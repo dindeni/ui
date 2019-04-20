@@ -1,0 +1,12 @@
+mixin searchRoom
+  section.searchRoom
+    h2.searchRoom__head Найдём номера под ваши пожелания
+    div.searchRoom__check
+      div
+        span.searchRoom__label прибытие
+        span.searchRoom__label выезд
+      label(class='searchRoom__input-label')
+        input#datepickerIn(type='text' class='searchRoom__input' placeholder='дд.мм.гггг')
+      label(class='searchRoom__input-label')
+        input#datepickerOut(type='text' class='searchRoom__input' placeholder='дд.мм.гггг')
+

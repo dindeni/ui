@@ -1,0 +1,214 @@
+
+.searchRoom{
+  width: 380px;
+  height: 374px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #FFFFFF;
+  padding-left: 30px;
+}
+.searchRoom__input{
+  width: 150px;
+  height: 44px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.searchRoom__head{
+  font: 24px/29px Quickand-regular, sans-serif;
+  font-weight: bold;
+  width: 280px;
+  margin: 41px 0 0 0;
+  letter-spacing: -0.8px;
+}
+.searchRoom__check{
+  font-family: Montserrat, sans-serif;
+}
+.ui-datepicker{
+  width: 320px;
+  height: 369px;
+  margin: 5px auto 0 auto;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  background: #FFFFFF;
+}
+#ui-datepicker-div{
+  display: none;
+}
+.ui-datepicker-title{
+  text-transform: capitalize;
+  font-weight: bold;
+  font-family: Quickand-regular, sans-serif;
+  font-size: 19px;
+  text-align: center;
+  margin: 3px 0 0 0;
+  letter-spacing: -1px;
+}
+.ui-icon.ui-icon-circle-triangle-e,.ui-icon.ui-icon-circle-triangle-w{
+  opacity: 0;
+}
+.ui-datepicker-prev{
+  position: relative;
+  cursor: pointer;
+  &::before{
+    position: absolute;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background: url("./icon-arrow.svg") no-repeat;
+    transform: rotate(180deg);
+    left: 15px;
+    top: 17px;
+  }
+}
+.ui-datepicker-next{
+  position: relative;
+  cursor: pointer;
+  &::before{
+    position: absolute;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background: url("./icon-arrow.svg") no-repeat;
+    left: 241px;
+    top: 27px;
+  }
+}
+.ui-datepicker-calendar{
+  margin: 39px 0 0 29px;
+  font-size: 12px;
+  & thead{
+    color: #BC9CFF;
+    width: 100%;
+  }
+  & tr{
+    display: flex;
+  }
+  & th{
+    margin: 0 20px 20px 0;
+    display: inline-block;
+  }
+  & td, td .ui-state-default{
+    color: rgba(31, 32, 65, 0.5);
+    text-decoration: none;
+    width: 20px;
+    margin: 0 18px 11.6px 0;
+    display: inline-block;
+    text-align: center;
+  }
+}
+.ui-datepicker-calendar .ui-datepicker-today .ui-state-default{
+  font-family: Montserrat, sans-serif;
+  color: #FFFFFF;
+  font-weight: bold;
+  position: relative;
+  &::after{
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border-radius: 22px;
+    left: -10px;
+    top: -12px;
+    z-index: -10;
+  }
+}
+.ui-datepicker-calendar .ui-datepicker-other-month .ui-state-default{
+  color: rgba(31, 32, 65, 0.25);
+}
+.searchRoom__input{
+  margin: 4px 20px 0 0;
+  padding: 0 0 3px 15px;
+  &::placeholder{
+    text-transform: uppercase;
+  }
+}
+/*#ui-datepicker-div{
+  left: 38px;
+}*/
+.searchRoom__input-label{
+  position: relative;
+  &::after{
+    position: absolute;
+    content: '';
+    width: 44px;
+    height: 44px;
+    background: url("./icon-expand.svg") no-repeat;
+    right: 4px;
+    top: 6px;
+  }
+}
+.searchRoom__label{
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 20px 0 0 0;
+  display: inline-block;
+  letter-spacing: -0.8px;
+    &:first-child{
+      margin-right: 106px;
+    }
+}
+.ui-datepicker-calendar .searchRoom__min:not(.ui-state-disabled),
+.ui-datepicker-calendar .searchRoom__max:not(.ui-state-disabled){
+  position: relative;
+  & > a{
+    color: #FFFFFF;
+    font-weight: bold;
+  }
+  &::after{
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    left: -10px;
+    top: -12px;
+    z-index: -10;
+  }
+}
+.ui-datepicker-calendar .searchRoom__min:not(.ui-state-disabled)::before{
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 40px;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-size: 50px 40px;
+  opacity: 0.25;
+  left: 10px;
+  top: -12px;
+  z-index: -10;
+}
+.ui-datepicker-calendar .searchRoom__max:not(.ui-state-disabled)::before{
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 40px;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-size: 50px 40px;
+  opacity: 0.25;
+  left: -10px;
+  top: -12px;
+  z-index: -10;
+}
+.ui-datepicker-calendar .searchRoom__range:not(.ui-state-disabled){
+  position: relative;
+  margin: 0;
+  width: 38px;
+  &::after{
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background-size: 50px 40px;
+    opacity: 0.25;
+    left: -10px;
+    top: -12px;
+    z-index: -10;
+  }
+}
