@@ -44,7 +44,7 @@ module.exports = merge(common, {
 					use: ['pug-loader']
 				},
 				{
-					test: /\.scss$/,
+					test: /\.(scss|css)$/,
 						use: [
 							{
 							loader: MiniCssExtractPlugin.loader,

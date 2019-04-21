@@ -1,0 +1,49 @@
+@import "../mixins/input";
+@import "../mixins/hide";
+
+@include input('.guests__input','.guests__label','.guests');
+@include hide;
+.guests{
+  margin: 22px 0 0 0;
+  & .guests__input{
+    width: 320px;
+  }
+  & .guests__input::placeholder{
+    text-transform: none;
+  }
+  & .guests__label::after{
+    top: 4px;
+  }
+}
+.guests__popup{
+  width: 320px;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  height: 159px;
+  border-radius: 0 0 4px 4px;
+}
+.guests__type-visitors{
+  margin: 12px 0 10px 15px;
+}
+.guests__container{
+  display: flex;
+  justify-content: space-between;
+}
+.guests__button{
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 22px;
+  color: rgba(31, 32, 65, 0.5);
+  background: #FFFFFF;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 3px;
+}
+.guests__numberVisitors{
+  color: #1F2041;
+  margin: 0 12px;
+}
+.guests__numberVisitors-wrapper{
+  margin: 4px 6px 0 0;
+}

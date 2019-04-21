@@ -1,0 +1,38 @@
+@mixin input($input, $input-label, $label){
+  #{$input}{
+    margin: 4px 20px 0 0;
+    padding: 0 0 3px 15px;
+    width: 150px;
+    height: 44px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+    &::placeholder{
+      text-transform: uppercase;
+    }
+  }
+  #{$input-label}{
+    position: relative;
+    &::after{
+      position: absolute;
+      content: '';
+      width: 44px;
+      height: 44px;
+      background: url("../common/icon-expand.svg") no-repeat;
+      right: 4px;
+      top: 6px;
+    }
+  }
+  #{$label}{
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 20px 0 0 0;
+    width: 150px;
+    display: inline-block;
+    letter-spacing: -0.8px;
+    &:nth-child(2){
+      margin-left: 20px;
+    }
+  }
+}
