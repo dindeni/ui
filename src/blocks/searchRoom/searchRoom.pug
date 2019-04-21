@@ -7,8 +7,10 @@ mixin searchRoom
       div
         span.searchRoom__label прибытие
         span.searchRoom__label выезд
-      label(class='searchRoom__input-label')
-        input#datepickerIn(type='text' class='searchRoom__input' placeholder='дд.мм.гггг')
-      label(class='searchRoom__input-label')
-        input#datepickerOut(type='text' class='searchRoom__input' placeholder='дд.мм.гггг')
-      +sumGuests
+      form
+
+        label(class='searchRoom__input-label')
+          input#datepickerIn(type='text' class='searchRoom__input' placeholder='дд.мм.гггг')
+        label(class='searchRoom__input-label')
+          input#datepickerOut(type='text' class='searchRoom__input' placeholder='дд.мм.гггг')
+        +sumGuests

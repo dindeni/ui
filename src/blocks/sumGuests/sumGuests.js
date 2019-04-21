@@ -3,17 +3,21 @@ const guestsPopup = document.querySelector('#guestsPopup');
 const wrapperAdult = document.querySelector('#guest-wrapper-adult');
 const wrapperChildren = document.querySelector('#guest-wrapper-children');
 const wrapperBabies = document.querySelector('#guest-wrapper-babies');
+const buttonApply = document.querySelector('.guests__buttons-footer--apply');
+const buttonClear = document.querySelector('.guests__buttons-footer--clear');
 
 inputGuests.value = 0;
 
 document.addEventListener('click', (evt)=>{
     if(evt.target === inputGuests && guestsPopup.classList.contains('hide')){
         guestsPopup.classList.remove('hide')
-    }else if (!guestsPopup.classList.contains('hide') && evt.target !== inputGuests){
+    }/*else if (!guestsPopup.classList.contains('hide') && evt.target !== inputGuests){
         guestsPopup.classList.add('hide')
-    }
+    }*/
 
     sumGuests(evt);
+    clearInput(evt);
+    applyInputValue(evt);
 
 });
 
@@ -29,7 +33,8 @@ const sumGuests = (evt)=>{
     const decreaseVisitors = ()=> inputGuests.value = +inputGuests.value - 1;
     const increaseNumberVisitors = ()=>
         searchNumberVisitors.textContent = +searchNumberVisitors.textContent + 1;
-    const decreaseNumberVisitors = ()=> +searchNumberVisitors.textContent - 1;
+    const decreaseNumberVisitors = ()=> searchNumberVisitors.textContent =
+        +searchNumberVisitors.textContent - 1;
 
     if (parentElement === wrapperAdult &&
         evt.target === searchButtonPlus){
@@ -47,7 +52,7 @@ const sumGuests = (evt)=>{
         evt.target === searchButtonMinus && searchNumberVisitors.textContent > 0){
         decreaseNumberVisitors();
         decreaseVisitors();
-    }else if(evt.target.parentElement.parentElement === wrapperBabies &&
+    }else if(parentElement === wrapperBabies &&
         evt.target === searchButtonPlus){
         increaseNumberVisitors();
         increaseVisitors();
@@ -55,6 +60,21 @@ const sumGuests = (evt)=>{
         evt.target === searchButtonMinus && searchNumberVisitors.textContent > 0){
         decreaseNumberVisitors();
         decreaseVisitors();
+    }
+};
+
+const clearInput = (evt)=>{
+    if(evt.target === buttonClear){
+        inputGuests.value = 0;
+        guestsPopup.querySelectorAll('.guests__numberVisitors').forEach((value)=>{
+            value.textContent = 0
+        })
+    }
+};
+
+const applyInputValue = (evt)=>{
+    if (evt.target === buttonApply){
+        guestsPopup.classList.add('hide')
     }
 };
 

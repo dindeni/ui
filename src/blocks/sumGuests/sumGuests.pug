@@ -5,11 +5,14 @@ mixin sumGuests
     label(class='guests__label')
       input#guests-input(type='text' class='guests__input' placeholder='Сколько гостей')
     div#guestsPopup.guests__popup.hide
-      div.guests__adult-container
+      div.guests__count-container
         each value, index in visitors
           div.guests__container(id=`guest-wrapper-${visitorsId[index]}`)
             span.guests__type-visitors #{value}
             div.guests__numberVisitors-wrapper
-              button(type='button' class='guests__button guests__button--minus' id='button-minus') -
-              span.guests__numberVisitors(id=`number-visitors-${visitorsId[index]}`) 0
-              button(type='button' class='guests__button guests__button--plus' id='button-plus') +
+              button(type='button' class='guests__button guests__button--minus') -
+              span.guests__numberVisitors 0
+              button(type='button' class='guests__button guests__button--plus') +
+      div.guests__buttons-footer-container
+        button.guests__buttons-footer.guests__buttons-footer--clear очистить
+        button.guests__buttons-footer.guests__buttons-footer--apply применить
