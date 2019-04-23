@@ -1,0 +1,74 @@
+@import "../common/variables";
+
+.input{
+  width: 320px;
+  border: 1px solid $dark25;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 12px 14px;
+  &::placeholder{
+    text-transform: none;
+    color: $dark25;
+    font-size: 14px;
+    font-family: Montserrat, sans-serif;
+  }
+  &.input__text::placeholder{
+    text-transform: capitalize;
+  }
+  &:hover, &:focus{
+    border: 1px solid $dark50;
+    &::placeholder{
+      color: $dark75;
+    }
+  }
+  &.input__date{
+    width: 150px;
+    color: $dark75;
+    &::placeholder{
+      color: $dark75;
+      text-transform: uppercase;
+    }
+  }
+  &.input__filter{
+    width: 266px;
+  }
+}
+.input__label-dropdown{
+  display: inline-block;
+  position: relative;
+  &::after{
+    position: absolute;
+    content: '';
+    width: 44px;
+    height: 44px;
+    background: url("./icon-expand.svg") no-repeat;
+    right: -16px;
+    top: 18px;;
+  }
+  & .input::placeholder{
+    color: $dark75;
+  }
+}
+.input__masked{
+  &::placeholder{
+    text-transform: uppercase;
+  }
+}
+.input__label-subscription{
+  position: relative;
+  &::after{
+    position: absolute;
+    content: '';
+    width: 44px;
+    height: 44px;
+    background: url("./icon-arrow-forward.svg") no-repeat;
+    right: -14px;
+    top: 0;
+  }
+  & .input__subscription{
+    width: 267px;
+    &::placeholder{
+      text-transform: capitalize;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+mixin input(type, placeholder, id)
+  if type === 'text'
+    input(type='text' class=`input input__text` id=`${id}` placeholder=`${placeholder}`)
+  else if type === 'dropdown'
+    label.input__label-dropdown
+      input(type='text' class='input input__dropdown' placeholder=`${placeholder}` id=`${id}`)
+  else if type === 'masked'
+    input(type='text' class='input input__masked' placeholder=`${placeholder}`)
+  else if type === 'date'
+    label.input__label-dropdown
+      input(type='text' class='input input__date' placeholder=`${placeholder}` id=`${id}`)
+  else if type === 'filter'
+    label.input__label-dropdown
+      input(type='text' class='input input__filter' placeholder=`${placeholder}`)
+  else if type === 'subscription'
+    label.input__label-subscription
+      input(type='text' class='input input__subscription' placeholder=`${placeholder}`)

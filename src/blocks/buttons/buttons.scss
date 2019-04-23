@@ -51,14 +51,14 @@
 }
 .button__full--buy{
   position: relative;
-  padding: 15px 94px;
+  padding: 15px 91px;
   &::after{
     position: absolute;
     content: '';
     width: 44px;
     height: 44px;
     background: url("./icon-arrow-forward.svg") no-repeat;
-    right: -10px;
+    right: -14px;
     top: 12px;
   }
 }

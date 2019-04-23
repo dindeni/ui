@@ -1,10 +1,11 @@
 include ../buttons/buttons
+include ../inputs/inputs
+
 mixin sumGuests
   -const visitors = ['взрослые', 'дети', 'младенцы']
   -const visitorsId = ['adult', 'children', 'babies']
   div.guests гости
-    label(class='guests__label')
-      input#guests-input(type='text' class='guests__input' placeholder='Сколько гостей')
+    +input('dropdown', 'Сколько гостей', 'guests-input')
     div#guestsPopup.guests__popup.hide
       div.guests__count-container
         each value, index in visitors

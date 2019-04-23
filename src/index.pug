@@ -1,5 +1,6 @@
 include blocks/searchRoom/searchRoom
 include blocks/buttons/buttons
+include blocks/inputs/inputs
 
 doctype html
 html(lang="en")
@@ -8,7 +9,15 @@ html(lang="en")
       meta(name="viewport" content="width=device-width,initial-scale=1")
     body
       +searchRoom
-      +buttons('full', 'click me')
-      +buttons('border', 'click me')
-      +buttons('transparent', 'click me')
-      +buttons('buy', 'перейти к оплате')
+      div.div__container
+        +buttons('full', 'click me')
+        +buttons('border', 'click me')
+        +buttons('transparent', 'click me')
+        +buttons('buy', 'перейти к оплате')
+      div.div__container
+        +input('text', 'email', 'input__email')
+        +input('dropdown', 'Сколько гостей', 'input-dropdown')
+        +input('masked', 'дд.мм.гггг')
+        +input('date', 'дд.мм.гггг')
+        +input('filter', '19 авг - 23 авг')
+        +input('subscription', 'email')

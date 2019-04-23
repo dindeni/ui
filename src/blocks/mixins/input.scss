@@ -1,16 +1,4 @@
-@mixin input($input, $input-label, $label){
-  #{$input}{
-    margin: 4px 20px 0 0;
-    padding: 0 0 3px 15px;
-    width: 150px;
-    height: 44px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    box-sizing: border-box;
-    border-radius: 4px;
-    &::placeholder{
-      text-transform: uppercase;
-    }
-  }
+@mixin input($input-label, $label){
   #{$input-label}{
     position: relative;
     &::after{

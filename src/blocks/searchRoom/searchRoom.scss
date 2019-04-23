@@ -8,6 +8,9 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   background: #FFFFFF;
   padding-left: 30px;
+  & .button__full{
+    margin: 32px 0 0 0;
+  }
 }
 /*.searchRoom__input{
   width: 150px;
@@ -25,7 +28,11 @@
 }
 .searchRoom__check{
   font-family: Montserrat-regular, sans-serif;
+  & .input__label-dropdown{
+    margin: 5px 20px 0 0;
+  }
 }
+
 .ui-datepicker{
   width: 320px;
   height: 369px;
@@ -119,52 +126,7 @@
 .ui-datepicker-calendar .ui-datepicker-other-month .ui-state-default{
   color: rgba(31, 32, 65, 0.25);
 }
-@include input('.searchRoom__input', '.searchRoom__input-label', '.searchRoom__label')
-/*.searchRoom__input{
-  margin: 4px 20px 0 0;
-  padding: 0 0 3px 15px;
-  &::placeholder{
-    text-transform: uppercase;
-  }
-  &.searchRoom__input--guests{
-    display: block;
-    width: 320px;
-    position: relative;
-  }
-}*/
-/*.searchRoom__input--guests{
-  &.searchRoom__input::placeholder{
-    text-transform: none;
-  }
-}
-.searchRoom__input-label{
-  position: relative;
-  &::after{
-    position: absolute;
-    content: '';
-    width: 44px;
-    height: 44px;
-    background: url("./icon-expand.svg") no-repeat;
-    right: 4px;
-    top: 6px;
-  }
-}
-.searchRoom__input-label--guests.searchRoom__input-label::after{
-  top: 41px;
-  right: 0;
-  left: 251px;
-}
-.searchRoom__label{
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: bold;
-  margin: 20px 0 0 0;
-  display: inline-block;
-  letter-spacing: -0.8px;
-    &:first-child{
-      margin-right: 106px;
-    }
-}*/
+@include input('.searchRoom__input-label', '.searchRoom__label')
 .ui-datepicker-calendar .searchRoom__min:not(.ui-state-disabled),
 .ui-datepicker-calendar .searchRoom__max:not(.ui-state-disabled){
   position: relative;
@@ -225,3 +187,4 @@
     z-index: -10;
   }
 }
+
