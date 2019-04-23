@@ -11,9 +11,9 @@ inputGuests.value = 0;
 document.addEventListener('click', (evt)=>{
     if(evt.target === inputGuests && guestsPopup.classList.contains('hide')){
         guestsPopup.classList.remove('hide')
-    }/*else if (!guestsPopup.classList.contains('hide') && evt.target !== inputGuests){
+    }else if (!guestsPopup.classList.contains('hide') && evt.target !== inputGuests){
         guestsPopup.classList.add('hide')
-    }*/
+    }
 
     sumGuests(evt);
     clearInput(evt);
@@ -74,7 +74,7 @@ const clearInput = (evt)=>{
 
 const applyInputValue = (evt)=>{
     if (evt.target === buttonApply){
-        guestsPopup.classList.add('hide')
+        guestsPopup.classList.add('hide');
     }
 };
 

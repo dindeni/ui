@@ -1,0 +1,10 @@
+mixin buttons(type, content, className)
+  if type === 'full'
+    button.button__full #{content}
+  else if type === 'transparent'
+    button.button__transparent(class=`${className}`) #{content}
+  else if type === 'border'
+    div.button__wrapper
+      button.button__border(class=`${className}`) #{content}
+  else if type === 'buy'
+    button.button__full.button__full--buy #{content}

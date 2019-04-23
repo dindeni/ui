@@ -1,3 +1,4 @@
+include ../buttons/buttons
 mixin sumGuests
   -const visitors = ['взрослые', 'дети', 'младенцы']
   -const visitorsId = ['adult', 'children', 'babies']
@@ -14,5 +15,5 @@ mixin sumGuests
               span.guests__numberVisitors 0
               button(type='button' class='guests__button guests__button--plus') +
       div.guests__buttons-footer-container
-        button.guests__buttons-footer.guests__buttons-footer--clear очистить
-        button.guests__buttons-footer.guests__buttons-footer--apply применить
+        +buttons('transparent', 'очистить', 'guests__buttons-footer--clear')
+        +buttons('transparent', 'применить', 'guests__buttons-footer--apply')
