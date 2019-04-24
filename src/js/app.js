@@ -7,6 +7,7 @@ import '../blocks/buttons/buttons.scss';
 import '../blocks/inputs/inputs.scss';
 import '../blocks/checkbox/checkbox.scss';
 import '../blocks/radio/radio.scss';
+import '../blocks/toggle/toggle.scss';
 
 import '../blocks/sumGuests/sumGuests';
 

@@ -3,6 +3,7 @@ include blocks/buttons/buttons
 include blocks/inputs/inputs
 include blocks/checkbox/checkbox
 include blocks/radio/radio
+  include blocks/toggle/toggle
 
 -const arrCheckbox = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']
 -const arrRadio = ['Terran', 'Protoss']
@@ -30,3 +31,5 @@ html(lang="en")
         +checkbox(arrCheckbox)
       div.div__container
         +radio(arrRadio)
+      div.div__container
+        +toggle('Получать спецпредложение')

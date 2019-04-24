@@ -629,3 +629,51 @@
   .radio__input:checked + .radio__label::before {
     border: 1px solid #bc9cff; }
 
+.toggle__input {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.toggle__label {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  padding: 0 0 0 45px;
+  position: relative; }
+  .toggle__label::before {
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 20px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border-radius: 10px;
+    left: -5px;
+    top: -2px; }
+  .toggle__label::after {
+    position: absolute;
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: rgba(31, 32, 65, 0.25);
+    border-radius: 10px;
+    left: 0;
+    top: 2px; }
+
+.toggle__input:checked + .toggle__label::before {
+  border: 1px solid #bc9cff; }
+
+.toggle__input:checked + .toggle__label::after {
+  background: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  left: 19px; }
+
