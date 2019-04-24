@@ -1,0 +1,6 @@
+
+mixin checkbox(arr)
+  form.checkbox
+    each value, index in arr
+      input.checkbox__input(type='checkbox' id=`input.checkbox-${index}`)
+      label.checkbox__label(for=`input.checkbox-${index}`) #{value}

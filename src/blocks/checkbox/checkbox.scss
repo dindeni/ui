@@ -1,0 +1,45 @@
+@import "../mixins/hide";
+@import "../common/variables";
+@import "../mixins/text";
+
+.checkbox__label{
+  padding: 0 0 0 20px;
+  display: block;
+  @include body;
+  margin: 0 0 12px 5px;
+  position: relative;
+  text-transform: unset;
+  width: 220px;
+  line-height: 18px;
+  &::before{
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 1px solid $dark25;
+    box-sizing: border-box;
+    border-radius: 4px;
+    left: -10px;
+    top: 0;
+  }
+}
+.checkbox__input{
+  display: none;
+}
+.checkbox__input:checked +.checkbox__label{
+  position: relative;
+  &::before{
+    border: 1px solid $purple;
+  }
+  &::after{
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: url("./icon-checked.svg");
+    left: -5px;
+    top: 4px;
+
+  }
+
+}

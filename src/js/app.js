@@ -5,6 +5,7 @@ import '../blocks/common/common.scss';
 import '../blocks/sumGuests/sumGuests.scss';
 import '../blocks/buttons/buttons.scss';
 import '../blocks/inputs/inputs.scss';
+import '../blocks/checkbox/checkbox.scss';
 
 import '../blocks/sumGuests/sumGuests';
 

@@ -532,3 +532,43 @@
     .input__label-subscription .input__subscription::placeholder {
       text-transform: capitalize; }
 
+.checkbox__label {
+  padding: 0 0 0 20px;
+  display: block;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  margin: 0 0 12px 5px;
+  position: relative;
+  text-transform: unset;
+  width: 220px;
+  line-height: 18px; }
+  .checkbox__label::before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border-radius: 4px;
+    left: -10px;
+    top: 0; }
+
+.checkbox__input {
+  display: none; }
+
+.checkbox__input:checked + .checkbox__label {
+  position: relative; }
+  .checkbox__input:checked + .checkbox__label::before {
+    border: 1px solid #bc9cff; }
+  .checkbox__input:checked + .checkbox__label::after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAxMCAxMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEuNDY0MzkgNC40MDc2OEw1LjcwNzAzIDguNjUwMzJMNC4yOTI4MiAxMC4wNjQ1TDAuMDUwMTc3MSA1LjgyMTg5TDEuNDY0MzkgNC40MDc2OFoiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcikiLz4KPHBhdGggZD0iTTguNTM1NDYgMi45OTM0N0w5Ljk0OTY3IDQuNDA3NjhMNC4yOTI4MiAxMC4wNjQ1TDIuODc4NiA4LjY1MDMyTDguNTM1NDYgMi45OTM0N1oiIGZpbGw9InVybCgjcGFpbnQxX2xpbmVhcikiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhciIgeDE9IjcuODI4MzUiIHkxPSIyLjI4NjM2IiB4Mj0iMi4xNzE1IiB5Mj0iNy45NDMyMSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjQkM5Q0ZGIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzhCQTRGOSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MV9saW5lYXIiIHgxPSI3LjgyODM1IiB5MT0iMi4yODYzNiIgeDI9IjIuMTcxNSIgeTI9IjcuOTQzMjEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0JDOUNGRiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM4QkE0RjkiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K);
+    left: -5px;
+    top: 4px; }
+

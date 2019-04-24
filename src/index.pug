@@ -1,6 +1,9 @@
 include blocks/searchRoom/searchRoom
 include blocks/buttons/buttons
 include blocks/inputs/inputs
+include blocks/checkbox/checkbox
+
+-const arrCheckbox = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']
 
 doctype html
 html(lang="en")
@@ -21,3 +24,5 @@ html(lang="en")
         +input('date', 'дд.мм.гггг')
         +input('filter', '19 авг - 23 авг')
         +input('subscription', 'email')
+      div.div__container
+        +checkbox(arrCheckbox)
