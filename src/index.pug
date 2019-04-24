@@ -2,8 +2,10 @@ include blocks/searchRoom/searchRoom
 include blocks/buttons/buttons
 include blocks/inputs/inputs
 include blocks/checkbox/checkbox
+include blocks/radio/radio
 
 -const arrCheckbox = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']
+-const arrRadio = ['Terran', 'Protoss']
 
 doctype html
 html(lang="en")
@@ -26,3 +28,5 @@ html(lang="en")
         +input('subscription', 'email')
       div.div__container
         +checkbox(arrCheckbox)
+      div.div__container
+        +radio(arrRadio)

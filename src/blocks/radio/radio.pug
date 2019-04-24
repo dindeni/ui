@@ -1,0 +1,5 @@
+mixin radio(arr)
+  form.radio
+    each value, index in arr
+      input.radio__input(type='radio' id=`input-radio-${index}` name='radio')
+      label.radio__label(for=`input-radio-${index}`) #{value}

@@ -24,7 +24,7 @@
   }
 }
 .checkbox__input{
-  display: none;
+  @include hide;
 }
 .checkbox__input:checked +.checkbox__label{
   position: relative;

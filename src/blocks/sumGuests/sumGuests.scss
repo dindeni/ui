@@ -2,7 +2,7 @@
 @import "../mixins/hide";
 
 @include input('.guests__label','.guests');
-@include hide;
+@include hideClass;
 .guests{
   margin: 22px 0 0 0;
   & .guests__input{
