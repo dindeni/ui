@@ -1,0 +1,36 @@
+@import "../mixins/text";
+@import "../common/variables";
+
+.ui-slider.ui-slider-horizontal{
+  width: 266px;
+  height: 6px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+.ui-slider-horizontal .ui-slider-handle.ui-corner-all{
+  top: -6px;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
+
+  &:last-child{
+    left: 100%;
+  }
+}
+.ui-slider-range{
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border-radius: 3px;
+}
+.range__label{
+  @include h3;
+  color: $dark50;
+  text-align: end;
+  margin: 0 0 24px 0;
+  font-weight: normal;
+}
+.range{
+  width: 271px;
+}
