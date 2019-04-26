@@ -8,3 +8,9 @@ mixin buttons(type, content, className)
       button.button__border(class=`${className}`) #{content}
   else if type === 'buy'
     button.button__full.button__full--buy #{content}
+  else if type === 'like'
+    div.button__wrapper.button__wrapper--like
+      button.button__border.button__border--like #{content}
+  else if type === 'like-gray'
+    div.button__wrapper.button__wrapper--like.button__wrapper--like-gray
+      button.button__border.button__border--like.button__border--like-gray #{content}

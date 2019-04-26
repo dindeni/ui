@@ -1,3 +1,5 @@
+@import "../common/variables";
+
 .button__full{
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border-radius: 22px;
@@ -60,5 +62,42 @@
     background: url("./icon-arrow-forward.svg") no-repeat;
     right: -14px;
     top: 12px;
+  }
+}
+.button__border--like{
+  font-size: 10px;
+  font-weight: normal;
+  padding: 0 0 0 8px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  &::before{
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url("icon-favorite.svg") no-repeat;
+    left: 3px;
+    top: 5px;
+  }
+
+}
+.button__wrapper.button__wrapper--like{
+  padding: 1px;
+  border-radius: 10px;
+  display: flex;
+  width: 40px;
+  height: 20px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+.button__wrapper.button__wrapper--like.button__wrapper--like-gray{
+  border: 1px solid $dark25;
+  background: none;
+}
+.button__border--like.button__border--like-gray{
+  color: $dark25;
+  &::before{
+    background: url("./icon-favorite_border.svg") no-repeat;
   }
 }
