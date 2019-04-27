@@ -1,0 +1,55 @@
+@import "../mixins/text";
+@import "../common/variables";
+
+.pagination__list{
+  list-style: none;
+  @include h3;
+  display: flex;
+  padding: 0;
+  margin: 20px 0 10px 20px;
+}
+.pagination__item{
+  margin: 0 0 0 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & .pagination__link{
+    color: $dark25;
+  }
+  &.pagination__item--dots{
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    color: $dark50;
+    font-weight: normal;
+  }
+  &:first-child{
+    & .pagination__link{
+      color: #FFFFFF;
+    }
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+  }
+  &:nth-child(4){
+
+  }
+}
+.pagination__link{
+  text-decoration: none;
+}
+.pagination__item--next{
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border-radius: 22px;
+  & .pagination__link{
+    width: 18px;
+    height: 18px;
+    margin: 0 auto;
+    background: url("../common/icon-arrow-forward.svg") no-repeat;
+    background-size: 18px 18px;
+  }
+}
+.pagination__description{
+  @include body;
+  margin-left: 26px;
+}

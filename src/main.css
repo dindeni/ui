@@ -572,7 +572,7 @@
 .checkbox__label {
   padding: 0 0 0 20px;
   display: block;
-  font-family: Montserrat, sans-serif;
+  font-family: Montserrat-regular, sans-serif;
   font-size: 14px;
   line-height: 24px;
   color: rgba(31, 32, 65, 0.75);
@@ -632,7 +632,7 @@
 
 .radio__label {
   position: relative;
-  font-family: Montserrat, sans-serif;
+  font-family: Montserrat-regular, sans-serif;
   font-size: 14px;
   line-height: 24px;
   color: rgba(31, 32, 65, 0.75);
@@ -679,7 +679,7 @@
   width: 1px; }
 
 .toggle__label {
-  font-family: Montserrat, sans-serif;
+  font-family: Montserrat-regular, sans-serif;
   font-size: 14px;
   line-height: 24px;
   color: rgba(31, 32, 65, 0.75);
@@ -739,7 +739,7 @@
   border-radius: 3px; }
 
 .range__label {
-  font-family: Montserrat, sans-serif;
+  font-family: Montserrat-regular, sans-serif;
   font-weight: bold;
   font-size: 12px;
   text-transform: uppercase;
@@ -751,6 +751,68 @@
 
 .range {
   width: 271px; }
+
+.pagination__list {
+  list-style: none;
+  font-family: Montserrat-regular, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 20px 0 10px 20px; }
+
+.pagination__item {
+  margin: 0 0 0 0;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .pagination__item .pagination__link {
+    color: rgba(31, 32, 65, 0.25); }
+  .pagination__item.pagination__item--dots {
+    background: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    color: rgba(31, 32, 65, 0.5);
+    font-weight: normal; }
+  .pagination__item:first-child {
+    background: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px; }
+    .pagination__item:first-child .pagination__link {
+      color: #FFFFFF; }
+
+.pagination__link {
+  text-decoration: none; }
+
+.pagination__item--next {
+  background: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border-radius: 22px; }
+  .pagination__item--next .pagination__link {
+    width: 18px;
+    height: 18px;
+    margin: 0 auto;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkgMC45ODQzNzVMMTcuMDE1NiA5TDkgMTcuMDE1Nkw3LjU5Mzc1IDE1LjYwOTRMMTMuMTcxOSA5Ljk4NDM4SDAuOTg0Mzc1VjguMDE1NjJIMTMuMTcxOUw3LjU5Mzc1IDIuMzkwNjJMOSAwLjk4NDM3NVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=) no-repeat;
+    background-size: 18px 18px; }
+
+.pagination__description {
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  margin-left: 26px; }
 
 /*!
  * jQuery UI Slider 1.12.1

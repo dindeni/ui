@@ -5,6 +5,7 @@ include blocks/checkbox/checkbox
 include blocks/radio/radio
 include blocks/toggle/toggle
 include blocks/range/range
+include blocks/pagination/pagination
 
 -const arrCheckbox = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']
 -const arrRadio = ['Terran', 'Protoss']
@@ -38,4 +39,5 @@ html(lang="en")
         +toggle('Получать спецпредложение')
       div.div__container
         +range
-
+      div.div__container
+        +pagination(Array(15))
