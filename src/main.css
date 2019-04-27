@@ -814,6 +814,10 @@
   color: rgba(31, 32, 65, 0.75);
   margin-left: 26px; }
 
+.rate__img {
+  width: 24px;
+  height: 24px; }
+
 /*!
  * jQuery UI Slider 1.12.1
  * http://jqueryui.com

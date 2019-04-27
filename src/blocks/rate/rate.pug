@@ -1,0 +1,11 @@
+mixin rate(numberFillStars)
+
+  div.rate
+    each value,index in Array(5)
+      if index <= numberFillStars - 1
+        svg.rate__img
+          use(xlink:href="blocks/rate/rate-sprite.svg#icon-star")
+      else
+        svg.rate__img
+          use(xlink:href="blocks/rate/rate-sprite.svg#icon-star-border")
+

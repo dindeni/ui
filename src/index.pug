@@ -6,6 +6,7 @@ include blocks/radio/radio
 include blocks/toggle/toggle
 include blocks/range/range
 include blocks/pagination/pagination
+include blocks/rate/rate
 
 -const arrCheckbox = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']
 -const arrRadio = ['Terran', 'Protoss']
@@ -41,3 +42,6 @@ html(lang="en")
         +range
       div.div__container
         +pagination(Array(15))
+      div.div__container
+        +rate(4)
+
