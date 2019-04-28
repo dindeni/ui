@@ -1,5 +1,7 @@
 @import "../mixins/input";
 @import "../mixins/hide";
+@import "../common/variables";
+@import "../mixins/text";
 
 @include input('.guests__label','.guests');
 @include hideClass;
@@ -17,9 +19,9 @@
 }
 .guests__popup{
   width: 320px;
-  border: 1px solid rgba(31, 32, 65, 0.5);
+  border: 1px solid $dark50;
   box-sizing: border-box;
-  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  box-shadow: 0 10px 20px $dark5;
   height: 159px;
   border-radius: 0 0 4px 4px;
   background: #FFFFFF;
@@ -34,10 +36,10 @@
   justify-content: space-between;
 }
 .guests__button{
-  border: 1px solid rgba(31, 32, 65, 0.25);
+  border: 1px solid $dark25;
   box-sizing: border-box;
   border-radius: 22px;
-  color: rgba(31, 32, 65, 0.5);
+  color: $dark50;
   background: #FFFFFF;
   width: 30px;
   height: 30px;
@@ -52,21 +54,25 @@
 }
 .guests__buttons-footer-container{
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   margin: 16px 0 0 2px;
 }
-/*
-.guests__buttons-footer{
-  border: none;
-  background: none;
-  font-family: Montserrat, sans-serif;
-  font-weight: bold;
-  font-size: 12px;
+.rooms{
+  & .rooms__popup, .input{
+    width: 266px;
+  }
+  & .guests__popup{
+    height: 119px;
+  }
+  & .input__dropdown{
+    @include body;
+    padding: 10px 14px;
+  }
 }
-.guests__buttons-footer--clear{
-  color: rgba(31, 32, 65, 0.5);
+
+.rooms__count-container{
+  @include h3;
+  color: $dark100;
+
 }
-.guests__buttons-footer--apply{
-  color: #BC9CFF;
-  margin-right: 3px;
-}*/
+

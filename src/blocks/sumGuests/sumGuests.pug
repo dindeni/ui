@@ -1,20 +1,36 @@
 include ../buttons/buttons
 include ../inputs/inputs
 
-mixin sumGuests
+mixin sumGuests(type)
   -const visitors = ['взрослые', 'дети', 'младенцы']
   -const visitorsId = ['adult', 'children', 'babies']
-  div.guests гости
-    +input('dropdown', 'Сколько гостей', 'guests-input')
-    div#guestsPopup.guests__popup.hide
-      div.guests__count-container
-        each value, index in visitors
-          div.guests__container(id=`guest-wrapper-${visitorsId[index]}`)
-            span.guests__type-visitors #{value}
-            div.guests__numberVisitors-wrapper
-              button(type='button' class='guests__button guests__button--minus') -
-              span.guests__numberVisitors 0
-              button(type='button' class='guests__button guests__button--plus') +
-      div.guests__buttons-footer-container
-        +buttons('transparent', 'очистить', 'guests__buttons-footer--clear')
-        +buttons('transparent', 'применить', 'guests__buttons-footer--apply')
+  -const rooms = ['спальни', 'кровати', 'ванные комнаты']
+  -const roomsId = ['bedroom', 'beds', 'bathroom']
+
+  if type === 'guests'
+    div.guests гости
+      +input('dropdown', 'Сколько гостей', 'guests-input')
+      div#guestsPopup.guests__popup.hide
+        div.guests__count-container
+          each value, index in visitors
+            div.guests__container(id=`guest-wrapper-${visitorsId[index]}`)
+              span.guests__type-visitors #{value}
+              div.guests__numberVisitors-wrapper
+                button(type='button' class='guests__button guests__button--minus') -
+                span.guests__numberVisitors 0
+                button(type='button' class='guests__button guests__button--plus') +
+        div.guests__buttons-footer-container
+          +buttons('transparent', 'очистить', 'guests__buttons-footer--clear')
+          +buttons('transparent', 'применить', 'guests__buttons-footer--apply')
+  if type === 'rooms'
+    form.rooms
+      +input('dropdown', '', 'rooms-input')
+      div#roomsPopup.guests__popup.rooms__popup.hide
+        div.rooms__count-container
+          each value, index in rooms
+            div.guests__container
+              span.guests__type-visitors #{value}
+              div.guests__numberVisitors-wrapper(id=`rooms-wrapper-${roomsId[index]}`)
+                button(type='button' class='guests__button rooms__button--minus') -
+                span.guests__numberVisitors(id=`roomsNumber-${roomsId[index]}`) 0
+                button(type='button' class='guests__button rooms__button--plus') +

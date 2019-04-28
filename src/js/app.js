@@ -15,5 +15,6 @@ import '../blocks/rate/rate.scss';
 
 import '../blocks/sumGuests/sumGuests';
 import '../blocks/range/range';
+import '../blocks/sumGuests/sumRooms';
 
 import '../blocks/searchRoom/dataPicker';

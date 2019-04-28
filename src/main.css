@@ -314,26 +314,31 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
   margin: 16px 0 0 2px; }
 
-/*
-.guests__buttons-footer{
-  border: none;
-  background: none;
-  font-family: Montserrat, sans-serif;
+.rooms .rooms__popup, .rooms .input {
+  width: 266px; }
+
+.rooms .guests__popup {
+  height: 119px; }
+
+.rooms .input__dropdown {
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  padding: 10px 14px; }
+
+.rooms__count-container {
+  font-family: Montserrat-regular, sans-serif;
   font-weight: bold;
   font-size: 12px;
-}
-.guests__buttons-footer--clear{
-  color: rgba(31, 32, 65, 0.5);
-}
-.guests__buttons-footer--apply{
-  color: #BC9CFF;
-  margin-right: 3px;
-}*/
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 0.75);
+  color: #1f2041; }
 
 .button__full {
   background: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));

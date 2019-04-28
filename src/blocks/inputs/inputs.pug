@@ -3,7 +3,7 @@ mixin input(type, placeholder, id)
     input(type='text' class=`input input__text` id=`${id}` placeholder=`${placeholder}`)
   else if type === 'dropdown'
     label.input__label-dropdown
-      input(type='text' class='input input__dropdown' placeholder=`${placeholder}` id=`${id}`)
+      input(type='text' class='input input__dropdown' placeholder=`${placeholder}` id=`${id}` readonly)
   else if type === 'masked'
     input(type='text' class='input input__masked' placeholder=`${placeholder}`)
   else if type === 'date'
