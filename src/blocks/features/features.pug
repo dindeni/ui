@@ -1,0 +1,6 @@
+mixin features(arr)
+  div.features
+    each value in arr
+      div.features__wrapper
+        b.features__slogan #{value.slogan}
+        span.features__description #{value.description}

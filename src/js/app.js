@@ -14,6 +14,7 @@ import '../blocks/pagination/pagination.scss';
 import '../blocks/rate/rate.scss';
 import '../blocks/bulletList/bulletList.scss';
 import '../blocks/review/review.scss';
+import '../blocks/features/features.scss';
 
 import '../blocks/sumGuests/sumGuests';
 import '../blocks/range/range';

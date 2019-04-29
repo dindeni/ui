@@ -1,0 +1,29 @@
+@import "../mixins/text";
+
+.features{
+  @include body;
+}
+.features__slogan{
+  font-weight: bold;
+  display: block;
+  padding: 0 0 0 60px;
+  position: relative;
+  &::before{
+    position: absolute;
+    content: '';
+    width: 48px;
+    height: 48px;
+    background: url("./icon-emoticon.svg") no-repeat;
+    left: 8px;
+    top: 2px;
+  }
+}
+.features__description{
+  margin: 0 0 0 60px;
+}
+.features__wrapper{
+  margin: 0 0 40px 0;
+  &:last-child .features__slogan::before{
+    background: url("./icon-location-city.svg") no-repeat;
+  }
+}
