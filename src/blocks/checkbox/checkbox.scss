@@ -6,7 +6,7 @@
   padding: 0 0 0 20px;
   display: block;
   @include body;
-  margin: 0 0 12px 5px;
+  margin: 0 0 12px 12px;
   position: relative;
   text-transform: unset;
   width: 220px;
@@ -39,7 +39,23 @@
     background: url("./icon-checked.svg");
     left: -5px;
     top: 4px;
-
   }
-
+}
+.checkbox__head{
+  position: relative;
+  @include h3;
+  color: $dark100;
+  margin: 0 0 18px 2px;
+  width: 250px;
+  --rotate: rotate(0deg);
+  &::after{
+    position: absolute;
+    content: '';
+    width: 12px;
+    height: 8px;
+    background: url("../common/icon-expand.svg") no-repeat;
+    right: 0;
+    transform: var(--rotate);
+    top: 3px;
+  }
 }

@@ -10,6 +10,8 @@ include blocks/rate/rate
 include blocks/sumGuests/sumGuests
 
 -const arrCheckbox = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']
+-const arrCheckboxExpandable = ['Завтрак', 'Письменный стол', 'Стул для кормления',
+-'Кроватка', 'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь']
 -const arrRadio = ['Terran', 'Protoss']
 
 doctype html
@@ -34,7 +36,9 @@ html(lang="en")
         +input('filter', '19 авг - 23 авг')
         +input('subscription', 'email')
       div.div__container
-        +checkbox(arrCheckbox)
+        +checkbox(arrCheckbox, 'checkbox')
+      div.div__container
+        +checkbox(arrCheckboxExpandable, 'checkboxExpandable', 'expandable checkbox list')
       div.div__container
         +radio(arrRadio)
       div.div__container

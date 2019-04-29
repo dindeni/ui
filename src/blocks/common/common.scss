@@ -11,6 +11,9 @@
   url('../../fonts/montserrat-regular-webfont.svg') format('svg'),
   url('../../fonts/montserrat-regular-webfont.ttf') format('truetype');
 }
+body{
+  margin: 0;
+}
 .div__container{
   margin-top: 15px;
 }
