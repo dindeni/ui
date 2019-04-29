@@ -861,6 +861,29 @@ body {
   width: 24px;
   height: 24px; }
 
+.bullet {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75); }
+
+.bullet__item {
+  padding-left: 20px;
+  position: relative;
+  margin: 0 0 10px 0; }
+  .bullet__item::before {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: rgba(31, 32, 65, 0.25);
+    border-radius: 50%;
+    left: 0;
+    top: 5px; }
+
 /*!
  * jQuery UI Slider 1.12.1
  * http://jqueryui.com

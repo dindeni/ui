@@ -8,6 +8,7 @@ include blocks/range/range
 include blocks/pagination/pagination
 include blocks/rate/rate
 include blocks/sumGuests/sumGuests
+include blocks/bulletList/bulletList
 
 -const arrCheckbox = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']
 -const arrCheckboxExpandable = ['Завтрак', 'Письменный стол', 'Стул для кормления',
@@ -15,6 +16,7 @@ include blocks/sumGuests/sumGuests
 -const arrCheckboxRich = [{label:'Широкий коридор', description: 'Ширина коридоров в номере не менее 91 см.'},
 -{label: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.'}]
 -const arrRadio = ['Terran', 'Protoss']
+-const arrBulletList = ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
 
 doctype html
 html(lang="en")
@@ -55,4 +57,6 @@ html(lang="en")
         +rate(4)
       div.div__container
         +sumGuests('rooms')
+      div.div__container
+        +bulletList(arrBulletList)
 
