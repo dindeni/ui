@@ -22,6 +22,23 @@
     left: -10px;
     top: 0;
   }
+  &.checkbox__label--rich{
+    font-weight: bold;
+    & .checkbox__span{
+      font-size: 12px;
+      font-weight: normal;
+      display: block;
+      margin: 7px 0 0 0;
+      line-height: 13px;
+      color: $dark50;
+    }
+    &:first-child{
+      width: 200px;
+    }
+    &:last-child{
+      width: 230px;
+    }
+  }
 }
 .checkbox__input{
   @include hide;

@@ -12,3 +12,9 @@ mixin checkbox(arr, type, head)
         each value, index in arr
           input.checkbox__input(type='checkbox' id=`input-checkbox-expandable-${index}`)
           label.checkbox__label(for=`input-checkbox-expandable-${index}`) #{value}
+  else if type === 'rich'
+    form.checkbox
+      each value, index in arr
+        input.checkbox__input(type='checkbox' id=`input-checkbox-rich-${index}`)
+        label.checkbox__label.checkbox__label--rich(for=`input-checkbox-rich-${index}`) #{value.label}
+          span.checkbox__span #{value.description}

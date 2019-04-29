@@ -600,6 +600,19 @@ body {
     border-radius: 4px;
     left: -10px;
     top: 0; }
+  .checkbox__label.checkbox__label--rich {
+    font-weight: bold; }
+    .checkbox__label.checkbox__label--rich .checkbox__span {
+      font-size: 12px;
+      font-weight: normal;
+      display: block;
+      margin: 7px 0 0 0;
+      line-height: 13px;
+      color: rgba(31, 32, 65, 0.5); }
+    .checkbox__label.checkbox__label--rich:first-child {
+      width: 200px; }
+    .checkbox__label.checkbox__label--rich:last-child {
+      width: 230px; }
 
 .checkbox__input {
   border: 0;
