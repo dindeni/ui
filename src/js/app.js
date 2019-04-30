@@ -15,10 +15,12 @@ import '../blocks/rate/rate.scss';
 import '../blocks/bulletList/bulletList.scss';
 import '../blocks/review/review.scss';
 import '../blocks/features/features.scss';
+import '../blocks/datapicker/datepicker.scss';
 
 import '../blocks/sumGuests/sumGuests';
 import '../blocks/range/range';
 import '../blocks/sumGuests/sumRooms';
 import '../blocks/checkbox/checkbox';
+import '../blocks/datapicker/datepicker';
 
 import '../blocks/searchRoom/dataPicker';

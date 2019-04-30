@@ -5,7 +5,7 @@ const dateElementOut = $('#datepickerOut');
 let dateArrive;
 let dateOut;
 
-const getRange = function () {
+const getRange = function (element) {
     setTimeout(()=>{
         $('.ui-datepicker td').each(function(index, elem){
             if (dateOut && +this.textContent === parseInt(dateOut.substring(0, 2), 10)){
@@ -17,6 +17,9 @@ const getRange = function () {
                 parseInt(dateArrive.substring(0, 2), 10) && +this.textContent < parseInt(dateOut.substring(0, 2), 10)){
                 $(this).addClass('searchRoom__range');
             }
+        });
+        $('.ui-datepicker-current').click(()=>{
+            element.datepicker('hide')
         })
     }, 500)
 };
@@ -29,12 +32,21 @@ dateElementIn.datepicker({
     'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
     nextText: '',
     firstDay: 1,
+    showButtonPanel: true,
+    closeText: 'очистить',
+    currentText: 'применить',
     onSelect: (date, dataObj)=>{
         dateArrive = date;
     },
     beforeShow: function(){
-        getRange()
-    }
+        getRange(dateElementIn);
+
+    },
+    onClose: (value, inst)=>{
+        if ($(window.event.srcElement).hasClass('ui-datepicker-close')) {
+            dateElementIn.datepicker('setDate', null);
+        }
+    },
 } );
 
 dateElementOut.datepicker({
@@ -45,13 +57,21 @@ dateElementOut.datepicker({
         'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
     nextText: '',
     firstDay: 1,
+    showButtonPanel: true,
+    closeText: 'очистить',
+    currentText: 'применить',
     onSelect: (date, dataObj)=>{
         dateOut = date;
     },
     beforeShow: function () {
-        getRange();
+        getRange(dateElementOut);
 
-    }
+    },
+    onClose: (value, inst)=>{
+        if ($(window.event.srcElement).hasClass('ui-datepicker-close')) {
+            dateElementOut.datepicker('setDate', null);
+        }
+    },
 } );
 
 

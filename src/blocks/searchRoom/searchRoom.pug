@@ -1,5 +1,6 @@
 include ../sumGuests/sumGuests
-  include ../inputs/inputs
+include ../inputs/inputs
+include ../datapicker/datepicker
 
 mixin searchRoom
   section.searchRoom
@@ -9,7 +10,7 @@ mixin searchRoom
         span.searchRoom__label прибытие
         span.searchRoom__label выезд
       form
-        +input('date', 'дд.мм.гггг', 'datepickerIn')
-        +input('date', 'дд.мм.гггг', 'datepickerOut')
+        +datapicker('datepickerIn')
+        +datapicker('datepickerOut')
         +sumGuests('guests')
     +buttons('buy', 'Подобрать номер')
