@@ -1,4 +1,4 @@
-mixin toggle(content)
-  form.toggle
-      input.toggle__input(type='checkbox' id=`toggle-1` name='toggle')
-      label.toggle__label(for=`toggle-1` name='toggle') #{content}
+mixin toggle(content, id)
+  span.toggle
+      input.toggle__input(type='checkbox' id=`${id}` name='toggle')
+      label.toggle__label(for=`${id}` name='toggle') #{content}

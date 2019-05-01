@@ -11,6 +11,7 @@ include blocks/sumGuests/sumGuests
 include blocks/bulletList/bulletList
 include blocks/review/review
 include blocks/features/features
+include blocks/registration/registration
 
 -const arrCheckbox = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']
 -const arrCheckboxExpandable = ['Завтрак', 'Письменный стол', 'Стул для кормления',
@@ -18,6 +19,7 @@ include blocks/features/features
 -const arrCheckboxRich = [{label:'Широкий коридор', description: 'Ширина коридоров в номере не менее 91 см.'},
 -{label: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.'}]
 -const arrRadio = ['Terran', 'Protoss']
+-const arrRadioId = ['terran', 'protoss']
 -const arrBulletList = ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
 -const arrFeatures = [{slogan: 'Комфорт', description: 'Шумопоглощающие стены'},
 -{slogan: 'Удобство', description: 'Окно в каждой из спален'}]
@@ -50,9 +52,9 @@ html(lang="en")
       div.div__container
         +checkbox(arrCheckboxRich, 'rich')
       div.div__container
-        +radio(arrRadio)
+        +radio(arrRadio, arrRadioId)
       div.div__container
-        +toggle('Получать спецпредложение')
+        +toggle('Получать спецпредложение', 'toggle')
       div.div__container
         +range
       div.div__container
@@ -67,5 +69,7 @@ html(lang="en")
         +review
       div.div__container
         +features(arrFeatures)
+      div.div__container
+        +registration
 
 

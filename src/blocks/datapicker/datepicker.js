@@ -19,15 +19,19 @@ const datePicker = (element)=>{
                 element.datepicker('setDate', null);
             }
         },
-        beforeShow: ()=>{
+        beforeShow: (text, instance)=>{
             setTimeout(()=>{
                 $('.ui-datepicker-current').click(()=>{
                     element.datepicker('hide')
-                })
-            }, 500)
+                });
+                console.log(instance);
+                instance.dpDiv.css({top: element.offset().top + 38})
+            }, 100)
 
         }
     } );
 };
 
 datePicker(dateElement);
+
+export {datePicker}

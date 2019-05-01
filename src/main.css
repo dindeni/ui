@@ -12,13 +12,6 @@
   .searchRoom .button__full {
     margin: 32px 0 0 0; }
 
-/*.searchRoom__input{
-  width: 150px;
-  height: 44px;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  box-sizing: border-box;
-  border-radius: 4px;
-}*/
 .searchRoom__head {
   font: 24px/29px Quickand-regular, sans-serif;
   font-weight: bold;
@@ -31,99 +24,6 @@
   .searchRoom__check .input__label-dropdown {
     margin: 5px 20px 0 0; }
 
-/*.ui-datepicker{
-  width: 320px;
-  height: 369px;
-  margin: 5px auto 0 auto;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
-  background: #FFFFFF;
-}*/
-/*#ui-datepicker-div{
-  display: none;
-}
-.ui-datepicker-title{
-  text-transform: capitalize;
-  font-weight: bold;
-  font-family: Quickand-regular, sans-serif;
-  font-size: 19px;
-  text-align: center;
-  margin: 3px 0 0 0;
-  letter-spacing: -1px;
-}
-.ui-icon.ui-icon-circle-triangle-e,.ui-icon.ui-icon-circle-triangle-w{
-  opacity: 0;
-}
-.ui-datepicker-prev{
-  position: relative;
-  cursor: pointer;
-  &::before{
-    position: absolute;
-    content: '';
-    width: 24px;
-    height: 24px;
-    background: url("./icon-arrow.svg") no-repeat;
-    transform: rotate(180deg);
-    left: 15px;
-    top: 17px;
-  }
-}
-.ui-datepicker-next{
-  position: relative;
-  cursor: pointer;
-  &::before{
-    position: absolute;
-    content: '';
-    width: 24px;
-    height: 24px;
-    background: url("./icon-arrow.svg") no-repeat;
-    left: 241px;
-    top: 27px;
-  }
-}*/
-/*.ui-datepicker-calendar{
-  margin: 39px 0 0 29px;
-  font-size: 12px;
-  & thead{
-    color: #BC9CFF;
-    width: 100%;
-  }
-  & tr{
-    display: flex;
-  }
-  & th{
-    margin: 0 20px 20px 0;
-    display: inline-block;
-  }
-  & td, td .ui-state-default{
-    color: rgba(31, 32, 65, 0.5);
-    text-decoration: none;
-    width: 20px;
-    margin: 0 18px 11.6px 0;
-    display: inline-block;
-    text-align: center;
-  }
-}*/
-/*.ui-datepicker-calendar .ui-datepicker-today .ui-state-default{
-  font-family: Montserrat, sans-serif;
-  color: #FFFFFF;
-  font-weight: bold;
-  position: relative;
-  &::after{
-    position: absolute;
-    content: '';
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    border-radius: 22px;
-    left: -10px;
-    top: -12px;
-    z-index: -10;
-  }
-}
-.ui-datepicker-calendar .ui-datepicker-other-month .ui-state-default{
-  color: rgba(31, 32, 65, 0.25);
-}*/
 .searchRoom__input-label {
   position: relative; }
   .searchRoom__input-label::after {
@@ -1070,6 +970,81 @@ body {
   background: none;
   border: none;
   color: rgba(31, 32, 65, 0.5); }
+
+.registration {
+  width: 380px;
+  height: 374px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #FFFFFF;
+  padding-left: 30px;
+  padding-left: 28px;
+  height: 646px; }
+  .registration .input__label-dropdown .input {
+    width: 320px;
+    margin: 4px 0 0 0; }
+  .registration .input__label-dropdown::after {
+    content: none; }
+  .registration #registration-email {
+    margin: 5px 0 10px 0; }
+  .registration .toggle {
+    margin: 9px 0 0 5px;
+    display: inline-block; }
+  .registration .button__full--buy {
+    margin: 22px 0 0 0;
+    padding: 15px 93px; }
+    .registration .button__full--buy::after {
+      right: -12px; }
+  .registration .button__wrapper {
+    margin: 0 0 0 33px; }
+  .registration .button__border {
+    padding: 12px 23px; }
+
+.registration__head {
+  font-family: Quicksand, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #1F2041;
+  margin: 42px 0 0 0; }
+
+.registration__form .input:first-child {
+  margin: 20px 0 0 0; }
+
+.registration__form .input:nth-child(2) {
+  margin: 10px 0 0 0; }
+
+.registration__radio-wrapper {
+  position: relative;
+  display: block;
+  margin: 10px 0 0 10px; }
+  .registration__radio-wrapper .radio__label::before {
+    top: -3px; }
+  .registration__radio-wrapper .radio__input:checked + .radio__label::after {
+    top: 1px; }
+
+.registration__date-head, .registration__data-head {
+  font-family: Montserrat-regular, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 0.75);
+  color: #1f2041;
+  text-transform: uppercase;
+  margin: 22px 0 0 0;
+  display: inline-block; }
+
+.registration__footer {
+  margin: 29px 0 0 0; }
+
+.registration__footer-label {
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75); }
 
 /*!
  * jQuery UI Slider 1.12.1

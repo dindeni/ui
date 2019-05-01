@@ -1,0 +1,79 @@
+@import "../mixins/text";
+@import "../mixins/rectangle";
+@import "../common/variables";
+
+.registration{
+  @include rectangle;
+  padding-left: 28px;
+  height: 646px;
+  & .input__label-dropdown{
+    & .input{
+      width: 320px;
+      margin: 4px 0 0 0;
+    }
+    &::after{
+      content: none;
+    }
+  }
+  & #registration-email{
+    margin: 5px 0 10px 0;
+  }
+  & .toggle{
+    margin: 9px 0 0 5px;
+    display: inline-block;
+  }
+  & .button__full--buy{
+    margin: 22px 0 0 0;
+    padding: 15px 93px;
+    &::after{
+      right: -12px;
+    }
+  }
+  & .button__wrapper{
+    margin: 0 0 0 33px;
+  }
+  & .button__border{
+    padding: 12px 23px;
+  }
+}
+.registration__head{
+  @include h1;
+  margin: 42px 0 0 0;
+}
+.registration__form{
+  & .input{
+    &:first-child{
+      margin: 20px 0 0 0;
+    }
+    &:nth-child(2){
+      margin: 10px 0 0 0;
+    }
+
+  }
+}
+.registration__radio-wrapper{
+  position: relative;
+  display: block;
+  margin: 10px 0 0 10px;
+  & .radio__label{
+    &::before{
+      top: -3px;
+    }
+  }
+  & .radio__input:checked + .radio__label::after{
+    top: 1px;
+  }
+}
+.registration__date-head, .registration__data-head{
+  @include h3;
+  color: $dark100;
+  text-transform: uppercase;
+  margin: 22px 0 0 0;
+  display: inline-block;
+}
+.registration__footer{
+  margin: 29px 0 0 0;
+}
+.registration__footer-label{
+  @include body;
+}

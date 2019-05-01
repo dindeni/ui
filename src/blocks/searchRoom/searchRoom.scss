@@ -1,13 +1,8 @@
 @import "../mixins/input";
+@import "../mixins/rectangle";
+
 .searchRoom{
-  width: 380px;
-  height: 374px;
-  border-radius: 4px;
-  box-sizing: border-box;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background: #FFFFFF;
-  padding-left: 30px;
+  @include rectangle;
   & .button__full{
     margin: 32px 0 0 0;
   }

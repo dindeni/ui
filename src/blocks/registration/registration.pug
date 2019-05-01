@@ -1,0 +1,30 @@
+include ../inputs/inputs
+include ../radio/radio
+include ../datapicker/datepicker
+include ../toggle/toggle
+include ../buttons/buttons
+
+-const arrRadioReg = ['Мужчина', 'Женщина']
+-const arrRadioRegId = ['man', 'woman']
+
+mixin registration
+  section.registration
+    h2.registration__head Регистрация аккаунта
+    form.registration__form
+      +input('text', 'Имя', 'registration-firstName')
+      +input('text', 'Фамилия', 'registration-lastName')
+      span.registration__radio-wrapper
+        +radio(arrRadioReg, arrRadioRegId)
+      span.registration__date-head дата рождения
+      +datapicker('registration-date')
+      span.registration__data-head данные для входа в сервис
+      +input('text', 'Email', 'registration-email')
+      +input('text', 'Пароль', 'registration-password')
+      +toggle('Получать спецпредложения', 'registration-toggle')
+      +buttons('buy', 'перейти к оплате', 'registration-buy')
+    div.registration__footer
+      span.registration__footer-label Уже есть аккаунт на Toxin
+      +buttons('border', 'войти', 'registration-login')
+
+
+
