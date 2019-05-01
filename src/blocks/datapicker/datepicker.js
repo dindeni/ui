@@ -24,7 +24,6 @@ const datePicker = (element)=>{
                 $('.ui-datepicker-current').click(()=>{
                     element.datepicker('hide')
                 });
-                console.log(instance);
                 instance.dpDiv.css({top: element.offset().top + 38})
             }, 100)
 

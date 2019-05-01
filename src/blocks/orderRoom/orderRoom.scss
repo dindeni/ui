@@ -1,0 +1,117 @@
+@import "../mixins/rectangle";
+@import "../mixins/text";
+@import "../common/variables";
+
+.orderRoom{
+  @include rectangle;
+  height: 511px;
+  padding-left: 27px;
+  & .searchRoom__label{
+    @include h3;
+    color: $dark100;
+  }
+  & .button__full--buy{
+    margin: 20px 0 0 0;
+    padding: 15px 99px;
+  }
+}
+.orderRoom__header{
+  display: flex;
+  margin: 40px 0 0 0;
+}
+.orderRoom__number{
+  @include h2;
+  font-size: 24px;
+  letter-spacing: -1.5px;
+  margin: 0 4px 0 3px;
+}
+.orderRoom__number-mark{
+  @include h2;
+  font-size: 14px;
+}
+.orderRoom__type-room{
+  @include body;
+  color: $purple;
+  font-weight: bold;
+  margin: 0 110px 0 0;
+}
+.orderRoom__price-wrapper{
+  @include body;
+  color: $dark50;
+  margin: 8px 0 0 0;
+}
+.orderRoom__price{
+  @include body;
+  color: $dark50;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+.orderRoom__periodicity{
+  @include body;
+  font-size: 12px;
+  margin-left: 6px;
+}
+.orderRoom__form{
+  margin: 4px 0 0 0;
+  & .input__label-dropdown{
+    margin: 0 21px 0 0;
+    &::after{
+      right: -17px;
+      top: 20px;
+    }
+  }
+}
+.orderRoom__guests{
+  @include h3;
+  color: $dark100;
+  & .input{
+    margin: 4px 0 0 0;
+  }
+}
+.orderRoom__total{
+  @include body;
+  line-height: 18px;
+  margin: 22px 0 0 1px;
+}
+.orderRoom__total-wrapper{
+  display: flex;
+  justify-content: space-between;
+  width: 91%;
+  margin: 0 0 16px 0;
+  position: relative;
+}
+.orderRoom__total-description{
+  width: 220px;
+}
+.orderRoom__total-tax{
+  background: none;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 80px;
+  top: -2px;
+  padding: 0;
+}
+.orderRoom__sum-wrapper{
+  @include h2;
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0 0 0;
+  position: relative;
+  &::after{
+    position: absolute;
+    content: '';
+    width: 182px;
+    height: 1px;
+    border: 1px solid $dark25;
+    box-sizing: border-box;
+    bottom: 4px;
+    left: 65px;
+  }
+}
+.orderRoom__sum{
+  margin-right: 16px;
+}

@@ -12,6 +12,7 @@ include blocks/bulletList/bulletList
 include blocks/review/review
 include blocks/features/features
 include blocks/registration/registration
+include blocks/orderRoom/orderRoom
 
 -const arrCheckbox = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']
 -const arrCheckboxExpandable = ['Завтрак', 'Письменный стол', 'Стул для кормления',
@@ -23,6 +24,9 @@ include blocks/registration/registration
 -const arrBulletList = ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
 -const arrFeatures = [{slogan: 'Комфорт', description: 'Шумопоглощающие стены'},
 -{slogan: 'Удобство', description: 'Окно в каждой из спален'}]
+-const arrTotalDesc = ['9 990₽ х 4 суток', 'Сбор за услуги: скидка 2 179₽',
+-'Сбор за дополнительные услуги']
+-const arrTotalPrice = ['39 960₽', '0₽', '300₽']
 
 doctype html
 html(lang="en")
@@ -71,5 +75,7 @@ html(lang="en")
         +features(arrFeatures)
       div.div__container
         +registration
+      div.div__container
+        +orderRoom(arrTotalDesc, arrTotalPrice)
 
 

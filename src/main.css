@@ -1046,6 +1046,166 @@ body {
   line-height: 24px;
   color: rgba(31, 32, 65, 0.75); }
 
+.orderRoom {
+  width: 380px;
+  height: 374px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #FFFFFF;
+  padding-left: 30px;
+  height: 511px;
+  padding-left: 27px; }
+  .orderRoom .searchRoom__label {
+    font-family: Montserrat-regular, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: rgba(31, 32, 65, 0.75);
+    color: #1f2041; }
+  .orderRoom .button__full--buy {
+    margin: 20px 0 0 0;
+    padding: 15px 99px; }
+
+.orderRoom__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 40px 0 0 0; }
+
+.orderRoom__number {
+  font-family: Quicksand, sans-serif;
+  font-weight: bold;
+  font-size: 19px;
+  color: #1F2041;
+  font-size: 24px;
+  letter-spacing: -1.5px;
+  margin: 0 4px 0 3px; }
+
+.orderRoom__number-mark {
+  font-family: Quicksand, sans-serif;
+  font-weight: bold;
+  font-size: 19px;
+  color: #1F2041;
+  font-size: 14px; }
+
+.orderRoom__type-room {
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  color: #bc9cff;
+  font-weight: bold;
+  margin: 0 110px 0 0; }
+
+.orderRoom__price-wrapper {
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  color: rgba(31, 32, 65, 0.5);
+  margin: 8px 0 0 0; }
+
+.orderRoom__price {
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  color: rgba(31, 32, 65, 0.5);
+  font-weight: bold;
+  letter-spacing: -1px; }
+
+.orderRoom__periodicity {
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  font-size: 12px;
+  margin-left: 6px; }
+
+.orderRoom__form {
+  margin: 4px 0 0 0; }
+  .orderRoom__form .input__label-dropdown {
+    margin: 0 21px 0 0; }
+    .orderRoom__form .input__label-dropdown::after {
+      right: -17px;
+      top: 20px; }
+
+.orderRoom__guests {
+  font-family: Montserrat-regular, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 0.75);
+  color: #1f2041; }
+  .orderRoom__guests .input {
+    margin: 4px 0 0 0; }
+
+.orderRoom__total {
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  line-height: 18px;
+  margin: 22px 0 0 1px; }
+
+.orderRoom__total-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 91%;
+  margin: 0 0 16px 0;
+  position: relative; }
+
+.orderRoom__total-description {
+  width: 220px; }
+
+.orderRoom__total-tax {
+  background: none;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 80px;
+  top: -2px;
+  padding: 0; }
+
+.orderRoom__sum-wrapper {
+  font-family: Quicksand, sans-serif;
+  font-weight: bold;
+  font-size: 19px;
+  color: #1F2041;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 30px 0 0 0;
+  position: relative; }
+  .orderRoom__sum-wrapper::after {
+    position: absolute;
+    content: '';
+    width: 182px;
+    height: 1px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    bottom: 4px;
+    left: 65px; }
+
+.orderRoom__sum {
+  margin-right: 16px; }
+
 /*!
  * jQuery UI Slider 1.12.1
  * http://jqueryui.com

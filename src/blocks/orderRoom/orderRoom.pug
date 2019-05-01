@@ -1,0 +1,36 @@
+include ../datapicker/datepicker
+include ../sumGuests/sumGuests
+include ../buttons/buttons
+
+mixin orderRoom(arrTotalDesc, arrTotalPrice)
+  section.orderRoom
+    div.orderRoom__header
+      div.orderRoom__number-room-wrapper
+        span.orderRoom__number-mark №
+        span.orderRoom__number 888
+        span.orderRoom__type-room люкс
+        span.orderRoom__price 9 990&#8381;
+        span.orderRoom__periodicity в сутки
+    div
+      span.searchRoom__label прибытие
+      span.searchRoom__label выезд
+    form.orderRoom__form
+      +datapicker('datepickerRegIn')
+      +datapicker('datepickerRegOut')
+      +sumGuests('guests', 'orderRoom__guests guests')
+    div.orderRoom__total
+      each value, index in arrTotalDesc
+        if index >= arrTotalDesc.length-2
+          div.orderRoom__total-wrapper
+            span.orderRoom__total-description #{value}
+            button.orderRoom__total-tax !
+            span.orderRoom__total-price #{arrTotalPrice[index]}
+        else
+          div.orderRoom__total-wrapper
+            span.orderRoom__total-description #{value}
+            span.orderRoom__total-price #{arrTotalPrice[index]}
+    div.orderRoom__sum-wrapper
+      span.orderRoom__sum-label Итого
+      span.orderRoom__sum 38 081₽
+    +buttons('buy', 'забронировать')
+

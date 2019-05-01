@@ -1,14 +1,14 @@
 include ../buttons/buttons
 include ../inputs/inputs
 
-mixin sumGuests(type)
+mixin sumGuests(type, className)
   -const visitors = ['взрослые', 'дети', 'младенцы']
   -const visitorsId = ['adult', 'children', 'babies']
   -const rooms = ['спальни', 'кровати', 'ванные комнаты']
   -const roomsId = ['bedroom', 'beds', 'bathroom']
 
   if type === 'guests'
-    div.guests гости
+    div(class=`${className}`) гости
       +input('dropdown', 'Сколько гостей', 'guests-input')
       div#guestsPopup.guests__popup.hide
         div.guests__count-container
