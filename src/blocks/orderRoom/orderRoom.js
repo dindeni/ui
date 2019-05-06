@@ -3,4 +3,4 @@ import {countGuests} from "../sumGuests/sumGuests";
 
 datePickerInOut('#datepickerRegIn', '#datepickerRegOut');
 
-countGuests('.registration__guests');
+countGuests('.orderRoom__guests');

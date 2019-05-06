@@ -1,0 +1,38 @@
+include ../rate/rate
+
+mixin cardRoom(arr, id, name, idInput, type, numberRoom, price)
+  span.cardRoom
+    div.cardRoom__wrapper
+      div.cardRoom__image-wrapper
+        each value, index in arr
+          if index > 0
+            img(src=`${value}` class=`cardRoom__image hide`)
+          else
+            img(src=`${value}` class=`cardRoom__image`)
+      form.cardRoom__form(id=`${id}`)
+        each value, index in Array(4)
+          if index === 0
+            input(type='radio' class='cardRoom__radio' name=`${name}` id=`${idInput}-${index}` checked=true)
+            label(for=id=`${idInput}-${index}` class='cardRoom__label')
+          else
+            input(type='radio' class='cardRoom__radio' name=`${name}` id=id=`${idInput}-${index}`)
+            label(for=id=`${idInput}-${index}` class='cardRoom__label')
+      div.cardRoom__buttons-wrapper
+        button.cardRoom__button.cardRoom__button--prev
+        button.cardRoom__button.cardRoom__button--next
+    if type === 'luxe'
+      div.cardRoom__number-room-wrapper
+        span.cardRoom__number-mark №
+        span.cardRoom__number #{numberRoom}
+        span.cardRoom__type-room люкс
+        span.cardRoom__price #{price}&#8381;
+        span.cardRoom__periodicity в сутки
+    else if type === 'normal'
+      div.cardRoom__number-room-wrapper
+        span.cardRoom__number-mark №
+        span.cardRoom__number #{numberRoom}
+        span.cardRoom__price.cardRoom__price--normal 9 990&#8381;
+        span.cardRoom__periodicity в сутки
+    +rate(5)
+    div.cardRoom__number-review 145
+      span.cardRoom__number-review-word Отзывов

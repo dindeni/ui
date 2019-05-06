@@ -1206,6 +1206,163 @@ body {
 .orderRoom__sum {
   margin-right: 16px; }
 
+.cardRoom {
+  width: 380px;
+  height: 374px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #FFFFFF;
+  padding-left: 30px;
+  padding: 0;
+  width: 270px;
+  height: 258px;
+  display: inline-block;
+  position: relative; }
+  .cardRoom .cardRoom__radio:first-child + .cardRoom__label {
+    background: #FFFFFF; }
+  .cardRoom .rate {
+    display: inline-block;
+    margin: 15px 0 0 20px; }
+
+.cardRoom__radio {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.cardRoom__form {
+  position: absolute;
+  width: 50px;
+  top: 120px;
+  left: 213px; }
+
+.cardRoom__label {
+  width: 7.5px;
+  height: 7.5px;
+  border: 1px solid #FFFFFF;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0 5px 5px rgba(31, 32, 65, 0.3);
+          box-shadow: 0 5px 5px rgba(31, 32, 65, 0.3);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px 0 0;
+  background: none;
+  cursor: pointer; }
+
+.cardRoom__button {
+  width: 15px;
+  height: 15px;
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDggMTMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik03LjQyMTg4IDExLjA5MjhMNi4wMTU2MyAxMi40OTlMMC4wMTU2MjUzIDYuNDk5MDJMNi4wMTU2MyAwLjQ5OTAyNEw3LjQyMTg4IDEuOTA1MjdMMi44MjgxMyA2LjQ5OTAyTDcuNDIxODggMTEuMDkyOFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=) no-repeat;
+  border: none;
+  cursor: pointer; }
+  .cardRoom__button.cardRoom__button--next {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    margin-right: 18px; }
+  .cardRoom__button.cardRoom__button--prev {
+    margin-left: 18px; }
+
+.cardRoom__buttons-wrapper {
+  position: absolute;
+  top: 68px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 270px; }
+
+.cardRoom__image {
+  width: 278px;
+  margin: 0 0 0 -5px; }
+
+.cardRoom__wrapper {
+  position: relative; }
+
+.cardRoom__number-room-wrapper {
+  margin: 9px 0 0 0; }
+
+.cardRoom__number {
+  font-family: Quicksand, sans-serif;
+  font-weight: bold;
+  font-size: 19px;
+  color: #1F2041;
+  letter-spacing: -1.5px;
+  margin: 0 4px 0 3px; }
+
+.cardRoom__number-mark {
+  font-family: Quicksand, sans-serif;
+  font-weight: bold;
+  font-size: 19px;
+  color: #1F2041;
+  font-size: 14px;
+  margin-left: 20px; }
+
+.cardRoom__type-room {
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  color: #bc9cff;
+  font-weight: bold; }
+
+.cardRoom__price-wrapper {
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  color: rgba(31, 32, 65, 0.5);
+  margin: 8px 0 0 0; }
+
+.cardRoom__price {
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  color: rgba(31, 32, 65, 0.5);
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-left: 34px; }
+  .cardRoom__price.cardRoom__price--normal {
+    margin-left: 74px; }
+
+.cardRoom__periodicity {
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  font-size: 12px;
+  margin-left: 6px; }
+
+.cardRoom__number-review {
+  display: inline-block;
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  font-weight: bold;
+  color: rgba(31, 32, 65, 0.5);
+  line-height: 18px;
+  vertical-align: top;
+  margin: 21px 0 0 18px; }
+
+.cardRoom__number-review-word {
+  font-weight: normal;
+  text-transform: none;
+  margin-left: 2px; }
+
 /*!
  * jQuery UI Slider 1.12.1
  * http://jqueryui.com

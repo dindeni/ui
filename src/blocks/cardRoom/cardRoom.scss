@@ -1,0 +1,122 @@
+@import "../mixins/rectangle";
+@import "../mixins/hide";
+@import "../common/variables";
+@import "../mixins/text";
+
+.cardRoom{
+  @include rectangle;
+  padding: 0;
+  width: 270px;
+  height: 258px;
+  display: inline-block;
+  position: relative;
+  & .cardRoom__radio:first-child + .cardRoom__label{
+    background: #FFFFFF;
+  }
+  .rate{
+    display: inline-block;
+    margin: 15px 0 0 20px;
+  }
+}
+.cardRoom__radio{
+  @include hide;
+}
+.cardRoom__form{
+  position: absolute;
+  width: 50px;
+  top: 120px;
+  left: 213px;
+}
+.cardRoom__label{
+  width: 7.5px;
+  height: 7.5px;
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0 5px 5px rgba(31, 32, 65, 0.3);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px 0 0;
+  background: none;
+  cursor: pointer;
+}
+
+.cardRoom__button{
+  width: 15px;
+  height: 15px;
+  background: url("./icon-expand-white.svg") no-repeat;
+  border: none;
+  cursor: pointer;
+  &.cardRoom__button--next{
+    transform: rotate(180deg);
+    margin-right: 18px;
+  }
+  &.cardRoom__button--prev{
+    margin-left: 18px;
+  }
+}
+.cardRoom__buttons-wrapper{
+  position: absolute;
+  top: 68px;
+  display: flex;
+  justify-content: space-between;
+  width: 270px;
+}
+.cardRoom__image {
+  width: 278px;
+  margin: 0 0 0 -5px;
+}
+.cardRoom__wrapper{
+  position: relative;
+}
+.cardRoom__number-room-wrapper {
+  margin: 9px 0 0 0;
+}
+.cardRoom__number{
+  @include h2;
+  letter-spacing: -1.5px;
+  margin: 0 4px 0 3px;
+}
+.cardRoom__number-mark{
+  @include h2;
+  font-size: 14px;
+  margin-left: 20px;
+}
+.cardRoom__type-room{
+  @include body;
+  color: $purple;
+  font-weight: bold;
+}
+.cardRoom__price-wrapper{
+  @include body;
+  color: $dark50;
+  margin: 8px 0 0 0;
+}
+.cardRoom__price{
+  @include body;
+  color: $dark50;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-left: 34px;
+  &.cardRoom__price--normal{
+    margin-left: 74px;
+  }
+}
+.cardRoom__periodicity{
+  @include body;
+  font-size: 12px;
+  margin-left: 6px;
+}
+.cardRoom__number-review{
+  display: inline-block;
+  @include body;
+  font-weight: bold;
+  color: $dark50;
+  line-height: 18px;
+  vertical-align: top;
+  margin: 21px 0 0 18px;
+}
+.cardRoom__number-review-word{
+  font-weight: normal;
+  text-transform: none;
+  margin-left: 2px;
+}

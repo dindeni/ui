@@ -18,6 +18,7 @@ import '../blocks/features/features.scss';
 import '../blocks/datapicker/datepicker.scss';
 import '../blocks/registration/registration.scss';
 import '../blocks/orderRoom/orderRoom.scss';
+import '../blocks/cardRoom/cardRoom.scss';
 
 import '../blocks/sumGuests/sumGuests';
 import '../blocks/range/range';
@@ -26,5 +27,6 @@ import '../blocks/checkbox/checkbox';
 import '../blocks/datapicker/datepicker';
 import '../blocks/registration/registration';
 import '../blocks/orderRoom/orderRoom';
+import '../blocks/cardRoom/cardRoom';
 
 import '../blocks/searchRoom/dataPicker';

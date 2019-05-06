@@ -13,6 +13,7 @@ include blocks/review/review
 include blocks/features/features
 include blocks/registration/registration
 include blocks/orderRoom/orderRoom
+include blocks/cardRoom/cardRoom
 
 -const arrCheckbox = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']
 -const arrCheckboxExpandable = ['Завтрак', 'Письменный стол', 'Стул для кормления',
@@ -27,6 +28,8 @@ include blocks/orderRoom/orderRoom
 -const arrTotalDesc = ['9 990₽ х 4 суток', 'Сбор за услуги: скидка 2 179₽',
 -'Сбор за дополнительные услуги']
 -const arrTotalPrice = ['39 960₽', '0₽', '300₽']
+-const arrPathImage = ['img/image-room-888.png', 'img/image-room-982.png',
+-'img/image-room-350.png', 'img/image-room-444.png']
 
 doctype html
 html(lang="en")
@@ -77,5 +80,10 @@ html(lang="en")
         +registration
       div.div__container
         +orderRoom(arrTotalDesc, arrTotalPrice)
+      div.div__container
+        +cardRoom(arrPathImage, 'formId1', 'room-radio-name-1', 'romId1', 'luxe', 888,
+        '9 900')
+
+
 
 
