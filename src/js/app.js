@@ -19,6 +19,7 @@ import '../blocks/datapicker/datepicker.scss';
 import '../blocks/registration/registration.scss';
 import '../blocks/orderRoom/orderRoom.scss';
 import '../blocks/cardRoom/cardRoom.scss';
+import '../blocks/navBar/navBar.scss';
 
 import '../blocks/sumGuests/sumGuests';
 import '../blocks/range/range';
@@ -28,5 +29,6 @@ import '../blocks/datapicker/datepicker';
 import '../blocks/registration/registration';
 import '../blocks/orderRoom/orderRoom';
 import '../blocks/cardRoom/cardRoom';
+import '../blocks/navBar/navBar';
 
 import '../blocks/searchRoom/dataPicker';
