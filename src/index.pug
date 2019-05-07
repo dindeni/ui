@@ -15,6 +15,7 @@ include blocks/registration/registration
 include blocks/orderRoom/orderRoom
 include blocks/cardRoom/cardRoom
 include blocks/navBar/navBar
+include blocks/copyright/copyright
 
 -const arrCheckbox = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']
 -const arrCheckboxExpandable = ['Завтрак', 'Письменный стол', 'Стул для кормления',
@@ -89,6 +90,8 @@ html(lang="en")
         +navBar('standart', arrNavBarItems)
       div.div__container
         +navBar('loggedIn', arrNavBarItems, 'Cosmin Negoita')
+      div.div__container
+        +copyright
 
 
 

@@ -20,6 +20,8 @@ import '../blocks/registration/registration.scss';
 import '../blocks/orderRoom/orderRoom.scss';
 import '../blocks/cardRoom/cardRoom.scss';
 import '../blocks/navBar/navBar.scss';
+import '../blocks/copyright/copyright.scss';
+import '../blocks/socialButtons/socialButtons.scss';
 
 import '../blocks/sumGuests/sumGuests';
 import '../blocks/range/range';
