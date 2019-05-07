@@ -3,7 +3,7 @@ include ../buttons/buttons
 mixin navBar(type, items, user)
   if type === 'standart'
     nav.nav-standart
-      img.nav-standart__logo(src='blocks/navBar/icon-logo.svg')
+      img.nav-standart__logo(src='blocks/common/icon-logo.svg')
       ul.nav-standart__list
         each item, index in items
           case index
@@ -22,7 +22,7 @@ mixin navBar(type, items, user)
         button.nav-standart__button-mobile
   else if type === 'loggedIn'
     nav.nav-standart.nav-standart--logged
-      img.nav-standart__logo(src='blocks/navBar/icon-logo.svg')
+      img.nav-standart__logo(src='blocks/common/icon-logo.svg')
       ul.nav-standart__list
         each item, index in items
           case index

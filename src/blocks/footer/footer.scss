@@ -1,0 +1,24 @@
+@import "../mixins/text";
+
+.footer{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  & .social{
+    margin:  28px 0 110px 0;
+  }
+}
+.footer__logo{
+  margin: 100px 0 0 20px;
+}
+.footer__description{
+  @include body;
+  width: 560px;
+  margin: 18px 0 0 22px;
+  text-align: center;
+}
+@media (max-width: 620px) {
+  .footer__description{
+    width: 300px;
+  }
+}
