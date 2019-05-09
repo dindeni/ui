@@ -1,0 +1,25 @@
+include ../inputs/inputs
+
+mixin list(listHead, items, className)
+  div.footerWidget__footerList.footerList(class=`footerList--${className}`)
+    h3.footerList__head #{listHead}
+    ul.footerList__list
+      each item in items
+        li.footerListon__item
+          a.footerListon__link(href='#') #{item}
+
+mixin footerWidget(description, headNavigation, navigationItems, headAbout, aboutItems, headSupport, supportItems, headSubscribe, subscribeDescription)
+  section.footerWidget
+    div.footerWidget__logo-wrapper
+      img.footerWidget__logo(src="./blocks/common/icon-logo.svg")
+      p.footerWidget__description #{description}
+    +list(headNavigation, navigationItems, 'navigation')
+    +list(headAbout, aboutItems, 'about')
+    +list(headSupport, supportItems, 'support')
+    div.footerWidget__subscribe-wrapper
+      h3.footerWidget__subscribe-head #{headSubscribe}
+      div.footerWidget__subscribe-description #{subscribeDescription}
+      +input('subscription', 'Your email address')
+
+
+

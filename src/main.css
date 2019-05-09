@@ -1674,6 +1674,103 @@ body {
   .footer__description {
     width: 300px; } }
 
+.footerWidget {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .footerWidget .input__label-subscription .input__subscription {
+    margin: 21px 0 0 0;
+    width: 100%; }
+
+.footerWidget__logo-wrapper {
+  width: 18%;
+  margin: 100px 2.8% 116px 9.7%; }
+
+.footerWidget__description {
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75); }
+
+.footerList {
+  width: 120px;
+  margin: 93px 5.6% 0 0; }
+
+.footerList__head, .footerWidget__subscribe-head {
+  font-family: Montserrat-regular, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 0.75);
+  color: #1f2041; }
+
+.footerList__list {
+  list-style: none;
+  padding: 0;
+  margin: 19px 0 0 0; }
+
+.footerListon__link {
+  text-decoration: none;
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75); }
+
+.footerListon__item {
+  margin: 0 0 14px 0; }
+
+.footerWidget__subscribe-wrapper {
+  margin: 92px 0 0 0;
+  width: 18%; }
+
+.footerWidget__subscribe-description {
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  margin: 20px 0 0 0; }
+
+@media (max-width: 1100px) {
+  .footerWidget .input {
+    padding: 12px 14px; }
+    .footerWidget .input::-webkit-input-placeholder {
+      font-size: 12px; }
+    .footerWidget .input::-moz-placeholder {
+      font-size: 12px; }
+    .footerWidget .input:-ms-input-placeholder {
+      font-size: 12px; }
+    .footerWidget .input::-ms-input-placeholder {
+      font-size: 12px; }
+    .footerWidget .input::placeholder {
+      font-size: 12px; }
+  .footerWidget__logo-wrapper {
+    margin: 100px 2.8% 116px 2%; } }
+
+@media (max-width: 900px) {
+  .footerWidget {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .footerWidget__subscribe-wrapper {
+    width: 180px;
+    margin-bottom: 116px; }
+  .footerWidget__logo-wrapper {
+    margin: 100px 2.8% 0 2%; } }
+
+@media (max-width: 620px) {
+  .footerWidget__logo {
+    width: 80px; }
+  .footerList {
+    width: 120px;
+    margin: 45px 0 0 0; }
+  .footerWidget__logo-wrapper {
+    width: 120px;
+    margin: 50px 2.8% 0 2%; }
+  .footerWidget__subscribe-wrapper {
+    margin: 50px 0 50px 0; } }
+
 /*!
  * jQuery UI Slider 1.12.1
  * http://jqueryui.com

@@ -17,6 +17,7 @@ include blocks/cardRoom/cardRoom
 include blocks/navBar/navBar
 include blocks/copyright/copyright
 include blocks/footer/footer
+include blocks/footerWidget/footerWidget
 
 -const arrCheckbox = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']
 -const arrCheckboxExpandable = ['Завтрак', 'Письменный стол', 'Стул для кормления',
@@ -34,6 +35,12 @@ include blocks/footer/footer
 -const arrPathImage = ['img/image-room-888.png', 'img/image-room-982.png',
 -'img/image-room-350.png', 'img/image-room-444.png']
 -const arrNavBarItems = ['Home', 'About Us', 'Services', 'Careers', 'News', 'Documentation']
+-const footerWidgetData = {description:
+-'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
+-navigation: ['About Us', 'News', 'Support', 'Products'], about: ['Who we are',
+-'Our team', 'Careers', 'Investors'], support: ['Documentation', 'Community',
+-'Get in Touch'], subscribe: 'Receive our latest news and promotions in your inbox!'}
+
 
 doctype html
 html(lang="en")
@@ -95,6 +102,11 @@ html(lang="en")
         +copyright
       div.div__container
         +footer
+      div.div__container
+        +footerWidget(footerWidgetData.description, 'Navigation',
+            footerWidgetData.navigation, 'ABOUT US', footerWidgetData.about, 'support',
+        footerWidgetData.support, 'Subscribe to our newsletter',
+            footerWidgetData.subscribe)
 
 
 
