@@ -19,12 +19,13 @@ module.exports = merge(common, {
 		},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: './src/index.pug'
+			template: './src/index.pug',
+			filename: './index.html'
 		}),
-		/*new HtmlWebpackPlugin({
-			filename: 'index1.html',
-			template: './src/index1.pug'
-		}),*/
+		new HtmlWebpackPlugin({
+			template: './src/ui.pug',
+			filename: './ui.html'
+		}),
 		new MiniCssExtractPlugin({
 			filename: "[name].css",
 			chunkFilename: "[id].css"

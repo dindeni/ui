@@ -50,7 +50,7 @@
   display: flex;
   align-items: center;
   padding: 0;
-  width: 37%;
+  width: 532px;
   margin: 5px 0 0 20.5%;
 }
 .nav-standart__link{
@@ -61,7 +61,7 @@
     font-weight: bold;
     color: $dark75;
   }
-  &.nav-standart__link--services{
+  &.nav-standart__link--expand{
     padding:  0 15px 0 0;
     position: relative;
     &::after{
@@ -84,11 +84,10 @@
 @media (max-width: 1430px) {
   .nav-standart__list{
     margin: 5px 0 0 13%;
-    width: 44%;
   }
   .nav-standart--logged{
     .nav-standart__list{
-      margin: 5px 0 0 16.2%;
+      margin: 5px 0 0 6.2%;
     }
     & .nav-standart__userName{
       margin: 26px 0 0 10%;
@@ -96,86 +95,37 @@
   }
 }
 @media (max-width: 1200px) {
+  .nav-standart__list{
+    margin: 5px 0 0 6%;
+  }
+}
+@media (max-width: 1100px) {
+  .nav-standart{
+    justify-content: space-between;
+    & .button__full{
+      padding: 10px 16px;
+      font-size: 10px;
+    }
+    & .button__border{
+      font-size: 8px;
+      padding: 10px 15px;
+    }
+  }
   .nav-standart__logo {
     margin: 0 0 0 2%;
     width: 70px;
     padding: 5px 0 0 0;
   }
-  .nav-standart__link{
-    font-size: 12px;
+  .nav-standart__buttons-wrapper{
+    margin-right: 2%;
   }
-  .nav-standart__list {
-    margin: 5px 0 0 3%;
-    width: 53%;
-  }
-  .nav-standart{
-    & .button__full{
-      font-size: 10px;
-      height: 26px;
-      padding: 8px 16px;
-      margin: 23px 0 0 21px;
-    }
-    & .button__border{
-      font-size: 10px;
-      line-height: 10px;
-      padding: 7px 16px 3px 16px;
-    }
-    .button__wrapper{
-      height: 26px;
-      margin: 23px 0 0 21px;
-    }
-
-  }
-  .nav-standart__item:not(:last-child) {
-    margin: 0 15px 0 0;
-  }
-  .nav-standart--logged{
-    .nav-standart__list{
-      margin: 5px 0 0 5.2%;
-    }
-    & .nav-standart__userName{
-      margin: 26px 0 0 14%;
-      font-size: 12px;
-    }
-  }
-
 }
 @media (max-width: 800px) {
-  .nav-standart__item:not(:last-child) {
-    margin: 0 10px 0 0;
-  }
-  .nav-standart{
-    & .button__full{
-      font-size: 10px;
-      height: 26px;
-      padding: 8px 10px;
-      margin: 23px 0 0 10px;
-    }
-    & .button__border{
-      font-size: 10px;
-      line-height: 10px;
-      padding: 5px 8px 4px 8px;
-    }
-    .button__wrapper{
-      height: 26px;
-      margin: 23px 0 0 8px;
-    }
-  }
-  .nav-standart__list {
-    width: 60%;
-  }
-  .nav-standart--logged{
-    & .nav-standart__userName{
-      margin: 26px 0 0 5%;
-      &::before{
-        left: -20px;
-      }
-    }
-  }
-}
-@media (max-width: 660px) {
   .nav-standart{
     justify-content: space-between;
+    & .button__border{
+      padding: 10px 15px;
+    }
   }
   .nav-standart__list{
     display: none;
@@ -239,7 +189,22 @@
   }
   .nav-standart--logged{
     & .nav-standart__userName{
-      margin: 26px 0 0 22%;
+      margin: 26px 0 0 15%;
     }
   }
+}
+@media (max-width: 500px) {
+    & .nav-standart{
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    & .nav-standart__list{
+      width: 50%;
+    }
+
+}
+@media (max-width: 399px) {
+    & .nav-standart__list{
+    }
+
 }
