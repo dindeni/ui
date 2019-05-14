@@ -35,5 +35,6 @@ import '../blocks/registration/registration';
 import '../blocks/orderRoom/orderRoom';
 import '../blocks/cardRoom/cardRoom';
 import '../blocks/navBar/navBar';
+import '../blocks/common/index';
 
 import '../blocks/searchRoom/dataPicker';

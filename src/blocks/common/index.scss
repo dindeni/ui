@@ -1,4 +1,9 @@
+@import "../mixins/text";
+
 .index-header{
+  background: #FFFFFF;
+  z-index: 100;
+  position: relative;
   & .nav-standart__list{
     margin: 5px 0 0 19.8%;
     width: 460px;
@@ -19,7 +24,48 @@
   }
   & .button__border{
     padding: 7px 17px;
+    background-size: 100% 100%;
   }
+}
+.main{
+  height: 830px;
+  position: relative;
+  display: block;
+  & .searchRoom{
+    position: absolute;
+    top: 70px;
+    left: 9.6%;
+  }
+  .main__background{
+    background: url("../../img/image-back-1.png") no-repeat;
+    width: 100%;
+    height: 100%;
+    &.main__gallery {
+      animation: move 4s 1;
+      @keyframes move {
+        0% {
+          opacity: 0;
+          animation-timing-function: ease-in;
+        }
+        50% {
+          opacity: .5;
+          animation-timing-function: ease-in;
+        }
+        100% {
+          opacity: 1;
+          animation-timing-function: ease-in;
+        }
+      }
+    }
+  }
+}
+.main__slogan{
+  position: absolute;
+  bottom: 20px;
+  @include body;
+  width: 300px;
+  right: 9%;
+  text-align: end;
 }
 @media (max-width: 1260px) {
   .index-header{
@@ -61,10 +107,22 @@
     & .nav-standart{
       flex-wrap: wrap;
       justify-content: center;
+      height: 95px;
+      & .button__wrapper{
+        margin: 10px 0 0 4px;
+      }
+      & .button__full{
+        margin: 10px 0 0 21px;
+      }
     }
     & .nav-standart__list{
       width: 50%;
     }
+    & .nav-standart__button-mobile{
+      margin: 12px 0 0 20px;
+    }
+  }
+  .index-header .nav-standart .button__wrapper {
 
   }
 }
@@ -74,6 +132,9 @@
       top: 50px;
       right: 4%;
     }
-
   }
+    .main .searchRoom{
+      left: 0;
+    }
+
 }

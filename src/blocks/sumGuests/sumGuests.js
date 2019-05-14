@@ -1,6 +1,5 @@
 const countGuests = (classGuests) =>{
     if (document.querySelector(classGuests)){
-        console.log(classGuests);
         const guests = document.querySelector(classGuests);
         const buttonMinus = guests.querySelectorAll('.guests__button--minus');
         const numberVisitors = guests.querySelectorAll('.guests__numberVisitors');
