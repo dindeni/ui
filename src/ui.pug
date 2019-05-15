@@ -18,6 +18,7 @@ include blocks/navBar/navBar
 include blocks/copyright/copyright
 include blocks/footer/footer
 include blocks/footerWidget/footerWidget
+include blocks/signIn/signIn
 
 -const arrCheckbox = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']
 -const arrCheckboxExpandable = ['Завтрак', 'Письменный стол', 'Стул для кормления',
@@ -92,6 +93,8 @@ html(lang="en")
         +features(arrFeatures)
       div.div__container
         +registration
+      div.div__container
+        +signIn
       div.div__container
         +orderRoom(arrTotalDesc, arrTotalPrice)
       div.div__container

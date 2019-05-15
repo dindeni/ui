@@ -2032,6 +2032,48 @@ body {
       -ms-flex-align: center;
           align-items: center; }
 
+.signIn {
+  width: 380px;
+  height: 374px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #FFFFFF;
+  padding-left: 30px;
+  height: 358px;
+  position: relative;
+  z-index: 1; }
+  .signIn .input {
+    margin: 0 0 12px 0; }
+  .signIn .button__full {
+    padding: 15px 135px;
+    margin: 8px 0 0 0; }
+  .signIn .button__border-link {
+    margin: 0 0 0 60px;
+    padding: 11px 0;
+    width: 92px; }
+    .signIn .button__border-link::before {
+      width: 99px;
+      height: 44px; }
+
+.signIn__head {
+  font-family: Quicksand, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #1F2041;
+  margin: 40px 0 20px 0; }
+
+.signIn__label {
+  font-family: Montserrat-regular, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  display: block;
+  margin: 33px 0 0 0; }
+
 /*!
  * jQuery UI Slider 1.12.1
  * http://jqueryui.com

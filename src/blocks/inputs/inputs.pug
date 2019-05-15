@@ -15,3 +15,5 @@ mixin input(type, placeholder, id)
   else if type === 'subscription'
     label.input__label-subscription
       input(type='text' class='input input__subscription' placeholder=`${placeholder}`)
+  else if type === 'password'
+    input(type='password' class=`input input__text` id=`${id}` placeholder=`${placeholder}`)
