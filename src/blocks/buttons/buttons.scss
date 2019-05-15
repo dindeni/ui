@@ -1,4 +1,5 @@
 @import "../common/variables";
+@import "../mixins/text";
 
 .button__full{
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -11,6 +12,7 @@
   font-weight: bold;
   padding: 15px 18px;
   cursor: pointer;
+  text-decoration: none;
   &:hover{
     background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%,
             rgba(139, 164, 249, .5) 100%);
@@ -31,12 +33,40 @@
   background: #FFFFFF;
   border: none;
   border-radius: 22px;
-  color: #BC9CFF;
+  color: $purple;
   text-transform: uppercase;
   font-family: Montserrat, sans-serif;
   font-size: 12px;
   font-weight: bold;
   padding: 12px 15px;
+}
+.button__border-link{
+  text-decoration: none;
+  @include h3;
+  color: $purple;
+  padding: 6px 0;
+  text-align: center;
+  display: inline-block;
+  background: #FFFFFF;
+  border-radius: 22px;
+  line-height: 15px;
+  width: 81px;
+  position: relative;
+  &::before{
+    position: absolute;
+    content: '';
+    width: 87px;
+    height: 34px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    z-index: -10;
+    top: -3px;
+    left: -3px;
+  }
+  &:hover::before{
+    background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%,
+            rgba(139, 164, 249, .5) 100%);
+  }
 }
 .button__transparent{
   border: none;

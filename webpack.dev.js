@@ -26,6 +26,14 @@ module.exports = merge(common, {
 			template: './src/ui.pug',
 			filename: './ui.html'
 		}),
+		new HtmlWebpackPlugin({
+			template: './src/registration.pug',
+			filename: './registration.html'
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/signIn.pug',
+			filename: './signIn.html'
+		}),
 		new MiniCssExtractPlugin({
 			filename: "[name].css",
 			chunkFilename: "[id].css"

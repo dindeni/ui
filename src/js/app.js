@@ -25,6 +25,7 @@ import '../blocks/socialButtons/socialButtons.scss';
 import '../blocks/footer/footer.scss';
 import '../blocks/footerWidget/footerWidget.scss';
 import '../blocks/common/index.scss';
+import '../blocks/common/registration.scss';
 
 import '../blocks/sumGuests/sumGuests';
 import '../blocks/range/range';

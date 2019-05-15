@@ -309,7 +309,8 @@ body {
   font-size: 12px;
   font-weight: bold;
   padding: 15px 18px;
-  cursor: pointer; }
+  cursor: pointer;
+  text-decoration: none; }
   .button__full:hover {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.5)), to(rgba(139, 164, 249, 0.5)));
     background: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%); }
@@ -329,12 +330,43 @@ body {
   background: #FFFFFF;
   border: none;
   border-radius: 22px;
-  color: #BC9CFF;
+  color: #bc9cff;
   text-transform: uppercase;
   font-family: Montserrat, sans-serif;
   font-size: 12px;
   font-weight: bold;
   padding: 12px 15px; }
+
+.button__border-link {
+  text-decoration: none;
+  font-family: Montserrat-regular, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 0.75);
+  color: #bc9cff;
+  padding: 6px 0;
+  text-align: center;
+  display: inline-block;
+  background: #FFFFFF;
+  border-radius: 22px;
+  line-height: 15px;
+  width: 81px;
+  position: relative; }
+  .button__border-link::before {
+    position: absolute;
+    content: '';
+    width: 87px;
+    height: 34px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    z-index: -10;
+    top: -3px;
+    left: -3px; }
+  .button__border-link:hover::before {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.5)), to(rgba(139, 164, 249, 0.5)));
+    background: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%); }
 
 .button__transparent {
   border: none;
@@ -1035,7 +1067,9 @@ body {
   background: #FFFFFF;
   padding-left: 30px;
   padding-left: 28px;
-  height: 646px; }
+  height: 646px;
+  position: relative;
+  z-index: 1; }
   .registration .input__label-dropdown .input {
     width: 320px;
     margin: 4px 0 0 0; }
@@ -1053,8 +1087,13 @@ body {
       right: -12px; }
   .registration .button__wrapper {
     margin: 0 0 0 33px; }
-  .registration .button__border {
-    padding: 12px 23px; }
+  .registration .button__border-link {
+    margin: 3px 0 0 38px;
+    width: 92px;
+    padding: 11px 0; }
+    .registration .button__border-link::before {
+      width: 99px;
+      height: 44px; }
 
 .registration__head {
   font-family: Quicksand, sans-serif;
@@ -1097,6 +1136,35 @@ body {
   font-size: 14px;
   line-height: 24px;
   color: rgba(31, 32, 65, 0.75); }
+
+@media (max-width: 400px) {
+  .registration {
+    padding-left: 20px;
+    width: 300px; }
+    .registration .registration__head {
+      font-size: 18px; }
+    .registration .input {
+      width: 260px; }
+      .registration .input::-webkit-input-placeholder {
+        font-size: 12px; }
+      .registration .input::-moz-placeholder {
+        font-size: 12px; }
+      .registration .input:-ms-input-placeholder {
+        font-size: 12px; }
+      .registration .input::-ms-input-placeholder {
+        font-size: 12px; }
+      .registration .input::placeholder {
+        font-size: 12px; }
+    .registration .input__label-dropdown .input {
+      width: 260px; }
+    .registration .button__full--buy {
+      padding: 15px 62px; }
+    .registration .button__border-link {
+      margin: 0 0 0 10px; }
+    .registration .button__wrapper {
+      margin: 0 0 0 15px; }
+    .registration .registration__footer-label {
+      font-size: 12px; } }
 
 .orderRoom {
   width: 380px;
@@ -1431,7 +1499,12 @@ body {
     margin: 17px 0 0 21px;
     padding: 10px 18px; }
   .nav-standart .button__border {
-    padding: 7px 16px; }
+    padding: 0;
+    width: 85px;
+    height: 30px;
+    display: inline-block; }
+  .nav-standart .nav-standart__buttons-wrapper {
+    margin: 21px 0 0 8px; }
 
 .nav-standart--logged .nav-standart__list {
   margin: 5px 0 0 24.2%; }
@@ -1551,7 +1624,7 @@ body {
             box-shadow: 0 2px #bc9cff;
     border: none;
     background: none;
-    margin: 20px 0 0 20px;
+    margin: 0 10px 0 15px;
     vertical-align: top;
     position: relative; }
     .nav-standart__button-mobile::before {
@@ -1844,7 +1917,7 @@ body {
   .index-header .nav-standart .button__wrapper {
     margin: 17px 0 0 4px; }
   .index-header .button__border {
-    padding: 7px 17px;
+    /*padding: 7px 17px;*/
     background-size: 100% 100%; }
 
 .main {
@@ -1937,7 +2010,7 @@ body {
   .index-header .nav-standart__list {
     width: 50%; }
   .index-header .nav-standart__button-mobile {
-    margin: 12px 0 0 20px; } }
+    margin: 0 0 0 20px; } }
 
 @media (max-width: 399px) {
   .index-header .nav-standart__list {
@@ -1945,6 +2018,19 @@ body {
     right: 4%; }
   .main .searchRoom {
     left: 0; } }
+
+.main-registration {
+  background: url(71c3f0d9dbf544194ab1df3f53046253.png) no-repeat;
+  height: 703px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 /*!
  * jQuery UI Slider 1.12.1
