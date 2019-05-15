@@ -9,7 +9,7 @@ mixin navBar(type, items, itemClasses, buttonLoginName, buttonRegName, user)
           li.nav-standart__item
             a(href='#' class=`${itemClasses[index]}`) #{item}
       div.nav-standart__buttons-wrapper
-        +buttons('border-link', `${buttonLoginName}`, 'nav-standart__button-login', '#')
+        +buttons('border-link', `${buttonLoginName}`, 'nav-standart__button-login', 'signIn.html')
         +buttons('full-link', `${buttonRegName}`, 'nav-standart__button-registration', 'registration.html')
         button.nav-standart__button-mobile
   else if type === 'loggedIn'

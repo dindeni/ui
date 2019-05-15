@@ -2074,6 +2074,34 @@ body {
   display: block;
   margin: 33px 0 0 0; }
 
+@media (max-width: 400px) {
+  .signIn {
+    width: 300px;
+    padding-left: 20px; }
+    .signIn .signIn__head {
+      font-size: 18px; }
+    .signIn .input {
+      width: 260px; }
+    .signIn .button__full {
+      padding: 15px 106px; }
+    .signIn .signIn__label {
+      font-size: 12px; }
+    .signIn .button__border-link {
+      margin: 0 0 0 10px; } }
+
+.main-signIn {
+  background: url(71c3f0d9dbf544194ab1df3f53046253.png) no-repeat;
+  height: 683px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
 /*!
  * jQuery UI Slider 1.12.1
  * http://jqueryui.com

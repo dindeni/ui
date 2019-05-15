@@ -1,5 +1,5 @@
 include ./blocks/navBar/navBar
-include ./blocks/registration/registration
+include ./blocks/signIn/signIn
 include ./blocks/footerWidget/footerWidget
 include ./blocks/footer/footer
 
@@ -22,8 +22,8 @@ html(lang="en")
   body
     header.index-header
       +navBar('standart', arrIndexNavigation.items, arrIndexNavigation.classes, 'войти', 'зарегистрироваться')
-    main.main-registration
-
+    main.main-signIn
+      +signIn
     +footerWidget(footerdata.description, footerdata.headNavigation, footerdata.navigationItems,
         footerdata.headAbout, footerdata.aboutItems, footerdata.headSupport,
         footerdata.supportItems, footerdata.headSubscribe, footerdata.subscribeDescription,

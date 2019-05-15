@@ -32,3 +32,24 @@
   display: block;
   margin: 33px 0 0 0;
 }
+@media (max-width: 400px) {
+  .signIn{
+    width: 300px;
+    padding-left: 20px;
+    & .signIn__head{
+      font-size: 18px;
+    }
+    & .input{
+      width: 260px;
+    }
+    & .button__full{
+      padding: 15px 106px;
+    }
+    .signIn__label{
+      font-size: 12px;
+    }
+    & .button__border-link{
+      margin: 0 0 0 10px;
+    }
+  }
+}
