@@ -6,6 +6,7 @@
   width: 100%;
   height: 70px;
   display: flex;
+  box-shadow: 0 10px 20px $dark5;
   & .button__wrapper{
     height: 35px;
     box-sizing: border-box;

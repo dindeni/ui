@@ -18,14 +18,14 @@ require('jquery-ui/ui/widgets/datepicker.js');
         onClose: (value, inst)=>{
             if ($(window.event.srcElement).hasClass('ui-datepicker-close')) {
                 filterElement.datepicker('setDate', null);
-            }
-            filterElementHide.datepicker('show')
+            }else filterElementHide.datepicker('show')
 
         },
         beforeShow: (text, instance)=>{
             setTimeout(()=>{
                 $('.ui-datepicker-current').click(()=>{
-                    filterElement.datepicker('hide')
+                    filterElement.datepicker('hide');
+                   filterElementHide.datepicker('hide')
                 });
                 instance.dpDiv.css({top: filterElement.offset().top + 38})
             }, 100)
@@ -47,14 +47,15 @@ filterElementHide.datepicker({
     onClose: (value, inst)=>{
         if ($(window.event.srcElement).hasClass('ui-datepicker-close')) {
             filterElement.datepicker('setDate', null);
+        }else {
+            filterElement.val(`${filterElement.val()} - ${filterElementHide.val()}`)
         }
-        filterElement.val(`${filterElement.val()} - ${filterElementHide.val()}`)
 
     },
     beforeShow: (text, instance)=>{
         setTimeout(()=>{
             $('.ui-datepicker-current').click(()=>{
-                filterElement.datepicker('hide')
+                filterElementHide.datepicker('hide');
             });
             instance.dpDiv.css({top: filterElement.offset().top + 38,
                 left: filterElement.offset().left})

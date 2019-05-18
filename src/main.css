@@ -1488,7 +1488,9 @@ body {
   height: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+          box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05); }
   .nav-standart .button__wrapper {
     height: 35px;
     -webkit-box-sizing: border-box;
@@ -2101,6 +2103,88 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
+
+.filter .ui-datepicker {
+  width: 264px; }
+
+.filter .ui-datepicker-title {
+  font-size: 16px; }
+
+.filter .ui-datepicker-next::before {
+  left: 180px;
+  top: 22px; }
+
+.filter .ui-datepicker-calendar {
+  font-size: 10px;
+  margin: 39px 0 0 5px; }
+
+.filter .ui-datepicker-calendar td, .filter .ui-datepicker-calendar td .ui-state-default {
+  margin: 0 15px 11.6px 0; }
+
+.filter .ui-datepicker-buttonpane .ui-datepicker-close {
+  margin-right: 40px; }
+
+.side-panel {
+  margin: 31px 0 0 140px; }
+  .side-panel .range__label {
+    display: inline-block;
+    width: 120px;
+    margin: 0 0 0 16px; }
+  .side-panel .checkbox__label {
+    margin: 0 0 12px 10px; }
+  .side-panel .checkbox__label--rich::before {
+    top: -3px; }
+  .side-panel .checkbox__label--rich .checkbox__span {
+    margin: 5px 0 0 0; }
+  .side-panel .checkbox__input:checked + .checkbox__label--rich::after {
+    top: 1px; }
+  .side-panel .checkbox__head {
+    margin: 30px 0 18px 0; }
+
+.side-panel__slogan {
+  font-family: Montserrat-regular, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 0.75);
+  color: #1f2041;
+  margin: 0 0 5px 0; }
+  .side-panel__slogan.side-panel__slogan--guests {
+    margin-top: 22px; }
+  .side-panel__slogan.side-panel__slogan--range {
+    margin: 31px 0 24px 0;
+    display: inline-block; }
+  .side-panel__slogan.side-panel__slogan--checkbox {
+    margin: 29px 0 17px 0; }
+  .side-panel__slogan.side-panel__slogan--checkbox-rich {
+    margin: 32px 0 19px 0; }
+  .side-panel__slogan.side-panel__slogan--rooms {
+    margin: 28px 0 7px 0; }
+
+.side-panel__sumGuests {
+  color: #1f2041;
+  font-family: Montserrat-regular, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 0.75);
+  display: block; }
+  .side-panel__sumGuests .input {
+    width: 265px;
+    margin-top: 5px; }
+  .side-panel__sumGuests .input__label-dropdown::after {
+    right: -17px;
+    top: 21px; }
+
+.side-panel__range-reference {
+  font-family: Montserrat-regular, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 0.75);
+  color: rgba(31, 32, 65, 0.5);
+  text-transform: inherit;
+  margin-top: 15px; }
 
 /*!
  * jQuery UI Slider 1.12.1

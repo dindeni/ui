@@ -28,6 +28,7 @@ import '../blocks/common/index.scss';
 import '../blocks/common/registration.scss';
 import '../blocks/signIn/signIn.scss';
 import '../blocks/common/signIn.scss';
+import '../blocks/common/filter.scss';
 
 import '../blocks/sumGuests/sumGuests';
 import '../blocks/range/range';

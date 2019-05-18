@@ -23,7 +23,7 @@ mixin sumGuests(type, className)
           +buttons('transparent', 'очистить', 'guests__buttons-footer--clear')
           +buttons('transparent', 'применить', 'guests__buttons-footer--apply')
   if type === 'rooms'
-    form.rooms
+    div.rooms
       +input('dropdown', '', 'rooms-input')
       div#roomsPopup.guests__popup.rooms__popup.hide
         div.rooms__count-container

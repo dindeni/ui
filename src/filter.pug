@@ -1,6 +1,10 @@
 include ./blocks/navBar/navBar
 include ./blocks/footerWidget/footerWidget
 include ./blocks/footer/footer
+include ./blocks/inputs/inputs
+include ./blocks/sumGuests/sumGuests
+include ./blocks/range/range
+include ./blocks/checkbox/checkbox
 
 -const arrIndexNavigation = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
 -classes: ['nav-standart__link', 'nav-standart__link nav-standart__link--expand',
@@ -12,18 +16,37 @@ include ./blocks/footer/footer
 - 'Сообщества', 'Связь с нами'], headSubscribe: 'Подписка', subscribeDescription:
 -'Получайте специальные предложения и новости сервиса', placeholderEmail: 'Email',
 -copyrightText: 'Copyright © 2018 Toxin отель. Все права зачищены.'}
+-const checkboxArr = {standart: ['Можно курить', 'Можно с питомцами',
+-'Можно пригласить гостей (до 10 человек)'], rich: [{label: 'Широкий коридор',
+-description: 'Ширина коридоров в номере не менее 91 см.'},
+-{label: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист  и проводит до номера.'}],
+-expandable: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка',
+-'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь']}
 
 doctype html
 html(lang="en")
   head
     title hotel
     meta(name="viewport" content="width=device-width,initial-scale=1")
-  body
-    header.index-header
+  body.filter
+    header.filter.filter__index-header.index-header
       +navBar('standart', arrIndexNavigation.items, arrIndexNavigation.classes, 'войти', 'зарегистрироваться')
-    main.main-filter
-      span
-
+    main.filter.filter__main-filter
+      section.main-filter__side-panel.side-panel
+        div.side-panel__slogan даты пребывания в отеле
+        form.side-panel__form
+          +input('filter', '19 авг - 23 авг')
+          +sumGuests('guests', 'guests side-panel__sumGuests')
+          div.side-panel__slogan.side-panel__slogan--range диапазон цены
+          +range
+          div.side-panel__range-reference Стоимость за сутки пребывания в номере
+          div.side-panel__slogan.side-panel__slogan--checkbox Checkbox Buttons
+          +checkbox(checkboxArr.standart, 'checkbox')
+          div.side-panel__slogan.side-panel__slogan--checkbox-rich доступность
+          +checkbox(checkboxArr.rich, 'rich')
+          div.side-panel__slogan.side-panel__slogan--rooms удобства номера
+          +sumGuests('rooms')
+          +checkbox(checkboxArr.expandable, 'checkboxExpandable', 'дополнительные удобства')
     +footerWidget(footerdata.description, footerdata.headNavigation, footerdata.navigationItems,
         footerdata.headAbout, footerdata.aboutItems, footerdata.headSupport,
         footerdata.supportItems, footerdata.headSubscribe, footerdata.subscribeDescription,

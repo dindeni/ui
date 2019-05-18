@@ -1,3 +1,91 @@
-.main-filter{
+@import "../mixins/text";
+@import "../common/variables";
 
+.filter{
+  & .ui-datepicker{
+    width: 264px;
+  }
+  & .ui-datepicker-title{
+    font-size: 16px;
+  }
+  & .ui-datepicker-next::before{
+    left: 180px;
+    top: 22px;
+  }
+  & .ui-datepicker-calendar {
+    font-size: 10px;
+    margin: 39px 0 0 5px;
+  }
+  & .ui-datepicker-calendar td, .ui-datepicker-calendar td .ui-state-default {
+    margin: 0 15px 11.6px 0;
+  }
+  & .ui-datepicker-buttonpane .ui-datepicker-close {
+    margin-right: 40px;
+  }
+}
+.side-panel{
+  margin: 31px 0 0 140px;
+  & .range__label{
+    display: inline-block;
+    width: 120px;
+    margin: 0 0 0 16px;
+  }
+  & .checkbox__label{
+    margin: 0 0 12px 10px;
+  }
+  & .checkbox__label--rich{
+    &::before{
+      top: -3px;
+    }
+    & .checkbox__span{
+      margin: 5px 0 0 0;
+    }
+  }
+  & .checkbox__input:checked + .checkbox__label--rich::after{
+    top: 1px
+  }
+  & .checkbox__head{
+    margin: 30px 0 18px 0;
+  }
+}
+.side-panel__slogan{
+  @include h3;
+  color: $dark100;
+  margin: 0 0 5px 0;
+  &.side-panel__slogan--guests{
+    margin-top: 22px;
+  }
+  &.side-panel__slogan--range{
+    margin: 31px 0 24px 0;
+    display: inline-block;
+  }
+  &.side-panel__slogan--checkbox{
+    margin: 29px 0 17px 0;
+  }
+  &.side-panel__slogan--checkbox-rich{
+    margin: 32px 0 19px 0;
+  }
+  &.side-panel__slogan--rooms{
+    margin: 28px 0 7px 0;
+  }
+}
+.side-panel__sumGuests{
+  color: $dark100;
+  @include h3;
+  display: block;
+  & .input{
+    width: 265px;
+    margin-top: 5px;
+  }
+  & .input__label-dropdown::after{
+    right: -17px;
+    top: 21px;
+  }
+
+}
+.side-panel__range-reference{
+  @include h3;
+  color: $dark50;
+  text-transform: inherit;
+  margin-top: 15px;
 }
