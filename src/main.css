@@ -1405,14 +1405,13 @@ body {
   width: 270px; }
 
 .cardRoom__image {
-  width: 278px;
-  margin: 0 0 0 -5px; }
+  width: 270px; }
 
 .cardRoom__wrapper {
   position: relative; }
 
 .cardRoom__number-room-wrapper {
-  margin: 9px 0 0 0; }
+  margin: 16px 0 0 0; }
 
 .cardRoom__number {
   font-family: Quicksand, sans-serif;
@@ -1476,7 +1475,9 @@ body {
   color: rgba(31, 32, 65, 0.5);
   line-height: 18px;
   vertical-align: top;
-  margin: 21px 0 0 18px; }
+  margin: 21px 0 0 0;
+  width: 110px;
+  text-align: end; }
 
 .cardRoom__number-review-word {
   font-weight: normal;
@@ -2104,6 +2105,22 @@ body {
       -ms-flex-align: center;
           align-items: center; }
 
+.filter .main-filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative; }
+  .filter .main-filter::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    -webkit-box-shadow: 0 1px 0 rgba(31, 32, 65, 0.1);
+            box-shadow: 0 1px 0 rgba(31, 32, 65, 0.1);
+    bottom: 0; }
+
 .filter .ui-datepicker {
   width: 264px; }
 
@@ -2125,6 +2142,7 @@ body {
   margin-right: 40px; }
 
 .side-panel {
+  width: 22%;
   margin: 31px 0 0 140px; }
   .side-panel .range__label {
     display: inline-block;
@@ -2185,6 +2203,23 @@ body {
   color: rgba(31, 32, 65, 0.5);
   text-transform: inherit;
   margin-top: 15px; }
+
+.rooms {
+  width: 60%;
+  margin: 0 0 70px 8px; }
+  .rooms .cardRoom {
+    margin: 0 12px 20px 0; }
+  .rooms .pagination {
+    width: 324px;
+    margin: 0 auto; }
+
+.rooms__head {
+  font-family: Quicksand, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #1F2041;
+  margin: 32px 0 20px 0;
+  letter-spacing: -1.5px; }
 
 /*!
  * jQuery UI Slider 1.12.1

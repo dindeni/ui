@@ -5,10 +5,13 @@ include ./blocks/inputs/inputs
 include ./blocks/sumGuests/sumGuests
 include ./blocks/range/range
 include ./blocks/checkbox/checkbox
+include ./blocks/cardRoom/cardRoom
+include ./blocks/pagination/pagination
 
 -const arrIndexNavigation = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
 -classes: ['nav-standart__link', 'nav-standart__link nav-standart__link--expand',
 -'nav-standart__link', 'nav-standart__link', 'nav-standart__link nav-standart__link--expand']}
+
 -const footerdata = {description: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
 -headNavigation: 'навигация', navigationItems: ['О нас', 'Новости', 'Служба поддержки',
 -'Услуги'], headAbout: 'о нас', aboutItems: ['О сервисе', 'Наша команда', 'Вакансии',
@@ -16,12 +19,42 @@ include ./blocks/checkbox/checkbox
 - 'Сообщества', 'Связь с нами'], headSubscribe: 'Подписка', subscribeDescription:
 -'Получайте специальные предложения и новости сервиса', placeholderEmail: 'Email',
 -copyrightText: 'Copyright © 2018 Toxin отель. Все права зачищены.'}
+
 -const checkboxArr = {standart: ['Можно курить', 'Можно с питомцами',
 -'Можно пригласить гостей (до 10 человек)'], rich: [{label: 'Широкий коридор',
 -description: 'Ширина коридоров в номере не менее 91 см.'},
 -{label: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист  и проводит до номера.'}],
 -expandable: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка',
 -'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь']}
+
+-const arrPathImage = ['img/image-room-888.png', 'img/image-room-982.png',
+-'img/image-room-350.png', 'img/image-room-444.png']
+
+-const rooms = [{images: ['img/image-room-888.png', 'img/image-room-982.png',
+-'img/image-room-350.png', 'img/image-room-444.png'], type: 'luxe', number: 888,
+-price: '9 900', review: 145, rate: 5}, {images: ['img/image-room-840.png', 'img/image-room-982.png',
+-'img/image-room-350.png', 'img/image-room-444.png'], type: 'normal', number: 840,
+-price: '9 900', review: 65, rate: 4}, {images: ['img/image-room-980.png', 'img/image-room-982.png',
+-'img/image-room-350.png', 'img/image-room-444.png'], type: 'luxe', number: 980,
+-price: '8 500', review: 35, rate: 3}, {images: ['img/image-room-856.png', 'img/image-room-982.png',
+-'img/image-room-350.png', 'img/image-room-444.png'], type: 'normal', number: 856,
+-price: '7 300', review: 19, rate: 5}, {images: ['img/image-room-740.png', 'img/image-room-982.png',
+-'img/image-room-350.png', 'img/image-room-444.png'], type: 'normal', number: 740,
+-price: '6 000', review: 44, rate: 4}, {images: ['img/image-room-982.png', 'img/image-room-982.png',
+-'img/image-room-350.png', 'img/image-room-444.png'], type: 'normal', number: 982,
+-price: '5 800', review: 56, rate: 3}, {images: ['img/image-room-678.png', 'img/image-room-982.png',
+-'img/image-room-350.png', 'img/image-room-444.png'], type: 'normal', number: 678,
+-price: '5 500', review: 45, rate: 5}, {images: ['img/image-room-450.png', 'img/image-room-982.png',
+-'img/image-room-350.png', 'img/image-room-444.png'], type: 'normal', number: 450,
+-price: '5 300', review: 39, rate: 4}, {images: ['img/image-room-350.png', 'img/image-room-982.png',
+-'img/image-room-350.png', 'img/image-room-444.png'], type: 'normal', number: 350,
+-price: '5 000', review: 77, rate: 3}, {images: ['img/image-room-666.png', 'img/image-room-982.png',
+-'img/image-room-350.png', 'img/image-room-444.png'], type: 'normal', number: 666,
+-price: '5 000', review: 25, rate: 5}, {images: ['img/image-room-444.png', 'img/image-room-982.png',
+-'img/image-room-350.png', 'img/image-room-444.png'], type: 'normal', number: 444,
+-price: '9 900', review: 15, rate: 3}, {images: ['img/image-room-352.png', 'img/image-room-982.png',
+-'img/image-room-350.png', 'img/image-room-444.png'], type: 'normal', number: 352,
+-price: '5 000', review: 55, rate: 3}]
 
 doctype html
 html(lang="en")
@@ -31,7 +64,7 @@ html(lang="en")
   body.filter
     header.filter.filter__index-header.index-header
       +navBar('standart', arrIndexNavigation.items, arrIndexNavigation.classes, 'войти', 'зарегистрироваться')
-    main.filter.filter__main-filter
+    main.filter.filter__main-filter.main-filter
       section.main-filter__side-panel.side-panel
         div.side-panel__slogan даты пребывания в отеле
         form.side-panel__form
@@ -47,6 +80,13 @@ html(lang="en")
           div.side-panel__slogan.side-panel__slogan--rooms удобства номера
           +sumGuests('rooms')
           +checkbox(checkboxArr.expandable, 'checkboxExpandable', 'дополнительные удобства')
+      section.rooms
+        h1.rooms__head Номера, которые мы для вас подобрали
+        each value in rooms
+          +cardRoom(value.images, 'room-radio-name', `room-Id-${value.number}`,
+              value.type, value.number,
+              value.price, value.review, value.rate)
+        +pagination(Array(15))
     +footerWidget(footerdata.description, footerdata.headNavigation, footerdata.navigationItems,
         footerdata.headAbout, footerdata.aboutItems, footerdata.headSupport,
         footerdata.supportItems, footerdata.headSubscribe, footerdata.subscribeDescription,
