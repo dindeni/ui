@@ -80,8 +80,8 @@ html(lang="en")
           div.side-panel__slogan.side-panel__slogan--rooms удобства номера
           +sumGuests('rooms')
           +checkbox(checkboxArr.expandable, 'checkboxExpandable', 'дополнительные удобства')
-      section.rooms
-        h1.rooms__head Номера, которые мы для вас подобрали
+      section.main-filter__filtered-rooms.filtered-rooms
+        h1.filtered-rooms__head Номера, которые мы для вас подобрали
         each value in rooms
           +cardRoom(value.images, 'room-radio-name', `room-Id-${value.number}`,
               value.type, value.number,

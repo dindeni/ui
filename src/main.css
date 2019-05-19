@@ -1664,13 +1664,15 @@ body {
   .nav-standart--logged .nav-standart__userName {
     margin: 26px 0 0 15%; } }
 
-@media (max-width: 500px) {
+@media (max-width: 500px) and (min-width: 400px) {
   .nav-standart {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center; }
+    .nav-standart .nav-standart__buttons-wrapper {
+      margin: 34px 0 0 8px; }
   .nav-standart__list {
     width: 50%; } }
 
@@ -2142,8 +2144,8 @@ body {
   margin-right: 40px; }
 
 .side-panel {
-  width: 22%;
-  margin: 31px 0 0 140px; }
+  width: 300px;
+  margin: 31px 0 0 9.8%; }
   .side-panel .range__label {
     display: inline-block;
     width: 120px;
@@ -2177,7 +2179,7 @@ body {
   .side-panel__slogan.side-panel__slogan--checkbox-rich {
     margin: 32px 0 19px 0; }
   .side-panel__slogan.side-panel__slogan--rooms {
-    margin: 28px 0 7px 0; }
+    margin: 32px 0 3px 0; }
 
 .side-panel__sumGuests {
   color: #1f2041;
@@ -2204,22 +2206,45 @@ body {
   text-transform: inherit;
   margin-top: 15px; }
 
-.rooms {
+.filtered-rooms {
   width: 60%;
-  margin: 0 0 70px 8px; }
-  .rooms .cardRoom {
+  margin: 0 0 70px 25px; }
+  .filtered-rooms .cardRoom {
     margin: 0 12px 20px 0; }
-  .rooms .pagination {
+  .filtered-rooms .pagination {
     width: 324px;
     margin: 0 auto; }
+  .filtered-rooms .pagination__item--dots {
+    background: none; }
 
-.rooms__head {
+.filtered-rooms__head {
   font-family: Quicksand, sans-serif;
   font-weight: bold;
   font-size: 24px;
   color: #1F2041;
   margin: 32px 0 20px 0;
   letter-spacing: -1.5px; }
+
+@media (max-width: 1100px) {
+  .side-panel {
+    margin: 31px 0 0 4.8%; }
+  .filtered-rooms {
+    width: 50%; }
+    .filtered-rooms .pagination {
+      margin: 0; }
+    .filtered-rooms .pagination__description {
+      margin-left: 5px; }
+    .filtered-rooms .pagination__list {
+      margin: 20px 0 10px 0; }
+  .filtered-rooms__head {
+    font-size: 18px; } }
+
+@media (max-width: 750px) {
+  .side-panel {
+    margin: 31px auto 0 auto; }
+  .filtered-rooms {
+    width: 300px;
+    margin: 0 auto 70px auto; } }
 
 /*!
  * jQuery UI Slider 1.12.1

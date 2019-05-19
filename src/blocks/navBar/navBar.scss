@@ -200,10 +200,13 @@
     }
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 500px) and (min-width: 400px){
     & .nav-standart{
       flex-wrap: wrap;
       justify-content: center;
+      & .nav-standart__buttons-wrapper{
+        margin: 34px 0 0 8px;
+      }
     }
     & .nav-standart__list{
       width: 50%;

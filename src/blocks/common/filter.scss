@@ -37,8 +37,8 @@
   }
 }
 .side-panel{
-  width: 22%;
-  margin: 31px 0 0 140px;
+  width: 300px;
+  margin: 31px 0 0 9.8%;
   & .range__label{
     display: inline-block;
     width: 120px;
@@ -80,7 +80,7 @@
     margin: 32px 0 19px 0;
   }
   &.side-panel__slogan--rooms{
-    margin: 28px 0 7px 0;
+    margin: 32px 0 3px 0;
   }
 }
 .side-panel__sumGuests{
@@ -103,9 +103,9 @@
   text-transform: inherit;
   margin-top: 15px;
 }
-.rooms{
+.filtered-rooms{
   width: 60%;
-  margin: 0 0 70px 8px;
+  margin: 0 0 70px 25px;
   & .cardRoom{
     margin: 0 12px 20px 0;
   }
@@ -113,9 +113,41 @@
     width: 324px;
     margin: 0 auto;
   }
+  & .pagination__item--dots{
+    background: none;
+  }
 }
-.rooms__head{
+.filtered-rooms__head{
   @include h1;
   margin: 32px 0 20px 0;
   letter-spacing: -1.5px;
+}
+@media (max-width: 1100px) {
+  .side-panel{
+    margin: 31px 0 0 4.8%;
+  }
+  .filtered-rooms{
+    width: 50%;
+    & .pagination{
+      margin: 0;
+    }
+    & .pagination__description{
+      margin-left: 5px;
+    }
+    & .pagination__list{
+      margin: 20px 0 10px 0;
+    }
+  }
+  .filtered-rooms__head{
+    font-size: 18px;
+  }
+}
+@media (max-width: 750px) {
+  .side-panel{
+    margin: 31px auto 0 auto;
+  }
+  .filtered-rooms{
+    width: 300px;
+    margin: 0 auto 70px auto;
+  }
 }
