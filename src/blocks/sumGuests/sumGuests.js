@@ -88,6 +88,7 @@ const countGuests = (classGuests) =>{
 
         const applyInputValue = (evt)=>{
             if (evt.target === buttonApply){
+                evt.preventDefault();
                 guestsPopup.classList.add('hide');
             }
         };

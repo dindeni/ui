@@ -38,6 +38,10 @@ module.exports = merge(common, {
 			template: './src/filter.pug',
 			filename: './filter.html'
 		}),
+		new HtmlWebpackPlugin({
+			template: './src/room.pug',
+			filename: './room.html'
+		}),
 		new MiniCssExtractPlugin({
 			filename: "[name].css",
 			chunkFilename: "[id].css"

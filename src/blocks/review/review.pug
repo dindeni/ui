@@ -1,9 +1,10 @@
 include ../buttons/buttons
 
-mixin review
+mixin review(name, date, text, pathIcon, buttonType, numberLikes)
   section.review
-    h3.review__name Мурад Сарафанов
-    span.review__date 5 дней назад
+    img.review__icon(src=pathIcon alt='фото аватар')
+    h3.review__name #{name}
+    span.review__date #{date}
     div.review__wrapper
-      +buttons('like', 12)
-      p.review__description Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+      +buttons(buttonType, numberLikes)
+      p.review__description #{text}
