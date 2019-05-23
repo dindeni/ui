@@ -70,7 +70,8 @@ const datePickerInOut = (idIn, idOut)=>{
         beforeShow: function (text, instance) {
             getRange(dateElementOut);
             setTimeout(()=>{
-                instance.dpDiv.css({top: dateElementOut.offset().top + 38});
+                instance.dpDiv.css({top: dateElementOut.offset().top + 38,
+                left: 31});
             }, 100);
 
         },

@@ -1329,6 +1329,32 @@ body {
 .orderRoom__sum {
   margin-right: 16px; }
 
+@media (max-width: 450px) {
+  .ui-datepicker.ui-widget.ui-widget-content {
+    width: 258px; }
+  .ui-datepicker.ui-widget .ui-datepicker-title {
+    font-size: 16px; }
+  .ui-datepicker.ui-widget .ui-datepicker-next::before {
+    left: 180px;
+    top: 22px; }
+  .ui-datepicker.ui-widget .ui-datepicker-calendar {
+    font-size: 10px; }
+  .ui-datepicker.ui-widget .ui-datepicker-calendar {
+    margin: 39px 0 0 5px; }
+  .ui-datepicker.ui-widget .ui-datepicker-calendar td, .ui-datepicker.ui-widget .ui-datepicker-calendar td .ui-state-default {
+    margin: 0 15px 11.6px 0; }
+  .ui-datepicker.ui-widget .ui-datepicker-calendar .searchRoom__range:not(.ui-state-disabled) {
+    position: relative;
+    margin: 0;
+    width: 35px; }
+    .ui-datepicker.ui-widget .ui-datepicker-calendar .searchRoom__range:not(.ui-state-disabled)::after {
+      width: 37px;
+      left: -7px; }
+  .ui-datepicker.ui-widget .ui-datepicker-calendar .searchRoom__max:not(.ui-state-disabled)::before {
+    left: -7px; }
+  .ui-datepicker.ui-widget .ui-datepicker-buttonpane .ui-datepicker-close {
+    margin-right: 40px; } }
+
 .cardRoom {
   width: 380px;
   height: 374px;
@@ -1678,6 +1704,10 @@ body {
       margin: 34px 0 0 8px; }
   .nav-standart__list {
     width: 50%; } }
+
+@media (max-width: 399px) {
+  .nav-standart .nav-standart__buttons-wrapper {
+    margin: 10px 0 0 8px; } }
 
 .copyright {
   height: 70px;
@@ -2270,7 +2300,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+  width: 459px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .room-description {
   margin: 71px 0 0 9.6%; }
@@ -2361,6 +2395,111 @@ body {
 
 .room-description__cancel-head {
   margin: 0 0 0 0; }
+
+@media (max-width: 1240px) {
+  .room-description__pie-chart-wrapper {
+    margin: 0 0 0 5%; }
+  .room-description__cancel {
+    margin: 14px 0 90px 0; } }
+
+@media (max-width: 1056px) {
+  .room-detail__images-aside {
+    width: 40%; }
+  .room-description__container {
+    width: 100%; }
+  .room-description__pie-chart-wrapper {
+    margin: 0 0 0 8%; }
+  .room-description__review {
+    width: 82%; }
+  .room-detail__room-description .orderRoom {
+    margin: 0 auto 90px auto; }
+  .room-description__cancel {
+    margin: 14px 0 90px 8%; } }
+
+@media (max-width: 800px) {
+  .room-detail__image-wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .room-detail__images-aside {
+    width: 100%; }
+  .room-detail__image {
+    margin: auto; }
+  .room-description {
+    margin: 71px 0 0 2.6%; }
+  .room-description__pie-chart-wrapper {
+    margin: 0 0 0 2%; }
+  .room-description__cancel {
+    margin: 14px 0 90px 2%; }
+  .review__description {
+    width: 80%; }
+  .room-description__review {
+    width: 100%; } }
+
+@media (max-width: 620px) {
+  .room-description__review-number {
+    right: 10%; } }
+
+@media (max-width: 450px) {
+  .room-detail__image {
+    width: 320px;
+    height: 250px;
+    margin: auto; }
+  .room-detail__room-description .orderRoom {
+    width: 320px; }
+    .room-detail__room-description .orderRoom .orderRoom__number {
+      font-size: 18px; }
+    .room-detail__room-description .orderRoom .orderRoom__type-room {
+      font-size: 12px;
+      margin: 0 70px 0 0; }
+    .room-detail__room-description .orderRoom .orderRoom__price {
+      font-size: 13px; }
+    .room-detail__room-description .orderRoom .input.input__date {
+      width: 120px; }
+    .room-detail__room-description .orderRoom .input::-webkit-input-placeholder {
+      font-size: 12px; }
+    .room-detail__room-description .orderRoom .input::-moz-placeholder {
+      font-size: 12px; }
+    .room-detail__room-description .orderRoom .input:-ms-input-placeholder {
+      font-size: 12px; }
+    .room-detail__room-description .orderRoom .input::-ms-input-placeholder {
+      font-size: 12px; }
+    .room-detail__room-description .orderRoom .input::placeholder {
+      font-size: 12px; }
+    .room-detail__room-description .orderRoom .input__label-dropdown::after {
+      right: -20px; }
+    .room-detail__room-description .orderRoom .input {
+      width: 265px; }
+    .room-detail__room-description .orderRoom .button__full--buy {
+      padding: 15px 65px; }
+  .room-detail__room-description .orderRoom__total-description {
+    font-size: 13px;
+    width: 200px; }
+  .room-detail__room-description .orderRoom__total-price {
+    font-size: 13px; }
+  .room-detail__room-description .orderRoom__total-tax {
+    right: 40px; }
+  .room-detail__room-description .orderRoom__sum-label {
+    font-size: 18px; }
+  .room-detail__room-description .orderRoom__sum {
+    font-size: 18px; }
+  .room-detail__room-description .orderRoom__sum-wrapper::after {
+    width: 110px; }
+  .room-detail__room-description .room-description__features-head, .room-detail__room-description .room-description__pie-chart-head,
+  .room-detail__room-description .room-description__review-head, .room-detail__room-description .room-description__rules-head,
+  .room-detail__room-description .room-description__cancel-head {
+    font-size: 16px; }
+  .room-description__cancel .room-description__cancel-paragraph {
+    width: 90%; }
+  .room-description__pie-chart-wrapper {
+    margin: 12px 0 0 2%; }
+    .room-description__pie-chart-wrapper .pie-chart__item {
+      font-size: 13px; }
+  .pie-chart-outer {
+    top: 35px; }
+  .room-description__review-number {
+    right: 2%;
+    font-size: 12px;
+    top: 34px; } }
 
 .pie-chart {
   display: -webkit-box;

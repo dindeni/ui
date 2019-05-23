@@ -72,14 +72,13 @@ html(lang="en")
             each value in reviewData
               +review(value.name, value.date, value.text, value.pathIcon,
                   value.typeButton, value.numberLikes)
+          div.room-description__rules
+            h2.room-description__rules-head Правила
+            +bulletList(bulletListData)
+          div.room-description__cancel
+            h2.room-description__cancel-head Отмена
+            p.room-description__cancel-paragraph Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
         +orderRoom(arrTotalDesc, arrTotalPrice)
-
-        div.room-description__rules
-          h2.room-description__rules-head Правила
-          +bulletList(bulletListData)
-        div.room-description__cancel
-          h2.room-description__cancel-head Отмена
-          p.room-description__cancel-paragraph Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
     +footerWidget(footerdata.description, footerdata.headNavigation, footerdata.navigationItems,
         footerdata.headAbout, footerdata.aboutItems, footerdata.headSupport,
         footerdata.supportItems, footerdata.headSubscribe, footerdata.subscribeDescription,
