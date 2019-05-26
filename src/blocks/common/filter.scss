@@ -61,6 +61,9 @@
   & .checkbox__head{
     margin: 30px 0 18px 0;
   }
+  & .guests__popup{
+    width: 265px;
+  }
 }
 .side-panel__slogan{
   @include h3;

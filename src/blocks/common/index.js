@@ -1,8 +1,9 @@
 if (document.querySelector('.main__background')){
     const mainElement = document.querySelector('.main__background');
 
-    const images = ["../../img/image-back-1.png", "../../img/image-back-2.png",
-        "../../img/image-back-3.png"];
+    const images = [require("../../img/image-back-1.png"),
+        require("../../img/image-back-2.png"),
+        require("../../img/image-back-3.png")];
 
     let count = 1;
     const interval = setInterval(()=> {
