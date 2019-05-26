@@ -1,7 +1,7 @@
 include ../rate/rate
 
-mixin cardRoom(arr, id, name, idInput, type, numberRoom, price)
-  span.cardRoom
+mixin cardRoom(arr, name, idInput, type, numberRoom, price, numberReview, numberRate)
+  div.cardRoom
     div.cardRoom__wrapper
       div.cardRoom__image-wrapper
         each value, index in arr
@@ -9,13 +9,13 @@ mixin cardRoom(arr, id, name, idInput, type, numberRoom, price)
             img(src=`${value}` class=`cardRoom__image hide`)
           else
             img(src=`${value}` class=`cardRoom__image`)
-      form.cardRoom__form(id=`${id}`)
+      form.cardRoom__form
         each value, index in Array(4)
           if index === 0
             input(type='radio' class='cardRoom__radio' name=`${name}` id=`${idInput}-${index}` checked=true)
             label(for=id=`${idInput}-${index}` class='cardRoom__label')
           else
-            input(type='radio' class='cardRoom__radio' name=`${name}` id=id=`${idInput}-${index}`)
+            input(type='radio' class='cardRoom__radio' name=`${name}` id=`${idInput}-${index}`)
             label(for=id=`${idInput}-${index}` class='cardRoom__label')
       div.cardRoom__buttons-wrapper
         button.cardRoom__button.cardRoom__button--prev
@@ -31,8 +31,8 @@ mixin cardRoom(arr, id, name, idInput, type, numberRoom, price)
       div.cardRoom__number-room-wrapper
         span.cardRoom__number-mark №
         span.cardRoom__number #{numberRoom}
-        span.cardRoom__price.cardRoom__price--normal 9 990&#8381;
+        span.cardRoom__price.cardRoom__price--normal #{price}&#8381;
         span.cardRoom__periodicity в сутки
-    +rate(5)
-    div.cardRoom__number-review 145
+    +rate(numberRate)
+    div.cardRoom__number-review #{numberReview}
       span.cardRoom__number-review-word Отзывов

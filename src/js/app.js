@@ -24,6 +24,13 @@ import '../blocks/copyright/copyright.scss';
 import '../blocks/socialButtons/socialButtons.scss';
 import '../blocks/footer/footer.scss';
 import '../blocks/footerWidget/footerWidget.scss';
+import '../blocks/common/index.scss';
+import '../blocks/common/registration.scss';
+import '../blocks/signIn/signIn.scss';
+import '../blocks/common/signIn.scss';
+import '../blocks/common/filter.scss';
+import '../blocks/common/roomDetail.scss';
+import '../blocks/pieChart/pieChart.scss';
 
 import '../blocks/sumGuests/sumGuests';
 import '../blocks/range/range';
@@ -34,5 +41,8 @@ import '../blocks/registration/registration';
 import '../blocks/orderRoom/orderRoom';
 import '../blocks/cardRoom/cardRoom';
 import '../blocks/navBar/navBar';
+import '../blocks/common/index';
+import '../blocks/inputs/inputDateRange';
+import '../blocks/pieChart/pieChart';
 
 import '../blocks/searchRoom/dataPicker';

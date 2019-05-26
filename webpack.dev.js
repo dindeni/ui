@@ -19,12 +19,29 @@ module.exports = merge(common, {
 		},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: './src/index.pug'
+			template: './src/index.pug',
+			filename: './index.html'
 		}),
-		/*new HtmlWebpackPlugin({
-			filename: 'index1.html',
-			template: './src/index1.pug'
-		}),*/
+		new HtmlWebpackPlugin({
+			template: './src/ui.pug',
+			filename: './ui.html'
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/registration.pug',
+			filename: './registration.html'
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/signIn.pug',
+			filename: './signIn.html'
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/filter.pug',
+			filename: './filter.html'
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/room.pug',
+			filename: './room.html'
+		}),
 		new MiniCssExtractPlugin({
 			filename: "[name].css",
 			chunkFilename: "[id].css"
@@ -59,16 +76,6 @@ module.exports = merge(common, {
 
 						]
 				},
-				/*{
-					test: /\.(woff|woff2|svg|ttf|png)(\?v=\d+\.\d+\.\d+)?$/,
-					use: {
-						loader: "url-loader",
-						options: {
-							limit: 50000,
-
-						}
-					}
-				}*/
 			]
 	},
 	//source map

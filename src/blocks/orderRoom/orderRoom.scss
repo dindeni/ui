@@ -115,3 +115,49 @@
 .orderRoom__sum{
   margin-right: 16px;
 }
+@media (max-width: 450px) {
+  .ui-datepicker.ui-widget.ui-widget-content {
+    width: 258px;
+  }
+  .ui-datepicker.ui-widget {
+    & .ui-datepicker-title {
+      font-size: 16px;
+    }
+
+    & .ui-datepicker-next::before {
+      left: 180px;
+      top: 22px;
+    }
+
+    & .ui-datepicker-calendar {
+      font-size: 10px;
+    }
+
+    & .ui-datepicker-calendar {
+      margin: 39px 0 0 5px;
+    }
+
+    & .ui-datepicker-calendar td, .ui-datepicker-calendar td .ui-state-default {
+      margin: 0 15px 11.6px 0;
+    }
+
+    & .ui-datepicker-calendar .searchRoom__range:not(.ui-state-disabled) {
+      position: relative;
+      margin: 0;
+      width: 35px;
+
+      &::after {
+        width: 37px;
+        left: -7px;
+      }
+    }
+
+    & .ui-datepicker-calendar .searchRoom__max:not(.ui-state-disabled)::before {
+      left: -7px;
+    }
+
+    & .ui-datepicker-buttonpane .ui-datepicker-close {
+      margin-right: 40px;
+    }
+  }
+}

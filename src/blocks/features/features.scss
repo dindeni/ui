@@ -23,7 +23,10 @@
 }
 .features__wrapper{
   margin: 0 0 40px 0;
-  &:last-child .features__slogan::before{
+  &:nth-child(2) .features__slogan::before{
     background: url("./icon-location-city.svg") no-repeat;
+  }
+  &:nth-child(3) .features__slogan::before{
+    background: url("./icon-whatshot.svg") no-repeat;
   }
 }

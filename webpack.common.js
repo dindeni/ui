@@ -35,9 +35,9 @@ const config = {
 					{
 						test: /\.(woff|woff2|svg|ttf|png)(\?v=\d+\.\d+\.\d+)?$/,
 						use: {
-							loader: "url-loader",
+							loader: "file-loader",
 							options: {
-								limit: 50000,
+								outputPath: 'files'
 
 							}
 						}

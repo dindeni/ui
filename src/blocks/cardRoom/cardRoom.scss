@@ -62,14 +62,13 @@
   width: 270px;
 }
 .cardRoom__image {
-  width: 278px;
-  margin: 0 0 0 -5px;
+  width: 270px;
 }
 .cardRoom__wrapper{
   position: relative;
 }
 .cardRoom__number-room-wrapper {
-  margin: 9px 0 0 0;
+  margin: 16px 0 0 0;
 }
 .cardRoom__number{
   @include h2;
@@ -113,7 +112,9 @@
   color: $dark50;
   line-height: 18px;
   vertical-align: top;
-  margin: 21px 0 0 18px;
+  margin: 21px 0 0 0;
+  width: 110px;
+  text-align: end;
 }
 .cardRoom__number-review-word{
   font-weight: normal;

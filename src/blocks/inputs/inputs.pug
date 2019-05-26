@@ -12,6 +12,9 @@ mixin input(type, placeholder, id)
   else if type === 'filter'
     label.input__label-dropdown
       input(type='text' class='input input__filter' placeholder=`${placeholder}`)
+    input(type='text' class='input input__filter-hide hide')
   else if type === 'subscription'
     label.input__label-subscription
       input(type='text' class='input input__subscription' placeholder=`${placeholder}`)
+  else if type === 'password'
+    input(type='password' class=`input input__text` id=`${id}` placeholder=`${placeholder}`)

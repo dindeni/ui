@@ -16,4 +16,8 @@ body{
 }
 .div__container{
   margin-top: 15px;
+  & .range__label{
+    margin: 0 0 24px 165px;
+    text-align: start;
+  }
 }

@@ -1,40 +1,24 @@
 include ../buttons/buttons
 
-mixin navBar(type, items, user)
+mixin navBar(type, items, itemClasses, buttonLoginName, buttonRegName, user)
   if type === 'standart'
     nav.nav-standart
-      img.nav-standart__logo(src='blocks/common/icon-logo.svg')
+      img.nav-standart__logo(src=require('./blocks/common/icon-logo.svg'))
       ul.nav-standart__list
         each item, index in items
-          case index
-            when 0
-              li.nav-standart__item
-                a.nav-standart__link.nav-standart__link--home(href='#') #{item}
-            when 2
-              li.nav-standart__item
-                a.nav-standart__link.nav-standart__link--services(href='#') #{item}
-            default
-              li.nav-standart__item
-                a.nav-standart__link(href='#') #{item}
+          li.nav-standart__item
+            a(href='#' class=`${itemClasses[index]}`) #{item}
       div.nav-standart__buttons-wrapper
-        +buttons('border', 'login', 'nav-standart__button-login')
-        +buttons('full', 'register', 'nav-standart__button-registration')
+        +buttons('border-link', `${buttonLoginName}`, 'nav-standart__button-login', 'signIn.html')
+        +buttons('full-link', `${buttonRegName}`, 'nav-standart__button-registration', 'registration.html')
         button.nav-standart__button-mobile
   else if type === 'loggedIn'
     nav.nav-standart.nav-standart--logged
-      img.nav-standart__logo(src='blocks/common/icon-logo.svg')
+      img.nav-standart__logo(src=require('./blocks/common/icon-logo.svg'))
       ul.nav-standart__list
         each item, index in items
-          case index
-            when 0
-              li.nav-standart__item
-                a.nav-standart__link.nav-standart__link--home(href='#') #{item}
-            when 2
-              li.nav-standart__item
-                a.nav-standart__link.nav-standart__link--services(href='#') #{item}
-            default
-              li.nav-standart__item
-                a.nav-standart__link(href='#') #{item}
+          li.nav-standart__item
+            a(href='#' class=`${itemClasses[index]}`) #{item}
       em.nav-standart__userName #{user}
       div.nav-standart__buttons-wrapper
         button.nav-standart__button-mobile

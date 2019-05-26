@@ -1,0 +1,260 @@
+@import "../mixins/text";
+@import "../common/variables";
+
+.room-detail{
+  position: relative;
+  &::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    -webkit-box-shadow: 0 1px 0 rgba(31, 32, 65, 0.1);
+    box-shadow: 0 1px 0 rgba(31, 32, 65, 0.1);
+    bottom: 0;
+  }
+}
+.room-detail__image-wrapper{
+  display: flex;
+}
+.room-detail__images-aside{
+  display: flex;
+  flex-wrap: wrap;
+  width: 459px;
+  justify-content: center;
+}
+.room-description{
+  margin: 71px 0 0 9.6%;
+  & .features__slogan{
+    padding: 0 0 0 58px;
+    &::before{
+      left: 7px;
+    }
+  }
+  & .features__description {
+    margin: 0 0 0 58px;
+  }
+  & .features__wrapper:last-child{
+    margin: 0;
+  }
+  & .review{
+    margin: 17px 0 19px 0;
+
+  }
+}
+.room-description__container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+}
+.room-detail__room-description{
+  display: flex;
+  flex-wrap: wrap;
+  & .orderRoom{
+    margin-left: 2px;
+  }
+}
+.room-description__features-head, .room-description__pie-chart-head,
+.room-description__review-head, .room-description__rules-head,
+.room-description__cancel-head{
+  @include h2;
+  letter-spacing: -1.2px;
+  margin: 0 0 22px 0;
+}
+.room-description__pie-chart-wrapper{
+  margin: 0 0 0 13.5%;
+  position: relative;
+  .room-description__pie-chart-head{
+    margin: 0 0 15px 0;
+  }
+}
+.pie-chart-outer{
+  position: absolute;
+  top: 38px;
+}
+.room-description__review{
+  position: relative;
+}
+.room-description__review-head{
+  margin: 35px 0 0 0;
+  display: inline-block;
+}
+.room-description__review-number{
+  @include body;
+  color: $dark50;
+  position: absolute;
+  right: 68px;
+  top: 36px;
+}
+.room-description__rules{
+  margin: 12px 0 0 0;
+  & .bullet{
+    margin: 20px 0 0 0;
+    width: 260px;
+  }
+}
+.room-description__rules-head{
+  margin: 0 0 0 21px;
+}
+.room-description__cancel{
+  margin: 14px 0 90px 8%;
+}
+.room-description__cancel-paragraph{
+  width: 350px;
+  @include body;
+  margin: 18px 0 0 0;
+}
+.room-description__cancel-head{
+  margin: 0 0 0 0;
+}
+@media (max-width: 1240px) {
+  .room-description__pie-chart-wrapper {
+    margin: 0 0 0 5%;
+  }
+  .room-description__cancel {
+    margin: 14px 0 90px 0;
+  }
+}
+
+@media (max-width: 1056px) {
+  .room-detail__images-aside{
+    width: 40%;
+  }
+  .room-description__container{
+    width: 100%;
+  }
+  .room-description__pie-chart-wrapper{
+    margin: 0 0 0 8%;
+  }
+  .room-description__review{
+    width: 82%;
+  }
+  .room-detail__room-description .orderRoom{
+    margin: 0 auto 90px auto;
+  }
+  .room-description__cancel{
+    margin: 14px 0 90px 8%;
+  }
+}
+@media (max-width: 800px) {
+  .room-detail__image-wrapper{
+    flex-wrap: wrap;
+  }
+  .room-detail__images-aside{
+    width: 100%;
+  }
+  .room-detail__image{
+    margin: auto;
+  }
+  .room-description{
+    margin: 71px 0 0 2.6%;
+  }
+  .room-description__pie-chart-wrapper{
+    margin: 0 0 0 2%;
+  }
+  .room-description__cancel {
+    margin: 14px 0 90px 2%;
+  }
+  .review__description{
+    width: 80%;
+  }
+  .room-description__review{
+    width: 100%;
+  }
+}
+@media (max-width: 620px) {
+  .room-description__review-number{
+    right: 10%;
+  }
+}
+@media (max-width: 450px) {
+  .room-detail__image{
+    width: 320px;
+    height: 250px;
+    margin:  auto;
+  }
+  .room-detail__room-description {
+    & .orderRoom {
+      width: 320px;
+
+      & .orderRoom__number {
+        font-size: 18px;
+      }
+
+      & .orderRoom__type-room {
+        font-size: 12px;
+        margin: 0 70px 0 0;
+      }
+
+      & .orderRoom__price {
+        font-size: 13px;
+      }
+
+      & .input.input__date {
+        width: 120px;
+      }
+
+      & .input::placeholder {
+        font-size: 12px;
+      }
+
+      & .input__label-dropdown::after {
+        right: -20px;
+      }
+
+      & .input {
+        width: 265px;
+      }
+
+      & .button__full--buy {
+        padding: 15px 65px;
+      }
+    }
+
+    & .orderRoom__total-description {
+      font-size: 13px;
+      width: 200px;
+    }
+
+    & .orderRoom__total-price {
+      font-size: 13px;
+    }
+
+    & .orderRoom__total-tax {
+      right: 40px;
+    }
+
+    & .orderRoom__sum-label {
+      font-size: 18px;
+    }
+
+    & .orderRoom__sum {
+      font-size: 18px;
+    }
+
+    .orderRoom__sum-wrapper::after {
+      width: 110px;
+    }
+    & .room-description__features-head, .room-description__pie-chart-head,
+    .room-description__review-head, .room-description__rules-head,
+    .room-description__cancel-head{
+      font-size: 16px;
+    }
+  }
+  .room-description__cancel .room-description__cancel-paragraph{
+    width: 90%;
+  }
+  .room-description__pie-chart-wrapper{
+    margin: 12px 0 0 2%;
+    & .pie-chart__item{
+      font-size: 13px;
+    }
+  }
+  .pie-chart-outer {
+    top: 35px;
+  }
+  .room-description__review-number{
+    right: 2%;
+    font-size: 12px;
+    top: 34px;
+  }
+}

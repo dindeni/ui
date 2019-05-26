@@ -23,7 +23,10 @@ module.exports = merge(common, {
 		}),
 		new CopyPlugin([
 			{from: 'src/fonts', to: 'fonts'},
-			{from: 'src/index.html', to: ''}
+			{from: 'src/*.html', to: path.resolve(__dirname, './build'),
+			flatten: true},
+			{from: 'src/files', to: path.resolve(__dirname, './build/files'),
+				flatten: true}
 		])
 	],
 	module: {
@@ -33,7 +36,7 @@ module.exports = merge(common, {
 				use: ['pug-loader']
 			},
 			{
-				test: /\.scss$/,
+				test: /\.scss|css$/,
 				use: [
 					MiniCssExtractPlugin.loader,
 					"css-loader",

@@ -1,0 +1,11 @@
+include ../inputs/inputs
+include ../buttons/buttons
+
+mixin signIn
+  section.signIn
+    h1.signIn__head Войти
+    +input('text', 'Email', 'signIn-input')
+    +input('password', ' Пароль', 'signIn-password')
+    +buttons('buy', 'Войти')
+    span.signIn__label Нет аккаунта на Toxin?
+      +buttons('border-link', 'Создать', 'signIn-login', 'registration.html')

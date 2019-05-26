@@ -1,0 +1,10 @@
+-const legendArr = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован']
+
+mixin pieChart(number, head)
+  div.pie-chart
+    canvas(id='pieChart' style={width: '120px', height: '132px'})
+    canvas(id='pieChartOuter' style={width: '120px', height: '132px'}
+      class='pie-chart pie-chart-outer')
+    ul.pie-chart__list
+      each item in legendArr
+        li.pie-chart__item #{item}

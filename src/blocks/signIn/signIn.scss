@@ -1,0 +1,55 @@
+@import "../mixins/text";
+@import "../mixins/rectangle";
+
+.signIn{
+  @include rectangle;
+  height: 358px;
+  position: relative;
+  z-index: 1;
+  & .input{
+    margin: 0 0 12px 0;
+  }
+  & .button__full{
+    padding: 15px 135px;
+    margin: 8px 0 0 0;
+  }
+  & .button__border-link{
+    margin: 0 0 0 60px;
+    padding: 11px 0;
+    width: 92px;
+    &::before{
+      width: 99px;
+      height: 44px;
+    }
+  }
+}
+.signIn__head{
+  @include h1;
+  margin: 40px 0 20px 0;
+}
+.signIn__label{
+  @include body;
+  display: block;
+  margin: 33px 0 0 0;
+}
+@media (max-width: 400px) {
+  .signIn{
+    width: 300px;
+    padding-left: 20px;
+    & .signIn__head{
+      font-size: 18px;
+    }
+    & .input{
+      width: 260px;
+    }
+    & .button__full{
+      padding: 15px 106px;
+    }
+    .signIn__label{
+      font-size: 12px;
+    }
+    & .button__border-link{
+      margin: 0 0 0 10px;
+    }
+  }
+}
