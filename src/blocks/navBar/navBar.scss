@@ -7,6 +7,7 @@
   height: 70px;
   display: flex;
   box-shadow: 0 10px 20px $dark5;
+  align-items: center;
   & .button__wrapper{
     height: 35px;
     box-sizing: border-box;
@@ -25,7 +26,7 @@
     display: inline-block;
   }
   & .nav-standart__buttons-wrapper{
-    margin: 21px 0 0 8px;
+    margin: 0 0 0 8px;
   }
 }
 .nav-standart--logged{
@@ -50,6 +51,7 @@
 }
 .nav-standart__logo{
   margin: 0 0 0 9.8%;
+  height: 40px;
 }
 .nav-standart__list{
   @include body;

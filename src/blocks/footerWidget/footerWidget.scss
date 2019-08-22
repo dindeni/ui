@@ -65,6 +65,11 @@
   @include body;
   margin: 20px 0 0 0;
 }
+@media (max-width: 1200px) {
+  .footerWidget__subscribe-wrapper{
+    width: 16%;
+  }
+}
 @media (max-width: 1100px) {
   .footerWidget{
     & .input{
@@ -73,7 +78,6 @@
         font-size: 12px;
       }
     }
-
   }
   .footerWidget__logo-wrapper{
     margin: 100px 2.8% 116px 2%;

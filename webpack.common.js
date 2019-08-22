@@ -33,7 +33,7 @@ const config = {
 						}
 				},
 					{
-						test: /\.(woff|woff2|svg|ttf|png)(\?v=\d+\.\d+\.\d+)?$/,
+						test: /\.(woff|woff2|svg|ttf|png|jpg)(\?v=\d+\.\d+\.\d+)?$/,
 						use: {
 							loader: "file-loader",
 							options: {

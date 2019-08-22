@@ -6,9 +6,9 @@ mixin cardRoom(arr, name, idInput, type, numberRoom, price, numberReview, number
       div.cardRoom__image-wrapper
         each value, index in arr
           if index > 0
-            img(src=`${value}` class=`cardRoom__image hide`)
+            img(src=`${value}` class=`cardRoom__image hide` alt='room image')
           else
-            img(src=`${value}` class=`cardRoom__image`)
+            img(src=`${value}` class=`cardRoom__image` alt='room image')
       form.cardRoom__form
         each value, index in Array(4)
           if index === 0
