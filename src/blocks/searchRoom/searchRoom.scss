@@ -3,12 +3,12 @@
 
 .searchRoom{
   @include rectangle;
-  & .button__full{
+  & .button--full{
     margin: 32px 0 0 0;
   }
 }
 .searchRoom__head{
-  font: 24px/29px Quickand-regular, sans-serif;
+  font: 1.7rem/29px Quickand-regular, sans-serif;
   font-weight: bold;
   width: 280px;
   margin: 41px 0 0 0;
@@ -17,10 +17,10 @@
 .searchRoom__check{
   font-family: Montserrat-regular, sans-serif;
   & .input__label-dropdown{
-    margin: 5px 20px 0 0;
+    margin: 6px 20px 0 0;
   }
 }
-@include input('.searchRoom__input-label', '.searchRoom__label')
+@include input('.searchRoom__input-label', '.searchRoom__label');
 .ui-datepicker-calendar .searchRoom__min:not(.ui-state-disabled),
 .ui-datepicker-calendar .searchRoom__max:not(.ui-state-disabled){
   position: relative;
@@ -88,7 +88,7 @@
       width: 120px;
     }
     & .input::placeholder{
-      font-size: 12px;
+      font-size: 0.86rem;
     }
     & .input__label-dropdown::after{
       right: -20px;
@@ -96,12 +96,12 @@
     & .input{
       width: 265px;
     }
-    & .button__full--buy {
+    & .button--for-filtering {
       padding: 15px 65px;
     }
   }
   .searchRoom__head{
-    font-size: 22px;
+    font-size: 1.5rem;
   }
   .searchRoom__label{
     width: 120px;

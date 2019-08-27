@@ -4,12 +4,10 @@ if (document.querySelector('.rooms')){
     const rooms = document.querySelector('.rooms');
     const roomsInput = rooms.querySelector('#rooms-input');
     const roomsPopup = rooms.querySelector('#roomsPopup');
-    const badroomElement = document.querySelector('#rooms-wrapper-bedroom');
     const numberVisitors = rooms.querySelectorAll('.guests__numberVisitors');
     const buttonMinus = rooms.querySelectorAll('.rooms__button--minus');
     const bedRoomsNumber = rooms.querySelector('#roomsNumber-bedroom');
     const bedsNumber = rooms.querySelector('#roomsNumber-beds');
-    const bathroom = rooms.querySelector('#roomsNumber-bathroom');
 
     roomsInput.value = '0 спальни, 0 кровати...';
 
@@ -37,10 +35,6 @@ if (document.querySelector('.rooms')){
 
         roomsInput.value = `${bedRoomsNumber.textContent} спальни, ` +
             `${bedsNumber.textContent} кровати...`
-
-
-
-
     });
 }
 

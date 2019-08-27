@@ -3,7 +3,7 @@ mixin rate(numberFillStars)
   div.rate
     each value,index in Array(5)
       if index <= numberFillStars - 1
-        img.rate__img(src=require('./blocks/rate/icon-star.svg'))
+        img.rate__img(src=require('./blocks/rate/icon-star.svg') alt='image star')
       else
-        img.rate__img(src=require('./blocks/rate/icon-star-border.svg'))
+        img.rate__img(src=require('./blocks/rate/icon-star-border.svg') alt='image star')
 

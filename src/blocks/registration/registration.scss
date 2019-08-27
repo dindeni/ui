@@ -24,7 +24,7 @@
     margin: 9px 0 0 5px;
     display: inline-block;
   }
-  & .button__full--buy{
+  & .button--for-filtering{
     margin: 22px 0 0 0;
     padding: 15px 93px;
     &::after{
@@ -34,7 +34,7 @@
   & .button__wrapper{
     margin: 0 0 0 33px;
   }
-  & .button__border-link{
+  & .button--with-bordering-link{
     margin: 3px 0 0 38px;
     width: 92px;
     padding: 11px 0;

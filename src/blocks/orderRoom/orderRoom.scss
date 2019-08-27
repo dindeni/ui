@@ -10,7 +10,7 @@
     @include h3;
     color: $dark100;
   }
-  & .button__full--buy{
+  & .button--for-filtering{
     margin: 20px 0 0 0;
     padding: 15px 99px;
   }
@@ -21,13 +21,13 @@
 }
 .orderRoom__number{
   @include h2;
-  font-size: 24px;
+  font-size: 1.71rem;
   letter-spacing: -1.5px;
   margin: 0 4px 0 3px;
 }
 .orderRoom__number-mark{
   @include h2;
-  font-size: 14px;
+  font-size: 1rem;
 }
 .orderRoom__type-room{
   @include body;
@@ -48,7 +48,7 @@
 }
 .orderRoom__periodicity{
   @include body;
-  font-size: 12px;
+  font-size: 0.86rem;
   margin-left: 6px;
 }
 .orderRoom__form{
@@ -117,11 +117,11 @@
 }
 @media (max-width: 450px) {
   .ui-datepicker.ui-widget.ui-widget-content {
-    width: 258px;
+    width: 264px;
   }
   .ui-datepicker.ui-widget {
     & .ui-datepicker-title {
-      font-size: 16px;
+      font-size: 1.14rem;
     }
 
     & .ui-datepicker-next::before {
@@ -130,7 +130,7 @@
     }
 
     & .ui-datepicker-calendar {
-      font-size: 10px;
+      font-size: 0.71rem;
     }
 
     & .ui-datepicker-calendar {

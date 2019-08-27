@@ -19,14 +19,14 @@
     width: 264px;
   }
   & .ui-datepicker-title{
-    font-size: 16px;
+    font-size: 1.14rem;
   }
   & .ui-datepicker-next::before{
     left: 180px;
     top: 22px;
   }
   & .ui-datepicker-calendar {
-    font-size: 10px;
+    font-size: 0.71rem;
     margin: 39px 0 0 5px;
   }
   & .ui-datepicker-calendar td, .ui-datepicker-calendar td .ui-state-default {
@@ -142,7 +142,7 @@
     }
   }
   .filtered-rooms__head{
-    font-size: 18px;
+    font-size: 1.29rem;
   }
 }
 @media (max-width: 750px) {
@@ -152,5 +152,14 @@
   .filtered-rooms{
     width: 300px;
     margin: 0 auto 70px auto;
+    & .pagination{
+      width: 300px;
+      margin: 0 auto;
+    }
+  }
+}
+@media (max-width: 599px) {
+  .input.input__filter-hide{
+    width: 0;
   }
 }

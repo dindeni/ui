@@ -15,12 +15,21 @@
 }
 .room-detail__image-wrapper{
   display: flex;
+  & .room-detail__image{
+  }
+   &> .room-detail__image:first-child{
+     flex-basis: 68.1%;
+     width: 68.1%;
+   }
 }
 .room-detail__images-aside{
   display: flex;
   flex-wrap: wrap;
-  width: 459px;
   justify-content: center;
+  flex-basis: 31.9%;
+  & .room-detail__image{
+    width: 100%;
+  }
 }
 .room-description{
   margin: 71px 0 0 9.6%;
@@ -69,7 +78,7 @@
 }
 .pie-chart-outer{
   position: absolute;
-  top: 38px;
+  top: 30px;
 }
 .room-description__review{
   position: relative;
@@ -136,12 +145,6 @@
   }
 }
 @media (max-width: 800px) {
-  .room-detail__image-wrapper{
-    flex-wrap: wrap;
-  }
-  .room-detail__images-aside{
-    width: 100%;
-  }
   .room-detail__image{
     margin: auto;
   }
@@ -167,26 +170,33 @@
   }
 }
 @media (max-width: 450px) {
-  .room-detail__image{
-    width: 320px;
-    height: 250px;
-    margin:  auto;
+  .room-detail__image-wrapper{
+    flex-wrap: wrap;
+  }
+  .room-detail__images-aside{
+    flex-basis: 100%;
+  }
+  .room-detail__image-wrapper{
+    &> .room-detail__image:first-child{
+      flex-basis: 100%;
+    }
   }
   .room-detail__room-description {
     & .orderRoom {
-      width: 320px;
+      width: 100%;
+      padding-left: 20px;
 
       & .orderRoom__number {
-        font-size: 18px;
+        font-size: 1.29rem;
       }
 
       & .orderRoom__type-room {
-        font-size: 12px;
+        font-size: 0.86rem;
         margin: 0 70px 0 0;
       }
 
       & .orderRoom__price {
-        font-size: 13px;
+        font-size: 0.93rem;
       }
 
       & .input.input__date {
@@ -194,7 +204,7 @@
       }
 
       & .input::placeholder {
-        font-size: 12px;
+        font-size: 0.86rem;
       }
 
       & .input__label-dropdown::after {
@@ -205,18 +215,18 @@
         width: 265px;
       }
 
-      & .button__full--buy {
+      & .button--for-filtering {
         padding: 15px 65px;
       }
     }
 
     & .orderRoom__total-description {
-      font-size: 13px;
+      font-size: 0.93rem;
       width: 200px;
     }
 
     & .orderRoom__total-price {
-      font-size: 13px;
+      font-size: 0.93rem;
     }
 
     & .orderRoom__total-tax {
@@ -224,11 +234,11 @@
     }
 
     & .orderRoom__sum-label {
-      font-size: 18px;
+      font-size: 1.29rem;
     }
 
     & .orderRoom__sum {
-      font-size: 18px;
+      font-size: 1.29rem;
     }
 
     .orderRoom__sum-wrapper::after {
@@ -237,7 +247,7 @@
     & .room-description__features-head, .room-description__pie-chart-head,
     .room-description__review-head, .room-description__rules-head,
     .room-description__cancel-head{
-      font-size: 16px;
+      font-size: 1.14rem;
     }
   }
   .room-description__cancel .room-description__cancel-paragraph{
@@ -246,15 +256,15 @@
   .room-description__pie-chart-wrapper{
     margin: 12px 0 0 2%;
     & .pie-chart__item{
-      font-size: 13px;
+      font-size: 0.93rem;
     }
   }
   .pie-chart-outer {
-    top: 35px;
+    top: 30px;
   }
   .room-description__review-number{
     right: 2%;
-    font-size: 12px;
+    font-size: 0.86rem;
     top: 34px;
   }
 }
