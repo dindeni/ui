@@ -26,7 +26,8 @@ module.exports = merge(common, {
 			{from: 'src/*.html', to: path.resolve(__dirname, './build'),
 			flatten: true},
 			{from: 'src/files', to: path.resolve(__dirname, './build/files'),
-				flatten: true}
+				flatten: true},
+			{from: 'src/favicons', to: 'favicons'}
 		])
 	],
 	module: {

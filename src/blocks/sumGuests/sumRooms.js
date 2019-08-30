@@ -11,7 +11,7 @@ if (document.querySelector('.rooms')){
 
     roomsInput.value = '0 спальни, 0 кровати...';
 
-    document.addEventListener('click', (evt)=>{
+    const handlerDocumentClick = (evt)=>{
         if (evt.target === roomsInput && roomsPopup.classList.contains('hide')){
             roomsPopup.classList.remove('hide');
             checkNumberVisitors(numberVisitors, buttonMinus);
@@ -19,10 +19,10 @@ if (document.querySelector('.rooms')){
         }else if (evt.target === roomsInput && !roomsPopup.classList.contains('hide')){
             roomsPopup.classList.add('hide')
         }
-    });
-
-    roomsPopup.addEventListener('click', (evt)=>{
-
+    };
+    document.addEventListener('click', handlerDocumentClick);
+    
+    const handlerRoomsClick = (evt)=>{
         let parentElement = evt.target.parentElement;
         let searchButtonPlus = parentElement.querySelector('.rooms__button--plus');
         let number = parentElement.querySelector('.guests__numberVisitors');
@@ -32,9 +32,11 @@ if (document.querySelector('.rooms')){
             number.textContent =+number.textContent - 1;
         }
         checkNumberVisitors(numberVisitors, buttonMinus);
-
+    
         roomsInput.value = `${bedRoomsNumber.textContent} спальни, ` +
-            `${bedsNumber.textContent} кровати...`
-    });
+          `${bedsNumber.textContent} кровати...`
+    };
+
+    roomsPopup.addEventListener('click', handlerRoomsClick);
 }
 

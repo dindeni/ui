@@ -14,21 +14,22 @@ const countGuests = (classGuests) =>{
 
         buttonClear.classList.add('hide');
 
-        guests.addEventListener('click', (evt)=>{
-            if(evt.target === inputGuests && guestsPopup.classList.contains('hide')){
+        const handlerGuestsClick = (evt)=>{
+            const isHidden = evt.target === inputGuests && guestsPopup.classList.contains('hide');
+            if(isHidden){
                 guestsPopup.classList.remove('hide')
             }
-
+    
             sumGuests(evt);
             clearInput(evt);
             applyInputValue(evt);
             checkNumberVisitors(numberVisitors, buttonMinus);
-
-        });
+        };
+        guests.addEventListener('click', handlerGuestsClick);
 
         const clearInput = (evt)=>{
-            // add or remove clear button
-            if (+inputGuests.value !== 0 && inputGuests.value !== ''){
+            const hasValue = +inputGuests.value !== 0 && inputGuests.value !== '';
+            if (hasValue){
                 buttonClear.classList.remove('hide');
                 buttonsContainer.style.justifyContent = 'space-between'
             } else {
@@ -38,12 +39,12 @@ const countGuests = (classGuests) =>{
             if(evt.target === buttonClear){
                 inputGuests.value = 0;
                 guestsPopup.querySelectorAll('.guests__numberVisitors').forEach((value)=>{
-                    value.textContent = 0
+                    value.textContent = '0'
                 })
             }
         };
 
-        const sumGuests = (evt, input)=>{
+        const sumGuests = (evt)=>{
             let parentElement = evt.target.parentElement.parentElement;
             let searchButtonPlus = parentElement.querySelector(
                 '.guests__button--plus');
@@ -59,28 +60,32 @@ const countGuests = (classGuests) =>{
             const decreaseNumberVisitors = ()=> searchNumberVisitors.textContent =
                 +searchNumberVisitors.textContent - 1;
 
-            if (parentElement === wrapperAdult &&
-                evt.target === searchButtonPlus){
+            const isAdultPlus = parentElement === wrapperAdult && evt.target === searchButtonPlus;
+            const isAdultMinus = parentElement === wrapperAdult &&
+              evt.target === searchButtonMinus && searchNumberVisitors.textContent > 0;
+            const isChildrenPlus = parentElement === wrapperChildren && evt.target === searchButtonPlus
+            const isChildrenMinus = parentElement === wrapperChildren &&
+              evt.target === searchButtonMinus && searchNumberVisitors.textContent > 0;
+            const isBabiesPlus = parentElement === wrapperBabies &&
+              evt.target === searchButtonPlus;
+            const isBabiesMinus = parentElement === wrapperBabies &&
+              evt.target === searchButtonMinus && searchNumberVisitors.textContent > 0;
+            if (isAdultPlus){
                 increaseNumberVisitors();
                 increaseVisitors();
-            }else if (parentElement === wrapperAdult &&
-                evt.target === searchButtonMinus && searchNumberVisitors.textContent > 0){
+            }else if (isAdultMinus){
                 decreaseNumberVisitors();
                 decreaseVisitors();
-            }else if(evt.target.parentElement.parentElement === wrapperChildren &&
-                evt.target === searchButtonPlus){
+            }else if(isChildrenPlus){
                 increaseNumberVisitors();
                 increaseVisitors();
-            }else if (parentElement === wrapperChildren &&
-                evt.target === searchButtonMinus && searchNumberVisitors.textContent > 0){
+            }else if (isChildrenMinus){
                 decreaseNumberVisitors();
                 decreaseVisitors();
-            }else if(parentElement === wrapperBabies &&
-                evt.target === searchButtonPlus){
+            }else if(isBabiesPlus){
                 increaseNumberVisitors();
                 increaseVisitors();
-            }else if (parentElement === wrapperBabies &&
-                evt.target === searchButtonMinus && searchNumberVisitors.textContent > 0){
+            }else if (isBabiesMinus){
                 decreaseNumberVisitors();
                 decreaseVisitors();
             }
@@ -93,9 +98,6 @@ const countGuests = (classGuests) =>{
             }
         };
     }
-
-
-
 };
 
 const checkNumberVisitors = (number, buttonMinus)=>{

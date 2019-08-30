@@ -1,31 +1,32 @@
 require('jquery-ui/ui/widgets/datepicker.js');
 
 const datePickerInOut = (idIn, idOut)=>{
-    const dateElementIn = $(idIn);
-    const dateElementOut = $(idOut);
+    const $dateElementIn = $(idIn);
+    const $dateElementOut = $(idOut);
     let dateArrive;
     let dateOut;
 
     const getRange = function (element) {
         setTimeout(()=>{
-            $('.ui-datepicker td').each(function(index, elem){
-                if (dateOut && +this.textContent === parseInt(dateOut.substring(0, 2), 10)){
+            const $tdElement = $('.ui-datepicker td');
+            
+            $tdElement.each(function(index, elem){
+                const isMaxDate = dateOut && +this.textContent === parseInt(dateOut.substring(0, 2), 10);
+                const isMinDate = dateArrive && +this.textContent === parseInt(dateArrive.substring(0, 2), 10);
+                const isRangeDate = dateArrive && dateOut && +this.textContent >
+                  parseInt(dateArrive.substring(0, 2), 10) && +this.textContent < parseInt(dateOut.substring(0, 2), 10);
+                if (isMaxDate){
                     $(this).addClass('searchRoom__max');
-                }else if(dateArrive && +this.textContent === parseInt(dateArrive.substring(0, 2), 10)){
+                }else if(isMinDate){
                     $(this).addClass('searchRoom__min');
-
-                }else if(dateArrive && dateOut && +this.textContent >
-                    parseInt(dateArrive.substring(0, 2), 10) && +this.textContent < parseInt(dateOut.substring(0, 2), 10)){
+                }else if(isRangeDate){
                     $(this).addClass('searchRoom__range');
                 }
             });
-            $('.ui-datepicker-current').click(()=>{
-                element.datepicker('hide')
-            })
-        }, 500)
+        }, 100)
     };
 
-    dateElementIn.datepicker({
+    $dateElementIn.datepicker({
         showOtherMonths: true,
         dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
         dateFormat: 'dd.mm.yy',
@@ -39,21 +40,21 @@ const datePickerInOut = (idIn, idOut)=>{
         onSelect: (date, dataObj)=>{
             dateArrive = date;
         },
-        beforeShow: function(tetx, instance){
-            getRange(dateElementIn);
+        beforeShow: function(value, instance){
+            getRange($dateElementIn);
             setTimeout(()=>{
-                instance.dpDiv.css({top: dateElementOut.offset().top + 38});
+                instance.dpDiv.css({top: $dateElementOut.offset().top + 38});
             }, 100);
 
         },
         onClose: (value, inst)=>{
-            if ($(window.event.srcElement).hasClass('ui-datepicker-close')) {
-                dateElementIn.datepicker('setDate', null);
+            if (value === '') {
+                $dateElementIn.datepicker('setDate', null);
             }
         },
     } );
 
-    dateElementOut.datepicker({
+    $dateElementOut.datepicker({
         showOtherMonths: true,
         dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
         dateFormat: 'dd.mm.yy',
@@ -68,16 +69,16 @@ const datePickerInOut = (idIn, idOut)=>{
             dateOut = date;
         },
         beforeShow: function (text, instance) {
-            getRange(dateElementOut);
+            getRange($dateElementOut);
             setTimeout(()=>{
-                instance.dpDiv.css({top: dateElementOut.offset().top + 38,
-                  left: dateElementIn.offset().left});
+                instance.dpDiv.css({top: $dateElementOut.offset().top + 38,
+                  left: $dateElementIn.offset().left});
             }, 100);
 
         },
         onClose: (value, inst)=>{
-            if ($(window.event.srcElement).hasClass('ui-datepicker-close')) {
-                dateElementOut.datepicker('setDate', null);
+            if (value === '') {
+                $dateElementOut.datepicker('setDate', null);
             }
         },
     } );

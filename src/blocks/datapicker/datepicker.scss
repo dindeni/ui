@@ -18,7 +18,7 @@
   font-family: Quickand-regular, sans-serif;
   font-size: 1.36rem;
   text-align: center;
-  margin: 3px 0 0 0;
+  margin: 10px 8px 0 0;
   letter-spacing: -1px;
 }
 .ui-icon.ui-icon-circle-triangle-e,.ui-icon.ui-icon-circle-triangle-w{
@@ -47,12 +47,13 @@
     width: 24px;
     height: 24px;
     background: url("./icon-arrow.svg") no-repeat;
-    left: 241px;
-    top: 27px;
+    left: 248px;
+    top: 22px;
+
   }
 }
 .ui-datepicker-calendar{
-  margin: 39px 0 0 29px;
+  margin: 46px 0 0 28px;
   font-size: 0.86rem;
   & thead{
     color: #BC9CFF;
@@ -62,14 +63,14 @@
     display: flex;
   }
   & th{
-    margin: 0 20px 20px 0;
+    margin: 0 22px 20px 0;
     display: inline-block;
   }
   & td, td .ui-state-default{
     color: rgba(31, 32, 65, 0.5);
     text-decoration: none;
     width: 20px;
-    margin: 0 18px 11.6px 0;
+    margin: 0 18px 12px 0;
     display: inline-block;
     text-align: center;
   }
@@ -95,14 +96,14 @@
 }
 .ui-datepicker-buttonpane{
   display: flex;
-  @include h3;
-  margin: 4px 0 0 10px;
+  justify-content: space-between;
+  margin: 8px 0 0 15px;
   & .ui-datepicker-current{
     color: $purple;
     order: 10;
   }
-  & .ui-datepicker-close{
-    margin-right: 105px;
+  & .ui-datepicker-current{
+    margin-right: 15px;
   }
 }
 .ui-datepicker-close, .ui-datepicker-current{
@@ -110,5 +111,5 @@
   background: none;
   border: none;
   color: $dark50;
-
+  @include h3;
 }

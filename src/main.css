@@ -967,7 +967,7 @@ body {
   font-family: Quickand-regular, sans-serif;
   font-size: 1.36rem;
   text-align: center;
-  margin: 3px 0 0 0;
+  margin: 10px 8px 0 0;
   letter-spacing: -1px; }
 
 .ui-icon.ui-icon-circle-triangle-e, .ui-icon.ui-icon-circle-triangle-w {
@@ -996,11 +996,11 @@ body {
     width: 24px;
     height: 24px;
     background: url(files/80658cf5b0ef60b43e41d4caf03316ed.svg) no-repeat;
-    left: 241px;
-    top: 27px; }
+    left: 248px;
+    top: 22px; }
 
 .ui-datepicker-calendar {
-  margin: 39px 0 0 29px;
+  margin: 46px 0 0 28px;
   font-size: 0.86rem; }
   .ui-datepicker-calendar thead {
     color: #BC9CFF;
@@ -1010,13 +1010,13 @@ body {
     display: -ms-flexbox;
     display: flex; }
   .ui-datepicker-calendar th {
-    margin: 0 20px 20px 0;
+    margin: 0 22px 20px 0;
     display: inline-block; }
   .ui-datepicker-calendar td, .ui-datepicker-calendar td .ui-state-default {
     color: rgba(31, 32, 65, 0.5);
     text-decoration: none;
     width: 20px;
-    margin: 0 18px 11.6px 0;
+    margin: 0 18px 12px 0;
     display: inline-block;
     text-align: center; }
 
@@ -1043,19 +1043,17 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-family: Montserrat-regular, sans-serif;
-  font-weight: bold;
-  font-size: 0.86rem;
-  text-transform: uppercase;
-  color: rgba(31, 32, 65, 0.75);
-  margin: 4px 0 0 10px; }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 8px 0 0 15px; }
   .ui-datepicker-buttonpane .ui-datepicker-current {
     color: #bc9cff;
     -webkit-box-ordinal-group: 11;
         -ms-flex-order: 10;
             order: 10; }
-  .ui-datepicker-buttonpane .ui-datepicker-close {
-    margin-right: 105px; }
+  .ui-datepicker-buttonpane .ui-datepicker-current {
+    margin-right: 15px; }
 
 .ui-datepicker-close, .ui-datepicker-current {
   -webkit-box-ordinal-group: -9;
@@ -1063,7 +1061,12 @@ body {
           order: -10;
   background: none;
   border: none;
-  color: rgba(31, 32, 65, 0.5); }
+  color: rgba(31, 32, 65, 0.5);
+  font-family: Montserrat-regular, sans-serif;
+  font-weight: bold;
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 0.75); }
 
 .registration {
   width: 380px;

@@ -1,9 +1,11 @@
 import Chart from 'chart.js'
 
-if (document.querySelector('#pieChart')){
-    const chartElement = document.querySelector('#pieChart').getContext('2d');
-    const chartElementOuter = document.querySelector('#pieChartOuter')
-        .getContext('2d');
+const pieChartElement = document.querySelector('#pieChart');
+const pieChartOuterElement = document.querySelector('#pieChartOuter');
+
+if (pieChartElement){
+    const chartElement = pieChartElement.getContext('2d');
+    const chartElementOuter = pieChartOuterElement.getContext('2d');
 
     const gradientPurple = chartElement.createLinearGradient(0, 0, 0, 400);
     gradientPurple.addColorStop(0, '#BC9CFF');

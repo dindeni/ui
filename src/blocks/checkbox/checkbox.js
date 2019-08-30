@@ -1,16 +1,19 @@
-if (document.querySelector('#checkbox-head')){
-    const checkboxHead = document.querySelector('#checkbox-head');
-    const checkboxWrapper = document.querySelector('#checkbox-expandable-wrapper');
+const checkboxHead = document.querySelector('#checkbox-head');
+const checkboxWrapper = document.querySelector('#checkbox-expandable-wrapper');
 
-    checkboxHead.addEventListener('click', (evt)=>{
-        if (evt.target === checkboxHead && !checkboxWrapper.classList.contains('hide')){
-            checkboxWrapper.classList.add('hide');
-            checkboxHead.style.setProperty('--rotate', 'rotate(0deg)');
-        }else if(evt.target === checkboxHead && checkboxWrapper.classList.contains('hide')){
-            checkboxWrapper.classList.remove('hide');
-            checkboxHead.style.setProperty('--rotate', 'rotate(180deg)');
-            console.log('remove')
-        }
-    });
+const handlerCheckboxClick = (evt) => {
+    const isNotHide = evt.target === checkboxHead && !checkboxWrapper.classList.contains('hide');
+    const isHide = evt.target === checkboxHead && checkboxWrapper.classList.contains('hide');
+    if (isNotHide){
+        checkboxWrapper.classList.add('hide');
+        checkboxHead.style.setProperty('--rotate', 'rotate(0deg)');
+    }else if(isHide){
+        checkboxWrapper.classList.remove('hide');
+        checkboxHead.style.setProperty('--rotate', 'rotate(180deg)');
+    }
+};
+
+if (checkboxHead){
+    checkboxHead.addEventListener('click', handlerCheckboxClick);
 }
 
