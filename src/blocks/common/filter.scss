@@ -32,8 +32,12 @@
   & .ui-datepicker-calendar td, .ui-datepicker-calendar td .ui-state-default {
     margin: 0 15px 11.6px 0;
   }
-  & .ui-datepicker-buttonpane .ui-datepicker-close {
-    margin-right: 40px;
+  & .ui-datepicker-buttonpane {
+    bottom: 2%;
+    & .ui-datepicker-close{
+      margin-right: 40px;
+    }
+    
   }
 }
 .side-panel{

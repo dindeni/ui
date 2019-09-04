@@ -116,7 +116,7 @@
       top: 22px;
     }
     & .ui-datepicker-calendar {
-      font-size: 10px;
+      font-size: 0.71rem;
     }
     & .ui-datepicker-calendar {
       margin: 39px 0 0 5px;
@@ -136,8 +136,12 @@
     & .ui-datepicker-calendar .searchRoom__max:not(.ui-state-disabled)::before {
       left: -7px;
     }
-    & .ui-datepicker-buttonpane .ui-datepicker-close {
+    & .ui-datepicker-buttonpane {
+      bottom: 2%;
       margin-right: 40px;
+      & .ui-datepicker-close, .ui-datepicker-current{
+        font-size: 0.71rem;
+      }
     }
   }
   .guests .guests__popup{
