@@ -24,8 +24,6 @@ const config = {
 														safari: "11.1",
 
 												},
-											'corejs': '3.0.0',
-												useBuiltIns: "usage",
 										},
 								],
 								]
