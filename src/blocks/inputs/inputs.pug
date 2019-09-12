@@ -1,14 +1,13 @@
-mixin input(type, placeholder, id)
+mixin input(type, placeholder, className)
   if type === 'text'
-    input(type='text' class=`input input__text` id=`${id}` placeholder=`${placeholder}`)
+    input(type='text' class=`input input__text` placeholder=`${placeholder}`)
   else if type === 'dropdown'
     label.input__label-dropdown
-      input(type='text' class='input input__dropdown' placeholder=`${placeholder}` id=`${id}` readonly)
+      input(type='text' class='input input__dropdown' placeholder=`${placeholder}` readonly)
   else if type === 'masked'
     input(type='text' class='input input__masked' placeholder=`${placeholder}`)
   else if type === 'date'
-    label.input__label-dropdown
-      input(type='text' class='input input__date' placeholder=`${placeholder}` id=`${id}`)
+      input(type='text' class=`input input__date ${className}`  placeholder=`${placeholder}`)
   else if type === 'filter'
     label.input__label-dropdown
       input(type='text' class='input input__filter' placeholder=`${placeholder}`)
@@ -17,4 +16,4 @@ mixin input(type, placeholder, id)
     label.input__label-subscription
       input(type='text' class='input input__subscription' placeholder=`${placeholder}`)
   else if type === 'password'
-    input(type='password' class=`input input__text` id=`${id}` placeholder=`${placeholder}`)
+    input(type='password' class=`input input__text` placeholder=`${placeholder}`)

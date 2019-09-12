@@ -9,11 +9,11 @@ mixin navBar(type, items, itemClasses, buttonLoginName, buttonRegName, user)
           li.nav-standart__item
             a(href='somePage.html' class=`${itemClasses[index]}`) #{item}
       div.nav-standart__buttons-wrapper
-        +buttons('bordering-link', `${buttonLoginName}`, 'nav-standart__button-login', 'signIn.html')
-        +buttons('full-link', `${buttonRegName}`, 'nav-standart__button-registration', 'registration.html')
+        +buttons('bordering-link', `${buttonLoginName}`, 'signIn.html')
+        +buttons('full-link', `${buttonRegName}`, 'registration.html')
         button.nav-standart__button-mobile
   else if type === 'loggedIn'
-    nav.nav-standart.nav-standart--logged
+    nav.nav-standart.nav-standart_logged
       img.nav-standart__logo(src=require('./blocks/common/icon-logo.svg') alt='logo')
       ul.nav-standart__list
         each item, index in items

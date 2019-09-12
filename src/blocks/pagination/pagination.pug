@@ -4,13 +4,13 @@ mixin pagination(arr)
       each value, index in arr
         if index <= 2
           li.pagination__item
-            a.pagination__link(href='#') #{index+1}
+            a.pagination__link(href='somePage.html') #{index+1}
         else if index === 3
-          li.pagination__item.pagination__item--dots
-            a.pagination__link(href='#') ...
+          li.pagination__item.pagination__item_dots
+            a.pagination__link(href='somePage.html') ...
         else if index === arr.length-1
           li.pagination__item.pagination__item
-            a.pagination__link(href='#') #{index+1}
-          li.pagination__item.pagination__item--next
-            a.pagination__link(href='#')
+            a.pagination__link(href='somePage.html') #{index+1}
+          li.pagination__item.pagination__item_next
+            a.pagination__link(href='somePage.html')
     div.pagination__description 1 – 12 из 100+ вариантов аренды

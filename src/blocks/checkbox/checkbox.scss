@@ -9,7 +9,7 @@
   margin: 0 0 12px 12px;
   position: relative;
   text-transform: unset;
-  width: 220px;
+  width: 210px;
   line-height: 18px;
   &::before{
     position: absolute;
@@ -22,7 +22,7 @@
     left: -10px;
     top: 0;
   }
-  &.checkbox__label--rich{
+  &.checkbox__label_rich{
     font-weight: bold;
     & .checkbox__span{
       font-size: 12px;

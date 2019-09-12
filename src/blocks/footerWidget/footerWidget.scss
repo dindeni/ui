@@ -12,7 +12,7 @@
   & .copyright{
     width: 100%;
     box-shadow: 0 10px 20px $dark5;
-    margin-top: 15px;
+    margin-top: 14px;
     position: relative;
     &::before{
       position: absolute;
@@ -36,29 +36,30 @@
 }
 .footerWidget__description{
   @include body;
+  margin-top: 18px;
 }
-.footerList{
+.footer-list{
   width: 160px;
-  margin: 93px 2.8% 0 0;
+  margin: 96px 2.8% 0 0;
 }
-.footerList__head, .footerWidget__subscribe-head{
+.footer-list__head, .footerWidget__subscribe-head{
   @include h3;
   color: $dark100;
 }
-.footerList__list{
+.footer-list__list{
   list-style: none;
   padding: 0;
   margin: 19px 0 0 0;
 }
-.footerListon__link{
+.footer-list__link{
   text-decoration: none;
   @include body;
 }
-.footerListon__item{
+.footer-list__item{
   margin: 0 0 14px 0;
 }
 .footerWidget__subscribe-wrapper{
-  margin: 92px 0 0 0;
+  margin: 95px 0 0 0;
   width: 18%;
 }
 .footerWidget__subscribe-description{
@@ -78,9 +79,13 @@
         font-size: 0.86rem;
       }
     }
+    & .footer-list.footerWidget__footerList, .footerWidget__logo-wrapper,
+    .footerWidget__subscribe-wrapper{
+      margin: 50px 2.8% 0 0;
+    }
   }
   .footerWidget__logo-wrapper{
-    margin: 100px 2.8% 116px 2%;
+    margin: 100px 2.8% 50px 2%;
   }
 }
 @media (max-width: 900px) {
@@ -100,7 +105,7 @@
   .footerWidget__logo {
     width: 80px;
   }
-  .footerList {
+  .footer-list {
     width: 120px;
     margin: 45px 0 0 0;
   }
@@ -116,5 +121,16 @@
   }
   .footerWidget .copyright .social__list {
     margin: 0 0 0 0;
+  }
+}
+@media (max-width: 550px){
+
+  .footerWidget {
+    & .copyright{
+      flex-direction: column;
+    }
+    & .copyright__head {
+      margin: 0;
+    }
   }
 }

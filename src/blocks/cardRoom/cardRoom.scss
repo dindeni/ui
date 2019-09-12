@@ -3,31 +3,44 @@
 @import "../common/variables";
 @import "../mixins/text";
 
-.cardRoom{
+.card-room{
   @include rectangle;
   padding: 0;
   width: 270px;
   height: 258px;
   display: inline-block;
   position: relative;
-  & .cardRoom__radio:first-child + .cardRoom__label{
+  & .card-room__label:first-child{
     background: #FFFFFF;
   }
   .rate{
     display: inline-block;
     margin: 15px 0 0 20px;
   }
+  &::after{
+    position: absolute;
+    content: '';
+    width: 230px;
+    height: 1px;
+    background: $dark10;
+    z-index: 10;
+    bottom: 49px;
+    left: 20px;
+  }
 }
-.cardRoom__radio{
+.card-room__image_hide{
   @include hide;
 }
-.cardRoom__form{
+.card-room__radio{
+  @include hide;
+}
+.card-room__form{
   position: absolute;
   width: 50px;
-  top: 120px;
+  top: 125px;
   left: 213px;
 }
-.cardRoom__label{
+.card-room__label{
   width: 7.5px;
   height: 7.5px;
   border: 1px solid #FFFFFF;
@@ -40,72 +53,71 @@
   cursor: pointer;
 }
 
-.cardRoom__button{
+.card-room__button{
   width: 15px;
   height: 15px;
   background: url("./icon-expand-white.svg") no-repeat;
   border: none;
   cursor: pointer;
-  &.cardRoom__button--next{
+  &.card-room__button_next{
     transform: rotate(180deg);
     margin-right: 18px;
   }
-  &.cardRoom__button--prev{
+  &.card-room__button_prev{
     margin-left: 18px;
   }
 }
-.cardRoom__buttons-wrapper{
+.card-room__buttons-wrapper{
   position: absolute;
-  top: 68px;
+  top: 69px;
   display: flex;
   justify-content: space-between;
   width: 270px;
 }
-.cardRoom__image {
+.card-room__image {
   width: 270px;
 }
-.cardRoom__wrapper{
+.card-room__wrapper{
   position: relative;
 }
-.cardRoom__number-room-wrapper {
-  margin: 16px 0 0 0;
+.card-room__number-room-wrapper {
+  margin: 25px 0 0 0;
+  width: 50%;
+  display: inline-block;
 }
-.cardRoom__number{
+.card-room__number{
   @include h2;
-  letter-spacing: -1.5px;
-  margin: 0 4px 0 3px;
+  margin: 0 7px 0 6px;
 }
-.cardRoom__number-mark{
+.card-room__number-mark{
   @include h2;
   font-size: 14px;
   margin-left: 20px;
 }
-.cardRoom__type-room{
+.card-room__type-room{
   @include body;
   color: $purple;
   font-weight: bold;
+  line-height: normal;
 }
-.cardRoom__price-wrapper{
-  @include body;
-  color: $dark50;
-  margin: 8px 0 0 0;
+.card-room__price-wrapper{
+  width: 50%;
+  display: inline-block;
+  text-align: end;
 }
-.cardRoom__price{
+.card-room__price{
   @include body;
   color: $dark50;
   font-weight: bold;
-  letter-spacing: -1px;
-  margin-left: 34px;
-  &.cardRoom__price--normal{
-    margin-left: 74px;
+  &.card-room__price_normal{
   }
 }
-.cardRoom__periodicity{
+.card-room__periodicity{
   @include body;
   font-size: 12px;
-  margin-left: 6px;
+  margin: 0 17px 0 6px;
 }
-.cardRoom__number-review{
+.card-room__number-review{
   display: inline-block;
   @include body;
   font-weight: bold;
@@ -113,11 +125,13 @@
   line-height: 18px;
   vertical-align: top;
   margin: 21px 0 0 0;
-  width: 110px;
+  width: 45%;
   text-align: end;
 }
-.cardRoom__number-review-word{
+.card-room__number-review-word{
   font-weight: normal;
   text-transform: none;
-  margin-left: 2px;
+  margin-left: 4px;
+  margin-right: 12px;
+
 }

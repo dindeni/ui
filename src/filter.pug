@@ -2,15 +2,15 @@ include ./blocks/navBar/navBar
 include ./blocks/footerWidget/footerWidget
 include ./blocks/footer/footer
 include ./blocks/inputs/inputs
-include ./blocks/sumGuests/sumGuests
+include blocks/sumGuestsRooms/sumGuests
 include ./blocks/range/range
 include ./blocks/checkbox/checkbox
 include ./blocks/cardRoom/cardRoom
 include ./blocks/pagination/pagination
 
 -const arrIndexNavigation = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
--classes: ['nav-standart__link', 'nav-standart__link nav-standart__link--expand',
--'nav-standart__link', 'nav-standart__link', 'nav-standart__link nav-standart__link--expand']}
+-classes: ['nav-standart__link', 'nav-standart__link nav-standart__link_expand',
+-'nav-standart__link', 'nav-standart__link', 'nav-standart__link nav-standart__link_expand']}
 
 -const footerdata = {description: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
 -headNavigation: 'навигация', navigationItems: ['О нас', 'Новости', 'Служба поддержки',
@@ -90,14 +90,14 @@ html(lang="en")
         form.side-panel__form
           +input('filter', '19 авг - 23 авг')
           +sumGuests('guests', 'guests side-panel__sumGuests')
-          div.side-panel__slogan.side-panel__slogan--range диапазон цены
+          div.side-panel__slogan.side-panel__slogan_range диапазон цены
           +range
           div.side-panel__range-reference Стоимость за сутки пребывания в номере
-          div.side-panel__slogan.side-panel__slogan--checkbox Checkbox Buttons
+          div.side-panel__slogan.side-panel__slogan_checkbox Checkbox Buttons
           +checkbox(checkboxArr.standart, 'checkbox')
-          div.side-panel__slogan.side-panel__slogan--checkbox-rich доступность
+          div.side-panel__slogan.side-panel__slogan_checkbox-rich доступность
           +checkbox(checkboxArr.rich, 'rich')
-          div.side-panel__slogan.side-panel__slogan--rooms удобства номера
+          div.side-panel__slogan.side-panel__slogan_rooms удобства номера
           +sumGuests('rooms')
           +checkbox(checkboxArr.expandable, 'checkboxExpandable', 'дополнительные удобства')
       section.main-filter__filtered-rooms.filtered-rooms

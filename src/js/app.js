@@ -3,7 +3,7 @@ import 'core-js'
 
 import '../blocks/searchRoom/searchRoom.scss';
 import '../blocks/common/common.scss';
-import '../blocks/sumGuests/sumGuests.scss';
+import '../blocks/sumGuestsRooms/sumGuests.scss';
 import '../blocks/buttons/buttons.scss';
 import '../blocks/inputs/inputs.scss';
 import '../blocks/checkbox/checkbox.scss';
@@ -32,9 +32,8 @@ import '../blocks/common/filter.scss';
 import '../blocks/common/roomDetail.scss';
 import '../blocks/pieChart/pieChart.scss';
 
-import '../blocks/sumGuests/sumGuests';
+import '../blocks/sumGuestsRooms/sumGuestsRooms';
 import '../blocks/range/range';
-import '../blocks/sumGuests/sumRooms';
 import '../blocks/checkbox/checkbox';
 import '../blocks/datapicker/datepicker';
 import '../blocks/registration/registration';
@@ -42,7 +41,7 @@ import '../blocks/orderRoom/orderRoom';
 import '../blocks/cardRoom/cardRoom';
 import '../blocks/navBar/navBar';
 import '../blocks/common/index';
-import '../blocks/inputs/inputDateRange';
+import '../blocks/inputs/inputs';
 import '../blocks/pieChart/pieChart';
 
-import '../blocks/searchRoom/dataPicker';
+import '../blocks/searchRoom/searchRoom';

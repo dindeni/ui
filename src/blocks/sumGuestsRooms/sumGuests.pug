@@ -1,0 +1,36 @@
+include ../buttons/buttons
+include ../inputs/inputs
+
+mixin sumGuests(type, className)
+  -const visitors = ['взрослые', 'дети', 'младенцы']
+  -const visitorsId = ['adult', 'children', 'babies']
+  -const rooms = ['спальни', 'кровати', 'ванные комнаты']
+  -const roomsId = ['bedroom', 'beds', 'bathroom']
+
+  if type === 'guests'
+    div(class=`${className}`) гости
+      +input('dropdown', 'Сколько гостей', 'guests-input')
+      div.guests__popup.hide
+        div.guests__count-container
+          each value, index in visitors
+            div.guests__container(class=`guest__container_${visitorsId[index]}`)
+              span.guests__type-visitors #{value}
+              div.guests__number-of-visitors-wrapper
+                button(type='button' class='guests__button guests__button_minus') -
+                span.guests__number-of-visitors 0
+                button(type='button' class='guests__button guests__button_plus') +
+        div.guests__buttons-footer-container
+          +buttons('transparent', 'очистить',undefined, 'button_clear')
+          +buttons('transparent', 'применить',undefined, 'button_apply')
+  if type === 'rooms'
+    div.rooms
+      +input('dropdown', '', 'rooms-input')
+      div.rooms__popup.hide
+        div.rooms__count-container
+          each value, index in rooms
+            div.rooms__container
+              span.rooms__type-visitors #{value}
+              div.rooms__number-of-visitors-wrapper
+                button(type='button' class='guests__button rooms__button_minus') -
+                span.rooms__number-of-visitors(class=`rooms__number-of-visitors_${roomsId[index]}`) 0
+                button(type='button' class='guests__button rooms__button_plus') +

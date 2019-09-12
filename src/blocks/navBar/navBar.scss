@@ -13,23 +13,17 @@
     box-sizing: border-box;
     margin: 17px 0 0 24px;
   }
-  &  .button--full{
+  & .button-full{
     height: 35px;
-    margin: 17px 0 0 21px;
-    padding: 10px 18px;
+    margin: 17px 0 0 25px;
+    padding: 10px 25px;
 
   }
-  .button--bordering{
-    padding: 0;
-    width: 85px;
-    height: 30px;
-    display: inline-block;
-  }
   & .nav-standart__buttons-wrapper{
-    margin: 0 0 0 8px;
+    margin: 0 0 0 22px;
   }
 }
-.nav-standart--logged{
+.nav-standart_logged{
   & .nav-standart__list{
     margin: 5px 0 0 24.2%;
   }
@@ -59,17 +53,17 @@
   display: flex;
   align-items: center;
   padding: 0;
-  margin: 5px 0 0 20.5%;
+  margin: 5px 0 0 19.8%;
 }
 .nav-standart__link{
   text-decoration: none;
   color: $dark50;
   line-height: 17px;
-  &.nav-standart__link--home{
+  &.nav-standart__link_home{
     font-weight: bold;
     color: $dark75;
   }
-  &.nav-standart__link--expand{
+  &.nav-standart__link_expand{
     padding:  0 15px 0 0;
     position: relative;
     &::after{
@@ -93,7 +87,7 @@
   .nav-standart__list{
     margin: 5px 0 0 13%;
   }
-  .nav-standart--logged{
+  .nav-standart_logged{
     .nav-standart__list{
       margin: 5px 0 0 6.2%;
     }
@@ -104,14 +98,17 @@
 }
 @media (max-width: 1250px) {
   .nav-standart__list{
-    margin: 5px 0 0 10%;
+    margin: 5px 0 0 5%;
   }
 }
 @media (max-width: 1100px) {
   .nav-standart{
     justify-content: space-between;
-    & .button--full{
+    & .button_full{
       padding: 10px 16px;
+    }
+    & .nav-standart__buttons-wrapper{
+      margin-right: 1%;
     }
   }
   .nav-standart__logo {
@@ -119,21 +116,18 @@
     width: 70px;
     padding: 5px 0 0 0;
   }
-  .nav-standart__buttons-wrapper{
-    margin-right: 2%;
-  }
 }
 @media (max-width: 920px) {
   .nav-standart{
     position: relative;
     justify-content: space-between;
-    & .button--bordering{
+    & .button__bordering{
       padding: 10px 15px;
     }
-    & .button--with-bordering-link{
+    & .button-with-bordering-link{
       font-size: 0.66rem;
     }
-    & .button--full{
+    & .button-full{
       font-size: 0.66rem;
       margin: 17px 65px 0 21px;
     }
@@ -189,7 +183,7 @@
     border-radius: 4px;
     margin: 50px 0 0 10%;
   }
-  .nav-standart__button-mobile--open{
+  .nav-standart__button-mobile_open{
     &.nav-standart__button-mobile::before{
       background: $dark50;
       transform: rotate(45deg);
@@ -200,7 +194,7 @@
       top: 15px;
     }
   }
-  .nav-standart--logged{
+  .nav-standart_logged{
     & .nav-standart__userName{
       margin: 26px 0 0 15%;
     }
@@ -213,7 +207,7 @@
       margin: 5px 0 0 0;
     }
   }
-  .nav-standart .button--full {
+  .nav-standart .button-full {
     margin: 17px 0 0 10px;
   }
   .nav-standart__logo{

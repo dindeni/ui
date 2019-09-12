@@ -5,7 +5,7 @@
   border: 1px solid $dark25;
   box-sizing: border-box;
   border-radius: 4px;
-  padding: 12px 14px;
+  padding: 13px 15px;
   &::placeholder{
     text-transform: none;
     color: $dark25;
@@ -43,7 +43,7 @@
     height: 44px;
     background: url("./icon-expand.svg") no-repeat;
     right: -16px;
-    top: 18px;;
+    top: 18px;
   }
   & .input::placeholder, .input{
     color: $dark75;
@@ -63,7 +63,7 @@
     height: 44px;
     background: url("./icon-arrow-forward.svg") no-repeat;
     right: -14px;
-    top: 0;
+    top: -2px;
   }
   & .input__subscription{
     width: 267px;

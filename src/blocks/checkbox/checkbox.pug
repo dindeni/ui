@@ -16,5 +16,5 @@ mixin checkbox(arr, type, head)
     div.checkbox
       each value, index in arr
         input.checkbox__input(type='checkbox' id=`input-checkbox-rich-${index}`)
-        label.checkbox__label.checkbox__label--rich(for=`input-checkbox-rich-${index}`) #{value.label}
+        label.checkbox__label.checkbox__label_rich(for=`input-checkbox-rich-${index}`) #{value.label}
           span.checkbox__span #{value.description}

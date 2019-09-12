@@ -14,14 +14,14 @@ mixin registration
       +input('text', 'Имя', 'registration-firstName')
       +input('text', 'Фамилия', 'registration-lastName')
       div.registration__radio-wrapper
-      +radio(arrRadioReg, arrRadioRegId)
+        +radio(arrRadioReg, arrRadioRegId)
       div.registration__date-head дата рождения
-      +datapicker('registration-date')
+        +datapicker('registration__input-with-date js-registration__input-with-date')
       div.registration__data-head данные для входа в сервис
-      +input('text', 'Email', 'registration-email')
-      +input('text', 'Пароль', 'registration-password')
-      +toggle('Получать спецпредложения', 'registration-toggle')
-      +buttons('buy', 'перейти к оплате', 'registration-buy')
+        +input('text', 'Email', 'registration-email')
+        +input('text', 'Пароль', 'registration-password')
+        +toggle('Получать спецпредложения', 'registration-toggle')
+        +buttons('buy', 'перейти к оплате', 'registration-buy')
     div.registration__footer
       span.registration__footer-label Уже есть аккаунт на Toxin
       +buttons('bordering-link', 'войти', 'registration-login', 'signIn.html')

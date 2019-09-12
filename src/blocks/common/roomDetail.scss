@@ -76,7 +76,7 @@
     margin: 0 0 15px 0;
   }
 }
-.pie-chart-outer{
+.pie-chart__outer{
   position: absolute;
   top: 30px;
 }
@@ -182,20 +182,19 @@
     }
   }
   .room-detail__room-description {
-    & .orderRoom {
+    & .order-room {
       width: 100%;
       padding-left: 20px;
 
-      & .orderRoom__number {
+      & .order-room__number {
         font-size: 1.29rem;
       }
-
-      & .orderRoom__type-room {
+      & .order-room__type-room {
         font-size: 0.86rem;
         margin: 0 70px 0 0;
       }
 
-      & .orderRoom__price {
+      & .order-room__price {
         font-size: 0.93rem;
       }
 
@@ -215,33 +214,33 @@
         width: 265px;
       }
 
-      & .button--for-filtering {
+      & .button-full_for-filtering {
         padding: 15px 65px;
       }
     }
 
-    & .orderRoom__total-description {
+    & .order-room__total-description {
       font-size: 0.93rem;
       width: 200px;
     }
 
-    & .orderRoom__total-price {
+    & .order-room__total-price {
       font-size: 0.93rem;
     }
 
-    & .orderRoom__total-tax {
+    & .order-room__total-tax {
       right: 40px;
     }
 
-    & .orderRoom__sum-label {
+    & .order-room__sum-label {
       font-size: 1.29rem;
     }
 
-    & .orderRoom__sum {
+    & .order-room__sum {
       font-size: 1.29rem;
     }
 
-    .orderRoom__sum-wrapper::after {
+    .order-room__sum-wrapper::after {
       width: 110px;
     }
     & .room-description__features-head, .room-description__pie-chart-head,
@@ -259,7 +258,7 @@
       font-size: 0.93rem;
     }
   }
-  .pie-chart-outer {
+  .pie-chart__outer {
     top: 30px;
   }
   .room-description__review-number{

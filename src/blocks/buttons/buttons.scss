@@ -1,7 +1,7 @@
 @import "../common/variables";
 @import "../mixins/text";
 
-.button--full{
+.button-full{
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border-radius: 22px;
   border: none;
@@ -18,7 +18,7 @@
             rgba(139, 164, 249, .5) 100%);
   }
 }
-.button__wrapper{
+.button{
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   padding: 3px;
   border-radius: 22px;
@@ -29,7 +29,7 @@
             rgba(139, 164, 249, .5) 100%);
   }
 }
-.button--bordering{
+.button__bordering{
   background: #FFFFFF;
   border: none;
   border-radius: 22px;
@@ -40,7 +40,7 @@
   font-weight: bold;
   padding: 12px 15px;
 }
-.button--with-bordering-link{
+.button-with-bordering-link{
   text-decoration: none;
   @include h3;
   color: $purple;
@@ -68,7 +68,7 @@
             rgba(139, 164, 249, .5) 100%);
   }
 }
-.button--transparent{
+.button-transparent{
   border: none;
   background: #FFFFFF;
   text-transform: uppercase;
@@ -81,7 +81,7 @@
     color: rgba(31, 32, 65, 0.5);
   }
 }
-.button--for-filtering{
+.button-full_for-filtering{
   position: relative;
   padding: 15px 91px;
   &::after{
@@ -94,7 +94,7 @@
     top: 12px;
   }
 }
-.button--for-rate{
+.button__bordering_for-rate{
   font-size: 0.86rem;
   font-weight: normal;
   padding: 0 0 0 8px;
@@ -112,7 +112,7 @@
   }
 
 }
-.button__wrapper.button__wrapper--for-rate{
+.button_for-rate{
   padding: 1px;
   border-radius: 10px;
   display: flex;
@@ -121,11 +121,11 @@
   box-sizing: border-box;
   margin-top: 10px;
 }
-.button__wrapper.button__wrapper--for-rate.button__wrapper--for-rate-gray{
+.button_gray{
   border: 1px solid $dark25;
   background: none;
 }
-.button--for-rate.button--for-rate-gray{
+.button__bordering_gray{
   color: $dark25;
   &::before{
     background: url("./icon-favorite_border.svg") no-repeat;

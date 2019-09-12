@@ -21,13 +21,13 @@
   width: 24px;
   height: 24px;
   margin: 0 0 0 20px;
-  &.social__item--twitter{
+  &.social__item_twitter{
     background: url("./icon-twitter.svg") no-repeat;
   }
-  &.social__item--facebook{
+  &.social__item_facebook{
     background: url("./icon-facebook.svg") no-repeat;
   }
-  &.social__item--instagram{
+  &.social__item_instagram{
     background: url("./icon-instagram.svg") no-repeat;
   }
 }

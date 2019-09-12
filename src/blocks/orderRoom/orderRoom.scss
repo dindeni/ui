@@ -2,7 +2,7 @@
 @import "../mixins/text";
 @import "../common/variables";
 
-.orderRoom{
+.order-room{
   @include rectangle;
   height: 511px;
   padding-left: 27px;
@@ -10,48 +10,48 @@
     @include h3;
     color: $dark100;
   }
-  & .button--for-filtering{
+  & .button-full_for-filtering{
     margin: 20px 0 0 0;
     padding: 15px 99px;
   }
 }
-.orderRoom__header{
+.order-room__header{
   display: flex;
   margin: 40px 0 0 0;
 }
-.orderRoom__number{
+.order-room__number{
   @include h2;
   font-size: 1.71rem;
   letter-spacing: -1.5px;
   margin: 0 4px 0 3px;
 }
-.orderRoom__number-mark{
+.order-room__number-mark{
   @include h2;
   font-size: 1rem;
 }
-.orderRoom__type-room{
+.order-room__type-room{
   @include body;
   color: $purple;
   font-weight: bold;
   margin: 0 110px 0 0;
 }
-.orderRoom__price-wrapper{
+.order-room__price-wrapper{
   @include body;
   color: $dark50;
   margin: 8px 0 0 0;
 }
-.orderRoom__price{
+.order-room__price{
   @include body;
   color: $dark50;
   font-weight: bold;
   letter-spacing: -1px;
 }
-.orderRoom__periodicity{
+.order-room__periodicity{
   @include body;
   font-size: 0.86rem;
   margin-left: 6px;
 }
-.orderRoom__form{
+.order-room__form{
   margin: 4px 0 0 0;
   & .input__label-dropdown{
     margin: 0 21px 0 0;
@@ -61,29 +61,29 @@
     }
   }
 }
-.orderRoom__guests{
+.order-room__guests{
   @include h3;
   color: $dark100;
   & .input{
     margin: 4px 0 0 0;
   }
 }
-.orderRoom__total{
+.order-room__total{
   @include body;
   line-height: 18px;
   margin: 22px 0 0 1px;
 }
-.orderRoom__total-wrapper{
+.order-room__total-wrapper{
   display: flex;
   justify-content: space-between;
   width: 91%;
   margin: 0 0 16px 0;
   position: relative;
 }
-.orderRoom__total-description{
+.order-room__total-description{
   width: 220px;
 }
-.orderRoom__total-tax{
+.order-room__total-tax{
   background: none;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
@@ -95,7 +95,7 @@
   top: -2px;
   padding: 0;
 }
-.orderRoom__sum-wrapper{
+.order-room__sum-wrapper{
   @include h2;
   display: flex;
   justify-content: space-between;
@@ -112,7 +112,7 @@
     left: 65px;
   }
 }
-.orderRoom__sum{
+.order-room__sum{
   margin-right: 16px;
 }
 @media (max-width: 450px) {

@@ -1,26 +1,26 @@
-document.querySelectorAll('.cardRoom').forEach((value)=>{
-    const input = value.querySelectorAll('.cardRoom__radio');
+document.querySelectorAll('.card-room').forEach((value)=>{
+    const input = value.querySelectorAll('.card-room__radio');
     input[0].checked = true
 });
 
 let imageCount = 0;
 
 const handleFormChange = (evt, form)=>{
-    const cardImages = evt.target.parentElement.parentElement.querySelectorAll('.cardRoom__image');
-    if (evt.target.parentElement === form){
-        form.querySelectorAll('.cardRoom__radio').
+    if (evt.currentTarget === form){
+        const cardImages = evt.currentTarget.parentElement.querySelectorAll('.card-room__image');
+        form.querySelectorAll('.card-room__radio').
         forEach((input, index)=>{
             if (evt.target === input){
-                input.nextSibling.style.background = '#FFFFFF';
-                cardImages[index].classList.remove('hide');
+                input.parentElement.style.background = '#FFFFFF';
+                cardImages[index].classList.remove('card-room__image_hide');
                 if (imageCount !== index){
-                    cardImages[imageCount].classList.add('hide');
+                    cardImages[imageCount].classList.add('card-room__image_hide');
                 }
                 imageCount = index;
                 
-            }else if (evt.target.parentElement === input.parentElement){
-                input.nextSibling.style.background = 'none';
-                cardImages[index].classList.add('hide');
+            }else if (evt.currentTarget === input.parentElement.parentElement){
+                input.parentElement.style.background = 'none';
+                cardImages[index].classList.add('card-room__image_hide');
             }
             
         });
@@ -28,31 +28,31 @@ const handleFormChange = (evt, form)=>{
     }
 };
 
-document.querySelectorAll('.cardRoom__form').forEach((form)=>{
+document.querySelectorAll('.card-room__form').forEach((form)=>{
     form.addEventListener('change', (evt)=>handleFormChange(evt, form));
 });
 
 const handleRoomsClick = (evt, cardRoom)=>{
-    const prev = cardRoom.querySelector('.cardRoom__button--prev');
-    const next = cardRoom.querySelector('.cardRoom__button--next');
-    const images = cardRoom.querySelectorAll('.cardRoom__image');
-    const inputs = cardRoom.querySelectorAll('.cardRoom__radio');
+    const prev = cardRoom.querySelector('.card-room__button_prev');
+    const next = cardRoom.querySelector('.card-room__button_next');
+    const images = cardRoom.querySelectorAll('.card-room__image');
+    const inputs = cardRoom.querySelectorAll('.card-room__radio');
     
     if (evt.target === prev){
         for (let i=0; i < inputs.length; i++){
             const isInputFirst = inputs[i].checked && inputs[i] === inputs[0];
             if(isInputFirst){
-                images[i].classList.add('hide');
-                images[inputs.length-1].classList.remove('hide');
+                images[i].classList.add('cardRoom__image_hide');
+                images[inputs.length-1].classList.remove('card-room__image_hide');
                 inputs[inputs.length-1].checked = true;
-                inputs[i].nextSibling.style.background = 'none';
-                return inputs[inputs.length-1].nextSibling.style.background = '#FFFFFF';
+                inputs[i].parentElement.style.background = 'none';
+                return inputs[inputs.length-1].parentElement.style.background = '#FFFFFF';
                 
             }else if (inputs[i].checked){
-                inputs[i].nextSibling.style.background = 'none';
-                inputs[i-1].nextSibling.style.background = '#FFFFFF';
-                images[i].classList.add('hide');
-                images[i-1].classList.remove('hide');
+                inputs[i].parentElement.style.background = 'none';
+                inputs[i-1].parentElement.style.background = '#FFFFFF';
+                images[i].classList.add('card-room__image_hide');
+                images[i-1].classList.remove('card-room__image_hide');
                 return inputs[i-1].checked = true;
             }
         }
@@ -62,24 +62,24 @@ const handleRoomsClick = (evt, cardRoom)=>{
         for (let i=0; i < inputs.length; i++){
             const isInputLast = inputs[i].checked && inputs[i] === inputs[inputs.length-1];
             if(isInputLast){
-                images[i].classList.add('hide');
-                images[0].classList.remove('hide');
+                images[i].classList.add('card-room__image_hide');
+                images[0].classList.remove('card-room__image_hide');
                 inputs[0].checked = true;
-                inputs[i].nextSibling.style.background = 'none';
-                return inputs[0].nextSibling.style.background = '#FFFFFF';
+                inputs[i].parentElement.style.background = 'none';
+                return inputs[0].parentElement.style.background = '#FFFFFF';
                 
             }else if (inputs[i].checked){
-                images[i].classList.add('hide');
-                images[i+1].classList.remove('hide');
+                images[i].classList.add('card-room__image_hide');
+                images[i+1].classList.remove('card-room__image_hide');
                 inputs[i+1].checked = true;
-                inputs[i].nextSibling.style.background = 'none';
-                return inputs[i+1].nextSibling.style.background = '#FFFFFF';
+                inputs[i].parentElement.style.background = 'none';
+                return inputs[i+1].parentElement.style.background = '#FFFFFF';
             }
         }
         
     }
 };
 
-document.querySelectorAll('.cardRoom').forEach((cardRoom)=>{
+document.querySelectorAll('.card-room').forEach((cardRoom)=>{
    cardRoom.addEventListener('click', (evt) => handleRoomsClick(evt, cardRoom));
 });

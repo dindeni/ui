@@ -7,7 +7,7 @@ include blocks/toggle/toggle
 include blocks/range/range
 include blocks/pagination/pagination
 include blocks/rate/rate
-include blocks/sumGuests/sumGuests
+include blocks/sumGuestsRooms/sumGuests
 include blocks/bulletList/bulletList
 include blocks/review/review
 include blocks/features/features
@@ -65,64 +65,64 @@ html(lang="en")
       meta(name="viewport" content="width=device-width,initial-scale=1")
     body
       +searchRoom
-      div.div__container
+      div.ui-container
         +buttons('full', 'click me')
         +buttons('bordering', 'click me')
         +buttons('transparent', 'click me')
         +buttons('buy', 'перейти к оплате')
         +buttons('like', 12)
         +buttons('like-gray', 2)
-      div.div__container
+      div.container
         +input('text', 'email', 'input__email')
         +input('dropdown', 'Сколько гостей', 'input-dropdown')
         +input('masked', 'дд.мм.гггг')
         +input('date', 'дд.мм.гггг')
         +input('filter', '19 авг - 23 авг')
         +input('subscription', 'email')
-      div.div__container
+      div.ui-container
         +checkbox(arrCheckbox, 'checkbox')
-      div.div__container
+      div.ui-container
         +checkbox(arrCheckboxExpandable, 'checkboxExpandable', 'expandable checkbox list')
-      div.div__container
+      div.ui-container
         +checkbox(arrCheckboxRich, 'rich')
-      div.div__container
+      div.ui-container
         +radio(arrRadio, arrRadioId)
-      div.div__container
+      div.ui-container
         +toggle('Получать спецпредложение', 'toggle')
-      div.div__container
+      div.ui-container
         +range
-      div.div__container
+      div.ui-container
         +pagination(Array(15))
-      div.div__container
+      div.ui-container
         +rate(4)
-      div.div__container
+      div.ui-container
         +sumGuests('rooms')
-      div.div__container
+      div.ui-container
         +bulletList(arrBulletList)
-      div.div__container
+      div.ui-container
         +review('Мурад Сарафанов', '5 дней назад',
             'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
             require('./blocks/review/icon-avatar-1.png'), 'like', 12)
-      div.div__container
+      div.ui-container
         +features(arrFeatures)
-      div.div__container
+      div.ui-container
         +registration
-      div.div__container
+      div.ui-container
         +signIn
-      div.div__container
+      div.ui-container
         +orderRoom(arrTotalDesc, arrTotalPrice)
-      div.div__container
+      div.ui-container
         +cardRoom(arrPathImage, 'room-radio-name-1', 'romId1', 'luxe', 888,
         '9 900', 145, 5)
-      div.div__container
+      div.ui-container
         +navBar('standart', uiNavBarItems.items, uiNavBarItems.classes, 'login', 'register')
-      div.div__container
+      div.ui-container
         +navBar('loggedIn', uiNavBarItems.items, uiNavBarItems.classes,'login', 'register', 'Cosmin Negoita')
-      div.div__container
+      div.ui-container
         +copyright('Copyright © 2018 Toxin UI Kit. All rights reserved.')
-      div.div__container
+      div.ui-container
         +footer
-      div.div__container
+      div.ui-container
         +footerWidget(footerWidgetData.description, 'Navigation',
             footerWidgetData.navigation, 'ABOUT US', footerWidgetData.about, 'support',
         footerWidgetData.support, 'Subscribe to our newsletter',

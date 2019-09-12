@@ -1,7 +1,7 @@
 import Chart from 'chart.js'
 
-const pieChartElement = document.querySelector('#pieChart');
-const pieChartOuterElement = document.querySelector('#pieChartOuter');
+const pieChartElement = document.querySelector('.pie-chart__inner');
+const pieChartOuterElement = document.querySelector('.pie-chart__outer');
 
 if (pieChartElement){
     const chartElement = pieChartElement.getContext('2d');
