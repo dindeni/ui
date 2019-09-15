@@ -1,5 +1,5 @@
 import {datePicker} from "../datapicker/datepicker";
 
-const registrationDate = $('.js-registration__input-with-date');
+const registrationDate = $('.js-input_date');
 
 datePicker(registrationDate);

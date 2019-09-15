@@ -3,7 +3,7 @@ import 'core-js'
 
 import '../blocks/searchRoom/searchRoom.scss';
 import '../blocks/common/common.scss';
-import '../blocks/sumGuestsRooms/sumGuests.scss';
+import '../blocks/sumGuestsRooms/sumGuestsRooms.scss';
 import '../blocks/buttons/buttons.scss';
 import '../blocks/inputs/inputs.scss';
 import '../blocks/checkbox/checkbox.scss';
@@ -31,6 +31,7 @@ import '../blocks/common/signIn.scss';
 import '../blocks/common/filter.scss';
 import '../blocks/common/roomDetail.scss';
 import '../blocks/pieChart/pieChart.scss';
+import '../blocks/common/ui.scss';
 
 import '../blocks/sumGuestsRooms/sumGuestsRooms';
 import '../blocks/range/range';

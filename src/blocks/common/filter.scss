@@ -89,15 +89,18 @@
     margin: 32px 0 3px 0;
   }
 }
-.side-panel__sumGuests{
+.side-panel__form .guests{
   color: $dark100;
   @include h3;
   display: block;
   & .input{
     width: 265px;
     margin-top: 5px;
+    &::placeholder{
+      text-transform: none;
+    }
   }
-  & .input__label-dropdown::after{
+  & .input-label-dropdown::after{
     right: -17px;
     top: 21px;
   }

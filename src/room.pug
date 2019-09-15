@@ -9,8 +9,8 @@ include ./blocks/bulletList/bulletList
 
 
 -const arrIndexNavigation = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
--classes: ['nav-standart__link', 'nav-standart__link nav-standart__link--expand',
--'nav-standart__link', 'nav-standart__link', 'nav-standart__link nav-standart__link--expand']}
+-classes: ['nav-standart__link', 'nav-standart__link nav-standart__link_expand',
+-'nav-standart__link', 'nav-standart__link', 'nav-standart__link nav-standart__link_expand']}
 
 -const footerdata = {description: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
 -headNavigation: 'навигация', navigationItems: ['О нас', 'Новости', 'Служба поддержки',
@@ -56,7 +56,7 @@ html(lang="en")
     meta(name="theme-color" content="#ffffff")
     title hotel
     meta(name="viewport" content="width=device-width,initial-scale=1")
-  body.filter
+  body
     header.filter.filter__index-header.index-header
       +navBar('standart', arrIndexNavigation.items, arrIndexNavigation.classes, 'войти', 'зарегистрироваться')
     main.room-detail

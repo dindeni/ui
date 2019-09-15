@@ -12,7 +12,7 @@
     font-size: 1rem;
     font-family: Montserrat, sans-serif;
   }
-  &.input__text::placeholder{
+  &.input_text::placeholder{
     text-transform: capitalize;
   }
   &:hover, &:focus{
@@ -21,7 +21,7 @@
       color: $dark75;
     }
   }
-  &.input__date{
+  &.input_date{
     width: 150px;
     color: $dark75;
     &::placeholder{
@@ -29,11 +29,11 @@
       text-transform: uppercase;
     }
   }
-  &.input__filter{
+  &.input_filter{
     width: 266px;
   }
 }
-.input__label-dropdown{
+.input-label-dropdown{
   display: inline-block;
   position: relative;
   &::after{
@@ -47,14 +47,15 @@
   }
   & .input::placeholder, .input{
     color: $dark75;
+    text-transform: uppercase;
   }
 }
-.input__masked{
+.input_masked{
   &::placeholder{
     text-transform: uppercase;
   }
 }
-.input__label-subscription{
+.input-label-subscription{
   position: relative;
   &::after{
     position: absolute;
@@ -65,7 +66,7 @@
     right: -14px;
     top: -2px;
   }
-  & .input__subscription{
+  & .input_subscription{
     width: 267px;
     &::placeholder{
       text-transform: capitalize;

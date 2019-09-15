@@ -1,4 +1,4 @@
-include ../sumGuestsRooms/sumGuests
+include ../sumGuestsRooms/sumGuestsRooms
 include ../inputs/inputs
 include ../datapicker/datepicker
 
@@ -10,9 +10,8 @@ mixin searchRoom
         span.search-room__label прибытие
         span.search-room__label выезд
       form.search-room__form
+        +datapicker('input_in js-input_in', true)
         label.search-room__label-for-input
-          +datapicker('search-room__input-in js-search-room__input-in')
-        label.search-room__label-for-input
-          +datapicker('search-room__input-out js-search-room__input-out')
-        +sumGuests('guests', 'guests')
+          +datapicker('input_out js-input_out', true)
+        +sumGuestsRooms('guests', 'guests')
         +buttons('buy', 'Подобрать номер')

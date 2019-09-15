@@ -2,7 +2,7 @@ include ../inputs/inputs
 include ../copyright/copyright
 
 mixin list(listHead, items, className)
-  div.footerWidget__footerList.footer-list(class=`footerList_${className}`)
+  div.footer-widget__footerList.footer-list(class=`footerList_${className}`)
     h3.footer-list__head #{listHead}
     ul.footer-list__list
       each item in items
@@ -10,16 +10,16 @@ mixin list(listHead, items, className)
           a.footer-list__link(href='#') #{item}
 
 mixin footerWidget(description, headNavigation, navigationItems, headAbout,aboutItems, headSupport, supportItems, headSubscribe, subscribeDescription, placeholderEmail, copyrightText, classModifier)
-  footer(class= classModifier ? `footerWidget ${classModifier}`: 'footerWidget')
-    div.footerWidget__logo-wrapper
-      img.footerWidget__logo(src=require('./blocks/common/icon-logo.svg') alt='image logo')
-      p.footerWidget__description #{description}
+  footer(class= classModifier ? `footer-widget ${classModifier}`: 'footer-widget')
+    div.footer-widget__logo-wrapper
+      img.footer-widget__logo(src=require('./blocks/common/icon-logo.svg') alt='image logo')
+      p.footer-widget__description #{description}
     +list(headNavigation, navigationItems, 'navigation')
     +list(headAbout, aboutItems, 'about')
     +list(headSupport, supportItems, 'support')
-    div.footerWidget__subscribe-wrapper
-      h3.footerWidget__subscribe-head #{headSubscribe}
-      div.footerWidget__subscribe-description #{subscribeDescription}
+    div.footer-widget__subscribe-wrapper
+      h3.footer-widget__subscribe-head #{headSubscribe}
+      div.footer-widget__subscribe-description #{subscribeDescription}
       +input('subscription', placeholderEmail)
     +copyright(copyrightText)
 

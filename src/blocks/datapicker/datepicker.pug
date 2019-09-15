@@ -1,4 +1,4 @@
 include ../inputs/inputs
 
-mixin datapicker(className)
-  +input('date', 'дд.мм.гггг', className)
+mixin datapicker(jsClass, dropdown)
+  +input(dropdown ? 'dropdown':'date', 'дд.мм.гггг', jsClass)

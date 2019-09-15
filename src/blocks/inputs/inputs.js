@@ -1,8 +1,8 @@
 require('jquery-ui/ui/widgets/datepicker.js');
 
 
-    const $filterElement = $('.input__filter');
-    const $filterElementHide = $('.input__filter-hide');
+    const $filterElement = $('.input_filter');
+    const $filterElementHide = $('.input_filter-hide');
 
     $filterElement.datepicker({
         showOtherMonths: true,
@@ -18,7 +18,8 @@ require('jquery-ui/ui/widgets/datepicker.js');
         beforeShow: (text, instance)=>{
             setTimeout(()=>{
                 instance.dpDiv.css({top: $filterElement.offset().top + 44,
-                    left: $filterElement.offset().left})
+                    left: $filterElement.offset().left,
+                    width: $filterElement.outerWidth()});
             }, 100)
         
         },

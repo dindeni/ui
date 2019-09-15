@@ -2,7 +2,7 @@ include ./blocks/navBar/navBar
 include ./blocks/footerWidget/footerWidget
 include ./blocks/footer/footer
 include ./blocks/inputs/inputs
-include blocks/sumGuestsRooms/sumGuests
+include blocks/sumGuestsRooms/sumGuestsRooms
 include ./blocks/range/range
 include ./blocks/checkbox/checkbox
 include ./blocks/cardRoom/cardRoom
@@ -89,7 +89,7 @@ html(lang="en")
         div.side-panel__slogan даты пребывания в отеле
         form.side-panel__form
           +input('filter', '19 авг - 23 авг')
-          +sumGuests('guests', 'guests side-panel__sumGuests')
+          +sumGuestsRooms('guests', 'guests')
           div.side-panel__slogan.side-panel__slogan_range диапазон цены
           +range
           div.side-panel__range-reference Стоимость за сутки пребывания в номере
@@ -98,7 +98,7 @@ html(lang="en")
           div.side-panel__slogan.side-panel__slogan_checkbox-rich доступность
           +checkbox(checkboxArr.rich, 'rich')
           div.side-panel__slogan.side-panel__slogan_rooms удобства номера
-          +sumGuests('rooms')
+          +sumGuestsRooms('rooms')
           +checkbox(checkboxArr.expandable, 'checkboxExpandable', 'дополнительные удобства')
       section.main-filter__filtered-rooms.filtered-rooms
         h1.filtered-rooms__head Номера, которые мы для вас подобрали

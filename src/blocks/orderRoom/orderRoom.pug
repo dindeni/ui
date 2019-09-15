@@ -1,5 +1,5 @@
 include ../datapicker/datepicker
-include ../sumGuestsRooms/sumGuests
+include ../sumGuestsRooms/sumGuestsRooms
 include ../buttons/buttons
 
 mixin orderRoom(arrTotalDesc, arrTotalPrice)
@@ -12,12 +12,12 @@ mixin orderRoom(arrTotalDesc, arrTotalPrice)
         span.order-room__price 9 990&#8381;
         span.order-room__periodicity в сутки
     div.order-room__label-wrapper
-      span.searchRoom__label прибытие
-      span.searchRoom__label выезд
+      span.order-room__label прибытие
+      span.order-room__label выезд
     form.order-room__form
-      +datapicker('order-room__input-in')
-      +datapicker('order-room__input-out')
-      +sumGuests('guests', 'order-room__guests guests')
+      +datapicker('input_in js-input_in', 'dropdown')
+      +datapicker('input_out js-input_out', 'dropdown')
+      +sumGuestsRooms('guests', 'order-room__guests guests')
     div.order-room__total
       each value, index in arrTotalDesc
         if index >= arrTotalDesc.length-2

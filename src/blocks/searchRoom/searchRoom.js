@@ -85,7 +85,7 @@ const datePickerInOut = (elementIn, elementOut)=>{
 };
 
 
-datePickerInOut('.js-search-room__input-in', '.js-search-room__input-out');
+datePickerInOut('.js-input_in', '.js-input_out');
 
 export {datePickerInOut}
 

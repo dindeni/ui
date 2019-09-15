@@ -8,7 +8,6 @@
   height: 646px;
   position: relative;
   z-index: 1;
-  & .input__label-dropdown{
     & .input{
       width: 320px;
       margin: 4px 0 0 0;
@@ -16,12 +15,8 @@
     &::after{
       content: none;
     }
-  }
-  & #registration-email{
-    margin: 5px 0 10px 0;
-  }
   & .toggle{
-    margin: 2px 0 0 5px;
+    margin: 8px 0 0 5px;
     display: inline-block;
   }
   & .toggle__label{
@@ -51,14 +46,10 @@
   @include h1;
   margin: 50px 0 0 0;
 }
-.registration__form{
-  & .input{
-    &:first-child{
-      margin: 27px 0 0 0;
-    }
-    &:nth-child(2){
-      margin: 10px 0 0 0;
-    }
+.registration__name-wrapper{
+  margin: 26px 0 0 0;
+  & .input:first-child{
+    margin: 0 0 8px 0;
   }
 }
 .registration__radio-wrapper{
@@ -80,19 +71,17 @@
   text-transform: uppercase;
   margin: 22px 0 0 0;
   display: block;
-  & .input.input__date, .input.input__text{
-    width: 320px;
-    margin: 5px 0 0 0;
-  }
-  & .input.input__text{
-    margin: 5px 0 6px 0;
-  }
 }
 .registration__footer{
-  margin: 31px 0 0 0;
+  margin: 30px 0 0 0;
 }
 .registration__footer-label{
   @include body;
+}
+.registration__data-head{
+  & .input:first-child{
+    margin: 5px 0 8px 0;
+  }
 }
 @media (max-width: 400px) {
   .registration{

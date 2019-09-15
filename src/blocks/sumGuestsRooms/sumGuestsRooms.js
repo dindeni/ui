@@ -3,7 +3,7 @@ const countGuests = (classGuests) =>{
         const guests = document.querySelector(classGuests);
         const buttonMinus = guests.querySelectorAll('.guests__button_minus');
         const numberVisitors = guests.querySelectorAll('.guests__number-of-visitors');
-        const inputGuests = guests.querySelector('.input__dropdown');
+        const inputGuests = guests.querySelector('.input_dropdown');
         const guestsPopup = guests.querySelector('.guests__popup');
         const containerAdult = guests.querySelector('.guest__container_adult');
         const containerChildren = guests.querySelector('.guest__container_children');
@@ -102,7 +102,7 @@ const countGuests = (classGuests) =>{
 
 if (document.querySelector('.rooms')){
     const rooms = document.querySelector('.rooms');
-    const roomsInput = rooms.querySelector('.input__dropdown');
+    const roomsInput = rooms.querySelector('.input_dropdown');
     const roomsPopup = rooms.querySelector('.rooms__popup');
     const numberVisitors = rooms.querySelectorAll('.rooms__number-of-visitors');
     const buttonMinus = rooms.querySelectorAll('.rooms__button_minus');
