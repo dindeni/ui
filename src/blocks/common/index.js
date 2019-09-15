@@ -10,7 +10,7 @@ if (mainElement){
             count = 0;
         }
         mainElement.classList.add('main__gallery');
-        mainElement.style.background = `url(${images[count]}) no-repeat`;
+        mainElement.src = images[count];
         setTimeout(()=>{
             mainElement.classList.remove('main__gallery');
         }, 4500);

@@ -103,7 +103,7 @@ html(lang="en")
       section.main-filter__filtered-rooms.filtered-rooms
         h1.filtered-rooms__head Номера, которые мы для вас подобрали
         each value in rooms
-          +cardRoom(value.images, 'room-radio-name', `room-Id-${value.number}`,
+          +cardRoom(value.images, 'room-radio-name',
               value.type, value.number,
               value.price, value.review, value.rate)
         +pagination(Array(15))

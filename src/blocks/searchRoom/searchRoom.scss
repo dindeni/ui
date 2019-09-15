@@ -20,15 +20,6 @@
   width: 280px;
   margin: 41px 0 0 0;
 }
-/*.search-room__check{
-  font-family: Montserrat-regular, sans-serif;
-  & .input-label-dropdown{
-    margin: 7px 20px 0 0;
-  }
-  & .input__label-dropdown{
-    margin: 5px 20px 0 0;
-  }
-}*/
 @include input('.search-room__input-label', '.search-room__label');
 .ui-datepicker-calendar .search-room__min:not(.ui-state-disabled),
 .ui-datepicker-calendar .search-room__max:not(.ui-state-disabled){
@@ -92,6 +83,9 @@
 }
 .input_out{
   margin: 0 0 0 21px;
+}
+.guests .input.input_dropdown::placeholder{
+  text-transform: none;
 }
 @media (max-width: 1100px) {
   .search-room{

@@ -7,7 +7,7 @@ include blocks/toggle/toggle
 include blocks/range/range
 include blocks/pagination/pagination
 include blocks/rate/rate
-include blocks/sumGuestsRooms/sumGuests
+include blocks/sumGuestsRooms/sumGuestsRooms
 include blocks/bulletList/bulletList
 include blocks/review/review
 include blocks/features/features
@@ -42,7 +42,11 @@ include blocks/signIn/signIn
 
 -const arrTotalPrice = ['39 960₽', '0₽', '300₽']
 
--const arrPathImage = [require('./img/image-room-888.jpg'),
+-const arrPathImage1 = [require('./img/image-room-888.jpg'),
+-require('./img/image-room-982.jpg'), require('./img/image-room-350.jpg'),
+-require('./img/image-room-444.jpg')]
+
+-const arrPathImage2 = [require('./img/image-room-840.jpg'),
 -require('./img/image-room-982.jpg'), require('./img/image-room-350.jpg'),
 -require('./img/image-room-444.jpg')]
 
@@ -60,74 +64,72 @@ include blocks/signIn/signIn
 
 doctype html
 html(lang="en")
-    head
-      title UI
-      meta(name="viewport" content="width=device-width,initial-scale=1")
-    body
-      +searchRoom
-      div.ui-container
-        +buttons('full', 'click me')
-        +buttons('bordering', 'click me')
-        +buttons('transparent', 'click me')
-        +buttons('buy', 'перейти к оплате')
-        +buttons('like', 12)
-        +buttons('like-gray', 2)
-      div.container
+  head
+    title UI
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+  body
+    div.form-elements
+      div.form-elements__wrapper
         +input('text', 'email', 'input__email')
         +input('dropdown', 'Сколько гостей', 'input-dropdown')
         +input('masked', 'дд.мм.гггг')
         +input('date', 'дд.мм.гггг')
-        +input('filter', '19 авг - 23 авг')
-        +input('subscription', 'email')
-      div.ui-container
+        +input('filter', '19 авг - 23 авг', 'input__label-dropdown_for-filtering')
+        div.form-elements__subscription-wrapper
+          +input('subscription', 'email')
+      div.form-elements__wrapper
         +checkbox(arrCheckbox, 'checkbox')
-      div.ui-container
-        +checkbox(arrCheckboxExpandable, 'checkboxExpandable', 'expandable checkbox list')
-      div.ui-container
-        +checkbox(arrCheckboxRich, 'rich')
-      div.ui-container
         +radio(arrRadio, arrRadioId)
-      div.ui-container
         +toggle('Получать спецпредложение', 'toggle')
-      div.ui-container
-        +range
-      div.ui-container
-        +pagination(Array(15))
-      div.ui-container
+        div.form-elements__buttons-wrapper
+          +buttons('like-gray', 2)
+          +buttons('like', 12)
         +rate(4)
-      div.ui-container
-        +sumGuests('rooms')
-      div.ui-container
+        +rate(5)
+      div.form-elements__wrapper
+        div.form-elements__range-wrapper
+          +range
+        div.form-elements__buttons-wrapper
+          +buttons('full', 'click me')
+        div.form-elements__buttons-wrapper
+          +buttons('bordering', 'click me')
+        div.form-elements__buttons-wrapper
+          +buttons('transparent', 'click me')
+        div.form-elements__buttons-wrapper
+          +buttons('buy', 'перейти к оплате')
+        +pagination(Array(15))
+      div.form-elements__wrapper
+        +sumGuestsRooms('rooms')
+        div.form-elements__checkbox-wrapper
+          +checkbox(arrCheckboxExpandable, 'checkboxExpandable', 'expandable checkbox list')
+      div.form-elements__wrapper
+        +checkbox(arrCheckboxRich, 'rich')
+      div.form-elements__wrapper
         +bulletList(arrBulletList)
-      div.ui-container
-        +review('Мурад Сарафанов', '5 дней назад',
-            'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
-            require('./blocks/review/icon-avatar-1.png'), 'like', 12)
-      div.ui-container
+      div.form-elements__wrapper.form-elements__wrapper_review
         +features(arrFeatures)
-      div.ui-container
+        +review('Мурад Сарафанов', '5 дней назад',
+        'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+					require('./blocks/review/icon-avatar-1.png'), 'like', 12)
+
+    div.cards
+      div.cards__wrapper
+        +searchRoom
         +registration
-      div.ui-container
-        +signIn
-      div.ui-container
+      div.cards__wrapper
         +orderRoom(arrTotalDesc, arrTotalPrice)
-      div.ui-container
-        +cardRoom(arrPathImage, 'room-radio-name-1', 'romId1', 'luxe', 888,
-        '9 900', 145, 5)
-      div.ui-container
-        +navBar('standart', uiNavBarItems.items, uiNavBarItems.classes, 'login', 'register')
-      div.ui-container
-        +navBar('loggedIn', uiNavBarItems.items, uiNavBarItems.classes,'login', 'register', 'Cosmin Negoita')
-      div.ui-container
-        +copyright('Copyright © 2018 Toxin UI Kit. All rights reserved.')
-      div.ui-container
-        +footer
-      div.ui-container
-        +footerWidget(footerWidgetData.description, 'Navigation',
-            footerWidgetData.navigation, 'ABOUT US', footerWidgetData.about, 'support',
-        footerWidgetData.support, 'Subscribe to our newsletter',
-            footerWidgetData.subscribe, 'Your email address')
-
-
-
-
+        +signIn
+      div.cards__wrapper
+        +cardRoom(arrPathImage1, 'room-radio-name-1', 'luxe', 888,
+					'9 900', 145, 5)
+        +cardRoom(arrPathImage2, 'room-radio-name-2', 'normal', 840,
+					'9 900', 65, 4)
+    div.headers-footers
+      +navBar('standart', uiNavBarItems.items, uiNavBarItems.classes, 'login', 'register')
+      +navBar('loggedIn', uiNavBarItems.items, uiNavBarItems.classes,'login', 'register', 'Cosmin Negoita')
+      +footer
+      +footerWidget(footerWidgetData.description, 'Navigation',
+				footerWidgetData.navigation, 'ABOUT US', footerWidgetData.about, 'support',
+				footerWidgetData.support, 'Subscribe to our newsletter',
+				footerWidgetData.subscribe, 'Your email address')
+      
