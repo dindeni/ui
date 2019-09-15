@@ -52,7 +52,6 @@ $filterElementHide.datepicker({
     },
     beforeShow: (text, instance)=>{
         setTimeout(()=>{
-        console.log(instance);
             instance.dpDiv.css({top: $filterElement.offset().top + 44,
                 left: $filterElement.offset().left})
         }, 100)
