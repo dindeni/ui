@@ -41,6 +41,9 @@
   "dependencies": {
     "@babel/runtime": "^7.6.0",
     "chart.js": "^2.8.0",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
     "jquery": "^3.4.0",
     "jquery-ui": "^1.12.1"
   }

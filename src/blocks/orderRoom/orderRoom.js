@@ -1,5 +1,5 @@
-import {datePickerInOut} from "../searchRoom/searchRoom";
-import {countGuests} from "../sumGuestsRooms/sumGuestsRooms";
+import datePickerInOut from '../searchRoom/searchRoom';
+import { countGuests } from '../sumGuestsRooms/sumGuestsRooms';
 
 datePickerInOut('.input_in js-input_in', '.input_in js-input_in');
 

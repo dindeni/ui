@@ -1,4 +1,4 @@
-import {datePicker} from "../datapicker/datepicker";
+import datePicker from '../datapicker/datepicker';
 
 const registrationDate = $('.js-input_date');
 
