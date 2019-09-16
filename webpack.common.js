@@ -5,12 +5,13 @@ const config = {
   entry: ['jquery', './src/js/app.js'],
   output: {
     path: path.resolve(__dirname, './src'),
-    filename: 'js/bundle.js'
-  },
+    filename: 'assets/bundle/bundle.js',
+		publicPath: './'
+	},
 		module: {
 				rules: [
 					{
-						test: /\.js$/, // files ending with .js
+						test: /\.js$/, // files ending with .bundle
 						exclude: /node_modules/, // exclude the node_modules directory
 						loader: "babel-loader", // use this (babel-core) loader
 						query: {
@@ -30,16 +31,16 @@ const config = {
 
 						}
 				},
-					{
+					/*{
 						test: /\.(woff|woff2|svg|ttf|png|jpg)(\?v=\d+\.\d+\.\d+)?$/,
 						use: {
 							loader: "file-loader",
 							options: {
-								outputPath: 'files'
-
+								outputPath: './assets/files',
+								publicPath: './files'
 							}
 						}
-					}
+					}*/
 				]
 		},
 	plugins: [

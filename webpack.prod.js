@@ -6,13 +6,27 @@ const autoprefixer = require('autoprefixer');
 const webpack = require("webpack");
 const CopyPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const mappingHtmlTemplate = ()=>{
+	const arrPugNames = ['index', 'filter', 'registration', 'room', 'signIn',
+		'ui'];
+	return arrPugNames.map(name=>{
+		return new HtmlWebpackPlugin({
+			template: `./src/pugTemplates/${name}.pug`,
+			filename: `${name}.html`,
+			inject: 'body'
+		})
+	});
+};
 
 module.exports = merge(common, {
-	plugins: [
+	plugins:
+		mappingHtmlTemplate().concat([
 		new CleanWebpackPlugin(),
 		new MiniCssExtractPlugin({
-			filename: "[name].css",
-			chunkFilename: "[id].css"
+			filename: "style.css",
+			publicPath: './'
 		}),
 		new webpack.LoaderOptionsPlugin({
 			options: {
@@ -23,13 +37,9 @@ module.exports = merge(common, {
 		}),
 		new CopyPlugin([
 			{from: 'src/fonts', to: 'fonts'},
-			{from: 'src/*.html', to: path.resolve(__dirname, './build'),
-			flatten: true},
-			{from: 'src/files', to: path.resolve(__dirname, './build/files'),
-				flatten: true},
-			{from: 'src/favicons', to: 'favicons'}
+			{from: 'src/assets/favicons', to: 'favicons'}
 		])
-	],
+	]),
 	module: {
 		rules: [
 			{
@@ -44,6 +54,16 @@ module.exports = merge(common, {
 					"postcss-loader",
 					"sass-loader"
 				]
+			},
+			{
+				test: /\.(woff|woff2|svg|ttf|png|jpg)(\?v=\d+\.\d+\.\d+)?$/,
+				use: {
+					loader: "file-loader",
+					options: {
+						outputPath: './files',
+						publicPath: './files'
+					}
+				}
 			}
 		]
 	},

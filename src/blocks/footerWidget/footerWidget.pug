@@ -12,7 +12,7 @@ mixin list(listHead, items, className)
 mixin footerWidget(description, headNavigation, navigationItems, headAbout,aboutItems, headSupport, supportItems, headSubscribe, subscribeDescription, placeholderEmail, copyrightText, classModifier)
   footer(class= classModifier ? `footer-widget ${classModifier}`: 'footer-widget')
     div.footer-widget__logo-wrapper
-      img.footer-widget__logo(src=require('./blocks/common/icon-logo.svg') alt='image logo')
+      img.footer-widget__logo(src=require('../blocks/common/icon-logo.svg') alt='image logo')
       p.footer-widget__description #{description}
     +list(headNavigation, navigationItems, 'navigation')
     +list(headAbout, aboutItems, 'about')
