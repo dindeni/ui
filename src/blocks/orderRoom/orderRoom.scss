@@ -2,88 +2,110 @@
 @import "../mixins/text";
 @import "../common/variables";
 
-.orderRoom{
+.order-room{
   @include rectangle;
   height: 511px;
   padding-left: 27px;
+  margin-bottom: 10px;
   & .searchRoom__label{
     @include h3;
     color: $dark100;
   }
-  & .button--for-filtering{
-    margin: 20px 0 0 0;
-    padding: 15px 99px;
+  & .button-full_for-filtering{
+    margin: 22px 0 0 0;
+    padding: 15px 106px;
   }
 }
-.orderRoom__header{
+.order-room__header{
   display: flex;
-  margin: 40px 0 0 0;
+  margin: 46px 0 0 5px;
 }
-.orderRoom__number{
+.order-room__number{
   @include h2;
   font-size: 1.71rem;
-  letter-spacing: -1.5px;
-  margin: 0 4px 0 3px;
+  margin: 0 10px 0 3px;
 }
-.orderRoom__number-mark{
+.order-room__number-mark{
   @include h2;
   font-size: 1rem;
 }
-.orderRoom__type-room{
+.order-room__type-room{
   @include body;
   color: $purple;
   font-weight: bold;
-  margin: 0 110px 0 0;
+  margin: 0 114px 0 0;
 }
-.orderRoom__price-wrapper{
+.order-room__price-wrapper{
   @include body;
   color: $dark50;
   margin: 8px 0 0 0;
 }
-.orderRoom__price{
+.order-room__price{
   @include body;
   color: $dark50;
   font-weight: bold;
-  letter-spacing: -1px;
 }
-.orderRoom__periodicity{
+.order-room__periodicity{
   @include body;
   font-size: 0.86rem;
   margin-left: 6px;
 }
-.orderRoom__form{
+.order-room__label-wrapper {
+  margin: 20px 0 0 3px;
+  & .order-room__label{
+    @include h3;
+    &:first-child{
+      margin-right: 96px;
+    }
+  }
+  
+}
+.order-room__form{
   margin: 4px 0 0 0;
-  & .input__label-dropdown{
-    margin: 0 21px 0 0;
-    &::after{
-      right: -17px;
-      top: 20px;
+  & .input{
+    width: 150px;
+  }
+  & .input-label-dropdown{
+    &:first-child{
+      & .input_dropdown{
+        margin: 2px 0 0 3px;
+      }
+    }
+    &:nth-child(2){
+      & .input__dropdown{
+        margin: 0 0 0 20px;
+      }
     }
   }
 }
-.orderRoom__guests{
+.order-room__guests{
   @include h3;
   color: $dark100;
-  & .input{
-    margin: 4px 0 0 0;
+  margin: 23px 0 0 3px;
+  & .input.input_dropdown.input_for-guests{
+    margin: 3px 0 0 0;
+    width: 320px;
+    &::placeholder{
+      text-transform: none;
+    }
   }
 }
-.orderRoom__total{
+.order-room__total{
   @include body;
   line-height: 18px;
-  margin: 22px 0 0 1px;
+  margin: 24px 0 0 5px;
 }
-.orderRoom__total-wrapper{
+.order-room__total-wrapper{
   display: flex;
   justify-content: space-between;
   width: 91%;
   margin: 0 0 16px 0;
   position: relative;
 }
-.orderRoom__total-description{
+.order-room__total-description{
   width: 220px;
 }
-.orderRoom__total-tax{
+.order-room__total-tax{
   background: none;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
@@ -91,15 +113,15 @@
   width: 20px;
   height: 20px;
   position: absolute;
-  right: 80px;
-  top: -2px;
+  right: 77px;
+  top: -4px;
   padding: 0;
 }
-.orderRoom__sum-wrapper{
+.order-room__sum-wrapper{
   @include h2;
   display: flex;
   justify-content: space-between;
-  margin: 30px 0 0 0;
+  margin: 35px 0 0 5px;
   position: relative;
   &::after{
     position: absolute;
@@ -108,12 +130,12 @@
     height: 1px;
     border: 1px solid $dark25;
     box-sizing: border-box;
-    bottom: 4px;
+    bottom: 2px;
     left: 65px;
   }
 }
-.orderRoom__sum{
-  margin-right: 16px;
+.order-room__sum{
+  margin-right: 26px;
 }
 @media (max-width: 450px) {
   .ui-datepicker.ui-widget.ui-widget-content {

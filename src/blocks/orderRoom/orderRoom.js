@@ -1,6 +1,6 @@
-import {datePickerInOut} from "../searchRoom/dataPicker";
-import {countGuests} from "../sumGuests/sumGuests";
+import datePickerInOut from '../searchRoom/searchRoom';
+import { countGuests } from '../sumGuestsRooms/sumGuestsRooms';
 
-datePickerInOut('#datepickerRegIn', '#datepickerRegOut');
+datePickerInOut('.input_in js-input_in', '.input_in js-input_in');
 
-countGuests('.orderRoom__guests');
+countGuests('.order-room__guests');

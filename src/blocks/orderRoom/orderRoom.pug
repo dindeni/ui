@@ -1,36 +1,36 @@
 include ../datapicker/datepicker
-include ../sumGuests/sumGuests
+include ../sumGuestsRooms/sumGuestsRooms
 include ../buttons/buttons
 
 mixin orderRoom(arrTotalDesc, arrTotalPrice)
-  section.orderRoom
-    div.orderRoom__header
-      div.orderRoom__number-room-wrapper
-        span.orderRoom__number-mark №
-        span.orderRoom__number 888
-        span.orderRoom__type-room люкс
-        span.orderRoom__price 9 990&#8381;
-        span.orderRoom__periodicity в сутки
-    div
-      span.searchRoom__label прибытие
-      span.searchRoom__label выезд
-    form.orderRoom__form
-      +datapicker('datepickerRegIn')
-      +datapicker('datepickerRegOut')
-      +sumGuests('guests', 'orderRoom__guests guests')
-    div.orderRoom__total
+  section.order-room
+    div.order-room__header
+      div.order-room__number-room-wrapper
+        span.order-room__number-mark №
+        span.order-room__number 888
+        span.order-room__type-room люкс
+        span.order-room__price 9 990&#8381;
+        span.order-room__periodicity в сутки
+    div.order-room__label-wrapper
+      span.order-room__label прибытие
+      span.order-room__label выезд
+    form.order-room__form
+      +datapicker('input_in js-input_in', 'dropdown')
+      +datapicker('input_out js-input_out', 'dropdown')
+      +sumGuestsRooms('guests', 'order-room__guests guests')
+    div.order-room__total
       each value, index in arrTotalDesc
         if index >= arrTotalDesc.length-2
-          div.orderRoom__total-wrapper
-            span.orderRoom__total-description #{value}
-            button.orderRoom__total-tax !
-            span.orderRoom__total-price #{arrTotalPrice[index]}
+          div.order-room__total-wrapper
+            span.order-room__total-description #{value}
+            button.order-room__total-tax !
+            span.order-room__total-price #{arrTotalPrice[index]}
         else
-          div.orderRoom__total-wrapper
-            span.orderRoom__total-description #{value}
-            span.orderRoom__total-price #{arrTotalPrice[index]}
-    div.orderRoom__sum-wrapper
-      span.orderRoom__sum-label Итого
-      span.orderRoom__sum 38 081₽
+          div.order-room__total-wrapper
+            span.order-room__total-description #{value}
+            span.order-room__total-price #{arrTotalPrice[index]}
+    div.order-room__sum-wrapper
+      span.order-room__sum-label Итого
+      span.order-room__sum 38 081₽
     +buttons('buy', 'забронировать')
 

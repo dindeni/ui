@@ -1,7 +1,54 @@
 .main-registration{
   background: url("../../img/image-back-registration.jpg") no-repeat;
+  background-size: 100%;
   height: 703px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.footerWidget_registration{
+  & .footerWidget__logo-wrapper{
+    margin: 110px 2.8% 116px 11.5%;
+  }
+  & .footer-list{
+    margin: 105px 2.8% 0 0;
+  }
+  & .footerWidget__subscribe-wrapper {
+    margin: 105px 0 0 0;
+  }
+  & .input__label-subscription .input__subscription {
+    margin: 20px 0 0 0;
+  }
+  & .copyright{
+    margin-top: 10px;
+  }
+  & .copyright__head{
+    margin: 0 0 0 11.5%;
+  }
+  & .social .social__list{
+    margin: 0 114px 0 0;
+  }
+}
+@media (max-width: 1100px){
+  .footerWidget_registration {
+    & .footerWidget__logo-wrapper, .footerWidget__subscribe-wrapper {
+      margin: 50px 2.8% 50px 11.5%;
+    }
+  }
+}
+@media (max-width: 750px) {
+  &.footerWidget .social .social__list {
+    margin: 0 10px 0 0;
+  }
+}
+@media (max-width: 550px){
+
+  .footerWidget_registration {
+    & .copyright{
+      flex-direction: column;
+    }
+    & .copyright__head {
+      margin: 0;
+    }
+  }
 }

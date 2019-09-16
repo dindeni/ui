@@ -1,0 +1,68 @@
+.form-elements, .cards{
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-elements__wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 10px 0 20px 50px;
+  width: 320px;
+  & .input, .form-elements__range-wrapper, .rooms,
+   .form-elements__checkbox-wrapper{
+    margin: 0 0 20px 10px;
+  }
+  & .input__label-dropdown{
+    width: 330px;
+  }
+  & .input__label-subscription{
+    width: 277px;
+  }
+  & .input__label-dropdown_for-filtering{
+    width: 276px;
+  }
+  & .form-elements__buttons-wrapper{
+    margin: 0 0 20px 0;
+    display: flex;
+    width: 100%;
+    & .button_for-rate{
+      margin-right: 10px;
+    }
+  }
+    & .rate{
+      margin-right: 20px;
+    }
+    & .rooms{
+      .input__label-dropdown{
+        width: 266px;
+      }
+      .input{
+        margin: 0;
+      }
+    }
+  &.form-elements__wrapper_review{
+    width: 100%;
+    & .features{
+      margin-right: 170px;
+    }
+  }
+}
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+}
+.cards__wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 10px 0 20px 50px;
+  width: 400px;
+  & .search-room{
+    margin-bottom: 40px;
+  }
+}
+.headers-footers{
+  & .nav-standart, .footer{
+    margin-bottom: 20px;
+  }
+} 

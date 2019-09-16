@@ -1,16 +1,17 @@
-include ../sumGuests/sumGuests
+include ../sumGuestsRooms/sumGuestsRooms
 include ../inputs/inputs
 include ../datapicker/datepicker
 
 mixin searchRoom
-  section.searchRoom
-    h2.searchRoom__head Найдём номера под ваши пожелания
-    div.searchRoom__check
-      div
-        span.searchRoom__label прибытие
-        span.searchRoom__label выезд
-      form
-        +datapicker('datepickerIn')
-        +datapicker('datepickerOut')
-        +sumGuests('guests', 'guests')
+  section.search-room
+    h2.search-room__head Найдём номера под ваши пожелания
+    div.search-room__check
+      div.search-room__label-wrapper
+        span.search-room__label прибытие
+        span.search-room__label выезд
+      form.search-room__form
+        +datapicker('input_in js-input_in', true)
+        label.search-room__label-for-input
+          +datapicker('input_out js-input_out', true)
+        +sumGuestsRooms('guests', 'guests')
         +buttons('buy', 'Подобрать номер')

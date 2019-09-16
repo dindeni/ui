@@ -1,38 +1,41 @@
 include ../rate/rate
 
-mixin cardRoom(arr, name, idInput, type, numberRoom, price, numberReview, numberRate)
-  div.cardRoom
-    div.cardRoom__wrapper
-      div.cardRoom__image-wrapper
+mixin cardRoom(arr, name, type, numberRoom, price, numberReview, numberRate)
+  div.card-room
+    div.card-room__wrapper
+      div.card-room__image-wrapper
         each value, index in arr
           if index > 0
-            img(src=`${value}` class=`cardRoom__image hide` alt='room image')
+            img(src=`${value}` class=`card-room__image card-room__image_hide` alt='room image')
           else
-            img(src=`${value}` class=`cardRoom__image` alt='room image')
-      form.cardRoom__form
+            img(src=`${value}` class=`card-room__image` alt='room image')
+      form.card-room__form
         each value, index in Array(4)
           if index === 0
-            input(type='radio' class='cardRoom__radio' name=`${name}` id=`${idInput}-${index}` checked=true)
-            label(for=id=`${idInput}-${index}` class='cardRoom__label')
+            label(class='card-room__label')
+              input(type='radio' class='card-room__radio' name=`${name}` checked=true)
           else
-            input(type='radio' class='cardRoom__radio' name=`${name}` id=`${idInput}-${index}`)
-            label(for=id=`${idInput}-${index}` class='cardRoom__label')
-      div.cardRoom__buttons-wrapper
-        button.cardRoom__button.cardRoom__button--prev
-        button.cardRoom__button.cardRoom__button--next
+            label(class='card-room__label')
+              input(type='radio' class='card-room__radio' name=`${name}`)
+            
+      div.card-room__buttons-wrapper
+        button.card-room__button.card-room__button_prev
+        button.card-room__button.card-room__button_next
     if type === 'luxe'
-      div.cardRoom__number-room-wrapper
-        span.cardRoom__number-mark №
-        span.cardRoom__number #{numberRoom}
-        span.cardRoom__type-room люкс
-        span.cardRoom__price #{price}&#8381;
-        span.cardRoom__periodicity в сутки
+      div.card-room__number-room-wrapper
+        span.card-room__number-mark №
+        span.card-room__number #{numberRoom}
+        span.card-room__type-room люкс
+      div.card-room__price-wrapper
+          span.card-room__price #{price}&#8381;
+          span.card-room__periodicity в сутки
     else if type === 'normal'
-      div.cardRoom__number-room-wrapper
-        span.cardRoom__number-mark №
-        span.cardRoom__number #{numberRoom}
-        span.cardRoom__price.cardRoom__price--normal #{price}&#8381;
-        span.cardRoom__periodicity в сутки
+      div.card-room__number-room-wrapper
+        span.card-room__number-mark №
+        span.card-room__number #{numberRoom}
+      div.card-room__price-wrapper
+          span.card-room__price.card-room__price_normal #{price}&#8381;
+          span.card-room__periodicity в сутки
     +rate(numberRate)
-    div.cardRoom__number-review #{numberReview}
-      span.cardRoom__number-review-word Отзывов
+    div.card-room__number-review #{numberReview}
+      span.card-room__number-review-word Отзывов

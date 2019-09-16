@@ -18,7 +18,7 @@
   & .pagination__link{
     color: $dark25;
   }
-  &.pagination__item--dots{
+  &.pagination__item_dots{
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border-radius: 22px;
     color: $dark50;
@@ -38,7 +38,7 @@
 .pagination__link{
   text-decoration: none;
 }
-.pagination__item--next{
+.pagination__item_next{
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   border-radius: 22px;
   & .pagination__link{
