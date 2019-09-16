@@ -12,5 +12,8 @@ https://dindeni.github.io/hotel/signIn.html
 https://dindeni.github.io/hotel/ui.html
 
 ## Разворачивание и запуск проекта:<br>
-   npm install<br>
-   npm run develop
+  npm install<br>
+  npm run develop
+
+## Создание production версии проекта:<br>
+  npm run build
