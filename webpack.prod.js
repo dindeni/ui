@@ -1,8 +1,6 @@
 const merge = require('webpack-merge');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const autoprefixer = require('autoprefixer');
-const webpack = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -19,38 +17,32 @@ const mappingHtmlTemplate = () => {
 };
 
 module.exports = merge(common, {
-  plugins:
-    mappingHtmlTemplate().concat([
-      new CleanWebpackPlugin(),
-      new MiniCssExtractPlugin({
-        filename: 'style.css',
-        publicPath: './',
-      }),
-      new webpack.LoaderOptionsPlugin({
-        options: {
-          postcss: [
-            autoprefixer(),
-          ],
-        },
-      }),
-      new CopyPlugin([
-        { from: 'src/fonts', to: 'fonts' },
-        { from: 'src/assets/favicons', to: 'favicons' },
-      ]),
+  plugins: mappingHtmlTemplate().concat([
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
+      publicPath: './',
+    }),
+    new CopyPlugin([
+      { from: 'src/favicons', to: 'favicons' },
     ]),
+  ]),
   module: {
     rules: [
       {
-        test: /\.pug$/,
-        use: ['pug-loader'],
-      },
-      {
-        test: /\.scss|css$/,
+        test: /\.(scss|css)$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'production',
+              reloadAll: true,
+            },
+          },
           'css-loader',
           'postcss-loader',
           'sass-loader',
+
         ],
       },
       {
@@ -67,7 +59,7 @@ module.exports = merge(common, {
   },
   output: {
     path: path.resolve(__dirname, './build'),
-    filename: 'js/bundle.js',
+    filename: './js/bundle.js',
   },
   mode: 'production',
 });
