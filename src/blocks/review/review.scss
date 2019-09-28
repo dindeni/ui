@@ -3,13 +3,7 @@
 
 .review{
   @include body;
-  & .button__wrapper{
-    margin-left: 6px;
-  }
   position: relative;
-  & .button__wrapper.button__wrapper--like{
-    margin-top: 2px;
-  }
 }
 .review__icon{
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.1);
@@ -29,6 +23,7 @@
 }
 .review__wrapper{
   display: flex;
+  margin: 2px 0 0 6px;
 }
 .review__description{
   width: 652px;
@@ -36,4 +31,12 @@
 }
 .room-description__review{
   width: 100%;
+}
+
+@media (max-width: 800px) {
+  .review__description{
+    font-size: 0.8rem;
+    width: 80%;
+  }
+
 }

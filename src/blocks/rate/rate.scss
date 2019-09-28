@@ -1,4 +1,10 @@
-.rate__img{
-  width: 24px;
-  height: 24px;
+.rate{
+  &__img{
+    width: 24px;
+    height: 24px;
+  }
+  &_for-card-room{
+    display: inline-block;
+    margin: 15px 0 0 20px;
+  }
 }

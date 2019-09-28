@@ -1,4 +1,4 @@
-include ../inputs/inputs
+include ../ui-input/ui-input
 include ../radio/radio
 include ../datapicker/datepicker
 include ../toggle/toggle
@@ -12,20 +12,20 @@ mixin registration
     h2.registration__head Регистрация аккаунта
     form.registration__form
       div.registration__name-wrapper
-        +input('text', 'Имя')
-        +input('text', 'Фамилия')
+        +ui-input('text', 'Имя')
+        +ui-input('text', 'Фамилия')
       div.registration__radio-wrapper
         +radio(arrRadioReg, arrRadioRegId)
       div.registration__date-head дата рождения
         +datapicker('js-input_date')
       div.registration__data-head данные для входа в сервис
-        +input('text', 'Email')
-        +input('password', 'Пароль')
+        +ui-input('text', 'Email')
+        +ui-input('password', 'Пароль')
         +toggle('Получать спецпредложения', 'registration-toggle')
-        +buttons('buy', 'перейти к оплате', 'registration-buy')
+        +buttons('buy', 'перейти к оплате', undefined, 'buttons_for-registration')
     div.registration__footer
       span.registration__footer-label Уже есть аккаунт на Toxin
-      +buttons('bordering-link', 'войти', 'registration-login', 'signIn.html')
+      +buttons('bordering-link', 'войти', 'registration-login', 'buttons_for-registration')
 
 
 

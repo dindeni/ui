@@ -1,0 +1,44 @@
+@import "../common/variables";
+@import "../mixins/hide";
+
+.sum-rooms{
+  font-weight: bold;
+  &__popup{
+    width: 266px;
+    border: 1px solid $dark50;
+    box-sizing: border-box;
+    box-shadow: 0 10px 20px $dark5;
+    border-radius: 0 0 4px 4px;
+    background: #FFFFFF;
+    position: absolute;
+    z-index: 100;
+    &_hide{
+      @include hide;
+    }
+  }
+  &__type-visitors{
+    margin: 12px 0 10px 15px;
+  }
+  &__container{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__button{
+    border: 1px solid $dark25;
+    box-sizing: border-box;
+    border-radius: 22px;
+    color: $dark50;
+    background: #FFFFFF;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 4px;
+  }
+  &__number-of-visitors{
+    color: #1F2041;
+    margin: 0 12px;
+  }
+  &__number-of-visitors-wrapper{
+    margin: 4px 6px 0 0;
+  }
+}
+

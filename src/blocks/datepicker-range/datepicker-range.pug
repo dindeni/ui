@@ -1,0 +1,6 @@
+include ../ui-input/ui-input
+
+mixin datepicker-range(defaultDate)
+  +ui-input('dropdown', defaultDate, 'ui-input__field_for-datepicker-range js-input__field_for-datepicker-range')
+  +ui-input('dropdown', defaultDate, 'ui-input__field_for-hide-datepicker js-input__field_for-hide-datepicker',
+    'ui-input_for-hide-datepicker')

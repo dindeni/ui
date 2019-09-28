@@ -1,5 +1,5 @@
 include ../buttons/buttons
-include ../inputs/inputs
+include ../ui-input/ui-input
 
 mixin sumGuestsRooms(type, className)
   -const visitors = ['взрослые', 'дети', 'младенцы']
@@ -9,7 +9,7 @@ mixin sumGuestsRooms(type, className)
 
   if type === 'guests'
     div(class=`${className}`) гости
-      +input('dropdown', 'Сколько гостей', 'input_for-guests')
+      +ui-input('dropdown', 'Сколько гостей', 'input_for-guests')
       div.guests__popup.hide
         div.guests__count-container
           each value, index in visitors
@@ -24,7 +24,7 @@ mixin sumGuestsRooms(type, className)
           +buttons('transparent', 'применить',undefined, 'button_apply')
   if type === 'rooms'
     div.rooms
-      +input('dropdown', '', 'input_for-rooms')
+      +ui-input('dropdown', '', 'input_for-rooms')
       div.rooms__popup.hide
         div.rooms__count-container
           each value, index in rooms

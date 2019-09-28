@@ -12,11 +12,11 @@
     box-shadow: 0 1px 0 rgba(31, 32, 65, 0.1);
     bottom: 0;
   }
-  & .button_for-rate{
+  & .buttons__for-rate{
     margin-top: 2px;
   }
   & .guests .input{
-    
+
   }
 }
 .room-detail__image-wrapper{
@@ -48,7 +48,7 @@
     margin: 0;
   }
   & .review{
-    margin: 18px 0 19px 0;
+    margin: 18px 0 17px 0;
 
   }
 }
@@ -112,12 +112,12 @@
 .room-description__cancel-paragraph{
   width: 344px;
   @include body;
-  margin: 23px 0 0 0;
+  margin: 20px 0 0 0;
 }
 .room-description__cancel-head{
   margin: 0 0 0 0;
 }
-@media (max-width: 1240px) {
+@media (max-width: 1300px) {
   .room-description__pie-chart-wrapper {
     margin: 0 0 0 5%;
   }
@@ -220,7 +220,7 @@
         width: 265px;
       }
 
-      & .button-full_for-filtering {
+      & .buttons__full_for-filtering {
         padding: 15px 80px;
       }
     }

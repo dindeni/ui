@@ -1,11 +1,11 @@
-include ../inputs/inputs
+include ../ui-input/ui-input
 include ../buttons/buttons
 
 mixin signIn
-  section.signIn
-    h1.signIn__head Войти
-    +input('text', 'Email', 'signIn-input')
-    +input('password', ' Пароль', 'signIn-password')
-    +buttons('buy', 'Войти')
-    span.signIn__label Нет аккаунта на Toxin?
-      +buttons('bordering-link', 'Создать', 'signIn-login', 'registration.html')
+  section.sign-in
+    h1.sign-in__head Войти
+    +ui-input('text', 'Email', 'signIn-input')
+    +ui-input('password', ' Пароль', 'signIn-password')
+    +buttons('buy', 'Войти', undefined, 'buttons_for-sign-in')
+    span.sign-in__label Нет аккаунта на Toxin?
+      +buttons('bordering-link', 'Создать', 'registration.html', 'buttons_for-sign-in')

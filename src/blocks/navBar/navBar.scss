@@ -8,17 +8,6 @@
   display: flex;
   box-shadow: 0 10px 20px $dark5;
   align-items: center;
-  & .button__wrapper{
-    height: 35px;
-    box-sizing: border-box;
-    margin: 17px 0 0 24px;
-  }
-  & .button-full{
-    height: 35px;
-    margin: 17px 0 0 25px;
-    padding: 10px 25px;
-
-  }
   & .nav-standart__buttons-wrapper{
     margin: 0 0 0 22px;
   }
@@ -71,18 +60,28 @@
       content: '';
       width: 15px;
       height: 15px;
-      background: url("../common/icon-expand.svg") no-repeat;
+      background: url("./icon-expand.svg") no-repeat;
       right: -4px;
       top: 2px;
+    }
+    &.nav-standart__link_expand-ru{
+      padding: 0 23px 0 0;
+      &::after{
+        right: 3px;
+      }
     }
   }
 }
 .nav-standart__item:not(:last-child){
   margin: 0 28px 0 0;
+  &.nav-standart__item_ru{
+    margin: 0 21px 0 0;
+  }
 }
 .nav-standart__button-mobile{
   display: none;
 }
+
 @media (max-width: 1430px) {
   .nav-standart__list{
     margin: 5px 0 0 13%;
@@ -96,17 +95,16 @@
     }
   }
 }
+
 @media (max-width: 1250px) {
   .nav-standart__list{
     margin: 5px 0 0 5%;
   }
 }
+
 @media (max-width: 1100px) {
   .nav-standart{
     justify-content: space-between;
-    & .button_full{
-      padding: 10px 16px;
-    }
     & .nav-standart__buttons-wrapper{
       margin-right: 1%;
     }
@@ -117,20 +115,11 @@
     padding: 5px 0 0 0;
   }
 }
+
 @media (max-width: 920px) {
   .nav-standart{
     position: relative;
     justify-content: space-between;
-    & .button__bordering{
-      padding: 10px 15px;
-    }
-    & .button-with-bordering-link{
-      font-size: 0.66rem;
-    }
-    & .button-full{
-      font-size: 0.66rem;
-      margin: 17px 65px 0 21px;
-    }
   }
   .nav-standart__list{
     display: none;
@@ -200,15 +189,32 @@
     }
   }
 }
+
+@media (max-width: 800px) {
+    .nav-standart__logo{
+      width: 90px;
+    }
+}
+
+@media (max-width: 500px) {
+    & .nav-standart{
+      flex-wrap: wrap;
+      justify-content: center;
+      & .button__wrapper{
+        margin: 10px 0 0 4px;
+      }
+    }
+    & .nav-standart__list{
+      width: 50%;
+    }
+}
+
 @media (max-width: 450px) {
   .nav-standart {
     padding-bottom: 20px;
     & .nav-standart__buttons-wrapper{
       margin: 5px 0 0 0;
     }
-  }
-  .nav-standart .button-full {
-    margin: 17px 0 0 10px;
   }
   .nav-standart__logo{
     margin: 0 20%;

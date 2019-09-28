@@ -1,0 +1,23 @@
+mixin ui-input(type, placeholder, modifierInput, modifierLabel)
+  if type === 'text'
+    div.ui-input
+      input(type='text' class=modifierInput ? `ui-input__field ui-input__field_text ${modifierInput}`: 'ui-input__field ui-input__field_text' placeholder=`${placeholder}`)
+  else if type === 'dropdown'
+    label(class=modifierLabel ? `ui-input ui-input_dropdown ${modifierLabel}`: 'ui-input ui-input_dropdown')
+      input(type='text' class= modifierInput ? `ui-input__field ui-input__field_dropdown ${modifierInput}`: 'ui-input__field ui-input__field_dropdown' placeholder=`${placeholder}` readonly)
+  else if type === 'masked'
+    div.ui-input
+      input(type='text' class='ui-input__field ui-input__field_masked' placeholder=`${placeholder}`)
+  else if type === 'date'
+    label(class=modifierLabel ? `ui-input ui-input_date ${modifierLabel}`: 'ui-input ui-input_date')
+      input(type='text' class= modifierInput ? `ui-input__field ui-input__field_date ${modifierInput}`: 'ui-input__field ui-input__field_date'  placeholder=`${placeholder}`)
+  else if type === 'filter'
+    label.ui-input.ui-input_label-filter
+      input(type='text' class=modifierInput ? `ui-input__field ui-input__field_filter ${modifierInput}`: 'ui-input__field ui-input__field_filter' placeholder=`${placeholder}`)
+      input(type='text' class='ui-input__field ui-input__field_hide')
+  else if type === 'subscription'
+    label.ui-input.ui-input_subscription
+      input(type='text' class=modifierInput ? `ui-input__field ui-input__field_subscription ${modifierInput}`: 'ui-input__field ui-input__field_subscription' placeholder=`${placeholder}`)
+  else if type === 'password'
+    div.ui-input
+      input(type='password' class=modifierInput ? `ui-input__field ui-input__field_text ${modifierInput}`: 'ui-input__field ui-input__field_text' placeholder=`${placeholder}`)

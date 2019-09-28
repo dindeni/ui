@@ -1,12 +1,13 @@
 include ../blocks/navBar/navBar
 include ../blocks/footerWidget/footerWidget
 include ../blocks/footer/footer
-include ../blocks/inputs/inputs
-include ../blocks/sumGuestsRooms/sumGuestsRooms
+include ../blocks/datepicker-range/datepicker-range
+include ../blocks/sum-guests/sum-guests
 include ../blocks/range/range
 include ../blocks/checkbox/checkbox
-include ../blocks/cardRoom/cardRoom
+include ../blocks/card-room/card-room
 include ../blocks/pagination/pagination
+include ../blocks/sum-rooms/sum-rooms
 
 -const arrIndexNavigation = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
 -classes: ['nav-standart__link', 'nav-standart__link nav-standart__link_expand',
@@ -81,15 +82,15 @@ html(lang="en")
     meta(name="theme-color" content="#ffffff")
     title hotel
     meta(name="viewport" content="width=device-width,initial-scale=1")
-  body.filter
-    header.filter.filter__index-header.index-header
-      +navBar('standart', arrIndexNavigation.items, arrIndexNavigation.classes, 'войти', 'зарегистрироваться')
-    main.filter.filter__main-filter.main-filter
+  body
+    header.main-filter__header
+      +navBar('standart', arrIndexNavigation.items, arrIndexNavigation.classes, 'войти', 'зарегистрироваться', undefined, 'nav-standart__item_ru')
+    main.main-filter
       section.main-filter__side-panel.side-panel
         div.side-panel__slogan даты пребывания в отеле
         form.side-panel__form
-          +input('filter', '19 авг - 23 авг')
-          +sumGuestsRooms('guests', 'guests')
+          +datepicker-range('19 авг - 23 авг')
+          +sum-guests('sum-guests_for-filter', 'ui-input__field_for-filter', 'ui-input_for-filter')
           div.side-panel__slogan.side-panel__slogan_range диапазон цены
           +range
           div.side-panel__range-reference Стоимость за сутки пребывания в номере
@@ -98,12 +99,12 @@ html(lang="en")
           div.side-panel__slogan.side-panel__slogan_checkbox-rich доступность
           +checkbox(checkboxArr.rich, 'rich')
           div.side-panel__slogan.side-panel__slogan_rooms удобства номера
-          +sumGuestsRooms('rooms')
+          +sum-rooms
           +checkbox(checkboxArr.expandable, 'checkboxExpandable', 'дополнительные удобства')
       section.main-filter__filtered-rooms.filtered-rooms
         h1.filtered-rooms__head Номера, которые мы для вас подобрали
         each value in rooms
-          +cardRoom(value.images, 'room-radio-name',
+          +card-room(value.images, 'room-radio-name',
               value.type, value.number,
               value.price, value.review, value.rate)
         +pagination(Array(15))

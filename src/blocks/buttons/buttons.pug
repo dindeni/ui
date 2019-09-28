@@ -1,20 +1,25 @@
-mixin buttons(type, content, link, className)
+mixin buttons(type, content, link, modifier)
   if type === 'full'
-    button.button-full #{content}
+    div(class=modifier ? `buttons ${modifier}`:'buttons')
+      button.buttons__full #{content}
   else if type === 'full-link'
-    a(href=`${link}`).button-full #{content}
+    div(class=modifier ? `buttons ${modifier}`:'buttons')
+      a(href=`${link}`).buttons__full #{content}
   else if type === 'transparent'
-    button.button-transparent(class=`${className}`) #{content}
+    div.buttons
+      button.buttons__transparent(class=modifier ? `buttons__transparent ${modifier}`: 'buttons__transparent') #{content}
   else if type === 'bordering'
-    div.button
-      button.button__bordering #{content}
+    div.buttons
+      button.buttons__bordering #{content}
   else if type === 'bordering-link'
-      a.button-with-bordering-link(href=`${link}`) #{content}
+    div(class=modifier ? `buttons ${modifier}`:'buttons')
+      a.buttons__with-bordering-link(href=`${link}`) #{content}
   else if type === 'buy'
-    button.button-full.button-full_for-filtering #{content}
+    div(class=modifier ? `buttons ${modifier}`:'buttons')
+      button.buttons__full.buttons__full_for-filtering #{content}
   else if type === 'like'
-    div.button.button_for-rate
-      button.button__bordering.button__bordering_for-rate #{content}
+    div.buttons.buttons_for-rate.buttons_for-rate_like
+      button.buttons__bordering.buttons__bordering_for-rate #{content}
   else if type === 'like-gray'
-    div.button.button_for-rate.button_gray
-      button.button__bordering.button__bordering_for-rate.button__bordering_gray #{content}
+    div.buttons.buttons_for-rate.buttons_gray
+      button.buttons__bordering.buttons__bordering_for-rate.buttons__bordering_gray #{content}

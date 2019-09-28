@@ -1,4 +1,4 @@
-include ../inputs/inputs
+include ../ui-input/ui-input
 include ../copyright/copyright
 
 mixin list(listHead, items, className)
@@ -20,8 +20,8 @@ mixin footerWidget(description, headNavigation, navigationItems, headAbout,about
     div.footer-widget__subscribe-wrapper
       h3.footer-widget__subscribe-head #{headSubscribe}
       div.footer-widget__subscribe-description #{subscribeDescription}
-      +input('subscription', placeholderEmail)
-    +copyright(copyrightText)
+      +ui-input('subscription', placeholderEmail, 'ui-input__field_for-footer-widget')
+    +copyright(copyrightText, 'copyright_footer-widget')
 
 
 

@@ -1,16 +1,16 @@
 include ../buttons/buttons
 
-mixin navBar(type, items, itemClasses, buttonLoginName, buttonRegName, user)
+mixin navBar(type, items, itemClasses, buttonLoginName, buttonRegName, user, itemModifier)
   if type === 'standart'
     nav.nav-standart
       img.nav-standart__logo(src=require('../blocks/common/icon-logo.svg') alt='logo')
       ul.nav-standart__list
         each item, index in items
-          li.nav-standart__item
+          li(class= itemModifier ? `nav-standart__item ${itemModifier}`: 'nav-standart__item')
             a(href='somePage.html' class=`${itemClasses[index]}`) #{item}
       div.nav-standart__buttons-wrapper
         +buttons('bordering-link', `${buttonLoginName}`, 'signIn.html')
-        +buttons('full-link', `${buttonRegName}`, 'registration.html')
+        +buttons('full-link', `${buttonRegName}`, 'registration.html', 'buttons_for-navigation')
         button.nav-standart__button-mobile
   else if type === 'loggedIn'
     nav.nav-standart.nav-standart_logged

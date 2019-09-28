@@ -11,10 +11,6 @@
     @include h3;
     color: $dark100;
   }
-  & .button-full_for-filtering{
-    margin: 22px 0 0 0;
-    padding: 15px 106px;
-  }
 }
 .order-room__header{
   display: flex;
@@ -58,7 +54,7 @@
       margin-right: 96px;
     }
   }
-  
+
 }
 .order-room__form{
   margin: 4px 0 0 0;

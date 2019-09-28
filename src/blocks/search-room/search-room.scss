@@ -1,0 +1,50 @@
+@import "../mixins/input";
+@import "../mixins/rectangle";
+
+.search-room{
+  @include rectangle;
+  & .input_in, .input_out{
+    width: 150px;
+  }
+  &.search-room_absolute{
+    position: absolute;
+    top: 70px;
+    left: 9.6%;
+  }
+}
+.search-room__head{
+  font: 1.7rem/29px Quickand-regular, sans-serif;
+  font-weight: bold;
+  width: 280px;
+  margin: 41px 0 0 0;
+}
+.search-room__label{
+  text-transform: uppercase;
+  font-size: 0.86rem;
+  font-weight: bold;
+  margin: 21px 20px 0 0;
+  width: 150px;
+  display: inline-block;
+}
+
+@media (max-width: 1100px) {
+  .search-room, .search-room.search-room_absolute{
+    width: 320px;
+    & .input__label-dropdown::after{
+      right: -20px;
+    }
+  }
+  .search-room__head{
+    font-size: 1.5rem;
+  }
+  .search-room__label{
+    width: 120px;
+  }
+}
+@media (max-width: 399px) {
+  .search-room.search-room_absolute{
+    left: 0;
+  }
+}
+
+

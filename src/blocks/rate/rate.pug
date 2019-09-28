@@ -1,6 +1,6 @@
-mixin rate(numberFillStars)
+mixin rate(numberFillStars, modifier)
 
-  div.rate
+  div(class=modifier ? `rate ${modifier}`: 'rate')
     each value,index in Array(5)
       if index <= numberFillStars - 1
         img.rate__img(src=require('../blocks/rate/icon-star.svg') alt='image star')

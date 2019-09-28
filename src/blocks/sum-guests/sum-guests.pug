@@ -1,0 +1,22 @@
+include ../buttons/buttons
+include ../ui-input/ui-input
+
+mixin sum-guests(modifier, modifierInput, modifierLabel)
+  -const visitors = ['взрослые', 'дети', 'младенцы']
+  -const visitorsId = ['adult', 'children', 'babies']
+
+    div.sum-guests(class=modifier ? `sum-guests ${modifier}`: 'sum-guests') гости
+      +ui-input('dropdown', 'Сколько гостей', modifierInput ? `ui-input__field_for-guests js-ui-input__field_for-guests ${modifierInput}`: 'ui-input__field_for-guests js-ui-input__field_for-guests',
+       modifierLabel ? `ui-input_for-guests ${modifierLabel}`: 'ui-input_for-guests')
+      div.sum-guests__popup.sum-guests__popup_hide
+        div.sum-guests__count-container
+          each value, index in visitors
+            div.sum-guests__container(class=`sum-guests__container_${visitorsId[index]}`)
+              span.sum-guests__type-visitors #{value}
+              div.sum-guests__number-of-visitors-wrapper
+                button(type='button' class='sum-guests__button sum-guests__button_minus') -
+                span.sum-guests__number-of-visitors 0
+                button(type='button' class='sum-guests__button sum-guests__button_plus') +
+        div.sum-guests__buttons-footer-container
+          +buttons('transparent', 'очистить',undefined, 'buttons__transparent_clear buttons__transparent_hide')
+          +buttons('transparent', 'применить',undefined, 'buttons__transparent_apply')

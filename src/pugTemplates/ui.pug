@@ -1,19 +1,19 @@
-include ../blocks/searchRoom/searchRoom
+include ../blocks/search-room/search-room
 include ../blocks/buttons/buttons
-include ../blocks/inputs/inputs
+include ../blocks/ui-input/ui-input
 include ../blocks/checkbox/checkbox
 include ../blocks/radio/radio
 include ../blocks/toggle/toggle
 include ../blocks/range/range
 include ../blocks/pagination/pagination
 include ../blocks/rate/rate
-include ../blocks/sumGuestsRooms/sumGuestsRooms
+include ../blocks/sum-guests-rooms/sum-guests-rooms
 include ../blocks/bulletList/bulletList
 include ../blocks/review/review
 include ../blocks/features/features
 include ../blocks/registration/registration
 include ../blocks/orderRoom/orderRoom
-include ../blocks/cardRoom/cardRoom
+include ../blocks/card-room/card-room
 include ../blocks/navBar/navBar
 include ../blocks/copyright/copyright
 include ../blocks/footer/footer
@@ -70,13 +70,13 @@ html(lang="en")
   body
     div.form-elements
       div.form-elements__wrapper
-        +input('text', 'email', 'input__email')
-        +input('dropdown', 'Сколько гостей', 'input-dropdown')
-        +input('masked', 'дд.мм.гггг')
-        +input('date', 'дд.мм.гггг')
-        +input('filter', '19 авг - 23 авг', 'input__label-dropdown_for-filtering')
+        +ui-input('text', 'email', 'input__email')
+        +ui-input('dropdown', 'Сколько гостей', 'input-dropdown')
+        +ui-input('masked', 'дд.мм.гггг')
+        +ui-input('date', 'дд.мм.гггг')
+        +ui-input('filter', '19 авг - 23 авг', 'input__label-dropdown_for-filtering')
         div.form-elements__subscription-wrapper
-          +input('subscription', 'email')
+          +ui-input('subscription', 'email')
       div.form-elements__wrapper
         +checkbox(arrCheckbox, 'checkbox')
         +radio(arrRadio, arrRadioId)
@@ -120,9 +120,9 @@ html(lang="en")
         +orderRoom(arrTotalDesc, arrTotalPrice)
         +signIn
       div.cards__wrapper
-        +cardRoom(arrPathImage1, 'room-radio-name-1', 'luxe', 888,
+        +card-room(arrPathImage1, 'room-radio-name-1', 'luxe', 888,
 					'9 900', 145, 5)
-        +cardRoom(arrPathImage2, 'room-radio-name-2', 'normal', 840,
+        +card-room(arrPathImage2, 'room-radio-name-2', 'normal', 840,
 					'9 900', 65, 4)
     div.headers-footers
       +navBar('standart', uiNavBarItems.items, uiNavBarItems.classes, 'login', 'register')

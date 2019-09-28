@@ -1,0 +1,16 @@
+include ../sum-guests/sum-guests
+include ../ui-input/ui-input
+include ../datapicker/datepicker
+
+mixin searchRoom(absolute)
+  section(class=absolute ? `search-room search-room_absolute`: 'search-room')
+    h2.search-room__head Найдём номера под ваши пожелания
+    div.search-room__check
+      div.search-room__label-wrapper
+        span.search-room__label прибытие
+        span.search-room__label выезд
+      form.search-room__form
+        +datapicker('ui-input__field_for-search-in js-ui-input__field_for-search-in', false, 'ui-input_for-search')
+        +datapicker('ui-input__field_for-search-out js-ui-input__field_for-search-out', false, 'ui-input_for-search')
+        +sum-guests
+        +buttons('buy', 'Подобрать номер', undefined, 'buttons_for-search')

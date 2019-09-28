@@ -1,4 +1,4 @@
-include ../inputs/inputs
+include ../ui-input/ui-input
 
-mixin datapicker(jsClass, dropdown)
-  +input(dropdown ? 'dropdown':'date', 'дд.мм.гггг', jsClass)
+mixin datapicker(modifierInput, dropdown, modifierLabel)
+  +ui-input(dropdown ? 'dropdown':'date', 'дд.мм.гггг', modifierInput, modifierLabel)

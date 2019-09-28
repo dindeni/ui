@@ -1,5 +1,5 @@
 include ../datapicker/datepicker
-include ../sumGuestsRooms/sumGuestsRooms
+include ../sum-guests-rooms/sum-guests-rooms
 include ../buttons/buttons
 
 mixin orderRoom(arrTotalDesc, arrTotalPrice)
@@ -32,5 +32,5 @@ mixin orderRoom(arrTotalDesc, arrTotalPrice)
     div.order-room__sum-wrapper
       span.order-room__sum-label Итого
       span.order-room__sum 38 081₽
-    +buttons('buy', 'забронировать')
+    +buttons('buy', 'забронировать', undefined, 'buttons_for-order')
 

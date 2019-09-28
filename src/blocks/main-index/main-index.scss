@@ -1,0 +1,35 @@
+@import "../mixins/text";
+.main-index{
+  height: 830px;
+  position: relative;
+  display: block;
+  .main-index__background{
+    width: 100%;
+    height: auto;
+    &.main-index__gallery {
+      animation: move 4s 1;
+      @keyframes move {
+        0% {
+          opacity: 0;
+          animation-timing-function: ease-in;
+        }
+        50% {
+          opacity: .5;
+          animation-timing-function: ease-in;
+        }
+        100% {
+          opacity: 1;
+          animation-timing-function: ease-in;
+        }
+      }
+    }
+  }
+}
+.main-index__slogan{
+  position: absolute;
+  bottom: 20px;
+  @include body;
+  width: 300px;
+  right: 9.3%;
+  text-align: end;
+}

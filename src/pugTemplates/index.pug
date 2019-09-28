@@ -1,11 +1,11 @@
 include ../blocks/navBar/navBar
-include ../blocks/searchRoom/searchRoom
+include ../blocks/search-room/search-room
 include ../blocks/footerWidget/footerWidget
 include ../blocks/footer/footer
 
 -const arrIndexNavigation = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
--classes: ['nav-standart__link', 'nav-standart__link nav-standart__link_expand',
--'nav-standart__link', 'nav-standart__link', 'nav-standart__link nav-standart__link_expand']}
+-classes: ['nav-standart__link', 'nav-standart__link nav-standart__link_expand nav-standart__link_expand-ru',
+-'nav-standart__link', 'nav-standart__link', 'nav-standart__link nav-standart__link_expand nav-standart__link_expand-ru']}
 -const footerdata = {description: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
 -headNavigation: 'навигация', navigationItems: ['О нас', 'Новости', 'Служба поддержки',
 -'Услуги'], headAbout: 'о нас', aboutItems: ['О сервисе', 'Наша команда', 'Вакансии',
@@ -28,12 +28,12 @@ html(lang="ru")
     title hotel
     meta(name="viewport" content="width=device-width,initial-scale=1")
   body
-    header.index-header
-      +navBar('standart', arrIndexNavigation.items, arrIndexNavigation.classes, 'войти', 'зарегистрироваться')
-    main.main
-      img(class='main__background' src=require('../img/image-back-1.jpg'))
-      span.main__slogan Лучшие номера для вашей работы, отдыха и просто вдохновения
-      +searchRoom
+    header
+      +navBar('standart', arrIndexNavigation.items, arrIndexNavigation.classes, 'войти', 'зарегистрироваться', undefined, 'nav-standart__item_ru')
+    main.main-index
+      img(class='main-index__background' src=require('../img/image-back-1.jpg'))
+      span.main-index__slogan Лучшие номера для вашей работы, отдыха и просто вдохновения
+      +searchRoom(true)
     +footerWidget(footerdata.description, footerdata.headNavigation, footerdata.navigationItems,
     footerdata.headAbout, footerdata.aboutItems, footerdata.headSupport,
       footerdata.supportItems, footerdata.headSubscribe, footerdata.subscribeDescription,

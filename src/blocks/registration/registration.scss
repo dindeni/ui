@@ -22,25 +22,6 @@
   & .toggle__label{
     text-transform: none;
   }
-  & .button-full_for-filtering{
-    margin: 23px 0 0 0;
-    padding: 15px 100px;
-    &::after{
-      right: -12px;
-    }
-  }
-  & .button__wrapper{
-    margin: 0 0 0 33px;
-  }
-  & .button-with-bordering-link{
-    margin: 3px 0 0 40px;
-    width: 92px;
-    padding: 11px 0;
-    &::before{
-      width: 99px;
-      height: 44px;
-    }
-  }
 }
 .registration__head{
   @include h1;
@@ -100,21 +81,8 @@
     .input.input__text {
       width: 264px;
     }
-
-    & .button-full{
-      padding: 15px 62px;
-    }
-    & .button--with-bordering-link{
-      margin: 0 0 0 10px;
-    }
-    & .button__wrapper{
-      margin: 0 0 0 15px;
-    }
     & .registration__footer-label{
       font-size: 12px;
-    }
-    & .button-with-bordering-link {
-      margin: 3px 0 0 10px
     }
   }
 }

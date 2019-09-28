@@ -1,6 +1,6 @@
 include ../rate/rate
 
-mixin cardRoom(arr, name, type, numberRoom, price, numberReview, numberRate)
+mixin card-room(arr, name, type, numberRoom, price, numberReview, numberRate)
   div.card-room
     div.card-room__wrapper
       div.card-room__image-wrapper
@@ -17,7 +17,7 @@ mixin cardRoom(arr, name, type, numberRoom, price, numberReview, numberRate)
           else
             label(class='card-room__label')
               input(type='radio' class='card-room__radio' name=`${name}`)
-            
+
       div.card-room__buttons-wrapper
         button.card-room__button.card-room__button_prev
         button.card-room__button.card-room__button_next
@@ -36,6 +36,6 @@ mixin cardRoom(arr, name, type, numberRoom, price, numberReview, numberRate)
       div.card-room__price-wrapper
           span.card-room__price.card-room__price_normal #{price}&#8381;
           span.card-room__periodicity в сутки
-    +rate(numberRate)
+    +rate(numberRate, 'rate_for-card-room')
     div.card-room__number-review #{numberReview}
       span.card-room__number-review-word Отзывов
