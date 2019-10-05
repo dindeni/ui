@@ -4,20 +4,20 @@
 
 .radio{
   &_for-registration{
-    & .radio__label{
+    & .radio__mark{
       &::before{
         top: -4px;
       }
     }
-    & .radio__input:checked + .radio__label::after{
+    & .radio__input:checked + .radio__mark::after{
       top: 0;
     }
   }
 }
-.radio__input{
+.radio__field{
   @include hide;
 }
-.radio__label{
+.radio__mark{
   position: relative;
   @include body;
   color: rgba(31, 32, 65, 0.5);
@@ -35,7 +35,7 @@
     top: -1px;
   }
 }
-.radio__input:checked + .radio__label{
+.radio__field:checked + .radio__mark{
   color: rgba(31, 32, 65, 0.75);
   &::after{
     position: absolute;

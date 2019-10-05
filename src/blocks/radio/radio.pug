@@ -1,5 +1,5 @@
 mixin radio(arr, arrId, modifier)
   div(class=modifier ? `radio ${modifier}`: 'radio')
     each value, index in arr
-      input.radio__input(type='radio' name='radio' id=`${arrId[index]}`)
-      label.radio__label(for=`${arrId[index]}`) #{value}
+      input.radio__field(type='radio' name='radio' id=`${arrId[index]}`)
+      label.radio__mark(for=`${arrId[index]}`) #{value}
