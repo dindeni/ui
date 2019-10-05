@@ -1,2 +1,2 @@
-const req = require.context('../blocks', true, /\.(scss|js)$/);
+const req = require.context('../', true, /\.(scss|js)$/);
 req.keys().forEach(req);

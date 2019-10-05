@@ -1,0 +1,145 @@
+@import "../mixins/rectangle";
+@import "../mixins/text";
+@import "../variables/variables";
+
+.order-room{
+  @include rectangle;
+  height: 511px;
+  padding-left: 27px;
+  margin-bottom: 10px;
+}
+.order-room__header{
+  display: flex;
+  margin: 46px 0 0 5px;
+}
+.order-room__number{
+  @include h2;
+  font-size: 1.71rem;
+  margin: 0 10px 0 3px;
+}
+.order-room__number-mark{
+  @include h2;
+  font-size: 1rem;
+}
+.order-room__type-room{
+  @include body;
+  color: $purple;
+  font-weight: bold;
+  margin: 0 114px 0 0;
+}
+.order-room__price-wrapper{
+  @include body;
+  color: $dark50;
+  margin: 8px 0 0 0;
+}
+.order-room__price{
+  @include body;
+  color: $dark50;
+  font-weight: bold;
+}
+.order-room__periodicity{
+  @include body;
+  font-size: 0.86rem;
+  color: $dark50;
+  margin: 2px 0 0 6px;
+  display: inline-block;
+}
+.order-room__label-wrapper {
+  margin: 18px 0 0 3px;
+  & .order-room__label{
+    @include h3;
+    color: $dark100;
+    &:first-child{
+      margin-right: 96px;
+    }
+  }
+}
+.order-room__form{
+  margin: 4px 0 0 0;
+}
+.order-room__total{
+  @include body;
+  line-height: 18px;
+  margin: 23px 0 0 5px;
+}
+.order-room__total-wrapper{
+  display: flex;
+  justify-content: space-between;
+  width: 91%;
+  margin: 0 0 16px 0;
+  position: relative;
+}
+.order-room__total-description{
+  width: 220px;
+}
+.order-room__total-tax{
+  background: none;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 77px;
+  top: -4px;
+  padding: 0;
+}
+.order-room__sum-wrapper{
+  @include h2;
+  display: flex;
+  justify-content: space-between;
+  margin: 35px 0 0 5px;
+  position: relative;
+  &::after{
+    position: absolute;
+    content: '';
+    width: 182px;
+    height: 1px;
+    border: 1px solid $dark25;
+    box-sizing: border-box;
+    bottom: 2px;
+    left: 65px;
+  }
+}
+.order-room__sum{
+  margin-right: 26px;
+}
+
+@media (max-width: 1100px) {
+  .order-room{
+    margin: 0 auto 90px auto;
+  }
+}
+
+@media (max-width: 450px) {
+  .order-room {
+    width: 320px;
+    margin: 0 auto 10px auto;
+    padding-left: 15px;
+    &__number {
+      font-size: 1.29rem;
+    }
+    &__type-room {
+      font-size: 0.86rem;
+      margin: 0 70px 0 0;
+    }
+    &_price {
+      font-size: 0.93rem;
+    }
+    &__label-wrapper &__label:first-child{
+      margin-right: 66px;
+    }
+    &__total-description {
+      font-size: 0.93rem;
+      width: 200px;
+    }
+    &__total-tax {
+      right: 40px;
+    }
+    &__sum-wrapper{
+      font-size: 1.29rem;
+      &::after{
+        width: 125px;}
+    }
+  }
+}

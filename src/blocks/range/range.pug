@@ -1,3 +1,7 @@
-mixin range
+mixin range(modifier)
+
+  span(class=modifier ? `range ${modifier}`: 'range')
+
     div.range__label.js-range__label 1 000&#8381; - 50 000&#8381;
+
     div.js-slider

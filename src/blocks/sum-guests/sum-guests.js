@@ -1,4 +1,4 @@
-const checkNumberVisitors = (number, buttonMinus) => {
+const controlButtonMinus = (number, buttonMinus) => {
   number.forEach((value, index) => {
     const buttonMinusElement = buttonMinus;
     if (+value.textContent === 0) {
@@ -7,12 +7,14 @@ const checkNumberVisitors = (number, buttonMinus) => {
   });
 };
 
+export default controlButtonMinus;
+
 const countGuests = (classGuests) => {
   if (document.querySelector(classGuests)) {
     const guests = document.querySelector(classGuests);
     const buttonMinus = guests.querySelectorAll('.sum-guests__button_minus');
     const numberVisitors = guests.querySelectorAll('.sum-guests__number-of-visitors');
-    const inputGuests = guests.querySelector('.ui-input__field_for-guests');
+    const inputGuests = guests.querySelector('.form-element__field_for-guests');
     const guestsPopup = guests.querySelector('.sum-guests__popup');
     const containerAdult = guests.querySelector('.sum-guests__container_adult');
     const containerChildren = guests.querySelector('.sum-guests__container_children');
@@ -108,12 +110,10 @@ const countGuests = (classGuests) => {
       sumGuests(evt);
       clearInput(evt);
       applyInputValue(evt);
-      checkNumberVisitors(numberVisitors, buttonMinus);
+      controlButtonMinus(numberVisitors, buttonMinus);
     };
     guests.addEventListener('click', handlerGuestsClick);
   }
 };
 
 countGuests('.sum-guests');
-
-export { checkNumberVisitors, countGuests };

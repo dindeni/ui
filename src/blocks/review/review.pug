@@ -1,7 +1,7 @@
 include ../buttons/buttons
 
-mixin review(name, date, text, pathIcon, buttonType, numberLikes)
-  section.review
+mixin review(name, date, text, pathIcon, buttonType, numberLikes, modifier)
+  section(class=modifier ? `review ${modifier}`: 'review')
     img.review__icon(src=pathIcon alt='фото аватар')
     h3.review__name #{name}
     span.review__date #{date}

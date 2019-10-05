@@ -1,11 +1,13 @@
 @import "../mixins/input";
 @import "../mixins/hide";
-@import "../common/variables";
+@import "../variables/variables";
 @import "../mixins/text";
 
 .sum-guests{
   margin: 22px 0 0 0;
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
   & .sum-guests__input{
     width: 320px;
   }
@@ -15,12 +17,16 @@
   & .sum-guests__label::after{
     top: 4px;
   }
+  &_for-order{
+    margin: 20px 0 0 3px;
+  }
 }
 .sum-guests__popup_hide{
   @include hide;
 }
 .sum-guests__popup{
   width: 320px;
+  margin-top: 61px;
   border: 1px solid $dark50;
   box-sizing: border-box;
   box-shadow: 0 10px 20px $dark5;

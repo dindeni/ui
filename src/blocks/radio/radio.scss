@@ -1,7 +1,19 @@
 @import "../mixins/hide";
-@import "../common/variables";
+@import "../variables/variables";
 @import "../mixins/text";
 
+.radio{
+  &_for-registration{
+    & .radio__label{
+      &::before{
+        top: -4px;
+      }
+    }
+    & .radio__input:checked + .radio__label::after{
+      top: 0;
+    }
+  }
+}
 .radio__input{
   @include hide;
 }

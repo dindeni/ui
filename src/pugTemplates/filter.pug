@@ -1,17 +1,11 @@
-include ../blocks/navBar/navBar
-include ../blocks/footerWidget/footerWidget
+include ../blocks/navigation/navigation
+include ../blocks/footer-widget/footer-widget
 include ../blocks/footer/footer
-include ../blocks/datepicker-range/datepicker-range
-include ../blocks/sum-guests/sum-guests
-include ../blocks/range/range
-include ../blocks/checkbox/checkbox
-include ../blocks/card-room/card-room
-include ../blocks/pagination/pagination
-include ../blocks/sum-rooms/sum-rooms
+include ../blocks/side-panel/side-panel
 
 -const arrIndexNavigation = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
--classes: ['nav-standart__link', 'nav-standart__link nav-standart__link_expand',
--'nav-standart__link', 'nav-standart__link', 'nav-standart__link nav-standart__link_expand']}
+-classes: ['navigation__link', 'navigation__link navigation__link_expand navigation__link_expand-ru',
+-'navigation__link', 'navigation__link', 'navigation__link navigation__link_expand navigation__link_expand-ru']}
 
 -const footerdata = {description: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
 -headNavigation: 'навигация', navigationItems: ['О нас', 'Новости', 'Служба поддержки',
@@ -20,13 +14,6 @@ include ../blocks/sum-rooms/sum-rooms
 - 'Сообщества', 'Связь с нами'], headSubscribe: 'Подписка', subscribeDescription:
 -'Получайте специальные предложения и новости сервиса', placeholderEmail: 'Email',
 -copyrightText: 'Copyright © 2018 Toxin отель. Все права зачищены.'}
-
--const checkboxArr = {standart: ['Можно курить', 'Можно с питомцами',
--'Можно пригласить гостей (до 10 человек)'], rich: [{label: 'Широкий коридор',
--description: 'Ширина коридоров в номере не менее 91 см.'},
--{label: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист  и проводит до номера.'}],
--expandable: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка',
--'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь']}
 
 -const arrPathImage = [require('../img/image-room-888.jpg'), require('../img/image-room-982.jpg'),
 -require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')]
@@ -71,6 +58,7 @@ include ../blocks/sum-rooms/sum-rooms
 
 doctype html
 html(lang="en")
+
   head
     meta(charset="utf-8")
     link(rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png")
@@ -82,33 +70,25 @@ html(lang="en")
     meta(name="theme-color" content="#ffffff")
     title hotel
     meta(name="viewport" content="width=device-width,initial-scale=1")
+
   body
+
     header.main-filter__header
-      +navBar('standart', arrIndexNavigation.items, arrIndexNavigation.classes, 'войти', 'зарегистрироваться', undefined, 'nav-standart__item_ru')
+      +navigation('standart', arrIndexNavigation.items, arrIndexNavigation.classes, 'войти', 'зарегистрироваться', undefined, 'navigation__item_ru')
+
     main.main-filter
-      section.main-filter__side-panel.side-panel
-        div.side-panel__slogan даты пребывания в отеле
-        form.side-panel__form
-          +datepicker-range('19 авг - 23 авг')
-          +sum-guests('sum-guests_for-filter', 'ui-input__field_for-filter', 'ui-input_for-filter')
-          div.side-panel__slogan.side-panel__slogan_range диапазон цены
-          +range
-          div.side-panel__range-reference Стоимость за сутки пребывания в номере
-          div.side-panel__slogan.side-panel__slogan_checkbox Checkbox Buttons
-          +checkbox(checkboxArr.standart, 'checkbox')
-          div.side-panel__slogan.side-panel__slogan_checkbox-rich доступность
-          +checkbox(checkboxArr.rich, 'rich')
-          div.side-panel__slogan.side-panel__slogan_rooms удобства номера
-          +sum-rooms
-          +checkbox(checkboxArr.expandable, 'checkboxExpandable', 'дополнительные удобства')
-      section.main-filter__filtered-rooms.filtered-rooms
-        h1.filtered-rooms__head Номера, которые мы для вас подобрали
+
+      +side-panel
+
+      section.main-filter__rooms
+        h1.main-filter__rooms-head Номера, которые мы для вас подобрали
         each value in rooms
           +card-room(value.images, 'room-radio-name',
               value.type, value.number,
-              value.price, value.review, value.rate)
-        +pagination(Array(15))
-    +footerWidget(footerdata.description, footerdata.headNavigation, footerdata.navigationItems,
+              value.price, value.review, value.rate, 'card-room_for-filter')
+        +pagination(Array(15), 'pagination_for-filter')
+
+    +footer-widget(footerdata.description, footerdata.headNavigation, footerdata.navigationItems,
         footerdata.headAbout, footerdata.aboutItems, footerdata.headSupport,
         footerdata.supportItems, footerdata.headSubscribe, footerdata.subscribeDescription,
         footerdata.placeholderEmail, footerdata.copyrightText)

@@ -1,5 +1,5 @@
-mixin pagination(arr)
-  div.pagination
+mixin pagination(arr, modifier)
+  div(class=modifier ? `pagination ${modifier}`: 'pagination')
     ul.pagination__list
       each value, index in arr
         if index <= 2

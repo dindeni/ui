@@ -1,0 +1,28 @@
+@import "../mixins/text";
+@import "../variables/variables";
+
+.bullet-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  @include body;
+  &_for-room-description{
+    margin: 23px 0 0 3px;
+    width: 260px;
+  }
+}
+.bullet-list__item{
+  padding-left: 20px;
+  position: relative;
+  margin: 0 0 10px 0;
+  &::before{
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: $dark25;
+    border-radius: 50%;
+    left: 0;
+    top: 5px;
+  }
+}

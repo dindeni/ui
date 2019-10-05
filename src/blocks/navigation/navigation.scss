@@ -1,0 +1,222 @@
+@import "../mixins/text";
+@import "../variables/variables";
+@import "../mixins/hide";
+
+.navigation{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  box-shadow: 0 10px 20px $dark5;
+  align-items: center;
+  & .navigation__buttons-wrapper{
+    margin: 0 0 0 22px;
+  }
+}
+.navigation_logged{
+  & .navigation__list{
+    margin: 5px 0 0 24.2%;
+  }
+  & .navigation__user-Name{
+    @include body;
+    margin: 26px 0 0 4%;
+    font-style: normal;
+    position: relative;
+    &::before{
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 30px;
+      background: rgba(31, 32, 65, 0.1);
+      left: -30px;
+      top: -5px;
+    }
+  }
+}
+.navigation__logo{
+  margin: 0 0 0 9.8%;
+  height: 40px;
+}
+.navigation__list{
+  @include body;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 5px 0 0 19.8%;
+}
+.navigation__link{
+  text-decoration: none;
+  color: $dark50;
+  line-height: 17px;
+  &.navigation__link_home{
+    font-weight: bold;
+    color: $dark75;
+  }
+  &.navigation__link_expand{
+    padding:  0 15px 0 0;
+    position: relative;
+    &::after{
+      position: absolute;
+      content: '';
+      width: 15px;
+      height: 15px;
+      background: url("./icon-expand.svg") no-repeat;
+      right: -4px;
+      top: 2px;
+    }
+    &.navigation__link_expand-ru{
+      padding: 0 23px 0 0;
+      &::after{
+        right: 3px;
+      }
+    }
+  }
+}
+.navigation__item:not(:last-child){
+  margin: 0 28px 0 0;
+  &.navigation__item_ru{
+    margin: 0 21px 0 0;
+  }
+}
+.navigation__button-mobile{
+  display: none;
+}
+
+@media (max-width: 1430px) {
+  .navigation__list{
+    margin: 5px 0 0 13%;
+  }
+  .navigation_logged{
+    .navigation__list{
+      margin: 5px 0 0 6.2%;
+    }
+    & .navigation__user-name{
+      margin: 26px 0 0 10%;
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  .navigation__list{
+    margin: 5px 0 0 5%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .navigation{
+    justify-content: space-between;
+    & .navigation__buttons-wrapper{
+      margin-right: 1%;
+    }
+  }
+  .navigation__logo {
+    margin: 0 0 0 2%;
+    width: 70px;
+    padding: 5px 0 0 0;
+  }
+}
+
+@media (max-width: 920px) {
+  .navigation{
+    position: relative;
+    justify-content: space-between;
+  }
+  .navigation__list{
+    display: none;
+    z-index: 10;
+  }
+  .navigation__item{
+    padding: 4px 5px;
+  }
+  .navigation__buttons-wrapper{
+    margin: 0 5% 0 0;
+  }
+  .navigation__button-mobile{
+    display: inline-block;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    box-shadow: 0 2px $purple;
+    border: none;
+    background: none;
+    margin: 0 10px 0 15px;
+    vertical-align: top;
+    position: absolute;
+    z-index: 100;
+    right: 5px;
+    top: 20px;
+    &::before{
+      position: absolute;
+      content: '';
+      width: 30px;
+      height: 2px;
+      background: $purple;
+      left: 0;
+      top: 15px;
+    }
+    &::after{
+      position: absolute;
+      content: '';
+      width: 30px;
+      height: 2px;
+      background: $purple;
+      left: 0;
+      top: 5px;
+    }
+  }
+  .navigation__list{
+    position: absolute;
+    width: 40%;
+    right: 0;
+    background: $purple;
+    border-radius: 4px;
+    margin: 50px 0 0 10%;
+  }
+  .navigation__button-mobile_open{
+    &.navigation__button-mobile::before{
+      background: $dark50;
+      transform: rotate(45deg);
+    }
+    &.navigation__button-mobile::after{
+      background: $dark50;
+      transform: rotate(-45deg);
+      top: 15px;
+    }
+  }
+  .navigation_logged{
+    & .navigation__user-name{
+      margin: 26px 0 0 15%;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+    .navigation__logo{
+      width: 90px;
+    }
+}
+
+@media (max-width: 500px) {
+    & .navigation{
+      flex-wrap: wrap;
+      justify-content: center;
+      & .button__wrapper{
+        margin: 10px 0 0 4px;
+      }
+    }
+    & .navigation__list{
+      width: 50%;
+    }
+}
+
+@media (max-width: 450px) {
+  .navigation {
+    padding-bottom: 20px;
+    & .navigation__buttons-wrapper{
+      margin: 5px 0 0 0;
+    }
+  }
+  .navigation__logo{
+    margin: 0 20%;
+  }
+}

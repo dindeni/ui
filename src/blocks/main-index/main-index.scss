@@ -1,6 +1,6 @@
 @import "../mixins/text";
 .main-index{
-  height: 830px;
+  height: max-content;
   position: relative;
   display: block;
   .main-index__background{

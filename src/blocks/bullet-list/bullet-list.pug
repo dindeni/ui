@@ -1,0 +1,4 @@
+mixin bullet-list(arr, modifier)
+  ul(class=modifier ? `bullet-list ${modifier}`: 'bullet-list')
+    each value in arr
+      li.bullet-list__item #{value}

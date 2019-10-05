@@ -1,28 +1,27 @@
-include ../ui-input/ui-input
+include ../form-element/form-element
 include ../radio/radio
-include ../datapicker/datepicker
 include ../toggle/toggle
 include ../buttons/buttons
 
 -const arrRadioReg = ['Мужчина', 'Женщина']
 -const arrRadioRegId = ['man', 'woman']
 
-mixin registration
-  section.registration
+mixin registration(modifier)
+  section(class=modifier ? `registration ${modifier}`: 'registration')
     h2.registration__head Регистрация аккаунта
     form.registration__form
       div.registration__name-wrapper
-        +ui-input('text', 'Имя')
-        +ui-input('text', 'Фамилия')
+        +form-element('text', 'Имя', 'form-element__field_for-registration')
+        +form-element('text', 'Фамилия', 'form-element__field_for-registration')
       div.registration__radio-wrapper
-        +radio(arrRadioReg, arrRadioRegId)
+        +radio(arrRadioReg, arrRadioRegId, 'radio_for-registration')
       div.registration__date-head дата рождения
-        +datapicker('js-input_date')
+      +form-element('date', 'дд.мм.гггг','form-element__field_for-registration js-form-element__field_for-registration', 'form-element_for-registration')
       div.registration__data-head данные для входа в сервис
-        +ui-input('text', 'Email')
-        +ui-input('password', 'Пароль')
-        +toggle('Получать спецпредложения', 'registration-toggle')
-        +buttons('buy', 'перейти к оплате', undefined, 'buttons_for-registration')
+      +form-element('text', 'Email', 'form-element__field_for-registration')
+      +form-element('password', 'Пароль', 'form-element__field_for-registration form-element__field_for-password')
+      +toggle('Получать спецпредложения', 'registration-toggle', 'toggle_for-registration')
+      +buttons('buy', 'перейти к оплате', undefined, 'buttons_for-registration')
     div.registration__footer
       span.registration__footer-label Уже есть аккаунт на Toxin
       +buttons('bordering-link', 'войти', 'registration-login', 'buttons_for-registration')

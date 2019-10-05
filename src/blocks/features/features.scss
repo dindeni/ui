@@ -2,6 +2,16 @@
 
 .features{
   @include body;
+  &_for-room-description{
+    & .features__slogan{
+      &::before{
+        left: 7px;
+      }
+    }
+    & .features__wrapper:last-child{
+      margin: 0;
+    }
+  }
 }
 .features__slogan{
   font-weight: bold;

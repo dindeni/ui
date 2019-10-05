@@ -21,5 +21,5 @@ mixin buttons(type, content, link, modifier)
     div.buttons.buttons_for-rate.buttons_for-rate_like
       button.buttons__bordering.buttons__bordering_for-rate #{content}
   else if type === 'like-gray'
-    div.buttons.buttons_for-rate.buttons_gray
+    div(class=modifier ? `buttons buttons_for-rate buttons_gray ${modifier}`: 'buttons buttons_for-rate buttons_gray')
       button.buttons__bordering.buttons__bordering_for-rate.buttons__bordering_gray #{content}

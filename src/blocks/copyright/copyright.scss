@@ -1,13 +1,16 @@
 @import "../mixins/text";
-@import "../common/variables";
+@import "../variables/variables";
 
 .copyright{
   height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  & .social__list{
-    margin: 0 164px 0 0;
+  &_for-registration#{&}_footer-widget#{&} {
+      margin-top: 10px;
+    /*& .copyright__head{
+      margin: 0 0 0 11.5%;
+    }*/
   }
 }
 .copyright_footer-widget{
@@ -27,9 +30,9 @@
   }
   & .copyright__head{
     margin: 0 0 0 9.6%;
-  }
-  & .social__list {
-    margin: 0 140px 0 0;
+    &.copyright_for-registration{
+      margin: 0 0 0 11.5%;
+    }
   }
 }
 .copyright__head{
@@ -37,24 +40,14 @@
   font-style: normal;
   margin: 0 0 0 8%;
 }
-@media (max-width: 800px) {
-  .copyright{
-    & .social__list{
-      margin: 0 82px 0 0;
-    }
-  }
-}
 
 @media (max-width: 620px) {
   .copyright{
     flex-wrap: wrap;
     justify-content: center;
-    & .social__list{
-      margin: 0 41px 0 0;
-    }
   }
-  .copyright__head{
-    font-size: 12px;
+  .copyright__head, .copyright_for-registration .copyright__head{
+    font-size: 0.86rem;
     width: 320px;
     margin: 0;
   }

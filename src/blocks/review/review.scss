@@ -1,9 +1,12 @@
 @import "../mixins/text";
-@import "../common/variables";
+@import "../variables/variables";
 
 .review{
   @include body;
   position: relative;
+  &_for-room-description{
+    margin: 18px 0 17px 0;
+  }
 }
 .review__icon{
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.1);
@@ -26,11 +29,8 @@
   margin: 2px 0 0 6px;
 }
 .review__description{
-  width: 652px;
-  margin: 2px 0 0 14px;
-}
-.room-description__review{
-  width: 100%;
+  max-width: calc(100% - 125px);
+  margin: 1px 0 0 14px;
 }
 
 @media (max-width: 800px) {
@@ -38,5 +38,4 @@
     font-size: 0.8rem;
     width: 80%;
   }
-
 }

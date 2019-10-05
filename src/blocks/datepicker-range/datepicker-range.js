@@ -1,8 +1,8 @@
 require('jquery-ui/ui/widgets/datepicker.js');
 
 
-const $filterElement = $('.ui-input__field_for-datepicker-range');
-const $filterElementHide = $('.ui-input__field_for-hide-datepicker');
+const $filterElement = $('.form-element__field_for-datepicker-range');
+const $filterElementHide = $('.form-element__field_for-hide-datepicker');
 
 const clearInput = () => {
   $filterElement.val('');
@@ -26,14 +26,15 @@ $filterElement.datepicker({
   currentText: 'применить',
   beforeShow: (text, instance) => {
     setTimeout(() => {
+      instance.dpDiv.addClass('ui-datepicker_range');
       instance.dpDiv.css({
         top: $filterElement.offset().top + 44,
         left: $filterElement.offset().left,
         width: $filterElement.outerWidth(),
       });
 
-      const $clearButton = $('.ui-datepicker-close');
-      const $applyButton = $('.ui-datepicker-current');
+      const $clearButton = $('.ui-ui-datepicker-close');
+      const $applyButton = $('.ui-ui-datepicker-current');
 
       $clearButton.click(clearInput);
       $applyButton.click({ value: $filterElement }, applyDatepicker);
@@ -67,13 +68,14 @@ $filterElementHide.datepicker({
   },
   beforeShow: (text, instance) => {
     setTimeout(() => {
+      instance.dpDiv.addClass('ui-datepicker_range');
       instance.dpDiv.css({
         top: $filterElement.offset().top + 44,
         left: $filterElement.offset().left,
       });
 
-      const $clearButton = $('.ui-datepicker-close');
-      const $applyButton = $('.ui-datepicker-current');
+      const $clearButton = $('.ui-ui-datepicker-close');
+      const $applyButton = $('.ui-ui-datepicker-current');
 
       $clearButton.click(clearInput);
       $applyButton.click({ value: $filterElementHide }, applyDatepicker);

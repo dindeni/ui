@@ -1,6 +1,11 @@
 @import "../mixins/text";
-@import "../common/variables";
+@import "../variables/variables";
 
+.range_for-side-panel .range__label{
+  display: inline-block;
+  width: 120px;
+  margin: 0 0 0 16px;
+}
 .ui-slider.ui-slider-horizontal{
   width: 266px;
   height: 6px;

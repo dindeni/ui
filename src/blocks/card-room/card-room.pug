@@ -1,7 +1,7 @@
 include ../rate/rate
 
-mixin card-room(arr, name, type, numberRoom, price, numberReview, numberRate)
-  div.card-room
+mixin card-room(arr, name, type, numberRoom, price, numberReview, numberRate, modifier)
+  div(class=modifier ? `card-room ${modifier}`: 'card-room')
     div.card-room__wrapper
       div.card-room__image-wrapper
         each value, index in arr
@@ -12,15 +12,15 @@ mixin card-room(arr, name, type, numberRoom, price, numberReview, numberRate)
       form.card-room__form
         each value, index in Array(4)
           if index === 0
-            label(class='card-room__label')
+            label(class='card-room__mark')
               input(type='radio' class='card-room__radio' name=`${name}` checked=true)
           else
-            label(class='card-room__label')
+            label(class='card-room__mark')
               input(type='radio' class='card-room__radio' name=`${name}`)
 
-      div.card-room__buttons-wrapper
-        button.card-room__button.card-room__button_prev
-        button.card-room__button.card-room__button_next
+      div.card-room__arrows-wrapper
+        button.card-room__arrow.card-room__arrow_prev
+        button.card-room__arrow.card-room__arrow_next
     if type === 'luxe'
       div.card-room__number-room-wrapper
         span.card-room__number-mark №

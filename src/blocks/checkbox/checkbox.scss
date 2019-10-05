@@ -1,49 +1,92 @@
 @import "../mixins/hide";
-@import "../common/variables";
+@import "../variables/variables";
 @import "../mixins/text";
 
-.checkbox__label{
-  padding: 0 0 0 20px;
-  display: block;
-  @include body;
-  margin: 0 0 12px 12px;
-  position: relative;
-  text-transform: unset;
-  width: 210px;
-  line-height: 18px;
-  &::before{
-    position: absolute;
-    content: '';
-    width: 20px;
-    height: 20px;
-    border: 1px solid $dark25;
-    box-sizing: border-box;
-    border-radius: 4px;
-    left: -10px;
-    top: 0;
+.checkbox{
+  &__mark{
+    padding: 0 0 0 20px;
+    display: block;
+    @include body;
+    margin: 0 0 12px 12px;
+    position: relative;
+    text-transform: unset;
+    width: 210px;
+    line-height: 18px;
+    &::before{
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+      border: 1px solid $dark25;
+      box-sizing: border-box;
+      border-radius: 4px;
+      left: -10px;
+      top: 0;
+    }
+    &.checkbox__mark_rich{
+      font-weight: bold;
+      & .checkbox__description{
+        font-size: 12px;
+        font-weight: normal;
+        display: block;
+        margin: 7px 0 0 0;
+        line-height: 13px;
+        color: $dark50;
+      }
+      &:first-child{
+        width: 200px;
+      }
+      &:last-child{
+        width: 230px;
+      }
+    }
   }
-  &.checkbox__label_rich{
-    font-weight: bold;
-    & .checkbox__span{
-      font-size: 12px;
-      font-weight: normal;
-      display: block;
-      margin: 7px 0 0 0;
-      line-height: 13px;
-      color: $dark50;
+  &__field{
+    @include hide;
+  }
+  &__head{
+    position: relative;
+    @include h3;
+    color: $dark100;
+    margin: 0 0 18px 2px;
+    width: 250px;
+    --rotate: rotate(0deg);
+    &::after{
+      position: absolute;
+      content: '';
+      width: 12px;
+      height: 8px;
+      background: url("./icon-expand.svg") no-repeat;
+      right: 0;
+      transform: var(--rotate);
+      top: 3px;
     }
-    &:first-child{
-      width: 200px;
+  }
+  &_for-side-panel{
+    & .checkbox__mark{
+      margin: 0 0 12px 10px;
     }
-    &:last-child{
-      width: 230px;
+    & .checkbox__mark_rich{
+      &::before{
+        top: -3px;
+      }
+      & .checkbox__description{
+        margin: 5px 0 0 0;
+      }
     }
+    & .checkbox__field:checked + .checkbox__mark_rich::after{
+      top: 1px
+    }
+    & .checkbox__head{
+      margin: 32px 0 18px 0;
+    }
+  }
+  &__wrapper_hide{
+    @include hide;
   }
 }
-.checkbox__input{
-  @include hide;
-}
-.checkbox__input:checked +.checkbox__label{
+
+.checkbox__field:checked +.checkbox__mark{
   position: relative;
   &::before{
     border: 1px solid $purple;
@@ -56,23 +99,5 @@
     background: url("./icon-checked.svg");
     left: -5px;
     top: 4px;
-  }
-}
-.checkbox__head{
-  position: relative;
-  @include h3;
-  color: $dark100;
-  margin: 0 0 18px 2px;
-  width: 250px;
-  --rotate: rotate(0deg);
-  &::after{
-    position: absolute;
-    content: '';
-    width: 12px;
-    height: 8px;
-    background: url("../common/icon-expand.svg") no-repeat;
-    right: 0;
-    transform: var(--rotate);
-    top: 3px;
   }
 }

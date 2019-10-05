@@ -32,8 +32,8 @@ document.querySelectorAll('.card-room__form').forEach((form) => {
 });
 
 const handleRoomsClick = (evt, cardRoom) => {
-  const prev = cardRoom.querySelector('.card-room__button_prev');
-  const next = cardRoom.querySelector('.card-room__button_next');
+  const prev = cardRoom.querySelector('.card-room__arrow_prev');
+  const next = cardRoom.querySelector('.card-room__arrow_next');
   const images = cardRoom.querySelectorAll('.card-room__image');
   const inputs = cardRoom.querySelectorAll('.card-room__radio');
 

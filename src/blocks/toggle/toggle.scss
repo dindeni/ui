@@ -1,7 +1,13 @@
 @import "../mixins/text";
 @import "../mixins/hide";
-@import "../common/variables";
+@import "../variables/variables";
 
+.toggle{
+  &_for-registration{
+    margin: 8px 0 0 5px;
+    display: inline-block;
+  }
+}
 .toggle__input{
   @include hide;
 }

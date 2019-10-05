@@ -1,6 +1,6 @@
 @import "../mixins/text";
 @import "../mixins/rectangle";
-@import "../common/variables";
+@import "../variables/variables";
 
 .registration{
   @include rectangle;
@@ -8,19 +8,20 @@
   height: 646px;
   position: relative;
   z-index: 1;
-    & .input{
-      width: 320px;
-      margin: 4px 0 0 0;
-    }
-    &::after{
-      content: none;
-    }
-  & .toggle{
-    margin: 8px 0 0 5px;
-    display: inline-block;
+  &__date-head, &__data-head{
+    @include h3;
+    color: $dark100;
+    text-transform: uppercase;
+    display: block;
   }
-  & .toggle__label{
-    text-transform: none;
+  &__date-head{
+    margin: 22px 0 5px 0;
+  }
+  &__data-head{
+    margin: 10px 0 5px 0;
+  }
+  &_for-main-ui{
+    margin-top: 10px;
   }
 }
 .registration__head{
@@ -36,22 +37,7 @@
 .registration__radio-wrapper{
   position: relative;
   display: block;
-  margin: 10px 0 0 10px;
-  & .radio__label{
-    &::before{
-      top: -3px;
-    }
-  }
-  & .radio__input:checked + .radio__label::after{
-    top: 1px;
-  }
-}
-.registration__date-head, .registration__data-head{
-  @include h3;
-  color: $dark100;
-  text-transform: uppercase;
-  margin: 22px 0 0 0;
-  display: block;
+  margin: 0 0 0 10px;
 }
 .registration__footer{
   margin: 30px 0 0 0;
@@ -59,27 +45,13 @@
 .registration__footer-label{
   @include body;
 }
-.registration__data-head{
-  & .input:first-child{
-    margin: 5px 0 8px 0;
-  }
-}
+
 @media (max-width: 400px) {
   .registration{
     padding-left: 20px;
     width: 300px;
     & .registration__head{
       font-size: 18px;
-    }
-    .input{
-      width: 264px;
-      &::placeholder{
-        font-size: 12px;
-      }
-    }
-    & .input.input__date,
-    .input.input__text {
-      width: 264px;
     }
     & .registration__footer-label{
       font-size: 12px;

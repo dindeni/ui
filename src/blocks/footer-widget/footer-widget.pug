@@ -1,0 +1,29 @@
+include ../form-element/form-element
+include ../copyright/copyright
+include ../footer-list/footer-list
+
+mixin footer-widget(description, headNavigation, navigationItems, headAbout, aboutItems, headSupport, supportItems, headSubscribe,subscribeDescription, placeholderEmail, copyrightText, classModifier, listModifier, copyrightModifier, socialModifier)
+  footer(class= classModifier ? `footer-widget ${classModifier}`: 'footer-widget')
+    div.footer-widget__logo-wrapper
+      img.footer-widget__logo(src=require('../img/icon-logo.svg') alt='image logo')
+      p.footer-widget__description #{description}
+    if (listModifier)
+      +footer-list(headNavigation, navigationItems, `footer-list_navigation ${listModifier}`)
+      +footer-list(headAbout, aboutItems, `footer-list_about ${listModifier}`)
+      +footer-list(headSupport, supportItems, `footer-list_support ${listModifier}`)
+    else
+      +footer-list(headNavigation, navigationItems, `footer-list_navigation`)
+      +footer-list(headAbout, aboutItems, `footer-list_about`)
+      +footer-list(headSupport, supportItems, `footer-list_support`)
+    div.footer-widget__subscribe-wrapper
+      h3.footer-widget__subscribe-head #{headSubscribe}
+      div.footer-widget__subscribe-description #{subscribeDescription}
+      +form-element('subscription', placeholderEmail, 'form-element__field_for-footer-widget', 'form-element_for-footer-widget')
+    if (socialModifier)
+      +copyright(copyrightText, `${copyrightModifier}`,  `${socialModifier}`)
+    else
+      +copyright(copyrightText, 'copyright_footer-widget')
+
+
+
+

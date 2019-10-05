@@ -1,6 +1,5 @@
 include ../sum-guests/sum-guests
-include ../ui-input/ui-input
-include ../datapicker/datepicker
+include ../form-element/form-element
 
 mixin searchRoom(absolute)
   section(class=absolute ? `search-room search-room_absolute`: 'search-room')
@@ -10,7 +9,7 @@ mixin searchRoom(absolute)
         span.search-room__label прибытие
         span.search-room__label выезд
       form.search-room__form
-        +datapicker('ui-input__field_for-search-in js-ui-input__field_for-search-in', false, 'ui-input_for-search')
-        +datapicker('ui-input__field_for-search-out js-ui-input__field_for-search-out', false, 'ui-input_for-search')
+        +form-element('date', 'дд.мм.гггг', 'form-element__field_for-search-in js-form-element__field_for-search-in', 'form-element_for-search')
+        +form-element('date', 'дд.мм.гггг', 'form-element__field_for-search-out js-form-element__field_for-search-out', 'form-element_for-search')
         +sum-guests
         +buttons('buy', 'Подобрать номер', undefined, 'buttons_for-search')

@@ -1,5 +1,5 @@
-mixin features(arr)
-  div.features
+mixin features(arr, modifier)
+  div(class=modifier ? `features ${modifier}`: 'features')
     each value in arr
       div.features__wrapper
         b.features__slogan #{value.slogan}

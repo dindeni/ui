@@ -1,0 +1,63 @@
+include ../card-room/card-room
+include ../review/review
+include ../pie-chart/pie-chart
+include ../bullet-list/bullet-list
+include ../features/features
+include ../order-room/order-room
+
+-const roomDetailPath = [require('../img/image-room-1.jpg'),
+-require('../img/image-room-2.jpg'), require('../img/image-room-3.jpg')]
+
+-const roomFeatures = [{slogan: 'Комфорт', description: 'Шумопоглощающие стены'},
+-{slogan: 'Удобство', description: 'Окно в каждой из спален'}, {slogan: 'Уют',
+-description: 'Номер оснащён камином'}]
+
+-const arrTotalDesc = ['9 990₽ х 4 суток', 'Сбор за услуги: скидка 2 179₽',
+-'Сбор за дополнительные услуги']
+-const arrTotalPrice = ['39 960₽', '0₽', '300₽']
+
+-const reviewData = [{name: 'Мурад Сарафанов', date: '5 дней назад', text:
+-'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+-pathIcon: require('../blocks/review/icon-avatar-1.png'), typeButton: 'like',
+-numberLikes: 12}, {name: 'Патрисия Стёклышкова', date: 'Неделю назад',
+-text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
+-pathIcon: require('../blocks/review/icon-avatar-2.png'), typeButton: 'like-gray',
+-numberLikes: 2}]
+
+
+-const bulletListData = ['Нельзя с питомцами', 'Без вечеринок и мероприятий',
+-'Время прибытия — после 13:00, а выезд до 12:00']
+
+
+mixin room-description
+
+  section.room-description
+    div.room-description__container
+      div.room-description__wrapper
+        h2.room-description__features-head Сведения о номере
+
+        +features(roomFeatures, 'features_for-room-description')
+
+      div.room-description__pie-chart-wrapper
+        h2.room-description__pie-chart-head Впечатления от номера
+
+        +pie-chart
+
+      div.room-description__review
+        h2.room-description__review-head Отзывы посетителей номера
+        span.room-description__review-number 2 отзыва
+        each value in reviewData
+
+          +review(value.name, value.date, value.text, value.pathIcon,
+            value.typeButton, value.numberLikes, 'review_for-room-description')
+
+      div.room-description__rules
+        h2.room-description__rules-head Правила
+
+        +bullet-list(bulletListData, 'bullet-list_for-room-description')
+
+      div.room-description__cancel
+        h2.room-description__cancel-head Отмена
+        p.room-description__cancel-paragraph Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+    +order-room(arrTotalDesc, arrTotalPrice)

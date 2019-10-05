@@ -1,24 +1,23 @@
 include ../blocks/search-room/search-room
 include ../blocks/buttons/buttons
-include ../blocks/ui-input/ui-input
+include ../blocks/form-element/form-element
 include ../blocks/checkbox/checkbox
 include ../blocks/radio/radio
 include ../blocks/toggle/toggle
 include ../blocks/range/range
 include ../blocks/pagination/pagination
 include ../blocks/rate/rate
-include ../blocks/sum-guests-rooms/sum-guests-rooms
-include ../blocks/bulletList/bulletList
+include ../blocks/bullet-list/bullet-list
 include ../blocks/review/review
 include ../blocks/features/features
 include ../blocks/registration/registration
-include ../blocks/orderRoom/orderRoom
+include ../blocks/order-room/order-room
 include ../blocks/card-room/card-room
-include ../blocks/navBar/navBar
+include ../blocks/navigation/navigation
 include ../blocks/copyright/copyright
 include ../blocks/footer/footer
-include ../blocks/footerWidget/footerWidget
-include ../blocks/signIn/signIn
+include ../blocks/footer-widget/footer-widget
+include ../blocks/sign-in/sign-in
 
 -const arrCheckbox = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']
 
@@ -51,9 +50,9 @@ include ../blocks/signIn/signIn
 -require('../img/image-room-444.jpg')]
 
 -const uiNavBarItems = {items: ['Home', 'About Us', 'Services', 'Careers',
--'News', 'Documentation'], classes: ['nav-standart__link nav-standart__link--home',
--'nav-standart__link', 'nav-standart__link nav-standart__link--expand',
--'nav-standart__link', 'nav-standart__link', 'nav-standart__link']}
+-'News', 'Documentation'], classes: ['navigation__link navigation__link--home',
+-'navigation__link', 'navigation__link navigation__link--expand',
+-'navigation__link', 'navigation__link', 'navigation__link']}
 
 -const footerWidgetData = {description:
 -'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
@@ -68,67 +67,67 @@ html(lang="en")
     title UI
     meta(name="viewport" content="width=device-width,initial-scale=1")
   body
-    div.form-elements
-      div.form-elements__wrapper
-        +ui-input('text', 'email', 'input__email')
-        +ui-input('dropdown', 'Сколько гостей', 'input-dropdown')
-        +ui-input('masked', 'дд.мм.гггг')
-        +ui-input('date', 'дд.мм.гггг')
-        +ui-input('filter', '19 авг - 23 авг', 'input__label-dropdown_for-filtering')
-        div.form-elements__subscription-wrapper
-          +ui-input('subscription', 'email')
-      div.form-elements__wrapper
+    div.main-ui__form
+      div.main-ui__form-wrapper
+        +form-element('text', 'email', undefined, 'form-element_for-main-ui')
+        +form-element('dropdown', 'Сколько гостей', undefined, 'form-element_for-main-ui')
+        +form-element('masked', 'дд.мм.гггг', undefined, 'form-element_for-main-ui')
+        +form-element('date', 'дд.мм.гггг', undefined, 'form-element_for-main-ui')
+        +form-element('filter', '19 авг - 23 авг', undefined, 'form-element_for-main-ui')
+        +form-element('subscription', 'email', undefined, 'form-element_for-main-ui')
+      div.main-ui__form-wrapper
         +checkbox(arrCheckbox, 'checkbox')
         +radio(arrRadio, arrRadioId)
         +toggle('Получать спецпредложение', 'toggle')
-        div.form-elements__buttons-wrapper
-          +buttons('like-gray', 2)
+        div.main-ui__buttons-wrapper
+          +buttons('like-gray', 2, undefined,  'buttons_for-ui')
           +buttons('like', 12)
-        +rate(4)
-        +rate(5)
-      div.form-elements__wrapper
-        div.form-elements__range-wrapper
+        div.main-ui__rate-wrapper
+          +rate(4)
+          +rate(5)
+      div.main-ui__form-wrapper
+        div.main-ui__range-wrapper
           +range
-        div.form-elements__buttons-wrapper
+        div.main-ui__buttons-wrapper
           +buttons('full', 'click me')
-        div.form-elements__buttons-wrapper
+        div.main-ui__buttons-wrapper
           +buttons('bordering', 'click me')
-        div.form-elements__buttons-wrapper
+        div.main-ui__buttons-wrapper
           +buttons('transparent', 'click me')
-        div.form-elements__buttons-wrapper
+        div.main-ui__buttons-wrapper
           +buttons('buy', 'перейти к оплате')
         +pagination(Array(15))
-      div.form-elements__wrapper
-        +sumGuestsRooms('rooms')
-        div.form-elements__checkbox-wrapper
+      div.main-ui__form-wrapper
+        div.main-ui__checkbox-wrapper
           +checkbox(arrCheckboxExpandable, 'checkboxExpandable', 'expandable checkbox list')
-      div.form-elements__wrapper
+      div.main-ui__form-wrapper
         +checkbox(arrCheckboxRich, 'rich')
-      div.form-elements__wrapper
-        +bulletList(arrBulletList)
-      div.form-elements__wrapper.form-elements__wrapper_review
+      div.main-ui__form-wrapper
+        +bullet-list(arrBulletList)
+      div.main-ui__form-wrapper.main-ui__form-wrapper_review
         +features(arrFeatures)
         +review('Мурад Сарафанов', '5 дней назад',
 					'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
 					require('../blocks/review/icon-avatar-1.png'), 'like', 12)
 
-    div.cards
-      div.cards__wrapper
+    div.main-ui__cards
+      div.main-ui__card-wrapper
         +searchRoom
-        +registration
-      div.cards__wrapper
-        +orderRoom(arrTotalDesc, arrTotalPrice)
-        +signIn
-      div.cards__wrapper
+        +registration('registration_for-main-ui')
+      div.main-ui__card-wrapper
+        +order-room(arrTotalDesc, arrTotalPrice)
+        +sign-in
+      div.main-ui__card-wrapper
         +card-room(arrPathImage1, 'room-radio-name-1', 'luxe', 888,
 					'9 900', 145, 5)
         +card-room(arrPathImage2, 'room-radio-name-2', 'normal', 840,
 					'9 900', 65, 4)
-    div.headers-footers
-      +navBar('standart', uiNavBarItems.items, uiNavBarItems.classes, 'login', 'register')
-      +navBar('loggedIn', uiNavBarItems.items, uiNavBarItems.classes,'login', 'register', 'Cosmin Negoita')
+    div.main-ui__headers-footers
+      +navigation('standart', uiNavBarItems.items, uiNavBarItems.classes, 'login', 'register')
+      +navigation('loggedIn', uiNavBarItems.items, uiNavBarItems.classes,'login', 'register', 'Cosmin Negoita')
       +footer
-      +footerWidget(footerWidgetData.description, 'Navigation',
+      +footer-widget(footerWidgetData.description, 'Navigation',
 				footerWidgetData.navigation, 'ABOUT US', footerWidgetData.about, 'support',
 				footerWidgetData.support, 'Subscribe to our newsletter',
-				footerWidgetData.subscribe, 'Your email address')
+				footerWidgetData.subscribe, 'Your email address', 'Copyright © 2018 Toxin UI Kit.' +
+				 ' All rights reserved.')

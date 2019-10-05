@@ -1,5 +1,5 @@
 @import "../mixins/text";
-@import "../common/variables";
+@import "../variables/variables";
 
 .main-filter{
   display: flex;
@@ -13,162 +13,36 @@
     box-shadow: 0 1px 0 rgba(31, 32, 65, 0.1);
     bottom: 0;
   }
+  &__rooms{
+    width: 60%;
+    margin: 0 0 70px 25px;
+  }
+  &__rooms-head{
+    @include h1;
+    margin: 40px 0 25px 0;
+  }
 }
-/*.filter{
-  & .ui-datepicker{
-    width: 264px;
-  }
-  & .ui-datepicker-title{
-    font-size: 1.14rem;
-  }
-  & .ui-datepicker-next::before{
-    left: 180px;
-    top: 22px;
-  }
-  & .ui-datepicker-calendar {
-    font-size: 0.71rem;
-    margin: 39px 0 0 5px;
-  }
-  & .ui-datepicker-calendar td, .ui-datepicker-calendar td .ui-state-default {
-    margin: 0 15px 11.6px 0;
-  }
-  & .ui-datepicker-buttonpane {
-    bottom: 2%;
-    & .ui-datepicker-close{
-      margin-right: 40px;
-    }
 
-  }
-  & .ui-slider .ui-slider-handle{
-    z-index: 1;
-  }
-}*/
-.side-panel{
-  width: 300px;
-  margin: 31px 0 0 9.8%;
-  & .range__label{
-    display: inline-block;
-    width: 120px;
-    margin: 0 0 0 16px;
-  }
-  & .checkbox__label{
-    margin: 0 0 12px 10px;
-  }
-  & .checkbox__label_rich{
-    &::before{
-      top: -3px;
-    }
-    & .checkbox__span{
-      margin: 5px 0 0 0;
-    }
-  }
-  & .checkbox__input:checked + .checkbox__label_rich::after{
-    top: 1px
-  }
-  & .checkbox__head{
-    margin: 30px 0 18px 0;
-  }
-  & .guests__popup{
-    width: 265px;
-  }
-}
-.side-panel__slogan{
-  @include h3;
-  color: $dark100;
-  margin: 0 0 5px 0;
-  &.side-panel__slogan_guests{
-    margin-top: 22px;
-  }
-  &.side-panel__slogan_range{
-    margin: 31px 0 24px 0;
-    display: inline-block;
-  }
-  &.side-panel__slogan_checkbox{
-    margin: 29px 0 17px 0;
-  }
-  &.side-panel__slogan_checkbox-rich{
-    margin: 34px 0 19px 0;
-  }
-  &.side-panel__slogan_rooms{
-    margin: 32px 0 3px 0;
-  }
-}
-.side-panel__form .guests{
-  color: $dark100;
-  @include h3;
-  display: block;
-  & .input{
-    width: 265px;
-    margin-top: 5px;
-    &::placeholder{
-      text-transform: none;
-    }
-  }
-  & .input-label-dropdown::after{
-    right: -17px;
-    top: 21px;
-  }
-
-}
-.side-panel__range-reference{
-  @include h3;
-  color: $dark50;
-  text-transform: inherit;
-  margin-top: 15px;
-}
-.filtered-rooms{
-  width: 60%;
-  margin: 0 0 70px 25px;
-  & .card-room{
-    margin: 0 12px 20px 0;
-  }
-  & .pagination{
-    width: 324px;
-    margin: 0 auto;
-  }
-  & .pagination__item_dots{
-    background: none;
-  }
-}
-.filtered-rooms__head{
-  @include h1;
-  margin: 40px 0 25px 0;
-}
 @media (max-width: 1100px) {
-  .side-panel{
-    margin: 31px 0 0 4.8%;
-  }
-  .filtered-rooms{
-    width: 50%;
-    & .pagination{
-      margin: 0;
+  .main-filter{
+    &__rooms{
+      width: calc(100vw - 6% - 300px);
+      margin: 0 auto 70px auto;
     }
-    & .pagination__description{
-      margin-left: 5px;
+    &__rooms-head{
+      font-size: 1.29rem;
+      line-height: 20px;
     }
-    & .pagination__list{
-      margin: 20px 0 10px 0;
-    }
-  }
-  .filtered-rooms__head{
-    font-size: 1.29rem;
   }
 }
+
 @media (max-width: 750px) {
-  .side-panel{
-    margin: 31px auto 0 auto;
-  }
-  .filtered-rooms{
+  .main-filter__rooms{
     width: 300px;
     margin: 0 auto 70px auto;
     & .pagination{
       width: 300px;
       margin: 0 auto;
     }
-  }
-}
-@media (max-width: 599px) {
-  .input.input__filter-hide{
-    width: 0;
   }
 }

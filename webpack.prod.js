@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const common = require('./webpack.common.js');
 
 const mappingHtmlTemplate = () => {
-  const arrPugNames = ['index', 'filter', 'registration', 'room', 'signIn',
+  const arrPugNames = ['index', 'filter', 'registration', 'room', 'sign-in',
     'ui'];
   return arrPugNames.map((name) => new HtmlWebpackPlugin({
     template: `./src/pugTemplates/${name}.pug`,

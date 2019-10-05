@@ -1,4 +1,4 @@
-@import "../common/variables";
+@import "../variables/variables";
 @import "../mixins/text";
 @import "../mixins/hide";
 
@@ -6,23 +6,29 @@
   display: inline-block;
 }
 
-.buttons__full{
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border-radius: 22px;
-  border: none;
-  text-transform: uppercase;
-  font-family: Montserrat, sans-serif;
-  color: #FFFFFF;
-  font-size: 0.86rem;
-  font-weight: bold;
-  padding: 15px 18px;
-  cursor: pointer;
-  text-decoration: none;
-  &:hover{
-    background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%,
-            rgba(139, 164, 249, .5) 100%);
+.buttons{
+  &__full{
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    border: none;
+    text-transform: uppercase;
+    font-family: Montserrat, sans-serif;
+    color: #FFFFFF;
+    font-size: 0.86rem;
+    font-weight: bold;
+    padding: 15px 18px;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover{
+      background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%,
+              rgba(139, 164, 249, .5) 100%);
+    }
+  }
+  &_for-ui{
+    margin-right: 10px;
   }
 }
+
 .buttons_for-navigation{
   & .buttons__full{
     height: 35px;
@@ -96,7 +102,7 @@
     content: '';
     width: 44px;
     height: 44px;
-    background: url("../common/icon-arrow-forward.svg") no-repeat;
+    background: url("../pagination/icon-arrow-forward.svg") no-repeat;
     right: -14px;
     top: 12px;
   }
@@ -226,28 +232,40 @@
 }
 
 @media (max-width: 450px) {
-  .buttons_for-navigation{
-    & .buttons__full{
-      margin: 17px 0 0 10px;
+  .buttons{
+    &_for-registration .buttons__full{
+      padding: 15px 70px;
+    }
+    &_for-navigation{
+      & .buttons__full{
+        margin: 17px 0 0 10px;
+      }
+    }
+    &_for-order{
+      .buttons__full{
+        padding: 15px 82px;
+      }
+    }
+    &_for-sign-in{
+      .buttons__full{
+        padding: 15px 106px;
+      }
+      .buttons__with-bordering-link{
+        margin: 0 0 0 10px;
+      }
     }
   }
 }
 
 @media (max-width: 400px) {
-  .buttons_for-sign-in{
-    .buttons__full{
-      padding: 15px 106px;
-    }
-    .buttons__with-bordering-link{
-      margin: 0 0 0 10px;
-    }
-  }
-  .buttons_for-registration{
-    .buttons__full{
-      padding: 15px 71px;
-    }
-    .buttons__with-bordering-link{
-      margin: 3px 0 0 10px
+  .buttons{
+    &_for-registration{
+      .buttons__full{
+        padding: 15px 71px;
+      }
+      .buttons__with-bordering-link{
+        margin: 3px 0 0 10px
+      }
     }
   }
 }

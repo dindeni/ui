@@ -1,0 +1,40 @@
+@import "../variables/variables";
+@import "../mixins/text";
+
+.footer-list{
+  width: 160px;
+  margin: 96px 2.8% 0 0;
+  &_for-registration{
+    margin: 105px 2.8% 0 0;
+  }
+}
+.footer-list__head{
+  @include h3;
+  color: $dark100;
+}
+.footer-list__list{
+  list-style: none;
+  padding: 0;
+  margin: 19px 0 0 0;
+}
+.footer-list__link{
+  text-decoration: none;
+  @include body;
+}
+.footer-list__item{
+  margin: 0 0 14px 0;
+}
+
+@media (max-width: 1250px) {
+
+  .footer-list {
+    margin: 50px 2.8% 0 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .footer-list {
+    width: 120px;
+    margin: 45px 0 0 0;
+  }
+}
