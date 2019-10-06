@@ -1,11 +1,6 @@
 @import "../mixins/text";
 @import "../variables/variables";
 
-.range_for-side-panel .range__label{
-  display: inline-block;
-  width: 120px;
-  margin: 0 0 0 16px;
-}
 .ui-slider.ui-slider-horizontal{
   width: 266px;
   height: 6px;
@@ -20,6 +15,7 @@
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   border: 2px solid #FFFFFF;
   border-radius: 10px;
+  outline: none;
 
   &:last-child{
     left: 100%;
@@ -29,16 +25,22 @@
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   border-radius: 3px;
 }
-.range__label{
+.ui-slider .ui-slider-handle{
+  z-index: 1;
+}
+
+.ui-slider_for-side-panel .ui-slider__label{
+  display: inline-block;
+  width: 120px;
+  margin: 0 0 0 25px;
+}
+.ui-slider__label{
   @include h3;
   color: $dark50;
   text-align: end;
   margin: 0 0 24px 0;
   font-weight: normal;
 }
-.ui-slider .ui-slider-handle{
-  z-index: 1;
-}
-.range{
+.ui-slider{
   width: 271px;
 }

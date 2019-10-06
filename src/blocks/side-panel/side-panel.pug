@@ -1,6 +1,6 @@
 include ../sum-guests/sum-guests
 include ../datepicker-range/datepicker-range
-include ../range/range
+include ../ui-slider/ui-slider
 include ../checkbox/checkbox
 include ../card-room/card-room
 include ../pagination/pagination
@@ -19,9 +19,9 @@ mixin side-panel
     div.side-panel__slogan даты пребывания в отеле
     form.side-panel__form
       +datepicker-range('19 авг - 23 авг')
-      +sum-guests('sum-guests_for-filter', 'ui-input__field_for-filter', 'ui-input_for-filter')
+      +sum-guests('sum-guests_for-filter', 'form-element__field_for-filter', 'form-element_for-filter')
       div.side-panel__slogan.side-panel__slogan_range диапазон цены
-      +range('range_for-side-panel')
+      +ui-slider('ui-slider_for-side-panel')
       div.side-panel__range-reference Стоимость за сутки пребывания в номере
       div.side-panel__slogan.side-panel__slogan_checkbox Checkbox Buttons
       +checkbox(checkboxArr.standart, 'checkbox', undefined, 'checkbox_for-side-panel')
