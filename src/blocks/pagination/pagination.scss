@@ -19,12 +19,6 @@
     & .pagination__link{
       color: $dark25;
     }
-    &.pagination__item_dots{
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-      border-radius: 22px;
-      color: $dark50;
-      font-weight: normal;
-    }
     &:first-child{
       & .pagination__link{
         color: #FFFFFF;

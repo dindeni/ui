@@ -1,8 +1,3 @@
-document.querySelectorAll('.card-room').forEach((value) => {
-  const input = value.querySelectorAll('.card-room__radio');
-  input[0].checked = true;
-});
-
 let imageCount = 0;
 
 const handleFormChange = (evt, form) => {
@@ -38,15 +33,18 @@ const handleRoomsClick = (evt, cardRoom) => {
   const inputs = cardRoom.querySelectorAll('.card-room__radio');
 
   if (evt.target === prev) {
+    let flag = false;
     for (let i = 0; i < inputs.length; i += 1) {
-      const isInputFirst = inputs[i].checked && inputs[i] === inputs[0];
+      const isInputFirst = inputs[i].checked && inputs[i] === inputs[0] && !flag;
+      const isInputChecked = inputs[i].checked && !flag;
       if (isInputFirst) {
-        images[i].classList.add('cardRoom__image_hide');
+        flag = true;
+        images[i].classList.add('card-room__image_hide');
         images[inputs.length - 1].classList.remove('card-room__image_hide');
         inputs[inputs.length - 1].checked = true;
         inputs[i].parentElement.style.background = 'none';
         inputs[inputs.length - 1].parentElement.style.background = '#FFFFFF';
-      } else if (inputs[i].checked) {
+      } else if (isInputChecked) {
         inputs[i].parentElement.style.background = 'none';
         inputs[i - 1].parentElement.style.background = '#FFFFFF';
         images[i].classList.add('card-room__image_hide');
@@ -57,15 +55,19 @@ const handleRoomsClick = (evt, cardRoom) => {
   }
 
   if (evt.target === next) {
+    let flag = false;
     for (let i = 0; i < inputs.length; i += 1) {
-      const isInputLast = inputs[i].checked && inputs[i] === inputs[inputs.length - 1];
+      const isInputLast = inputs[i].checked && inputs[i] === inputs[inputs.length - 1] && !flag;
+      const isInputChecked = inputs[i].checked && !flag;
+
       if (isInputLast) {
         images[i].classList.add('card-room__image_hide');
         images[0].classList.remove('card-room__image_hide');
         inputs[0].checked = true;
         inputs[i].parentElement.style.background = 'none';
         inputs[0].parentElement.style.background = '#FFFFFF';
-      } else if (inputs[i].checked) {
+      } else if (isInputChecked) {
+        flag = true;
         images[i].classList.add('card-room__image_hide');
         images[i + 1].classList.remove('card-room__image_hide');
         inputs[i + 1].checked = true;

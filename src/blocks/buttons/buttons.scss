@@ -19,6 +19,7 @@
     padding: 15px 18px;
     cursor: pointer;
     text-decoration: none;
+    outline: none;
     &:hover{
       background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%,
               rgba(139, 164, 249, .5) 100%);
@@ -46,8 +47,25 @@
   font-family: Montserrat, sans-serif;
   font-size: 0.86rem;
   font-weight: bold;
-  padding: 12px 15px;
-}
+  padding: 12px 18px;;
+  position: relative;
+  outline: none;
+  &::before{
+    position: absolute;
+    content: '';
+    width: 99px;
+    height: 44px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    z-index: -10;
+    top: -3px;
+    left: -2px;
+    }
+  &:hover::before{
+    background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%,
+            rgba(139, 164, 249, .5) 100%);
+  }
+  }
 .buttons__with-bordering-link{
   text-decoration: none;
   @include h3;
@@ -86,8 +104,12 @@
   font-weight: bold;
   color: #BC9CFF;
   margin-left: 5px;
+  outline: none;
   &:hover{
     color: rgba(31, 32, 65, 0.5);
+  }
+  &_clear{
+    color: $dark50;
   }
 }
 .buttons__transparent_hide{
@@ -160,14 +182,15 @@
   width: 100%;
   height: 100%;
   position: relative;
-  &::before{
+  &::before, &:hover::before{
     position: absolute;
     content: '';
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 8px;
     background: url("./icon-favorite.svg") no-repeat;
     left: 3px;
     top: 5px;
+    z-index: 1;
   }
 
 }
@@ -179,7 +202,7 @@
   height: 20px;
   box-sizing: border-box;
 }
-.buttons_for-rate_like{
+.buttons_like{
   position: relative;
   &::before{
     position: absolute;

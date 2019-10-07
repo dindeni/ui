@@ -56,8 +56,8 @@ const datePickerInOut = (elementIn, elementOut) => {
       getRange($dateElementIn);
       setTimeout(() => {
         instance.dpDiv.css({ top: $dateElementOut.offset().top + 44 });
-        const $clearButton = $('.ui-ui-datepicker-close');
-        const $applyButton = $('.ui-ui-datepicker-current');
+        const $clearButton = $('.ui-datepicker-close');
+        const $applyButton = $('.ui-datepicker-current');
 
         $clearButton.click({ value: $dateElementIn, inOut: 'in' }, clearInput);
         $applyButton.click({ value: $dateElementIn }, applyDatepicker);

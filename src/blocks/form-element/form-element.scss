@@ -42,7 +42,7 @@
     width: 320px;
     margin: 6px 0 4px 0;
   }
-  &_for-registration.form-element__field{
+  &_for-registration#{&}{
     width: 320px;
     margin: 0 0 10px 0;
     &.form-element__field_for-password{

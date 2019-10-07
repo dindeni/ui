@@ -4,7 +4,7 @@ include ../blocks/form-element/form-element
 include ../blocks/checkbox/checkbox
 include ../blocks/radio/radio
 include ../blocks/toggle/toggle
-include ../blocks/range/range
+include ../blocks/ui-slider/ui-slider
 include ../blocks/pagination/pagination
 include ../blocks/rate/rate
 include ../blocks/bullet-list/bullet-list
@@ -50,8 +50,8 @@ include ../blocks/sign-in/sign-in
 -require('../img/image-room-444.jpg')]
 
 -const uiNavBarItems = {items: ['Home', 'About Us', 'Services', 'Careers',
--'News', 'Documentation'], classes: ['navigation__link navigation__link--home',
--'navigation__link', 'navigation__link navigation__link--expand',
+-'News', 'Documentation'], classes: ['navigation__link navigation__link_current',
+-'navigation__link', 'navigation__link navigation__link_expand',
 -'navigation__link', 'navigation__link', 'navigation__link']}
 
 -const footerWidgetData = {description:
@@ -87,7 +87,7 @@ html(lang="en")
           +rate(5)
       div.main-ui__form-wrapper
         div.main-ui__range-wrapper
-          +range
+          +ui-slider
         div.main-ui__buttons-wrapper
           +buttons('full', 'click me')
         div.main-ui__buttons-wrapper

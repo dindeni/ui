@@ -14,27 +14,33 @@
 }
 .navigation_logged{
   & .navigation__list{
-    margin: 5px 0 0 24.2%;
+    margin: 5px 0 0 24.4%;
   }
-  & .navigation__user-Name{
-    @include body;
-    margin: 26px 0 0 4%;
-    font-style: normal;
-    position: relative;
-    &::before{
-      position: absolute;
-      content: '';
-      width: 1px;
-      height: 30px;
-      background: rgba(31, 32, 65, 0.1);
-      left: -30px;
-      top: -5px;
+  & .navigation{
+    &__item:not(:last-child){
+      margin: 0 29px 0 0;
+    }
+    &__user-name{
+      @include body;
+      margin: 5px 0 0 4.3%;
+      font-style: normal;
+      position: relative;
+      &::before{
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 30px;
+        background: rgba(31, 32, 65, 0.1);
+        left: -30px;
+        top: -5px;
+      }
     }
   }
+
 }
 .navigation__logo{
   margin: 0 0 0 9.8%;
-  height: 40px;
+  height: auto;
 }
 .navigation__list{
   @include body;
@@ -48,7 +54,7 @@
   text-decoration: none;
   color: $dark50;
   line-height: 17px;
-  &.navigation__link_home{
+  &.navigation__link_current, &:hover{
     font-weight: bold;
     color: $dark75;
   }
@@ -91,7 +97,7 @@
       margin: 5px 0 0 6.2%;
     }
     & .navigation__user-name{
-      margin: 26px 0 0 10%;
+      margin: 5px 0 0 10%;
     }
   }
 }
@@ -145,6 +151,7 @@
     z-index: 100;
     right: 5px;
     top: 20px;
+    outline: none;
     &::before{
       position: absolute;
       content: '';
@@ -185,7 +192,10 @@
   }
   .navigation_logged{
     & .navigation__user-name{
-      margin: 26px 0 0 15%;
+      margin: 5px 0 0 15%;
+    }
+    & .navigation__list{
+      top: 0;
     }
   }
 }

@@ -1,6 +1,6 @@
 if (document.querySelector('.sum-rooms')) {
   const rooms = document.querySelector('.sum-rooms');
-  const roomsInput = rooms.querySelector('.js-ui-input__field_for-rooms');
+  const roomsInput = rooms.querySelector('.js-form-element__field_for-rooms');
   const roomsPopup = rooms.querySelector('.sum-rooms__popup');
   const bedRoomsNumber = rooms.querySelector('.sum-rooms__number-of-visitors_bedroom');
   const bedsNumber = rooms.querySelector('.sum-rooms__number-of-visitors_beds');

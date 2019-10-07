@@ -9,7 +9,7 @@
         top: -4px;
       }
     }
-    & .radio__input:checked + .radio__mark::after{
+    & .radio__field:checked + .radio__mark::after{
       top: 0;
     }
   }

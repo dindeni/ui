@@ -51,11 +51,12 @@
     cursor: pointer;
   }
   &__arrow{
-    width: 15px;
-    height: 15px;
+    width: 8px;
+    height: 13px;
     background: url("./icon-expand-white.svg") no-repeat;
     border: none;
     cursor: pointer;
+    outline: none;
     &.card-room__arrow{
       &_next{
         transform: rotate(180deg);
