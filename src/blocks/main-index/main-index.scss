@@ -3,7 +3,7 @@
   height: max-content;
   position: relative;
   display: block;
-  .main-index__background{
+  &__background{
     width: 100%;
     height: auto;
     &.main-index__gallery {
@@ -24,12 +24,13 @@
       }
     }
   }
-}
-.main-index__slogan{
-  position: absolute;
-  bottom: 20px;
-  @include body;
-  width: 300px;
-  right: 9.3%;
-  text-align: end;
+
+  &__slogan{
+    position: absolute;
+    bottom: 20px;
+    @include body;
+    width: 300px;
+    right: 9.3%;
+    text-align: end;
+  }
 }

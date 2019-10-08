@@ -6,58 +6,59 @@
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 60px;
-}
-.room-description__container{
-  display: flex;
-  flex-wrap: wrap;
-  width: 60%;
-  margin-top: 7px;
-}
-.room-description__features-head, .room-description__pie-chart-head,
-.room-description__review-head, .room-description__rules-head,
-.room-description__cancel-head{
-  @include h2;
-  margin: 0 0 24px 0;
-}
-.room-description__pie-chart-wrapper{
-  margin: 3px 0 0 13.7%;
-  position: relative;
-  .room-description__pie-chart-head{
-    margin: 0 0 15px 0;
+  &__container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    margin-top: 7px;
   }
-}
-.room-description__review{
-  position: relative;
-  width: 100%;
-}
-.room-description__review-head{
-  margin: 42px 0 0 0;
-  display: inline-block;
-}
-.room-description__review-number{
-  @include body;
-  color: $dark50;
-  position: absolute;
-  right: 68px;
-  top: 36px;
-}
-.room-description__rules{
-  margin: 20px 82px 0 2px;
-  width: 280px;
-}
-.room-description__rules-head{
-  margin: 0 0 0 21px;
-}
-.room-description__cancel{
-  margin: 20px 0 0 0;
-}
-.room-description__cancel-paragraph{
-  width: 344px;
-  @include body;
-  margin: 23px 0 0 0;
-}
-.room-description__cancel-head{
-  margin: 0 0 0 0;
+
+  &__features-head, &__pie-chart-head, &__review-head, &__rules-head,
+  &__cancel-head{
+    @include h2;
+    margin: 0 0 24px 0;
+  }
+
+  &__pie-chart-wrapper{
+    margin: 3px 0 0 13.7%;
+    position: relative;
+    .room-description__pie-chart-head{
+      margin: 0 0 15px 0;
+    }
+  }
+  &__review{
+    position: relative;
+    width: 100%;
+  }
+  &__review-head{
+    margin: 42px 0 0 0;
+    display: inline-block;
+  }
+  &__review-number{
+    @include body;
+    color: $dark50;
+    position: absolute;
+    right: 68px;
+    top: 36px;
+  }
+  &__rules{
+    margin: 20px 82px 0 2px;
+    width: 280px;
+  }
+  &__rules-head{
+    margin: 0 0 0 21px;
+  }
+  &__cancel{
+    margin: 20px 0 0 0;
+  }
+  &__cancel-paragraph{
+    width: 344px;
+    @include body;
+    margin: 23px 0 0 0;
+  }
+  &__cancel-head{
+    margin: 0 0 0 0;
+  }
 }
 
 @media (max-width: 1300px) {
@@ -67,29 +68,31 @@
 }
 
 @media (max-width: 1056px) {
-  .room-description__container{
-    width: 100%;
-  }
-  .room-description__pie-chart-wrapper{
-    margin: 0 0 0 8%;
-  }
-  .room-description__review{
-    width: 82%;
+  .room-description{
+    &__container{
+      width: 100%;
+    }
+    &__pie-chart-wrapper{
+      margin: 0 0 0 8%;
+    }
+    &__review{
+      width: 82%;
+    }
   }
 }
 
 @media (max-width: 800px) {
   .room-description{
     margin: 71px 0 0 2.6%;
-  }
-  .room-description__pie-chart-wrapper{
-    margin: 0 0 0 2%;
-  }
-  .room-description__cancel {
-    margin: 14px 0 20px 2%;
-  }
-  .room-description__review{
-    width: 100%;
+    &__pie-chart-wrapper{
+      margin: 0 0 0 2%;
+    }
+    &__cancel {
+      margin: 14px 0 20px 2%;
+    }
+    &.room-description__review{
+      width: 100%;
+    }
   }
 }
 
@@ -100,20 +103,22 @@
 }
 
 @media (max-width: 450px) {
-  .room-description__features-head, .room-description__pie-chart-head,
-  .room-description__review-head, .room-description__rules-head,
-  .room-description__cancel-head{
-    font-size: 1.14rem;
-  }
-  .room-description__cancel .room-description__cancel-paragraph{
-    width: 90%;
-  }
-  .room-description__pie-chart-wrapper{
-    margin: 12px 0 0 2%;
-  }
-  .room-description__review-number{
-    right: 2%;
-    font-size: 0.86rem;
-    top: 34px;
+  .room-description{
+    &__features-head, &__pie-chart-head, &__review-head, &__rules-head,
+    &__cancel-head{
+      font-size: 1.14rem;
+    }
+
+    &__cancel &__cancel-paragraph{
+      width: 90%;
+    }
+    &__pie-chart-wrapper{
+      margin: 12px 0 0 2%;
+    }
+    &__review-number{
+      right: 2%;
+      font-size: 0.86rem;
+      top: 34px;
+    }
   }
 }

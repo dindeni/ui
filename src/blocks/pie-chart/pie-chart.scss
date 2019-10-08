@@ -2,44 +2,48 @@
 
 .pie-chart{
   display: flex;
-}
-.pie-chart__list{
-  list-style: none;
-  margin: 34px 0 0 5px;
-}
-.pie-chart__item{
-  @include body;
-  position: relative;
-  &::before{
+  &__list{
+    list-style: none;
+    margin: 34px 0 0 5px;
+  }
+
+  &__item{
+    @include body;
+    position: relative;
+    &::before{
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+      border-radius: 50%;
+      left: -15px;
+      top: 5px;
+    }
+    &:nth-child(2)::before{
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    }
+    &:nth-child(3)::before{
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+    &:nth-child(4)::before{
+      background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+    }
+  }
+
+  &__outer{
     position: absolute;
-    content: '';
-    width: 10px;
-    height: 10px;
-    background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
-    border-radius: 50%;
-    left: -15px;
-    top: 5px;
+    top: 30px;
   }
-  &:nth-child(2)::before{
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-  }
-  &:nth-child(3)::before{
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  }
-  &:nth-child(4)::before{
-    background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
-  }
-}
-.pie-chart__outer{
-  position: absolute;
-  top: 30px;
 }
 
 @media (max-width: 450px) {
-  .pie-chart__item{
-    font-size: 0.93rem;
-  }
-  .pie-chart__outer {
-    top: 30px;
+  .pie-chart{
+    &__item{
+      font-size: 0.93rem;
+    }
+    &__outer {
+      top: 30px;
+    }
   }
 }

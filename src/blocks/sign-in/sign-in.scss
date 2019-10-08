@@ -6,25 +6,25 @@
   height: 358px;
   position: relative;
   z-index: 1;
+
+  &__head{
+    @include h1;
+    margin: 49px 0 20px 0;
+  }
+
+  &__label{
+    @include body;
+    display: block;
+    margin: 33px 0 0 0;
+  }
 }
-.sign-in__head{
-  @include h1;
-  margin: 49px 0 20px 0;
-}
-.sign-in__label{
-  @include body;
-  display: block;
-  margin: 33px 0 0 0;
-}
+
 @media (max-width: 450px) {
   .sign-in{
     width: 300px;
     padding-left: 20px;
-    & .signIn__head{
-      font-size: 18px;
-    }
-    .sign-in__label{
-      font-size: 12px;
+    &__label{
+      font-size: 0.86rem;
     }
   }
 }

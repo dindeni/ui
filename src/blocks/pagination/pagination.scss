@@ -34,7 +34,7 @@
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     border-radius: 22px;
 
-    & .pagination__link {
+    & #{&}__link {
       width: 18px;
       height: 18px;
       margin: 0 auto;
@@ -71,7 +71,7 @@
 }
 
 @media (max-width: 750px) {
-    & .pagination_for-filter{
+  .pagination_for-filter{
       width: 300px;
       margin: 0 auto;
       }

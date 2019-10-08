@@ -23,7 +23,7 @@
       left: -10px;
       top: 0;
     }
-    &.checkbox__mark_rich{
+    &#{&}_rich{
       font-weight: bold;
       & .checkbox__description{
         font-size: 12px;
@@ -41,6 +41,7 @@
       }
     }
   }
+
   &__field{
     @include hide;
   }
@@ -63,41 +64,48 @@
     }
   }
   &_for-side-panel{
-    & .checkbox__mark{
-      margin: 0 0 12px 10px;
-    }
-    & .checkbox__mark_rich{
-      &::before{
-        top: -3px;
+    & .checkbox{
+      &__mark{
+        margin: 0 0 12px 10px;
       }
-      & .checkbox__description{
-        margin: 5px 0 0 0;
+
+      &__mark_rich{
+        &::before{
+          top: -3px;
+        }
+        & .checkbox__description{
+          margin: 5px 0 0 0;
+        }
       }
-    }
-    & .checkbox__field:checked + .checkbox__mark_rich::after{
-      top: 1px
-    }
-    & .checkbox__head{
-      margin: 32px 0 18px 0;
+
+      &__field:checked + .checkbox__mark_rich::after{
+        top: 1px
+      }
+
+      &__head{
+        margin: 32px 0 18px 0;
+      }
     }
   }
   &__wrapper_hide{
     @include hide;
   }
+
+  &__field:checked + .checkbox__mark{
+    position: relative;
+    &::before{
+      border: 1px solid $purple;
+    }
+    &::after{
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: url("./icon-checked.svg");
+      left: -5px;
+      top: 4px;
+    }
+  }
 }
 
-.checkbox__field:checked +.checkbox__mark{
-  position: relative;
-  &::before{
-    border: 1px solid $purple;
-  }
-  &::after{
-    position: absolute;
-    content: '';
-    width: 10px;
-    height: 10px;
-    background: url("./icon-checked.svg");
-    left: -5px;
-    top: 4px;
-  }
-}
+

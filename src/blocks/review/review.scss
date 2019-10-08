@@ -7,30 +7,31 @@
   &_for-room-description{
     margin: 18px 0 17px 0;
   }
-}
-.review__icon{
-  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.1);
-  border: 2px solid #FFFFFF;
-  border-radius: 50%;
-}
-.review__name{
-  font-weight: bold;
-  margin: 4px 0 0 6px;
-  display: inline-block;
-  vertical-align: top;
-}
-.review__date{
-  position: absolute;
-  top: 28px;
-  left: 60px;
-}
-.review__wrapper{
-  display: flex;
-  margin: 2px 0 0 6px;
-}
-.review__description{
-  max-width: calc(100% - 125px);
-  margin: 1px 0 0 14px;
+
+  &__icon{
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.1);
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+  }
+  &__name{
+    font-weight: bold;
+    margin: 4px 0 0 6px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  &__date{
+    position: absolute;
+    top: 28px;
+    left: 60px;
+  }
+  &__wrapper{
+    display: flex;
+    margin: 2px 0 0 6px;
+  }
+  &__description{
+    max-width: calc(100% - 125px);
+    margin: 1px 0 0 14px;
+  }
 }
 
 @media (max-width: 800px) {

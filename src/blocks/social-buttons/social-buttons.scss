@@ -1,48 +1,54 @@
 @import "../mixins/hide";
 
-.social-buttons__list{
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.social-buttons__link{
-  text-decoration: none;
-}
-.social-buttons__link-text{
-  @include hide;
-}
-.social-buttons__link{
-  width: 24px;
-  height: 24px;
-  display: inline-block;
-}
-.social-buttons__item{
+.social-buttons{
+  &__list{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link{
+    text-decoration: none;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+  }
+  &__link-text{
+    @include hide;
+  }
+
+
+  &__item{
   width: 24px;
   height: 24px;
   margin: 0 0 0 20px;
-  &.social-buttons__item_twitter{
-    background: url("./icon-twitter.svg") no-repeat;
+  &.social-buttons{
+    &__item_twitter{
+      background: url("./icon-twitter.svg") no-repeat;
+    }
+    &__item_facebook{
+      background: url("./icon-facebook.svg") no-repeat;
+    }
+    &__item_instagram{
+      background: url("./icon-instagram.svg") no-repeat;
+      }
+    }
   }
-  &.social-buttons__item_facebook{
-    background: url("./icon-facebook.svg") no-repeat;
-  }
-  &.social-buttons__item_instagram{
-    background: url("./icon-instagram.svg") no-repeat;
+
+  &_for-copyright{
+    &.social-buttons{
+      margin: 0 140px 0 0;
+      &__list{
+        margin: 0 164px 0 0;
+      }
+    }
+    &.social-buttons_for-registration{
+      margin: 0 114px 0 0;
+    }
   }
 }
 
-.social-buttons_for-copyright{
-  &.social-buttons{
-    margin: 0 140px 0 0;
-    &__list{
-      margin: 0 164px 0 0;
-    }
-  }
-  &.social-buttons_for-registration{
-    margin: 0 114px 0 0;
-  }
-}
 
 @media (max-width: 800px) {
   .social-buttons{

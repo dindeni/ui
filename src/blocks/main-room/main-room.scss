@@ -19,14 +19,15 @@
       width: 68.1%;
     }
   }
-}
-.main-room__images-aside{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex-basis: 31.9%;
-  & .main-room__image{
-    width: 100%;
+
+  &__images-aside{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-basis: 31.9%;
+    & .main-room__image{
+      width: 100%;
+    }
   }
 }
 
@@ -34,9 +35,6 @@
   .main-room__images-aside{
     width: 40%;
   }
-  /*.main-room__room-description .order-room{
-    margin: 0 auto 90px auto;
-  }*/
 }
 
 @media (max-width: 800px) {
@@ -46,82 +44,19 @@
 }
 
 @media (max-width: 450px) {
-  .main-room__image-wrapper{
-    flex-wrap: wrap;
-  }
-  .main-room__images-aside{
-    flex-basis: 100%;
-  }
-  .main-room__image-wrapper{
-    &> .main-room__image:first-child{
+  .main-room{
+    &__image-wrapper{
+      flex-wrap: wrap;
+    }
+
+    &__images-aside{
       flex-basis: 100%;
     }
+
+    &__image-wrapper{
+      &> .main-room__image:first-child{
+        flex-basis: 100%;
+      }
+    }
   }
-  .main-room__room-description {
-    /*& .order-room {
-      width: 320px;
-      margin: auto;
-      padding-left: 15px;
-
-      & .order-room__number {
-        font-size: 1.29rem;
-      }
-      & .order-room__type-room {
-        font-size: 0.86rem;
-        margin: 0 70px 0 0;
-      }
-
-      & .order-room__price {
-        font-size: 0.93rem;
-      }
-
-      & .input.input_dropdown {
-        width: 122px;
-      }
-      & .guests .input_dropdown{
-        width: 266px;
-      }
-
-      & .input::placeholder {
-        font-size: 0.86rem;
-      }
-
-      & .input__label-dropdown::after {
-        right: -20px;
-      }
-
-      & .input {
-        width: 265px;
-      }
-
-      & .buttons__full_for-filtering {
-        padding: 15px 80px;
-      }*/
-    }
-
-    /*& .order-room__total-description {
-      font-size: 0.93rem;
-      width: 200px;
-    }*/
-
-    /*& .order-room__total-price {
-      font-size: 0.93rem;
-    }
-
-    & .order-room__total-tax {
-      right: 40px;
-    }
-
-    & .order-room__sum-label {
-      font-size: 1.29rem;
-    }
-
-    & .order-room__sum {
-      font-size: 1.29rem;
-    }
-
-    .order-room__sum-wrapper::after {
-      width: 110px;
-    }
-  }*/
 }

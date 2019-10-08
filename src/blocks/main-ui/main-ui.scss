@@ -1,43 +1,46 @@
-.main-ui__form, .main-ui__cards{
-  display: flex;
-  flex-wrap: wrap;
-}
-.main-ui__form-wrapper{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  margin: 10px 0 20px 50px;
-  width: 320px;
-  & .main-ui__range-wrapper,
-   .main-ui__checkbox-wrapper{
-    margin: 0 0 20px 10px;
-  }
-  & .main-ui__buttons-wrapper{
-    margin: 0 0 20px 0;
+.main-ui{
+  &__form, &__cards{
     display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__form-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 10px 0 20px 50px;
+    width: 320px;
+    & .main-ui__range-wrapper,
+    .main-ui__checkbox-wrapper{
+      margin: 0 0 20px 10px;
+    }
+    & .main-ui__buttons-wrapper{
+      margin: 0 0 20px 0;
+      display: flex;
+      width: 100%;
+    }
+    &_review{
+      width: 780px;
+    }
+  }
+
+  &__rate-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     width: 100%;
   }
-  &_review{
-    width: 780px;
+
+  &__card-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 10px 0 20px 50px;
+    width: 400px;
+  }
+
+  &__headers-footers{
+    margin-top: 20px;
   }
 }
-.main-ui__rate-wrapper {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 100%;
-}
-.cards{
-  display: flex;
-  flex-wrap: wrap;
-}
-.main-ui__card-wrapper{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  margin: 10px 0 20px 50px;
-  width: 400px;
-}
-.main-ui__headers-footers{
-  margin-top: 20px;
-}
+

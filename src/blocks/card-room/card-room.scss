@@ -10,7 +10,7 @@
   height: 258px;
   display: inline-block;
   position: relative;
-  & .card-room__mark:first-child{
+  & &__mark:first-child{
     background: #FFFFFF;
   }
   &::after{
@@ -23,7 +23,7 @@
     bottom: 49px;
     left: 20px;
   }
-  &.card-room_for-filter{
+  &#{&}_for-filter{
     margin: 0 12px 20px 0;
   }
   &__image_hide{
@@ -50,6 +50,7 @@
     background: none;
     cursor: pointer;
   }
+
   &__arrow{
     width: 8px;
     height: 13px;
@@ -57,7 +58,6 @@
     border: none;
     cursor: pointer;
     outline: none;
-    &.card-room__arrow{
       &_next{
         transform: rotate(180deg);
         margin-right: 18px;
@@ -65,7 +65,6 @@
       &_prev{
         margin-left: 18px;
       }
-    }
   }
   &__arrows-wrapper{
     position: absolute;
@@ -80,20 +79,21 @@
   &__wrapper{
     position: relative;
   }
-  &__number-room-wrapper {
-    margin: 25px 0 0 0;
-    width: 50%;
-    display: inline-block;
-  }
   &__number{
     @include h2;
     margin: 0 7px 0 6px;
+    &-room-wrapper {
+      margin: 25px 0 0 0;
+      width: 50%;
+      display: inline-block;
+    }
+    &-mark{
+      @include h2;
+      font-size: 14px;
+      margin-left: 20px;
+    }
   }
-  &__number-mark{
-    @include h2;
-    font-size: 14px;
-    margin-left: 20px;
-  }
+
   &__type-room{
     @include body;
     color: $purple;

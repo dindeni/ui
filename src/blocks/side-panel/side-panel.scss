@@ -4,33 +4,34 @@
 .side-panel{
   width: 300px;
   margin: 31px 0 0 9.8%;
-}
-.side-panel__slogan{
-  @include h3;
-  color: $dark100;
-  margin: 0 0 5px 0;
-  &.side-panel__slogan_guests{
-    margin-top: 22px;
+  &__slogan{
+    @include h3;
+    color: $dark100;
+    margin: 0 0 5px 0;
+    &_guests{
+      margin-top: 22px;
+    }
+    &_range{
+      margin: 31px 0 24px 0;
+      display: inline-block;
+    }
+    &_checkbox{
+      margin: 29px 0 17px 0;
+    }
+    &_checkbox-rich{
+      margin: 32px 0 19px 0;
+    }
+    &_rooms{
+      margin: 32px 0 5px 0;
+    }
   }
-  &.side-panel__slogan_range{
-    margin: 31px 0 24px 0;
-    display: inline-block;
+
+  &__range-reference{
+    @include h3;
+    color: $dark50;
+    text-transform: inherit;
+    margin-top: 15px;
   }
-  &.side-panel__slogan_checkbox{
-    margin: 29px 0 17px 0;
-  }
-  &.side-panel__slogan_checkbox-rich{
-    margin: 32px 0 19px 0;
-  }
-  &.side-panel__slogan_rooms{
-    margin: 32px 0 5px 0;
-  }
-}
-.side-panel__range-reference{
-  @include h3;
-  color: $dark50;
-  text-transform: inherit;
-  margin-top: 15px;
 }
 
 @media (max-width: 1100px) {
