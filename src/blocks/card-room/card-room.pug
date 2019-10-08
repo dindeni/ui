@@ -2,27 +2,27 @@ include ../rate/rate
 
 mixin card-room(arr, name, type, numberRoom, price, numberReview, numberRate, modifier)
 
-  div(class=modifier ? `card-room ${modifier}`: 'card-room')
+  div(class=modifier ? `card-room js-card-room ${modifier}`: 'card-room js-card-room')
     div.card-room__wrapper
       div.card-room__image-wrapper
         each value, index in arr
           if index > 0
-            img(src=`${value}` class=`card-room__image card-room__image_hide` alt='room image')
+            img(src=`${value}` class=`card-room__image js-card-room__image card-room__image_hide` alt='room image')
           else
-            img(src=`${value}` class=`card-room__image` alt='room image')
+            img(src=`${value}` class=`card-room__image js-card-room__image` alt='room image')
 
-      form.card-room__form
+      form.card-room__form.js-card-room__form
         each value, index in Array(4)
           if index === 0
             label(class='card-room__mark')
-              input(type='radio' class='card-room__radio' name=`${name}` checked=true)
+              input(type='radio' class='card-room__radio js-card-room__radio' name=`${name}` checked=true)
           else
             label(class='card-room__mark')
-              input(type='radio' class='card-room__radio' name=`${name}`)
+              input(type='radio' class='card-room__radio js-card-room__radio' name=`${name}`)
 
       div.card-room__arrows-wrapper
-        button.card-room__arrow.card-room__arrow_prev
-        button.card-room__arrow.card-room__arrow_next
+        button.card-room__arrow.card-room__arrow_prev.js-card-room__arrow_prev
+        button.card-room__arrow.card-room__arrow_next.js-card-room__arrow_next
 
     if type === 'luxe'
       div.card-room__number-room-wrapper

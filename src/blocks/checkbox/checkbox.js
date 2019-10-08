@@ -1,5 +1,5 @@
-const checkboxHead = document.querySelector('.checkbox__head');
-const checkboxWrapper = document.querySelector('.checkbox__wrapper');
+const checkboxHead = document.querySelector('.js-checkbox__head');
+const checkboxWrapper = document.querySelector('.js-checkbox__wrapper');
 
 const handlerCheckboxClick = (evt) => {
   const isNotHide = evt.target === checkboxHead && !checkboxWrapper.classList.contains('checkbox__wrapper_hide');

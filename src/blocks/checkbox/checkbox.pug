@@ -8,8 +8,8 @@ mixin checkbox(arr, type, head, modifier)
 
   else if type === 'checkboxExpandable'
     div(class=modifier ? `checkbox ${modifier}`: 'checkbox')
-      h3.checkbox__head#checkbox-head #{head}
-      div.checkbox__wrapper.checkbox__wrapper_hide#checkbox-expandable-wrapper
+      h3.checkbox__head.js-checkbox__head #{head}
+      div.checkbox__wrapper.js-checkbox__wrapper.checkbox__wrapper_hide#checkbox-expandable-wrapper
         each value, index in arr
           input.checkbox__field(type='checkbox' id=`field-checkbox-expandable-${index}`)
           label.checkbox__mark(for=`field-checkbox-expandable-${index}`) #{value}

@@ -36,26 +36,26 @@ export default controlButtonMinus;
 
 const countGuests = (classGuests, babiesValue, guestsValue) => {
   const guests = classGuests;
-  const buttonMinus = guests.querySelectorAll('.sum-guests__button_minus');
-  const numberVisitors = guests.querySelectorAll('.sum-guests__number-of-visitors');
-  const inputGuests = guests.querySelector('.form-element__field_for-guests');
-  const guestsPopup = guests.querySelector('.sum-guests__popup');
-  const containerAdult = guests.querySelector('.sum-guests__container_adult');
-  const containerChildren = guests.querySelector('.sum-guests__container_children');
-  const containerBabies = guests.querySelector('.sum-guests__container_babies');
-  const buttonApply = guests.querySelector('.buttons__transparent_apply');
-  const buttonClear = guests.querySelector('.buttons__transparent_clear');
-  const buttonsContainer = guests.querySelector('.sum-guests__buttons-footer-container');
+  const buttonMinus = guests.querySelectorAll('.js-sum-guests__button_minus');
+  const numberVisitors = guests.querySelectorAll('.js-sum-guests__number-of-visitors');
+  const inputGuests = guests.querySelector('.js-form-element__field_for-guests');
+  const guestsPopup = guests.querySelector('.js-sum-guests__popup');
+  const containerAdult = guests.querySelector('.js-sum-guests__container_adult');
+  const containerChildren = guests.querySelector('.js-sum-guests__container_children');
+  const containerBabies = guests.querySelector('.js-sum-guests__container_babies');
+  const buttonApply = guests.querySelector('.js-buttons__transparent_apply');
+  const buttonClear = guests.querySelector('.js-buttons__transparent_clear');
+  const buttonsContainer = guests.querySelector('.js-sum-guests__buttons-footer-container');
 
   const sumGuests = (evt) => {
     const { parentElement } = evt.target.parentElement;
     const searchButtonPlus = parentElement.querySelector(
-      '.sum-guests__button_plus',
+      '.js-sum-guests__button_plus',
     );
     const searchButtonMinus = parentElement.querySelector(
-      '.sum-guests__button_minus',
+      '.js-sum-guests__button_minus',
     );
-    const searchNumberVisitors = parentElement.querySelector('.sum-guests__number-of-visitors');
+    const searchNumberVisitors = parentElement.querySelector('.js-sum-guests__number-of-visitors');
 
     /* eslint-disable no-param-reassign */
     const increaseVisitors = () => { guestsValue += 1; };
@@ -116,7 +116,7 @@ const countGuests = (classGuests, babiesValue, guestsValue) => {
     }
     if (evt.target === buttonClear) {
       inputGuests.value = 0;
-      guestsPopup.querySelectorAll('.sum-guests__number-of-visitors').forEach((value) => {
+      guestsPopup.querySelectorAll('.js-sum-guests__number-of-visitors').forEach((value) => {
         const valueOfSpanElement = value;
         valueOfSpanElement.textContent = '0';
       });

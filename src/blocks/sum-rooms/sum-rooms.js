@@ -1,9 +1,9 @@
-if (document.querySelector('.sum-rooms')) {
-  const rooms = document.querySelector('.sum-rooms');
+if (document.querySelector('.js-sum-rooms')) {
+  const rooms = document.querySelector('.js-sum-rooms');
   const roomsInput = rooms.querySelector('.js-form-element__field_for-rooms');
-  const roomsPopup = rooms.querySelector('.sum-rooms__popup');
-  const bedRoomsNumber = rooms.querySelector('.sum-rooms__number-of-visitors_bedroom');
-  const bedsNumber = rooms.querySelector('.sum-rooms__number-of-visitors_beds');
+  const roomsPopup = rooms.querySelector('.js-sum-rooms__popup');
+  const bedRoomsNumber = rooms.querySelector('.js-sum-rooms__number-of-visitors_bedroom');
+  const bedsNumber = rooms.querySelector('.js-sum-rooms__number-of-visitors_beds');
 
   roomsInput.value = '0 спальни, 0 кровати...';
 
@@ -18,8 +18,8 @@ if (document.querySelector('.sum-rooms')) {
 
   const handlerRoomsClick = (evt) => {
     const { parentElement } = evt.target;
-    const searchButtonPlus = parentElement.querySelector('.sum-rooms__button_plus');
-    const number = parentElement.querySelector('.sum-rooms__number-of-visitors');
+    const searchButtonPlus = parentElement.querySelector('.js-sum-rooms__button_plus');
+    const number = parentElement.querySelector('.js-sum-rooms__number-of-visitors');
     if (evt.target === searchButtonPlus) {
       number.textContent = +number.textContent + 1;
     } else if (number.textContent > 0) {

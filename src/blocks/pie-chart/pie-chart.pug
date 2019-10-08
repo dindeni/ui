@@ -3,9 +3,9 @@
 mixin pie-chart(number, head)
 
   div.pie-chart
-    canvas(class='pie-chart__inner' style={width: '120px', height: '132px'})
+    canvas(class='pie-chart__inner js-pie-chart__inner' style={width: '120px', height: '132px'})
     canvas(style={width: '120px', height: '132px'}
-      class='pie-chart__outer')
+      class='pie-chart__outer js-pie-chart__outer')
 
     ul.pie-chart__list
       each item in legendArr

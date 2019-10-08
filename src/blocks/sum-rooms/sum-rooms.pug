@@ -1,17 +1,17 @@
 mixin sum-rooms
   -const rooms = ['спальни', 'кровати', 'ванные комнаты']
   -const roomsModifier = ['bedroom', 'beds', 'bathroom']
-  div.sum-rooms
+  div.sum-rooms.js-sum-rooms
 
     +form-element('dropdown', '0 спальни, 0 кровати...', 'form-element__field_for-rooms js-form-element__field_for-rooms')
 
-    div.sum-rooms__popup.sum-rooms__popup_hide
+    div.sum-rooms__popup.js-sum-rooms__popup.sum-rooms__popup_hide
       div.sum-rooms__count-container
 
       each value, index in rooms
         div.sum-rooms__container
           span.sum-rooms__type-visitors #{value}
           div.sum-rooms__number-of-visitors-wrapper
-            button(type='button' class='sum-rooms__button sum-rooms__button_minus') -
-            span.sum-rooms__number-of-visitors(class=`sum-rooms__number-of-visitors_${roomsModifier[index]}`) 0
-            button(type='button' class='sum-rooms__button sum-rooms__button_plus') +
+            button(type='button' class='sum-rooms__button sum-rooms__button_minus js-sum-rooms__button_minus') -
+            span.sum-rooms__number-of-visitors.js-sum-rooms__number-of-visitors(class=`sum-rooms__number-of-visitors_${roomsModifier[index]} js-sum-rooms__number-of-visitors_${roomsModifier[index]}`) 0
+            button(type='button' class='sum-rooms__button sum-rooms__button_plus js-sum-rooms__button_plus') +

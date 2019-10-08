@@ -1,8 +1,8 @@
-const navigations = document.querySelectorAll('.navigation');
+const navigations = document.querySelectorAll('.js-navigation');
 
 const handlerButtonClick = (evt, navigation) => {
-  const button = navigation.querySelector('.navigation__button-mobile');
-  const navigationList = navigation.querySelector('.navigation__list');
+  const button = navigation.querySelector('.js-navigation__button-mobile');
+  const navigationList = navigation.querySelector('.js-navigation__list');
   const isButtonClose = evt.target === button
       && !button.classList.contains('navigation__button-mobile_open');
   const isButtonOpen = evt.target === button

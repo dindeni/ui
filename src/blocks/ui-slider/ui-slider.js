@@ -1,8 +1,8 @@
 require('jquery-ui/ui/widgets/slider');
 require('jquery-ui/themes/base/slider.css');
 
-const $sliderElement = $('.ui-slider__range');
-const $labelElement = $('.ui-slider__label');
+const $sliderElement = $('.js-ui-slider__range');
+const $labelElement = $('.js-ui-slider__label');
 
 $sliderElement.slider({
   range: true,

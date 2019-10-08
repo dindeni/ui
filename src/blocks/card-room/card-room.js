@@ -2,7 +2,7 @@ let imageCount = 0;
 
 const handleFormChange = (evt, form) => {
   if (evt.currentTarget === form) {
-    const cardImages = evt.currentTarget.parentElement.querySelectorAll('.card-room__image');
+    const cardImages = evt.currentTarget.parentElement.querySelectorAll('.js-card-room__image');
     form.querySelectorAll('.card-room__radio')
       .forEach((input, index) => {
         if (evt.target === input) {
@@ -22,15 +22,15 @@ const handleFormChange = (evt, form) => {
   }
 };
 
-document.querySelectorAll('.card-room__form').forEach((form) => {
+document.querySelectorAll('.js-card-room__form').forEach((form) => {
   form.addEventListener('change', (evt) => handleFormChange(evt, form));
 });
 
 const handleRoomsClick = (evt, cardRoom) => {
-  const prev = cardRoom.querySelector('.card-room__arrow_prev');
-  const next = cardRoom.querySelector('.card-room__arrow_next');
-  const images = cardRoom.querySelectorAll('.card-room__image');
-  const inputs = cardRoom.querySelectorAll('.card-room__radio');
+  const prev = cardRoom.querySelector('.js-card-room__arrow_prev');
+  const next = cardRoom.querySelector('.js-card-room__arrow_next');
+  const images = cardRoom.querySelectorAll('.js-card-room__image');
+  const inputs = cardRoom.querySelectorAll('.js-card-room__radio');
 
   if (evt.target === prev) {
     let flag = false;
@@ -78,6 +78,6 @@ const handleRoomsClick = (evt, cardRoom) => {
   }
 };
 
-document.querySelectorAll('.card-room').forEach((cardRoom) => {
+document.querySelectorAll('.js-card-room').forEach((cardRoom) => {
   cardRoom.addEventListener('click', (evt) => handleRoomsClick(evt, cardRoom));
 });

@@ -1,8 +1,8 @@
 /* eslint-disable no-new */
 import Chart from 'chart.js';
 
-const pieChartElement = document.querySelector('.pie-chart__inner');
-const pieChartOuterElement = document.querySelector('.pie-chart__outer');
+const pieChartElement = document.querySelector('.js-pie-chart__inner');
+const pieChartOuterElement = document.querySelector('.js-pie-chart__outer');
 
 if (pieChartElement) {
   const chartElement = pieChartElement.getContext('2d');

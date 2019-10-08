@@ -1,8 +1,8 @@
 require('jquery-ui/ui/widgets/datepicker.js');
 
 
-const $filterElement = $('.form-element__field_for-datepicker-range');
-const $filterElementHide = $('.form-element__field_for-hide-datepicker');
+const $filterElement = $('.js-form-element__field_for-datepicker-range');
+const $filterElementHide = $('.js-form-element__field_for-hide-datepicker');
 
 const clearInput = () => {
   $filterElement.val('');
