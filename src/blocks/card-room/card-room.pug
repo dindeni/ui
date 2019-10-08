@@ -1,6 +1,7 @@
 include ../rate/rate
 
 mixin card-room(arr, name, type, numberRoom, price, numberReview, numberRate, modifier)
+
   div(class=modifier ? `card-room ${modifier}`: 'card-room')
     div.card-room__wrapper
       div.card-room__image-wrapper
@@ -9,6 +10,7 @@ mixin card-room(arr, name, type, numberRoom, price, numberReview, numberRate, mo
             img(src=`${value}` class=`card-room__image card-room__image_hide` alt='room image')
           else
             img(src=`${value}` class=`card-room__image` alt='room image')
+
       form.card-room__form
         each value, index in Array(4)
           if index === 0
@@ -21,6 +23,7 @@ mixin card-room(arr, name, type, numberRoom, price, numberReview, numberRate, mo
       div.card-room__arrows-wrapper
         button.card-room__arrow.card-room__arrow_prev
         button.card-room__arrow.card-room__arrow_next
+
     if type === 'luxe'
       div.card-room__number-room-wrapper
         span.card-room__number-mark №
@@ -29,6 +32,7 @@ mixin card-room(arr, name, type, numberRoom, price, numberReview, numberRate, mo
       div.card-room__price-wrapper
           span.card-room__price #{price}&#8381;
           span.card-room__periodicity в сутки
+
     else if type === 'normal'
       div.card-room__number-room-wrapper
         span.card-room__number-mark №
@@ -36,6 +40,8 @@ mixin card-room(arr, name, type, numberRoom, price, numberReview, numberRate, mo
       div.card-room__price-wrapper
           span.card-room__price.card-room__price_normal #{price}&#8381;
           span.card-room__periodicity в сутки
+
     +rate(numberRate, 'rate_for-card-room')
+
     div.card-room__number-review #{numberReview}
       span.card-room__number-review-word Отзывов

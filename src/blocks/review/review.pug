@@ -1,10 +1,12 @@
 include ../buttons/buttons
 
 mixin review(name, date, text, pathIcon, buttonType, numberLikes, modifier)
+
   section(class=modifier ? `review ${modifier}`: 'review')
     img.review__icon(src=pathIcon alt='фото аватар')
     h3.review__name #{name}
     span.review__date #{date}
+
     div.review__wrapper
       +buttons(buttonType, numberLikes)
       p.review__description #{text}

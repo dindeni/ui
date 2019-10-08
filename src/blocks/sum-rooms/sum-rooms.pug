@@ -2,9 +2,12 @@ mixin sum-rooms
   -const rooms = ['спальни', 'кровати', 'ванные комнаты']
   -const roomsModifier = ['bedroom', 'beds', 'bathroom']
   div.sum-rooms
+
     +form-element('dropdown', '0 спальни, 0 кровати...', 'form-element__field_for-rooms js-form-element__field_for-rooms')
+
     div.sum-rooms__popup.sum-rooms__popup_hide
       div.sum-rooms__count-container
+
       each value, index in rooms
         div.sum-rooms__container
           span.sum-rooms__type-visitors #{value}

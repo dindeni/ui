@@ -1,24 +1,30 @@
 include ../buttons/buttons
 
 mixin navigation(type, items, itemClasses, buttonLoginName, buttonRegName, user, itemModifier)
+
   if type === 'standart'
     nav.navigation
       img.navigation__logo(src=require('../img/icon-logo.svg') alt='logo')
+
       ul.navigation__list
         each item, index in items
           li(class= itemModifier ? `navigation__item ${itemModifier}`: 'navigation__item')
             a(href='somePage.html' class=`${itemClasses[index]}`) #{item}
+
       div.navigation__buttons-wrapper
         +buttons('bordering-link', `${buttonLoginName}`, 'sign-in.html')
         +buttons('full-link', `${buttonRegName}`, 'registration.html', 'buttons_for-navigation')
         button.navigation__button-mobile
+
   else if type === 'loggedIn'
     nav.navigation.navigation_logged
       img.navigation__logo(src=require('../img/icon-logo.svg') alt='logo')
+
       ul.navigation__list
         each item, index in items
           li.navigation__item
             a(href='somePage.html' class=`${itemClasses[index]}`) #{item}
+
       em.navigation__user-name #{user}
       div.navigation__buttons-wrapper
         button.navigation__button-mobile

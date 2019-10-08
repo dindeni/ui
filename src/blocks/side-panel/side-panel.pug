@@ -17,16 +17,23 @@ mixin side-panel
 
   section.side-panel
     div.side-panel__slogan даты пребывания в отеле
+
     form.side-panel__form
+
       +datepicker-range('19 авг - 23 авг')
+
       +sum-guests('sum-guests_for-filter', 'form-element__field_for-filter', 'form-element_for-filter')
+
       div.side-panel__slogan.side-panel__slogan_range диапазон цены
       +ui-slider('ui-slider_for-side-panel')
       div.side-panel__range-reference Стоимость за сутки пребывания в номере
+
       div.side-panel__slogan.side-panel__slogan_checkbox Checkbox Buttons
       +checkbox(checkboxArr.standart, 'checkbox', undefined, 'checkbox_for-side-panel')
+
       div.side-panel__slogan.side-panel__slogan_checkbox-rich доступность
       +checkbox(checkboxArr.rich, 'rich', undefined, 'checkbox_for-side-panel')
+
       div.side-panel__slogan.side-panel__slogan_rooms удобства номера
       +sum-rooms
       +checkbox(checkboxArr.expandable, 'checkboxExpandable', 'дополнительные удобства', 'checkbox_for-side-panel')

@@ -2,8 +2,10 @@ mixin rate(numberFillStars, modifier)
 
   div(class=modifier ? `rate ${modifier}`: 'rate')
     each value,index in Array(5)
+
       if index <= numberFillStars - 1
         img.rate__img(src=require('../blocks/rate/icon-star.svg') alt='image star')
+
       else
         img.rate__img(src=require('../blocks/rate/icon-star-border.svg') alt='image star')
 

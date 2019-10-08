@@ -2,12 +2,15 @@ include ../sum-guests/sum-guests
 include ../form-element/form-element
 
 mixin searchRoom(absolute)
+
   section(class=absolute ? `search-room search-room_absolute`: 'search-room')
     h2.search-room__head Найдём номера под ваши пожелания
+
     div.search-room__check
       div.search-room__label-wrapper
         span.search-room__label прибытие
         span.search-room__label выезд
+
       form.search-room__form
         +form-element('date', 'дд.мм.гггг', 'form-element__field_for-search-in js-form-element__field_for-search-in', 'form-element_for-search')
         +form-element('date', 'дд.мм.гггг', 'form-element__field_for-search-out js-form-element__field_for-search-out', 'form-element_for-search')

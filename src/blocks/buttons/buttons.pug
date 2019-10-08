@@ -1,25 +1,33 @@
 mixin buttons(type, content, link, modifier)
+
   if type === 'full'
     div(class=modifier ? `buttons ${modifier}`:'buttons')
       button.buttons__full #{content}
+
   else if type === 'full-link'
     div(class=modifier ? `buttons ${modifier}`:'buttons')
       a(href=`${link}`).buttons__full #{content}
+
   else if type === 'transparent'
     div.buttons
       button.buttons__transparent(class=modifier ? `buttons__transparent ${modifier}`: 'buttons__transparent') #{content}
+
   else if type === 'bordering'
     div.buttons
       button.buttons__bordering #{content}
+
   else if type === 'bordering-link'
     div(class=modifier ? `buttons ${modifier}`:'buttons')
       a.buttons__with-bordering-link(href=`${link}`) #{content}
+
   else if type === 'buy'
     div(class=modifier ? `buttons ${modifier}`:'buttons')
       button.buttons__full.buttons__full_for-filtering #{content}
+
   else if type === 'like'
     div.buttons.buttons_for-rate.buttons_like
       button.buttons__bordering.buttons__bordering_for-rate #{content}
+
   else if type === 'like-gray'
     div(class=modifier ? `buttons buttons_for-rate buttons_gray ${modifier}`: 'buttons buttons_for-rate buttons_gray')
       button.buttons__bordering.buttons__bordering_for-rate.buttons__bordering_gray #{content}

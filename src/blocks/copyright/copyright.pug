@@ -4,8 +4,12 @@ mixin copyright(text, modifier, modifierSocial)
 
   section(class=modifier ? `copyright ${modifier}`: 'copyright')
     em.copyright__head #{text}
+
     if(modifierSocial)
+
       +social-buttons(`social-buttons_for-copyright ${modifierSocial}`)
+
     else
+
       +social-buttons(`social-buttons_for-copyright`)
 

@@ -6,8 +6,10 @@ mixin sum-guests(modifier, modifierInput, modifierLabel)
   -const visitorsId = ['adult', 'children', 'babies']
 
     div(class=modifier ? `sum-guests ${modifier}`: 'sum-guests') гости
+
       +form-element('dropdown', 'Сколько гостей', modifierInput ? `form-element__field_for-guests js-form-element__field_for-guests ${modifierInput}`: 'form-element__field_for-guests js-form-element__field_for-guests',
        modifierLabel ? `form-element_for-guests ${modifierLabel}`: 'form-element_for-guests')
+
       div.sum-guests__popup.sum-guests__popup_hide
         div.sum-guests__count-container
           each value, index in visitors
@@ -17,6 +19,7 @@ mixin sum-guests(modifier, modifierInput, modifierLabel)
                 button(type='button' class='sum-guests__button sum-guests__button_minus') -
                 span.sum-guests__number-of-visitors 0
                 button(type='button' class='sum-guests__button sum-guests__button_plus') +
+
         div.sum-guests__buttons-footer-container
           +buttons('transparent', 'очистить',undefined, 'buttons__transparent_clear buttons__transparent_hide')
           +buttons('transparent', 'применить',undefined, 'buttons__transparent_apply')

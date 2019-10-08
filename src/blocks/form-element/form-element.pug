@@ -1,23 +1,30 @@
 mixin form-element(type, placeholder, modifierInput, modifierLabel)
+
   if type === 'text'
     div(class=modifierLabel ? `form-element ${modifierLabel}`: 'form-element')
       input(type='text' class=modifierInput ? `form-element__field form-element__field_text ${modifierInput}`: 'form-element__field form-element__field_text' placeholder=`${placeholder}`)
+
   else if type === 'dropdown'
     label(class=modifierLabel ? `form-element form-element_dropdown ${modifierLabel}`: 'form-element form-element_dropdown')
       input(type='text' class= modifierInput ? `form-element__field form-element__field_dropdown ${modifierInput}`: 'form-element__field form-element__field_dropdown' placeholder=`${placeholder}` readonly)
+
   else if type === 'masked'
     div.form-element(class=modifierLabel ? `form-element ${modifierLabel}`: 'form-element')
       input(type='text' class='form-element__field form-element__field_masked' placeholder=`${placeholder}`)
+
   else if type === 'date'
     label(class=modifierLabel ? `form-element form-element_date ${modifierLabel}`: 'form-element form-element_date')
       input(type='text' class= modifierInput ? `form-element__field form-element__field_date ${modifierInput}`: 'form-element__field form-element__field_date'  placeholder=`${placeholder}`)
+
   else if type === 'filter'
     label(class=modifierLabel ? `form-element form-element_dropdown ${modifierLabel}`:'form-element form-element_dropdown')
       input(type='text' class=modifierInput ? `form-element__field form-element__field_filter form-element__field_dropdown ${modifierInput}`: 'form-element__field form-element__field_filter form-element__field_dropdown' placeholder=`${placeholder}`)
       input(type='text' class='form-element__field form-element__field_hide')
+
   else if type === 'subscription'
     label(class=modifierLabel ? `form-element form-element_subscription ${modifierLabel}`: 'form-element form-element_subscription')
       input(type='text' class=modifierInput ? `form-element__field form-element__field_subscription ${modifierInput}`: 'form-element__field form-element__field_subscription' placeholder=`${placeholder}`)
+
   else if type === 'password'
     div.form-element
       input(type='password' class=modifierInput ? `form-element__field form-element__field_text ${modifierInput}`: 'form-element__field form-element__field_text' placeholder=`${placeholder}`)

@@ -4,6 +4,7 @@ mixin social-buttons(modifier)
   -const arrSocial = ['twitter', 'facebook', 'instagram']
 
   div(class=modifier ? `social-buttons ${modifier}`: 'social-buttons')
+
     ul.social-buttons__list
       each item, index in arrSocial
         li.social-buttons__item(class=`social-buttons__item_${item}`)

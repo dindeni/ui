@@ -1,4 +1,5 @@
 mixin toggle(content, id, modifier)
+
   span.toggle(class=modifier ? `toggle ${modifier}`: 'toggle')
       input.toggle__field(type='checkbox' id=`${id}` name='toggle')
       label.toggle__label(for=`${id}` name='toggle') #{content}
