@@ -1,4 +1,6 @@
-# Github Pages:
+# Hotel
+
+### Github Pages:
 https://dindeni.github.io/hotel/
 ### filter room page: 
 https://dindeni.github.io/hotel/filter.html
