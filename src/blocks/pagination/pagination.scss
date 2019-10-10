@@ -34,7 +34,7 @@
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     border-radius: 22px;
 
-    & #{&}__link {
+    & .pagination__link {
       width: 18px;
       height: 18px;
       margin: 0 auto;

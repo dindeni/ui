@@ -228,7 +228,7 @@
         font-size: 0.71rem;
         margin: 39px 0 0 5px;
       }
-      &-calendar, &-calendar td .ui-state-default {
+      &-calendar td, &-calendar td .ui-state-default {
         margin: 0 15px 11.6px 0;
       }
       &-calendar .ui-datepicker-calendar__range:not(.ui-state-disabled) {
