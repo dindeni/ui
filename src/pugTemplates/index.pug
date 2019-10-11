@@ -27,13 +27,19 @@ html(lang="ru")
     meta(name="theme-color" content="#ffffff")
     title hotel
     meta(name="viewport" content="width=device-width,initial-scale=1")
+
   body
+
     header
       +navigation('standart', arrIndexNavigation.items, arrIndexNavigation.classes, 'войти', 'зарегистрироваться', undefined, 'navigation__item_ru')
+
     main.main-index
+
       img(class='main-index__background' src=require('../img/image-back-1.jpg'))
       span.main-index__slogan Лучшие номера для вашей работы, отдыха и просто вдохновения
+
       +searchRoom(true)
+
     +footer-widget(footerdata.description, footerdata.headNavigation, footerdata.navigationItems,
     footerdata.headAbout, footerdata.aboutItems, footerdata.headSupport,
       footerdata.supportItems, footerdata.headSubscribe, footerdata.subscribeDescription,

@@ -1,7 +1,9 @@
 mixin footer-list(listHead, items, modifier)
 
   div(class=modifier ? `footer-list ${modifier}`: 'footer-list')
+
     h3.footer-list__head #{listHead}
+
     ul.footer-list__list
       each item in items
         li.footer-list__item

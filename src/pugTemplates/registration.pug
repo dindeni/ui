@@ -28,10 +28,13 @@ html(lang="en")
     title hotel
     meta(name="viewport" content="width=device-width,initial-scale=1")
   body
+
     header
       +navigation('standart', arrIndexNavigation.items, arrIndexNavigation.classes, 'войти', 'зарегистрироваться', undefined, 'navigation__item_ru')
+
     main.main-registration
       +registration
+
     +footer-widget(footerdata.description, footerdata.headNavigation, footerdata.navigationItems,
       footerdata.headAbout, footerdata.aboutItems, footerdata.headSupport,
       footerdata.supportItems, footerdata.headSubscribe, footerdata.subscribeDescription,

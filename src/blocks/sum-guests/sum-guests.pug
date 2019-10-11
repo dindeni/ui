@@ -11,10 +11,14 @@ mixin sum-guests(modifier, modifierInput, modifierLabel)
        modifierLabel ? `form-element_for-guests ${modifierLabel}`: 'form-element_for-guests')
 
       div.sum-guests__popup.js-sum-guests__popup.sum-guests__popup_hide
+
         div.sum-guests__count-container
           each value, index in visitors
+
             div.sum-guests__container(class=`sum-guests__container_${visitorsId[index]} js-sum-guests__container_${visitorsId[index]}`)
+
               span.sum-guests__type-visitors #{value}
+
               div.sum-guests__number-of-visitors-wrapper
                 button(type='button' class='sum-guests__button sum-guests__button_minus js-sum-guests__button_minus') -
                 span.sum-guests__number-of-visitors.js-sum-guests__number-of-visitors 0
