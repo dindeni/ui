@@ -35,7 +35,7 @@ const handleRoomsClick = (evt, cardRoom) => {
   if (evt.target === prev) {
     let flag = false;
     for (let i = 0; i < inputs.length; i += 1) {
-      const isInputFirst = inputs[i].checked && inputs[i] === inputs[0] && !flag;
+      const isInputFirst = inputs[i].checked && inputs[i] === inputs[0];
       const isInputChecked = inputs[i].checked && !flag;
       if (isInputFirst) {
         flag = true;

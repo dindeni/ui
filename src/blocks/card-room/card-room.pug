@@ -11,11 +11,11 @@ mixin card-room(arr, name, type, numberRoom, price, numberReview, numberRate, mo
           else
             img(src=`${value}` class=`card-room__image js-card-room__image` alt='room image')
 
-      form.card-room__form.js-card-room__form
+      form(autocomplete='off').card-room__form.js-card-room__form
         each value, index in Array(4)
           if index === 0
             label(class='card-room__mark')
-              input(type='radio' class='card-room__radio js-card-room__radio' name=`${name}` checked=true)
+              input(type='radio' class='card-room__radio js-card-room__radio' name=`${name}` checked )
           else
             label(class='card-room__mark')
               input(type='radio' class='card-room__radio js-card-room__radio' name=`${name}`)
