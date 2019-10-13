@@ -31,7 +31,7 @@
     width: 100%;
   }
   &__review-head{
-    margin: 42px 0 0 0;
+    margin: 2px 0 0 0;
     display: inline-block;
   }
   &__review-number{
@@ -39,14 +39,14 @@
     color: $dark50;
     position: absolute;
     right: 68px;
-    top: 36px;
+    top: -3px;
   }
   &__rules{
     margin: 20px 82px 0 2px;
     width: 280px;
   }
   &__rules-head{
-    margin: 0 0 0 21px;
+    margin: 0 0 22px 21px;
   }
   &__cancel{
     margin: 20px 0 0 0;
