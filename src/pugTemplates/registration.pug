@@ -4,8 +4,8 @@ include ../blocks/footer-widget/footer-widget
 include ../blocks/footer/footer
 
 -const arrIndexNavigation = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
--classes: ['navigation__link', 'navigation__link navigation__link_expand',
--'navigation__link', 'navigation__link', 'navigation__link navigation__link_expand']}
+-modifier: [ , 'expand-ru', ,  , 'expand-ru']}
+
 -const footerdata = {description: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
 -headNavigation: 'навигация', navigationItems: ['О нас', 'Новости', 'Служба поддержки',
 -'Услуги'], headAbout: 'о нас', aboutItems: ['О сервисе', 'Наша команда', 'Вакансии',
@@ -29,14 +29,16 @@ html(lang="en")
     meta(name="viewport" content="width=device-width,initial-scale=1")
   body
 
-    header
-      +navigation('standart', arrIndexNavigation.items, arrIndexNavigation.classes, 'войти', 'зарегистрироваться', undefined, 'navigation__item_ru')
+    +navigation()(typeForNavigation='standart' itemsForNavigation=arrIndexNavigation.items navigationLogin='войти'
+      navigationRegistration='зарегистрироваться' navigationLinkModifier=arrIndexNavigation.modifier,
+      modifierForNavigationItems='ru')
 
     main.main-registration
       +registration
 
-    +footer-widget(footerdata.description, footerdata.headNavigation, footerdata.navigationItems,
-      footerdata.headAbout, footerdata.aboutItems, footerdata.headSupport,
-      footerdata.supportItems, footerdata.headSubscribe, footerdata.subscribeDescription,
-      footerdata.placeholderEmail, footerdata.copyrightText, 'footer-widget_for-registration', 'footer-list_for-registration',
-      'copyright_for-registration copyright_footer-widget', 'social-buttons_for-registration')
+    +footer-widget()(footerWidgetDescription=footerdata.description footerWidgetHeadNavigation=footerdata.headNavigation
+      footerWidgetNavigationItems=footerdata.navigationItems footerWidgetHeadAbout=footerdata.headAbout
+      footerWidgetAboutItems=footerdata.aboutItems footerWidgetHeadSupport=footerdata.headSupport
+      footerWidgetSupportItems=footerdata.supportItems footerWidgetHeadSubscribe=footerdata.headSubscribe
+      footerWidgetSubscribeDescription=footerdata.subscribeDescription footerWidgetPlaceholderEmail=footerdata.placeholderEmail
+      footerWidgetCopyrightText=footerdata.copyrightText)

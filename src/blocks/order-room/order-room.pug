@@ -1,7 +1,9 @@
 include ../sum-guests/sum-guests
 include ../buttons/buttons
 
-mixin order-room(arrTotalDesc, arrTotalPrice)
+mixin order-room()
+
+  -const {totalValueForOrder, totalPriceForOrder}=attributes
 
   section.order-room
     div.order-room__header
@@ -18,27 +20,34 @@ mixin order-room(arrTotalDesc, arrTotalPrice)
       span.order-room__label выезд
 
     form.order-room__form
-      +form-element('date', 'дд.мм.гггг', 'form-element__field_for-order-in js-form-element__field_for-order-in', 'form-element_for-order')
-      +form-element('date', 'дд.мм.гггг', 'form-element__field_for-order-out js-form-element__field_for-order-out', 'form-element_for-order')
-      +sum-guests('sum-guests_for-order')
+
+      +form-element()(typeOfForm='date' placeholderForForm='дд.мм.гггг'
+        modifierForInput='for-order-in' jsModifierForInput='for-order-in'
+        modifierForLabel='for-order')
+
+      +form-element()(typeOfForm='date' placeholderForForm='дд.мм.гггг'
+        modifierForInput='for-order-out' jsModifierForInput='for-order-out'
+        modifierForLabel='for-order')
+
+      +sum-guests()(guestsModifier='for-order')
 
     div.order-room__total
-      each value, index in arrTotalDesc
+      each value, index in totalValueForOrder
 
-        if index >= arrTotalDesc.length-2
+        if index >= totalValueForOrder.length-2
           div.order-room__total-wrapper
             span.order-room__total-description #{value}
             button.order-room__total-tax !
-            span.order-room__total-price #{arrTotalPrice[index]}
+            span.order-room__total-price #{totalPriceForOrder[index]}
 
         else
           div.order-room__total-wrapper
             span.order-room__total-description #{value}
-            span.order-room__total-price #{arrTotalPrice[index]}
+            span.order-room__total-price #{totalPriceForOrder[index]}
 
     div.order-room__sum-wrapper
       span.order-room__sum-label Итого
       span.order-room__sum 38 081₽
 
-    +buttons('buy', 'забронировать', undefined, 'buttons_for-order')
+    +buttons()(typeOfButtons='buy' contentOfButtons='забронировать' modifierForButtons='for-order')
 

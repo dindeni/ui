@@ -27,7 +27,7 @@
     &_date{
       width: 150px;
     }
-    &_filter{
+    &_for-filter{
       width: 266px;
     }
     &_for-datepicker-range, &_for-rooms{
@@ -123,6 +123,10 @@
     &.form-element_for-filter, & .form-element__field_for-filter{
       width: 266px;
     }
+  }
+  &_for-filter{
+    width: 266px;
+    margin-top: 4px;
   }
 
   &_subscription{

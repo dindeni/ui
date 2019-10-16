@@ -6,12 +6,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  &_for-registration#{&}_footer-widget#{&} {
+  &#{&}_for-registration {
       margin-top: 10px;
   }
 
   &_footer-widget{
-    &.copyright{
+
       width: 100%;
       box-shadow: 0 10px 20px $dark5;
       margin-top: 14px;
@@ -23,13 +23,10 @@
         height: 1px;
         box-shadow: 0 1px 0 rgba(31, 32, 65, 0.1);
         top: -4px;
-      }
+
     }
     & .copyright__head{
       margin: 0 0 0 9.6%;
-      &.copyright_for-registration{
-        margin: 0 0 0 11.5%;
-      }
     }
   }
 
@@ -45,7 +42,7 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    &__head, &_for-registration &__head{
+    &__head{
       font-size: 0.86rem;
       width: 320px;
       margin: 0;

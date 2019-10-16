@@ -91,8 +91,8 @@ const datePickerInOut = (elementIn, elementOut) => {
           top: $dateElementOut.offset().top + 44,
           left: $dateElementIn.offset().left,
         });
-        const $clearButton = $('.ui-ui-datepicker-close');
-        const $applyButton = $('.ui-ui-datepicker-current');
+        const $clearButton = $('.ui-datepicker-close');
+        const $applyButton = $('.ui-datepicker-current');
 
         $clearButton.click({ value: $dateElementOut }, clearInput);
         $applyButton.click({ value: $dateElementOut }, applyDatepicker);

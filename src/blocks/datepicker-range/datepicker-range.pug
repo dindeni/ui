@@ -2,7 +2,9 @@ include ../form-element/form-element
 
 mixin datepicker-range(defaultDate)
 
-  +form-element('dropdown', defaultDate, 'form-element__field_for-datepicker-range js-form-element__field_for-datepicker-range')
+  +form-element()(typeOfForm='dropdown' placeholderForForm=defaultDate
+  modifierForInput='for-datepicker-range' jsModifierForInput='for-datepicker-range')
 
-  +form-element('dropdown', defaultDate, 'form-element__field_for-hide-datepicker js-form-element__field_for-hide-datepicker',
-    'form-element_for-hide-datepicker')
+  +form-element(typeOfForm='dropdown' placeholderForForm=defaultDate
+  modifierForInput='for-hide-datepicker' jsModifierForInput='for-hide-datepicker'
+    modifierForLabel='for-hide-datepicker')

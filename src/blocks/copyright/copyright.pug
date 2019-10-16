@@ -1,15 +1,18 @@
 include ../social-buttons/social-buttons
 
-mixin copyright(text, modifier, modifierSocial)
+mixin copyright()
 
-  section(class=modifier ? `copyright ${modifier}`: 'copyright')
-    em.copyright__head #{text}
+  -const {copyrightText, copyrightModifier, copyrightSocialModifier}=attributes
 
-    if(modifierSocial)
+  section(class=['copyright',
+   `${copyrightModifier ? `copyright_${copyrightModifier}`:''}`])
+    em.copyright__head #{copyrightText}
 
-      +social-buttons(`social-buttons_for-copyright ${modifierSocial}`)
+    if(copyrightSocialModifier)
+
+      +social-buttons(copyrightSocialModifier)
 
     else
 
-      +social-buttons(`social-buttons_for-copyright`)
+      +social-buttons('for-copyright')
 

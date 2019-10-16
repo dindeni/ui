@@ -1,7 +1,10 @@
-mixin features(arr, modifier)
+mixin features()
 
-  div(class=modifier ? `features ${modifier}`: 'features')
-    each value in arr
+  -const {featuresValue, featuresModifier}=attributes
+
+  div(class=['features',
+   `${featuresModifier ? `features_${featuresModifier}`: ''}`])
+    each value in featuresValue
       div.features__wrapper
         b.features__slogan #{value.slogan}
         span.features__description #{value.description}

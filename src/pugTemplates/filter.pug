@@ -4,8 +4,7 @@ include ../blocks/footer/footer
 include ../blocks/side-panel/side-panel
 
 -const arrIndexNavigation = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
--classes: ['navigation__link', 'navigation__link navigation__link_expand navigation__link_expand-ru',
--'navigation__link', 'navigation__link', 'navigation__link navigation__link_expand navigation__link_expand-ru']}
+-modifier: [ , 'expand-ru', ,  , 'expand-ru']}
 
 -const footerdata = {description: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
 -headNavigation: 'навигация', navigationItems: ['О нас', 'Новости', 'Служба поддержки',
@@ -74,7 +73,9 @@ html(lang="en")
   body
 
     header.main-filter__header
-      +navigation('standart', arrIndexNavigation.items, arrIndexNavigation.classes, 'войти', 'зарегистрироваться', undefined, 'navigation__item_ru')
+      +navigation()(typeForNavigation='standart' itemsForNavigation=arrIndexNavigation.items navigationLogin='войти'
+        navigationRegistration='зарегистрироваться' navigationLinkModifier=arrIndexNavigation.modifier,
+        modifierForNavigationItems='ru')
 
     main.main-filter
 
@@ -83,12 +84,16 @@ html(lang="en")
       section.main-filter__rooms
         h1.main-filter__rooms-head Номера, которые мы для вас подобрали
         each value in rooms
-          +card-room(value.images, 'room-radio-name',
-              value.type, value.number,
-              value.price, value.review, value.rate, 'card-room_for-filter')
-        +pagination(Array(15), 'pagination_for-filter')
+          +card-room()(cardImages=value.images cardRadioName='room-radio-name'
+          typeOfRoom=value.type numberOfRoom=value.number roomPrice=value.price
+            cardNumberOfReviews=value.review cardNumberOfRate=value.rate
+            cardModifier='for-filter')
 
-    +footer-widget(footerdata.description, footerdata.headNavigation, footerdata.navigationItems,
-        footerdata.headAbout, footerdata.aboutItems, footerdata.headSupport,
-        footerdata.supportItems, footerdata.headSubscribe, footerdata.subscribeDescription,
-        footerdata.placeholderEmail, footerdata.copyrightText)
+        +pagination()(valueForPagination=Array(15) modifierForPagination='for-filter')
+
+    +footer-widget()(footerWidgetDescription=footerdata.description footerWidgetHeadNavigation=footerdata.headNavigation
+      footerWidgetNavigationItems=footerdata.navigationItems footerWidgetHeadAbout=footerdata.headAbout
+      footerWidgetAboutItems=footerdata.aboutItems footerWidgetHeadSupport=footerdata.headSupport
+      footerWidgetSupportItems=footerdata.supportItems footerWidgetHeadSubscribe=footerdata.headSubscribe
+      footerWidgetSubscribeDescription=footerdata.subscribeDescription footerWidgetPlaceholderEmail=footerdata.placeholderEmail
+      footerWidgetCopyrightText=footerdata.copyrightText)

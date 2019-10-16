@@ -2,33 +2,41 @@ include ../form-element/form-element
 include ../copyright/copyright
 include ../footer-list/footer-list
 
-mixin footer-widget(description, headNavigation, navigationItems, headAbout, aboutItems, headSupport, supportItems, headSubscribe,subscribeDescription, placeholderEmail, copyrightText, classModifier, listModifier, copyrightModifier, socialModifier)
+mixin footer-widget()
 
-  footer(class= classModifier ? `footer-widget ${classModifier}`: 'footer-widget')
+  -const {footerWidgetDescription, footerWidgetHeadNavigation,
+  -footerWidgetNavigationItems, footerWidgetHeadAbout,
+  -footerWidgetAboutItems, footerWidgetHeadSupport,
+  -footerWidgetSupportItems, footerWidgetHeadSubscribe,
+  -footerWidgetSubscribeDescription, footerWidgetPlaceholderEmail,
+  -footerWidgetCopyrightText, footerWidgetModifier,
+  -footerWidgetCopyrightModifier}=attributes
+
+  footer(class=['footer-widget',
+  `${footerWidgetModifier ? `footer-widget_${footerWidgetModifier}`:''}`])
     div.footer-widget__logo-wrapper
       img.footer-widget__logo(src=require('../img/icon-logo.svg') alt='image logo')
-      p.footer-widget__description #{description}
+      p.footer-widget__description #{footerWidgetDescription}
 
-    if (listModifier)
-      +footer-list(headNavigation, navigationItems, `footer-list_navigation ${listModifier}`)
-      +footer-list(headAbout, aboutItems, `footer-list_about ${listModifier}`)
-      +footer-list(headSupport, supportItems, `footer-list_support ${listModifier}`)
+    +footer-list()(footerListHead=footerWidgetHeadNavigation footerListItems=footerWidgetNavigationItems
+      footerListModifier='navigation')
 
-    else
-      +footer-list(headNavigation, navigationItems, `footer-list_navigation`)
-      +footer-list(headAbout, aboutItems, `footer-list_about`)
-      +footer-list(headSupport, supportItems, `footer-list_support`)
+    +footer-list()(footerListHead=footerWidgetHeadAbout footerListItems=footerWidgetAboutItems
+      footerListModifier='about')
+
+    +footer-list()(footerListHead=footerWidgetHeadSupport footerListItems=footerWidgetSupportItems
+      footerListModifier='support')
 
     div.footer-widget__subscribe-wrapper
-      h3.footer-widget__subscribe-head #{headSubscribe}
-      div.footer-widget__subscribe-description #{subscribeDescription}
-      +form-element('subscription', placeholderEmail, 'form-element__field_for-footer-widget', 'form-element_for-footer-widget')
+      h3.footer-widget__subscribe-head #{footerWidgetHeadSubscribe}
+      div.footer-widget__subscribe-description #{footerWidgetSubscribeDescription}
 
-    if (socialModifier)
-      +copyright(copyrightText, `${copyrightModifier}`,  `${socialModifier}`)
+      +form-element()(typeOfForm='subscription' placeholderForForm=footerWidgetPlaceholderEmail
+        modifierForInput='for-footer-widget' modifierForLabel='for-footer-widget')
 
-    else
-      +copyright(copyrightText, 'copyright_footer-widget')
+    +copyright()(copyrightText=footerWidgetCopyrightText copyrightModifier='footer-widget')
+
+
 
 
 

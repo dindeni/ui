@@ -106,13 +106,11 @@ const countGuests = (classGuests, babiesValue, guestsValue) => {
   };
 
   const clearInput = (evt) => {
-    const hasValue = +inputGuests.value !== 0 && inputGuests.value !== '';
+    const hasValue = +inputGuests.value !== 0 && inputGuests.value !== '' && inputGuests.value !== '0 гостей';
     if (hasValue) {
       buttonClear.classList.remove('buttons__transparent_hide');
-      buttonsContainer.style.justifyContent = 'space-between';
     } else {
       buttonClear.classList.add('buttons__transparent_hide');
-      buttonsContainer.style.justifyContent = 'end';
     }
     if (evt.target === buttonClear) {
       inputGuests.value = 0;

@@ -3,7 +3,8 @@ include ../form-element/form-element
 
 mixin searchRoom(absolute)
 
-  section(class=absolute ? `search-room search-room_absolute`: 'search-room')
+  section(class=['search-room',
+  `${absolute ? 'search-room_absolute':''}`])
     h2.search-room__head Найдём номера под ваши пожелания
 
     div.search-room__check
@@ -12,7 +13,12 @@ mixin searchRoom(absolute)
         span.search-room__label выезд
 
       form.search-room__form
-        +form-element('date', 'дд.мм.гггг', 'form-element__field_for-search-in js-form-element__field_for-search-in', 'form-element_for-search')
-        +form-element('date', 'дд.мм.гггг', 'form-element__field_for-search-out js-form-element__field_for-search-out', 'form-element_for-search')
+
+        +form-element()(typeOfForm='date' placeholderForForm='дд.мм.гггг' modifierForInput='for-search-in'
+         modifierForLabel='for-search' jsModifierForInput='for-search-in')
+
+        +form-element()(typeOfForm='date' placeholderForForm='дд.мм.гггг' modifierForInput='for-search-out'
+          modifierForLabel='for-search' jsModifierForInput='for-search-out')
+
         +sum-guests
-        +buttons('buy', 'Подобрать номер', undefined, 'buttons_for-search')
+        +buttons()(typeOfButtons='buy' contentOfButtons='Подобрать номер' modifierForButtons='for-search')

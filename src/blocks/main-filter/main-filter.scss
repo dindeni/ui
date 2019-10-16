@@ -11,11 +11,11 @@
     width: 100%;
     height: 1px;
     box-shadow: 0 1px 0 rgba(31, 32, 65, 0.1);
-    bottom: 0;
+    bottom: 4px;
   }
   &__rooms{
     width: 60%;
-    margin: 0 0 70px 25px;
+    margin: 0 0 74px 25px;
   }
   &__rooms-head{
     @include h1;

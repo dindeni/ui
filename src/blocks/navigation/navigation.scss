@@ -61,7 +61,7 @@
       font-weight: bold;
       color: $dark75;
     }
-    &#{&}_expand{
+    &#{&}_expand, &#{&}_expand-ru{
       padding:  0 15px 0 0;
       position: relative;
       &::after{
@@ -73,11 +73,11 @@
         right: -4px;
         top: 2px;
       }
-      &#{&}_expand-ru{
-        padding: 0 23px 0 0;
-        &::after{
-          right: 3px;
-        }
+    }
+    &#{&}_expand-ru{
+      padding: 0 23px 0 0;
+      &::after{
+        right: 3px;
       }
     }
   }

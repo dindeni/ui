@@ -1,30 +1,39 @@
 include ../buttons/buttons
 
-mixin navigation(type, items, itemClasses, buttonLoginName, buttonRegName, user, itemModifier)
+mixin navigation()
 
-  if type === 'standart'
+  -const {typeForNavigation, itemsForNavigation, modifierForNavigationItems,
+  -navigationLogin, navigationRegistration, navigationLinkModifier, navigationUserName} = attributes
+
+  if typeForNavigation === 'standart'
     nav.navigation.js-navigation
       img.navigation__logo(src=require('../img/icon-logo.svg') alt='logo')
 
       ul.navigation__list.js-navigation__list
-        each item, index in items
-          li(class= itemModifier ? `navigation__item ${itemModifier}`: 'navigation__item')
-            a(href='somePage.html' class=`${itemClasses[index]}`) #{item}
+        each item, index in attributes.itemsForNavigation
+          li(class=['navigation__item',
+           `${modifierForNavigationItems ? `navigation__item_${modifierForNavigationItems}`:''}`])
+            a(href='somePage.html' class=['navigation__link',
+            `${navigationLinkModifier[index] ?
+             `navigation__link_${navigationLinkModifier[index]}`:''}`]) #{item}
 
       div.navigation__buttons-wrapper
-        +buttons('bordering-link', `${buttonLoginName}`, 'sign-in.html')
-        +buttons('full-link', `${buttonRegName}`, 'registration.html', 'buttons_for-navigation')
+        +buttons()(typeOfButtons='bordering-link' contentOfButtons=`${navigationLogin}` linkForButtons='sign-in.html')
+        +buttons()(typeOfButtons='full-link' contentOfButtons=`${navigationRegistration}` linkForButtons='registration.html' modifierForButtons='for-navigation')
         button.navigation__button-mobile.js-navigation__button-mobile
 
-  else if type === 'loggedIn'
+  else if typeForNavigation === 'loggedIn'
     nav.navigation.js-navigation.navigation_logged
       img.navigation__logo(src=require('../img/icon-logo.svg') alt='logo')
 
       ul.navigation__list.js-navigation__list
-        each item, index in items
+        each item, index in itemsForNavigation
           li.navigation__item
-            a(href='somePage.html' class=`${itemClasses[index]}`) #{item}
+            a(href='somePage.html' class=['navigation__link',
+             `${navigationLinkModifier[index] ?
+               `navigation__link_${navigationLinkModifier[index]}` : ''}`]) #{item}
 
-      em.navigation__user-name #{user}
+      em.navigation__user-name #{navigationUserName}
+
       div.navigation__buttons-wrapper
         button.navigation__button-mobile.js-navigation__button-mobile

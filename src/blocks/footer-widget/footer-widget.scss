@@ -5,16 +5,6 @@
 .footer-widget{
   display: flex;
   flex-wrap: wrap;
-  &_for-registration{
-    & .footer-widget{
-      &__logo-wrapper{
-        margin: 110px 2.8% 116px 11.5%;
-      }
-      &__subscribe-wrapper {
-        margin: 105px 0 0 0;
-      }
-    }
-  }
 
   &__subscribe-head{
     @include h3;
@@ -28,11 +18,11 @@
 
   &__description{
     @include body;
-    margin-top: 18px;
+    margin-top: 12px;
   }
 
   &__subscribe-wrapper{
-    margin: 95px 0 0 0;
+    margin: 90px 0 0 0;
     width: 18%;
   }
 

@@ -1,14 +1,19 @@
 include ../buttons/buttons
 include ../form-element/form-element
 
-mixin sum-guests(modifier, modifierInput, modifierLabel)
+mixin sum-guests()
+
+  -const {guestsModifier, guestsInput, guestsLabel}=attributes
   -const visitors = ['взрослые', 'дети', 'младенцы']
   -const visitorsId = ['adult', 'children', 'babies']
 
-    div(class=modifier ? `sum-guests ${modifier}`: 'sum-guests') гости
+    div(class=['sum-guests',
+    `${guestsModifier ? `sum-guests_${guestsModifier}`:''}`]) гости
 
-      +form-element('dropdown', 'Сколько гостей', modifierInput ? `form-element__field_for-guests js-form-element__field_for-guests ${modifierInput}`: 'form-element__field_for-guests js-form-element__field_for-guests',
-       modifierLabel ? `form-element_for-guests ${modifierLabel}`: 'form-element_for-guests')
+      +form-element()(typeOfForm ='dropdown' placeholderForForm='Сколько гостей'
+        modifierForInput=guestsInput ? guestsInput: 'for-guests',
+        modifierForLabel=guestsLabel ? guestsLabel: 'for-guests',
+        jsModifierForInput='for-guests')
 
       div.sum-guests__popup.js-sum-guests__popup.sum-guests__popup_hide
 
@@ -25,5 +30,9 @@ mixin sum-guests(modifier, modifierInput, modifierLabel)
                 button(type='button' class='sum-guests__button sum-guests__button_plus js-sum-guests__button_plus') +
 
         div.sum-guests__buttons-footer-container.js-sum-guests__buttons-footer-container
-          +buttons('transparent', 'очистить',undefined, 'buttons__transparent_clear js-buttons__transparent_clear buttons__transparent_hide')
-          +buttons('transparent', 'применить',undefined, 'buttons__transparent_apply js-buttons__transparent_apply')
+
+          +buttons()(typeOfButtons='transparent' contentOfButtons='очистить'
+           modifierForButtons='clear' hideModifierForButtons='hide' jsModifierForButtons='clear')
+
+          +buttons()(typeOfButtons='transparent' contentOfButtons='применить'
+           modifierForButtons='apply' jsModifierForButtons='apply')

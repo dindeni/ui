@@ -50,9 +50,7 @@ include ../blocks/sign-in/sign-in
 -require('../img/image-room-444.jpg')]
 
 -const uiNavBarItems = {items: ['Home', 'About Us', 'Services', 'Careers',
--'News', 'Documentation'], classes: ['navigation__link navigation__link_current',
--'navigation__link', 'navigation__link navigation__link_expand',
--'navigation__link', 'navigation__link', 'navigation__link']}
+-'News', 'Documentation'], linkModifier: ['current', , 'expand', , ,]}
 
 -const footerWidgetData = {description:
 -'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
@@ -70,25 +68,25 @@ html(lang="en")
 
     div.main-ui__form
       div.main-ui__form-wrapper
-        +form-element('text', 'email', undefined, 'form-element_for-main-ui')
-        +form-element('dropdown', 'Сколько гостей', undefined, 'form-element_for-main-ui')
-        +form-element('masked', 'дд.мм.гггг', undefined, 'form-element_for-main-ui')
-        +form-element('date', 'дд.мм.гггг', undefined, 'form-element_for-main-ui')
-        +form-element('filter', '19 авг - 23 авг', undefined, 'form-element_for-main-ui')
-        +form-element('subscription', 'email', undefined, 'form-element_for-main-ui')
+        +form-element()(typeOfForm='text' placeholderForForm='email' modifierForLabel='for-main-ui')
+        +form-element()(typeOfForm='dropdown' placeholderForForm='Сколько гостей' modifierForLabel='for-main-ui')
+        +form-element()(typeOfForm='masked' placeholderForForm='дд.мм.гггг' modifierForLabel='for-main-ui')
+        +form-element()(typeOfForm='date' placeholderForForm='дд.мм.гггг' modifierForLabel='for-main-ui')
+        +form-element()(typeOfForm='filter' placeholderForForm='19 авг - 23 авг' modifierForLabel='for-main-ui')
+        +form-element()(typeOfForm='subscription' placeholderForForm='email' modifierForLabel='for-main-ui')
 
       div.main-ui__form-wrapper
-        +checkbox(arrCheckbox, 'checkbox')
-        +radio(arrRadio, arrRadioId)
-        +toggle('Получать спецпредложение', 'toggle')
+        +checkbox()(checkboxValue=arrCheckbox typeOfCheckbox='checkbox')
+        +radio()(valueForRadio=arrRadio radioId=arrRadioId)
+        +toggle()(toggleLabel='Получать спецпредложение' toggleId='toggle')
 
         div.main-ui__buttons-wrapper
-          +buttons('like-gray', 2, undefined,  'buttons_for-ui')
-          +buttons('like', 12)
+          +buttons()(typeOfButtons='like-gray' contentOfButtons=2  modifierForButtons='for-ui')
+          +buttons()(typeOfButtons='like' contentOfButtons=12)
 
         div.main-ui__rate-wrapper
-          +rate(4)
-          +rate(5)
+          +rate()(numberFillStars=4)
+          +rate()(numberFillStars=5)
 
       div.main-ui__form-wrapper
 
@@ -96,34 +94,37 @@ html(lang="en")
           +ui-slider
 
         div.main-ui__buttons-wrapper
-          +buttons('full', 'click me')
+          +buttons()(typeOfButtons='full' contentOfButtons='click me')
 
         div.main-ui__buttons-wrapper
-          +buttons('bordering', 'click me')
+          +buttons()(typeOfButtons='bordering' contentOfButtons='click me')
 
         div.main-ui__buttons-wrapper
-          +buttons('transparent', 'click me')
+          +buttons()(typeOfButtons='transparent' contentOfButtons='click me')
 
         div.main-ui__buttons-wrapper
-          +buttons('buy', 'перейти к оплате')
-        +pagination(Array(15))
+          +buttons()(typeOfButtons='buy' contentOfButtons='перейти к оплате')
+        +pagination()(valueForPagination=Array(15))
 
       div.main-ui__form-wrapper
         div.main-ui__checkbox-wrapper
-          +checkbox(arrCheckboxExpandable, 'checkboxExpandable', 'expandable checkbox list')
+          +checkbox(checkboxValue=arrCheckboxExpandable
+          typeOfCheckbox='checkboxExpandable' headOfCheckbox='expandable checkbox list')
 
       div.main-ui__form-wrapper
-        +checkbox(arrCheckboxRich, 'rich')
+        +checkbox()(checkboxValue=arrCheckboxRich typeOfCheckbox='rich')
 
       div.main-ui__form-wrapper
-        +bullet-list(arrBulletList)
+        +bullet-list()(valuesForList=arrBulletList)
 
       div.main-ui__form-wrapper.main-ui__form-wrapper_review
-        +features(arrFeatures)
+        +features()(featuresValue=arrFeatures)
 
-      +review('Мурад Сарафанов', '5 дней назад',
-        'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
-        require('../blocks/review/icon-avatar-1.png'), 'like', 12)
+        +review()(reviewHead='Мурад Сарафанов' reviewDate='5 дней назад'
+          reviewDescription='Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+          reviewPath=require('../blocks/review/icon-avatar-1.png')
+          reviewNumberOfLikes=12 reviewTypeOfButton='like')
+
 
     div.main-ui__cards
 
@@ -132,23 +133,30 @@ html(lang="en")
         +registration('registration_for-main-ui')
 
       div.main-ui__card-wrapper
-        +order-room(arrTotalDesc, arrTotalPrice)
+        +order-room()(totalValueForOrder=arrTotalDesc totalPriceForOrder=arrTotalPrice)
         +sign-in
 
       div.main-ui__card-wrapper
-        +card-room(arrPathImage1, 'room-radio-name-1', 'luxe', 888,
-          '9 900', 145, 5)
-        +card-room(arrPathImage2, 'room-radio-name-2', 'normal', 840,
-          '9 900', 65, 4)
+
+        +card-room()(cardImages=arrPathImage1 cardRadioName='room-radio-name-1'
+          typeOfRoom='luxe' numberOfRoom=888 roomPrice='9 900'
+          cardNumberOfReviews=145 cardNumberOfRate=5)
+
+        +card-room()(cardImages=arrPathImage2 cardRadioName='room-radio-name-2'
+        typeOfRoom='normal' numberOfRoom=840 roomPrice='9 900'
+          cardNumberOfReviews=65 cardNumberOfRate=4)
 
     div.main-ui__headers-footers
 
-      +navigation('standart', uiNavBarItems.items, uiNavBarItems.classes, 'login', 'register')
-      +navigation('loggedIn', uiNavBarItems.items, uiNavBarItems.classes,'login', 'register', 'Cosmin Negoita')
+      +navigation()(typeForNavigation='standart' itemsForNavigation=uiNavBarItems.items navigationLogin='login'
+        navigationRegistration='register' navigationLinkModifier=uiNavBarItems.linkModifier)
+      +navigation()(typeForNavigation='loggedIn' itemsForNavigation=uiNavBarItems.items
+        navigationLinkModifier=uiNavBarItems.linkModifier navigationUserName='Cosmin Negoita')
 
       +footer
-      +footer-widget(footerWidgetData.description, 'Navigation',
-        footerWidgetData.navigation, 'ABOUT US', footerWidgetData.about, 'support',
-        footerWidgetData.support, 'Subscribe to our newsletter',
-        footerWidgetData.subscribe, 'Your email address', 'Copyright © 2018 Toxin UI Kit.' +
-      ' All rights reserved.')
+      +footer-widget()(footerWidgetDescription=footerWidgetData.description footerWidgetHeadNavigation='Navigation'
+        footerWidgetNavigationItems=footerWidgetData.navigation footerWidgetHeadAbout='ABOUT US'
+        footerWidgetAboutItems=footerWidgetData.about footerWidgetHeadSupport='support'
+        footerWidgetSupportItems=footerWidgetData.support footerWidgetHeadSubscribe='Subscribe to our newsletter'
+        footerWidgetSubscribeDescription=footerWidgetData.subscribe footerWidgetPlaceholderEmail='Your email address'
+        footerWidgetCopyrightText='Copyright © 2018 Toxin UI Kit. All rights reserved.')

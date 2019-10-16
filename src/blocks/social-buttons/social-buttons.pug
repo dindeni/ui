@@ -3,7 +3,8 @@ mixin social-buttons(modifier)
   -const arrSocialLink = ['https://twitter.com', 'https://www.facebook.com/', 'https://www.instagram.com']
   -const arrSocial = ['twitter', 'facebook', 'instagram']
 
-  div(class=modifier ? `social-buttons ${modifier}`: 'social-buttons')
+  div(class=['social-buttons',
+  `${modifier ? `social-buttons_${modifier}`:''}`])
 
     ul.social-buttons__list
       each item, index in arrSocial

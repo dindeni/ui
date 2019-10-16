@@ -1,7 +1,10 @@
-mixin radio(arr, arrId, modifier)
+mixin radio()
 
-  div(class=modifier ? `radio ${modifier}`: 'radio')
+  -const {valueForRadio, radioId, modifierForRadio}=attributes
 
-    each value, index in arr
-      input.radio__field(type='radio' name='radio' id=`${arrId[index]}`  checked=index===0 )
-      label.radio__mark(for=`${arrId[index]}`) #{value}
+  div(class=['radio',
+  `${modifierForRadio ? `radio_${modifierForRadio}`:''}`])
+
+    each value, index in valueForRadio
+      input.radio__field(type='radio' name='radio' id=`${radioId[index]}`  checked=index===0 )
+      label.radio__mark(for=`${radioId[index]}`) #{value}

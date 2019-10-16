@@ -1,10 +1,13 @@
-mixin footer-list(listHead, items, modifier)
+mixin footer-list()
 
-  div(class=modifier ? `footer-list ${modifier}`: 'footer-list')
+  -const {footerListHead, footerListItems, footerListModifier}=attributes
 
-    h3.footer-list__head #{listHead}
+  div(class=['footer-list',
+  `${footerListModifier ? `footer-list_${footerListModifier}`:''}`])
+
+    h3.footer-list__head #{footerListHead}
 
     ul.footer-list__list
-      each item in items
+      each item in footerListItems
         li.footer-list__item
           a.footer-list__link(href='page.html') #{item}
