@@ -240,8 +240,8 @@
           left: -10px;
         }
       }
-      &-calendar &-calendar__max:not(.ui-state-disabled)::before {
-        left: -7px;
+      &-calendar__min:not(.ui-state-disabled)::before{
+        left: 7px;
       }
       &-buttonpane {
         bottom: 2%;

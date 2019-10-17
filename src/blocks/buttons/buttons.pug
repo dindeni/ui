@@ -18,7 +18,7 @@ mixin buttons()
 
   else if typeOfButtons === 'bordering'
     div.buttons
-      button.buttons__bordering #{contentOfButtons}.
+      button.buttons__bordering #{contentOfButtons}
 
   else if typeOfButtons === 'bordering-link'
     div(class=['buttons', `${modifierForButtons ? `buttons_${modifierForButtons}`:''}`])
