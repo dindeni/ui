@@ -20,9 +20,10 @@ mixin side-panel
 
     form.side-panel__form
 
-      +datepicker-range('19 авг - 23 авг')
+      +datepicker-range()(defaultDateOfRange='19 авг - 23 авг')
 
-      +sum-guests()(guestsModifier='for-filter' guestsInput='for-filter' guestsLabel='for-filter')
+      +sum-guests()(guestsModifier='for-filter' guestsInput='for-filter' guestsLabel='for-filter',
+        guestsHead='гости')
 
       div.side-panel__slogan.side-panel__slogan_range диапазон цены
       +ui-slider('for-side-panel')

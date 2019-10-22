@@ -7,9 +7,22 @@ if (document.querySelector('.js-sum-rooms')) {
 
   roomsInput.value = '0 спальни, 0 кровати...';
 
+  const changeZIndex = (type) => {
+    if (type === 'out') {
+      roomsPopup.style.zIndex = 1;
+    }
+    if (type === 'in') {
+      roomsPopup.style.zIndex = 100;
+    }
+  };
+  roomsPopup.addEventListener('focusout', () => changeZIndex('out'));
+
+  roomsPopup.addEventListener('focusin', () => changeZIndex('in'));
+
   const handlerDocumentClick = (evt) => {
     if (evt.target === roomsInput && roomsPopup.classList.contains('sum-rooms__popup_hide')) {
       roomsPopup.classList.remove('sum-rooms__popup_hide');
+      roomsPopup.focus();
     } else if (evt.target === roomsInput && !roomsPopup.classList.contains('sum-rooms__popup_hide')) {
       roomsPopup.classList.add('sum-rooms__popup_hide');
     }

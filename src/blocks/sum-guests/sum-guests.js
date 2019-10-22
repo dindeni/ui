@@ -45,7 +45,18 @@ const countGuests = (classGuests, babiesValue, guestsValue) => {
   const containerBabies = guests.querySelector('.js-sum-guests__container_babies');
   const buttonApply = guests.querySelector('.js-buttons__transparent_apply');
   const buttonClear = guests.querySelector('.js-buttons__transparent_clear');
-  const buttonsContainer = guests.querySelector('.js-sum-guests__buttons-footer-container');
+
+  const changeZIndex = (type) => {
+    if (type === 'out') {
+      guestsPopup.style.zIndex = 1;
+    }
+    if (type === 'in') {
+      guestsPopup.style.zIndex = 100;
+    }
+  };
+  guestsPopup.addEventListener('focusout', () => changeZIndex('out'));
+
+  guestsPopup.addEventListener('focusin', () => changeZIndex('in'));
 
   const sumGuests = (evt) => {
     const { parentElement } = evt.target.parentElement;
@@ -132,6 +143,8 @@ const countGuests = (classGuests, babiesValue, guestsValue) => {
     const isHidden = evt.target === inputGuests && guestsPopup.classList.contains('sum-guests__popup_hide');
     if (isHidden) {
       guestsPopup.classList.remove('sum-guests__popup_hide');
+
+      guestsPopup.focus();
     }
 
     sumGuests(evt);

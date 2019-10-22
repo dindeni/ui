@@ -3,19 +3,19 @@ include ../form-element/form-element
 
 mixin sum-guests()
 
-  -const {guestsModifier, guestsInput, guestsLabel}=attributes
+  -const {guestsModifier, guestsInput, guestsLabel, guestsHead}=attributes
   -const visitors = ['взрослые', 'дети', 'младенцы']
   -const visitorsId = ['adult', 'children', 'babies']
 
     div(class=['sum-guests',
-    `${guestsModifier ? `sum-guests_${guestsModifier}`:''}`]) гости
+    `${guestsModifier ? `sum-guests_${guestsModifier}`:''}`]) #{guestsHead ? guestsHead:null}
 
       +form-element()(typeOfForm ='dropdown' placeholderForForm='Сколько гостей'
         modifierForInput=guestsInput ? guestsInput: 'for-guests',
         modifierForLabel=guestsLabel ? guestsLabel: 'for-guests',
         jsModifierForInput='for-guests')
 
-      div.sum-guests__popup.js-sum-guests__popup.sum-guests__popup_hide
+      div.sum-guests__popup.js-sum-guests__popup.sum-guests__popup_hide(tabindex=0)
 
         div.sum-guests__count-container
           each value, index in visitors

@@ -2,6 +2,7 @@ include ../form-element/form-element
 include ../radio/radio
 include ../toggle/toggle
 include ../buttons/buttons
+include ../singel-datepicker/single-datepicker
 
 -const arrRadioReg = ['Мужчина', 'Женщина']
 -const arrRadioRegId = ['man', 'woman']
@@ -26,9 +27,8 @@ mixin registration(modifier)
 
       div.registration__date-head дата рождения
 
-      +form-element()(typeOfForm='date' placeholderForForm='дд.мм.гггг'
-        modifierForInput='for-registration' jsModifierForInput='for-registration'
-      modifierForLabel='for-registration')
+      +singel-datepicker()(singelDatepickerPlaceholder='дд.мм.гггг' singelDatepickerLabel='for-registration'
+        singelDatepickerInput='for-registration' )
 
       div.registration__data-head данные для входа в сервис
 

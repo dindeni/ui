@@ -25,9 +25,7 @@
 
 @media (max-width: 1100px) {
   .search-room{
-    &#{&}_absolute{
       width: 320px;
-    }
     &__head{
       font-size: 1.5rem;
     }

@@ -1,9 +1,13 @@
 include ../form-element/form-element
 
-mixin datepicker-range(defaultDate)
+mixin datepicker-range()
 
-  +form-element()(typeOfForm='dropdown' placeholderForForm=defaultDate
-  modifierForInput='for-datepicker-range' jsModifierForInput='for-datepicker-range')
+  -const {defaultDateOfRange, datepickerRangeInputModifier,
+  -datepickerRangeLabelModifier}=attributes
+
+  +form-element()(typeOfForm='dropdown' placeholderForForm=defaultDateOfRange
+  modifierForInput='for-datepicker-range' jsModifierForInput='for-datepicker-range'
+    modifierForLabel=datepickerRangeLabelModifier)
 
   +form-element(typeOfForm='dropdown' placeholderForForm=defaultDate
   modifierForInput='for-hide-datepicker' jsModifierForInput='for-hide-datepicker'

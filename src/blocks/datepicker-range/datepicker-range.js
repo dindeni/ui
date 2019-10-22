@@ -26,24 +26,29 @@ $filterElement.datepicker({
   currentText: 'применить',
   beforeShow: (text, instance) => {
     setTimeout(() => {
-      instance.dpDiv.addClass('ui-datepicker_range');
+      if (parseInt($filterElement.css('width'), 10) < 270) {
+        instance.dpDiv.addClass('ui-datepicker_range');
+      }
+
       instance.dpDiv.css({
         top: $filterElement.offset().top + 44,
         left: $filterElement.offset().left,
         width: $filterElement.outerWidth(),
       });
 
-      const $clearButton = $('.ui-ui-datepicker-close');
-      const $applyButton = $('.ui-ui-datepicker-current');
+      const $clearButton = $('.ui-datepicker-close');
+      const $applyButton = $('.ui-datepicker-current');
 
       $clearButton.click(clearInput);
       $applyButton.click({ value: $filterElement }, applyDatepicker);
-    }, 100);
+    }, 0);
   },
-  onClose: (value) => {
+  onClose: (value, instance) => {
     if (!value) {
       $filterElement.datepicker('setDate', null);
     } else $filterElementHide.datepicker('show');
+
+    instance.dpDiv.removeClass('ui-datepicker_range');
   },
 });
 
@@ -59,26 +64,31 @@ $filterElementHide.datepicker({
   showButtonPanel: true,
   closeText: 'очистить',
   currentText: 'применить',
-  onClose: (value) => {
-    if (value === '') {
+  onClose: (value, instance) => {
+    const isValidValue = parseInt(value, 10) > parseInt($filterElement.val(), 10);
+    if (value === '' || !isValidValue) {
       $filterElementHide.datepicker('setDate', null);
     } else {
       $filterElement.val(`${$filterElement.val().substring(0, 6)} - ${value}`);
     }
+
+    instance.dpDiv.removeClass('ui-datepicker_range');
   },
   beforeShow: (text, instance) => {
     setTimeout(() => {
-      instance.dpDiv.addClass('ui-datepicker_range');
+      if (parseInt($filterElement.css('width'), 10) < 270) {
+        instance.dpDiv.addClass('ui-datepicker_range');
+      }
       instance.dpDiv.css({
         top: $filterElement.offset().top + 44,
         left: $filterElement.offset().left,
       });
 
-      const $clearButton = $('.ui-ui-datepicker-close');
-      const $applyButton = $('.ui-ui-datepicker-current');
+      const $clearButton = $('.ui-datepicker-close');
+      const $applyButton = $('.ui-datepicker-current');
 
       $clearButton.click(clearInput);
       $applyButton.click({ value: $filterElementHide }, applyDatepicker);
-    }, 100);
+    }, 0);
   },
 });

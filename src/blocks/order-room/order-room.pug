@@ -29,7 +29,7 @@ mixin order-room()
         modifierForInput='for-order-out' jsModifierForInput='for-order-out'
         modifierForLabel='for-order')
 
-      +sum-guests()(guestsModifier='for-order')
+      +sum-guests()(guestsModifier='for-order', guestsHead='гости')
 
     div.order-room__total
       each value, index in totalValueForOrder

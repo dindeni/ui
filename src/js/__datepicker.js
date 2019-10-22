@@ -1,6 +1,6 @@
 require('jquery-ui/ui/widgets/datepicker.js');
 
-const datePickerInOut = (elementIn, elementOut) => {
+const datePickerInOut = (elementIn, elementOut, modifier) => {
   const $dateElementIn = $(elementIn);
   const $dateElementOut = $(elementOut);
   let dateArrive;
@@ -26,7 +26,7 @@ const datePickerInOut = (elementIn, elementOut) => {
           $(td).addClass('ui-datepicker-calendar__range');
         }
       });
-    }, 100);
+    }, 0);
   };
 
   const clearInput = (evt) => {
@@ -50,22 +50,36 @@ const datePickerInOut = (elementIn, elementOut) => {
     closeText: 'очистить',
     currentText: 'применить',
     onSelect: (date) => {
-      dateArrive = date;
+      if (date < dateOut || !dateOut) {
+        dateArrive = date;
+      }
     },
     beforeShow(value, instance) {
       getRange($dateElementIn);
       setTimeout(() => {
-        instance.dpDiv.css({ top: $dateElementOut.offset().top + 44 });
+        instance.dpDiv.css({
+          top: $dateElementOut.offset().top + 44,
+          left: $dateElementIn.offset().left,
+        });
+
+        if (modifier) {
+          instance.dpDiv.addClass(`ui-datepicker_${modifier}`);
+        }
+
         const $clearButton = $('.ui-datepicker-close');
         const $applyButton = $('.ui-datepicker-current');
 
         $clearButton.click({ value: $dateElementIn, inOut: 'in' }, clearInput);
         $applyButton.click({ value: $dateElementIn }, applyDatepicker);
-      }, 100);
+      }, 0);
     },
-    onClose: (value) => {
+    onClose: (value, instance) => {
       if (value === '') {
         $dateElementIn.datepicker('setDate', null);
+      } else $dateElementIn.datepicker('setDate', dateArrive);
+
+      if (modifier) {
+        instance.dpDiv.removeClass(`ui-datepicker_${modifier}`);
       }
     },
   });
@@ -82,11 +96,17 @@ const datePickerInOut = (elementIn, elementOut) => {
     closeText: 'очистить',
     currentText: 'применить',
     onSelect: (date) => {
-      dateOut = date;
+      if (date > dateArrive) {
+        dateOut = date;
+      }
     },
     beforeShow(text, instance) {
       getRange($dateElementOut);
       setTimeout(() => {
+        if (modifier) {
+          instance.dpDiv.addClass(`ui-datepicker_${modifier}`);
+        }
+
         instance.dpDiv.css({
           top: $dateElementOut.offset().top + 44,
           left: $dateElementIn.offset().left,
@@ -96,11 +116,15 @@ const datePickerInOut = (elementIn, elementOut) => {
 
         $clearButton.click({ value: $dateElementOut }, clearInput);
         $applyButton.click({ value: $dateElementOut }, applyDatepicker);
-      }, 100);
+      }, 0);
     },
-    onClose: (value) => {
+    onClose: (value, instance) => {
       if (value === '') {
         $dateElementOut.datepicker('setDate', null);
+      } else $dateElementOut.datepicker('setDate', dateOut);
+
+      if (modifier) {
+        instance.dpDiv.removeClass(`ui-datepicker_${modifier}`);
       }
     },
   });

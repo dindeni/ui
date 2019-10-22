@@ -244,6 +244,12 @@
       }
     }
 
+    &_for-order{
+      & .buttons__full{
+        padding: 15px 82px;
+      }
+    }
+
     &_for-search{
       .buttons__full{
         padding: 15px 65px;
@@ -275,11 +281,6 @@
     &_for-navigation{
       & .buttons__full{
         margin: 17px 0 0 10px;
-      }
-    }
-    &_for-order{
-      .buttons__full{
-        padding: 15px 82px;
       }
     }
     &_for-sign-in{

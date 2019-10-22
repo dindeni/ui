@@ -94,6 +94,9 @@
 
   &_for-main-ui{
     margin: 0 0 10px 0;
+    & .form-element__field_date{
+      width: 150px;
+    }
   }
 
   &_dropdown{
@@ -173,8 +176,8 @@
         width: 120px;
       }
       & .form-element__field{
-        &.form-element__field_for-search-in,
-        &.form-element__field_for-search-out{
+        &_for-search-in, &_for-search-out,
+        &_for-order-in, &_for-order-out{
           width: 120px;
           &::placeholder{
             font-size: 0.86rem;
@@ -191,6 +194,21 @@
             width: 266px;
           }
         }
+      }
+    }
+
+    &_for-main-ui{
+      & .form-element__field{
+        width: 260px;
+        &_date{
+          width: 150px;
+        }
+      }
+    }
+
+    &__field{
+      &_for-main-ui{
+        width: 260px;
       }
     }
   }

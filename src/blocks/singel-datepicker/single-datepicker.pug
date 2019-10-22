@@ -1,0 +1,10 @@
+include ../form-element/form-element
+
+mixin singel-datepicker()
+
+  -const {singelDatepickerPlaceholder, singelDatepickerLabel,
+  -singelDatepickerInput}=attributes
+
+  +form-element(typeOfForm='date' placeholderForForm=singelDatepickerPlaceholder,
+    modifierForLabel=singelDatepickerLabel modifierForInput=singelDatepickerInput
+    jsModifierForInput='date')

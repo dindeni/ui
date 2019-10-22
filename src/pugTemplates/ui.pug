@@ -18,6 +18,9 @@ include ../blocks/copyright/copyright
 include ../blocks/footer/footer
 include ../blocks/footer-widget/footer-widget
 include ../blocks/sign-in/sign-in
+include ../blocks/sum-guests/sum-guests
+include ../blocks/singel-datepicker/single-datepicker
+include ../blocks/datepicker-range/datepicker-range
 
 -const arrCheckbox = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']
 
@@ -69,10 +72,11 @@ html(lang="en")
     div.main-ui__form
       div.main-ui__form-wrapper
         +form-element()(typeOfForm='text' placeholderForForm='email' modifierForLabel='for-main-ui')
-        +form-element()(typeOfForm='dropdown' placeholderForForm='Сколько гостей' modifierForLabel='for-main-ui')
+        +sum-guests()(guestsLabel='Сколько гостей' guestsModifier='for-main-ui' guestsInput='for-main-ui')
         +form-element()(typeOfForm='masked' placeholderForForm='дд.мм.гггг' modifierForLabel='for-main-ui')
-        +form-element()(typeOfForm='date' placeholderForForm='дд.мм.гггг' modifierForLabel='for-main-ui')
-        +form-element()(typeOfForm='filter' placeholderForForm='19 авг - 23 авг' modifierForLabel='for-main-ui')
+        +singel-datepicker()(singelDatepickerPlaceholder='дд.мм.гггг' singelDatepickerLabel='for-main-ui')
+        +datepicker-range()(defaultDateOfRange='19 авг - 23 авг',
+          datepickerRangeInputModifier='for-main-ui' datepickerRangeLabelModifier='for-main-ui')
         +form-element()(typeOfForm='subscription' placeholderForForm='email' modifierForLabel='for-main-ui')
 
       div.main-ui__form-wrapper
