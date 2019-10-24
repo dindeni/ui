@@ -1,16 +1,16 @@
 include ../buttons/buttons
 
-mixin review()
+mixin review(options)
 
-  -const {reviewHead, reviewDate, reviewDescription, reviewPath,
-  -reviewTypeOfButton, reviewNumberOfLikes, reviewModifier}=attributes
+  -const {head, date, description, path,
+  -typeOfButton, numberOfLikes, modifier}=options
 
   section(class=['review',
-  `${reviewModifier ? `review_${reviewModifier}`:''}`])
-    img.review__icon(src=reviewPath alt='фото аватар')
-    h3.review__name #{reviewHead}
-    span.review__date #{reviewDate}
+  `${modifier ? `review_${modifier}`:''}`])
+    img.review__icon(src=path alt='фото аватар')
+    h3.review__name #{head}
+    span.review__date #{date}
 
     div.review__wrapper
-      +buttons()(typeOfButtons=reviewTypeOfButton contentOfButtons=reviewNumberOfLikes)
-      p.review__description #{reviewDescription}
+      +buttons({type: typeOfButton, content: numberOfLikes})
+      p.review__description #{description}

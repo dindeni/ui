@@ -1,15 +1,15 @@
 include ../rate/rate
 
-mixin card-room()
+mixin card-room(options)
 
-  -const {cardImages, cardRadioName, typeOfRoom, numberOfRoom, roomPrice,
-  -cardNumberOfReviews, cardNumberOfRate, cardModifier}=attributes
+  -const {images, radioName, type, numberOfRoom, price,
+  -numberOfReviews, numberOfRate, modifier}=options
 
   div(class=['card-room', 'js-card-room',
-   `${cardModifier ? `card-room_${cardModifier}`:''}`])
+   `${modifier ? `card-room_${modifier}`:''}`])
     div.card-room__wrapper
       div.card-room__image-wrapper
-        each value, index in cardImages
+        each value, index in images
           if index > 0
             img(src=`${value}` class=`card-room__image js-card-room__image card-room__image_hide` alt='room image')
           else
@@ -19,33 +19,33 @@ mixin card-room()
         each value, index in Array(4)
           if index === 0
             label(class='card-room__mark')
-              input(type='radio' class='card-room__radio js-card-room__radio' name=`${cardRadioName}` checked )
+              input(type='radio' class='card-room__radio js-card-room__radio' name=`${radioName}` checked )
           else
             label(class='card-room__mark')
-              input(type='radio' class='card-room__radio js-card-room__radio' name=`${cardRadioName}`)
+              input(type='radio' class='card-room__radio js-card-room__radio' name=`${radioName}`)
 
       div.card-room__arrows-wrapper
         button.card-room__arrow.card-room__arrow_prev.js-card-room__arrow_prev
         button.card-room__arrow.card-room__arrow_next.js-card-room__arrow_next
 
-    if typeOfRoom === 'luxe'
+    if type === 'luxe'
       div.card-room__number-room-wrapper
         span.card-room__number-mark №
         span.card-room__number #{numberOfRoom}
         span.card-room__type-room люкс
       div.card-room__price-wrapper
-          span.card-room__price #{roomPrice}&#8381;
+          span.card-room__price #{price}&#8381;
           span.card-room__periodicity в сутки
 
-    else if typeOfRoom === 'normal'
+    else if type === 'normal'
       div.card-room__number-room-wrapper
         span.card-room__number-mark №
         span.card-room__number #{numberOfRoom}
       div.card-room__price-wrapper
-          span.card-room__price.card-room__price_normal #{roomPrice}&#8381;
+          span.card-room__price.card-room__price_normal #{price}&#8381;
           span.card-room__periodicity в сутки
 
-    +rate()(numberFillStars=cardNumberOfRate, modifierForRate='for-card-room')
+    +rate({numberFillStars: numberOfRate, modifier: 'for-card-room'})
 
-    div.card-room__number-review #{cardNumberOfReviews}
+    div.card-room__number-review #{numberOfReviews}
       span.card-room__number-review-word Отзывов

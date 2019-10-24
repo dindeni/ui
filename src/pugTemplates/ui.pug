@@ -22,19 +22,23 @@ include ../blocks/sum-guests/sum-guests
 include ../blocks/singel-datepicker/single-datepicker
 include ../blocks/datepicker-range/datepicker-range
 
--const arrCheckbox = ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']
+-const checkboxData = {values: ['Можно курить', 'Можно с питомцами',
+-'Можно пригласить гостей (до 10 человек)'], type: 'checkbox'}
 
--const arrCheckboxExpandable = ['Завтрак', 'Письменный стол', 'Стул для кормления',
--'Кроватка', 'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь']
+-const checkboxExpandableData = {values: ['Завтрак', 'Письменный стол', 'Стул для кормления',
+-'Кроватка', 'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь'], type: 'checkboxExpandable',
+-head: 'expandable checkbox list'}
 
--const arrCheckboxRich = [{label:'Широкий коридор', description: 'Ширина коридоров в номере не менее 91 см.'},
--{label: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.'}]
+-const checkboxRichData = {values: [{label:'Широкий коридор', description: 'Ширина коридоров в номере не менее 91 см.'},
+-{label: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.'}],
+-type: 'rich'}
 
 -const arrRadio = ['Terran', 'Protoss']
 
 -const arrRadioId = ['terran', 'protoss']
 
--const arrBulletList = ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
+-const bulletListData = {values: ['Нельзя с питомцами',
+-'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']}
 
 -const arrFeatures = [{slogan: 'Комфорт', description: 'Шумопоглощающие стены'},
 -{slogan: 'Удобство', description: 'Окно в каждой из спален'}]
@@ -57,9 +61,12 @@ include ../blocks/datepicker-range/datepicker-range
 
 -const footerWidgetData = {description:
 -'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
--navigation: ['About Us', 'News', 'Support', 'Products'], about: ['Who we are',
--'Our team', 'Careers', 'Investors'], support: ['Documentation', 'Community',
--'Get in Touch'], subscribe: 'Receive our latest news and promotions in your inbox!'}
+-navigationItems: ['About Us', 'News', 'Support', 'Products'], aboutItems: ['Who we are',
+-'Our team', 'Careers', 'Investors'], supportItems: ['Documentation', 'Community',
+-'Get in Touch'], subscribeDescription: 'Receive our latest news and promotions in your inbox!',
+-headNavigation: 'Navigation', headAbout: 'about us', headSubscribe: 'Subscribe to our newsletter',
+-headSupport:'support', placeholderEmail:'Your email address',
+-copyrightText:'Copyright © 2018 Toxin UI Kit. All rights reserved.'}
 
 
 doctype html
@@ -71,26 +78,29 @@ html(lang="en")
 
     div.main-ui__form
       div.main-ui__form-wrapper
-        +form-element()(typeOfForm='text' placeholderForForm='email' modifierForLabel='for-main-ui')
-        +sum-guests()(guestsLabel='Сколько гостей' guestsModifier='for-main-ui' guestsInput='for-main-ui')
-        +form-element()(typeOfForm='masked' placeholderForForm='дд.мм.гггг' modifierForLabel='for-main-ui')
-        +singel-datepicker()(singelDatepickerPlaceholder='дд.мм.гггг' singelDatepickerLabel='for-main-ui')
-        +datepicker-range()(defaultDateOfRange='19 авг - 23 авг',
-          datepickerRangeInputModifier='for-main-ui' datepickerRangeLabelModifier='for-main-ui')
-        +form-element()(typeOfForm='subscription' placeholderForForm='email' modifierForLabel='for-main-ui')
+        +form-element({type: 'text', placeholder: 'email',
+         modifierForLabel: 'for-main-ui'})
+        +sum-guests({label:'Сколько гостей', modifier: 'for-main-ui', modifierForInput: 'for-main-ui'})
+        +form-element({type: 'masked',placeholder: 'дд.мм.гггг',
+         modifierForLabel: 'for-main-ui'})
+        +singel-datepicker({placeholder: 'дд.мм.гггг', modifierForLabel: 'for-main-ui'})
+        +datepicker-range({defaultDate: '19 авг - 23 авг', inputModifier: 'for-main-ui',
+         labelModifier: 'for-main-ui'})
+        +form-element({type: 'subscription', placeholder: 'email',
+         modifierForLabel: 'for-main-ui'})
 
       div.main-ui__form-wrapper
-        +checkbox()(checkboxValue=arrCheckbox typeOfCheckbox='checkbox')
-        +radio()(valueForRadio=arrRadio radioId=arrRadioId)
-        +toggle()(toggleLabel='Получать спецпредложение' toggleId='toggle')
+        +checkbox(checkboxData)
+        +radio({values: arrRadio, id: arrRadioId})
+        +toggle({label: 'Получать спецпредложение', id: 'toggle'})
 
         div.main-ui__buttons-wrapper
-          +buttons()(typeOfButtons='like-gray' contentOfButtons=2  modifierForButtons='for-ui')
-          +buttons()(typeOfButtons='like' contentOfButtons=12)
+          +buttons({type:'like-gray', content:2,  modifier:'for-ui'})
+          +buttons({type:'like', content:12})
 
         div.main-ui__rate-wrapper
-          +rate()(numberFillStars=4)
-          +rate()(numberFillStars=5)
+          +rate({numberFillStars: 4})
+          +rate({numberFillStars: 5})
 
       div.main-ui__form-wrapper
 
@@ -98,36 +108,35 @@ html(lang="en")
           +ui-slider
 
         div.main-ui__buttons-wrapper
-          +buttons()(typeOfButtons='full' contentOfButtons='click me')
+          +buttons({type:'full', content: 'click me'})
 
         div.main-ui__buttons-wrapper
-          +buttons()(typeOfButtons='bordering' contentOfButtons='click me')
+          +buttons({typeOfButtons:'bordering', content: 'click me'})
 
         div.main-ui__buttons-wrapper
-          +buttons()(typeOfButtons='transparent' contentOfButtons='click me')
+          +buttons({type: 'transparent', content:'click me'})
 
         div.main-ui__buttons-wrapper
-          +buttons()(typeOfButtons='buy' contentOfButtons='перейти к оплате')
-        +pagination()(valueForPagination=Array(15))
+          +buttons({type:'buy', content: 'перейти к оплате'})
+        +pagination({value: 15})
 
       div.main-ui__form-wrapper
         div.main-ui__checkbox-wrapper
-          +checkbox(checkboxValue=arrCheckboxExpandable
-          typeOfCheckbox='checkboxExpandable' headOfCheckbox='expandable checkbox list')
+          +checkbox(checkboxExpandableData)
 
       div.main-ui__form-wrapper
-        +checkbox()(checkboxValue=arrCheckboxRich typeOfCheckbox='rich')
+        +checkbox(checkboxRichData)
 
       div.main-ui__form-wrapper
-        +bullet-list()(valuesForList=arrBulletList)
+        +bullet-list(bulletListData)
 
       div.main-ui__form-wrapper.main-ui__form-wrapper_review
-        +features()(featuresValue=arrFeatures)
+        +features({values: arrFeatures})
 
-        +review()(reviewHead='Мурад Сарафанов' reviewDate='5 дней назад'
-          reviewDescription='Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
-          reviewPath=require('../blocks/review/icon-avatar-1.png')
-          reviewNumberOfLikes=12 reviewTypeOfButton='like')
+        +review({head: 'Мурад Сарафанов', date: '5 дней назад',
+          description: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+          path: require('../blocks/review/icon-avatar-1.png'),
+          numberOfLikes: 12, typeOfButton: 'like'})
 
 
     div.main-ui__cards
@@ -137,30 +146,25 @@ html(lang="en")
         +registration('for-main-ui')
 
       div.main-ui__card-wrapper
-        +order-room()(totalValueForOrder=arrTotalDesc totalPriceForOrder=arrTotalPrice)
+        +order-room({totalValue: arrTotalDesc, totalPrice: arrTotalPrice})
         +sign-in
 
       div.main-ui__card-wrapper
 
-        +card-room()(cardImages=arrPathImage1 cardRadioName='room-radio-name-1'
-          typeOfRoom='luxe' numberOfRoom=888 roomPrice='9 900'
-          cardNumberOfReviews=145 cardNumberOfRate=5)
+        +card-room({images: arrPathImage1, radioName: 'room-radio-name-1',
+          type: 'luxe', numberOfRoom: 888, price:'9 900',
+          numberOfReviews:145, numberOfRate: 5})
 
-        +card-room()(cardImages=arrPathImage2 cardRadioName='room-radio-name-2'
-        typeOfRoom='normal' numberOfRoom=840 roomPrice='9 900'
-          cardNumberOfReviews=65 cardNumberOfRate=4)
+        +card-room({images: arrPathImage2, radioName: 'room-radio-name-2',
+          type: 'normal', number: 840, price: '9 900', numberOfReviews:65,
+          numberOfRate: 4})
 
     div.main-ui__headers-footers
 
-      +navigation()(typeForNavigation='standart' itemsForNavigation=uiNavBarItems.items navigationLogin='login'
-        navigationRegistration='register' navigationLinkModifier=uiNavBarItems.linkModifier)
-      +navigation()(typeForNavigation='loggedIn' itemsForNavigation=uiNavBarItems.items
-        navigationLinkModifier=uiNavBarItems.linkModifier navigationUserName='Cosmin Negoita')
+      +navigation({type: 'standart', items: uiNavBarItems.items, loginName:'login',
+        registrationName: 'register', linkModifier: uiNavBarItems.linkModifier})
+      +navigation({type: 'loggedIn', items: uiNavBarItems.items,
+        linkModifier: uiNavBarItems.linkModifier, userName: 'Cosmin Negoita'})
 
       +footer
-      +footer-widget()(footerWidgetDescription=footerWidgetData.description footerWidgetHeadNavigation='Navigation'
-        footerWidgetNavigationItems=footerWidgetData.navigation footerWidgetHeadAbout='ABOUT US'
-        footerWidgetAboutItems=footerWidgetData.about footerWidgetHeadSupport='support'
-        footerWidgetSupportItems=footerWidgetData.support footerWidgetHeadSubscribe='Subscribe to our newsletter'
-        footerWidgetSubscribeDescription=footerWidgetData.subscribe footerWidgetPlaceholderEmail='Your email address'
-        footerWidgetCopyrightText='Copyright © 2018 Toxin UI Kit. All rights reserved.')
+      +footer-widget(footerWidgetData)

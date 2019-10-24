@@ -1,30 +1,30 @@
-mixin checkbox()
+mixin checkbox(options)
 
-  -const {checkboxValue, typeOfCheckbox, headOfCheckbox, checkboxModifier}=attributes
+  -const {values, type, head, modifier}=options
 
-  if typeOfCheckbox === 'checkbox'
+  if type === 'checkbox'
     div(class=['checkbox',
-     `${checkboxModifier ? `checkbox_${checkboxModifier}`:''}`])
+     `${modifier ? `checkbox_${modifier}`:''}`])
 
-      each value, index in checkboxValue
+      each value, index in values
         input.checkbox__field(type='checkbox' id=`field-checkbox-${index}`)
         label.checkbox__mark(for=`field-checkbox-${index}`) #{value}
 
-  else if typeOfCheckbox === 'checkboxExpandable'
+  else if type === 'checkboxExpandable'
     div(class=['checkbox',
-      `${checkboxModifier ? `checkbox_${checkboxModifier}` : ''}`])
+      `${modifier ? `checkbox_${modifier}` : ''}`])
 
-      h3.checkbox__head.js-checkbox__head #{headOfCheckbox}
+      h3.checkbox__head.js-checkbox__head #{head}
       div.checkbox__wrapper.js-checkbox__wrapper.checkbox__wrapper_hide#checkbox-expandable-wrapper
-        each value, index in checkboxValue
+        each value, index in values
           input.checkbox__field(type='checkbox' id=`field-checkbox-expandable-${index}`)
           label.checkbox__mark(for=`field-checkbox-expandable-${index}`) #{value}
 
-  else if typeOfCheckbox === 'rich'
+  else if type === 'rich'
     div(class=['checkbox',
-      `${checkboxModifier ? `checkbox_${checkboxModifier}` : ''}`])
+      `${modifier ? `checkbox_${modifier}` : ''}`])
 
-      each value, index in checkboxValue
+      each value, index in values
         input.checkbox__field(type='checkbox' id=`field-checkbox-rich-${index}`)
         label.checkbox__mark.checkbox__mark_rich(for=`field-checkbox-rich-${index}`) #{value.label}
           span.checkbox__description #{value.description}

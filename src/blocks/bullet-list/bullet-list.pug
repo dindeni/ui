@@ -1,7 +1,7 @@
-mixin bullet-list()
+mixin bullet-list(options)
 
-  -const {valuesForList, modifierForList} = attributes;
+  -const {values, modifier} = options
 
-  ul(class=['bullet-list', `${modifierForList ? `bullet-list_${modifierForList}`:''}`])
-    each value in valuesForList
+  ul(class=['bullet-list', `${modifier ? `bullet-list_${modifier}`:''}`])
+    each value in values
       li.bullet-list__item #{value}

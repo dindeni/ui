@@ -6,7 +6,7 @@ include ../blocks/footer/footer
 -const arrIndexNavigation = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
 -modifier: [ , 'expand-ru', ,  , 'expand-ru']}
 
--const footerdata = {description: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+-const footerData = {description: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
 -headNavigation: 'навигация', navigationItems: ['О нас', 'Новости', 'Служба поддержки',
 -'Услуги'], headAbout: 'о нас', aboutItems: ['О сервисе', 'Наша команда', 'Вакансии',
 - 'Инвесторы'], headSupport: 'Служба поддержки', supportItems: ['Соглашения',
@@ -29,16 +29,13 @@ html(lang="en")
     meta(name="viewport" content="width=device-width,initial-scale=1")
   body
 
-    +navigation()(typeForNavigation='standart' itemsForNavigation=arrIndexNavigation.items navigationLogin='войти'
-      navigationRegistration='зарегистрироваться' navigationLinkModifier=arrIndexNavigation.modifier,
-      modifierForNavigationItems='ru')
+    +navigation({
+      type: 'standart', items: arrIndexNavigation.items, loginName: 'войти',
+      registrationName: 'зарегистрироваться', linkModifier: arrIndexNavigation.modifier,
+      modifierForItems: 'ru'
+    })
 
     main.main-registration
       +registration
 
-    +footer-widget()(footerWidgetDescription=footerdata.description footerWidgetHeadNavigation=footerdata.headNavigation
-      footerWidgetNavigationItems=footerdata.navigationItems footerWidgetHeadAbout=footerdata.headAbout
-      footerWidgetAboutItems=footerdata.aboutItems footerWidgetHeadSupport=footerdata.headSupport
-      footerWidgetSupportItems=footerdata.supportItems footerWidgetHeadSubscribe=footerdata.headSubscribe
-      footerWidgetSubscribeDescription=footerdata.subscribeDescription footerWidgetPlaceholderEmail=footerdata.placeholderEmail
-      footerWidgetCopyrightText=footerdata.copyrightText)
+    +footer-widget(footerData)

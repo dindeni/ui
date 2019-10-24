@@ -1,9 +1,9 @@
-mixin rate()
+mixin rate(options)
 
-  -const {numberFillStars, modifierForRate}=attributes
+  -const {numberFillStars, modifier}=options
 
   div(class=['rate',
-  `${modifierForRate ? `rate_${modifierForRate}`:''}`])
+  `${modifier ? `rate_${modifier}`:''}`])
     each value,index in Array(5)
 
       if index <= numberFillStars - 1

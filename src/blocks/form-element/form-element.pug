@@ -1,48 +1,48 @@
-mixin form-element()
+mixin form-element(options)
 
-  -const {typeOfForm, placeholderForForm, modifierForInput,
-  -modifierForLabel, jsModifierForInput}=attributes
+  -const {type, placeholder, modifierForInput,
+  -modifierForLabel, jsModifierForInput}=options
 
-  if typeOfForm=== 'text'
+  if type=== 'text'
     div(class=['form-element',
     `${modifierForLabel ? `form-element_${modifierForLabel}`:''}`])
       input(type='text' class=['form-element__field', 'form-element__field_text',
-       `${modifierForInput ? `form-element__field_${modifierForInput}`:''}`] placeholder=`${placeholderForForm}`)
+       `${modifierForInput ? `form-element__field_${modifierForInput}`:''}`] placeholder=`${placeholder}`)
 
-  else if typeOfForm === 'dropdown'
+  else if type === 'dropdown'
     label(class=['form-element', 'form-element_dropdown',
       `${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`])
       input(type='text' class=['form-element__field', 'form-element__field_dropdown',
         `${modifierForInput ? `form-element__field_${modifierForInput}` : ''}`,
-        `${jsModifierForInput ? `js-form-element__field_${jsModifierForInput}` : ''}`] placeholder=`${placeholderForForm}` readonly)
+        `${jsModifierForInput ? `js-form-element__field_${jsModifierForInput}` : ''}`] placeholder=`${placeholder}` readonly)
 
-  else if typeOfForm === 'masked'
+  else if type === 'masked'
     div.form-element(class=['form-element',
       `${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`])
       input(type='text' class=['form-element__field', 'form-element__field_masked']
-       placeholder=`${placeholderForForm}`)
+       placeholder=`${placeholder}`)
 
-  else if typeOfForm === 'date'
+  else if type === 'date'
     label(class=['form-element', 'form-element form-element_date',
       `${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`])
       input(type='text' class=['form-element__field', 'form-element__field_date',
         `${modifierForInput ? `form-element__field_${modifierForInput}` : ''}`,
-        `${jsModifierForInput ? `js-form-element__field_${jsModifierForInput}` : ''}`] placeholder=`${placeholderForForm}`)
+        `${jsModifierForInput ? `js-form-element__field_${jsModifierForInput}` : ''}`] placeholder=`${placeholder}`)
 
-  else if typeOfForm === 'filter'
+  else if type === 'filter'
     label(class=['form-element', 'form-element_dropdown',
       `${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`])
       input(type='text' class=['form-element__field', 'form-element__field_filter', 'form-element__field_dropdown',
-        `${modifierForInput ? `form-element__field_${modifierForInput}` : ''}`] placeholder=`${placeholderForForm}`)
+        `${modifierForInput ? `form-element__field_${modifierForInput}` : ''}`] placeholder=`${placeholder}`)
       input(type='text' class=['form-element__field', 'form-element__field_hide'])
 
-  else if typeOfForm === 'subscription'
+  else if type === 'subscription'
     label(class=['form-element', 'form-element_subscription',
       `${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`])
       input(type='text' class=['form-element__field', 'form-element__field_subscription',
-        `${modifierForInput ? `form-element__field_${modifierForInput}` : ''}`] placeholder=`${placeholderForForm}`)
+        `${modifierForInput ? `form-element__field_${modifierForInput}` : ''}`] placeholder=`${placeholder}`)
 
-  else if typeOfForm === 'password'
+  else if type === 'password'
     div.form-element
       input(type='password' class=['form-element__field', 'form-element__field_text',
-        `${modifierForInput ? `form-element__field_${modifierForInput}` : ''}`] placeholder=`${placeholderForForm}`)
+        `${modifierForInput ? `form-element__field_${modifierForInput}` : ''}`] placeholder=`${placeholder}`)

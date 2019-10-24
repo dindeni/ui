@@ -1,10 +1,10 @@
-mixin features()
+mixin features(options)
 
-  -const {featuresValue, featuresModifier}=attributes
+  -const {values, modifier}=options
 
   div(class=['features',
-   `${featuresModifier ? `features_${featuresModifier}`: ''}`])
-    each value in featuresValue
+   `${modifier ? `features_${modifier}`: ''}`])
+    each value in values
       div.features__wrapper
         b.features__slogan #{value.slogan}
         span.features__description #{value.description}

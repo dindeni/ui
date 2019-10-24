@@ -1,38 +1,38 @@
-mixin buttons()
+mixin buttons(options)
 
-  -const {typeOfButtons, contentOfButtons, linkForButtons, modifierForButtons, jsModifierForButtons, hideModifierForButtons} = attributes
+  -const {type, content, link, modifier, jsModifier, hideModifier} = options
 
-  if typeOfButtons === 'full'
-    div(class=['buttons', `${modifierForButtons ? `buttons_${modifierForButtons}`:''}`])
-      button.buttons__full #{contentOfButtons}
+  if type === 'full'
+    div(class=['buttons', `${modifier ? `buttons_${modifier}`:''}`])
+      button.buttons__full #{content}
 
-  else if typeOfButtons === 'full-link'
-    div(class=['buttons', `${modifierForButtons ? `buttons_${modifierForButtons}`:''}`])
-      a(href=`${linkForButtons}`).buttons__full #{contentOfButtons}
+  else if type === 'full-link'
+    div(class=['buttons', `${modifier ? `buttons_${modifier}`:''}`])
+      a(href=`${link}`).buttons__full #{content}
 
-  else if typeOfButtons === 'transparent'
+  else if type === 'transparent'
     div.buttons
-      button.buttons__transparent(class=[`buttons__transparent_${modifierForButtons}`,
-       `${jsModifierForButtons ? `js-buttons__transparent_${jsModifierForButtons}`:''}`,
-        `${hideModifierForButtons ? 'buttons__transparent_hide':''}`]) #{contentOfButtons}
+      button.buttons__transparent(class=[`buttons__transparent_${modifier}`,
+       `${jsModifier ? `js-buttons__transparent_${jsModifier}`:''}`,
+        `${hideModifier ? 'buttons__transparent_hide':''}`]) #{content}
 
-  else if typeOfButtons === 'bordering'
+  else if type === 'bordering'
     div.buttons
-      button.buttons__bordering #{contentOfButtons}
+      button.buttons__bordering #{content}
 
-  else if typeOfButtons === 'bordering-link'
-    div(class=['buttons', `${modifierForButtons ? `buttons_${modifierForButtons}`:''}`])
-      a.buttons__with-bordering-link(href=`${linkForButtons}`) #{contentOfButtons}
+  else if type === 'bordering-link'
+    div(class=['buttons', `${modifier ? `buttons_${modifier}`:''}`])
+      a.buttons__with-bordering-link(href=`${link}`) #{content}
 
-  else if typeOfButtons === 'buy'
-    div(class=['buttons', `${modifierForButtons ? `buttons_${modifierForButtons}`:''}`])
-      button.buttons__full.buttons__full_for-filtering #{contentOfButtons}
+  else if type === 'buy'
+    div(class=['buttons', `${modifier ? `buttons_${modifier}`:''}`])
+      button.buttons__full.buttons__full_for-filtering #{content}
 
-  else if typeOfButtons === 'like'
+  else if type === 'like'
     div.buttons.buttons_for-rate.buttons_like
-      button.buttons__bordering.buttons__bordering_for-rate #{contentOfButtons}
+      button.buttons__bordering.buttons__bordering_for-rate #{content}
 
-  else if typeOfButtons === 'like-gray'
+  else if type === 'like-gray'
     div(class=['buttons', 'buttons_for-rate', 'buttons_gray',
-    `${modifierForButtons ? `buttons_${modifierForButtons}`:''}`])
-      button.buttons__bordering.buttons__bordering_for-rate.buttons__bordering_gray #{contentOfButtons}
+    `${modifier ? `buttons_${modifier}`:''}`])
+      button.buttons__bordering.buttons__bordering_for-rate.buttons__bordering_gray #{content}

@@ -1,39 +1,39 @@
 include ../buttons/buttons
 
-mixin navigation()
+mixin navigation(options)
 
-  -const {typeForNavigation, itemsForNavigation, modifierForNavigationItems,
-  -navigationLogin, navigationRegistration, navigationLinkModifier, navigationUserName} = attributes
+  -const {type, items, modifierForItems, loginName, registrationName,
+  -linkModifier, userName} = options
 
-  if typeForNavigation === 'standart'
+  if type === 'standart'
     nav.navigation.js-navigation
       img.navigation__logo(src=require('../img/icon-logo.svg') alt='logo')
 
       ul.navigation__list.js-navigation__list
-        each item, index in attributes.itemsForNavigation
+        each item, index in items
           li(class=['navigation__item',
-           `${modifierForNavigationItems ? `navigation__item_${modifierForNavigationItems}`:''}`])
+           `${modifierForItems ? `navigation__item_${modifierForItems}`:''}`])
             a(href='somePage.html' class=['navigation__link',
-            `${navigationLinkModifier[index] ?
-             `navigation__link_${navigationLinkModifier[index]}`:''}`]) #{item}
+            `${linkModifier[index] ?
+             `navigation__link_${linkModifier[index]}`:''}`]) #{item}
 
       div.navigation__buttons-wrapper
-        +buttons()(typeOfButtons='bordering-link' contentOfButtons=`${navigationLogin}` linkForButtons='sign-in.html')
-        +buttons()(typeOfButtons='full-link' contentOfButtons=`${navigationRegistration}` linkForButtons='registration.html' modifierForButtons='for-navigation')
+        +buttons({type:'bordering-link', content: `${loginName}`, link:'sign-in.html'})
+        +buttons({type:'full-link', content:`${registrationName}`, link: 'registration.html', modifier:'for-navigation'})
         button.navigation__button-mobile.js-navigation__button-mobile
 
-  else if typeForNavigation === 'loggedIn'
+  else if type === 'loggedIn'
     nav.navigation.js-navigation.navigation_logged
       img.navigation__logo(src=require('../img/icon-logo.svg') alt='logo')
 
       ul.navigation__list.js-navigation__list
-        each item, index in itemsForNavigation
+        each item, index in items
           li.navigation__item
             a(href='somePage.html' class=['navigation__link',
-             `${navigationLinkModifier[index] ?
-               `navigation__link_${navigationLinkModifier[index]}` : ''}`]) #{item}
+             `${linkModifier[index] ?
+               `navigation__link_${linkModifier[index]}` : ''}`]) #{item}
 
-      em.navigation__user-name #{navigationUserName}
+      em.navigation__user-name #{userName}
 
       div.navigation__buttons-wrapper
         button.navigation__button-mobile.js-navigation__button-mobile

@@ -2,11 +2,12 @@ include ../blocks/navigation/navigation
 include ../blocks/footer-widget/footer-widget
 include ../blocks/footer/footer
 include ../blocks/side-panel/side-panel
+include ../blocks/pagination/pagination
 
 -const arrIndexNavigation = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
 -modifier: [ , 'expand-ru', ,  , 'expand-ru']}
 
--const footerdata = {description: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+-const footerData = {description: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
 -headNavigation: 'навигация', navigationItems: ['О нас', 'Новости', 'Служба поддержки',
 -'Услуги'], headAbout: 'о нас', aboutItems: ['О сервисе', 'Наша команда', 'Вакансии',
 - 'Инвесторы'], headSupport: 'Служба поддержки', supportItems: ['Соглашения',
@@ -73,9 +74,11 @@ html(lang="en")
   body
 
     header.main-filter__header
-      +navigation()(typeForNavigation='standart' itemsForNavigation=arrIndexNavigation.items navigationLogin='войти'
-        navigationRegistration='зарегистрироваться' navigationLinkModifier=arrIndexNavigation.modifier,
-        modifierForNavigationItems='ru')
+      +navigation({
+        type: 'standart', items: arrIndexNavigation.items, loginName: 'войти',
+        registrationName: 'зарегистрироваться', linkModifier: arrIndexNavigation.modifier,
+        modifierForItems: 'ru'
+      })
 
     main.main-filter
 
@@ -84,16 +87,11 @@ html(lang="en")
       section.main-filter__rooms
         h1.main-filter__rooms-head Номера, которые мы для вас подобрали
         each value in rooms
-          +card-room()(cardImages=value.images cardRadioName='room-radio-name'
-          typeOfRoom=value.type numberOfRoom=value.number roomPrice=value.price
-            cardNumberOfReviews=value.review cardNumberOfRate=value.rate
-            cardModifier='for-filter')
+          +card-room({images: value.images, radioName: 'room-radio-name',
+          type: value.type, numberOfRoom: value.number, price: value.price,
+            numberOfReviews: value.review, numberOfRate: value.rate,
+            modifier: 'for-filter'})
 
-        +pagination()(valueForPagination=Array(15) modifierForPagination='for-filter')
+        +pagination({value: 15, modifier: 'for-filter'})
 
-    +footer-widget()(footerWidgetDescription=footerdata.description footerWidgetHeadNavigation=footerdata.headNavigation
-      footerWidgetNavigationItems=footerdata.navigationItems footerWidgetHeadAbout=footerdata.headAbout
-      footerWidgetAboutItems=footerdata.aboutItems footerWidgetHeadSupport=footerdata.headSupport
-      footerWidgetSupportItems=footerdata.supportItems footerWidgetHeadSubscribe=footerdata.headSubscribe
-      footerWidgetSubscribeDescription=footerdata.subscribeDescription footerWidgetPlaceholderEmail=footerdata.placeholderEmail
-      footerWidgetCopyrightText=footerdata.copyrightText)
+    +footer-widget(footerData)

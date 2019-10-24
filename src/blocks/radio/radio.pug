@@ -1,10 +1,10 @@
-mixin radio()
+mixin radio(options)
 
-  -const {valueForRadio, radioId, modifierForRadio}=attributes
+  -const {values, id, modifier}=options
 
   div(class=['radio',
-  `${modifierForRadio ? `radio_${modifierForRadio}`:''}`])
+  `${modifier ? `radio_${modifier}`:''}`])
 
-    each value, index in valueForRadio
-      input.radio__field(type='radio' name='radio' id=`${radioId[index]}`  checked=index===0 )
-      label.radio__mark(for=`${radioId[index]}`) #{value}
+    each value, index in values
+      input.radio__field(type='radio' name='radio' id=`${id[index]}`  checked=index===0 )
+      label.radio__mark(for=`${id[index]}`) #{value}

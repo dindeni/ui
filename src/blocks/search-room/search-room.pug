@@ -14,11 +14,13 @@ mixin searchRoom(absolute)
 
       form.search-room__form
 
-        +form-element()(typeOfForm='date' placeholderForForm='дд.мм.гггг' modifierForInput='for-search-in'
-         modifierForLabel='for-search' jsModifierForInput='for-search-in')
+        +form-element({type: 'date',  placeholder: 'дд.мм.гггг',
+         modifierForInput: 'for-search-in', modifierForLabel: 'for-search',
+         jsModifierForInput: 'for-search-in'})
 
-        +form-element()(typeOfForm='date' placeholderForForm='дд.мм.гггг' modifierForInput='for-search-out'
-          modifierForLabel='for-search' jsModifierForInput='for-search-out')
+        +form-element({type: 'date', placeholder: 'дд.мм.гггг',
+         modifierForInput: 'for-search-out', modifierForLabel: 'for-search',
+          jsModifierForInput: 'for-search-out'})
 
-        +sum-guests()(guestsHead='гости')
-        +buttons()(typeOfButtons='buy' contentOfButtons='Подобрать номер' modifierForButtons='for-search')
+        +sum-guests({head: 'гости'})
+        +buttons({type:'buy', content: 'Подобрать номер', modifier: 'for-search'})

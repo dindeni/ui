@@ -6,13 +6,13 @@ mixin sign-in
   section.sign-in
     h1.sign-in__head Войти
 
-    +form-element()(typeOfForm='text' placeholderForForm='Email'
-      modifierForInput='for-sign-in')
+    +form-element({type: 'text', placeholder: 'Email',
+      modifierForInput: 'for-sign-in'})
 
-    +form-element()(typeOfForm='password' placeholderForForm=' Пароль'
-      modifierForInput='for-sign-in')
+    +form-element({type: 'password', placeholder: 'Пароль',
+      modifierForInput: 'for-sign-in'})
 
-    +buttons()(typeOfButtons='buy' contentOfButtons='Войти' modifierForButtons='for-sign-in')
+    +buttons({type: 'buy', content: 'Войти', modifier: 'for-sign-in'})
 
     span.sign-in__label Нет аккаунта на Toxin?
-      +buttons()(typeOfButtons='bordering-link' contentOfButtons='Создать' linkForButtons='registration.html' modifierForButtons='for-sign-in')
+      +buttons({type: 'bordering-link', content: 'Создать', link: 'registration.html', modifier: 'for-sign-in'})

@@ -25,8 +25,8 @@ include ../order-room/order-room
 -numberLikes: 2}]
 
 
--const bulletListData = ['Нельзя с питомцами', 'Без вечеринок и мероприятий',
--'Время прибытия — после 13:00, а выезд до 12:00']
+-const bulletListData = {values: ['Нельзя с питомцами', 'Без вечеринок и мероприятий',
+-'Время прибытия — после 13:00, а выезд до 12:00'], modifier: 'for-room-description'}
 
 
 mixin room-description
@@ -36,7 +36,7 @@ mixin room-description
       div.room-description__wrapper
         h2.room-description__features-head Сведения о номере
 
-        +features()(featuresValue=roomFeatures featuresModifier='for-room-description')
+        +features({values:roomFeatures, modifier: 'for-room-description'})
 
       div.room-description__pie-chart-wrapper
         h2.room-description__pie-chart-head Впечатления от номера
@@ -48,18 +48,18 @@ mixin room-description
         span.room-description__review-number 2 отзыва
         each value in reviewData
 
-          +review(reviewHead=value.name reviewDate=value.date
-          reviewDescription=value.text reviewPath=value.pathIcon
-          reviewTypeOfButton=value.typeButton reviewNumberOfLikes=value.numberLikes
-            reviewModifier='for-room-description')
+          +review({head: value.name, date: value.date,
+          description: value.text, path: value.pathIcon,
+          typeOfButton: value.typeButton, numberOfLikes: value.numberLikes,
+            modifier: 'for-room-description'})
 
       div.room-description__rules
         h2.room-description__rules-head Правила
 
-        +bullet-list()(valuesForList=bulletListData modifierForList='for-room-description')
+        +bullet-list(bulletListData)
 
       div.room-description__cancel
         h2.room-description__cancel-head Отмена
         p.room-description__cancel-paragraph Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
-    +order-room()(totalValueForOrder=arrTotalDesc totalPriceForOrder=arrTotalPrice)
+    +order-room({totalValue: arrTotalDesc, totalPrice: arrTotalPrice})

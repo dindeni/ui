@@ -2,39 +2,36 @@ include ../form-element/form-element
 include ../copyright/copyright
 include ../footer-list/footer-list
 
-mixin footer-widget()
+mixin footer-widget(options)
 
-  -const {footerWidgetDescription, footerWidgetHeadNavigation,
-  -footerWidgetNavigationItems, footerWidgetHeadAbout,
-  -footerWidgetAboutItems, footerWidgetHeadSupport,
-  -footerWidgetSupportItems, footerWidgetHeadSubscribe,
-  -footerWidgetSubscribeDescription, footerWidgetPlaceholderEmail,
-  -footerWidgetCopyrightText, footerWidgetModifier,
-  -footerWidgetCopyrightModifier}=attributes
+  -const {description, headNavigation,
+  -navigationItems, headAbout, aboutItems, headSupport, supportItems, headSubscribe,
+  -subscribeDescription, placeholderEmail, copyrightText, modifier,
+  -copyrightModifier}=options
 
   footer(class=['footer-widget',
-  `${footerWidgetModifier ? `footer-widget_${footerWidgetModifier}`:''}`])
+  `${modifier ? `footer-widget_${modifier}`:''}`])
     div.footer-widget__logo-wrapper
       img.footer-widget__logo(src=require('../img/icon-logo.svg') alt='image logo')
-      p.footer-widget__description #{footerWidgetDescription}
+      p.footer-widget__description #{description}
 
-    +footer-list()(footerListHead=footerWidgetHeadNavigation footerListItems=footerWidgetNavigationItems
-      footerListModifier='navigation')
+    +footer-list({head:headNavigation, items:navigationItems,
+      modifier:'navigation'})
 
-    +footer-list()(footerListHead=footerWidgetHeadAbout footerListItems=footerWidgetAboutItems
-      footerListModifier='about')
+    +footer-list({head:headAbout, items:aboutItems,
+      modifier:'about'})
 
-    +footer-list()(footerListHead=footerWidgetHeadSupport footerListItems=footerWidgetSupportItems
-      footerListModifier='support')
+    +footer-list({head:headSupport, items:supportItems,
+      modifier:'support'})
 
     div.footer-widget__subscribe-wrapper
-      h3.footer-widget__subscribe-head #{footerWidgetHeadSubscribe}
-      div.footer-widget__subscribe-description #{footerWidgetSubscribeDescription}
+      h3.footer-widget__subscribe-head #{headSubscribe}
+      div.footer-widget__subscribe-description #{subscribeDescription}
 
-      +form-element()(typeOfForm='subscription' placeholderForForm=footerWidgetPlaceholderEmail
-        modifierForInput='for-footer-widget' modifierForLabel='for-footer-widget')
+      +form-element({type: 'subscription', placeholder: placeholderEmail,
+        modifierForInput: 'for-footer-widget', modifierForLabel: 'for-footer-widget'})
 
-    +copyright()(copyrightText=footerWidgetCopyrightText copyrightModifier='footer-widget')
+    +copyright({text: copyrightText, modifier: 'footer-widget'})
 
 
 

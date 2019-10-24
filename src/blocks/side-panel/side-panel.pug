@@ -3,10 +3,9 @@ include ../datepicker-range/datepicker-range
 include ../ui-slider/ui-slider
 include ../checkbox/checkbox
 include ../card-room/card-room
-include ../pagination/pagination
 include ../sum-rooms/sum-rooms
 
--const checkboxArr = {standart: ['Можно курить', 'Можно с питомцами',
+-const checkboxValue = {standart: ['Можно курить', 'Можно с питомцами',
 -'Можно пригласить гостей (до 10 человек)'], rich: [{label: 'Широкий коридор',
 -description: 'Ширина коридоров в номере не менее 91 см.'},
 -{label: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист  и проводит до номера.'}],
@@ -20,24 +19,24 @@ mixin side-panel
 
     form.side-panel__form
 
-      +datepicker-range()(defaultDateOfRange='19 авг - 23 авг')
+      +datepicker-range({defaultDate: '19 авг - 23 авг'})
 
-      +sum-guests()(guestsModifier='for-filter' guestsInput='for-filter' guestsLabel='for-filter',
-        guestsHead='гости')
+      +sum-guests({modifier: 'for-filter', modifierForInput: 'for-filter',
+       modifierForLabel: 'for-filter', head: 'гости'})
 
       div.side-panel__slogan.side-panel__slogan_range диапазон цены
       +ui-slider('for-side-panel')
       div.side-panel__range-reference Стоимость за сутки пребывания в номере
 
       div.side-panel__slogan.side-panel__slogan_checkbox Checkbox Buttons
-      +checkbox(checkboxValue=checkboxArr.standart typeOfCheckbox='checkbox'
-        checkboxModifier='for-side-panel')
+      +checkbox({values: checkboxValue.standart, type: 'checkbox',
+        modifier: 'for-side-panel'})
 
       div.side-panel__slogan.side-panel__slogan_checkbox-rich доступность
-      +checkbox(checkboxValue=checkboxArr.rich typeOfCheckbox='rich'
-        checkboxModifier='for-side-panel')
+      +checkbox({values: checkboxValue.rich, type: 'rich',
+        modifier: 'for-side-panel'})
 
       div.side-panel__slogan.side-panel__slogan_rooms удобства номера
       +sum-rooms
-      +checkbox()(checkboxValue=checkboxArr.expandable typeOfCheckbox='checkboxExpandable'
-        headOfCheckbox='дополнительные удобства' checkboxModifier='for-side-panel')
+      +checkbox({values: checkboxValue.expandable, type: 'checkboxExpandable',
+        head: 'дополнительные удобства', modifier: 'for-side-panel'})
