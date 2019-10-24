@@ -74,9 +74,12 @@
   }
 
   &_for-main-ui{
-    margin: 0 0 5px 0;
+    margin: 0 0 10px 0;
     & .sum-guests__popup{
       margin-top: 43px;
+    }
+    & .form-element_for-guests{
+      margin-top: 0;
     }
   }
 }
