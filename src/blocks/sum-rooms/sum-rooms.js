@@ -10,9 +10,11 @@ if (document.querySelector('.js-sum-rooms')) {
   const changeZIndex = (type) => {
     if (type === 'out') {
       roomsPopup.style.zIndex = 1;
+      roomsPopup.classList.add('sum-rooms__popup_hide');
     }
     if (type === 'in') {
       roomsPopup.style.zIndex = 100;
+      roomsPopup.classList.remove('sum-rooms__popup_hide');
     }
   };
   roomsPopup.addEventListener('focusout', () => changeZIndex('out'));

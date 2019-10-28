@@ -7,6 +7,7 @@
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
   background: #FFFFFF;
+
   &_range{
     width: 264px;
     padding-bottom: 25px;
@@ -21,13 +22,23 @@
       &-calendar {
         font-size: 0.71rem;
         margin: 39px 0 0 5px;
+
+        & td .ui-state-default{
+          margin: 0 16px 25px 0;
+        }
+
+        & .ui-datepicker-today .ui-state-default::after{
+          width: 31px;
+          height: 31px;
+          left: -5px;
+          top: -9px;
+        }
       }
       &-buttonpane {
         bottom: 2%;
         & .ui-datepicker-close{
           margin-right: 40px;
         }
-
       }
     }
   }
@@ -213,12 +224,15 @@
   .ui-datepicker:not(.ui-datepicker_for-single-datepicker){
     width: 258px;
     padding-bottom: 25px;
-    &-calendar &-today .ui-state-default::after{
-      width: 35px;
-      height: 35px;
-      left: -7px;
-    }
     & .ui-datepicker{
+      &-calendar .ui-datepicker-today .ui-state-default::after{
+        width: 31px;
+        height: 31px;
+        left: -5px;
+        top: -9px;
+
+      }
+
       &-title{
         font-size: 16px;
       }
@@ -279,12 +293,14 @@
   .ui-datepicker_for-single-datepicker{
     width: 258px;
     padding-bottom: 25px;
-    &-calendar &-today .ui-state-default::after{
-      width: 35px;
-      height: 35px;
-      left: -7px;
-    }
     & .ui-datepicker{
+      &-calendar .ui-datepicker-today .ui-state-default::after{
+        width: 31px;
+        height: 31px;
+        left: -5px;
+        top: -9px;
+      }
+
       &-title{
         font-size: 16px;
       }
