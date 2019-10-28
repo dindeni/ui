@@ -17,7 +17,7 @@ mixin form-element(options)
         `${jsModifierForInput ? `js-form-element__field_${jsModifierForInput}` : ''}`] placeholder=`${placeholder}` readonly)
 
   else if type === 'masked'
-    div.form-element(class=['form-element',
+    div(class=['form-element',
       `${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`])
       input(type='text' class=['form-element__field', 'form-element__field_masked']
        placeholder=`${placeholder}`)
