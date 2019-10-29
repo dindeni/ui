@@ -4,7 +4,11 @@ mixin features(options)
 
   div(class=['features',
    `${modifier ? `features_${modifier}`: ''}`])
+
     each value in values
+
+      -const {slogan, description} = value
+
       div.features__wrapper
-        b.features__slogan #{value.slogan}
-        span.features__description #{value.description}
+        b.features__slogan #{slogan}
+        span.features__description #{description}

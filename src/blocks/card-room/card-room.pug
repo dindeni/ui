@@ -28,22 +28,16 @@ mixin card-room(options)
         button.card-room__arrow.card-room__arrow_prev.js-card-room__arrow_prev
         button.card-room__arrow.card-room__arrow_next.js-card-room__arrow_next
 
-    if type === 'luxe'
-      div.card-room__number-room-wrapper
-        span.card-room__number-mark №
-        span.card-room__number #{numberOfRoom}
-        span.card-room__type-room люкс
-      div.card-room__price-wrapper
-          span.card-room__price #{price}&#8381;
-          span.card-room__periodicity в сутки
+    div.card-room__number-room-wrapper
+      span.card-room__number-mark №
+      span.card-room__number #{numberOfRoom}
 
-    else if type === 'normal'
-      div.card-room__number-room-wrapper
-        span.card-room__number-mark №
-        span.card-room__number #{numberOfRoom}
-      div.card-room__price-wrapper
-          span.card-room__price.card-room__price_normal #{price}&#8381;
-          span.card-room__periodicity в сутки
+      if type === 'luxe'
+        span.card-room__type-room люкс
+
+    div.card-room__price-wrapper
+      span.card-room__price #{price}&#8381;
+      span.card-room__periodicity в сутки
 
     +rate({numberFillStars: numberOfRate, modifier: 'for-card-room'})
 

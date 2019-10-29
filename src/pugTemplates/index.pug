@@ -3,8 +3,8 @@ include ../blocks/search-room/search-room
 include ../blocks/footer-widget/footer-widget
 include ../blocks/footer/footer
 
--const arrIndexNavigation = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
--modifier: [ , 'expand-ru', ,  , 'expand-ru']}
+-const navigationValues = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
+-linkModifier: [ , 'expand-ru', ,  , 'expand-ru']}
 
 -const footerData = {description: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
 -headNavigation: 'навигация', navigationItems: ['О нас', 'Новости', 'Служба поддержки',
@@ -31,11 +31,10 @@ html(lang="ru")
   body
 
     header
-      +navigation({
-        type: 'standart', items: arrIndexNavigation.items, loginName: 'войти',
-        registrationName: 'зарегистрироваться', linkModifier: arrIndexNavigation.modifier,
-        modifierForItems: 'ru'
-      })
+      +navigation(Object.assign(navigationValues, {
+        type: 'standart', loginName: 'войти',
+        registrationName: 'зарегистрироваться', modifierForItems: 'ru'
+      }))
 
     main.main-index
 

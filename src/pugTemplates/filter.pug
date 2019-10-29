@@ -4,8 +4,8 @@ include ../blocks/footer/footer
 include ../blocks/side-panel/side-panel
 include ../blocks/pagination/pagination
 
--const arrIndexNavigation = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
--modifier: [ , 'expand-ru', ,  , 'expand-ru']}
+-const navigationValues = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
+-linkModifier: [ , 'expand-ru', ,  , 'expand-ru']}
 
 -const footerData = {description: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
 -headNavigation: 'навигация', navigationItems: ['О нас', 'Новости', 'Служба поддержки',
@@ -20,41 +20,41 @@ include ../blocks/pagination/pagination
 
 -const rooms = [{images: [require('../img/image-room-888.jpg'),
 -require('../img/image-room-982.jpg'),require('../img/image-room-350.jpg'),
--require('../img/image-room-444.jpg')], type: 'luxe', number: 888,
--price: '9 900', review: 145, rate: 5}, {images: [require('../img/image-room-840.jpg'),
+-require('../img/image-room-444.jpg')], type: 'luxe', numberOfRoom: 888,
+-price: '9 900', numberOfReviews: 145, numberOfRate: 5}, {images: [require('../img/image-room-840.jpg'),
 -require('../img/image-room-982.jpg'),
 -require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', number: 840, price: '9 900', review: 65, rate: 4},
+-type: 'normal', numberOfRoom: 840, price: '9 900', numberOfReviews: 65, numberOfRate: 4},
 -{images: [require('../img/image-room-980.jpg'), require('../img/image-room-982.jpg'),
 -require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'luxe', number: 980, price: '8 500', review: 35, rate: 3},
+-type: 'luxe', numberOfRoom: 980, price: '8 500', numberOfReviews: 35, numberOfRate: 3},
 -{images: [require('../img/image-room-856.jpg'), require('../img/image-room-982.jpg'),
 -require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', number: 856, price: '7 300', review: 19, rate: 5},
+-type: 'normal', numberOfRoom: 856, price: '7 300', numberOfReviews: 19, numberOfRate: 5},
 -{images: [require('../img/image-room-740.jpg'), require('../img/image-room-982.jpg'),
 -require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', number: 740, price: '6 000', review: 44, rate: 4},
+-type: 'normal', numberOfRoom: 740, price: '6 000', numberOfReviews: 44, numberOfRate: 4},
 -{images: [require('../img/image-room-982.jpg'), require('../img/image-room-982.jpg'),
 -require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', number: 982, price: '5 800', review: 56, rate: 3},
+-type: 'normal', numberOfRoom: 982, price: '5 800', numberOfReviews: 56, numberOfRate: 3},
 -{images: [require('../img/image-room-678.jpg'), require('../img/image-room-982.jpg'),
 -require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', number: 678, price: '5 500', review: 45, rate: 5},
+-type: 'normal', numberOfRoom: 678, price: '5 500', numberOfReviews: 45, numberOfRate: 5},
 -{images: [require('../img/image-room-450.jpg'), require('../img/image-room-982.jpg'),
 -require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', number: 450, price: '5 300', review: 39, rate: 4},
+-type: 'normal', numberOfRoom: 450, price: '5 300', numberOfReviews: 39, numberOfRate: 4},
 -{images: [require('../img/image-room-350.jpg'), require('../img/image-room-982.jpg'),
 -require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', number: 350, price: '5 000', review: 77, rate: 3},
+-type: 'normal', numberOfRoom: 350, price: '5 000', numberOfReviews: 77, numberOfRate: 3},
 -{images: [require('../img/image-room-666.jpg'), require('../img/image-room-982.jpg'),
 -require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', number: 666, price: '5 000', review: 25, rate: 5},
+-type: 'normal', numberOfRoom: 666, price: '5 000', numberOfReviews: 25, numberOfRate: 5},
 -{images: [require('../img/image-room-444.jpg'), require('../img/image-room-982.jpg'),
 -require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', number: 444, price: '9 900', review: 15, rate: 3},
+-type: 'normal', numberOfRoom: 444, price: '9 900', numberOfReviews: 15, numberOfRate: 3},
 -{images: [require('../img/image-room-352.jpg'), require('../img/image-room-982.jpg'),
 -require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', number: 352, price: '5 000', review: 55, rate: 3}]
+-type: 'normal', numberOfRoom: 352, price: '5 000', numberOfReviews: 55, numberOfRate: 3}]
 
 doctype html
 html(lang="en")
@@ -74,11 +74,10 @@ html(lang="en")
   body
 
     header.main-filter__header
-      +navigation({
-        type: 'standart', items: arrIndexNavigation.items, loginName: 'войти',
-        registrationName: 'зарегистрироваться', linkModifier: arrIndexNavigation.modifier,
-        modifierForItems: 'ru'
-      })
+      +navigation(Object.assign(navigationValues, {
+        type: 'standart', loginName: 'войти',
+        registrationName: 'зарегистрироваться', modifierForItems: 'ru'
+      }))
 
     main.main-filter
 
@@ -87,9 +86,12 @@ html(lang="en")
       section.main-filter__rooms
         h1.main-filter__rooms-head Номера, которые мы для вас подобрали
         each value in rooms
-          +card-room({images: value.images, radioName: 'room-radio-name',
-          type: value.type, numberOfRoom: value.number, price: value.price,
-            numberOfReviews: value.review, numberOfRate: value.rate,
+
+          -const {images, type, numberOfRoom, price, numberOfReviews,
+          -numberOfRate} = value
+
+          +card-room({images, radioName: 'room-radio-name', type,
+          numberOfRoom, price, numberOfReviews, numberOfRate,
             modifier: 'for-filter'})
 
         +pagination({value: 15, modifier: 'for-filter'})

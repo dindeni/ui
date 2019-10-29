@@ -43,10 +43,10 @@ include ../blocks/datepicker-range/datepicker-range
 -const arrFeatures = [{slogan: 'Комфорт', description: 'Шумопоглощающие стены'},
 -{slogan: 'Удобство', description: 'Окно в каждой из спален'}]
 
--const arrTotalDesc = ['9 990₽ х 4 суток', 'Сбор за услуги: скидка 2 179₽',
+-const totalValue = ['9 990₽ х 4 суток', 'Сбор за услуги: скидка 2 179₽',
 -'Сбор за дополнительные услуги']
 
--const arrTotalPrice = ['39 960₽', '0₽', '300₽']
+-const totalPrice = ['39 960₽', '0₽', '300₽']
 
 -const arrPathImage1 = [require('../img/image-room-888.jpg'),
 -require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'),
@@ -56,8 +56,8 @@ include ../blocks/datepicker-range/datepicker-range
 -require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'),
 -require('../img/image-room-444.jpg')]
 
--const uiNavBarItems = {items: ['Home', 'About Us', 'Services', 'Careers',
--'News', 'Documentation'], linkModifier: ['current', , 'expand', , ,]}
+-const navigationValues = {items: ['Home', 'About Us', 'Services', 'Careers',
+-'News', 'Documentation'], linkModifier: ['current', , 'expand', , ,], type: 'standart'}
 
 -const footerWidgetData = {description:
 -'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
@@ -146,7 +146,7 @@ html(lang="en")
         +registration('for-main-ui')
 
       div.main-ui__card-wrapper
-        +order-room({totalValue: arrTotalDesc, totalPrice: arrTotalPrice})
+        +order-room({totalValue, totalPrice})
         +sign-in
 
       div.main-ui__card-wrapper
@@ -156,15 +156,13 @@ html(lang="en")
           numberOfReviews:145, numberOfRate: 5})
 
         +card-room({images: arrPathImage2, radioName: 'room-radio-name-2',
-          type: 'normal', number: 840, price: '9 900', numberOfReviews:65,
+          type: 'normal', numberOfRoom: 840, price: '9 900', numberOfReviews:65,
           numberOfRate: 4})
 
     div.main-ui__headers-footers
 
-      +navigation({type: 'standart', items: uiNavBarItems.items, loginName:'login',
-        registrationName: 'register', linkModifier: uiNavBarItems.linkModifier})
-      +navigation({type: 'loggedIn', items: uiNavBarItems.items,
-        linkModifier: uiNavBarItems.linkModifier, userName: 'Cosmin Negoita'})
+      +navigation(Object.assign(navigationValues, {loginName: 'login', registrationName: 'register'}))
+      +navigation(Object.assign(navigationValues, {type: 'loggedIn', userName: 'Cosmin Negoita'}))
 
       +footer
       +footer-widget(footerWidgetData)
