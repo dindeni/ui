@@ -5,20 +5,20 @@ mixin checkbox(options)
   div(class=['checkbox',
     `${modifier ? `checkbox_${modifier}` : ''}`])
 
-  if type === 'checkbox'
-    each value, index in values
-      input.checkbox__field(type='checkbox' id=`field-checkbox-${index}`)
-      label.checkbox__mark(for=`field-checkbox-${index}`) #{value}
-
-  else if type === 'checkboxExpandable'
-    h3.checkbox__head.js-checkbox__head #{head}
-    div.checkbox__wrapper.js-checkbox__wrapper.checkbox__wrapper_hide#checkbox-expandable-wrapper
+    if type === 'checkbox'
       each value, index in values
-        input.checkbox__field(type='checkbox' id=`field-checkbox-expandable-${index}`)
-        label.checkbox__mark(for=`field-checkbox-expandable-${index}`) #{value}
+        input.checkbox__field(type='checkbox' id=`field-checkbox-${index}`)
+        label.checkbox__mark(for=`field-checkbox-${index}`) #{value}
 
-  else if type === 'rich'
-    each value, index in values
-      input.checkbox__field(type='checkbox' id=`field-checkbox-rich-${index}`)
-      label.checkbox__mark.checkbox__mark_rich(for=`field-checkbox-rich-${index}`) #{value.label}
-        span.checkbox__description #{value.description}
+    else if type === 'checkboxExpandable'
+      h3.checkbox__head.js-checkbox__head #{head}
+      div.checkbox__wrapper.js-checkbox__wrapper.checkbox__wrapper_hide#checkbox-expandable-wrapper
+        each value, index in values
+          input.checkbox__field(type='checkbox' id=`field-checkbox-expandable-${index}`)
+          label.checkbox__mark(for=`field-checkbox-expandable-${index}`) #{value}
+
+    else if type === 'rich'
+      each value, index in values
+        input.checkbox__field(type='checkbox' id=`field-checkbox-rich-${index}`)
+        label.checkbox__mark.checkbox__mark_rich(for=`field-checkbox-rich-${index}`) #{value.label}
+          span.checkbox__description #{value.description}
