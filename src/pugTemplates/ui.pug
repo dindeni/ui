@@ -91,15 +91,16 @@ html(lang="en")
 
       div.main-ui__form-wrapper
         +checkbox(checkboxData)
-        +radio({values: arrRadio, id: arrRadioId})
-        +toggle({label: 'Получать спецпредложение', id: 'toggle'})
+        +radio({values: arrRadio, id: arrRadioId, modifier: 'for-ui'})
+        +toggle({label: 'Получать спецпредложение', id: 'toggle',
+        modifier: 'for-ui'})
 
         div.main-ui__buttons-wrapper
           +buttons({type:'like-gray', content:2,  modifier:'for-ui'})
-          +buttons({type:'like', content:12})
+          +buttons({type:'like', content:12, modifier: 'for-ui'})
 
         div.main-ui__rate-wrapper
-          +rate({numberFillStars: 4})
+          +rate({numberFillStars: 4, modifier: 'for-ui'})
           +rate({numberFillStars: 5})
 
       div.main-ui__form-wrapper
@@ -118,7 +119,7 @@ html(lang="en")
 
         div.main-ui__buttons-wrapper
           +buttons({type:'buy', content: 'перейти к оплате'})
-        +pagination({value: 15})
+        +pagination({value: 15, modifier: 'for-ui'})
 
       div.main-ui__form-wrapper
         div.main-ui__checkbox-wrapper

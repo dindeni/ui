@@ -8,6 +8,10 @@
     display: inline-block;
   }
 
+  &_for-ui{
+    margin: 10px 0 10px 6px;
+  }
+
   &__field{
     @include hide;
   }

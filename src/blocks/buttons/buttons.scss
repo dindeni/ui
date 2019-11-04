@@ -38,8 +38,8 @@
     }
   }
 
-  &_for-ui {
-    margin-right: 10px;
+  &_for-ui#{&}_for-rate {
+    margin: 0 10px 0 4px;
   }
 
   &_for-navigation {

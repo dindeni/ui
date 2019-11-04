@@ -29,7 +29,8 @@ mixin buttons(options)
       button.buttons__full.buttons__full_for-filtering #{content}
 
   else if type === 'like'
-    div.buttons.buttons_for-rate.buttons_like
+    div(class=['buttons', 'buttons_for-rate', 'buttons_like',
+      `${modifier ? `buttons_${modifier}` : ''}`])
       button.buttons__bordering.buttons__bordering_for-rate #{content}
 
   else if type === 'like-gray'

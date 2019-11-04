@@ -54,6 +54,17 @@
       background: none;
     }
   }
+
+  &_for-ui{
+    & .pagination{
+      &__list{
+        margin: 20px 0 10px 0;
+      }
+      &__description{
+        margin-left: 6px;
+      }
+    }
+  }
 }
 
 @media (max-width: 1100px){
