@@ -4,10 +4,10 @@
 
 .checkbox{
   &__mark{
-    padding: 0 0 0 20px;
+    padding: 3px 0 0 20px;
     display: block;
     @include body;
-    margin: 0 0 12px 12px;
+    margin: 0 0 10px 12px;
     position: relative;
     text-transform: unset;
     width: 210px;
@@ -25,6 +25,7 @@
     }
     &#{&}_rich{
       font-weight: bold;
+      margin: 0 0 8px 12px;
       & .checkbox__description{
         font-size: 12px;
         font-weight: normal;
@@ -66,10 +67,11 @@
   &_for-side-panel{
     & .checkbox{
       &__mark{
-        margin: 0 0 12px 10px;
+        margin: 0 0 10px 10px;
       }
 
       &__mark_rich{
+        padding: 0 0 3px 20px;
         &::before{
           top: -3px;
         }

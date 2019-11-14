@@ -18,7 +18,7 @@
 
   &__label{
     @include body;
-    padding: 0 0 0 45px;
+    padding: 1px 0 0 45px;
     position: relative;
     &::before{
       position: absolute;
