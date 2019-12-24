@@ -1,6 +1,6 @@
-@import "../variables/variables";
-@import "../mixins/hide";
-@import "../mixins/text";
+@import "../../style/variables/variables";
+@import "../../style/mixins/hide";
+@import "../../style/mixins/text";
 
 .form-element{
   &__field{

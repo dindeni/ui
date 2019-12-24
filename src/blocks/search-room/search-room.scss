@@ -1,4 +1,4 @@
-@import "../mixins/rectangle";
+@import "../../style/mixins/rectangle";
 
 .search-room{
   @include rectangle;

@@ -1,7 +1,7 @@
-@import "../mixins/rectangle";
-@import "../mixins/hide";
-@import "../variables/variables";
-@import "../mixins/text";
+@import "../../style/mixins/rectangle";
+@import "../../style/mixins/hide";
+@import "../../style/variables/variables";
+@import "../../style/mixins/text";
 
 .card-room{
   @include rectangle;

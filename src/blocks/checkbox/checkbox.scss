@@ -1,6 +1,6 @@
-@import "../mixins/hide";
-@import "../variables/variables";
-@import "../mixins/text";
+@import "../../style/mixins/hide";
+@import "../../style/variables/variables";
+@import "../../style/mixins/text";
 
 .checkbox{
   &__mark{

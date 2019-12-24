@@ -1,6 +1,6 @@
-@import "../mixins/text";
-@import "../mixins/hide";
-@import "../variables/variables";
+@import "../../style/mixins/text";
+@import "../../style/mixins/hide";
+@import "../../style/variables/variables";
 
 .toggle{
   &_for-registration{

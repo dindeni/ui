@@ -1,6 +1,6 @@
-@import "../mixins/rectangle";
-@import "../mixins/text";
-@import "../variables/variables";
+@import "../../style/mixins/rectangle";
+@import "../../style/mixins/text";
+@import "../../style/variables/variables";
 
 .order-room{
   @include rectangle;
