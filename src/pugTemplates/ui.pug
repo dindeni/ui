@@ -56,8 +56,14 @@ include ../blocks/datepicker-range/datepicker-range
 -require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'),
 -require('../img/image-room-444.jpg')]
 
--const navigationValues = {items: ['Home', 'About Us', 'Services', 'Careers',
--'News', 'Documentation'], linkModifier: ['current', , 'expand', , ,], type: 'standart'}
+-const navigationValues ={items: ['Home', 'About Us', 'Services', 'Careers',
+-'News', 'Documentation'], linkModifier: ['current', , 'expand', , ,]};
+
+-const { items, linkModifier } = navigationValues;
+
+-const valuesForLogin = { items, linkModifier, type, loginName: 'login', registrationName: 'register', type: 'standart' };
+
+-const valuesForLoggedIn = { items, linkModifier, type: 'loggedIn', userName: 'Cosmin Negoita' };
 
 -const footerWidgetData = {description:
 -'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
@@ -162,8 +168,8 @@ html(lang="en")
 
     div.main-ui__headers-footers
 
-      +navigation(Object.assign(navigationValues, {loginName: 'login', registrationName: 'register'}))
-      +navigation(Object.assign(navigationValues, {type: 'loggedIn', userName: 'Cosmin Negoita'}))
+      +navigation(valuesForLogin)
+      +navigation(valuesForLoggedIn)
 
       +footer
       +footer-widget(footerWidgetData)
