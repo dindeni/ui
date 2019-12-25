@@ -1,6 +1,6 @@
 mixin bullet-list(options)
 
-  -const {values, modifier} = options
+  -const {values, modifier} = options;
 
   ul(class=['bullet-list', `${modifier ? `bullet-list_${modifier}`:''}`])
     each value in values

@@ -15,10 +15,10 @@ include ../blocks/pagination/pagination
 - 'Инвесторы'], headSupport: 'Служба поддержки', supportItems: ['Соглашения',
 - 'Сообщества', 'Связь с нами'], headSubscribe: 'Подписка', subscribeDescription:
 -'Получайте специальные предложения и новости сервиса', placeholderEmail: 'Email',
--copyrightText: 'Copyright © 2018 Toxin отель. Все права зачищены.'}
+-copyrightText: 'Copyright © 2018 Toxin отель. Все права зачищены.'};
 
 -const arrPathImage = [require('../img/image-room-888.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')]
+-require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')];
 
 -const rooms = [{images: [require('../img/image-room-888.jpg'),
 -require('../img/image-room-982.jpg'),require('../img/image-room-350.jpg'),
@@ -56,7 +56,7 @@ include ../blocks/pagination/pagination
 -type: 'normal', numberOfRoom: 444, price: '9 900', numberOfReviews: 15, numberOfRate: 3},
 -{images: [require('../img/image-room-352.jpg'), require('../img/image-room-982.jpg'),
 -require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 352, price: '5 000', numberOfReviews: 55, numberOfRate: 3}]
+-type: 'normal', numberOfRoom: 352, price: '5 000', numberOfReviews: 55, numberOfRate: 3}];
 
 doctype html
 html(lang="en")
@@ -90,7 +90,7 @@ html(lang="en")
         each value in rooms
 
           -const {images, type, numberOfRoom, price, numberOfReviews,
-          -numberOfRate} = value
+          -numberOfRate} = value;
 
           +card-room({images, radioName: 'room-radio-name', type,
           numberOfRoom, price, numberOfReviews, numberOfRate,

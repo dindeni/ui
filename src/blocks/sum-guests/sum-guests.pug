@@ -3,9 +3,9 @@ include ../form-element/form-element
 
 mixin sum-guests(options)
 
-  -const {modifier, modifierForInput, modifierForLabel, head}=options
-  -const visitors = ['взрослые', 'дети', 'младенцы']
-  -const visitorsId = ['adult', 'children', 'babies']
+  -const {modifier, modifierForInput, modifierForLabel, head}=options;
+  -const visitors = ['взрослые', 'дети', 'младенцы'];
+  -const visitorsId = ['adult', 'children', 'babies'];
 
     div(class=['sum-guests',
     `${modifier ? `sum-guests_${modifier}`:''}`]) #{head ? head:null}

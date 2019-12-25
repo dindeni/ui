@@ -3,7 +3,7 @@ include ../buttons/buttons
 mixin review(options)
 
   -const {head, date, description, path,
-  -typeOfButton, numberOfLikes, modifier}=options
+  -typeOfButton, numberOfLikes, modifier}=options;
 
   section(class=['review',
   `${modifier ? `review_${modifier}`:''}`])

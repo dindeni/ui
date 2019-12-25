@@ -3,7 +3,7 @@ include ../rate/rate
 mixin card-room(options)
 
   -const {images, radioName, type, numberOfRoom, price,
-  -numberOfReviews, numberOfRate, modifier}=options
+  -numberOfReviews, numberOfRate, modifier}=options;
 
   div(class=['card-room', 'js-card-room',
    `${modifier ? `card-room_${modifier}`:''}`])

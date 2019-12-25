@@ -6,15 +6,15 @@ include ../features/features
 include ../order-room/order-room
 
 -const roomDetailPath = [require('../img/image-room-1.jpg'),
--require('../img/image-room-2.jpg'), require('../img/image-room-3.jpg')]
+-require('../img/image-room-2.jpg'), require('../img/image-room-3.jpg')];
 
 -const roomFeatures = [{slogan: 'Комфорт', description: 'Шумопоглощающие стены'},
 -{slogan: 'Удобство', description: 'Окно в каждой из спален'}, {slogan: 'Уют',
--description: 'Номер оснащён камином'}]
+-description: 'Номер оснащён камином'}];
 
 -const totalValue = ['9 990₽ х 4 суток', 'Сбор за услуги: скидка 2 179₽',
--'Сбор за дополнительные услуги']
--const totalPrice = ['39 960₽', '0₽', '300₽']
+-'Сбор за дополнительные услуги'];
+-const totalPrice = ['39 960₽', '0₽', '300₽'];
 
 -const reviewData = [{head: 'Мурад Сарафанов', date: '5 дней назад', description:
 -'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
@@ -22,11 +22,11 @@ include ../order-room/order-room
 -numberOfLikes: 12}, {head: 'Патрисия Стёклышкова', date: 'Неделю назад',
 -description: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
 -path: require('../blocks/review/icon-avatar-2.png'), typeOfButton: 'like-gray',
--numberOfLikes: 2}]
+-numberOfLikes: 2}];
 
 
 -const bulletListData = {values: ['Нельзя с питомцами', 'Без вечеринок и мероприятий',
--'Время прибытия — после 13:00, а выезд до 12:00'], modifier: 'for-room-description'}
+-'Время прибытия — после 13:00, а выезд до 12:00'], modifier: 'for-room-description'};
 
 
 mixin room-description
@@ -49,7 +49,7 @@ mixin room-description
 
         each value in reviewData
 
-          -const {head, date, description, path, typeOfButton, numberOfLikes} = value
+          -const {head, date, description, path, typeOfButton, numberOfLikes} = value;
 
           +review({head, date, description, path, typeOfButton,
           numberOfLikes, modifier: 'for-room-description'})

@@ -1,6 +1,6 @@
 mixin buttons(options)
 
-  -const {type, content, link, modifier, jsModifier, hideModifier} = options
+  -const {type, content, link, modifier, jsModifier, hideModifier} = options;
 
   if type === 'full'
     div(class=['buttons', `${modifier ? `buttons_${modifier}`:''}`])

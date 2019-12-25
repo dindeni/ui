@@ -2,7 +2,7 @@ include ../form-element/form-element
 
 mixin singel-datepicker(options)
 
-  -const {placeholder, modifierForLabel, modifierForInput}=options
+  -const {placeholder, modifierForLabel, modifierForInput}=options;
 
   +form-element({type: 'date', placeholder: placeholder,
     modifierForLabel, modifierForInput, jsModifierForInput:'date'})

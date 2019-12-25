@@ -2,7 +2,7 @@ include ../form-element/form-element
 
 mixin datepicker-range(options)
 
-  -const {defaultDate, inputModifier, labelModifier}=options
+  -const {defaultDate, inputModifier, labelModifier}=options;
 
   +form-element({type: 'dropdown', placeholder: defaultDate,
   modifierForInput: 'for-datepicker-range', jsModifierForInput: 'for-datepicker-range',
