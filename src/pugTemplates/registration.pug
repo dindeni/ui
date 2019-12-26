@@ -1,7 +1,7 @@
 include ../blocks/navigation/navigation
-include ../blocks/registration/registration
 include ../blocks/footer-widget/footer-widget
 include ../blocks/footer/footer
+include ../blocks/main-registration/main-registration
 
 -const navigationValues = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
 -linkModifier: [ , 'expand-ru', ,  , 'expand-ru']};
@@ -36,7 +36,6 @@ html(lang="en")
       registrationName: 'зарегистрироваться', modifierForItems: 'ru'
     })
 
-    main.main-registration
-      +registration
+    +main-registration
 
     +footer-widget(footerData)

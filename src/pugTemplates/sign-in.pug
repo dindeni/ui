@@ -1,6 +1,6 @@
 include ../blocks/navigation/navigation
-include ../blocks/sign-in/sign-in
 include ../blocks/footer-widget/footer-widget
+include ../blocks/main-sign-in/main-sign-in
 
 -const navigationValues = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
 -linkModifier: [ , 'expand-ru', ,  , 'expand-ru']};
@@ -34,7 +34,6 @@ html(lang="en")
       +navigation({items, linkModifier, type: 'standart', loginName: 'войти',
         registrationName: 'зарегистрироваться', modifierForItems: 'ru'})
 
-    main.main-sign-in
-      +sign-in
+    +main-sign-in
 
     +footer-widget(footerData)

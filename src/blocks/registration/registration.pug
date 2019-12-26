@@ -2,7 +2,7 @@ include ../form-element/form-element
 include ../radio/radio
 include ../toggle/toggle
 include ../buttons/buttons
-include ../singel-datepicker/single-datepicker
+include ../ui-datepicker/ui-datepicker
 
 -const arrRadioReg = ['Мужчина', 'Женщина'];
 -const arrRadioRegId = ['man', 'woman'];
@@ -27,8 +27,11 @@ mixin registration(modifier)
 
       div.registration__date-head дата рождения
 
-      +singel-datepicker({placeholder: 'дд.мм.гггг', modifierForLabel: 'for-registration',
+      //+singel-datepicker({placeholder: 'дд.мм.гггг', modifierForLabel: 'for-registration',
         modifierForInput: 'for-registration'})
+      +ui-datepicker({type: 'single', placeholder: 'дд.мм.гггг',
+       modifierForLabel: 'for-registration', modifierForInput: 'for-registration'
+      })
 
       div.registration__data-head данные для входа в сервис
 

@@ -1,0 +1,13 @@
+include ../room-description/room-description
+
+mixin main-room()
+
+  main.main-room
+
+    div.main-room__image-wrapper
+      img(src=roomDetailPath[0] alt='room image').main-room__image
+      div.main-room__images-aside
+        each image, index in roomDetailPath
+          if index > 0
+            img(src=image alt='room image').main-room__image
+    +room-description

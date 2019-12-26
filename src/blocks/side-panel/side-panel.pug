@@ -1,9 +1,9 @@
 include ../sum-guests/sum-guests
-include ../datepicker-range/datepicker-range
 include ../ui-slider/ui-slider
 include ../checkbox/checkbox
 include ../card-room/card-room
 include ../sum-rooms/sum-rooms
+include ../ui-datepicker/ui-datepicker
 
 -const checkboxValue = {standart: ['Можно курить', 'Можно с питомцами',
 -'Можно пригласить гостей (до 10 человек)'], rich: [{label: 'Широкий коридор',
@@ -19,7 +19,7 @@ mixin side-panel
 
     form.side-panel__form
 
-      +datepicker-range({defaultDate: '19 авг - 23 авг'})
+      +ui-datepicker({type: 'range', defaultDate: '19 авг - 23 авг'})
 
       +sum-guests({modifier: 'for-filter', modifierForInput: 'for-filter',
        modifierForLabel: 'for-filter', head: 'гости'})

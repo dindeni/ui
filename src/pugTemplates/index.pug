@@ -2,6 +2,7 @@ include ../blocks/navigation/navigation
 include ../blocks/search-room/search-room
 include ../blocks/footer-widget/footer-widget
 include ../blocks/footer/footer
+include ../blocks/main-index/main-index
 
 -const navigationValues = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
 -linkModifier: [ , 'expand-ru', ,  , 'expand-ru']};
@@ -38,11 +39,6 @@ html(lang="ru")
         registrationName: 'зарегистрироваться', modifierForItems: 'ru'
       })
 
-    main.main-index
-
-      img(class='main-index__background' src=require('../img/image-back-1.jpg'))
-      span.main-index__slogan Лучшие номера для вашей работы, отдыха и просто вдохновения
-
-      +searchRoom(true)
+    +main-index
 
     +footer-widget(footerData)

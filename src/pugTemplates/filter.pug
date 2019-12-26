@@ -1,8 +1,6 @@
 include ../blocks/navigation/navigation
-include ../blocks/footer-widget/footer-widget
+include ../blocks/main-filter/main-filter
 include ../blocks/footer/footer
-include ../blocks/side-panel/side-panel
-include ../blocks/pagination/pagination
 
 -const navigationValues = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
 -linkModifier: [ , 'expand-ru', ,  , 'expand-ru']};
@@ -16,47 +14,6 @@ include ../blocks/pagination/pagination
 - 'Сообщества', 'Связь с нами'], headSubscribe: 'Подписка', subscribeDescription:
 -'Получайте специальные предложения и новости сервиса', placeholderEmail: 'Email',
 -copyrightText: 'Copyright © 2018 Toxin отель. Все права зачищены.'};
-
--const arrPathImage = [require('../img/image-room-888.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')];
-
--const rooms = [{images: [require('../img/image-room-888.jpg'),
--require('../img/image-room-982.jpg'),require('../img/image-room-350.jpg'),
--require('../img/image-room-444.jpg')], type: 'luxe', numberOfRoom: 888,
--price: '9 900', numberOfReviews: 145, numberOfRate: 5}, {images: [require('../img/image-room-840.jpg'),
--require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 840, price: '9 900', numberOfReviews: 65, numberOfRate: 4},
--{images: [require('../img/image-room-980.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'luxe', numberOfRoom: 980, price: '8 500', numberOfReviews: 35, numberOfRate: 3},
--{images: [require('../img/image-room-856.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 856, price: '7 300', numberOfReviews: 19, numberOfRate: 5},
--{images: [require('../img/image-room-740.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 740, price: '6 000', numberOfReviews: 44, numberOfRate: 4},
--{images: [require('../img/image-room-982.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 982, price: '5 800', numberOfReviews: 56, numberOfRate: 3},
--{images: [require('../img/image-room-678.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 678, price: '5 500', numberOfReviews: 45, numberOfRate: 5},
--{images: [require('../img/image-room-450.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 450, price: '5 300', numberOfReviews: 39, numberOfRate: 4},
--{images: [require('../img/image-room-350.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 350, price: '5 000', numberOfReviews: 77, numberOfRate: 3},
--{images: [require('../img/image-room-666.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 666, price: '5 000', numberOfReviews: 25, numberOfRate: 5},
--{images: [require('../img/image-room-444.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 444, price: '9 900', numberOfReviews: 15, numberOfRate: 3},
--{images: [require('../img/image-room-352.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 352, price: '5 000', numberOfReviews: 55, numberOfRate: 3}];
 
 doctype html
 html(lang="en")
@@ -74,28 +31,11 @@ html(lang="en")
     meta(name="viewport" content="width=device-width,initial-scale=1")
 
   body
-
     header.main-filter__header
       +navigation({
         items, linkModifier, type: 'standart', loginName: 'войти',
         registrationName: 'зарегистрироваться', modifierForItems: 'ru'
       })
-
-    main.main-filter
-
-      +side-panel
-
-      section.main-filter__rooms
-        h1.main-filter__rooms-head Номера, которые мы для вас подобрали
-        each value in rooms
-
-          -const {images, type, numberOfRoom, price, numberOfReviews,
-          -numberOfRate} = value;
-
-          +card-room({images, radioName: 'room-radio-name', type,
-          numberOfRoom, price, numberOfReviews, numberOfRate,
-            modifier: 'for-filter'})
-
-        +pagination({value: 15, modifier: 'for-filter'})
+    +main-filter
 
     +footer-widget(footerData)

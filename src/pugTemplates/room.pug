@@ -1,7 +1,7 @@
 include ../blocks/navigation/navigation
 include ../blocks/footer-widget/footer-widget
 include ../blocks/footer/footer
-include ../blocks/room-description/room-description
+include ../blocks/main-room/main-room
 
 
 -const navigationValues = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
@@ -39,15 +39,7 @@ html(lang="en")
       registrationName: 'зарегистрироваться', modifierForItems: 'ru'
     })
 
-    main.main-room
-
-      div.main-room__image-wrapper
-        img(src=roomDetailPath[0] alt='room image').main-room__image
-        div.main-room__images-aside
-          each image, index in roomDetailPath
-            if index > 0
-              img(src=image alt='room image').main-room__image
-      +room-description
+    +main-room
 
     +footer-widget(footerData)
 
