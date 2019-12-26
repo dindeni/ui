@@ -9,7 +9,7 @@ const mappingHtmlTemplate = () => {
     'ui'];
   return arrPugNames.map((name) => new HtmlWebpackPlugin({
     template: `./src/pugTemplates/${name}.pug`,
-    filename: `build/${name}.html`,
+    filename: `${path.resolve('./')}/${name}.html`,
     inject: 'body',
   }));
 };
@@ -20,15 +20,12 @@ module.exports = merge(common, {
     host: '0.0.0.0',
     port: 3000,
     publicPath: '/',
-    contentBase: path.resolve(__dirname, './build'),
-    watchContentBase: true,
-    writeToDisk: true,
+    contentBase: path.resolve(__dirname, './'),
     compress: true,
   },
   plugins: mappingHtmlTemplate().concat([
     new MiniCssExtractPlugin({
-      filename: './build/style.css',
-      publicPath: './',
+      filename: './style.css',
     }),
   ]),
   module: {
@@ -50,11 +47,11 @@ module.exports = merge(common, {
         ],
       },
       {
-        test: /\.(woff|woff2|svg|ttf|png|jpg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff|woff2|svg|ttf|png|jpg|webmanifest)(\?v=\d+\.\d+\.\d+)?$/,
         use: {
           loader: 'file-loader',
           options: {
-            outputPath: './build/files',
+            outputPath: './files',
             publicPath: './files',
           },
         },

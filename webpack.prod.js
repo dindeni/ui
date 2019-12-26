@@ -21,7 +21,6 @@ module.exports = merge(common, {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'style.css',
-      publicPath: './',
     }),
     new CopyPlugin([
       { from: 'src/favicons', to: 'favicons' },
@@ -37,6 +36,7 @@ module.exports = merge(common, {
             options: {
               hmr: process.env.NODE_ENV === 'production',
               reloadAll: true,
+              publicPath: '../',
             },
           },
           'css-loader',
@@ -46,7 +46,7 @@ module.exports = merge(common, {
         ],
       },
       {
-        test: /\.(woff|woff2|svg|ttf|png|jpg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff|woff2|svg|ttf|png|jpg|webmanifest)(\?v=\d+\.\d+\.\d+)?$/,
         use: {
           loader: 'file-loader',
           options: {

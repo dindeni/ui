@@ -6,7 +6,7 @@ const config = {
   entry: ['jquery', './src/js/app.js'],
   output: {
     path: path.resolve(__dirname, './'),
-    filename: 'build/js/bundle.js',
+    filename: './bundle.js',
     publicPath: './',
   },
   module: {
