@@ -10,8 +10,8 @@
 
   &__link{
     text-decoration: none;
-    width: 24px;
-    height: 24px;
+    width: 1.71rem;
+    height: 1.71rem;
     display: inline-block;
   }
   &__link-text{
@@ -20,9 +20,9 @@
 
 
   &__item{
-  width: 24px;
-  height: 24px;
-  margin: 0 0 0 20px;
+  width: 1.71rem;
+  height: 1.71rem;
+  margin: 0 0 0 1.43rem;
   &.social-buttons{
     &__item_twitter{
       background: url("./icon-twitter.svg") no-repeat;
@@ -38,13 +38,13 @@
 
   &_for-copyright{
     &.social-buttons{
-      margin: 0 140px 0 0;
+      margin: 0 10rem 0 0;
       &__list{
-        margin: 0 164px 0 0;
+        margin: 0 11.71rem 0 0;
       }
     }
     &.social-buttons_for-registration{
-      margin: 0 114px 0 0;
+      margin: 0 8.14rem 0 0;
     }
   }
 }
@@ -54,7 +54,7 @@
   .social-buttons{
     &_for-copyright{
       & .social-buttons__list{
-        margin: 0 82px 0 0;
+        margin: 0 5.86rem 0 0;
       }
     }
   }
@@ -66,7 +66,7 @@
       margin: 0;
     }
     & .social-buttons__list{
-      margin: 0 41px 0 0;
+      margin: 0 2.93rem 0 0;
     }
   }
 }

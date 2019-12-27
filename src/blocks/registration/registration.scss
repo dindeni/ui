@@ -4,8 +4,8 @@
 
 .registration{
   @include rectangle;
-  padding-left: 28px;
-  height: 646px;
+  padding-left: 2rem;
+  height: 46.14rem;
   position: relative;
   z-index: 1;
   &__date-head, &__data-head{
@@ -15,34 +15,34 @@
     display: block;
   }
   &__date-head{
-    margin: 22px 0 5px 0;
+    margin: 1.57rem 0 .36rem 0;
   }
   &__data-head{
-    margin: 10px 0 5px 0;
+    margin: .71rem 0 .36rem 0;
   }
   &_for-main-ui{
-    margin-top: 10px;
+    margin-top: .71rem;
   }
   &__head{
     @include h1;
-    margin: 50px 0 0 0;
+    margin: 3.57rem 0 0 0;
   }
   &__name-wrapper{
-    margin: 26px 0 0 0;
+    margin: 1.86rem 0 0 0;
     & .input:first-child{
-      margin: 0 0 8px 0;
+      margin: 0 0 .57rem 0;
     }
   }
   &__radio-wrapper{
     position: relative;
     display: block;
-    margin: 0 0 0 10px;
+    margin: 0 0 0 .71rem;
   }
   & .radio__mark{
-    padding: 0 0 0 21px;
+    padding: 0 0 0 1.5rem;
   }
   &__footer{
-    margin: 30px 0 0 0;
+    margin: 2.14rem 0 0 0;
   }
   &__footer-label{
     @include body;
@@ -51,13 +51,13 @@
 
 @media (max-width: 400px) {
   .registration{
-    padding-left: 20px;
-    width: 300px;
+    padding-left: 1.43rem;
+    width: 21.43rem;
     & #{&}__head{
-      font-size: 18px;
+      font-size: 1.29rem;
     }
     & #{&}__footer-label{
-      font-size: 12px;
+      font-size: .86rem;
     }
   }
 }

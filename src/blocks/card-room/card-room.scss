@@ -6,8 +6,8 @@
 .card-room{
   @include rectangle;
   padding: 0;
-  width: 270px;
-  height: 258px;
+  width: 19.29rem;
+  height: 18.43rem;
   display: inline-block;
   position: relative;
   & &__mark:first-child{
@@ -16,15 +16,15 @@
   &::after{
     position: absolute;
     content: '';
-    width: 230px;
-    height: 1px;
+    width: 16.43rem;
+    height: .071rem;
     background: $dark10;
     z-index: 10;
-    bottom: 49px;
-    left: 20px;
+    bottom: 3.5rem;
+    left: 1.43rem;
   }
   &#{&}_for-filter{
-    margin: 0 12px 20px 0;
+    margin: 0 .86rem 1.43rem 0;
   }
   &__image_hide{
     @include hide;
@@ -34,63 +34,63 @@
   }
   &__form{
     position: absolute;
-    width: 50px;
-    top: 125px;
-    left: 213px;
+    width: 3.57rem;
+    top: 8.93rem;
+    left: 15.21rem;
   }
   &__mark{
-    width: 7.5px;
-    height: 7.5px;
-    border: 1px solid #FFFFFF;
+    width: .54rem;
+    height: .54rem;
+    border: .07rem solid #FFFFFF;
     box-sizing: border-box;
-    box-shadow: 0 5px 5px rgba(31, 32, 65, 0.3);
+    box-shadow: 0 .36rem .36rem rgba(31, 32, 65, 0.3);
     border-radius: 50%;
     display: inline-block;
-    margin: 0 4px 0 0;
+    margin: 0 .29rem 0 0;
     background: none;
     cursor: pointer;
   }
 
   &__arrow{
-    width: 8px;
-    height: 13px;
+    width: .57rem;
+    height: .93rem;
     background: url("./icon-expand-white.svg") no-repeat;
     border: none;
     cursor: pointer;
     outline: none;
       &_next{
         transform: rotate(180deg);
-        margin-right: 18px;
+        margin-right: 1.29rem;
       }
       &_prev{
-        margin-left: 18px;
+        margin-left: 1.29rem;
       }
   }
   &__arrows-wrapper{
     position: absolute;
-    top: 69px;
+    top: 4.93rem;
     display: flex;
     justify-content: space-between;
-    width: 270px;
+    width: 19.29rem;
   }
   &__image {
-    width: 270px;
+    width: 19.29rem;
   }
   &__wrapper{
     position: relative;
   }
   &__number{
     @include h2;
-    margin: 0 7px 0 6px;
+    margin: 0 .5rem 0 .43rem;
     &-room-wrapper {
-      margin: 25px 0 0 0;
+      margin: 1.79rem 0 0 0;
       width: 50%;
       display: inline-block;
     }
     &-mark{
       @include h2;
-      font-size: 14px;
-      margin-left: 20px;
+      font-size: 1rem;
+      margin-left: 1.43rem;
     }
   }
 
@@ -114,25 +114,25 @@
   }
   &__periodicity{
     @include body;
-    font-size: 12px;
-    margin: 0 17px 0 6px;
+    font-size: .86rem;
+    margin: 0 1.21rem 0 .43rem;
   }
   &__number-review{
     display: inline-block;
     @include body;
     font-weight: bold;
     color: $dark50;
-    line-height: 18px;
+    line-height: 1.29rem;
     vertical-align: top;
-    margin: 21px 0 0 0;
+    margin: 1.5rem 0 0 0;
     width: 45%;
     text-align: end;
   }
   &__number-review-word{
     font-weight: normal;
     text-transform: none;
-    margin-left: 4px;
-    margin-right: 12px;
+    margin-left: .29rem;
+    margin-right: .86rem;
 
   }
 }

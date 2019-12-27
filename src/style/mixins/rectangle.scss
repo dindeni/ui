@@ -1,10 +1,10 @@
 @mixin rectangle{
-    width: 380px;
-    height: 374px;
-    border-radius: 4px;
+    width: 27.14rem;
+    height: 26.71rem;
+    border-radius: .29rem;
     box-sizing: border-box;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 1.79rem rgba(0, 0, 0, 0.2);
+    border: .07rem solid rgba(0, 0, 0, 0.12);
     background: #FFFFFF;
-    padding-left: 30px;
+    padding-left: 2.14rem;
 }

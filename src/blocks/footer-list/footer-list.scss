@@ -2,10 +2,10 @@
 @import "../../style/mixins/text";
 
 .footer-list{
-  width: 160px;
-  margin: 90px 2.8% 0 0;
+  width: 11.43rem;
+  margin: 6.43rem 2.8% 0 0;
   &_for-registration{
-    margin: 105px 2.8% 0 0;
+    margin: 7.5rem 2.8% 0 0;
   }
 
   &__head{
@@ -16,7 +16,7 @@
   &__list{
     list-style: none;
     padding: 0;
-    margin: 19px 0 0 0;
+    margin: 1.36rem 0 0 0;
   }
 
   &__link{
@@ -25,7 +25,7 @@
   }
 
   &__item{
-    margin: 0 0 14px 0;
+    margin: 0 0 1rem 0;
   }
 }
 
@@ -33,13 +33,13 @@
 @media (max-width: 1250px) {
 
   .footer-list {
-    margin: 50px 2.8% 0 0;
+    margin: 3.57rem 2.8% 0 0;
   }
 }
 
 @media (max-width: 620px) {
   .footer-list {
-    width: 120px;
-    margin: 45px 0 0 0;
+    width: 8.57rem;
+    margin: 3.21rem 0 0 0;
   }
 }

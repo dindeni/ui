@@ -8,19 +8,19 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin: 10px 0 20px 50px;
+    margin: .71rem 0 1.43rem 3.57rem;
     width: 320px;
     & .main-ui__range-wrapper,
     .main-ui__checkbox-wrapper{
-      margin: 0 0 20px 0;
+      margin: 0 0 1.43rem 0;
     }
     & .main-ui__buttons-wrapper{
-      margin: 0 0 20px 0;
+      margin: 0 0 1.43rem 0;
       display: flex;
       width: 100%;
     }
     &_review{
-      width: 780px;
+      width: 55.71rem;
     }
   }
 
@@ -28,19 +28,19 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin-left: 4px;
+    margin-left: .29rem;
   }
 
   &__card-wrapper{
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin: 10px 0 20px 50px;
+    margin: .71rem 0 1.43rem 3.57rem;
     width: 400px;
   }
 
   &__headers-footers{
-    margin-top: 20px;
+    margin-top: 1.43rem;
   }
 }
 

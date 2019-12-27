@@ -13,22 +13,22 @@
 
   &__logo-wrapper{
     width: 18%;
-    margin: 100px 2.8% 116px 9.7%;
+    margin: 7.14rem 2.8% 8.29rem 9.7%;
   }
 
   &__description{
     @include body;
-    margin-top: 12px;
+    margin-top: .86rem;
   }
 
   &__subscribe-wrapper{
-    margin: 90px 0 0 0;
+    margin: 6.43rem 0 0 0;
     width: 18%;
   }
 
   &__subscribe-description{
     @include body;
-    margin: 20px 0 0 0;
+    margin: 1.43rem 0 0 0;
   }
 }
 
@@ -44,8 +44,8 @@
     justify-content: center;
     & #{&}__logo-wrapper,
     &__subscribe-wrapper{
-      margin: 50px 2.8% 116px 0;
-      width: 260px;
+      margin: 3.57rem 2.8% 8.29rem 0;
+      width: 18.57rem;
     }
 
     &__logo-wrapper{
@@ -56,22 +56,22 @@
 
 @media (max-width: 900px) {
   .footer-widget__logo-wrapper{
-    margin: 100px 2.8% 0 2%;
+    margin: 7.14rem 2.8% 0 2%;
   }
 }
 
 @media (max-width: 620px) {
   .footer-widget{
     &__logo {
-      width: 80px;
+      width: 5.71rem;
       &-wrapper{
-        width: 120px;
-        margin: 50px 2.8% 0 2%;
+        width: 8.57rem;
+        margin: 3.57rem 2.8% 0 2%;
       }
     }
 
     &__subscribe-wrapper{
-      margin: 50px 0 50px 0;
+      margin: 3.57rem 0 3.57rem 0;
     }
   }
 }

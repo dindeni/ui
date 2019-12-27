@@ -5,7 +5,7 @@
   &_for-room-description{
     & .features__slogan{
       &::before{
-        left: 7px;
+        left: .5rem;
       }
     }
     & #{&}__wrapper:last-child{
@@ -16,25 +16,25 @@
   &__slogan{
     font-weight: bold;
     display: block;
-    padding: 0 0 0 62px;
+    padding: 0 0 0 4.43rem;
     position: relative;
     &::before{
       position: absolute;
       content: '';
-      width: 48px;
-      height: 48px;
+      width: 3.43rem;
+      height: 3.43rem;
       background: url("./icon-emoticon.svg") no-repeat;
-      left: 8px;
-      top: 2px;
+      left: .57rem;
+      top: .14rem;
     }
   }
 
   &__description{
-    margin: 0 0 0 62px;
+    margin: 0 0 0 4.43rem;
   }
 
   &__wrapper{
-    margin: 0 0 40px 0;
+    margin: 0 0 2.86rem 0;
     &:nth-child(2) .features__slogan::before{
       background: url("./icon-location-city.svg") no-repeat;
     }

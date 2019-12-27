@@ -4,41 +4,41 @@
 
 .checkbox{
   &__mark{
-    padding: 3px 0 0 20px;
+    padding: .21rem 0 0 1.43rem;
     display: block;
     @include body;
-    margin: 0 0 10px 12px;
+    margin: 0 0 .71rem .86rem;
     position: relative;
     text-transform: unset;
-    width: 210px;
-    line-height: 18px;
+    width: 15rem;
+    line-height: 1.29rem;
     &::before{
       position: absolute;
       content: '';
-      width: 20px;
-      height: 20px;
-      border: 1px solid $dark25;
+      width: 1.43rem;
+      height: 1.43rem;
+      border: .07rem solid $dark25;
       box-sizing: border-box;
-      border-radius: 4px;
-      left: -10px;
+      border-radius: .29rem;
+      left: -.71rem;
       top: 0;
     }
     &#{&}_rich{
       font-weight: bold;
-      margin: 0 0 8px 12px;
+      margin: 0 0 .57rem .86rem;
       & .checkbox__description{
-        font-size: 12px;
+        font-size: .86rem;
         font-weight: normal;
         display: block;
-        margin: 7px 0 0 0;
-        line-height: 13px;
+        margin: .5rem 0 0 0;
+        line-height: .93rem;
         color: $dark50;
       }
       &:first-child{
-        width: 200px;
+        width: 14.29rem;
       }
       &:last-child{
-        width: 230px;
+        width: 16.43rem;
       }
     }
   }
@@ -50,42 +50,42 @@
     position: relative;
     @include h3;
     color: $dark100;
-    margin: 0 0 18px 2px;
-    width: 250px;
+    margin: 0 0 1.29rem .14rem;
+    width: 17.86rem;
     --rotate: rotate(0deg);
     &::after{
       position: absolute;
       content: '';
-      width: 12px;
-      height: 8px;
+      width: .86rem;
+      height: .57rem;
       background: url("./icon-expand.svg") no-repeat;
       right: 0;
       transform: var(--rotate);
-      top: 3px;
+      top: .21rem;
     }
   }
   &_for-side-panel{
     & .checkbox{
       &__mark{
-        margin: 0 0 10px 10px;
+        margin: 0 0 .71rem .71rem;
       }
 
       &__mark_rich{
-        padding: 0 0 3px 20px;
+        padding: 0 0 .21rem 1.43rem;
         &::before{
-          top: -3px;
+          top: -.21rem;
         }
         & .checkbox__description{
-          margin: 5px 0 0 0;
+          margin: .36rem 0 0 0;
         }
       }
 
       &__field:checked + .checkbox__mark_rich::after{
-        top: 1px
+        top: .07rem;
       }
 
       &__head{
-        margin: 32px 0 18px 0;
+        margin: 2.29rem 0 1.29rem 0;
       }
     }
   }
@@ -96,16 +96,16 @@
   &__field:checked + .checkbox__mark{
     position: relative;
     &::before{
-      border: 1px solid $purple;
+      border: .07rem solid $purple;
     }
     &::after{
       position: absolute;
       content: '';
-      width: 10px;
-      height: 10px;
+      width: .71rem;
+      height: .71rem;
       background: url("./icon-checked.svg");
-      left: -5px;
-      top: 4px;
+      left: -.36rem;
+      top: .29rem;
     }
   }
 }

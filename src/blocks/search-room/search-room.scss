@@ -4,33 +4,33 @@
   @include rectangle;
   &.search-room_absolute{
     position: absolute;
-    top: 70px;
+    top: 5rem;
     left: 9.6%;
   }
   &__head{
     font: 1.7rem/29px Quickand-regular, sans-serif;
     font-weight: bold;
-    width: 280px;
-    margin: 41px 0 0 0;
+    width: 20rem;
+    margin: 2.93rem 0 0 0;
   }
   &__label{
     text-transform: uppercase;
     font-size: 0.86rem;
     font-weight: bold;
-    margin: 21px 20px 0 0;
-    width: 150px;
+    margin: 1.5rem 1.43rem 0 0;
+    width: 10.71rem;
     display: inline-block;
   }
 }
 
 @media (max-width: 1100px) {
   .search-room{
-      width: 320px;
+      width: 22.86rem;
     &__head{
       font-size: 1.5rem;
     }
     &__label{
-      width: 120px;
+      width: 8.57rem;
     }
   }
 

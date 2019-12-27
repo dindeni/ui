@@ -2,42 +2,42 @@
 @import "../../style/variables/variables";
 
 .ui-datepicker{
-  width: 318px;
-  margin: 5px auto 0 auto;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
+  width: 22.71rem;
+  margin: .36rem auto 0 auto;
+  border: .07rem solid rgba(31, 32, 65, 0.25);
+  border-radius: .29rem;
   background: #FFFFFF;
 
   &_range{
-    width: 264px;
-    padding-bottom: 25px;
+    width: 18.86rem;
+    padding-bottom: 1.79rem;
     & .ui-datepicker{
       &-title{
         font-size: 1.14rem;
       }
       &-next::before{
-        left: 180px;
-        top: 22px;
+        left: 12.86rem;
+        top: 1.57rem;
       }
       &-calendar {
         font-size: 0.71rem;
-        margin: 39px 0 0 5px;
+        margin: 2.79rem 0 0 .36rem;
 
         & td .ui-state-default{
-          margin: 0 16px 25px 0;
+          margin: 0 1.14rem 1.79rem 0;
         }
 
         & .ui-datepicker-today .ui-state-default::after{
-          width: 31px;
-          height: 31px;
-          left: -5px;
-          top: -9px;
+          width: 2.21rem;
+          height: 2.21rem;
+          left: -.36rem;
+          top: -.64rem;
         }
       }
       &-buttonpane {
         bottom: 2%;
         & .ui-datepicker-close{
-          margin-right: 40px;
+          margin-right: 2.86rem;
         }
       }
     }
@@ -49,8 +49,8 @@
     font-family: Quickand-regular, sans-serif;
     font-size: 1.36rem;
     text-align: center;
-    margin: 10px 8px 0 0;
-    letter-spacing: -1px;
+    margin: .71rem .57rem 0 0;
+    letter-spacing: -.07rem;
   }
 
   &-prev{
@@ -59,12 +59,12 @@
     &::before{
       position: absolute;
       content: '';
-      width: 24px;
-      height: 24px;
+      width: 1.71rem;
+      height: 1.71rem;
       background: url("./icon-arrow.svg") no-repeat;
       transform: rotate(180deg);
-      left: 15px;
-      top: 17px;
+      left: 1.07rem;
+      top: 1.21rem;
     }
   }
 
@@ -74,17 +74,17 @@
     &::before{
       position: absolute;
       content: '';
-      width: 24px;
-      height: 24px;
+      width: 1.71rem;
+      height: 1.71rem;
       background: url("./icon-arrow.svg") no-repeat;
-      left: 248px;
-      top: 22px;
+      left: 17.71rem;
+      top: 1.57rem;
 
     }
   }
 
   &-calendar{
-    margin: 46px 0 37px 28px;
+    margin: 3.29rem 0 2.64rem 2rem;
     font-size: 0.86rem;
     & thead{
       color: #BC9CFF;
@@ -94,14 +94,14 @@
       display: flex;
     }
     & th{
-      margin: 0 22px 20px 0;
+      margin: 0 1.57rem 1.43rem 0;
       display: inline-block;
     }
     & td .ui-state-default{
       color: rgba(31, 32, 65, 0.5);
       text-decoration: none;
-      width: 20px;
-      margin: 0 18px 25px 0;
+      width: 1.43rem;
+      margin: 0 1.29rem 1.79rem 0;
       display: inline-block;
       text-align: center;
     }
@@ -114,12 +114,12 @@
     &::after{
       position: absolute;
       content: '';
-      width: 40px;
-      height: 40px;
+      width: 2.86rem;
+      height: 2.86rem;
       background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-      border-radius: 22px;
-      left: -10px;
-      top: -12px;
+      border-radius: 1.57rem;
+      left: -.71rem;
+      top: -.86rem;
       z-index: -10;
     }
   }
@@ -131,7 +131,7 @@
   &-buttonpane{
     display: flex;
     justify-content: space-between;
-    margin: 8px 0 0 15px;
+    margin: .57rem 0 0 1.07rem;
     position: absolute;
     bottom: 5%;
     width: 100%;
@@ -140,7 +140,7 @@
       order: 10;
     }
     & .ui-datepicker-current{
-      margin-right: 30px;
+      margin-right: 2.14rem;
     }
   }
 
@@ -162,12 +162,12 @@
     &::after{
       position: absolute;
       content: '';
-      width: 40px;
-      height: 40px;
+      width: 2.86rem;
+      height: 2.86rem;
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-      border-radius: 22px;
-      left: -8px;
-      top: -14px;
+      border-radius: 1.57rem;
+      left: -.57rem;
+      top: -1rem;
       z-index: -10;
     }
   }
@@ -175,42 +175,42 @@
   &-calendar &-calendar__min:not(.ui-state-disabled)::before{
     position: absolute;
     content: '';
-    width: 20px;
-    height: 41px;
+    width: 1.43rem;
+    height: 2.93rem;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    background-size: 50px 40px;
+    background-size: 3.57rem 2.86rem;
     opacity: 0.25;
-    left: 10px;
-    top: -14px;
+    left: .71rem;
+    top: -1rem;
     z-index: -10;
   }
 
   &-calendar &-calendar__max:not(.ui-state-disabled)::before{
     position: absolute;
     content: '';
-    width: 20px;
-    height: 41px;
+    width: 1.43rem;
+    height: 2.93rem;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    background-size: 50px 40px;
+    background-size: 3.57rem 2.86rem;
     opacity: 0.25;
-    left: -10px;
-    top: -14px;
+    left: -.71rem;
+    top: -1;
     z-index: -10;
   }
 
   &-calendar &-calendar__range:not(.ui-state-disabled){
     position: relative;
     margin: 0;
-    width: 38px;
+    width: 2.71rem;
     &::after{
       position: absolute;
       content: '';
-      width: 40px;
-      height: 41px;
+      width: 2.86rem;
+      height: 2.93rem;
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
       opacity: 0.25;
-      left: -10px;
-      top: -14px;
+      left: -.71rem;
+      top: -1rem;
       z-index: -10;
     }
   }
@@ -222,65 +222,65 @@
 
 @media (max-width: 1100px) {
   .ui-datepicker:not(.ui-datepicker_for-single-datepicker){
-    width: 258px;
-    padding-bottom: 25px;
+    width: 18.43rem;
+    padding-bottom: 1.79rem;
     & .ui-datepicker{
       &-calendar .ui-datepicker-today .ui-state-default::after{
-        width: 31px;
-        height: 31px;
-        left: -5px;
-        top: -9px;
+        width: 2.21rem;
+        height: 2.21rem;
+        left: -.36rem;
+        top: -.64rem;
 
       }
 
       &-title{
-        font-size: 16px;
+        font-size: 1.14rem;
       }
       &-next::before{
-        left: 180px;
-        top: 22px;
+        left: 12.86rem;
+        top: 1.57rem;
       }
       &-calendar {
         font-size: 0.71rem;
-        margin: 39px 0 0 5px;
+        margin: 2.79rem 0 0 .36rem;
       }
       &-calendar td .ui-state-default {
-        margin: 0 15px 16px 0;
+        margin: 0 1.07rem 1.14rem 0;
       }
       &-calendar .ui-datepicker-calendar__range:not(.ui-state-disabled) {
         position: relative;
         margin: 0;
-        width: 35px;
+        width: 2.5rem;
         &::after{
-          width: 37px;
-          left: -8px;
-          height: 32px;
-          top: -10px;
+          width: 2.64rem;
+          left: -.57rem;
+          height: 2.29rem;
+          top: -.71rem;
         }
       }
       &-calendar__min:not(.ui-state-disabled),
       &-calendar__max:not(.ui-state-disabled){
         &::before{
-          left: 9px;
-          height: 32px;
-          top: -10px;
+          left: .64rem;
+          height: 2.29rem;
+          top: -.71rem;
         }
         &::after{
-          width: 31px;
-          height: 31px;
-          left: -5px;
-          top: -9px;
+          width: 2.21rem;
+          height: 2.21rem;
+          left: -.36rem;
+          top: -.64rem;
         }
       }
       &-calendar__max:not(.ui-state-disabled){
         &::before{
-          left: -8px;
+          left: -.57rem;
         }
       }
 
       &-buttonpane {
         bottom: 2%;
-        margin-right: 40px;
+        margin-right: 2.86rem;
         & .ui-datepicker-close, .ui-datepicker-current{
           font-size: 0.71rem;
         }
@@ -291,64 +291,64 @@
 
 @media (max-width: 450px) {
   .ui-datepicker_for-single-datepicker{
-    width: 258px;
-    padding-bottom: 25px;
+    width: 18.43rem;
+    padding-bottom: 1.79rem;
     & .ui-datepicker{
       &-calendar .ui-datepicker-today .ui-state-default::after{
-        width: 31px;
-        height: 31px;
-        left: -5px;
-        top: -9px;
+        width: 2.21rem;
+        height: 2.21rem;
+        left: -.36rem;
+        top: -.64rem;
       }
 
       &-title{
-        font-size: 16px;
+        font-size: 1.14rem;
       }
       &-next::before{
-        left: 180px;
-        top: 22px;
+        left: 12.86rem;
+        top: 1.57rem;
       }
       &-calendar {
         font-size: 0.71rem;
-        margin: 39px 0 0 5px;
+        margin: 2.79rem 0 0 .36rem;
       }
       &-calendar td .ui-state-default {
-        margin: 0 15px 16px 0;
+        margin: 0 1.07rem 1.14rem 0;
       }
       &-calendar .ui-datepicker-calendar__range:not(.ui-state-disabled) {
         position: relative;
         margin: 0;
-        width: 35px;
+        width: 2.5rem;
         &::after{
-          width: 37px;
-          left: -8px;
-          height: 32px;
-          top: -10px;
+          width: 2.64rem;
+          left: -.57rem;
+          height: 2.29rem;
+          top: -.71rem;
         }
       }
       &-calendar__min:not(.ui-state-disabled),
       &-calendar__max:not(.ui-state-disabled){
         &::before{
-          left: 9px;
-          height: 32px;
-          top: -10px;
+          left: .64rem;
+          height: 2.29rem;
+          top: -.71rem;
         }
         &::after{
-          width: 31px;
-          height: 31px;
-          left: -5px;
-          top: -9px;
+          width: 2.21rem;
+          height: 2.21rem;
+          left: -.36rem;
+          top: -.64rem;
         }
       }
       &-calendar__max:not(.ui-state-disabled){
         &::before{
-          left: -8px;
+          left: -.57rem;
         }
       }
 
       &-buttonpane {
         bottom: 2%;
-        margin-right: 40px;
+        margin-right: 2.86rem;
         & .ui-datepicker-close, .ui-datepicker-current{
           font-size: 0.71rem;
         }

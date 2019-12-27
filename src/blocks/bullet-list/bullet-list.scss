@@ -7,22 +7,22 @@
   list-style: none;
   @include body;
   &_for-room-description{
-    margin: 23px 0 0 3px;
-    width: 260px;
+    margin: 1.64rem 0 0 0.21rem;
+    width: 18.57rem;
   }
   &__item{
-    padding-left: 20px;
+    padding-left: 1.43rem;
     position: relative;
-    margin: 0 0 10px 0;
+    margin: 0 0 0.71rem 0;
     &::before{
       position: absolute;
       content: '';
-      width: 10px;
-      height: 10px;
+      width: 0.71rem;
+      height: 0.71rem;
       background: $dark25;
       border-radius: 50%;
       left: 0;
-      top: 5px;
+      top: 0.36rem;
     }
   }
 }

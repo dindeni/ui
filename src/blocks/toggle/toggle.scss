@@ -4,12 +4,12 @@
 
 .toggle{
   &_for-registration{
-    margin: 0 0 0 5px;
+    margin: 0 0 0 .36rem;
     display: inline-block;
   }
 
   &_for-ui{
-    margin: 10px 0 10px 6px;
+    margin: .71rem 0 .71rem .43rem;
   }
 
   &__field{
@@ -18,38 +18,38 @@
 
   &__label{
     @include body;
-    padding: 1px 0 0 45px;
+    padding: .07rem 0 0 3.21rem;
     position: relative;
     &::before{
       position: absolute;
       content: '';
-      width: 40px;
-      height: 20px;
-      border: 1px solid $dark25;
+      width: 2.86rem;
+      height: 1.43rem;
+      border: .07rem solid $dark25;
       box-sizing: border-box;
-      border-radius: 10px;
-      left: -5px;
-      top: -2px;
+      border-radius: .71rem;
+      left: -.36rem;
+      top: -.14rem;
     }
     &::after{
       position: absolute;
       content: '';
-      width: 12px;
-      height: 12px;
+      width: .86rem;
+      height: .86rem;
       background: $dark25;
-      border-radius: 10px;
+      border-radius: .71rem;
       left: 0;
-      top: 2px;
+      top: .14rem;
     }
   }
 }
 
 .toggle__field:checked + .toggle__label{
   &::before{
-    border: 1px solid $purple;
+    border: .07rem solid $purple;
   }
   &::after{
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    left: 19px;
+    left: 1.36rem;
   }
 }

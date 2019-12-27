@@ -5,35 +5,35 @@
   @include body;
   position: relative;
   &_for-room-description{
-    margin: 18px 0 17px 0;
+    margin: 1.29rem 0 1.21rem 0;
     & .review__description{
-      max-width: calc(100% - 125px);
+      max-width: calc(100% - 8.93rem);
     }
   }
 
   &__icon{
-    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.1);
-    border: 2px solid #FFFFFF;
+    box-shadow: 0 .71rem 1.43rem rgba(31, 32, 65, 0.1);
+    border: .14rem solid #FFFFFF;
     border-radius: 50%;
   }
   &__name{
     font-weight: bold;
-    margin: 4px 0 0 6px;
+    margin: .29rem 0 0 .43rem;
     display: inline-block;
     vertical-align: top;
   }
   &__date{
     position: absolute;
-    top: 28px;
-    left: 60px;
+    top: 2rem;
+    left: 4.29rem;
   }
   &__wrapper{
     display: flex;
-    margin: 0 0 0 6px;
+    margin: 0 0 0 .43rem;
   }
   &__description{
-    margin: 1px 0 0 14px;
-    width: 655px;
+    margin: .07rem 0 0 .43rem;
+    width: 46.79rem;
   }
 }
 

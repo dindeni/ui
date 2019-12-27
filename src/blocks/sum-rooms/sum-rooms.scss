@@ -4,11 +4,11 @@
 .sum-rooms{
   font-weight: bold;
   &__popup{
-    width: 266px;
-    border: 1px solid $dark50;
+    width: 19rem;
+    border: .07rem solid $dark50;
     box-sizing: border-box;
-    box-shadow: 0 10px 20px $dark5;
-    border-radius: 0 0 4px 4px;
+    box-shadow: 0 .71rem 1.43rem $dark5;
+    border-radius: 0 0 .29rem .29rem;
     background: #FFFFFF;
     position: absolute;
     z-index: 100;
@@ -17,29 +17,29 @@
     }
   }
   &__type-visitors{
-    margin: 12px 0 10px 15px;
+    margin: .86rem 0 .71rem 1.07rem;
   }
   &__container{
     display: flex;
     justify-content: space-between;
   }
   &__button{
-    border: 1px solid $dark25;
+    border: .07rem solid $dark25;
     box-sizing: border-box;
-    border-radius: 22px;
+    border-radius: 1.57rem;
     color: $dark50;
     background: #FFFFFF;
-    width: 30px;
-    height: 30px;
-    margin-bottom: 4px;
+    width: 2.14rem;
+    height: 2.14rem;
+    margin-bottom: .29rem;
     outline: none;
   }
   &__number-of-visitors{
     color: #1F2041;
-    margin: 0 12px;
+    margin: 0 .86rem;
   }
   &__number-of-visitors-wrapper{
-    margin: 4px 6px 0 0;
+    margin: .29rem .43rem 0 0;
   }
 }
 

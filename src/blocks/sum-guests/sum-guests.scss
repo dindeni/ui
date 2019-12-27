@@ -3,15 +3,15 @@
 @import "../../style/mixins/text";
 
 .sum-guests{
-  margin: 22px 0 0 0;
+  margin: 1.57rem 0 0 0;
   font-weight: bold;
   display: flex;
   flex-direction: column;
   &__label::after{
-    top: 4px;
+    top: .29rem;
   }
   &_for-order{
-    margin: 20px 0 0 3px;
+    margin: 1.43rem 0 0 .21rem;
   }
 
   &__popup_hide{
@@ -19,26 +19,26 @@
   }
 
   &__popup{
-    width: 320px;
-    margin-top: 61px;
-    border: 1px solid $dark50;
+    width: 22.86rem;
+    margin-top: 4.36rem;
+    border: 0.07rem solid $dark50;
     box-sizing: border-box;
-    box-shadow: 0 10px 20px $dark5;
-    border-radius: 0 0 4px 4px;
+    box-shadow: 0 .71rem 1.43rem $dark5;
+    border-radius: 0 0 .29rem .29rem;
     background: #FFFFFF;
     position: absolute;
     z-index: 100;
-    padding: 0 0 10px 0;
+    padding: 0 0 .71rem 0;
   }
 
   &_for-filter{
     .sum-guests__popup{
-      width: 266px;
+      width: 19rem;
     }
   }
 
   &__type-visitors{
-    margin: 12px 0 10px 15px;
+    margin: .86rem 0 .71rem 1.07rem;
   }
 
   &__container{
@@ -47,36 +47,36 @@
   }
 
   &__button{
-    border: 1px solid $dark25;
+    border: .07rem solid $dark25;
     box-sizing: border-box;
-    border-radius: 22px;
+    border-radius: 1.57rem;
     color: $dark50;
     background: #FFFFFF;
-    width: 30px;
-    height: 30px;
-    margin-bottom: 4px;
+    width: 2.14rem;
+    height: 2.14rem;
+    margin-bottom: .29rem;
     outline: none;
   }
 
   &__number-of-visitors{
     color: #1F2041;
-    margin: 0 12px;
+    margin: 0 .86rem;
   }
 
   &__number-of-visitors-wrapper{
-    margin: 4px 6px 0 0;
+    margin: .29rem .43rem 0 0;
   }
 
   &__buttons-footer-container{
     display: flex;
     justify-content: space-between;
-    margin: 16px 0 0 2px;
+    margin: 1.14rem 0 0 .14rem;
   }
 
   &_for-main-ui{
-    margin: 0 0 10px 0;
+    margin: 0 0 .71rem 0;
     & .sum-guests__popup{
-      margin-top: 43px;
+      margin-top: 3.07rem;
     }
     & .form-element_for-guests{
       margin-top: 0;
@@ -86,6 +86,6 @@
 
 @media (max-width: 1100px) {
   .sum-guests__popup{
-    width: 260px;
+    width: 18.57rem;
   }
 }

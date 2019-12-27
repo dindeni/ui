@@ -4,35 +4,35 @@
 
 .navigation{
   width: 100%;
-  height: 70px;
+  height: 5rem;
   display: flex;
-  box-shadow: 0 10px 20px $dark5;
+  box-shadow: 0 .71rem 1.43rem $dark5;
   align-items: center;
   & #{&}__buttons-wrapper{
-    margin: 0 0 0 22px;
+    margin: 0 0 0 1.57rem;
   }
 
   &_logged{
     & .navigation__list{
-      margin: 5px 0 0 24.4%;
+      margin: .36rem 0 0 24.4%;
     }
     & .navigation{
       &__item:not(:last-child){
-        margin: 0 29px 0 0;
+        margin: 0 2.07rem 0 0;
       }
       &__user-name{
         @include body;
-        margin: 5px 0 0 4.3%;
+        margin: 0.36rem 0 0 4.3%;
         font-style: normal;
         position: relative;
         &::before{
           position: absolute;
           content: '';
           width: 1px;
-          height: 30px;
+          height: 2.14rem;
           background: rgba(31, 32, 65, 0.1);
-          left: -30px;
-          top: -5px;
+          left: -2.14rem;
+          top: -.36rem;
         }
       }
     }
@@ -50,42 +50,42 @@
     display: flex;
     align-items: center;
     padding: 0;
-    margin: 5px 0 0 19.8%;
+    margin: .36rem 0 0 19.8%;
   }
 
   &__link{
     text-decoration: none;
     color: $dark50;
-    line-height: 17px;
+    line-height: 1.21rem;
     &#{&}_current, &:hover{
       font-weight: bold;
       color: $dark75;
     }
     &#{&}_expand, &#{&}_expand-ru{
-      padding:  0 15px 0 0;
+      padding:  0 1.07rem 0 0;
       position: relative;
       &::after{
         position: absolute;
         content: '';
-        width: 15px;
-        height: 15px;
+        width: 1.07rem;
+        height: 1.07rem;
         background: url("./icon-expand.svg") no-repeat;
-        right: -4px;
-        top: 2px;
+        right: -.29rem;
+        top: .14rem;
       }
     }
     &#{&}_expand-ru{
-      padding: 0 23px 0 0;
+      padding: 0 1.64rem 0 0;
       &::after{
-        right: 3px;
+        right: .21rem;
       }
     }
   }
 
   &__item:not(:last-child){
-    margin: 0 28px 0 0;
+    margin: 0 2rem 0 0;
     &.navigation__item_ru{
-      margin: 0 21px 0 0;
+      margin: 0 1.5rem 0 0;
     }
   }
 
@@ -103,10 +103,10 @@
     &_logged{
       .navigation{
         &__list{
-          margin: 5px 0 0 6.2%;
+          margin: .36rem 0 0 6.2%;
         }
         &__user-name{
-          margin: 5px 0 0 10%;
+          margin: .36rem 0 0 10%;
         }
       }
     }
@@ -115,7 +115,7 @@
 
 @media (max-width: 1250px) {
   .navigation__list{
-    margin: 5px 0 0 5%;
+    margin: .36rem 0 0 5%;
   }
 }
 
@@ -128,8 +128,8 @@
 
     &__logo {
       margin: 0 0 0 2%;
-      width: 70px;
-      padding: 5px 0 0 0;
+      width: 5rem;
+      padding: .36rem 0 0 0;
     }
   }
 }
@@ -143,7 +143,7 @@
       z-index: 10;
     }
     &__item{
-      padding: 4px 5px;
+      padding: .29rem .36rem;
     }
     &__buttons-wrapper{
       margin: 0 5% 0 0;
@@ -152,35 +152,35 @@
     &__button-mobile{
       display: inline-block;
       cursor: pointer;
-      width: 30px;
-      height: 25px;
-      box-shadow: 0 2px $purple;
+      width: 2.14rem;
+      height: 1.79rem;
+      box-shadow: 0 .14rem $purple;
       border: none;
       background: none;
-      margin: 0 10px 0 15px;
+      margin: 0 .71rem 0 1.07rem;
       vertical-align: top;
       position: absolute;
       z-index: 100;
-      right: 5px;
-      top: 20px;
+      right:.36rem;
+      top: 1.43rem;
       outline: none;
       &::before{
         position: absolute;
         content: '';
-        width: 30px;
-        height: 2px;
+        width: 2.14rem;
+        height: .14rem;
         background: $purple;
         left: 0;
-        top: 15px;
+        top: 1.07rem;
       }
       &::after{
         position: absolute;
         content: '';
-        width: 30px;
-        height: 2px;
+        width: 2.14rem;
+        height: .14rem;
         background: $purple;
         left: 0;
-        top: 5px;
+        top: .36rem;
       }
     }
 
@@ -189,8 +189,8 @@
       width: 40%;
       right: 0;
       background: $purple;
-      border-radius: 4px;
-      margin: 50px 0 0 10%;
+      border-radius: .29rem;
+      margin: 3.57rem 0 0 10%;
     }
 
     &__button-mobile_open{
@@ -201,13 +201,13 @@
       &.navigation__button-mobile::after{
         background: $dark50;
         transform: rotate(-45deg);
-        top: 15px;
+        top: 1.07rem;
       }
     }
 
     &_logged{
       & .navigation__user-name{
-        margin: 5px 0 0 15%;
+        margin: .36rem 0 0 15%;
       }
       & .navigation__list{
         top: 0;
@@ -218,7 +218,7 @@
 
 @media (max-width: 800px) {
     .navigation__logo{
-      width: 90px;
+      width: 6.43rem;
     }
 }
 
@@ -235,9 +235,9 @@
 
 @media (max-width: 450px) {
   .navigation {
-    padding-bottom: 20px;
+    padding-bottom: 1.43rem;
     & #{&}__buttons-wrapper{
-      margin: 5px 0 0 0;
+      margin: .36rem 0 0 0;
     }
     &__logo{
       margin: 0 20%;

@@ -3,26 +3,26 @@
 
 .sign-in{
   @include rectangle;
-  height: 358px;
+  height: 25.57rem;
   position: relative;
   z-index: 1;
 
   &__head{
     @include h1;
-    margin: 49px 0 20px 0;
+    margin: 3.5rem 0 1.43rem 0;
   }
 
   &__label{
     @include body;
     display: block;
-    margin: 31px 0 0 0;
+    margin: 2.21rem 0 0 0;
   }
 }
 
 @media (max-width: 450px) {
   .sign-in{
-    width: 300px;
-    padding-left: 20px;
+    width: 21.43rem;
+    padding-left: 1.43rem;
     &__label{
       font-size: 0.86rem;
     }
