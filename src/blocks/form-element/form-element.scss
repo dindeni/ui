@@ -15,7 +15,7 @@
       font-size: 1rem;
       font-family: Montserrat, sans-serif;
     }
-    &#{&}_text::placeholder{
+    &_text::placeholder{
       text-transform: capitalize;
     }
     &:hover, &:focus{
@@ -33,17 +33,17 @@
     &_for-datepicker-range, &_for-rooms{
       width: 19rem;
     }
-    &#{&}_for-guests{
+    &_for-guests{
       width: 22.86rem;
       &::placeholder{
         text-transform: none;
       }
     }
-    &_for-sign-in#{&}_text{
+    &_for-sign-in{
       width: 22.86rem;
       margin: .43rem 0 .29rem 0;
     }
-    &_for-registration#{&}{
+    &_for-registration{
       width: 22.86rem;
       margin: 0 0 .71rem 0;
       &.form-element__field_for-password{
@@ -62,6 +62,22 @@
         text-transform: uppercase;
       }
     }
+    &_date#{&}{
+      &::placeholder{
+        text-transform: uppercase;
+        color: $dark75;
+      }
+    }
+    &_dropdown::placeholder{
+      color: $dark75;
+    }
+    &_for-footer-widget{
+      width: 18.57rem;
+      margin: 1.43rem 0 0 0;
+    }
+    &_subscription{
+      width: 19rem;
+    }
   }
 
   &_date{
@@ -76,12 +92,6 @@
       right: -1.14rem;
       top: 1.29rem;
     }
-    & .form-element__field{
-      &::placeholder{
-        text-transform: uppercase;
-        color: $dark75;
-      }
-    }
     &.form-element{
       &_for-search{
         margin: .43rem 1.5rem 0 0;
@@ -94,9 +104,6 @@
 
   &_for-main-ui{
     margin: 0 0 .71rem 0;
-    & .form-element__field_date{
-      width: 10.71rem;
-    }
   }
 
   &_dropdown{
@@ -110,12 +117,6 @@
       background: url("./icon-expand.svg") no-repeat;
       right: -1.14rem;
       top: 1.29rem;
-    }
-    & .form-element__field::placeholder{
-      color: $dark75;
-    }
-    & .form-element__field_for-guests::placeholder{
-      text-transform: none;
     }
   }
 
@@ -132,6 +133,12 @@
     margin-top: .29rem;
   }
 
+  &_for-footer-widget#{&}_subscription{
+    &::after{
+      top: 2.36rem;
+    }
+  }
+
   &_subscription{
     position: relative;
     display: inline-block;
@@ -144,27 +151,13 @@
       right: -1rem;
       top: .93rem;
     }
-    &.form-element_for-footer-widget{
-      &::after{
-        top: 2.36rem;
-      }
-    }
-    & .form-element{
-      &__field_subscription{
-        width: 19.07rem;
-        &::placeholder{
-          text-transform: capitalize;
-        }
-      }
-      &__field_for-footer-widget{
-        width: 18.57rem;
-        margin: 1.43rem 0 0 0;
-      }
-    }
   }
 
   &_for-hide-datepicker{
     @include hide;
+  }
+  &_for-main-ui{
+    margin-top: 0;
   }
 }
 
@@ -175,31 +168,15 @@
       &.form-element_for-search{
         width: 8.57rem;
       }
-      & .form-element__field{
-        &_for-search-in, &_for-search-out,
-        &_for-order-in, &_for-order-out{
-          width: 8.57rem;
-          &::placeholder{
-            font-size: 0.86rem;
-          }
-        }
-      }
     }
     &_dropdown{
       &.form-element_for-guests{
         width: 18.57rem;
-        & .form-element__field{
-          width: 18.57rem;
-          &.form-element__field_for-filter{
-            width: 19rem;
-          }
-        }
       }
     }
 
     &_for-main-ui{
       & .form-element__field{
-        width: 18.57rem;
         &_date{
           width: 10.71rem;
         }
@@ -209,6 +186,19 @@
     &__field{
       &_for-main-ui{
         width: 18.57rem;
+      }
+      &_for-guests{
+        width: 18.57rem;
+      }
+      &__field_subscription{
+        width: 19rem;
+      }
+      &_for-search-in, &_for-search-out,
+      &_for-order-in, &_for-order-out{
+        width: 8.57rem;
+        &::placeholder{
+          font-size: 0.86rem;
+        }
       }
     }
   }
@@ -245,5 +235,4 @@
       }
     }
   }
-
 }

@@ -1,12 +1,13 @@
-mixin social-buttons(modifier)
-
+mixin social-buttons(options)
+  -const { modifier, listModifier } = options;
   -const arrSocialLink = ['https://twitter.com', 'https://www.facebook.com/', 'https://www.instagram.com'];
   -const arrSocial = ['twitter', 'facebook', 'instagram'];
 
   div(class=['social-buttons',
   `${modifier ? `social-buttons_${modifier}`:''}`])
 
-    ul.social-buttons__list
+    ul(class=['social-buttons__list',
+    `${listModifier ? `social-buttons__list_${listModifier}` : ''}`])
       each item, index in arrSocial
         li.social-buttons__item(class=`social-buttons__item_${item}`)
           a.social-buttons__link(href=`${arrSocialLink[index]}`)

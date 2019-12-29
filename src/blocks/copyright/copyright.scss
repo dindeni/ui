@@ -6,12 +6,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  &#{&}_for-registration {
-      margin-top: .71rem;
-  }
 
   &_footer-widget{
-
       width: 100%;
       box-shadow: 0 .71rem 1.43rem $dark5;
       margin-top: 1rem;
@@ -23,10 +19,6 @@
         height: .07rem;
         box-shadow: 0 .07rem 0 rgba(31, 32, 65, 0.1);
         top: -.29rem;
-
-    }
-    & .copyright__head{
-      margin: 0 0 0 9.6%;
     }
   }
 
@@ -34,6 +26,9 @@
     @include body;
     font-style: normal;
     margin: 0 0 0 8%;
+    &_footer-widget{
+      margin: 0 0 0 9.6%;
+    }
   }
 }
 
@@ -51,12 +46,9 @@
 }
 
 @media (max-width: 550px){
-  .copyright_footer-widget {
-    & .copyright{
+  .copyright{
+    &_footer-widget{
       flex-direction: column;
-      &__head {
-        margin: 0;
-      }
     }
   }
 }

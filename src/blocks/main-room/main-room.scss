@@ -14,10 +14,10 @@
   }
   &__image-wrapper{
     display: flex;
-    &> .main-room__image:first-child{
-      flex-basis: 68.1%;
-      width: 68.1%;
-    }
+  }
+  &__image_for-first-image{
+    flex-basis: 68.1%;
+    width: 68.1%;
   }
 
   &__images-aside{
@@ -52,11 +52,8 @@
     &__images-aside{
       flex-basis: 100%;
     }
-
-    &__image-wrapper{
-      &> .main-room__image:first-child{
-        flex-basis: 100%;
-      }
+    &__image_for-first-image{
+      flex-basis: 100%;
     }
   }
 }

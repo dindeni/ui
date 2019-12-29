@@ -23,49 +23,39 @@
   width: 1.71rem;
   height: 1.71rem;
   margin: 0 0 0 1.43rem;
-  &.social-buttons{
-    &__item_twitter{
+
+    &_twitter{
       background: url("./icon-twitter.svg") no-repeat;
     }
-    &__item_facebook{
+    &_facebook{
       background: url("./icon-facebook.svg") no-repeat;
     }
-    &__item_instagram{
+    &_instagram{
       background: url("./icon-instagram.svg") no-repeat;
-      }
     }
   }
 
   &_for-copyright{
-    &.social-buttons{
-      margin: 0 10rem 0 0;
-      &__list{
-        margin: 0 11.71rem 0 0;
-      }
-    }
-    &.social-buttons_for-registration{
-      margin: 0 8.14rem 0 0;
-    }
+    margin: 0 10rem 0 0;
   }
 }
 
 
 @media (max-width: 800px) {
   .social-buttons{
-    &_for-copyright{
-      & .social-buttons__list{
-        margin: 0 5.86rem 0 0;
-      }
+    &__list_for-copyright{
+      margin: 0 5.86rem 0 0;
     }
   }
+
 }
 
 @media (max-width: 620px) {
   .social-buttons{
-    &_for-copyright.social-buttons{
+    &_for-copyright{
       margin: 0;
     }
-    & .social-buttons__list{
+    &__list_for-copyright{
       margin: 0 2.93rem 0 0;
     }
   }

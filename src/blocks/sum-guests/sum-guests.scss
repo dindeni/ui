@@ -29,11 +29,11 @@
     position: absolute;
     z-index: 100;
     padding: 0 0 .71rem 0;
-  }
-
-  &_for-filter{
-    .sum-guests__popup{
+    &_for-filter{
       width: 19rem;
+    }
+    &_for-main-ui{
+      margin-top: 3.07rem;
     }
   }
 
@@ -75,12 +75,6 @@
 
   &_for-main-ui{
     margin: 0 0 .71rem 0;
-    & .sum-guests__popup{
-      margin-top: 3.07rem;
-    }
-    & .form-element_for-guests{
-      margin-top: 0;
-    }
   }
 }
 

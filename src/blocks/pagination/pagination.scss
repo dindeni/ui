@@ -8,6 +8,9 @@
     display: flex;
     padding: 0;
     margin: 1.43rem 0 .71rem 1.43rem;
+    &_for-ui{
+      margin: 1.43rem 0 .71rem;
+    }
   }
   &__item{
     margin: 0 0 0 0;
@@ -16,19 +19,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    & .pagination__link{
-      color: $dark25;
-    }
     &:first-child{
-      & .pagination__link{
-        color: #FFFFFF;
-      }
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
       border-radius: 1.57rem;
     }
   }
   &__link{
     text-decoration: none;
+    color: $dark25;
+    &_first-element{
+      color: #FFFFFF;
+    }
   }
   &__item_next{
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
@@ -45,25 +46,18 @@
   &__description{
     @include body;
     margin-left: 1.86rem;
+    &_for-ui{
+      margin-left: .43rem;
+    }
   }
 
   &_for-filter{
     width: 23.14rem;
     margin: 0 auto;
-    & .pagination__item_dots{
-      background: none;
-    }
   }
 
-  &_for-ui{
-    & .pagination{
-      &__list{
-        margin: 1.43rem 0 .71rem 0;
-      }
-      &__description{
-        margin-left: .43rem;
-      }
-    }
+  &__item_dots{
+    background: none;
   }
 }
 
@@ -71,12 +65,12 @@
   .pagination{
     &_for-filter{
       margin: 0;
-      & .pagination__description{
-        margin-left: .36rem;
-      }
-      & .pagination__list{
-        margin: 1.43rem 0 .71rem 0;
-      }
+    }
+    &__description_for-filter{
+      margin-left: .36rem;
+    }
+    &__list_for-filter{
+      margin: 1.43rem 0 .71rem 0;
     }
   }
 }

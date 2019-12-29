@@ -12,7 +12,7 @@ mixin sign-in
     +form-element({type: 'password', placeholder: 'Пароль',
       modifierForInput: 'for-sign-in'})
 
-    +buttons({type: 'buy', content: 'Войти', modifier: 'for-sign-in'})
+    +buttons({type: 'buy', content: 'Войти', linkModifier: 'for-sign-in'})
 
     span.sign-in__label Нет аккаунта на Toxin?
-      +buttons({type: 'bordering-link', content: 'Создать', link: 'registration.html', modifier: 'for-sign-in'})
+      +buttons({type: 'bordering-link', content: 'Создать', link: 'registration.html', linkModifier: 'for-sign-in'})

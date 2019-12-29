@@ -29,17 +29,11 @@
   }
   &__name-wrapper{
     margin: 1.86rem 0 0 0;
-    & .input:first-child{
-      margin: 0 0 .57rem 0;
-    }
   }
   &__radio-wrapper{
     position: relative;
     display: block;
     margin: 0 0 0 .71rem;
-  }
-  & .radio__mark{
-    padding: 0 0 0 1.5rem;
   }
   &__footer{
     margin: 2.14rem 0 0 0;
@@ -53,10 +47,10 @@
   .registration{
     padding-left: 1.43rem;
     width: 21.43rem;
-    & #{&}__head{
+    &__head{
       font-size: 1.29rem;
     }
-    & #{&}__footer-label{
+    &__footer-label{
       font-size: .86rem;
     }
   }

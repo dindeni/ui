@@ -13,4 +13,5 @@ mixin review(options)
 
     div.review__wrapper
       +buttons({type: typeOfButton, content: numberOfLikes})
-      p.review__description #{description}
+      p(class=['review__description',
+       `${modifier ? `review__description_${modifier}` : ''}`]) #{description}

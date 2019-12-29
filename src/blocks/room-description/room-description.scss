@@ -22,9 +22,9 @@
   &__pie-chart-wrapper{
     margin: .21rem 0 0 13.7%;
     position: relative;
-    .room-description__pie-chart-head{
-      margin: 0 0 1.07rem 0;
-    }
+  }
+  &__pie-chart-head{
+    margin: 0 0 1.07rem 0;
   }
   &__review{
     position: relative;
@@ -109,7 +109,7 @@
       font-size: 1.14rem;
     }
 
-    &__cancel &__cancel-paragraph{
+    &__cancel-paragraph{
       width: 90%;
     }
     &__pie-chart-wrapper{

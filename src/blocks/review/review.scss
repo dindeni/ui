@@ -6,9 +6,6 @@
   position: relative;
   &_for-room-description{
     margin: 1.29rem 0 1.21rem 0;
-    & .review__description{
-      max-width: calc(100% - 8.93rem);
-    }
   }
 
   &__icon{
@@ -34,6 +31,9 @@
   &__description{
     margin: .07rem 0 0 .43rem;
     width: 46.79rem;
+    &_for-room-description{
+      max-width: calc(100% - 8.93rem);
+    }
   }
 }
 

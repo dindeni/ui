@@ -45,12 +45,12 @@
   }
   &__label-wrapper {
     margin: 1.29rem 0 0 .21rem;
-    & .order-room__label{
-      @include h3;
-      color: $dark100;
-      &:first-child{
-        margin-right: 6.86rem;
-      }
+  }
+  &__label{
+    @include h3;
+    color: $dark100;
+    &:first-child{
+      margin-right: 6.86rem;
     }
   }
   &__form{
@@ -127,7 +127,7 @@
     &_price {
       font-size: 0.93rem;
     }
-    &__label-wrapper &__label:first-child{
+    &__label:first-child{
       margin-right: 4.71rem;
     }
     &__total-description {

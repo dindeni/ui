@@ -80,21 +80,23 @@ mixin main-ui()
       div.main-ui__form-wrapper
         +form-element({
           type: 'text', placeholder: 'email',
-          modifierForLabel: 'for-main-ui'
+          modifierForLabel: 'for-main-ui', modifierForInput: 'for-main-ui'
         })
-        +sum-guests({label: 'Сколько гостей', modifier: 'for-main-ui', modifierForInput: 'for-main-ui'})
+        +sum-guests({label: 'Сколько гостей', modifier: 'for-main-ui', modifierForInput: 'for-main-ui',
+        modifierForLabel: 'for-main-ui'})
         +form-element({
           type: 'masked', placeholder: 'дд.мм.гггг',
-          modifierForLabel: 'for-main-ui'
+          modifierForLabel: 'for-main-ui', modifierForInput: 'for-main-ui'
         })
-        +ui-datepicker({type: 'single', placeholder: 'дд.мм.гггг', modifierForLabel: 'for-main-ui'})
+        +ui-datepicker({type: 'single', placeholder: 'дд.мм.гггг', modifierForLabel: 'for-main-ui',
+        modifierForInput: 'for-main-ui'})
         +ui-datepicker({
-          type: 'range', defaultDate: '19 авг - 23 авг', inputModifier: 'for-main-ui',
-          labelModifier: 'for-main-ui'
+          type: 'range', defaultDate: '19 авг - 23 авг', modifierForLabel: 'for-main-ui',
+          modifierForInput: 'for-main-ui'
         })
         +form-element({
           type: 'subscription', placeholder: 'email',
-          modifierForLabel: 'for-main-ui'
+          modifierForLabel: 'for-main-ui', modifierForInput: 'for-main-ui'
         })
 
       div.main-ui__form-wrapper

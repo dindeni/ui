@@ -2,17 +2,9 @@
 
 .features{
   @include body;
-  &_for-room-description{
-    & .features__slogan{
-      &::before{
-        left: .5rem;
-      }
-    }
-    & #{&}__wrapper:last-child{
-      margin: 0;
-    }
+  &__wrapper{
+    margin-bottom: 2.9rem;
   }
-
   &__slogan{
     font-weight: bold;
     display: block;
@@ -27,19 +19,15 @@
       left: .57rem;
       top: .14rem;
     }
+    &_convenient::before{
+      background: url("./icon-location-city.svg") no-repeat;
+    }
+    &_cozy::before{
+      background: url("./icon-whatshot.svg") no-repeat;
+    }
   }
 
   &__description{
     margin: 0 0 0 4.43rem;
-  }
-
-  &__wrapper{
-    margin: 0 0 2.86rem 0;
-    &:nth-child(2) .features__slogan::before{
-      background: url("./icon-location-city.svg") no-repeat;
-    }
-    &:nth-child(3) .features__slogan::before{
-      background: url("./icon-whatshot.svg") no-repeat;
-    }
   }
 }

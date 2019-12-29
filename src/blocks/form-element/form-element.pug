@@ -20,7 +20,8 @@ mixin form-element(options)
     -readOnly = true;
   -} else if (type === 'masked'){
     -labelClasses.push(`${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`);
-    -inputClasses.push('form-element__field', 'form-element__field_masked');
+    -inputClasses.push('form-element__field', 'form-element__field_masked',
+    -`${modifierForInput ? `form-element__field_${modifierForInput}` : ''}`);
   -} else if (type === 'date'){
     -labelClasses.push('form-element form-element_date',
     -`${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`);

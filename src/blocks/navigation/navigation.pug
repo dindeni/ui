@@ -19,16 +19,17 @@ mixin navigation(options)
 
       div.navigation__buttons-wrapper
         +buttons({type:'bordering-link', content: `${loginName}`, link:'sign-in.html'})
-        +buttons({type:'full-link', content:`${registrationName}`, link: 'registration.html', modifier:'for-navigation'})
+        +buttons({type:'full-link', content:`${registrationName}`, link: 'registration.html',
+         linkModifier: 'for-navigation'})
         button.navigation__button-mobile.js-navigation__button-mobile
 
   else if type === 'loggedIn'
     nav.navigation.js-navigation.navigation_logged
       img.navigation__logo(src=require('../img/icon-logo.svg') alt='logo')
 
-      ul.navigation__list.js-navigation__list
+      ul.navigation__list.js-navigation__list.navigation__list_logged
         each item, index in items
-          li.navigation__item
+          li.navigation__item.navigation__item_logged
             a(href='somePage.html' class=['navigation__link',
              `${linkModifier[index] ?
                `navigation__link_${linkModifier[index]}` : ''}`]) #{item}

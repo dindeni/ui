@@ -5,11 +5,12 @@ mixin pagination(options)
   div(class=['pagination',
   `${modifier ? `pagination_${modifier}`:''}`])
 
-    ul.pagination__list
+    ul(class=['pagination__list', `${modifier ? `pagination__list_${modifier}` : ''}`])
       -for(let i = 0; i <= value; i+=1){
         if i <= 2
           li.pagination__item
-            a.pagination__link(href='somePage.html') #{i + 1}
+            a(class=['pagination__link', `${i === 0 ? `pagination__link_first-element` : ''}`]
+             href='somePage.html') #{i + 1}
         else if i === 3
           li.pagination__item.pagination__item_dots
             a.pagination__link(href='somePage.html') ...
@@ -20,4 +21,5 @@ mixin pagination(options)
             a.pagination__link(href='somePage.html')
       -}
 
-    div.pagination__description 1 – 12 из 100+ вариантов аренды
+    div(class=['pagination__description',
+     `${modifier ? `pagination__description_${modifier}` : ''}`]) 1 – 12 из 100+ вариантов аренды

@@ -6,13 +6,13 @@ mixin copyright(options)
 
   section(class=['copyright',
    `${modifier ? `copyright_${modifier}`:''}`])
-    em.copyright__head #{text}
+    em(class=['copyright__head', `${modifier ? `copyright__head_${modifier}` : ''}`]) #{text}
 
     if(socialModifier)
 
-      +social-buttons(socialModifier)
+      +social-buttons({modifier: socialModifier})
 
     else
 
-      +social-buttons('for-copyright')
+      +social-buttons({modifier: 'for-copyright', listModifier: 'for-copyright'})
 
