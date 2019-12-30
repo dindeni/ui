@@ -2,12 +2,13 @@ mixin footer-list(options)
 
   -const {head, items, modifier}=options;
 
-  div(class=['footer-list',
-  `${modifier ? `footer-list_${modifier}`:''}`])
+  div.footer-list
+    div(class=['footer-list__wrapper',
+    `${modifier ? `footer-list__wrapper_${modifier}`:''}`])
 
-    h3.footer-list__head #{head}
+      h3.footer-list__head #{head}
 
-    ul.footer-list__list
-      each item in items
-        li.footer-list__item
-          a.footer-list__link(href='page.html') #{item}
+      ul.footer-list__list
+        each item in items
+          li.footer-list__item
+            a.footer-list__link(href='page.html') #{item}

@@ -4,15 +4,16 @@ mixin copyright(options)
 
   -const {text, modifier, socialModifier}=options;
 
-  section(class=['copyright',
-   `${modifier ? `copyright_${modifier}`:''}`])
-    em(class=['copyright__head', `${modifier ? `copyright__head_${modifier}` : ''}`]) #{text}
+  div.copyright
+    section(class=['copyright__wrapper',
+     `${modifier ? `copyright__wrapper_${modifier}`:''}`])
+      em(class=['copyright__head', `${modifier ? `copyright__head_${modifier}` : ''}`]) #{text}
 
-    if(socialModifier)
+      if(socialModifier)
 
-      +social-buttons({modifier: socialModifier})
+        +social-buttons({modifier: socialModifier})
 
-    else
+      else
 
-      +social-buttons({modifier: 'for-copyright', listModifier: 'for-copyright'})
+        +social-buttons({modifier: 'for-copyright', listModifier: 'for-copyright'})
 

@@ -2,10 +2,9 @@
 @import "../../style/variables/variables";
 
 .room-description{
-  margin: 5rem 0 0 9.5%;
+  padding: 5rem 0 4.57rem 9.5%;
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 4.57rem;
   &__container{
     display: flex;
     flex-wrap: wrap;
@@ -31,7 +30,7 @@
     width: 100%;
   }
   &__review-head{
-    margin: .14rem 0 0 0;
+    margin: .14rem 0 1.29rem 0;
     display: inline-block;
   }
   &__review-number{
@@ -69,6 +68,7 @@
 
 @media (max-width: 1056px) {
   .room-description{
+    justify-content: space-around;
     &__container{
       width: 100%;
     }
@@ -83,7 +83,7 @@
 
 @media (max-width: 800px) {
   .room-description{
-    margin: 5.07rem 0 0 2.6%;
+    padding: 5.07rem 0 4.57rem 2.6%;
     &__pie-chart-wrapper{
       margin: 0 0 0 2%;
     }
@@ -98,7 +98,7 @@
 
 @media (max-width: 620px) {
   .room-description__review-number{
-    right: 10%;
+    right: 4%;
   }
 }
 
@@ -116,7 +116,7 @@
       margin: .86rem 0 0 2%;
     }
     &__review-number{
-      right: 2%;
+      right: -10%;
       font-size: 0.86rem;
       top: 2.43rem;
     }

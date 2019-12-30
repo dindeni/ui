@@ -2,10 +2,12 @@
 @import "../../style/variables/variables";
 
 .bullet-list{
-  margin: 0;
-  padding: 0;
-  list-style: none;
   @include body;
+  &__roster{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
   &_for-room-description{
     margin: 1.64rem 0 0 0.21rem;
     width: 18.57rem;

@@ -2,10 +2,10 @@
 @import "../../style/mixins/text";
 
 .footer-list{
-  width: 11.43rem;
-  margin: 6.43rem 2.8% 0 0;
-  &_for-registration{
-    margin: 7.5rem 2.8% 0 0;
+  padding-right: 2.8%;
+  &__wrapper{
+    width: 11.43rem;
+    padding: 6.43rem 0 0 0;
   }
 
   &__head{
@@ -29,16 +29,9 @@
   }
 }
 
-
-@media (max-width: 1250px) {
-  .footer-list {
-    margin: 3.57rem 2.8% 0 0;
-  }
-}
-
 @media (max-width: 620px) {
-  .footer-list {
+  .footer-list__wrapper {
     width: 8.57rem;
-    margin: 3.21rem 0 0 0;
+    padding: 3.57rem 2.8% 0 0;
   }
 }

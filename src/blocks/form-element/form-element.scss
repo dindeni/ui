@@ -94,16 +94,22 @@
     }
     &.form-element{
       &_for-search{
-        margin: .43rem 1.5rem 0 0;
+        padding: 0 1.5rem 0 0;
+        &::after{
+          right: 0.36rem;
+        }
       }
       &_for-order{
-        margin: .14rem 1.21rem 0 .21rem;
+        padding: 0 1.21rem 0 .21rem;
+        &::after{
+          right: .07rem;
+        }
       }
     }
   }
 
   &_for-main-ui{
-    margin: 0 0 .71rem 0;
+    padding: 0 0 .71rem 0;
   }
 
   &_dropdown{
@@ -122,15 +128,21 @@
 
   &_for-guests{
     display: inline-block;
-    margin-top: .36rem;
+    padding-top: .36rem;
     width: min-content;
     &.form-element_for-filter, & .form-element__field_for-filter{
       width: 19rem;
     }
+    &::after{
+    top: 1.65rem
+    }
   }
   &_for-filter{
     width: 19rem;
-    margin-top: .29rem;
+    padding-top: .29rem;
+    &::after{
+      top: 1.58rem;
+    }
   }
 
   &_for-footer-widget#{&}_subscription{
@@ -155,9 +167,6 @@
 
   &_for-hide-datepicker{
     @include hide;
-  }
-  &_for-main-ui{
-    margin-top: 0;
   }
 }
 
@@ -214,7 +223,6 @@
 
 @media (max-width: 450px) {
   .form-element{
-    &_for-order.form-element_date,
     &__field_for-sign-in.form-element__field_text{
       margin: .43rem 1.43rem .29rem 0;
     }

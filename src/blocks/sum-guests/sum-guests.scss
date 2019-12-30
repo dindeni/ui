@@ -3,7 +3,7 @@
 @import "../../style/mixins/text";
 
 .sum-guests{
-  margin: 1.57rem 0 0 0;
+  padding: 1.57rem 0 0 0;
   font-weight: bold;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@
     top: .29rem;
   }
   &_for-order{
-    margin: 1.43rem 0 0 .21rem;
+    padding: 1.43rem 0 0 .21rem;
   }
 
   &__popup_hide{

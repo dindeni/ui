@@ -4,9 +4,6 @@
 .review{
   @include body;
   position: relative;
-  &_for-room-description{
-    margin: 1.29rem 0 1.21rem 0;
-  }
 
   &__icon{
     box-shadow: 0 .71rem 1.43rem rgba(31, 32, 65, 0.1);
@@ -26,13 +23,13 @@
   }
   &__wrapper{
     display: flex;
-    margin: 0 0 0 .43rem;
+    margin: 0 0 1.36rem .43rem;
   }
   &__description{
-    margin: .07rem 0 0 .43rem;
+    margin: .07rem 0 0 .9rem;
     width: 46.79rem;
     &_for-room-description{
-      max-width: calc(100% - 8.93rem);
+      max-width: calc(100% - 8.9rem);
     }
   }
 }

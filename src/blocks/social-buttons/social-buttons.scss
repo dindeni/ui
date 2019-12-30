@@ -6,6 +6,9 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    &_for-copyright{
+      margin: 0 10rem 0 0;
+    }
   }
 
   &__link{
@@ -34,10 +37,6 @@
       background: url("./icon-instagram.svg") no-repeat;
     }
   }
-
-  &_for-copyright{
-    margin: 0 10rem 0 0;
-  }
 }
 
 
@@ -52,11 +51,8 @@
 
 @media (max-width: 620px) {
   .social-buttons{
-    &_for-copyright{
-      margin: 0;
-    }
     &__list_for-copyright{
-      margin: 0 2.93rem 0 0;
+      margin: 0;
     }
   }
 }

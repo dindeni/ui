@@ -158,7 +158,8 @@ mixin main-ui()
 
       div.main-ui__card-wrapper
         +searchRoom
-        +registration('for-main-ui')
+        div.main-ui__registration-wrapper
+          +registration('for-main-ui')
 
       div.main-ui__card-wrapper
         +order-room({totalValue, totalPrice})
