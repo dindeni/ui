@@ -14,9 +14,18 @@
     padding: 1.43rem 0 0 .21rem;
   }
 
-  &__popup_hide{
-    @include hide;
+  &__popup{
+    &_hide{
+      @include hide;
+    }
+    &_unfocused{
+      z-index: 1;
+    }
+    &_focused{
+      z-index: 100;
+    }
   }
+
 
   &__popup{
     width: 22.86rem;
@@ -56,6 +65,13 @@
     height: 2.14rem;
     margin-bottom: .29rem;
     outline: none;
+    &_nullified{
+      opacity: .38;
+    }
+    &_non-nullified{
+      opacity: 1;
+    }
+
   }
 
   &__number-of-visitors{

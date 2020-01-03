@@ -116,8 +116,12 @@ class SumGuests {
     number.forEach((value, index) => {
       const buttonMinusElement = buttonMinus;
       if (+value.textContent === 0) {
-        buttonMinusElement[index].style.opacity = '0.38';
-      } else buttonMinusElement[index].style.opacity = '1';
+        buttonMinusElement[index].classList.remove('sum-guests__button_non-nullified');
+        buttonMinusElement[index].classList.add('sum-guests__button_nullified');
+      } else {
+        buttonMinusElement[index].classList.remove('sum-guests__button_nullified');
+        buttonMinusElement[index].classList.add('sum-guests__button_non-nullified');
+      }
     });
   }
 
@@ -174,12 +178,14 @@ class SumGuests {
   }
 
   static _handleGuestsPopupFocusout(event) {
-    event.currentTarget.style.zIndex = 1;
+    event.currentTarget.classList.remove('sum-guests__popup_focused');
+    event.currentTarget.classList.add('sum-guests__popup_unfocused');
     event.currentTarget.classList.add('sum-guests__popup_hide');
   }
 
   static _handleGuestsPopupFocusIn(event) {
-    event.currentTarget.style.zIndex = 100;
+    event.currentTarget.classList.remove('sum-guests__popup_unfocused');
+    event.currentTarget.classList.add('sum-guests__popup_focused');
     event.currentTarget.classList.remove('sum-guests__popup_hide');
   }
 }

@@ -25,13 +25,15 @@ class SumRooms {
 
   static _handleRoomsPopupFocusout(element) {
     const roomsPopup = element;
-    roomsPopup.style.zIndex = 1;
+    roomsPopup.classList.remove('sum-rooms__popup_focused');
+    roomsPopup.classList.add('sum-rooms__popup_unfocused');
     roomsPopup.classList.add('sum-rooms__popup_hide');
   }
 
   static _handleRoomsPopupFocusin(element) {
     const roomsPopup = element;
-    roomsPopup.style.zIndex = 100;
+    roomsPopup.classList.remove('sum-rooms__popup_unfocused');
+    roomsPopup.classList.add('sum-rooms__popup_focused');
     roomsPopup.classList.remove('sum-rooms__popup_hide');
   }
 

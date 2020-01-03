@@ -15,6 +15,12 @@
     &_hide{
       @include hide;
     }
+    &_unfocused{
+      z-index: 1;
+    }
+    &_focused{
+      z-index: 100;
+    }
   }
   &__type-visitors{
     margin: .86rem 0 .71rem 1.07rem;
