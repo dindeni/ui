@@ -1,3 +1,5 @@
+import { DATE_SETTINGS, SHIFT_LEFT } from './constants';
+
 require('jquery-ui/ui/widgets/datepicker.js');
 
 class UiDatepicker {
@@ -38,16 +40,8 @@ class UiDatepicker {
     const $element = $(element);
 
     $element.datepicker({
-      showOtherMonths: true,
-      dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+      ...DATE_SETTINGS,
       dateFormat: 'dd.mm.yy',
-      monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль',
-        'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-      nextText: '',
-      firstDay: 1,
-      showButtonPanel: true,
-      closeText: 'очистить',
-      currentText: 'применить',
       onClose: (value, instance) => {
         if (value === '') {
           $element.datepicker('setDate', null);
@@ -58,7 +52,7 @@ class UiDatepicker {
       beforeShow: (text, instance) => {
         setTimeout(() => {
           instance.dpDiv.addClass('ui-datepicker_for-single-datepicker');
-          instance.dpDiv.css({ top: $element.offset().top + 44 });
+          instance.dpDiv.css({ top: $element.offset().top + SHIFT_LEFT });
 
           const $clearButton = $('.ui-datepicker-close');
           const $applyButton = $('.ui-datepicker-current');
@@ -72,17 +66,8 @@ class UiDatepicker {
 
   static _setRangeDatepickerSettings({ $inputElement, $inputElementHide }) {
     $inputElement.datepicker({
-      showOtherMonths: true,
-      dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-      dateFormat: 'dd M',
-      monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль',
-        'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+      ...DATE_SETTINGS,
       monthNamesShort: [' янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
-      nextText: '',
-      firstDay: 1,
-      showButtonPanel: true,
-      closeText: 'очистить',
-      currentText: 'применить',
       beforeShow: (text, instance) => {
         setTimeout(() => {
           if (parseInt($inputElement.css('width'), 10) < 270) {
@@ -90,7 +75,7 @@ class UiDatepicker {
           }
 
           instance.dpDiv.css({
-            top: $inputElement.offset().top + 44,
+            top: $inputElement.offset().top + SHIFT_LEFT,
             left: $inputElement.offset().left,
             width: $inputElement.outerWidth(),
           });
@@ -112,17 +97,9 @@ class UiDatepicker {
     });
 
     $inputElementHide.datepicker({
-      showOtherMonths: true,
-      dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+      ...DATE_SETTINGS,
       dateFormat: 'dd M',
-      monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль',
-        'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
       monthNamesShort: [' янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
-      nextText: '',
-      firstDay: 1,
-      showButtonPanel: true,
-      closeText: 'очистить',
-      currentText: 'применить',
       onClose: (value, instance) => {
         const isValidValue = parseInt(value, 10) > parseInt($inputElement.val(), 10);
         if (value === '' || !isValidValue) {
@@ -139,7 +116,7 @@ class UiDatepicker {
             instance.dpDiv.addClass('ui-datepicker_range');
           }
           instance.dpDiv.css({
-            top: $inputElement.offset().top + 44,
+            top: $inputElement.offset().top + SHIFT_LEFT,
             left: $inputElement.offset().left,
           });
 
@@ -182,16 +159,8 @@ class UiDatepicker {
     };
 
     $inputElementIn.datepicker({
-      showOtherMonths: true,
-      dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+      ...DATE_SETTINGS,
       dateFormat: 'dd.mm.yy',
-      monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль',
-        'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-      nextText: '',
-      firstDay: 1,
-      showButtonPanel: true,
-      closeText: 'очистить',
-      currentText: 'применить',
       onSelect: (date) => {
         if (date < dateOut || !dateOut) {
           dateArrive = date;
@@ -201,7 +170,7 @@ class UiDatepicker {
         getRange($inputElementIn);
         setTimeout(() => {
           instance.dpDiv.css({
-            top: $inputElementIn.offset().top + 44,
+            top: $inputElementIn.offset().top + SHIFT_LEFT,
             left: $inputElementIn.offset().left,
           });
 
@@ -228,16 +197,8 @@ class UiDatepicker {
     });
 
     $inputElementOut.datepicker({
-      showOtherMonths: true,
-      dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+      ...DATE_SETTINGS,
       dateFormat: 'dd.mm.yy',
-      monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль',
-        'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-      nextText: '',
-      firstDay: 1,
-      showButtonPanel: true,
-      closeText: 'очистить',
-      currentText: 'применить',
       onSelect: (date) => {
         if (date > dateArrive) {
           dateOut = date;
@@ -250,7 +211,7 @@ class UiDatepicker {
             instance.dpDiv.addClass(`ui-datepicker_${modifier}`);
           }
           instance.dpDiv.css({
-            top: instance.input.offset().top + 44,
+            top: instance.input.offset().top + SHIFT_LEFT,
             left: $inputElementIn.offset().left,
           });
           const $clearButton = $('.ui-datepicker-close');
