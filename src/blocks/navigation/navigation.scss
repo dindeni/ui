@@ -27,6 +27,9 @@
     &_logged{
       margin: .36rem 0 0 24.4%;
     }
+    &_hidden{
+      @include hide;
+    }
   }
 
   &__link{
@@ -132,8 +135,8 @@
     position: relative;
     justify-content: space-between;
     &__list{
-      display: none;
       z-index: 10;
+      display: block;
     }
     &__item{
       padding: .29rem .36rem;

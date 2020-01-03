@@ -21,7 +21,7 @@ class CardRoom {
         .map((input, index) => {
           if (event.target === input) {
             const inputElement = input;
-            inputElement.parentElement.style.background = '#FFFFFF';
+            inputElement.parentElement.classList.add('card-room__mark_filled');
             cardImages[index].classList.remove('card-room__image_hide');
             if (imageCount !== index) {
               cardImages[imageCount].classList.add('card-room__image_hide');
@@ -29,7 +29,7 @@ class CardRoom {
             imageCount = index;
           } else if (event.currentTarget === input.parentElement.parentElement) {
             const inputElement = input;
-            inputElement.parentElement.style.background = 'none';
+            inputElement.parentElement.classList.remove('card-room__mark_filled');
             cardImages[index].classList.add('card-room__image_hide');
           }
           return undefined;
@@ -54,11 +54,11 @@ class CardRoom {
           images[index].classList.add('card-room__image_hide');
           images[inputs.length - 1].classList.remove('card-room__image_hide');
           inputs[inputs.length - 1].checked = true;
-          inputElement.parentElement.style.background = 'none';
-          inputs[inputs.length - 1].parentElement.style.background = '#FFFFFF';
+          inputElement.parentElement.classList.remove('card-room__mark_filled');
+          inputs[inputs.length - 1].parentElement.classList.add('card-room__mark_filled');
         } else if (isInputChecked) {
-          inputElement.parentElement.style.background = 'none';
-          inputs[index - 1].parentElement.style.background = '#FFFFFF';
+          inputElement.parentElement.classList.remove('card-room__mark_filled');
+          inputs[index - 1].parentElement.classList.add('card-room__mark_filled');
           images[index].classList.add('card-room__image_hide');
           images[index - 1].classList.remove('card-room__image_hide');
           inputs[index - 1].checked = true;
@@ -79,16 +79,17 @@ class CardRoom {
           images[index].classList.add('card-room__image_hide');
           images[0].classList.remove('card-room__image_hide');
           inputs[0].checked = true;
-          inputs[index].parentElement.style.background = 'none';
-          inputs[0].parentElement.style.background = '#FFFFFF';
+          inputs[index].parentElement.classList.remove('card-room__mark_filled');
+          inputs[0].parentElement.classList.add('card-room__mark_filled');
         } else if (isInputChecked) {
           flag = true;
           images[index].classList.add('card-room__image_hide');
           images[index + 1].classList.remove('card-room__image_hide');
           inputs[index + 1].checked = true;
-          inputs[index].parentElement.style.background = 'none';
-          inputs[index + 1].parentElement.style.background = '#FFFFFF';
+          inputs[index].parentElement.classList.remove('card-room__mark_filled');
+          inputs[index + 1].parentElement.classList.add('card-room__mark_filled');
         }
+        return undefined;
       });
     }
   }

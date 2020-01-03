@@ -18,10 +18,10 @@ class Checkbox {
     const isHide = event.target === checkboxHead && checkboxWrapper.classList.contains('checkbox__wrapper_hide');
     if (isNotHide) {
       checkboxWrapper.classList.add('checkbox__wrapper_hide');
-      checkboxHead.style.setProperty('--rotate', 'rotate(0deg)');
+      checkboxHead.classList.remove('checkbox__head_turned');
     } else if (isHide) {
       checkboxWrapper.classList.remove('checkbox__wrapper_hide');
-      checkboxHead.style.setProperty('--rotate', 'rotate(180deg)');
+      checkboxHead.classList.add('checkbox__head_turned');
     }
   }
 }

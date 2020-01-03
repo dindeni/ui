@@ -10,9 +10,9 @@
   height: 18.43rem;
   display: inline-block;
   position: relative;
-  &__mark:first-child{
+  /*&__mark:first-child{
     background: #FFFFFF;
-  }
+  }*/
   &::after{
     position: absolute;
     content: '';
@@ -49,6 +49,9 @@
     margin: 0 .29rem 0 0;
     background: none;
     cursor: pointer;
+    &_filled{
+      background: #FFFFFF;
+    }
   }
 
   &__arrow{

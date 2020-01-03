@@ -18,7 +18,7 @@ mixin card-room(options)
       form(autocomplete='off').card-room__form.js-card-room__form
         each value, index in Array(4)
           if index === 0
-            label(class='card-room__mark')
+            label(class='card-room__mark card-room__mark_filled')
               input(type='radio' class='card-room__radio js-card-room__radio' name=`${radioName}` checked )
           else
             label(class='card-room__mark')

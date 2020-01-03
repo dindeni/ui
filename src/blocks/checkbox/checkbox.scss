@@ -75,6 +75,9 @@
       transform: var(--rotate);
       top: .21rem;
     }
+    &_turned{
+      --rotate: rotate(180deg);
+    }
     &_for-side-panel{
       margin: 2.29rem 0 1.29rem 0;
     }
