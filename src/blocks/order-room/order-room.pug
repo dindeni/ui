@@ -1,5 +1,6 @@
 include ../sum-guests/sum-guests
 include ../buttons/buttons
+include ../ui-datepicker/ui-datepicker
 
 mixin order-room(options)
 
@@ -21,13 +22,8 @@ mixin order-room(options)
 
     form.order-room__form
 
-      +form-element({type: 'date', placeholder: 'дд.мм.гггг',
-       modifierForInput: 'for-order-in', jsModifierForInput: 'for-order-in',
-       modifierForLabel: 'for-order'})
-
-      +form-element({type: 'date', placeholder: 'дд.мм.гггг',
-        modifierForInput: 'for-order-out', jsModifierForInput: 'for-order-out',
-        modifierForLabel: 'for-order'})
+      +ui-datepicker({ type: 'double', modifierForInput: 'for-order',
+       modifierForLabel: 'for-order' })
 
       +sum-guests({modifier: 'for-order', head: 'гости'})
 

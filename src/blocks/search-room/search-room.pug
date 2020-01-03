@@ -1,5 +1,5 @@
 include ../sum-guests/sum-guests
-include ../form-element/form-element
+include ../ui-datepicker/ui-datepicker
 
 mixin searchRoom(absolute)
 
@@ -13,14 +13,8 @@ mixin searchRoom(absolute)
         span.search-room__label выезд
 
       form.search-room__form
-
-        +form-element({type: 'date',  placeholder: 'дд.мм.гггг',
-         modifierForInput: 'for-search-in', modifierForLabel: 'for-search',
-         jsModifierForInput: 'for-search-in'})
-
-        +form-element({type: 'date', placeholder: 'дд.мм.гггг',
-         modifierForInput: 'for-search-out', modifierForLabel: 'for-search',
-          jsModifierForInput: 'for-search-out'})
+        +ui-datepicker({ type: 'double', modifierForInput: 'for-search',
+        modifierForLabel: 'for-search' })
 
         +sum-guests({head: 'гости'})
         +buttons({type:'buy', content: 'Подобрать номер', linkModifier: 'for-search'})

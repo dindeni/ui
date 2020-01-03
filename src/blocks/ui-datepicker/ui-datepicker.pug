@@ -18,4 +18,18 @@ mixin ui-datepicker(options)
       type: 'dropdown', placeholder: defaultDate,
       modifierForInput: 'for-hide-datepicker', jsModifierForInput: 'for-hide-datepicker',
       modifierForLabel: 'for-hide-datepicker' })
+  -} else if (type === 'double') {
+
+    +form-element({
+      type: 'date', placeholder: 'дд.мм.гггг',
+      modifierForInput: `${modifierForInput}-in`, modifierForLabel,
+      jsModifierForInput: `${modifierForInput}-in`
+    })
+
+    +form-element({
+      type: 'date', placeholder: 'дд.мм.гггг',
+      modifierForInput: `${modifierForInput}-out`, modifierForLabel: 'for-search',
+      jsModifierForInput: `${modifierForInput}-out`
+    })
+
   -}
