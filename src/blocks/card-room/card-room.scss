@@ -10,9 +10,6 @@
   height: 18.43rem;
   display: inline-block;
   position: relative;
-  /*&__mark:first-child{
-    background: #FFFFFF;
-  }*/
   &::after{
     position: absolute;
     content: '';
