@@ -37,7 +37,7 @@ class SumGuests {
         inputGuests,
       });
 
-      this._clearInput({
+      SumGuests._clearInput({
         event,
         buttonClear,
         inputGuests,
@@ -151,7 +151,7 @@ class SumGuests {
     return undefined;
   }
 
-  _clearInput(options) {
+  static _clearInput(options) {
     const {
       event, buttonClear, inputGuests, guestsPopup,
     } = options;
