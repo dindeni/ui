@@ -13,7 +13,7 @@ mixin footer-widget(options)
   `${modifier ? `footer-widget_${modifier}`:''}`])
     div.footer-widget__logo-wrapper
       img.footer-widget__logo(src=require('../img/icon-logo.svg') alt='image logo')
-      p.footer-widget__description #{description}
+      p.footer-widget__description=description
 
     +footer-list({head:headNavigation, items:navigationItems,
       modifier:'navigation'})
@@ -25,8 +25,8 @@ mixin footer-widget(options)
       modifier:'support'})
 
     div.footer-widget__subscribe-wrapper
-      h3.footer-widget__subscribe-head #{headSubscribe}
-      div.footer-widget__subscribe-description #{subscribeDescription}
+      h3.footer-widget__subscribe-head=headSubscribe
+      div.footer-widget__subscribe-description=subscribeDescription
 
       +form-element({type: 'subscription', placeholder: placeholderEmail,
         modifierForInput: 'for-footer-widget', modifierForLabel: 'for-footer-widget'})

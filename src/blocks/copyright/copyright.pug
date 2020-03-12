@@ -7,7 +7,7 @@ mixin copyright(options)
   div.copyright
     section(class=['copyright__wrapper',
      `${modifier ? `copyright__wrapper_${modifier}`:''}`])
-      em(class=['copyright__head', `${modifier ? `copyright__head_${modifier}` : ''}`]) #{text}
+      em(class=['copyright__head', `${modifier ? `copyright__head_${modifier}` : ''}`])=text
 
       if(socialModifier)
 

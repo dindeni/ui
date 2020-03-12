@@ -5,4 +5,4 @@ mixin bullet-list(options)
   div.bullet-list
     ul(class=['bullet-list__roster', `${modifier ? `bullet-list__roster_${modifier}`:''}`])
       each value in values
-        li.bullet-list__item #{value}
+        li.bullet-list__item=value

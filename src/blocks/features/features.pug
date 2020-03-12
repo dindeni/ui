@@ -11,5 +11,5 @@ mixin features(options)
       -const {slogan, description} = value
 
       div.features__wrapper
-        b(class=['features__slogan', `features__slogan_${sloganModifiers[index]}`]) #{slogan}
-        span.features__description #{description}
+        b(class=['features__slogan', `features__slogan_${sloganModifiers[index]}`])=slogan
+        span.features__description=description

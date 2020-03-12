@@ -8,7 +8,7 @@ mixin sum-guests(options)
   -const visitorsId = ['adult', 'children', 'babies'];
 
     div(class=['sum-guests',
-    `${modifier ? `sum-guests_${modifier}`:''}`]) #{head ? head:null}
+    `${modifier ? `sum-guests_${modifier}`:''}`])=head ? head:null
 
       +form-element({type: 'dropdown', placeholder: 'Сколько гостей',
         modifierForInput: modifierForInput ? modifierForInput: 'for-guests',
@@ -23,7 +23,7 @@ mixin sum-guests(options)
 
             div.sum-guests__container(class=`sum-guests__container_${visitorsId[index]} js-sum-guests__container_${visitorsId[index]}`)
 
-              span.sum-guests__type-visitors #{value}
+              span.sum-guests__type-visitors=value
 
               div.sum-guests__number-of-visitors-wrapper
                 button(type='button' class='sum-guests__button sum-guests__button_minus js-sum-guests__button_minus') -

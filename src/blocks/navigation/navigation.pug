@@ -15,7 +15,7 @@ mixin navigation(options)
            `${modifierForItems ? `navigation__item_${modifierForItems}`:''}`])
             a(href='somePage.html' class=['navigation__link',
             `${linkModifier[index] ?
-             `navigation__link_${linkModifier[index]}`:''}`]) #{item}
+             `navigation__link_${linkModifier[index]}`:''}`])=item
 
       div.navigation__buttons-wrapper
         +button({type:'bordering-link', content: `${loginName}`, link:'sign-in.html'})
@@ -32,9 +32,9 @@ mixin navigation(options)
           li.navigation__item.navigation__item_logged
             a(href='somePage.html' class=['navigation__link',
              `${linkModifier[index] ?
-               `navigation__link_${linkModifier[index]}` : ''}`]) #{item}
+               `navigation__link_${linkModifier[index]}` : ''}`])=item
 
-      em.navigation__user-name #{userName}
+      em.navigation__user-name=userName
 
       div.navigation__buttons-wrapper
         button.navigation__button-mobile.js-navigation__button-mobile

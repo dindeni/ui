@@ -13,7 +13,7 @@ mixin sum-rooms
       each value, index in rooms
 
         div.sum-rooms__container
-          span.sum-rooms__type-visitors #{value}
+          span.sum-rooms__type-visitors=value
 
           div.sum-rooms__number-of-visitors-wrapper
             button(type='button' class=['sum-rooms__button', 'sum-rooms__button_minus', 'js-sum-rooms__button_minus']) -

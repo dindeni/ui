@@ -32,14 +32,14 @@ mixin order-room(options)
 
         if index >= totalValue.length-2
           div.order-room__total-wrapper
-            span.order-room__total-description #{value}
+            span.order-room__total-description=value
             button.order-room__total-tax !
-            span.order-room__total-price #{totalPrice[index]}
+            span.order-room__total-price=totalPrice[index]
 
         else
           div.order-room__total-wrapper
-            span.order-room__total-description #{value}
-            span.order-room__total-price #{totalPrice[index]}
+            span.order-room__total-description=value
+            span.order-room__total-price=totalPrice[index]
 
     div.order-room__sum-wrapper
       span.order-room__sum-label Итого

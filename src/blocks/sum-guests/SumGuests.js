@@ -14,8 +14,8 @@ class SumGuests {
     const containerAdult = this.classGuests.querySelector('.js-sum-guests__container_adult');
     const containerChildren = this.classGuests.querySelector('.js-sum-guests__container_children');
     const containerBabies = this.classGuests.querySelector('.js-sum-guests__container_babies');
-    const buttonApply = this.classGuests.querySelector('.js-buttons__transparent_apply');
-    const buttonClear = this.classGuests.querySelector('.js-buttons__transparent_clear');
+    const buttonApply = this.classGuests.querySelector('.js-button__transparent_apply');
+    const buttonClear = this.classGuests.querySelector('.js-button__transparent_clear');
 
     guestsPopup.addEventListener('focusout', SumGuests._handleGuestsPopupFocusout);
 
@@ -36,7 +36,8 @@ class SumGuests {
         containerBabies,
         inputGuests,
       });
-      SumGuests._clearInput({
+
+      this._clearInput({
         event,
         buttonClear,
         inputGuests,
@@ -150,15 +151,15 @@ class SumGuests {
     return undefined;
   }
 
-  static _clearInput(options) {
+  _clearInput(options) {
     const {
       event, buttonClear, inputGuests, guestsPopup,
     } = options;
     const hasValue = +inputGuests.value !== 0 && inputGuests.value !== '' && inputGuests.value !== '0 гостей';
     if (hasValue) {
-      buttonClear.classList.remove('buttons__transparent_hide');
+      buttonClear.classList.remove('button__transparent_hide');
     } else {
-      buttonClear.classList.add('buttons__transparent_hide');
+      buttonClear.classList.add('button__transparent_hide');
     }
     if (event.target === buttonClear) {
       inputGuests.value = 0;

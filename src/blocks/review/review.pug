@@ -8,10 +8,10 @@ mixin review(options)
   section(class=['review',
   `${modifier ? `review_${modifier}`:''}`])
     img.review__icon(src=path alt='фото аватар')
-    h3.review__name #{head}
-    span.review__date #{date}
+    h3.review__name=head
+    span.review__date=date
 
     div.review__wrapper
       +button({type: typeOfButton, content: numberOfLikes})
       p(class=['review__description',
-       `${modifier ? `review__description_${modifier}` : ''}`]) #{description}
+       `${modifier ? `review__description_${modifier}` : ''}`])=description

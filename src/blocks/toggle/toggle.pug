@@ -5,4 +5,4 @@ mixin toggle(options)
   span(class=['toggle',
   `${modifier ? `toggle_${modifier}`:''}`])
       input.toggle__field(type='checkbox' id=`${id}` name='toggle')
-      label.toggle__label(for=`${id}` name='toggle') #{label}
+      label.toggle__label(for=`${id}` name='toggle')=label

@@ -10,13 +10,13 @@ mixin pagination(options)
         if i <= 2
           li.pagination__item
             a(class=['pagination__link', `${i === 0 ? `pagination__link_first-element` : ''}`]
-             href='somePage.html') #{i + 1}
+             href='somePage.html')=i + 1
         else if i === 3
           li.pagination__item.pagination__item_dots
             a.pagination__link(href='somePage.html') ...
         else if i === value
           li.pagination__item
-            a.pagination__link(href='somePage.html') #{i}
+            a.pagination__link(href='somePage.html')=i
           li.pagination__item.pagination__item_next
             a.pagination__link.pagination__link_next(href='somePage.html')
       -}

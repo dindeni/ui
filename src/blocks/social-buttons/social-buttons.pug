@@ -11,4 +11,4 @@ mixin social-buttons(options)
       each item, index in arrSocial
         li.social-buttons__item(class=`social-buttons__item_${item}`)
           a.social-buttons__link(href=`${arrSocialLink[index]}`)
-            span.social-buttons__link-text #{item}
+            span.social-buttons__link-text=item

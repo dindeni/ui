@@ -4,39 +4,39 @@ mixin button(options)
 
   if type === 'full'
     div(class=['button', `${modifier ? `button_${modifier}`:''}`])
-      button.button__full #{content}
+      button.button__full=content
 
   else if type === 'full-link'
     div(class=['button', `${modifier ? `button_${modifier}`:''}`])
       a(href=`${link}` class=['button__full',
-      `${linkModifier ? `button__full_${linkModifier}`:''}`]) #{content}
+      `${linkModifier ? `button__full_${linkModifier}`:''}`])=content
 
   else if type === 'transparent'
     div.button
       button.button__transparent(class=[`button__transparent_${modifier}`,
        `${jsModifier ? `js-button__transparent_${jsModifier}`:''}`,
-        `${hideModifier ? 'button__transparent_hide':''}`]) #{content}
+        `${hideModifier ? 'button__transparent_hide':''}`])=content
 
   else if type === 'bordering'
     div.button
-      button.button__bordering #{content}
+      button.button__bordering=content
 
   else if type === 'bordering-link'
     div(class=['button', `${modifier ? `button_${modifier}`:''}`])
       a(href=`${link}` class=['button__with-bordering-link',
-       `${linkModifier ? `button__with-bordering-link_${linkModifier}`:''}`]) #{content}
+       `${linkModifier ? `button__with-bordering-link_${linkModifier}`:''}`])=content
 
   else if type === 'buy'
     div(class=['button', `${modifier ? `button_${modifier}`:''}`])
       button(class=['button__full',
-        `${linkModifier ? `button__full_${linkModifier}`:''}`]) #{content}
+        `${linkModifier ? `button__full_${linkModifier}`:''}`])=content
 
   else if type === 'like'
     div(class=['button', 'button_for-rate', 'button_like',
       `${modifier ? `button_${modifier}` : ''}`])
-      button.button__bordering.button__bordering_for-rate #{content}
+      button.button__bordering.button__bordering_for-rate=content
 
   else if type === 'like-gray'
     div(class=['button', 'button_for-rate', 'button_gray',
     `${modifier ? `button_${modifier}`:''}`])
-      button.button__bordering.button__bordering_for-rate.button__bordering_gray #{content}
+      button.button__bordering.button__bordering_for-rate.button__bordering_gray=content

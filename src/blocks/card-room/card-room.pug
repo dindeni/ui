@@ -30,7 +30,7 @@ mixin card-room(options)
 
     div.card-room__number-room-wrapper
       span.card-room__number-mark №
-      span.card-room__number #{numberOfRoom}
+      span.card-room__number=numberOfRoom
 
       if type === 'luxe'
         span.card-room__type-room люкс
@@ -41,5 +41,5 @@ mixin card-room(options)
 
     +rate({numberFillStars: numberOfRate, modifier: 'for-card-room'})
 
-    div.card-room__number-review #{numberOfReviews}
+    div.card-room__number-review=numberOfReviews
       span.card-room__number-review-word Отзывов

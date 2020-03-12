@@ -8,4 +8,4 @@ mixin radio(options)
     each value, index in values
       input.radio__field(type='radio' name='radio' id=`${id[index]}`  checked=index===0 )
       label(for=`${id[index]}` class=['radio__mark',
-       `${modifier ? `radio__mark_${modifier}` : ''}`]) #{value}
+       `${modifier ? `radio__mark_${modifier}` : ''}`])=value
