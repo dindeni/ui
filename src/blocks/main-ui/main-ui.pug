@@ -1,5 +1,5 @@
 include ../search-room/search-room
-include ../buttons/buttons
+include ../button/button
 include ../form-element/form-element
 include ../checkbox/checkbox
 include ../radio/radio
@@ -108,8 +108,8 @@ mixin main-ui()
         })
 
         div.main-ui__buttons-wrapper
-          +buttons({type: 'like-gray', content: 2, modifier: 'for-ui'})
-          +buttons({type: 'like', content: 12, modifier: 'for-ui'})
+          +button({type: 'like-gray', content: 2, modifier: 'for-ui'})
+          +button({type: 'like', content: 12, modifier: 'for-ui'})
 
         div.main-ui__rate-wrapper
           +rate({numberFillStars: 4, modifier: 'for-ui'})
@@ -121,16 +121,16 @@ mixin main-ui()
           +ui-slider
 
         div.main-ui__buttons-wrapper
-          +buttons({type: 'full', content: 'click me'})
+          +button({type: 'full', content: 'click me'})
 
         div.main-ui__buttons-wrapper
-          +buttons({typeOfButtons: 'bordering', content: 'click me'})
+          +button({typeOfButtons: 'bordering', content: 'click me'})
 
         div.main-ui__buttons-wrapper
-          +buttons({type: 'transparent', content: 'click me'})
+          +button({type: 'transparent', content: 'click me'})
 
         div.main-ui__buttons-wrapper
-          +buttons({type: 'buy', content: 'перейти к оплате'})
+          +button({type: 'buy', content: 'перейти к оплате'})
         +pagination({value: 15, modifier: 'for-ui'})
 
       div.main-ui__form-wrapper

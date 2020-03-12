@@ -1,7 +1,7 @@
 include ../form-element/form-element
 include ../radio/radio
 include ../toggle/toggle
-include ../buttons/buttons
+include ../button/button
 include ../ui-datepicker/ui-datepicker
 
 -const arrRadioReg = ['Мужчина', 'Женщина'];
@@ -41,11 +41,11 @@ mixin registration(modifier)
       +toggle({label: 'Получать спецпредложения', id: 'registration-toggle',
         modifier:'for-registration'})
 
-      +buttons({type: 'buy', content: 'перейти к оплате', linkModifier: 'for-registration'})
+      +button({type: 'buy', content: 'перейти к оплате', linkModifier: 'for-registration'})
 
     div.registration__footer
       span.registration__footer-label Уже есть аккаунт на Toxin
-      +buttons({type: 'bordering-link', content: 'войти', link: 'registration-login', linkModifier: 'for-registration'})
+      +button({type: 'bordering-link', content: 'войти', link: 'registration-login', linkModifier: 'for-registration'})
 
 
 

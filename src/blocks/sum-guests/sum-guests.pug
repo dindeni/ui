@@ -1,4 +1,4 @@
-include ../buttons/buttons
+include ../button/button
 include ../form-element/form-element
 
 mixin sum-guests(options)
@@ -32,8 +32,8 @@ mixin sum-guests(options)
 
         div.sum-guests__buttons-footer-container.js-sum-guests__buttons-footer-container
 
-          +buttons({type: 'transparent', content: 'очистить',
+          +button({type: 'transparent', content: 'очистить',
            modifier: 'clear', hideModifier: 'hide', jsModifier:'clear'})
 
-          +buttons({type: 'transparent', content: 'применить',
+          +button({type: 'transparent', content: 'применить',
            modifier: 'apply', jsModifier: 'apply'})

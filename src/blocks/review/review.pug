@@ -1,4 +1,4 @@
-include ../buttons/buttons
+include ../button/button
 
 mixin review(options)
 
@@ -12,6 +12,6 @@ mixin review(options)
     span.review__date #{date}
 
     div.review__wrapper
-      +buttons({type: typeOfButton, content: numberOfLikes})
+      +button({type: typeOfButton, content: numberOfLikes})
       p(class=['review__description',
        `${modifier ? `review__description_${modifier}` : ''}`]) #{description}

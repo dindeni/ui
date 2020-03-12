@@ -1,5 +1,5 @@
 include ../sum-guests/sum-guests
-include ../buttons/buttons
+include ../button/button
 include ../ui-datepicker/ui-datepicker
 
 mixin order-room(options)
@@ -45,5 +45,5 @@ mixin order-room(options)
       span.order-room__sum-label Итого
       span.order-room__sum 38 081₽
 
-    +buttons({type: 'buy', content: 'забронировать', linkModifier: 'for-order'})
+    +button({type: 'buy', content: 'забронировать', linkModifier: 'for-order'})
 
