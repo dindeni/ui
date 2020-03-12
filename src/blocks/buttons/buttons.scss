@@ -31,7 +31,7 @@
         content: '';
         width: 3.14rem;
         height: 3.14rem;
-        background: url("../pagination/icon-arrow-forward.svg") no-repeat;
+        background: url("./images/icon-arrow-forward.svg") no-repeat;
         right: -1rem;
         top: .86rem;
       }
@@ -176,7 +176,7 @@
       content: '';
       width: .71rem;
       height: .57rem;
-      background: url("./icon-favorite.svg") no-repeat;
+      background: url("./images/icon-favorite.svg") no-repeat;
       left: .21rem;
       top: .36rem;
       z-index: 1;
@@ -216,7 +216,7 @@
   &__bordering_gray{
     color: $dark25;
     &::before{
-      background: url("./icon-favorite_border.svg") no-repeat;
+      background: url("./images/icon-favorite_border.svg") no-repeat;
     }
   }
 }

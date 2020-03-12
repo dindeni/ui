@@ -15,15 +15,15 @@
       content: '';
       width: 3.43rem;
       height: 3.43rem;
-      background: url("./icon-emoticon.svg") no-repeat;
+      background: url("./images/icon-emoticon.svg") no-repeat;
       left: .57rem;
       top: .14rem;
     }
     &_convenient::before{
-      background: url("./icon-location-city.svg") no-repeat;
+      background: url("./images/icon-location-city.svg") no-repeat;
     }
     &_cozy::before{
-      background: url("./icon-whatshot.svg") no-repeat;
+      background: url("./images/icon-whatshot.svg") no-repeat;
     }
   }
 
