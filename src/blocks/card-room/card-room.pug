@@ -10,7 +10,7 @@ mixin card-room(options)
       div.card-room__image-wrapper
         each value, index in images
           if index > 0
-            img(src=`${value}` class=`card-room__image js-card-room__image card-room__image_hide` alt='room image')
+            img(src=`${value}` class=`card-room__image js-card-room__image card-room__image_hidden` alt='room image')
           else
             img(src=`${value}` class=`card-room__image js-card-room__image` alt='room image')
 
@@ -24,8 +24,8 @@ mixin card-room(options)
               input(type='radio' class='card-room__radio js-card-room__radio' name=`${radioName}`)
 
       div.card-room__arrows-wrapper
-        button.card-room__arrow.card-room__arrow_prev.js-card-room__arrow_prev
-        button.card-room__arrow.card-room__arrow_next.js-card-room__arrow_next
+        button.card-room__arrow.card-room__arrow_type_prev.js-card-room__arrow_type_prev
+        button.card-room__arrow.card-room__arrow_type_next.js-card-room__arrow_type_next
 
     div.card-room__number-room-wrapper
       span.card-room__number-mark №

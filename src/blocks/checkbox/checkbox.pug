@@ -22,6 +22,6 @@ mixin checkbox(options)
     else if type === 'rich'
       each value, index in values
         input.checkbox__field(type='checkbox' id=`field-checkbox-rich-${index}`)
-        label(for=`field-checkbox-rich-${index}` class = ['checkbox__mark', 'checkbox__mark_rich',
+        label(for=`field-checkbox-rich-${index}` class = ['checkbox__mark', 'checkbox__mark_type_rich',
         `${modifier ? `checkbox__mark_${modifier}` : ''}`])=value.label
           span(class=['checkbox__description', `${modifier ? `checkbox__description_${modifier}` : ''}`])=value.description

@@ -23,7 +23,7 @@
       left: -.71rem;
       top: 0;
     }
-    &_rich{
+    &_type_rich{
       font-weight: bold;
       margin: 0 0 .57rem .86rem;
       &:first-child{
@@ -31,11 +31,6 @@
       }
       &:last-child{
         width: 16.43rem;
-      }
-      &.checkbox__mark_for-side-panel{
-        &::before{
-          top: -.18rem;
-        }
       }
     }
     &_for-side-panel{
@@ -100,9 +95,6 @@
       left: -.36rem;
       top: .29rem;
     }
-   &_rich::after{
-     top: .12rem;
-   }
   }
 }
 

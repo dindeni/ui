@@ -1,22 +1,26 @@
 @import "../../style/mixins/text";
 @import "../../style/variables/variables";
 
-.bullet-list{
+.bullet-list {
   @include body;
-  &__roster{
+
+  &__roster {
     margin: 0;
     padding: 0;
     list-style: none;
   }
-  &_for-room-description{
+
+  &_for-room-description {
     margin: 1.64rem 0 0 0.21rem;
     width: 18.57rem;
   }
-  &__item{
+
+  &__item {
     padding-left: 1.43rem;
     position: relative;
     margin: 0 0 0.71rem 0;
-    &::before{
+
+    &::before {
       position: absolute;
       content: '';
       width: 0.71rem;

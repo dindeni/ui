@@ -3,14 +3,15 @@
 @import "../../style/variables/variables";
 @import "../../style/mixins/text";
 
-.card-room{
+.card-room {
   @include rectangle;
   padding: 0;
   width: 19.29rem;
   height: 18.43rem;
   display: inline-block;
   position: relative;
-  &::after{
+
+  &::after {
     position: absolute;
     content: '';
     width: 16.43rem;
@@ -20,19 +21,23 @@
     bottom: 3.5rem;
     left: 1.43rem;
   }
-  &__image_hide{
+
+  &__image_hidden {
     @include hide;
   }
-  &__radio{
+
+  &__radio {
     @include hide;
   }
-  &__form{
+
+  &__form {
     position: absolute;
     width: 3.57rem;
     top: 8.93rem;
     left: 15.21rem;
   }
-  &__mark{
+
+  &__mark {
     width: .54rem;
     height: .54rem;
     border: .07rem solid #FFFFFF;
@@ -43,23 +48,26 @@
     margin: 0 .29rem 0 0;
     background: none;
     cursor: pointer;
+
     &_filled{
       background: #FFFFFF;
     }
   }
 
-  &__arrow{
+  &__arrow {
     width: .57rem;
     height: .93rem;
     background: url("./images/icon-expand-white.svg") no-repeat;
     border: none;
     cursor: pointer;
     outline: none;
-      &_next{
+
+      &_type_next {
         transform: rotate(180deg);
         margin-right: 1.29rem;
       }
-      &_prev{
+
+      &_type_prev {
         margin-left: 1.29rem;
       }
   }
