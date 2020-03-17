@@ -1,9 +1,10 @@
 @import "../../style/variables/variables";
 @import "../../style/mixins/hide";
 
-.sum-rooms{
+.sum-rooms {
   font-weight: bold;
-  &__popup{
+
+  &__popup {
     width: 19rem;
     border: .07rem solid $dark50;
     box-sizing: border-box;
@@ -12,24 +13,30 @@
     background: #FFFFFF;
     position: absolute;
     z-index: 100;
-    &_hide{
+
+    &_hide {
       @include hide;
     }
-    &_unfocused{
+
+    &_unfocused {
       z-index: 1;
     }
-    &_focused{
+
+    &_focused {
       z-index: 100;
     }
   }
-  &__type-visitors{
+
+  &__type-visitors {
     margin: .86rem 0 .71rem 1.07rem;
   }
-  &__container{
+
+  &__container {
     display: flex;
     justify-content: space-between;
   }
-  &__button{
+
+  &__button {
     border: .07rem solid $dark25;
     box-sizing: border-box;
     border-radius: 1.57rem;
@@ -40,11 +47,13 @@
     margin-bottom: .29rem;
     outline: none;
   }
-  &__number-of-visitors{
+
+  &__number-of-visitors {
     color: #1F2041;
     margin: 0 .86rem;
   }
-  &__number-of-visitors-wrapper{
+
+  &__number-of-visitors-wrapper {
     margin: .29rem .43rem 0 0;
   }
 }

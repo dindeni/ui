@@ -1,16 +1,18 @@
 @import "../../style/mixins/text";
 
-.pie-chart{
+.pie-chart {
   display: flex;
-  &__list{
+
+  &__list {
     list-style: none;
     margin: 2.43rem 0 0 .36rem;
   }
 
-  &__item{
+  &__item {
     @include body;
     position: relative;
-    &::before{
+
+    &::before {
       position: absolute;
       content: '';
       width: .71rem;
@@ -20,28 +22,32 @@
       left: -1.07rem;
       top: .36rem;
     }
-    &:nth-child(2)::before{
+
+    &:nth-child(2)::before {
       background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     }
-    &:nth-child(3)::before{
+
+    &:nth-child(3)::before {
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     }
-    &:nth-child(4)::before{
+
+    &:nth-child(4)::before {
       background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
     }
   }
 
-  &__outer{
+  &__outer {
     position: absolute;
     top: 2.14rem;
   }
 }
 
 @media (max-width: 450px) {
-  .pie-chart{
+  .pie-chart {
     &__item{
       font-size: 0.93rem;
     }
+
     &__outer {
       top: 2.14rem;
     }

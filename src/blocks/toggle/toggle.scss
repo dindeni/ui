@@ -2,16 +2,17 @@
 @import "../../style/mixins/hide";
 @import "../../style/variables/variables";
 
-.toggle{
+.toggle {
   &__field{
     @include hide;
   }
 
-  &__label{
+  &__label {
     @include body;
     padding: .07rem 0 0 3.21rem;
     position: relative;
-    &::before{
+
+    &::before {
       position: absolute;
       content: '';
       width: 2.86rem;
@@ -22,7 +23,8 @@
       left: -.36rem;
       top: -.14rem;
     }
-    &::after{
+
+    &::after {
       position: absolute;
       content: '';
       width: .86rem;
@@ -35,11 +37,12 @@
   }
 }
 
-.toggle__field:checked + .toggle__label{
-  &::before{
+.toggle__field:checked + .toggle__label {
+  &::before {
     border: .07rem solid $purple;
   }
-  &::after{
+
+  &::after {
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     left: 1.36rem;
   }

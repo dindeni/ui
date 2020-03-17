@@ -1,30 +1,33 @@
-.main-ui{
-  &__form, &__cards{
+.main-ui {
+  &__form, &__cards {
     display: flex;
     flex-wrap: wrap;
   }
+
   &__range-wrapper,
-  &__checkbox-wrapper{
+  &__checkbox-wrapper {
     margin: 0 0 1.43rem 0;
   }
-  &__buttons-wrapper{
+
+  &__buttons-wrapper {
     margin: 0 0 1.43rem 0;
     display: flex;
     width: 100%;
   }
 
-  &__form-wrapper{
+  &__form-wrapper {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     margin: .71rem 0 1.43rem 3.57rem;
     width: 22.86rem;
-    &_review{
+
+    &_review {
       width: 55.71rem;
     }
   }
 
-  &__rates-wrapper{
+  &__rates-wrapper {
     width: 100%;
   }
 
@@ -33,7 +36,7 @@
     margin: 0 1.43rem 0 .29rem;
   }
 
-  &__card-wrapper{
+  &__card-wrapper {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -41,22 +44,23 @@
     width: 400px;
   }
 
-  &__headers-footers{
+  &__headers-footers {
     margin-top: 1.43rem;
   }
-  &__registration-wrapper{
+
+  &__registration-wrapper {
     margin-top: .71rem;
   }
 
-  &__button-rate-wrapper{
+  &__button-rate-wrapper {
     margin: 0 1.71rem 0 .29rem;
   }
 
-  &__radio-wrapper{
+  &__radio-wrapper {
     padding-left: .71rem;
   }
 
-  &__toggle-wrapper{
+  &__toggle-wrapper {
     padding: .71rem 0 .71rem .43rem;
   }
 }

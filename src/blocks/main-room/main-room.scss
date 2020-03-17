@@ -1,9 +1,10 @@
 @import "../../style/mixins/text";
 @import "../../style/variables/variables";
 
-.main-room{
+.main-room {
   position: relative;
-  &::after{
+
+  &::after {
     position: absolute;
     content: '';
     width: 100%;
@@ -12,25 +13,28 @@
     box-shadow: 0 .07rem 0 rgba(31, 32, 65, 0.1);
     bottom: 4px;
   }
-  &__image-wrapper{
+
+  &__image-wrapper {
     display: flex;
   }
-  &__image_for-first-image{
+
+  &__image_for-first-image {
     flex-basis: 68.1%;
     width: 68.1%;
   }
 
-  &__images-aside{
+  &__images-aside {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     flex-basis: 31.9%;
-    & .main-room__image{
+
+    & .main-room__image {
       width: 100%;
     }
   }
 
-  &__description-wrapper{
+  &__description-wrapper {
     padding: 5rem 0 4.57rem 9.5%;
   }
 }
@@ -54,15 +58,16 @@
 }
 
 @media (max-width: 450px) {
-  .main-room{
-    &__image-wrapper{
+  .main-room {
+    &__image-wrapper {
       flex-wrap: wrap;
     }
 
-    &__images-aside{
+    &__images-aside {
       flex-basis: 100%;
     }
-    &__image_for-first-image{
+
+    &__image_for-first-image {
       flex-basis: 100%;
     }
   }

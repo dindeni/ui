@@ -1,41 +1,46 @@
 @import "../../style/mixins/text";
 @import "../../style/variables/variables";
 
-.review{
+.review {
   @include body;
   position: relative;
 
-  &__icon{
+  &__icon {
     box-shadow: 0 .71rem 1.43rem rgba(31, 32, 65, 0.1);
     border: .14rem solid #FFFFFF;
     border-radius: 50%;
   }
-  &__name{
+
+  &__name {
     font-weight: bold;
     margin: .29rem 0 0 .43rem;
     display: inline-block;
     vertical-align: top;
   }
-  &__date{
+
+  &__date {
     position: absolute;
     top: 2rem;
     left: 4.29rem;
   }
-  &__wrapper{
+
+  &__wrapper {
     display: flex;
     margin: 0 0 1.36rem .43rem;
   }
-  &__description{
+
+  &__description {
     margin: .07rem 0 0 .9rem;
     width: 46.79rem;
-    &_for-room-description{
+
+    &_for-room-description {
       max-width: calc(100% - 8.9rem);
     }
   }
 }
 
 @media (max-width: 800px) {
-  .review__description{
+  .review__description {
     font-size: 0.8rem;
     width: 80%;
   }

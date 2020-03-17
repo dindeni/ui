@@ -2,8 +2,8 @@
 @import "../../style/variables/variables";
 @import "../../style/mixins/text";
 
-.checkbox{
-  &__mark{
+.checkbox {
+  &__mark {
     padding: .21rem 0 0 1.43rem;
     display: block;
     @include body;
@@ -12,7 +12,8 @@
     text-transform: unset;
     width: 15rem;
     line-height: 1.29rem;
-    &::before{
+
+    &::before {
       position: absolute;
       content: '';
       width: 1.43rem;
@@ -23,44 +24,51 @@
       left: -.71rem;
       top: 0;
     }
-    &_type_rich{
+
+    &_type_rich {
       font-weight: bold;
       margin: 0 0 .57rem .86rem;
-      &:first-child{
+
+      &:first-child {
         width: 14.29rem;
       }
-      &:last-child{
+
+      &:last-child {
         width: 16.43rem;
       }
     }
-    &_for-side-panel{
+
+    &_for-side-panel {
       margin: 0 0 .71rem .71rem;
     }
   }
 
-  &__description{
+  &__description {
     font-size: .86rem;
     font-weight: normal;
     display: block;
     margin: .5rem 0 0 0;
     line-height: .93rem;
     color: $dark50;
-    &_for-side-panel{
+
+    &_for-side-panel {
       margin: .36rem 0 0 0;
     }
   }
 
-  &__field{
+  &__field {
     @include hide;
   }
-  &__head{
+
+  &__head {
     position: relative;
     @include h3;
     color: $dark100;
     margin: 0 0 1.29rem .14rem;
     width: 17.86rem;
     --rotate: rotate(0deg);
-    &::after{
+
+    &::after {
       position: absolute;
       content: '';
       width: .86rem;
@@ -70,23 +78,28 @@
       transform: var(--rotate);
       top: .21rem;
     }
-    &_turned{
+
+    &_turned {
       --rotate: rotate(180deg);
     }
-    &_for-side-panel{
+
+    &_for-side-panel {
       margin: 2.29rem 0 1.29rem 0;
     }
   }
-  &__wrapper_hidden{
+
+  &__wrapper_hidden {
     @include hide;
   }
 
-  &__field:checked + .checkbox__mark{
+  &__field:checked + .checkbox__mark {
     position: relative;
-    &::before{
+
+    &::before {
       border: .07rem solid $purple;
     }
-    &::after{
+
+    &::after {
       position: absolute;
       content: '';
       width: .71rem;

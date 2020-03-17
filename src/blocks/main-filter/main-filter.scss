@@ -1,11 +1,12 @@
 @import "../../style/mixins/text";
 @import "../../style/variables/variables";
 
-.main-filter{
+.main-filter {
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  &::after{
+
+  &::after {
     position: absolute;
     content: '';
     width: 100%;
@@ -13,36 +14,40 @@
     box-shadow: 0 .07rem 0 rgba(31, 32, 65, 0.1);
     bottom: .29rem;
   }
-  &__rooms{
+
+  &__rooms {
     width: 60%;
     margin: 0 0 5.29rem 1.79rem;
   }
-  &__rooms-head{
+
+  &__rooms-head {
     @include h1;
     margin: 2.86rem 0 1.79rem 0;
   }
-  &__card-wrapper{
+
+  &__card-wrapper {
     display: inline-block;
     margin: 0 .86rem 1.43rem 0;
   }
 
-  &__panel-wrapper{
+  &__panel-wrapper {
     padding: 2.21rem 0 0 9.8%;
   }
 }
 
 @media (max-width: 1100px) {
-  .main-filter{
-    &__rooms{
+  .main-filter {
+    &__rooms {
       width: calc(100vw - 6% - 21.43rem);
       margin: 0 auto 5rem auto;
     }
-    &__rooms-head{
+
+    &__rooms-head {
       font-size: 1.29rem;
       line-height: 1.43rem;
     }
 
-    &__panel-wrapper{
+    &__panel-wrapper {
       padding: 2.21rem 0 0 4.8%;
     }
   }
@@ -50,12 +55,12 @@
 
 @media (max-width: 750px) {
   .main-filter {
-    &__rooms{
+    &__rooms {
       width: 21.43rem;
       margin: 0 auto 5rem auto;
     }
 
-    &__panel-wrapper{
+    &__panel-wrapper {
       padding: 2.21rem 0 0 0;
       display: flex;
       flex-direction: column;
@@ -63,5 +68,4 @@
       width: 100%
     }
   }
-
 }

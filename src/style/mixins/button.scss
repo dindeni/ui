@@ -1,4 +1,4 @@
-@mixin button-inner($color, $background){
+@mixin button-inner($color, $background) {
   font-size: 0.86rem;
   font-weight: normal;
   padding: 0 0 0 .57rem;
@@ -11,7 +11,8 @@
   color: $color;
   text-transform: uppercase;
   font-family: Montserrat, sans-serif;
-  &::before, &:hover::before{
+
+  &::before, &:hover::before {
     position: absolute;
     content: '';
     width: .71rem;
@@ -23,7 +24,7 @@
   }
 }
 
-@mixin button-border($background-color){
+@mixin button-border($background-color) {
   position: relative;
   padding: .07rem;
   border-radius: .71rem;
@@ -31,7 +32,8 @@
   width: 2.86rem;
   height: 1.43rem;
   box-sizing: border-box;
-  &::before{
+
+  &::before {
     position: absolute;
     content: '';
     width: 3rem;
@@ -44,7 +46,7 @@
   }
 }
 
-@mixin button($background, $color){
+@mixin button($background, $color) {
   background: $background;
   border-radius: 1.57rem;
   border: none;

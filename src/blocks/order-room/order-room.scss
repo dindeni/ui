@@ -2,77 +2,92 @@
 @import "../../style/mixins/text";
 @import "../../style/variables/variables";
 
-.order-room{
+.order-room {
   @include rectangle;
   height: 36.5rem;
   padding-left: 1.93rem;
-  &__header{
+
+  &__header {
     display: flex;
     margin: 3.29rem 0 0 .36rem;
   }
-  &__number{
+
+  &__number {
     @include h2;
     font-size: 1.71rem;
     margin: 0 .71rem 0 .21rem;
   }
-  &__number-mark{
+
+  &__number-mark {
     @include h2;
     font-size: 1rem;
   }
-  &__type-room{
+
+  &__type-room {
     @include body;
     color: $purple;
     font-weight: bold;
     margin: 0 8.14rem 0 0;
   }
-  &__price-wrapper{
+
+  &__price-wrapper {
     @include body;
     color: $dark50;
     margin: .57rem 0 0 0;
   }
-  &__price{
+
+  &__price {
     @include body;
     color: $dark50;
     font-weight: bold;
   }
-  &__periodicity{
+
+  &__periodicity {
     @include body;
     font-size: 0.86rem;
     color: $dark50;
     margin: .14rem 0 0 .43rem;
     display: inline-block;
   }
+
   &__label-wrapper {
     margin: 1.29rem 0 0 .21rem;
   }
-  &__label{
+
+  &__label {
     @include h3;
     color: $dark100;
     margin-bottom: .14rem;
     display: inline-block;
-    &:first-child{
+
+    &:first-child {
       margin-right: 6.86rem;
     }
   }
-  &__form{
+
+  &__form {
     margin: .29rem 0 0 0;
   }
-  &__total{
+
+  &__total {
     @include body;
     line-height: 1.29rem;
     margin: 1.64rem 0 0 .36rem;
   }
-  &__total-wrapper{
+
+  &__total-wrapper {
     display: flex;
     justify-content: space-between;
     width: 91%;
     margin: 0 0 1.14rem 0;
     position: relative;
   }
-  &__total-description{
+
+  &__total-description {
     width: 15.71rem;
   }
-  &__total-tax{
+
+  &__total-tax {
     background: none;
     border: .07rem solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
@@ -84,13 +99,15 @@
     top: -.29rem;
     padding: 0;
   }
-  &__sum-wrapper{
+
+  &__sum-wrapper {
     @include h2;
     display: flex;
     justify-content: space-between;
     margin: 2.5rem 0 0 .36rem;
     position: relative;
-    &::after{
+
+    &::after {
       position: absolute;
       content: '';
       width: 13rem;
@@ -102,14 +119,15 @@
     }
   }
 
-  &__sum{
+  &__sum {
     margin-right: 1.86rem;
   }
-  &__button-wrapper{
+
+  &__button-wrapper {
     margin-top: 1.7rem;
   }
 
-  &__sum-guests-wrapper{
+  &__sum-guests-wrapper {
     padding: 1.43rem 0 0 .21rem;
   }
 }
@@ -118,29 +136,37 @@
   .order-room {
     width: 320px;
     padding-left: 1.07rem;
+
     &__number {
       font-size: 1.29rem;
     }
+
     &__type-room {
       font-size: 0.86rem;
       margin: 0 5rem 0 0;
     }
+
     &__price {
       font-size: 0.93rem;
     }
-    &__label:first-child{
+
+    &__label:first-child {
       margin-right: 4.71rem;
     }
+
     &__total-description {
       font-size: 0.93rem;
       width: 14.29rem;
     }
+
     &__total-tax {
       right: 2.86rem;
     }
-    &__sum-wrapper{
+
+    &__sum-wrapper {
       font-size: 1.29rem;
-      &::after{
+
+      &::after {
         width: 8.93rem;
       }
     }

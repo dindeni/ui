@@ -1,14 +1,15 @@
 @import "../../style/mixins/text";
 
-.footer{
+.footer {
   flex-direction: column;
   display: flex;
   align-items: center;
-  &__logo{
+
+  &__logo {
     margin: 7.14rem 0 0 1.43rem;
   }
 
-  &__description{
+  &__description {
     @include body;
     width: 40rem;
     margin: 1.29rem 0 2rem 1.57rem;

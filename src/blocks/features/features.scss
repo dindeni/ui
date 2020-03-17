@@ -1,16 +1,19 @@
 @import "../../style/mixins/text";
 
-.features{
+.features {
   @include body;
-  &__wrapper{
+
+  &__wrapper {
     margin-bottom: 2.9rem;
   }
-  &__slogan{
+
+  &__slogan {
     font-weight: bold;
     display: block;
     padding: 0 0 0 4.43rem;
     position: relative;
-    &::before{
+
+    &::before {
       position: absolute;
       content: '';
       width: 3.43rem;
@@ -19,15 +22,17 @@
       left: .57rem;
       top: .14rem;
     }
-    &_type_convenient::before{
+
+    &_type_convenient::before {
       background: url("./images/icon-location-city.svg") no-repeat;
     }
-    &_type_cozy::before{
+
+    &_type_cozy::before {
       background: url("./images/icon-whatshot.svg") no-repeat;
     }
   }
 
-  &__description{
+  &__description {
     margin: 0 0 0 4.43rem;
   }
 }

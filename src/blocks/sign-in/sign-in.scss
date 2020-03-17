@@ -1,38 +1,42 @@
 @import "../../style/mixins/text";
 @import "../../style/mixins/rectangle";
 
-.sign-in{
+.sign-in {
   @include rectangle;
   height: 25.57rem;
   position: relative;
   z-index: 1;
 
-  &__head{
+  &__head {
     @include h1;
     margin: 3.5rem 0 1.43rem 0;
   }
 
-  &__label{
+  &__label {
     @include body;
     display: inline-block;
     margin: 3.5rem 0 0 0;
   }
-  &__link-wrapper{
+
+  &__link-wrapper {
     margin: 0 0 0 4.29rem;
   }
-  &__link-enter-wrapper{
+
+  &__link-enter-wrapper {
     margin-top: 2.1rem;
     display: inline-block;
   }
 }
 
 @media (max-width: 450px) {
-  .sign-in{
+  .sign-in {
     width: 21.43rem;
     padding-left: 1.43rem;
-    &__label{
+
+    &__label {
       font-size: 0.86rem;
     }
+
     &__link-wrapper {
       margin: 0 0 0 .7rem;
     }

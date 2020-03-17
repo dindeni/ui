@@ -1,24 +1,24 @@
 @import "../../style/variables/variables";
 @import "../../style/mixins/text";
 
-.footer-list{
-  &__head{
+.footer-list {
+  &__head {
     @include h3;
     color: $dark100;
   }
 
-  &__items{
+  &__items {
     list-style: none;
     padding: 0;
     margin: 1.36rem 0 0 0;
   }
 
-  &__link{
+  &__link {
     text-decoration: none;
     @include body;
   }
 
-  &__item{
+  &__item {
     margin: 0 0 1rem 0;
   }
 }

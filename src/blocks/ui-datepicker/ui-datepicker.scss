@@ -1,49 +1,54 @@
 @import "../../style/mixins/text";
 @import "../../style/variables/variables";
 
-.ui-datepicker{
+.ui-datepicker {
   width: 22.71rem;
   padding-top: .36rem;
   border: .07rem solid rgba(31, 32, 65, 0.25);
   border-radius: .29rem;
   background: #FFFFFF;
 
-  &_type_range{
+  &_type_range {
     width: 18.86rem;
     padding-bottom: 1.79rem;
-    & .ui-datepicker{
-      &-title{
+
+    & .ui-datepicker {
+      &-title {
         font-size: 1.14rem;
       }
-      &-next::before{
+
+      &-next::before {
         left: 12.86rem;
         top: 1.57rem;
       }
+
       &-calendar {
         font-size: 0.71rem;
         margin: 2.79rem 0 0 .36rem;
 
-        & td .ui-state-default{
+        & td .ui-state-default {
           margin: 0 1.14rem 1.79rem 0;
         }
 
-        & .ui-datepicker-today .ui-state-default::after{
+        & .ui-datepicker-today .ui-state-default::after {
           width: 2.21rem;
           height: 2.21rem;
           left: -.36rem;
           top: -.64rem;
         }
       }
+
       &-buttonpane {
         bottom: 2%;
-        & .ui-datepicker-close{
+
+        & .ui-datepicker-close {
           margin-right: 2.86rem;
         }
       }
     }
   }
 
-  &-title{
+  &-title {
     text-transform: capitalize;
     font-weight: bold;
     font-family: Quickand-regular, sans-serif;
@@ -53,10 +58,11 @@
     letter-spacing: -.07rem;
   }
 
-  &-prev{
+  &-prev {
     position: relative;
     cursor: pointer;
-    &::before{
+
+    &::before {
       position: absolute;
       content: '';
       width: 1.71rem;
@@ -68,10 +74,11 @@
     }
   }
 
-  &-next{
+  &-next {
     position: relative;
     cursor: pointer;
-    &::before{
+
+    &::before {
       position: absolute;
       content: '';
       width: 1.71rem;
@@ -79,25 +86,28 @@
       background: url("images/icon-arrow.svg") no-repeat;
       left: 17.71rem;
       top: 1.57rem;
-
     }
   }
 
-  &-calendar{
+  &-calendar {
     margin: 3.29rem 0 2.64rem 2rem;
     font-size: 0.86rem;
-    & thead{
+
+    & thead {
       color: #BC9CFF;
       width: 100%;
     }
-    & tr{
+
+    & tr {
       display: flex;
     }
-    & th{
+
+    & th {
       margin: 0 1.57rem 1.43rem 0;
       display: inline-block;
     }
-    & td .ui-state-default{
+
+    & td .ui-state-default {
       color: rgba(31, 32, 65, 0.5);
       text-decoration: none;
       width: 1.43rem;
@@ -107,10 +117,11 @@
     }
   }
 
-  &-calendar &-today .ui-state-default{
+  &-calendar &-today .ui-state-default {
     color: #FFFFFF;
     font-weight: bold;
     position: relative;
+
     &::after{
       position: absolute;
       content: '';
@@ -124,27 +135,29 @@
     }
   }
 
-  &-calendar &-other-month .ui-state-default{
+  &-calendar &-other-month .ui-state-default {
     color: rgba(31, 32, 65, 0.25);
   }
 
-  &-buttonpane{
+  &-buttonpane {
     display: flex;
     justify-content: space-between;
     margin: .57rem 0 0 1.07rem;
     position: absolute;
     bottom: 5%;
     width: 100%;
-    & .ui-datepicker-current{
+
+    & .ui-datepicker-current {
       color: $purple;
       order: 10;
     }
-    & .ui-datepicker-current{
+
+    & .ui-datepicker-current {
       margin-right: 2.14rem;
     }
   }
 
-  &-close, &-current{
+  &-close, &-current {
     order: -10;
     background: none;
     border: none;
@@ -153,13 +166,15 @@
   }
 
   &-calendar &-calendar__min:not(.ui-state-disabled),
-  &-calendar &-calendar__max:not(.ui-state-disabled){
+  &-calendar &-calendar__max:not(.ui-state-disabled) {
     position: relative;
-    & > a{
+
+    & > a {
       color: #FFFFFF;
       font-weight: bold;
     }
-    &::after{
+
+    &::after {
       position: absolute;
       content: '';
       width: 2.86rem;
@@ -172,7 +187,7 @@
     }
   }
 
-  &-calendar &-calendar__min:not(.ui-state-disabled)::before{
+  &-calendar &-calendar__min:not(.ui-state-disabled)::before {
     position: absolute;
     content: '';
     width: 1.43rem;
@@ -185,7 +200,7 @@
     z-index: -10;
   }
 
-  &-calendar &-calendar__max:not(.ui-state-disabled)::before{
+  &-calendar &-calendar__max:not(.ui-state-disabled)::before {
     position: absolute;
     content: '';
     width: 1.43rem;
@@ -198,11 +213,12 @@
     z-index: -10;
   }
 
-  &-calendar &-calendar__range:not(.ui-state-disabled){
+  &-calendar &-calendar__range:not(.ui-state-disabled) {
     position: relative;
     margin: 0;
     width: 2.71rem;
-    &::after{
+
+    &::after {
       position: absolute;
       content: '';
       width: 2.86rem;
@@ -216,63 +232,71 @@
   }
 }
 
-.ui-icon.ui-icon-circle-triangle-e,.ui-icon.ui-icon-circle-triangle-w{
+.ui-icon.ui-icon-circle-triangle-e,.ui-icon.ui-icon-circle-triangle-w {
   opacity: 0;
 }
 
 @media (max-width: 1100px) {
-  .ui-datepicker:not(.ui-datepicker_for-single-datepicker){
+  .ui-datepicker:not(.ui-datepicker_for-single-datepicker) {
     width: 18.43rem;
     padding-bottom: 1.79rem;
-    & .ui-datepicker{
-      &-calendar .ui-datepicker-today .ui-state-default::after{
+
+    & .ui-datepicker {
+      &-calendar .ui-datepicker-today .ui-state-default::after {
         width: 2.21rem;
         height: 2.21rem;
         left: -.36rem;
         top: -.64rem;
-
       }
 
-      &-title{
+      &-title {
         font-size: 1.14rem;
       }
-      &-next::before{
+
+      &-next::before {
         left: 12.86rem;
         top: 1.57rem;
       }
+
       &-calendar {
         font-size: 0.71rem;
         margin: 2.79rem 0 0 .36rem;
       }
+
       &-calendar td .ui-state-default {
         margin: 0 1.07rem 1.14rem 0;
       }
+
       &-calendar .ui-datepicker-calendar__range:not(.ui-state-disabled) {
         position: relative;
         margin: 0;
         width: 2.5rem;
-        &::after{
+
+        &::after {
           width: 2.64rem;
           left: -.57rem;
           height: 2.29rem;
           top: -.71rem;
         }
       }
+
       &-calendar__min:not(.ui-state-disabled),
-      &-calendar__max:not(.ui-state-disabled){
-        &::before{
+      &-calendar__max:not(.ui-state-disabled) {
+        &::before {
           left: .64rem;
           height: 2.29rem;
           top: -.71rem;
         }
-        &::after{
+
+        &::after {
           width: 2.21rem;
           height: 2.21rem;
           left: -.36rem;
           top: -.64rem;
         }
       }
-      &-calendar__max:not(.ui-state-disabled){
+
+      &-calendar__max:not(.ui-state-disabled) {
         &::before{
           left: -.57rem;
         }
@@ -281,7 +305,8 @@
       &-buttonpane {
         bottom: 2%;
         margin-right: 2.86rem;
-        & .ui-datepicker-close, .ui-datepicker-current{
+
+        & .ui-datepicker-close, .ui-datepicker-current {
           font-size: 0.71rem;
         }
       }
@@ -290,57 +315,66 @@
 }
 
 @media (max-width: 450px) {
-  .ui-datepicker_for-single-datepicker{
+  .ui-datepicker_for-single-datepicker {
     width: 18.43rem;
     padding-bottom: 1.79rem;
-    & .ui-datepicker{
-      &-calendar .ui-datepicker-today .ui-state-default::after{
+
+    & .ui-datepicker {
+      &-calendar .ui-datepicker-today .ui-state-default::after {
         width: 2.21rem;
         height: 2.21rem;
         left: -.36rem;
         top: -.64rem;
       }
 
-      &-title{
+      &-title {
         font-size: 1.14rem;
       }
-      &-next::before{
+
+      &-next::before {
         left: 12.86rem;
         top: 1.57rem;
       }
+
       &-calendar {
         font-size: 0.71rem;
         margin: 2.79rem 0 0 .36rem;
       }
+
       &-calendar td .ui-state-default {
         margin: 0 1.07rem 1.14rem 0;
       }
+
       &-calendar .ui-datepicker-calendar__range:not(.ui-state-disabled) {
         position: relative;
         margin: 0;
         width: 2.5rem;
-        &::after{
+
+        &::after {
           width: 2.64rem;
           left: -.57rem;
           height: 2.29rem;
           top: -.71rem;
         }
       }
+
       &-calendar__min:not(.ui-state-disabled),
-      &-calendar__max:not(.ui-state-disabled){
-        &::before{
+      &-calendar__max:not(.ui-state-disabled) {
+        &::before {
           left: .64rem;
           height: 2.29rem;
           top: -.71rem;
         }
-        &::after{
+
+        &::after {
           width: 2.21rem;
           height: 2.21rem;
           left: -.36rem;
           top: -.64rem;
         }
       }
-      &-calendar__max:not(.ui-state-disabled){
+
+      &-calendar__max:not(.ui-state-disabled) {
         &::before{
           left: -.57rem;
         }
@@ -349,7 +383,8 @@
       &-buttonpane {
         bottom: 2%;
         margin-right: 2.86rem;
-        & .ui-datepicker-close, .ui-datepicker-current{
+
+        & .ui-datepicker-close, .ui-datepicker-current {
           font-size: 0.71rem;
         }
       }

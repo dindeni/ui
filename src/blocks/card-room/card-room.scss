@@ -49,7 +49,7 @@
     background: none;
     cursor: pointer;
 
-    &_filled{
+    &_filled {
       background: #FFFFFF;
     }
   }
@@ -71,58 +71,68 @@
         margin-left: 1.29rem;
       }
   }
-  &__arrows-wrapper{
+
+  &__arrows-wrapper {
     position: absolute;
     top: 4.93rem;
     display: flex;
     justify-content: space-between;
     width: 19.29rem;
   }
+
   &__image {
     width: 19.29rem;
   }
-  &__wrapper{
+
+  &__wrapper {
     position: relative;
   }
-  &__number{
+
+  &__number {
     @include h2;
     margin: 0 .5rem 0 .43rem;
+
     &-room-wrapper {
       margin: 1.79rem 0 0 0;
       width: 50%;
       display: inline-block;
     }
-    &-mark{
+
+    &-mark {
       @include h2;
       font-size: 1rem;
       margin-left: 1.43rem;
     }
   }
 
-  &__type-room{
+  &__type-room {
     @include body;
     color: $purple;
     font-weight: bold;
     line-height: normal;
   }
-  &__price-wrapper{
+
+  &__price-wrapper {
     width: 50%;
     display: inline-block;
     text-align: end;
   }
-  &__price{
+
+  &__price {
     @include body;
     color: $dark50;
     font-weight: bold;
     &.card-room__price_normal{
     }
   }
-  &__periodicity{
+
+  &__periodicity {
     @include body;
     font-size: .86rem;
     margin: 0 1.21rem 0 .43rem;
   }
-  &__number-review{
+
+  &__number-review {
     display: inline-block;
     @include body;
     font-weight: bold;
@@ -133,7 +143,8 @@
     width: 45%;
     text-align: end;
   }
-  &__number-review-word{
+
+  &__number-review-word {
     font-weight: normal;
     text-transform: none;
     margin-left: .29rem;
@@ -141,7 +152,7 @@
 
   }
 
-  &__rate-wrapper{
+  &__rate-wrapper {
     display: inline-block;
     margin: 1.07rem 0 0 1.43rem;
   }

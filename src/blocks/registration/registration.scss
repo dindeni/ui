@@ -2,70 +2,82 @@
 @import "../../style/mixins/rectangle";
 @import "../../style/variables/variables";
 
-.registration{
+.registration {
   @include rectangle;
   padding-left: 2rem;
   height: 46.14rem;
   position: relative;
   z-index: 1;
-  &__date-head, &__data-head{
+
+  &__date-head, &__data-head {
     @include h3;
     color: $dark100;
     text-transform: uppercase;
     display: block;
   }
-  &__date-head{
+
+  &__date-head {
     margin: 1.57rem 0 .36rem 0;
   }
-  &__data-head{
+
+  &__data-head {
     margin: .71rem 0 .36rem 0;
   }
-  &__head{
+
+  &__head {
     @include h1;
     margin: 3.57rem 0 0 0;
   }
-  &__name-wrapper{
+
+  &__name-wrapper {
     margin: 1.86rem 0 0 0;
   }
-  &__radio-wrapper{
+
+  &__radio-wrapper {
     position: relative;
     display: block;
     margin: 0 0 0 .71rem;
   }
-  &__footer{
+
+  &__footer {
     margin: 2.14rem 0 0 0;
   }
-  &__footer-label{
+
+  &__footer-label {
     @include body;
   }
-  &__button-wrapper{
+
+  &__button-wrapper {
     margin-top: 1.43rem;
   }
-  &__link-wrapper{
+
+  &__link-wrapper {
     display: inline-block;
     margin: .21rem 0 0 2.86rem;
   }
 
-  &__toggle-wrapper{
+  &__toggle-wrapper {
     padding: 0 0 0 .36rem;
     display: inline-block;
   }
 }
 
 @media (max-width: 1100px) {
-  .registration__link-wrapper{
+  .registration__link-wrapper {
     margin: .21rem 0 0 0.3rem;
   }
 }
 
 @media (max-width: 400px) {
-  .registration{
+  .registration {
     padding-left: 1.43rem;
     width: 21.43rem;
-    &__head{
+
+    &__head {
       font-size: 1.29rem;
     }
-    &__footer-label{
+
+    &__footer-label {
       font-size: .86rem;
     }
   }

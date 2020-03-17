@@ -1,33 +1,37 @@
 @import "../../style/variables/variables";
 @import "../../style/mixins/text";
 
-.side-panel{
+.side-panel {
   width: 21.43rem;
-  &__slogan{
+
+  &__slogan {
     @include h3;
     color: $dark100;
     margin: 0 0 .36rem 0;
 
-    &_type_range{
+    &_type_range {
       margin: 2.21rem 0 1.71rem 0;
       display: inline-block;
     }
-    &_type_checkbox{
+
+    &_type_checkbox {
       margin: 2.07rem 0 1.07rem 0;
     }
-    &_type_checkbox-rich{
+
+    &_type_checkbox-rich {
       margin: 2.14rem 0 1.3rem 0;
     }
-    &_type_rooms{
+
+    &_type_rooms {
       margin: 2.1rem 0 .36rem 0;
     }
   }
 
-  &__sum-guests-wrapper{
+  &__sum-guests-wrapper {
     margin-top: 1.57rem;
   }
 
-  &__range-reference{
+  &__range-reference {
     @include h3;
     color: $dark50;
     text-transform: inherit;

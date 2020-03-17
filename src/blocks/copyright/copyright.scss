@@ -9,7 +9,8 @@
   align-items: center;
   box-shadow: 0 .71rem 1.43rem $dark5;
   position: relative;
-  &::before{
+
+  &::before {
     position: absolute;
     content: '';
     width: 100%;
@@ -18,19 +19,20 @@
     top: .71rem;
   }
 
-  &__head{
+  &__head {
     @include body;
     font-style: normal;
     padding: 2rem 0 0 9.6%;
   }
-  &__buttons-wrapper{
+
+  &__buttons-wrapper {
     margin: 2rem 9.8% 0 0;
   }
 }
 
 @media (max-width: 720px) {
-  .copyright{
-    &__head{
+  .copyright {
+    &__head {
       font-size: 0.86rem;
       width: 22.86rem;
       padding: 2rem 0 0 0;
@@ -39,7 +41,7 @@
 }
 
 @media (max-width: 550px){
-  .copyright{
+  .copyright {
     flex-direction: column;
   }
 }

@@ -2,48 +2,54 @@
 @import "../../style/variables/variables";
 @import "../../style/mixins/hide";
 
-.navigation{
+.navigation {
   width: 100%;
   height: 5rem;
   display: flex;
   box-shadow: 0 .71rem 1.43rem $dark5;
   align-items: center;
-  &__buttons-wrapper{
+
+  &__buttons-wrapper {
     margin: 0 0 0 1.57rem;
   }
 
-  &__logo{
+  &__logo {
     margin: 0 0 0 9.8%;
     height: auto;
   }
 
-  &__list{
+  &__list {
     @include body;
     list-style: none;
     display: flex;
     align-items: center;
     padding: 0;
     margin: .36rem 0 0 19.8%;
-    &_logged{
+
+    &_logged {
       margin: .36rem 0 0 24.4%;
     }
-    &_hidden{
+
+    &_hidden {
       @include hide;
     }
   }
 
-  &__link{
+  &__link {
     text-decoration: none;
     color: $dark50;
     line-height: 1.21rem;
-    &_current, &:hover{
+
+    &_current, &:hover {
       font-weight: bold;
       color: $dark75;
     }
-    &_type_expand, &_type_expand-ru{
+
+    &_type_expand, &_type_expand-ru {
       padding:  0 1.07rem 0 0;
       position: relative;
-      &::after{
+
+      &::after {
         position: absolute;
         content: '';
         width: 1.07rem;
@@ -53,34 +59,39 @@
         top: .14rem;
       }
     }
-    &_type_expand-ru{
+
+    &_type_expand-ru {
       padding: 0 1.64rem 0 0;
-      &::after{
+
+      &::after {
         right: .21rem;
       }
     }
   }
 
-  &__item{
-    &:not(:last-child){
+  &__item {
+    &:not(:last-child) {
       margin: 0 2rem 0 0;
-      &.navigation__item_type_ru{
+
+      &.navigation__item_type_ru {
         margin: 0 1.5rem 0 0;
       }
     }
-    &_logged{
-      &:not(:last-child){
+
+    &_logged {
+      &:not(:last-child) {
         margin: 0 2.07rem 0 0;
       }
     }
   }
 
-  &__user-name{
+  &__user-name {
     @include body;
     margin: 0.36rem 0 0 4.3%;
     font-style: normal;
     position: relative;
-    &::before{
+
+    &::before {
       position: absolute;
       content: '';
       width: 1px;
@@ -91,41 +102,46 @@
     }
   }
 
-  &__button-mobile{
+  &__button-mobile {
     display: none;
   }
-  &__sign-in-button-wrapper{
+
+  &__sign-in-button-wrapper {
     display: inline-block;
     margin: 0 1.79rem 0 0;
   }
 }
 
 @media (max-width: 1430px) {
-  .navigation{
-    &__list{
+  .navigation {
+    &__list {
       margin: 5px 0 0 13%;
-      &_logged{
+
+      &_logged {
         margin: .36rem 0 0 6.2%;
       }
     }
-    &__user-name{
+
+    &__user-name {
       margin: .36rem 0 0 10%;
     }
   }
 }
 
 @media (max-width: 1250px) {
-  .navigation__list{
+  .navigation__list {
     margin: .36rem 0 0 5%;
   }
 }
 
 @media (max-width: 1100px) {
-  .navigation{
+  .navigation {
     justify-content: space-between;
-    &__buttons-wrapper{
+
+    &__buttons-wrapper {
       margin-right: 1%;
     }
+
     &__logo {
       margin: 0 0 0 2%;
       width: 5rem;
@@ -135,24 +151,28 @@
 }
 
 @media (max-width: 920px) {
-  .navigation{
+  .navigation {
     position: relative;
     justify-content: space-between;
-    &__list{
+
+    &__list {
       z-index: 10;
       display: block;
     }
-    &__item{
+
+    &__item {
       padding: .29rem .36rem;
     }
-    &__buttons-wrapper{
+
+    &__buttons-wrapper {
       margin: 0 5% 0 0;
     }
-    &__sign-in-button-wrapper{
+
+    &__sign-in-button-wrapper {
       margin: .8rem 1.5rem 0 0;
     }
 
-    &__button-mobile{
+    &__button-mobile {
       display: inline-block;
       cursor: pointer;
       width: 2.14rem;
@@ -166,7 +186,8 @@
       right:.36rem;
       top: 1.43rem;
       outline: none;
-      &::before{
+
+      &::before {
         position: absolute;
         content: '';
         width: 2.14rem;
@@ -175,7 +196,8 @@
         left: 0;
         top: 1.07rem;
       }
-      &::after{
+
+      &::after {
         position: absolute;
         content: '';
         width: 2.14rem;
@@ -186,60 +208,64 @@
       }
     }
 
-    &__list{
+    &__list {
       position: absolute;
       width: 40%;
       right: 0;
       background: $purple;
       border-radius: .29rem;
       margin: 3.57rem 0 0 10%;
-      &_logged{
+
+      &_logged {
         top: 0;
       }
     }
 
-    &__button-mobile_open{
-      &.navigation__button-mobile::before{
+    &__button-mobile_open {
+      &.navigation__button-mobile::before {
         background: $dark50;
         transform: rotate(45deg);
       }
-      &.navigation__button-mobile::after{
+
+      &.navigation__button-mobile::after {
         background: $dark50;
         transform: rotate(-45deg);
         top: 1.07rem;
       }
     }
 
-    &__user-name{
+    &__user-name {
       margin: .36rem 0 0 15%;
     }
   }
 }
 
 @media (max-width: 800px) {
-    .navigation__logo{
+    .navigation__logo {
       width: 6.43rem;
     }
 }
 
 @media (max-width: 500px) {
-    & .navigation{
+    & .navigation {
       flex-wrap: wrap;
       justify-content: center;
-      &__list{
+
+      &__list {
         width: 50%;
       }
     }
-
 }
 
 @media (max-width: 450px) {
   .navigation {
     padding-bottom: 1.43rem;
-    &__buttons-wrapper{
+
+    &__buttons-wrapper {
       margin: .36rem 0 0 0;
     }
-    &__logo{
+
+    &__logo {
       margin: 0 20%;
     }
   }

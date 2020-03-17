@@ -2,84 +2,85 @@
 @import "../../style/mixins/text";
 @import "../../style/variables/variables";
 
-.footer-widget{
+.footer-widget {
   display: flex;
   flex-wrap: wrap;
 
-  &__list-wrapper{
+  &__list-wrapper {
     padding: 6.43rem 2.8% 0 0;
     width: 11.43rem;
   }
 
-  &__subscribe-head{
+  &__subscribe-head {
     @include h3;
     color: $dark100;
   }
 
-  &__logo-wrapper{
+  &__logo-wrapper {
     width: 18%;
     margin: 7.14rem 2.8% 8.29rem 9.7%;
   }
 
-  &__description{
+  &__description {
     @include body;
     margin-top: .86rem;
   }
 
-  &__subscribe-wrapper{
+  &__subscribe-wrapper {
     margin: 6.43rem 0 0 0;
     width: 18%;
   }
 
-  &__subscribe-description{
+  &__subscribe-description {
     @include body;
     margin: 1.43rem 0 0 0;
   }
 }
 
 @media (max-width: 1200px) {
-  .footer-widget__subscribe-wrapper{
+  .footer-widget__subscribe-wrapper {
     width: 16%;
   }
 }
 
 @media (max-width: 1250px) {
-  .footer-widget{
+  .footer-widget {
     flex-wrap: wrap;
     justify-content: center;
-    &__logo-wrapper,
-    &__subscribe-wrapper{
+
+    &__logo-wrapper, &__subscribe-wrapper {
       width: 18.57rem;
       padding-bottom: 1rem;
     }
 
-    &__logo-wrapper{
+    &__logo-wrapper {
       margin: 100px 2.8% 50px 2%;
     }
   }
 }
 
 @media (max-width: 900px) {
-  .footer-widget__logo-wrapper{
+  .footer-widget__logo-wrapper {
     margin: 7.14rem 2.8% 0 2%;
   }
 }
 
 @media (max-width: 620px) {
-  .footer-widget{
+  .footer-widget {
     &__logo {
       width: 5.71rem;
-      &-wrapper{
+
+      &-wrapper {
         width: 8.57rem;
         margin: 3.57rem 2.8% 0 2%;
       }
     }
 
-    &__subscribe-wrapper{
+    &__subscribe-wrapper {
       margin: 3.57rem 0 3.57rem 0;
     }
 
-    &__list-wrapper{
+    &__list-wrapper {
       width: 8.57rem;
       padding: 3.57rem 2.8% 0 0;
     }

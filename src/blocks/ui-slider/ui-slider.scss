@@ -1,9 +1,10 @@
 @import "../../style/mixins/text";
 @import "../../style/variables/variables";
 
-.ui-slider{
+.ui-slider {
   width: 19.36rem;
-  &-horizontal{
+
+  &-horizontal {
     width: 19rem;
     height: .43rem;
     border: .07rem solid rgba(31, 32, 65, 0.25);
@@ -11,7 +12,7 @@
     border-radius: .21rem;
   }
 
-  &-handle.ui-corner-all{
+  &-handle.ui-corner-all {
     top: -.43rem;
     width: .86rem;
     height: .86rem;
@@ -20,24 +21,25 @@
     border-radius: .71rem;
     outline: none;
     z-index: 0;
-    &:last-child{
+
+    &:last-child {
       left: 100%;
     }
   }
 
-  &-range.ui-corner-all{
+  &-range.ui-corner-all {
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     border-radius: .21rem;
     z-index: 0;
   }
 
-  &_for-side-panel #{&}__label{
+  &_for-side-panel #{&}__label {
     display: inline-block;
     width: 8.57rem;
     margin: 0 0 0 1.79rem;
   }
 
-  &__label{
+  &__label {
     @include h3;
     color: $dark50;
     text-align: end;

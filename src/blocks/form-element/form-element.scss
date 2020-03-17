@@ -2,85 +2,103 @@
 @import "../../style/mixins/hide";
 @import "../../style/mixins/text";
 
-.form-element{
-  &__field{
+.form-element {
+  &__field {
     width: 22.86rem;
     border: .07rem solid $dark25;
     box-sizing: border-box;
     border-radius: .29rem;
     padding: .64rem 1.07rem;
     @include body;
-    &::placeholder{
+
+    &::placeholder {
       color: $dark25;
       font-size: 1rem;
       font-family: Montserrat, sans-serif;
     }
-    &_type_text::placeholder{
+
+    &_type_text::placeholder {
       text-transform: capitalize;
     }
-    &:hover, &:focus{
+
+    &:hover, &:focus {
       border: .07rem solid $dark50;
-      &::placeholder{
+
+      &::placeholder {
         color: $dark75;
       }
     }
-    &_type_date{
+
+    &_type_date {
       width: 10.71rem;
     }
-    &_for-filter{
+
+    &_for-filter {
       width: 19rem;
     }
-    &_for-datepicker-range, &_for-rooms{
+
+    &_for-datepicker-range, &_for-rooms {
       width: 19rem;
     }
-    &_for-guests{
+
+    &_for-guests {
       width: 22.86rem;
-      &::placeholder{
+
+      &::placeholder {
         text-transform: none;
       }
     }
-    &_for-sign-in{
+
+    &_for-sign-in {
       width: 22.86rem;
       margin: .43rem 0 .29rem 0;
     }
-    &_for-registration{
+
+    &_for-registration {
       width: 22.86rem;
       margin: 0 0 .71rem 0;
-      &.form-element__field_for-password{
+
+      &.form-element__field_for-password {
         margin-bottom: 0;
       }
-      &.form-element__field_type_date::placeholder{
+
+      &.form-element__field_type_date::placeholder {
         color: $dark25;
       }
     }
 
-    &_type_masked{
-      &::placeholder{
+    &_type_masked {
+      &::placeholder {
         text-transform: uppercase;
       }
     }
-    &_type_date#{&}{
-      &::placeholder{
+
+    &_type_date#{&} {
+      &::placeholder {
         text-transform: uppercase;
         color: $dark75;
       }
     }
-    &_type_dropdown::placeholder{
+
+    &_type_dropdown::placeholder {
       color: $dark75;
     }
-    &_for-footer-widget{
+
+    &_for-footer-widget {
       width: 18.57rem;
       margin: 1.43rem 0 0 0;
     }
-    &_type_subscription{
+
+    &_type_subscription {
       width: 19rem;
     }
   }
 
-  &_type_date{
+  &_type_date {
     display: inline-block;
     position: relative;
-    &::after{
+
+    &::after {
       position: absolute;
       content: '';
       width: 3.14rem;
@@ -89,14 +107,17 @@
       right: -1.14rem;
       top: 1.29rem;
     }
-    &.form-element{
-      &_for-search{
+
+    &.form-element {
+      &_for-search {
         padding: 0 1.5rem 0 0;
-        &::after{
+
+        &::after {
           right: 0.36rem;
         }
       }
-      &_for-order{
+
+      &_for-order {
         padding: 0 1.21rem 0 .21rem;
         &::after{
           right: .07rem;
@@ -105,14 +126,15 @@
     }
   }
 
-  &_for-main-ui{
+  &_for-main-ui {
     padding: 0 0 .71rem 0;
   }
 
-  &_type_dropdown{
+  &_type_dropdown {
     display: inline-block;
     position: relative;
-    &::after{
+
+    &::after {
       position: absolute;
       content: '';
       width: 3.14rem;
@@ -123,35 +145,40 @@
     }
   }
 
-  &_for-guests{
+  &_for-guests {
     display: inline-block;
     padding-top: .36rem;
     width: min-content;
-    &.form-element_for-filter, & .form-element__field_for-filter{
+
+    &.form-element_for-filter, & .form-element__field_for-filter {
       width: 19rem;
     }
-    &::after{
-    top: 1.65rem
+
+    &::after {
+      top: 1.65rem;
     }
   }
-  &_for-filter{
+
+  &_for-filter {
     width: 19rem;
     padding-top: .29rem;
-    &::after{
+
+    &::after {
       top: 1.58rem;
     }
   }
 
-  &_for-footer-widget#{&}_type_subscription{
+  &_for-footer-widget#{&}_type_subscription {
     &::after{
       top: 2.36rem;
     }
   }
 
-  &_type_subscription{
+  &_type_subscription {
     position: relative;
     display: inline-block;
-    &::after{
+
+    &::after {
       position: absolute;
       content: '';
       width: 3.14rem;
@@ -162,79 +189,87 @@
     }
   }
 
-  &_for-hide-datepicker{
+  &_for-hide-datepicker {
     @include hide;
   }
 }
 
 @media (max-width: 1100px) {
-  .form-element{
-    &_type_date{
-      &.form-element_for-search{
+  .form-element {
+    &_type_date {
+      &.form-element_for-search {
         width: 8.57rem;
       }
     }
-    &_type_dropdown{
-      &.form-element_for-guests{
+    &_type_dropdown {
+      &.form-element_for-guests {
         width: 18.57rem;
       }
     }
 
-    &_for-main-ui{
-      & .form-element__field{
-        &_type_date{
+    &_for-main-ui {
+      & .form-element__field {
+        &_type_date {
           width: 10.71rem;
         }
       }
     }
 
-    &__field{
-      &_for-main-ui{
+    &__field {
+      &_for-main-ui {
         width: 18.57rem;
       }
-      &_for-guests{
+
+      &_for-guests {
         width: 18.57rem;
       }
-      &__field_type_subscription{
+
+      &__field_type_subscription {
         width: 19rem;
       }
+
       &_for-search-in, &_for-search-out,
-      &_for-order-in, &_for-order-out{
+      &_for-order-in, &_for-order-out {
         width: 8.57rem;
-        &::placeholder{
+
+        &::placeholder {
           font-size: 0.86rem;
         }
       }
     }
   }
 
-  .form-element__field.form-element__field_type_subscription.form-element__field_for-footer-widget{
+  .form-element__field.form-element__field_type_subscription.form-element__field_for-footer-widget {
     padding: .86rem 1rem;
     width: 15.71rem;
-    &::placeholder{
+
+    &::placeholder {
       font-size: 0.86rem;
     }
   }
 }
 
 @media (max-width: 450px) {
-  .form-element{
-    &__field_for-sign-in.form-element__field_type_text{
+  .form-element  {
+    &__field_for-sign-in.form-element__field_type_text {
       margin: .43rem 1.43rem .29rem 0;
     }
-    &_for-registration{
+
+    &_for-registration {
       width: 18.57rem;
     }
 
-    &__field{
+    &__field {
       &_type_date {
         width: 8.5rem;
-        &::placeholder{
+
+        &::placeholder {
           font-size: 0.86rem;
         }
       }
+
       &_for-registration#{&}_type_text, &_for-registration#{&}_type_date,
-      &#{&}_for-sign-in{
+      &#{&}_for-sign-in {
         width: 18.57rem;
       }
     }

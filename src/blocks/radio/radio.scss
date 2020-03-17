@@ -2,17 +2,19 @@
 @import "../../style/variables/variables";
 @import "../../style/mixins/text";
 
-.radio{
-  &__field{
+.radio {
+  &__field {
     @include hide;
   }
-  &__mark{
+
+  &__mark {
     position: relative;
     @include body;
     color: rgba(31, 32, 65, 0.5);
     padding:  .21rem 0 0 1.43rem;
     margin: 0 2.14rem 0 0;
-    &::before{
+
+    &::before {
       position: absolute;
       content: '';
       width: 1.43rem;
@@ -23,18 +25,20 @@
       left: -.64rem;
       top: -.07rem;
     }
-    &_for-registration{
+
+    &_for-registration {
       padding: 0 0 0 1.5rem;
 
-      &::before{
+      &::before {
         top: -.29rem;
       }
     }
   }
 
-  &__field:checked + &__mark{
+  &__field:checked + &__mark {
     color: rgba(31, 32, 65, 0.75);
-    &::after{
+
+    &::after {
       position: absolute;
       content: '';
       width: .86rem;
@@ -44,10 +48,12 @@
       left: -.36rem;
       top: .21rem;
     }
-    &::before{
+
+    &::before {
       border: .07rem solid $purple;
     }
-    &_for-registration{
+
+    &_for-registration {
       &::after{
         top: 0;
       }
