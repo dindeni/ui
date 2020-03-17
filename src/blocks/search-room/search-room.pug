@@ -1,10 +1,11 @@
 include ../sum-guests/sum-guests
 include ../ui-datepicker/ui-datepicker
+include ../ui-control/ui-control
 
 mixin searchRoom(absolute)
 
   section(class=['search-room',
-  `${absolute ? 'search-room_absolute':''}`])
+  `${absolute ? 'search-room_with-position_absolute':''}`])
     h2.search-room__head Найдём номера под ваши пожелания
 
     div.search-room__check
@@ -16,5 +17,7 @@ mixin searchRoom(absolute)
         +ui-datepicker({ type: 'double', modifierForInput: 'for-search',
         modifierForLabel: 'for-search' })
 
-        +sum-guests({head: 'гости'})
-        +button({type:'buy', content: 'Подобрать номер', linkModifier: 'for-search'})
+        div.search-room__sum-guests-wrapper
+          +sum-guests({head: 'гости'})
+        div.search-room__button-wrapper
+          +ui-control({content: 'Подобрать номер', buttonModifier: 'width-arrow'})

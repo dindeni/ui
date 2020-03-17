@@ -24,11 +24,13 @@
     }
   }
 
-  &__rate-wrapper {
-    display: flex;
-    flex-wrap: wrap;
+  &__rates-wrapper{
     width: 100%;
-    margin-left: .29rem;
+  }
+
+  &__rate-wrapper {
+    display: inline-block;
+    margin: 0 1.43rem 0 .29rem;
   }
 
   &__card-wrapper{
@@ -44,6 +46,18 @@
   }
   &__registration-wrapper{
     margin-top: .71rem;
+  }
+
+  &__button-rate-wrapper{
+    margin: 0 1.71rem 0 .29rem;
+  }
+
+  &__radio-wrapper{
+    padding-left: .71rem;
+  }
+
+  &__toggle-wrapper{
+    padding: .71rem 0 .71rem .43rem;
   }
 }
 

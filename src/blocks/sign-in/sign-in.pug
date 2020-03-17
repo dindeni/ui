@@ -1,5 +1,5 @@
 include ../form-element/form-element
-include ../button/button
+include ../ui-control/ui-control
 
 mixin sign-in
 
@@ -12,7 +12,9 @@ mixin sign-in
     +form-element({type: 'password', placeholder: 'Пароль',
       modifierForInput: 'for-sign-in'})
 
-    +button({type: 'buy', content: 'Войти', linkModifier: 'for-sign-in'})
+    span.sign-in__link-enter-wrapper
+      +ui-control({content: 'Войти', link: 'sign-in.html', linkModifier: 'for-sign-in'})
 
     span.sign-in__label Нет аккаунта на Toxin?
-      +button({type: 'bordering-link', content: 'Создать', link: 'registration.html', linkModifier: 'for-sign-in'})
+      span.sign-in__link-wrapper
+        +ui-control({isBorder: true, content: 'Создать', link: 'registration.html', linkModifier: 'for-sign-in'})

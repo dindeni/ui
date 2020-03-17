@@ -1,0 +1,60 @@
+@mixin button-inner($color, $background){
+  font-size: 0.86rem;
+  font-weight: normal;
+  padding: 0 0 0 .57rem;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 1.57rem;
+  color: $color;
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+  &::before, &:hover::before{
+    position: absolute;
+    content: '';
+    width: .71rem;
+    height: .57rem;
+    background: $background;
+    left: .21rem;
+    top: .36rem;
+    z-index: 1;
+  }
+}
+
+@mixin button-border($background-color){
+  position: relative;
+  padding: .07rem;
+  border-radius: .71rem;
+  display: flex;
+  width: 2.86rem;
+  height: 1.43rem;
+  box-sizing: border-box;
+  &::before{
+    position: absolute;
+    content: '';
+    width: 3rem;
+    height: 1.57rem;
+    border-radius: 1.57rem;
+    background: $background-color;
+    z-index: -10;
+    top: -.07rem;
+    left: -.07rem;
+  }
+}
+
+@mixin button($background, $color){
+  background: $background;
+  border-radius: 1.57rem;
+  border: none;
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+  color: $color;
+  font-size: .86rem;
+  font-weight: bold;
+  padding: 1.07rem 1.29rem;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+}

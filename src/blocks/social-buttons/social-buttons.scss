@@ -38,21 +38,3 @@
     }
   }
 }
-
-
-@media (max-width: 800px) {
-  .social-buttons{
-    &__list_for-copyright{
-      margin: 0 5.86rem 0 0;
-    }
-  }
-
-}
-
-@media (max-width: 620px) {
-  .social-buttons{
-    &__list_for-copyright{
-      margin: 0;
-    }
-  }
-}

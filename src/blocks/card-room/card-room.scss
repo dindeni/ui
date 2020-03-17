@@ -20,9 +20,6 @@
     bottom: 3.5rem;
     left: 1.43rem;
   }
-  &_for-filter{
-    margin: 0 .86rem 1.43rem 0;
-  }
   &__image_hide{
     @include hide;
   }
@@ -134,5 +131,10 @@
     margin-left: .29rem;
     margin-right: .86rem;
 
+  }
+
+  &__rate-wrapper{
+    display: inline-block;
+    margin: 1.07rem 0 0 1.43rem;
   }
 }

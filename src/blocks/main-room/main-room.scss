@@ -29,6 +29,10 @@
       width: 100%;
     }
   }
+
+  &__description-wrapper{
+    padding: 5rem 0 4.57rem 9.5%;
+  }
 }
 
 @media (max-width: 1056px) {
@@ -38,8 +42,14 @@
 }
 
 @media (max-width: 800px) {
-  .main-room__image{
-    margin: auto;
+  .main-room {
+    &__image {
+      margin: auto;
+    }
+
+    &__description-wrapper {
+      padding: 5.07rem 0 4.57rem 2.6%;
+    }
   }
 }
 

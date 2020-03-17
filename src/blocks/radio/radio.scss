@@ -3,10 +3,6 @@
 @import "../../style/mixins/text";
 
 .radio{
-  &_for-ui{
-    padding-left: .71rem;
-  }
-
   &__field{
     @include hide;
   }

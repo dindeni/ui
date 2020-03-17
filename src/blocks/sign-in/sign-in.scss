@@ -14,8 +14,15 @@
 
   &__label{
     @include body;
-    display: block;
-    margin: 2.21rem 0 0 0;
+    display: inline-block;
+    margin: 3.5rem 0 0 0;
+  }
+  &__link-wrapper{
+    margin: 0 0 0 4.29rem;
+  }
+  &__link-enter-wrapper{
+    margin-top: 2.1rem;
+    display: inline-block;
   }
 }
 
@@ -25,6 +32,9 @@
     padding-left: 1.43rem;
     &__label{
       font-size: 0.86rem;
+    }
+    &__link-wrapper {
+      margin: 0 0 0 .7rem;
     }
   }
 }

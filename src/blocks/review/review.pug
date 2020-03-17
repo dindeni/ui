@@ -1,4 +1,4 @@
-include ../button/button
+include ../ui-control/ui-control
 
 mixin review(options)
 
@@ -12,6 +12,7 @@ mixin review(options)
     span.review__date=date
 
     div.review__wrapper
-      +button({type: typeOfButton, content: numberOfLikes})
+      +ui-control({isBorder: true, content: numberOfLikes, modifier: `theme_${typeOfButton}`,
+       buttonModifier: `theme_${typeOfButton}`})
       p(class=['review__description',
        `${modifier ? `review__description_${modifier}` : ''}`])=description

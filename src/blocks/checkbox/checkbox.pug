@@ -14,7 +14,7 @@ mixin checkbox(options)
     else if type === 'checkboxExpandable'
       h3(class=['checkbox__head', 'js-checkbox__head',
       `${modifier ? `checkbox__head_${modifier}` : ''}`])=head
-      div.checkbox__wrapper.js-checkbox__wrapper.checkbox__wrapper_hide#checkbox-expandable-wrapper
+      div.checkbox__wrapper.js-checkbox__wrapper.checkbox__wrapper_hidden#checkbox-expandable-wrapper
         each value, index in values
           input.checkbox__field(type='checkbox' id=`field-checkbox-expandable-${index}`)
           label.checkbox__mark(for=`field-checkbox-expandable-${index}`)=value

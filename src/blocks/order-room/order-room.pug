@@ -1,5 +1,5 @@
 include ../sum-guests/sum-guests
-include ../button/button
+include ../ui-control/ui-control
 include ../ui-datepicker/ui-datepicker
 
 mixin order-room(options)
@@ -25,7 +25,8 @@ mixin order-room(options)
       +ui-datepicker({ type: 'double', modifierForInput: 'for-order',
        modifierForLabel: 'for-order' })
 
-      +sum-guests({modifier: 'for-order', head: 'гости'})
+      div.order-room__sum-guests-wrapper
+        +sum-guests({modifier: 'for-order', head: 'гости'})
 
     div.order-room__total
       each value, index in totalValue
@@ -45,5 +46,6 @@ mixin order-room(options)
       span.order-room__sum-label Итого
       span.order-room__sum 38 081₽
 
-    +button({type: 'buy', content: 'забронировать', linkModifier: 'for-order'})
+    div.order-room__button-wrapper
+      +ui-control({content: 'забронировать', buttonModifier: 'width-arrow'})
 

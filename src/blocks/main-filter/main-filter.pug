@@ -47,7 +47,8 @@ mixin main-filter()
 
   main.main-filter
 
-    +side-panel
+    div.main-filter__panel-wrapper
+      +side-panel
 
     section.main-filter__rooms
       h1.main-filter__rooms-head Номера, которые мы для вас подобрали
@@ -56,10 +57,10 @@ mixin main-filter()
         -const { images, type, numberOfRoom, numberOfRate, price,
         -numberOfReviews } = value;
 
-        +card-room({
-          images, radioName: 'room-radio-name', type,
-          numberOfRoom, price, numberOfReviews, numberOfRate,
-          modifier: 'for-filter'
-        })
+        div.main-filter__card-wrapper
+          +card-room({
+            images, radioName: 'room-radio-name', type,
+            numberOfRoom, price, numberOfReviews, numberOfRate,
+          })
 
       +pagination({value: 15, modifier: 'for-filter'})

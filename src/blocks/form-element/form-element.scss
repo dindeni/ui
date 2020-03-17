@@ -15,7 +15,7 @@
       font-size: 1rem;
       font-family: Montserrat, sans-serif;
     }
-    &_text::placeholder{
+    &_type_text::placeholder{
       text-transform: capitalize;
     }
     &:hover, &:focus{
@@ -24,7 +24,7 @@
         color: $dark75;
       }
     }
-    &_date{
+    &_type_date{
       width: 10.71rem;
     }
     &_for-filter{
@@ -49,38 +49,35 @@
       &.form-element__field_for-password{
         margin-bottom: 0;
       }
-      &.form-element__field_date::placeholder{
+      &.form-element__field_type_date::placeholder{
         color: $dark25;
       }
     }
-    &_hide{
-      @include hide;
-    }
 
-    &_masked{
+    &_type_masked{
       &::placeholder{
         text-transform: uppercase;
       }
     }
-    &_date#{&}{
+    &_type_date#{&}{
       &::placeholder{
         text-transform: uppercase;
         color: $dark75;
       }
     }
-    &_dropdown::placeholder{
+    &_type_dropdown::placeholder{
       color: $dark75;
     }
     &_for-footer-widget{
       width: 18.57rem;
       margin: 1.43rem 0 0 0;
     }
-    &_subscription{
+    &_type_subscription{
       width: 19rem;
     }
   }
 
-  &_date{
+  &_type_date{
     display: inline-block;
     position: relative;
     &::after{
@@ -112,7 +109,7 @@
     padding: 0 0 .71rem 0;
   }
 
-  &_dropdown{
+  &_type_dropdown{
     display: inline-block;
     position: relative;
     &::after{
@@ -145,13 +142,13 @@
     }
   }
 
-  &_for-footer-widget#{&}_subscription{
+  &_for-footer-widget#{&}_type_subscription{
     &::after{
       top: 2.36rem;
     }
   }
 
-  &_subscription{
+  &_type_subscription{
     position: relative;
     display: inline-block;
     &::after{
@@ -170,15 +167,14 @@
   }
 }
 
-
 @media (max-width: 1100px) {
   .form-element{
-    &_date{
+    &_type_date{
       &.form-element_for-search{
         width: 8.57rem;
       }
     }
-    &_dropdown{
+    &_type_dropdown{
       &.form-element_for-guests{
         width: 18.57rem;
       }
@@ -186,7 +182,7 @@
 
     &_for-main-ui{
       & .form-element__field{
-        &_date{
+        &_type_date{
           width: 10.71rem;
         }
       }
@@ -199,7 +195,7 @@
       &_for-guests{
         width: 18.57rem;
       }
-      &__field_subscription{
+      &__field_type_subscription{
         width: 19rem;
       }
       &_for-search-in, &_for-search-out,
@@ -212,7 +208,7 @@
     }
   }
 
-  .form-element__field.form-element__field_subscription.form-element__field_for-footer-widget{
+  .form-element__field.form-element__field_type_subscription.form-element__field_for-footer-widget{
     padding: .86rem 1rem;
     width: 15.71rem;
     &::placeholder{
@@ -223,7 +219,7 @@
 
 @media (max-width: 450px) {
   .form-element{
-    &__field_for-sign-in.form-element__field_text{
+    &__field_for-sign-in.form-element__field_type_text{
       margin: .43rem 1.43rem .29rem 0;
     }
     &_for-registration{
@@ -231,13 +227,13 @@
     }
 
     &__field{
-      &_date {
+      &_type_date {
         width: 8.5rem;
         &::placeholder{
           font-size: 0.86rem;
         }
       }
-      &_for-registration#{&}_text, &_for-registration#{&}_date,
+      &_for-registration#{&}_type_text, &_for-registration#{&}_type_date,
       &#{&}_for-sign-in{
         width: 18.57rem;
       }

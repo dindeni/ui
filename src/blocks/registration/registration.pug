@@ -1,16 +1,15 @@
 include ../form-element/form-element
 include ../radio/radio
 include ../toggle/toggle
-include ../button/button
+include ../ui-control/ui-control
 include ../ui-datepicker/ui-datepicker
 
 -const arrRadioReg = ['Мужчина', 'Женщина'];
 -const arrRadioRegId = ['man', 'woman'];
 
-mixin registration(modifier)
+mixin registration()
 
-  section(class=['registration',
-  `${modifier ? `registration_${modifier}`:''}`])
+  section(class=['registration'])
     h2.registration__head Регистрация аккаунта
 
     form.registration__form
@@ -38,14 +37,17 @@ mixin registration(modifier)
       +form-element({type: 'password', placeholder: 'Пароль',
         modifierForInput: 'for-registration'})
 
-      +toggle({label: 'Получать спецпредложения', id: 'registration-toggle',
-        modifier:'for-registration'})
+      span.registration__toggle-wrapper
+        +toggle({label: 'Получать спецпредложения', id: 'registration-toggle',
+          modifier:'for-registration'})
 
-      +button({type: 'buy', content: 'перейти к оплате', linkModifier: 'for-registration'})
+      div.registration__button-wrapper
+        +ui-control({content: 'перейти к оплате', buttonModifier: 'width-arrow'})
 
     div.registration__footer
       span.registration__footer-label Уже есть аккаунт на Toxin
-      +button({type: 'bordering-link', content: 'войти', link: 'registration-login', linkModifier: 'for-registration'})
+      div.registration__link-wrapper
+        +ui-control({isBorder: true, content: 'войти', link: 'registration-login', linkModifier: 'for-registration'})
 
 
 

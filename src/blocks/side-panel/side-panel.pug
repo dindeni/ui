@@ -21,22 +21,23 @@ mixin side-panel
 
       +ui-datepicker({type: 'range', defaultDate: '19 авг - 23 авг'})
 
-      +sum-guests({modifier: 'for-filter', modifierForInput: 'for-filter',
-       modifierForLabel: 'for-filter', head: 'гости'})
+      div.side-panel__sum-guests-wrapper
+        +sum-guests({modifier: 'for-filter', modifierForInput: 'for-filter',
+         modifierForLabel: 'for-filter', head: 'гости'})
 
-      div.side-panel__slogan.side-panel__slogan_range диапазон цены
+      div.side-panel__slogan.side-panel__slogan_type_range диапазон цены
       +ui-slider('for-side-panel')
       div.side-panel__range-reference Стоимость за сутки пребывания в номере
 
-      div.side-panel__slogan.side-panel__slogan_checkbox Checkbox Buttons
+      div.side-panel__slogan.side-panel__slogan_type_checkbox Checkbox Buttons
       +checkbox({values: checkboxValue.standart, type: 'checkbox',
         modifier: 'for-side-panel'})
 
-      div.side-panel__slogan.side-panel__slogan_checkbox-rich доступность
+      div.side-panel__slogan.side-panel__slogan_type_checkbox-rich доступность
       +checkbox({values: checkboxValue.rich, type: 'rich',
         modifier: 'for-side-panel'})
 
-      div.side-panel__slogan.side-panel__slogan_rooms удобства номера
+      div.side-panel__slogan.side-panel__slogan_type_rooms удобства номера
       +sum-rooms
       +checkbox({values: checkboxValue.expandable, type: 'checkboxExpandable',
         head: 'дополнительные удобства', modifier: 'for-side-panel'})

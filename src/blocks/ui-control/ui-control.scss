@@ -1,0 +1,153 @@
+@import "../../style/variables/variables";
+@import "../../style/mixins/text";
+@import "../../style/mixins/hide";
+@import "../../style/mixins/button";
+
+.ui-control{
+  display: inline-block;
+
+  &__link{
+    text-decoration: none;
+    @include h3;
+    color: $purple;
+    padding: .5rem 0;
+    text-align: center;
+    display: inline-block;
+    background: #FFFFFF;
+    border-radius: 1.57rem;
+    line-height: 1.07rem;
+    width: 5.79rem;
+    position: relative;
+    &::before{
+      position: absolute;
+      content: '';
+      width: 6.21rem;
+      height: 2.43rem;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      border-radius: 1.57rem;
+      z-index: -10;
+      top: -.21rem;
+      left: -.21rem;
+    }
+    &:hover::before{
+      background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%,
+              rgba(139, 164, 249, .5) 100%);
+    }
+    &_for-sign-in{
+      padding: .85rem 0;
+      width: 6.57rem;
+      &::before{
+        width: 7.07rem;
+        height: 3.14rem;
+      }
+    }
+    &_for-registration{
+      width: 6.57rem;
+      padding: .84rem 0;
+      &::before{
+        width: 7.07rem;
+        height: 3.14rem;
+      }
+    }
+  }
+
+  &__button{
+    background: #FFFFFF;
+    border: none;
+    border-radius: 1.57rem;
+    color: $purple;
+    text-transform: uppercase;
+    font-family: Montserrat, sans-serif;
+    font-size: .86rem;
+    font-weight: bold;
+    width: 6.71rem;
+    height: 2.71rem;
+    position: relative;
+    outline: none;
+    &::before{
+      position: absolute;
+      content: '';
+      width: 7.07rem;
+      height: 3.14rem;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      border-radius: 1.57rem;
+      z-index: -10;
+      top: -.21rem;
+      left: -.14rem;
+    }
+    &:hover::before{
+      background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%,
+              rgba(139, 164, 249, .5) 100%);
+    }
+  }
+
+  &_theme_filled, &_with-link{
+    @include button(linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%), #FFFFFF);
+    &:hover {
+      background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%,
+              rgba(139, 164, 249, .5) 100%);
+    }
+  }
+  &_theme_transparent{
+    @include button(#FFFFFF, #BC9CFF);
+    padding: 0;
+    &:hover{
+      color: rgba(31, 32, 65, 0.5);
+    }
+  }
+  &_width-arrow{
+    position: relative;
+    width: 22.86rem;
+    &::after{
+      position: absolute;
+      content: '';
+      width: 3.14rem;
+      height: 3.14rem;
+      background: url("./images/icon-arrow-forward.svg") no-repeat;
+      right: -1rem;
+      top: .86rem;
+    }
+  }
+  &_with-link#{&}_for-navigation{
+    height: 2.5rem;
+    padding: .71rem 1.79rem;
+  }
+
+  &_theme_like{
+    @include button-border(linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%));
+  }
+  &_theme_gray{
+    @include button-border($dark25);
+  }
+  &__button{
+    &_theme_like{
+      @include button-inner($purple, url("./images/icon-favorite.svg") no-repeat);
+    }
+    &_theme_gray{
+      @include button-inner($dark25, url("./images/icon-favorite_border.svg") no-repeat);
+    }
+  }
+  &_for-sign-in{
+    padding: 1.07rem 9.9rem;
+  }
+
+  &_hidden{
+    @include hide;
+  }
+}
+
+@media (max-width: 1100px){
+  .ui-control{
+    &_width-arrow{
+      width: 18.6rem;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .ui-control{
+    &_for-sign-in{
+      padding: 1.07rem 7.8rem;
+    }
+  }
+}

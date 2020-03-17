@@ -105,6 +105,13 @@
   &__sum{
     margin-right: 1.86rem;
   }
+  &__button-wrapper{
+    margin-top: 1.7rem;
+  }
+
+  &__sum-guests-wrapper{
+    padding: 1.43rem 0 0 .21rem;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -118,7 +125,7 @@
       font-size: 0.86rem;
       margin: 0 5rem 0 0;
     }
-    &_price {
+    &__price {
       font-size: 0.93rem;
     }
     &__label:first-child{

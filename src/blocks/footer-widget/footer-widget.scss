@@ -6,6 +6,11 @@
   display: flex;
   flex-wrap: wrap;
 
+  &__list-wrapper{
+    padding: 6.43rem 2.8% 0 0;
+    width: 11.43rem;
+  }
+
   &__subscribe-head{
     @include h3;
     color: $dark100;
@@ -72,6 +77,11 @@
 
     &__subscribe-wrapper{
       margin: 3.57rem 0 3.57rem 0;
+    }
+
+    &__list-wrapper{
+      width: 8.57rem;
+      padding: 3.57rem 2.8% 0 0;
     }
   }
 }

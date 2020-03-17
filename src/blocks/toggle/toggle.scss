@@ -3,15 +3,6 @@
 @import "../../style/variables/variables";
 
 .toggle{
-  &_for-registration{
-    padding: 0 0 0 .36rem;
-    display: inline-block;
-  }
-
-  &_for-ui{
-    padding: .71rem 0 .71rem .43rem;
-  }
-
   &__field{
     @include hide;
   }

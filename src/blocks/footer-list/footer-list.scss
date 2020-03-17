@@ -2,18 +2,12 @@
 @import "../../style/mixins/text";
 
 .footer-list{
-  padding-right: 2.8%;
-  &__wrapper{
-    width: 11.43rem;
-    padding: 6.43rem 0 0 0;
-  }
-
   &__head{
     @include h3;
     color: $dark100;
   }
 
-  &__list{
+  &__items{
     list-style: none;
     padding: 0;
     margin: 1.36rem 0 0 0;
@@ -26,12 +20,5 @@
 
   &__item{
     margin: 0 0 1rem 0;
-  }
-}
-
-@media (max-width: 620px) {
-  .footer-list__wrapper {
-    width: 8.57rem;
-    padding: 3.57rem 2.8% 0 0;
   }
 }

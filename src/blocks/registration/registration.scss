@@ -38,6 +38,24 @@
   &__footer-label{
     @include body;
   }
+  &__button-wrapper{
+    margin-top: 1.43rem;
+  }
+  &__link-wrapper{
+    display: inline-block;
+    margin: .21rem 0 0 2.86rem;
+  }
+
+  &__toggle-wrapper{
+    padding: 0 0 0 .36rem;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 1100px) {
+  .registration__link-wrapper{
+    margin: .21rem 0 0 0.3rem;
+  }
 }
 
 @media (max-width: 400px) {

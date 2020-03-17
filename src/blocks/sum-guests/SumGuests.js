@@ -14,17 +14,17 @@ class SumGuests {
     const containerAdult = this.classGuests.querySelector('.js-sum-guests__container_adult');
     const containerChildren = this.classGuests.querySelector('.js-sum-guests__container_children');
     const containerBabies = this.classGuests.querySelector('.js-sum-guests__container_babies');
-    const buttonApply = this.classGuests.querySelector('.js-button__transparent_apply');
-    const buttonClear = this.classGuests.querySelector('.js-button__transparent_clear');
+    const buttonApply = this.classGuests.querySelector('.js-ui-control_apply');
+    const buttonClear = this.classGuests.querySelector('.js-ui-control_clear');
 
     guestsPopup.addEventListener('focusout', SumGuests._handleGuestsPopupFocusout);
 
     guestsPopup.addEventListener('focusin', SumGuests._handleGuestsPopupFocusIn);
 
     const handleClassGuestsClick = (event) => {
-      const isHidden = event.target === inputGuests && guestsPopup.classList.contains('sum-guests__popup_hide');
+      const isHidden = event.target === inputGuests && guestsPopup.classList.contains('sum-guests__popup_hidden');
       if (isHidden) {
-        guestsPopup.classList.remove('sum-guests__popup_hide');
+        guestsPopup.classList.remove('sum-guests__popup_hidden');
 
         guestsPopup.focus();
       }
@@ -117,11 +117,11 @@ class SumGuests {
     number.forEach((value, index) => {
       const buttonMinusElement = buttonMinus;
       if (+value.textContent === 0) {
-        buttonMinusElement[index].classList.remove('sum-guests__button_non-nullified');
-        buttonMinusElement[index].classList.add('sum-guests__button_nullified');
+        buttonMinusElement[index].classList.remove('sum-guests__button_type_non-nullified');
+        buttonMinusElement[index].classList.add('sum-guests__button_type_nullified');
       } else {
-        buttonMinusElement[index].classList.remove('sum-guests__button_nullified');
-        buttonMinusElement[index].classList.add('sum-guests__button_non-nullified');
+        buttonMinusElement[index].classList.remove('sum-guests__button_type_nullified');
+        buttonMinusElement[index].classList.add('sum-guests__button_type_non-nullified');
       }
     });
   }
@@ -157,9 +157,9 @@ class SumGuests {
     } = options;
     const hasValue = +inputGuests.value !== 0 && inputGuests.value !== '' && inputGuests.value !== '0 гостей';
     if (hasValue) {
-      buttonClear.classList.remove('button__transparent_hide');
+      buttonClear.classList.remove('ui-control_hidden');
     } else {
-      buttonClear.classList.add('button__transparent_hide');
+      buttonClear.classList.add('ui-control_hidden');
     }
     if (event.target === buttonClear) {
       inputGuests.value = 0;
@@ -174,20 +174,20 @@ class SumGuests {
     const { event, buttonApply, guestsPopup } = options;
     if (event.target === buttonApply) {
       event.preventDefault();
-      guestsPopup.classList.add('sum-guests__popup_hide');
+      guestsPopup.classList.add('sum-guests__popup_hidden');
     }
   }
 
   static _handleGuestsPopupFocusout(event) {
     event.currentTarget.classList.remove('sum-guests__popup_focused');
     event.currentTarget.classList.add('sum-guests__popup_unfocused');
-    event.currentTarget.classList.add('sum-guests__popup_hide');
+    event.currentTarget.classList.add('sum-guests__popup_hidden');
   }
 
   static _handleGuestsPopupFocusIn(event) {
     event.currentTarget.classList.remove('sum-guests__popup_unfocused');
     event.currentTarget.classList.add('sum-guests__popup_focused');
-    event.currentTarget.classList.remove('sum-guests__popup_hide');
+    event.currentTarget.classList.remove('sum-guests__popup_hidden');
   }
 }
 

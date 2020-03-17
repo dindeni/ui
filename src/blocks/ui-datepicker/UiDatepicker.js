@@ -67,11 +67,12 @@ class UiDatepicker {
   static _setRangeDatepickerSettings({ $inputElement, $inputElementHide }) {
     $inputElement.datepicker({
       ...DATE_SETTINGS,
+      dateFormat: 'dd M',
       monthNamesShort: [' янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
       beforeShow: (text, instance) => {
         setTimeout(() => {
           if (parseInt($inputElement.css('width'), 10) < 270) {
-            instance.dpDiv.addClass('ui-datepicker_range');
+            instance.dpDiv.addClass('ui-datepicker_type_range');
           }
 
           instance.dpDiv.css({
@@ -92,7 +93,7 @@ class UiDatepicker {
           $inputElement.datepicker('setDate', null);
         } else $inputElementHide.datepicker('show');
 
-        instance.dpDiv.removeClass('ui-datepicker_range');
+        instance.dpDiv.removeClass('ui-datepicker_type_range');
       },
     });
 
@@ -108,12 +109,12 @@ class UiDatepicker {
           $inputElement.val(`${$inputElement.val().substring(0, 6)} - ${value}`);
         }
 
-        instance.dpDiv.removeClass('ui-datepicker_range');
+        instance.dpDiv.removeClass('ui-datepicker_type_range');
       },
       beforeShow: (text, instance) => {
         setTimeout(() => {
           if (parseInt($inputElement.css('width'), 10) < 270) {
-            instance.dpDiv.addClass('ui-datepicker_range');
+            instance.dpDiv.addClass('ui-datepicker_type_range');
           }
           instance.dpDiv.css({
             top: $inputElement.offset().top + SHIFT_LEFT,

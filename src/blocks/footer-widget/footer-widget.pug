@@ -6,23 +6,21 @@ mixin footer-widget(options)
 
   -const {description, headNavigation,
   -navigationItems, headAbout, aboutItems, headSupport, supportItems, headSubscribe,
-  -subscribeDescription, placeholderEmail, copyrightText, modifier,
-  -copyrightModifier}=options;
+  -subscribeDescription, placeholderEmail, copyrightText}=options;
 
-  footer(class=['footer-widget',
-  `${modifier ? `footer-widget_${modifier}`:''}`])
+  footer(class=['footer-widget'])
     div.footer-widget__logo-wrapper
       img.footer-widget__logo(src=require('../img/icon-logo.svg') alt='image logo')
       p.footer-widget__description=description
 
-    +footer-list({head:headNavigation, items:navigationItems,
-      modifier:'navigation'})
+    div.footer-widget__list-wrapper
+      +footer-list({head:headNavigation, items:navigationItems})
 
-    +footer-list({head:headAbout, items:aboutItems,
-      modifier:'about'})
+    div.footer-widget__list-wrapper
+      +footer-list({head:headAbout, items:aboutItems})
 
-    +footer-list({head:headSupport, items:supportItems,
-      modifier:'support'})
+    div.footer-widget__list-wrapper
+      +footer-list({head:headSupport, items:supportItems})
 
     div.footer-widget__subscribe-wrapper
       h3.footer-widget__subscribe-head=headSubscribe
@@ -31,7 +29,7 @@ mixin footer-widget(options)
       +form-element({type: 'subscription', placeholder: placeholderEmail,
         modifierForInput: 'for-footer-widget', modifierForLabel: 'for-footer-widget'})
 
-    +copyright({text: copyrightText, modifier: 'footer-widget'})
+    +copyright(copyrightText)
 
 
 

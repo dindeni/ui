@@ -13,4 +13,5 @@ mixin main-room()
         each image, index in roomDetailPath
           if index > 0
             img(src=image alt='room image').main-room__image
-    +room-description
+    div.main-room__description-wrapper
+      +room-description

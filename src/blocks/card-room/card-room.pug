@@ -3,10 +3,9 @@ include ../rate/rate
 mixin card-room(options)
 
   -const {images, radioName, type, numberOfRoom, price,
-  -numberOfReviews, numberOfRate, modifier}=options;
+  -numberOfReviews, numberOfRate,}=options;
 
-  div(class=['card-room', 'js-card-room',
-   `${modifier ? `card-room_${modifier}`:''}`])
+  div(class=['card-room', 'js-card-room'])
     div.card-room__wrapper
       div.card-room__image-wrapper
         each value, index in images
@@ -39,7 +38,8 @@ mixin card-room(options)
       span.card-room__price #{price}&#8381;
       span.card-room__periodicity в сутки
 
-    +rate({numberFillStars: numberOfRate, modifier: 'for-card-room'})
+    div.card-room__rate-wrapper
+      +rate({numberFillStars: numberOfRate, modifier: 'for-card-room'})
 
     div.card-room__number-review=numberOfReviews
       span.card-room__number-review-word Отзывов

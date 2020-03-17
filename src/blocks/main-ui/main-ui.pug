@@ -1,5 +1,4 @@
 include ../search-room/search-room
-include ../button/button
 include ../form-element/form-element
 include ../checkbox/checkbox
 include ../radio/radio
@@ -55,7 +54,7 @@ include ../sum-guests/sum-guests
 -require('../img/image-room-444.jpg')];
 
 -const navigationValues ={items: ['Home', 'About Us', 'Services', 'Careers',
--'News', 'Documentation'], linkModifier: ['current', , 'expand', , ,]};
+-'News', 'Documentation'], linkModifier: ['current', , 'type_expand', , ,]};
 
 -const { items, linkModifier } = navigationValues;
 
@@ -101,36 +100,43 @@ mixin main-ui()
 
       div.main-ui__form-wrapper
         +checkbox(checkboxData)
-        +radio({values: arrRadio, id: arrRadioId, modifier: 'for-ui'})
-        +toggle({
-          label: 'Получать спецпредложение', id: 'toggle',
-          modifier: 'for-ui'
-        })
+        div.main-ui__radio-wrapper
+          +radio({values: arrRadio, id: arrRadioId, modifier: 'for-ui'})
+        div.main-ui__toggle-wrapper
+          +toggle({
+            label: 'Получать спецпредложение', id: 'toggle',
+            modifier: 'for-ui'
+          })
 
-        div.main-ui__buttons-wrapper
-          +button({type: 'like-gray', content: 2, modifier: 'for-ui'})
-          +button({type: 'like', content: 12, modifier: 'for-ui'})
+        div.main-ui__button-rate-wrapper
+          +ui-control({isBorder: true, content: 2, modifier: 'theme_gray',
+          buttonModifier: 'theme_gray'})
+        div.main-ui__button-rate-wrapper
+          +ui-control({isBorder: true, content: 12, modifier: 'theme_like',
+          buttonModifier: 'theme_like'})
 
-        div.main-ui__rate-wrapper
-          +rate({numberFillStars: 4, modifier: 'for-ui'})
-          +rate({numberFillStars: 5})
+        div.main-ui__rates-wrapper
+          div.main-ui__rate-wrapper
+            +rate({numberFillStars: 4, modifier: 'for-ui'})
+          div.main-ui__rate-wrapper
+            +rate({numberFillStars: 5})
 
-      div.main-ui__form-wrapper
+      div.main-ui__fofrm-wrapper
 
         div.main-ui__range-wrapper
           +ui-slider
 
         div.main-ui__buttons-wrapper
-          +button({type: 'full', content: 'click me'})
+          +ui-control({ content: 'click me'})
 
         div.main-ui__buttons-wrapper
-          +button({typeOfButtons: 'bordering', content: 'click me'})
+          +ui-control({isBorder: true, content: 'click me'})
 
         div.main-ui__buttons-wrapper
-          +button({type: 'transparent', content: 'click me'})
+          +ui-control({isTransparent: true, content: 'click me'})
 
         div.main-ui__buttons-wrapper
-          +button({type: 'buy', content: 'перейти к оплате'})
+          +ui-control({ content: 'перейти к оплате', buttonModifier: 'width-arrow'})
         +pagination({value: 15, modifier: 'for-ui'})
 
       div.main-ui__form-wrapper
@@ -159,7 +165,7 @@ mixin main-ui()
       div.main-ui__card-wrapper
         +searchRoom
         div.main-ui__registration-wrapper
-          +registration('for-main-ui')
+          +registration()
 
       div.main-ui__card-wrapper
         +order-room({totalValue, totalPrice})

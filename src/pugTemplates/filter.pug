@@ -3,7 +3,7 @@ include ../blocks/main-filter/main-filter
 include ../blocks/footer/footer
 
 -const navigationValues = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
--linkModifier: [ , 'expand-ru', ,  , 'expand-ru']};
+-linkModifier: [ , 'type_expand-ru', ,  , 'type_expand-ru']};
 
 -const { items, linkModifier } = navigationValues;
 
@@ -34,7 +34,7 @@ html(lang="en")
     header.main-filter__header
       +navigation({
         items, linkModifier, type: 'standart', loginName: 'войти',
-        registrationName: 'зарегистрироваться', modifierForItems: 'ru'
+        registrationName: 'зарегистрироваться', modifierForItems: 'type_ru'
       })
     +main-filter
 

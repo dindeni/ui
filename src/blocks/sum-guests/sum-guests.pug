@@ -1,4 +1,4 @@
-include ../button/button
+include ../ui-control/ui-control
 include ../form-element/form-element
 
 mixin sum-guests(options)
@@ -16,7 +16,7 @@ mixin sum-guests(options)
         jsModifierForInput: 'for-guests'})
 
       div(tabindex=0 class=['sum-guests__popup', 'js-sum-guests__popup',
-       'sum-guests__popup_hide', `${modifier ? `sum-guests__popup_${modifier}` : ''}`])
+       'sum-guests__popup_hidden', `${modifier ? `sum-guests__popup_${modifier}` : ''}`])
 
         div.sum-guests__count-container
           each value, index in visitors
@@ -32,8 +32,10 @@ mixin sum-guests(options)
 
         div.sum-guests__buttons-footer-container.js-sum-guests__buttons-footer-container
 
-          +button({type: 'transparent', content: 'очистить',
-           modifier: 'clear', hideModifier: 'hide', jsModifier:'clear'})
+          div.sum-guests__button-wrapper
+            +ui-control({isTransparent: true, content: 'очистить',
+             modifier: 'clear', hideModifier: 'hidden', jsModifier:'clear'})
 
-          +button({type: 'transparent', content: 'применить',
-           modifier: 'apply', jsModifier: 'apply'})
+          div.sum-guests__button-wrapper
+            +ui-control({isTransparent: true, content: 'применить',
+             modifier: 'apply', jsModifier: 'apply'})

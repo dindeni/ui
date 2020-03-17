@@ -3,7 +3,7 @@ include ../blocks/footer-widget/footer-widget
 include ../blocks/main-sign-in/main-sign-in
 
 -const navigationValues = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
--linkModifier: [ , 'expand-ru', ,  , 'expand-ru']};
+-linkModifier: [ , 'type_expand-ru', ,  , 'type_expand-ru']};
 
 -const { items, linkModifier } = navigationValues;
 
@@ -32,7 +32,7 @@ html(lang="en")
 
     header
       +navigation({items, linkModifier, type: 'standart', loginName: 'войти',
-        registrationName: 'зарегистрироваться', modifierForItems: 'ru'})
+        registrationName: 'зарегистрироваться', modifierForItems: 'type_ru'})
 
     +main-sign-in
 
