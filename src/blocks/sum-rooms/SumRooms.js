@@ -27,23 +27,23 @@ class SumRooms {
     const roomsPopup = element;
     roomsPopup.classList.remove('sum-rooms__popup_focused');
     roomsPopup.classList.add('sum-rooms__popup_unfocused');
-    roomsPopup.classList.add('sum-rooms__popup_hide');
+    roomsPopup.classList.add('sum-rooms__popup_hidden');
   }
 
   static _handleRoomsPopupFocusin(element) {
     const roomsPopup = element;
     roomsPopup.classList.remove('sum-rooms__popup_unfocused');
     roomsPopup.classList.add('sum-rooms__popup_focused');
-    roomsPopup.classList.remove('sum-rooms__popup_hide');
+    roomsPopup.classList.remove('sum-rooms__popup_hidden');
   }
 
   static _handleDocumentClick(options) {
     const { event, roomsPopup, roomsInput } = options;
-    if (event.target === roomsInput && roomsPopup.classList.contains('sum-rooms__popup_hide')) {
-      roomsPopup.classList.remove('sum-rooms__popup_hide');
+    if (event.target === roomsInput && roomsPopup.classList.contains('sum-rooms__popup_hidden')) {
+      roomsPopup.classList.remove('sum-rooms__popup_hidden');
       roomsPopup.focus();
-    } else if (event.target === roomsInput && !roomsPopup.classList.contains('sum-rooms__popup_hide')) {
-      roomsPopup.classList.add('sum-rooms__popup_hide');
+    } else if (event.target === roomsInput && !roomsPopup.classList.contains('sum-rooms__popup_hidden')) {
+      roomsPopup.classList.add('sum-rooms__popup_hidden');
     }
   }
 

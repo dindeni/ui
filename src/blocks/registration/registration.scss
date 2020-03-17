@@ -1,6 +1,6 @@
-@import "../../style/mixins/text";
-@import "../../style/mixins/rectangle";
-@import "../../style/variables/variables";
+@import '../../style/mixins/text';
+@import '../../style/mixins/rectangle';
+@import '../../style/variables/variables';
 
 .registration {
   @include rectangle;

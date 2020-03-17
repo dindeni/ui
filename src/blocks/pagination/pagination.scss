@@ -1,5 +1,5 @@
-@import "../../style/mixins/text";
-@import "../../style/variables/variables";
+@import '../../style/mixins/text';
+@import '../../style/variables/variables';
 
 .pagination {
   &__list {
@@ -39,7 +39,7 @@
       width: 1.29rem;
       height: 1.29rem;
       margin: 0 auto;
-      background: url("./images/icon-arrow-forward.svg") no-repeat;
+      background: url('./images/icon-arrow-forward.svg') no-repeat;
       background-size: 1.29rem 1.29rem;
     }
   }

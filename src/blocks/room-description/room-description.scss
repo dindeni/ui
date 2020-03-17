@@ -1,5 +1,5 @@
-@import "../../style/mixins/text";
-@import "../../style/variables/variables";
+@import '../../style/mixins/text';
+@import '../../style/variables/variables';
 
 .room-description {
   display: flex;
@@ -65,7 +65,7 @@
   }
 
   &__cancel-head {
-    margin: 0 0 0 0;
+    margin: 0;
   }
 }
 

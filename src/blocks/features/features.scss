@@ -1,4 +1,4 @@
-@import "../../style/mixins/text";
+@import '../../style/mixins/text';
 
 .features {
   @include body;
@@ -18,17 +18,17 @@
       content: '';
       width: 3.43rem;
       height: 3.43rem;
-      background: url("./images/icon-emoticon.svg") no-repeat;
+      background: url('./images/icon-emoticon.svg') no-repeat;
       left: .57rem;
       top: .14rem;
     }
 
     &_type_convenient::before {
-      background: url("./images/icon-location-city.svg") no-repeat;
+      background: url('./images/icon-location-city.svg') no-repeat;
     }
 
     &_type_cozy::before {
-      background: url("./images/icon-whatshot.svg") no-repeat;
+      background: url('./images/icon-whatshot.svg') no-repeat;
     }
   }
 

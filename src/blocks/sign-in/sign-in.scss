@@ -1,5 +1,5 @@
-@import "../../style/mixins/text";
-@import "../../style/mixins/rectangle";
+@import '../../style/mixins/text';
+@import '../../style/mixins/rectangle';
 
 .sign-in {
   @include rectangle;

@@ -1,7 +1,7 @@
-@import "../../style/variables/variables";
-@import "../../style/mixins/text";
-@import "../../style/mixins/hide";
-@import "../../style/mixins/button";
+@import '../../style/variables/variables';
+@import '../../style/mixins/text';
+@import '../../style/mixins/hide';
+@import '../../style/mixins/button';
 
 .ui-control {
   display: inline-block;
@@ -116,7 +116,7 @@
       content: '';
       width: 3.14rem;
       height: 3.14rem;
-      background: url("./images/icon-arrow-forward.svg") no-repeat;
+      background: url('./images/icon-arrow-forward.svg') no-repeat;
       right: -1rem;
       top: .86rem;
     }
@@ -137,11 +137,11 @@
 
   &__button {
     &_theme_like {
-      @include button-inner($purple, url("./images/icon-favorite.svg") no-repeat);
+      @include button-inner($purple, url('./images/icon-favorite.svg') no-repeat);
     }
 
     &_theme_gray {
-      @include button-inner($dark25, url("./images/icon-favorite_border.svg") no-repeat);
+      @include button-inner($dark25, url('./images/icon-favorite_border.svg') no-repeat);
     }
   }
 

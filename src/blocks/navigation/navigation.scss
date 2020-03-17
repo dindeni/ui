@@ -1,6 +1,6 @@
-@import "../../style/mixins/text";
-@import "../../style/variables/variables";
-@import "../../style/mixins/hide";
+@import '../../style/mixins/text';
+@import '../../style/variables/variables';
+@import '../../style/mixins/hide';
 
 .navigation {
   width: 100%;
@@ -40,7 +40,7 @@
     color: $dark50;
     line-height: 1.21rem;
 
-    &_current, &:hover {
+    &_type_current, &:hover {
       font-weight: bold;
       color: $dark75;
     }
@@ -54,7 +54,7 @@
         content: '';
         width: 1.07rem;
         height: 1.07rem;
-        background: url("./images/icon-expand.svg") no-repeat;
+        background: url('./images/icon-expand.svg') no-repeat;
         right: -.29rem;
         top: .14rem;
       }

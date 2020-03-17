@@ -1,7 +1,7 @@
-@import "../../style/mixins/rectangle";
-@import "../../style/mixins/hide";
-@import "../../style/variables/variables";
-@import "../../style/mixins/text";
+@import '../../style/mixins/rectangle';
+@import '../../style/mixins/hide';
+@import '../../style/variables/variables';
+@import '../../style/mixins/text';
 
 .card-room {
   @include rectangle;
@@ -57,7 +57,7 @@
   &__arrow {
     width: .57rem;
     height: .93rem;
-    background: url("./images/icon-expand-white.svg") no-repeat;
+    background: url('./images/icon-expand-white.svg') no-repeat;
     border: none;
     cursor: pointer;
     outline: none;
@@ -122,8 +122,6 @@
     @include body;
     color: $dark50;
     font-weight: bold;
-    &.card-room__price_normal{
-    }
   }
 
   &__periodicity {
@@ -149,7 +147,6 @@
     text-transform: none;
     margin-left: .29rem;
     margin-right: .86rem;
-
   }
 
   &__rate-wrapper {

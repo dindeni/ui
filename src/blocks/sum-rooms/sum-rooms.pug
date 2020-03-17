@@ -7,7 +7,7 @@ mixin sum-rooms
     +form-element({type: 'dropdown', placeholder: '0 спальни, 0 кровати...',
       modifierForInput: 'for-rooms', jsModifierForInput: 'for-rooms'})
 
-    div.sum-rooms__popup.js-sum-rooms__popup.sum-rooms__popup_hide(tabindex=0)
+    div.sum-rooms__popup.js-sum-rooms__popup.sum-rooms__popup_hidden(tabindex=0)
       div.sum-rooms__count-container
 
       each value, index in rooms

@@ -1,4 +1,4 @@
-@import "../../style/mixins/hide";
+@import '../../style/mixins/hide';
 
 .social-buttons {
   &__list {
@@ -30,13 +30,15 @@
   margin: 0 0 0 1.43rem;
 
     &_twitter {
-      background: url("./images/icon-twitter.svg") no-repeat;
+      background: url('./images/icon-twitter.svg') no-repeat;
     }
+
     &_facebook {
-      background: url("./images/icon-facebook.svg") no-repeat;
+      background: url('./images/icon-facebook.svg') no-repeat;
     }
+
     &_instagram {
-      background: url("./images/icon-instagram.svg") no-repeat;
+      background: url('./images/icon-instagram.svg') no-repeat;
     }
   }
 }
