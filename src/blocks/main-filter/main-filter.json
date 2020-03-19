@@ -1,0 +1,88 @@
+{
+  "value": [
+    {
+      "type": "luxe",
+      "numberOfRoom": 888,
+      "price": "9 900",
+      "numberOfReviews": 145,
+      "numberOfRate": 5
+    },
+    {
+      "type": "normal",
+      "numberOfRoom": 840,
+      "price": "9 900",
+      "numberOfReviews": 65,
+      "numberOfRate": 4
+    },
+    {
+      "type": "luxe",
+      "numberOfRoom": 980,
+      "price": "8 500",
+      "numberOfReviews": 35,
+      "numberOfRate": 3
+    },
+    {
+      "type": "normal",
+      "numberOfRoom": 856,
+      "price": "7 300",
+      "numberOfReviews": 19,
+      "numberOfRate": 5
+    },
+    {
+      "type": "normal",
+      "numberOfRoom": 740,
+      "price": "6 000",
+      "numberOfReviews": 44,
+      "numberOfRate": 4
+    },
+    {
+      "type": "normal",
+      "numberOfRoom": 982,
+      "price": "5 800",
+      "numberOfReviews": 56,
+      "numberOfRate": 3
+    },
+    {
+      "type": "normal",
+      "numberOfRoom": 678,
+      "price": "5 500",
+      "numberOfReviews": 45,
+      "numberOfRate": 5
+    },
+    {
+      "type": "normal",
+      "numberOfRoom": 450,
+      "price": "5 300",
+      "numberOfReviews": 39,
+      "numberOfRate": 4
+    },
+    {
+      "type": "normal",
+      "numberOfRoom": 350,
+      "price": "5 000",
+      "numberOfReviews": 77,
+      "numberOfRate": 3
+    },
+    {
+      "type": "normal",
+      "numberOfRoom": 666,
+      "price": "5 000",
+      "numberOfReviews": 25,
+      "numberOfRate": 5
+    },
+    {
+      "type": "normal",
+      "numberOfRoom": 444,
+      "price": "9 900",
+      "numberOfReviews": 15,
+      "numberOfRate": 3
+    },
+    {
+      "type": "normal",
+      "numberOfRoom": 352,
+      "price": "5 000",
+      "numberOfReviews": 55,
+      "numberOfRate": 3
+    }
+  ]
+}

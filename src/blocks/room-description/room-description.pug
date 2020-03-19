@@ -5,26 +5,10 @@ include ../bullet-list/bullet-list
 include ../features/features
 include ../order-room/order-room
 
--const roomFeatures = [{slogan: 'Комфорт', description: 'Шумопоглощающие стены'},
--{slogan: 'Удобство', description: 'Окно в каждой из спален'}, {slogan: 'Уют',
--description: 'Номер оснащён камином'}];
+-const descriptionData = require('../blocks/room-description/room-description.json');
+-const { features, totalValue, totalPrice, review, bulletList } = descriptionData;
 
--const totalValue = ['9 990₽ х 4 суток', 'Сбор за услуги: скидка 2 179₽',
--'Сбор за дополнительные услуги'];
--const totalPrice = ['39 960₽', '0₽', '300₽'];
-
--const reviewData = [{head: 'Мурад Сарафанов', date: '5 дней назад', description:
--'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
--path: require('../blocks/room-description/images/icon-avatar-1.png'), typeOfButton: 'like',
--numberOfLikes: 12}, {head: 'Патрисия Стёклышкова', date: 'Неделю назад',
--description: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
--path: require('../blocks/room-description/images/icon-avatar-2.png'), typeOfButton: 'gray',
--numberOfLikes: 2}];
-
-
--const bulletListData = {values: ['Нельзя с питомцами', 'Без вечеринок и мероприятий',
--'Время прибытия — после 13:00, а выезд до 12:00'], modifier: 'for-room-description'};
-
+- const reviewPath = [require('../blocks/room-description/images/icon-avatar-1.png'), require('../blocks/room-description/images/icon-avatar-2.png')];
 
 mixin room-description
 
@@ -33,7 +17,7 @@ mixin room-description
       div.room-description__wrapper
         h2.room-description__features-head Сведения о номере
 
-        +features({values:roomFeatures, modifier: 'for-room-description'})
+        +features({values: features, modifier: 'for-room-description'})
 
       div.room-description__pie-chart-wrapper
         h2.room-description__pie-chart-head Впечатления от номера
@@ -44,17 +28,17 @@ mixin room-description
         h2.room-description__review-head Отзывы посетителей номера
         span.room-description__review-number 2 отзыва
 
-        each value in reviewData
+        each value, index in review
 
-          -const {head, date, description, path, typeOfButton, numberOfLikes} = value;
+          -const {head, date, description, typeOfButton, numberOfLikes} = value;
 
-          +review({head, date, description, path, typeOfButton,
+          +review({head, date, description, path: reviewPath[index], typeOfButton,
           numberOfLikes, modifier: 'for-room-description'})
 
       div.room-description__rules
         h2.room-description__rules-head Правила
 
-        +bullet-list(bulletListData)
+        +bullet-list(bulletList)
 
       div.room-description__cancel
         h2.room-description__cancel-head Отмена

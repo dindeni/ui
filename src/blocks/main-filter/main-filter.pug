@@ -2,46 +2,21 @@ include ../footer-widget/footer-widget
 include ../side-panel/side-panel
 include ../pagination/pagination
 
--const arrPathImage = [require('../img/image-room-888.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')];
+-const cardRoomData = require('../blocks/main-filter/main-filter.json');
+-const { type, numberOfRoom, price, numberOfReviews, numberOfRate } = cardRoomData;
 
--const rooms = [{images: [require('../img/image-room-888.jpg'),
--require('../img/image-room-982.jpg'),require('../img/image-room-350.jpg'),
--require('../img/image-room-444.jpg')], type: 'luxe', numberOfRoom: 888,
--price: '9 900', numberOfReviews: 145, numberOfRate: 5}, {images: [require('../img/image-room-840.jpg'),
--require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 840, price: '9 900', numberOfReviews: 65, numberOfRate: 4},
--{images: [require('../img/image-room-980.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'luxe', numberOfRoom: 980, price: '8 500', numberOfReviews: 35, numberOfRate: 3},
--{images: [require('../img/image-room-856.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 856, price: '7 300', numberOfReviews: 19, numberOfRate: 5},
--{images: [require('../img/image-room-740.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 740, price: '6 000', numberOfReviews: 44, numberOfRate: 4},
--{images: [require('../img/image-room-982.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 982, price: '5 800', numberOfReviews: 56, numberOfRate: 3},
--{images: [require('../img/image-room-678.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 678, price: '5 500', numberOfReviews: 45, numberOfRate: 5},
--{images: [require('../img/image-room-450.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 450, price: '5 300', numberOfReviews: 39, numberOfRate: 4},
--{images: [require('../img/image-room-350.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 350, price: '5 000', numberOfReviews: 77, numberOfRate: 3},
--{images: [require('../img/image-room-666.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 666, price: '5 000', numberOfReviews: 25, numberOfRate: 5},
--{images: [require('../img/image-room-444.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 444, price: '9 900', numberOfReviews: 15, numberOfRate: 3},
--{images: [require('../img/image-room-352.jpg'), require('../img/image-room-982.jpg'),
--require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
--type: 'normal', numberOfRoom: 352, price: '5 000', numberOfReviews: 55, numberOfRate: 3}];
+-const rooms = [[require('../img/image-room-888.jpg'), require('../img/image-room-982.jpg'),require('../img/image-room-350.jpg'),require('../img/image-room-444.jpg')],
+-[require('../img/image-room-840.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
+-[require('../img/image-room-980.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
+-[require('../img/image-room-856.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
+-[require('../img/image-room-740.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
+-[require('../img/image-room-982.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
+-[require('../img/image-room-678.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
+-[require('../img/image-room-450.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
+-[require('../img/image-room-350.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
+-[require('../img/image-room-666.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
+-[require('../img/image-room-444.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
+-[require('../img/image-room-352.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')]];
 
 mixin main-filter()
 
@@ -52,14 +27,14 @@ mixin main-filter()
 
     section.main-filter__rooms
       h1.main-filter__rooms-head Номера, которые мы для вас подобрали
-      each value in rooms
+      each value, index in cardRoomData.value
 
         -const { images, type, numberOfRoom, numberOfRate, price,
         -numberOfReviews } = value;
 
         div.main-filter__card-wrapper
           +card-room({
-            images, radioName: 'room-radio-name', type,
+            images: rooms[index], radioName: 'room-radio-name', type,
             numberOfRoom, price, numberOfReviews, numberOfRate,
           })
 

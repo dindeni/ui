@@ -2,8 +2,7 @@ include ../form-element/form-element
 
 mixin ui-datepicker(options)
 
-  -const { type, placeholder, modifierForLabel, modifierForInput,
-  -defaultDate }=options;
+  -const { type, placeholder, modifierForLabel, modifierForInput, defaultDate }=options;
 
   -if (type === 'single') {
     +form-element({ type: 'date', placeholder: placeholder,

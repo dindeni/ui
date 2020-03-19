@@ -19,57 +19,19 @@ include ../footer-widget/footer-widget
 include ../sign-in/sign-in
 include ../sum-guests/sum-guests
 
--const checkboxData = {values: ['Можно курить', 'Можно с питомцами',
--'Можно пригласить гостей (до 10 человек)'], type: 'checkbox'};
+-const data = require('../blocks/main-ui/main-ui.json');
 
--const checkboxExpandableData = {values: ['Завтрак', 'Письменный стол', 'Стул для кормления',
--'Кроватка', 'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь'], type: 'checkboxExpandable',
--head: 'expandable checkbox list'};
+-const { radioLabels, radioIds, checkbox, checkboxExpandable, checkboxRich, bulletList, orderRoom, features, navigation, footerWidget } = data;
 
--const checkboxRichData = {values: [{label:'Широкий коридор', description: 'Ширина коридоров в номере не менее 91 см.'},
--{label: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.'}],
--type: 'rich'};
+-const cardRoomImagesFirst = [require('../img/image-room-888.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')];
 
--const arrRadio = ['Terran', 'Protoss'];
+-const cardRoomImagesSecond = [require('../img/image-room-840.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')];
 
--const arrRadioId = ['terran', 'protoss'];
+-const { items, linkModifier } = navigation;
 
--const bulletListData = {values: ['Нельзя с питомцами',
--'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']};
-
--const arrFeatures = [{slogan: 'Комфорт', description: 'Шумопоглощающие стены'},
--{slogan: 'Удобство', description: 'Окно в каждой из спален'}];
-
--const totalValue = ['9 990₽ х 4 суток', 'Сбор за услуги: скидка 2 179₽',
--'Сбор за дополнительные услуги'];
-
--const totalPrice = ['39 960₽', '0₽', '300₽'];
-
--const arrPathImage1 = [require('../img/image-room-888.jpg'),
--require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'),
--require('../img/image-room-444.jpg')];
-
--const arrPathImage2 = [require('../img/image-room-840.jpg'),
--require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'),
--require('../img/image-room-444.jpg')];
-
--const navigationValues ={items: ['Home', 'About Us', 'Services', 'Careers',
--'News', 'Documentation'], linkModifier: ['type_current', , 'type_expand', , ,]};
-
--const { items, linkModifier } = navigationValues;
-
--const valuesForLogin = { items, linkModifier, type, loginName: 'login', registrationName: 'register', type: 'standart' };
+-const valuesForLogin = { items, linkModifier, type: 'default', loginName: 'login', registrationName: 'register' };
 
 -const valuesForLoggedIn = { items, linkModifier, type: 'loggedIn', userName: 'Cosmin Negoita' };
-
--const footerWidgetData = {description:
--'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
--navigationItems: ['About Us', 'News', 'Support', 'Products'], aboutItems: ['Who we are',
--'Our team', 'Careers', 'Investors'], supportItems: ['Documentation', 'Community',
--'Get in Touch'], subscribeDescription: 'Receive our latest news and promotions in your inbox!',
--headNavigation: 'Navigation', headAbout: 'about us', headSubscribe: 'Subscribe to our newsletter',
--headSupport:'support', placeholderEmail:'Your email address',
--copyrightText:'Copyright © 2018 Toxin UI Kit. All rights reserved.'};
 
 mixin main-ui()
 
@@ -99,9 +61,9 @@ mixin main-ui()
         })
 
       div.main-ui__form-wrapper
-        +checkbox(checkboxData)
+        +checkbox(checkbox)
         div.main-ui__radio-wrapper
-          +radio({values: arrRadio, id: arrRadioId, modifier: 'for-ui'})
+          +radio({values: radioLabels, id: radioIds, modifier: 'for-ui'})
         div.main-ui__toggle-wrapper
           +toggle({
             label: 'Получать спецпредложение', id: 'toggle',
@@ -141,16 +103,16 @@ mixin main-ui()
 
       div.main-ui__form-wrapper
         div.main-ui__checkbox-wrapper
-          +checkbox(checkboxExpandableData)
+          +checkbox(checkboxExpandable)
 
       div.main-ui__form-wrapper
-        +checkbox(checkboxRichData)
+        +checkbox(checkboxRich)
 
       div.main-ui__form-wrapper
-        +bullet-list(bulletListData)
+        +bullet-list(bulletList)
 
       div.main-ui__form-wrapper.main-ui__form-wrapper_review
-        +features({values: arrFeatures})
+        +features({values: features})
 
         +review({
           head: 'Мурад Сарафанов', date: '5 дней назад',
@@ -158,7 +120,6 @@ mixin main-ui()
           path: require('../blocks/main-ui/images/icon-avatar-1.png'),
           numberOfLikes: 12, typeOfButton: 'like'
         })
-
 
     div.main-ui__cards
 
@@ -168,19 +129,19 @@ mixin main-ui()
           +registration()
 
       div.main-ui__card-wrapper
-        +order-room({totalValue, totalPrice})
+        +order-room(orderRoom)
         +sign-in
 
       div.main-ui__card-wrapper
 
         +card-room({
-          images: arrPathImage1, radioName: 'room-radio-name-1',
+          images: cardRoomImagesFirst, radioName: 'room-radio-name-1',
           type: 'luxe', numberOfRoom: 888, price: '9 900',
           numberOfReviews: 145, numberOfRate: 5
         })
 
         +card-room({
-          images: arrPathImage2, radioName: 'room-radio-name-2',
+          images: cardRoomImagesSecond, radioName: 'room-radio-name-2',
           type: 'normal', numberOfRoom: 840, price: '9 900', numberOfReviews: 65,
           numberOfRate: 4
         })
@@ -191,5 +152,4 @@ mixin main-ui()
       +navigation(valuesForLoggedIn)
 
       +footer
-      +footer-widget(footerWidgetData)
-
+      +footer-widget(footerWidget)

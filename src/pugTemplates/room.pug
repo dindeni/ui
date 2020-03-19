@@ -3,18 +3,8 @@ include ../blocks/footer-widget/footer-widget
 include ../blocks/footer/footer
 include ../blocks/main-room/main-room
 
--const navigationValues = {items: ['О нас', 'Услуги', 'Вакансии', 'Новости', 'Соглашения'],
--linkModifier: [ , 'type_expand-ru', ,  , 'type_expand-ru']};
-
--const { items, linkModifier } = navigationValues;
-
--const footerData = {description: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
--headNavigation: 'навигация', navigationItems: ['О нас', 'Новости', 'Служба поддержки',
--'Услуги'], headAbout: 'о нас', aboutItems: ['О сервисе', 'Наша команда', 'Вакансии',
-- 'Инвесторы'], headSupport: 'Служба поддержки', supportItems: ['Соглашения',
-- 'Сообщества', 'Связь с нами'], headSubscribe: 'Подписка', subscribeDescription:
--'Получайте специальные предложения и новости сервиса', placeholderEmail: 'Email',
--copyrightText: 'Copyright © 2018 Toxin отель. Все права зачищены.'};
+-const data = require('./data.json');
+-const { navigation, footer } = data;
 
 doctype html
 html(lang='en')
@@ -33,12 +23,9 @@ html(lang='en')
 
   body
 
-    +navigation({
-      items, linkModifier, type: 'standart', loginName: 'войти',
-      registrationName: 'зарегистрироваться', modifierForItems: 'type_ru'
-    })
+    +navigation(navigation)
 
     +main-room
 
-    +footer-widget(footerData)
+    +footer-widget(footer)
 

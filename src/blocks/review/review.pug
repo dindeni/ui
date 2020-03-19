@@ -2,11 +2,9 @@ include ../ui-control/ui-control
 
 mixin review(options)
 
-  -const {head, date, description, path,
-  -typeOfButton, numberOfLikes, modifier}=options;
+  -const {head, date, description, path, typeOfButton, numberOfLikes, modifier}=options;
 
-  section(class=['review',
-  `${modifier ? `review_${modifier}`:''}`])
+  section(class=['review', `${modifier ? `review_${modifier}`:''}`])
     img.review__icon(src=path alt='фото аватар')
     h3.review__name=head
     span.review__date=date
