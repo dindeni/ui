@@ -2,7 +2,9 @@ include ../ui-control/ui-control
 
 mixin navigation(options)
 
-  -const {type, items, modifierForItems, loginName, registrationName, linkModifier, userName} = options;
+  -
+    const {type, items, modifierForItems, loginName, registrationName,
+     linkModifier, userName} = options;
 
   if type === 'default'
     nav.navigation.js-navigation

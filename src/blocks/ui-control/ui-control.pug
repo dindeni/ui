@@ -1,8 +1,9 @@
 mixin ui-control(options)
 
-  -const {content, link, modifier, jsModifier, hideModifier, linkModifier, isBorder, buttonModifier, isTransparent, isArrow} = options;
+  -
+    const {content, link, modifier, jsModifier, hideModifier, linkModifier, isBorder, buttonModifier, isTransparent, isArrow} = options;
 
-  -const isLink = link ? 'a' : 'button';
+    const isLink = link ? 'a' : 'button';
 
   if isBorder
     div(class=['ui-control', `${modifier ? `ui-control_${modifier}` : ''}`])

@@ -2,25 +2,27 @@ include ../rate/rate
 
 mixin card-room(options)
 
-  -const {images, radioName, type, numberOfRoom, price, numberOfReviews, numberOfRate,}=options;
+  -
+    const {images, radioName, type, numberOfRoom, price, numberOfReviews,
+     numberOfRate,}=options;
 
-  div(class=['card-room', 'js-card-room'])
+  div(class=["card-room", "js-card-room"])
     div.card-room__wrapper
       div.card-room__image-wrapper
         each value, index in images
           if index > 0
-            img(src=`${value}` class=`card-room__image js-card-room__image card-room__image_hidden` alt='room image')
+            img(src=`${value}` class="card-room__image js-card-room__image card-room__image_hidden" alt="room image")
           else
-            img(src=`${value}` class=`card-room__image js-card-room__image` alt='room image')
+            img(src=`${value}` class="card-room__image js-card-room__image" alt="room image")
 
-      form(autocomplete='off').card-room__form.js-card-room__form
+      form(autocomplete="off").card-room__form.js-card-room__form
         each value, index in Array(4)
           if index === 0
-            label(class='card-room__mark card-room__mark_filled')
-              input(type='radio' class='card-room__radio js-card-room__radio' name=`${radioName}` checked )
+            label(class="card-room__mark card-room__mark_filled")
+              input(type="radio" class="card-room__radio js-card-room__radio" name=`${radioName}` checked )
           else
-            label(class='card-room__mark')
-              input(type='radio' class='card-room__radio js-card-room__radio' name=`${radioName}`)
+            label(class="card-room__mark")
+              input(type="radio" class="card-room__radio js-card-room__radio" name=`${radioName}`)
 
       div.card-room__arrows-wrapper
         button.card-room__arrow.card-room__arrow_type_prev.js-card-room__arrow_type_prev
@@ -38,7 +40,7 @@ mixin card-room(options)
       span.card-room__periodicity в сутки
 
     div.card-room__rate-wrapper
-      +rate({numberFillStars: numberOfRate, modifier: 'for-card-room'})
+      +rate({numberFillStars: numberOfRate, modifier: "for-card-room"})
 
     div.card-room__number-review=numberOfReviews
       span.card-room__number-review-word Отзывов

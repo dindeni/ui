@@ -5,10 +5,11 @@ include ../bullet-list/bullet-list
 include ../features/features
 include ../order-room/order-room
 
--const descriptionData = require('../blocks/room-description/room-description.json');
--const { features, totalValue, totalPrice, review, bulletList } = descriptionData;
+-
+  const descriptionData = require('../blocks/room-description/room-description.json');
+  const { features, totalValue, totalPrice, review, bulletList } = descriptionData;
 
-- const reviewPath = [require('../blocks/room-description/images/icon-avatar-1.png'), require('../blocks/room-description/images/icon-avatar-2.png')];
+  const reviewPath = [require('../blocks/room-description/images/icon-avatar-1.png'), require('../blocks/room-description/images/icon-avatar-2.png')];
 
 mixin room-description
 

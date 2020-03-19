@@ -19,19 +19,26 @@ include ../footer-widget/footer-widget
 include ../sign-in/sign-in
 include ../sum-guests/sum-guests
 
--const data = require('../blocks/main-ui/main-ui.json');
+-
+  const data = require('../blocks/main-ui/main-ui.json');
 
--const { radioLabels, radioIds, checkbox, checkboxExpandable, checkboxRich, bulletList, orderRoom, features, navigation, footerWidget } = data;
+  const { radioLabels, radioIds, checkbox, checkboxExpandable, checkboxRich,
+   bulletList, orderRoom, features, navigation, footerWidget } = data;
 
--const cardRoomImagesFirst = [require('../img/image-room-888.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')];
+  const cardRoomImagesFirst = [
+    require('../img/image-room-888.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')
+  ];
 
--const cardRoomImagesSecond = [require('../img/image-room-840.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')];
+  const cardRoomImagesSecond = [
+    require('../img/image-room-840.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')
+  ];
 
--const { items, linkModifier } = navigation;
+  const { items, linkModifier } = navigation;
 
--const valuesForLogin = { items, linkModifier, type: 'default', loginName: 'login', registrationName: 'register' };
+  const valuesForLogin = { items, linkModifier, type: 'default', loginName: 'login', registrationName: 'register' };
 
--const valuesForLoggedIn = { items, linkModifier, type: 'loggedIn', userName: 'Cosmin Negoita' };
+  const valuesForLoggedIn = { items, linkModifier, type: 'loggedIn',
+   userName: 'Cosmin Negoita' };
 
 mixin main-ui()
 
