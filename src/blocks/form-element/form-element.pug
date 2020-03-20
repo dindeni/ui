@@ -10,32 +10,32 @@ mixin form-element(options)
 
     if(type === 'text'){
       labelClasses.push(`${modifierForLabel ? `form-element_${modifierForLabel}`:''}`);
-      inputClasses.push('form-element__field', 'form-element__field_type_text',
+      inputClasses.push("form-element__field", "form-element__field_type_text",
       `${modifierForInput ? `form-element__field_${modifierForInput}`:''}`);
     } else if (type === 'dropdown') {
-      labelClasses.push('form-element_type_dropdown',
+      labelClasses.push("form-element_type_dropdown",
       `${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`);
-      inputClasses.push('form-element__field_type_dropdown',
+      inputClasses.push("form-element__field_type_dropdown",
       `${modifierForInput ? `form-element__field_${modifierForInput}` : ''}`,
       `${jsModifierForInput ? `js-form-element__field_${jsModifierForInput}` : ''}`);
       readOnly = true;
     } else if (type === 'masked'){
       labelClasses.push(`${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`);
-      inputClasses.push('form-element__field', 'form-element__field_type_masked',
+      inputClasses.push("form-element__field", "form-element__field_type_masked",
       `${modifierForInput ? `form-element__field_${modifierForInput}` : ''}`);
     } else if (type === 'date'){
-      labelClasses.push('form-element form-element_type_date',
+      labelClasses.push("form-element form-element_type_date",
       `${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`);
-      inputClasses.push('form-element__field_type_date',
+      inputClasses.push("form-element__field_type_date",
       `${modifierForInput ? `form-element__field_${modifierForInput}` : ''}`,
       `${jsModifierForInput ? `js-form-element__field_${jsModifierForInput}` : ''}`);
     } else if(type === 'subscription'){
-      labelClasses.push('form-element_type_subscription',
+      labelClasses.push("form-element_type_subscription",
       `${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`);
-      inputClasses.push('form-element__field_type_subscription',
+      inputClasses.push("form-element__field_type_subscription",
       `${modifierForInput ? `form-element__field_${modifierForInput}` : ''}`);
     } else if(type === 'password') {
-      inputClasses.push('form-element__field_type_text',
+      inputClasses.push("form-element__field_type_text",
       `${modifierForInput ? `form-element__field_${modifierForInput}` : ''}`);
     }
 

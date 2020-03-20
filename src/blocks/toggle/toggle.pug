@@ -2,7 +2,7 @@ mixin toggle(options)
 
   -const {label, id, modifier}=options;
 
-  span(class=['toggle',
+  span(class=["toggle",
   `${modifier ? `toggle_${modifier}`:''}`])
-      input.toggle__field(type='checkbox' id=`${id}` name='toggle')
-      label.toggle__label(for=`${id}` name='toggle')=label
+      input.toggle__field(type="checkbox" id=`${id}` name="toggle")
+      label.toggle__label(for=`${id}` name="toggle")=label

@@ -2,9 +2,9 @@ mixin radio(options)
 
   -const {values, id, modifier}=options;
 
-  div(class=['radio', `${modifier ? `radio_${modifier}`:''}`])
+  div(class=["radio", `${modifier ? `radio_${modifier}`:''}`])
 
     each value, index in values
-      input.radio__field(type='radio' name='radio' id=`${id[index]}`  checked=index===0 )
-      label(for=`${id[index]}` class=['radio__mark',
+      input.radio__field(type="radio" name="radio" id=`${id[index]}`  checked=index===0 )
+      label(for=`${id[index]}` class=["radio__mark",
        `${modifier ? `radio__mark_${modifier}` : ''}`])=value

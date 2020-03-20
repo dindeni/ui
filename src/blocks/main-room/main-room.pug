@@ -10,10 +10,10 @@ mixin main-room()
   main.main-room
 
     div.main-room__image-wrapper
-      img(src=roomDetailPath[0] alt='room image').main-room__image.main-room__image_for-first-image
+      img(src=roomDetailPath[0] alt="room image").main-room__image.main-room__image_for-first-image
       div.main-room__images-aside
         each image, index in roomDetailPath
           if index > 0
-            img(src=image alt='room image').main-room__image
+            img(src=image alt="room image").main-room__image
     div.main-room__description-wrapper
       +room-description

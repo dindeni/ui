@@ -7,7 +7,7 @@ mixin ui-control(options)
     const isLink = link ? 'a' : 'button';
 
   if isBorder
-    div(class=['ui-control', `${modifier ? `ui-control_${modifier}` : ''}`])
+    div(class=["ui-control", `${modifier ? `ui-control_${modifier}` : ''}`])
       #{isLink}(href=link || false class=[link ? 'ui-control__link' :
        `ui-control__button`, `${linkModifier ? `ui-control__link_${linkModifier}`:''}`,
         `${buttonModifier ? `ui-control__button_${buttonModifier}`:''}`])=content

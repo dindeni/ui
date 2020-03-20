@@ -2,12 +2,12 @@ mixin rate(options)
 
   -const {numberFillStars, modifier}=options;
 
-  div(class=['rate', `${modifier ? `rate_${modifier}`:''}`])
+  div(class=["rate", `${modifier ? `rate_${modifier}`:''}`])
     each value,index in Array(5)
 
       if index <= numberFillStars - 1
-        img.rate__img(src=require('../blocks/rate/images/icon-star.svg') alt='image star')
+        img.rate__img(src=require('../blocks/rate/images/icon-star.svg') alt="image star")
 
       else
-        img.rate__img(src=require('../blocks/rate/images/icon-star-border.svg') alt='image star')
+        img.rate__img(src=require('../blocks/rate/images/icon-star-border.svg') alt="image star")
 

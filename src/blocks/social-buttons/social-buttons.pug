@@ -3,9 +3,9 @@ mixin social-buttons()
     const arrSocialLink = ['https://twitter.com', 'https://www.facebook.com/', 'https://www.instagram.com'];
     const arrSocial = ['twitter', 'facebook', 'instagram'];
 
-  div(class=['social-buttons',])
+  div(class=["social-buttons",])
 
-    ul(class=['social-buttons__list',])
+    ul(class=["social-buttons__list",])
       each item, index in arrSocial
         li.social-buttons__item(class=`social-buttons__item_${item}`)
           a.social-buttons__link(href=`${arrSocialLink[index]}`)

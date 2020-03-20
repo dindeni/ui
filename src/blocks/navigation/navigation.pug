@@ -8,31 +8,31 @@ mixin navigation(options)
 
   if type === 'default'
     nav.navigation.js-navigation
-      img.navigation__logo(src=require('../img/icon-logo.svg') alt='logo')
+      img.navigation__logo(src=require('../img/icon-logo.svg') alt="logo")
 
       ul.navigation__list.js-navigation__list
         each item, index in items
-          li(class=['navigation__item',
+          li(class=["navigation__item",
            `${modifierForItems ? `navigation__item_${modifierForItems}`:''}`])
-            a(href='somePage.html' class=['navigation__link',
+            a(href="somePage.html" class=["navigation__link",
             `${linkModifier[index] ?
              `navigation__link_${linkModifier[index]}`:''}`])=item
 
       div.navigation__buttons-wrapper
         div.navigation__sign-in-button-wrapper
-          +ui-control({isBorder: true, content: `${loginName}`, link:'sign-in.html', linkModifier: 'for-navigation'})
+          +ui-control({isBorder: true, content: `${loginName}`, link:"sign-in.html", linkModifier: "for-navigation"})
         +ui-control({content:`${registrationName}`, link: 'registration.html',
          linkModifier: 'for-navigation'})
         button.navigation__button-mobile.js-navigation__button-mobile
 
   else if type === 'loggedIn'
     nav.navigation.js-navigation.navigation_logged
-      img.navigation__logo(src=require('../img/icon-logo.svg') alt='logo')
+      img.navigation__logo(src=require('../img/icon-logo.svg') alt="logo")
 
       ul.navigation__list.js-navigation__list.navigation__list_logged
         each item, index in items
           li.navigation__item.navigation__item_logged
-            a(href='somePage.html' class=['navigation__link',
+            a(href="somePage.html" class=["navigation__link",
              `${linkModifier[index] ?
                `navigation__link_${linkModifier[index]}` : ''}`])=item
 

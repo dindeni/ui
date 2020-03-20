@@ -4,13 +4,13 @@ mixin review(options)
 
   -const {head, date, description, path, typeOfButton, numberOfLikes, modifier}=options;
 
-  section(class=['review', `${modifier ? `review_${modifier}`:''}`])
-    img.review__icon(src=path alt='фото аватар')
+  section(class=["review", `${modifier ? `review_${modifier}`:''}`])
+    img.review__icon(src=path alt="фото аватар")
     h3.review__name=head
     span.review__date=date
 
     div.review__wrapper
       +ui-control({isBorder: true, content: numberOfLikes, modifier: `theme_${typeOfButton}`,
        buttonModifier: `theme_${typeOfButton}`})
-      p(class=['review__description',
+      p(class=["review__description",
        `${modifier ? `review__description_${modifier}` : ''}`])=description
