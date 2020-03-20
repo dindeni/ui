@@ -3,39 +3,40 @@ include ../form-element/form-element
 
 mixin sum-guests(options)
 
-  -const {modifier, modifierForInput, modifierForLabel, head}=options;
-  -const visitors = ['взрослые', 'дети', 'младенцы'];
-  -const visitorsId = ['adult', 'children', 'babies'];
+  -
+    const {modifier, modifierForInput, modifierForLabel, head}=options;
+    const visitors = ['взрослые', 'дети', 'младенцы'];
+    const visitorsId = ['adult', 'children', 'babies'];
 
-    div(class=['sum-guests',
-    `${modifier ? `sum-guests_${modifier}`:''}`])=head ? head:null
+  div(class=['sum-guests',
+  `${modifier ? `sum-guests_${modifier}`:''}`])=head ? head:null
 
-      +form-element({type: 'dropdown', placeholder: 'Сколько гостей',
-        modifierForInput: modifierForInput ? modifierForInput: 'for-guests',
-        modifierForLabel: modifierForLabel ? modifierForLabel: 'for-guests',
-        jsModifierForInput: 'for-guests'})
+    +form-element({type: 'dropdown', placeholder: 'Сколько гостей',
+      modifierForInput: modifierForInput ? modifierForInput: 'for-guests',
+      modifierForLabel: modifierForLabel ? modifierForLabel: 'for-guests',
+      jsModifierForInput: 'for-guests'})
 
-      div(tabindex=0 class=['sum-guests__popup', 'js-sum-guests__popup',
-       'sum-guests__popup_hidden', `${modifier ? `sum-guests__popup_${modifier}` : ''}`])
+    div(tabindex=0 class=['sum-guests__popup', 'js-sum-guests__popup',
+     'sum-guests__popup_hidden', `${modifier ? `sum-guests__popup_${modifier}` : ''}`])
 
-        div.sum-guests__count-container
-          each value, index in visitors
+      div.sum-guests__count-container
+        each value, index in visitors
 
-            div.sum-guests__container(class=`sum-guests__container_${visitorsId[index]} js-sum-guests__container_${visitorsId[index]}`)
+          div.sum-guests__container(class=`sum-guests__container_${visitorsId[index]} js-sum-guests__container_${visitorsId[index]}`)
 
-              span.sum-guests__type-visitors=value
+            span.sum-guests__type-visitors=value
 
-              div.sum-guests__number-of-visitors-wrapper
-                button(type='button' class='sum-guests__button sum-guests__button_minus js-sum-guests__button_minus') -
-                span.sum-guests__number-of-visitors.js-sum-guests__number-of-visitors 0
-                button(type='button' class='sum-guests__button sum-guests__button_plus js-sum-guests__button_plus') +
+            div.sum-guests__number-of-visitors-wrapper
+              button(type='button' class='sum-guests__button sum-guests__button_minus js-sum-guests__button_minus') -
+              span.sum-guests__number-of-visitors.js-sum-guests__number-of-visitors 0
+              button(type='button' class='sum-guests__button sum-guests__button_plus js-sum-guests__button_plus') +
 
-        div.sum-guests__buttons-footer-container.js-sum-guests__buttons-footer-container
+      div.sum-guests__buttons-footer-container.js-sum-guests__buttons-footer-container
 
-          div.sum-guests__button-wrapper
-            +ui-control({isTransparent: true, content: 'очистить',
-             modifier: 'clear', hideModifier: 'hidden', jsModifier:'clear'})
+        div.sum-guests__button-wrapper
+          +ui-control({isTransparent: true, content: 'очистить',
+           modifier: 'clear', hideModifier: 'hidden', jsModifier:'clear'})
 
-          div.sum-guests__button-wrapper
-            +ui-control({isTransparent: true, content: 'применить',
-             modifier: 'apply', jsModifier: 'apply'})
+        div.sum-guests__button-wrapper
+          +ui-control({isTransparent: true, content: 'применить',
+           modifier: 'apply', jsModifier: 'apply'})

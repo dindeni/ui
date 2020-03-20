@@ -2,10 +2,10 @@ include ../footer-widget/footer-widget
 include ../side-panel/side-panel
 include ../pagination/pagination
 
--const cardRoomData = require('../blocks/main-filter/main-filter.json');
--const { type, numberOfRoom, price, numberOfReviews, numberOfRate } = cardRoomData;
-
 -
+  const cardRoomData = require('../blocks/main-filter/main-filter.json');
+  const { type, numberOfRoom, price, numberOfReviews, numberOfRate } = cardRoomData;
+
   const rooms = [
     [require('../img/image-room-888.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'),require('../img/image-room-444.jpg')],
     [require('../img/image-room-840.jpg'), require('../img/image-room-982.jpg'), require('../img/image-room-350.jpg'), require('../img/image-room-444.jpg')],
@@ -32,8 +32,8 @@ mixin main-filter()
       h1.main-filter__rooms-head Номера, которые мы для вас подобрали
       each value, index in cardRoomData.value
 
-        -const { images, type, numberOfRoom, numberOfRate, price,
-        -numberOfReviews } = value;
+        -
+          const { images, type, numberOfRoom, numberOfRate, price, numberOfReviews } = value;
 
         div.main-filter__card-wrapper
           +card-room({
