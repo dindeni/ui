@@ -1,18 +1,28 @@
-@mixin button-inner($color, $background) {
-  font-size: 0.86rem;
-  font-weight: normal;
-  padding: 0 0 0 .57rem;
-  width: 100%;
-  height: 100%;
+@mixin button-like($background-color, $background, $color) {
   position: relative;
-  background: #FFFFFF;
-  border: none;
-  border-radius: 1.57rem;
+  padding: .1rem 0 0 .6rem;
+  border-radius: .71rem;
+  font-weight: normal;
+  font-size: .71rem;
+  width: 2.71rem;
+  height: 1.29rem;
+  box-sizing: border-box;
   color: $color;
-  text-transform: uppercase;
-  font-family: Montserrat, sans-serif;
+  background: #FFFFFF;
 
-  &::before, &:hover::before {
+  &::before {
+    position: absolute;
+    content: '';
+    width: 2.86rem;
+    height: 1.43rem;
+    border-radius: 1.57rem;
+    background: $background-color;
+    z-index: -10;
+    top: -.072rem;
+    left: -.07rem;
+  }
+
+  &::after, &:hover::after {
     position: absolute;
     content: '';
     width: .71rem;
@@ -21,28 +31,6 @@
     left: .21rem;
     top: .36rem;
     z-index: 1;
-  }
-}
-
-@mixin button-border($background-color) {
-  position: relative;
-  padding: .07rem;
-  border-radius: .71rem;
-  display: flex;
-  width: 2.86rem;
-  height: 1.43rem;
-  box-sizing: border-box;
-
-  &::before {
-    position: absolute;
-    content: '';
-    width: 3rem;
-    height: 1.57rem;
-    border-radius: 1.57rem;
-    background: $background-color;
-    z-index: -10;
-    top: -.07rem;
-    left: -.07rem;
   }
 }
 
@@ -55,7 +43,8 @@
   color: $color;
   font-size: .86rem;
   font-weight: bold;
-  padding: 1.07rem 1.29rem;
+  width: 100%;
+  padding: 1.07rem 0;
   cursor: pointer;
   text-decoration: none;
   outline: none;

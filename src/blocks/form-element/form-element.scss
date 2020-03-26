@@ -17,80 +17,12 @@
       font-family: Montserrat, sans-serif;
     }
 
-    &_type_text::placeholder {
-      text-transform: capitalize;
-    }
-
     &:hover, &:focus {
       border: .07rem solid $dark50;
 
       &::placeholder {
         color: $dark75;
       }
-    }
-
-    &_type_date {
-      width: 10.71rem;
-    }
-
-    &_for-filter {
-      width: 19rem;
-    }
-
-    &_for-datepicker-range, &_for-rooms {
-      width: 19rem;
-    }
-
-    &_for-guests {
-      width: 22.86rem;
-
-      &::placeholder {
-        text-transform: none;
-      }
-    }
-
-    &_for-sign-in {
-      width: 22.86rem;
-      margin: .43rem 0 .29rem 0;
-    }
-
-    &_for-registration {
-      width: 22.86rem;
-      margin: 0 0 .71rem 0;
-
-      &.form-element__field_for-password {
-        margin-bottom: 0;
-      }
-
-      &.form-element__field_type_date::placeholder {
-        color: $dark25;
-      }
-    }
-
-    &_type_masked {
-      &::placeholder {
-        text-transform: uppercase;
-      }
-    }
-
-    &_type_date#{&} {
-      &::placeholder {
-        text-transform: uppercase;
-        color: $dark75;
-      }
-    }
-
-    &_type_dropdown::placeholder {
-      color: $dark75;
-    }
-
-    &_for-footer-widget {
-      width: 18.57rem;
-      margin: 1.43rem 0 0 0;
-    }
-
-    &_type_subscription {
-      width: 19rem;
     }
   }
 
@@ -123,7 +55,26 @@
           right: .07rem;
         }
       }
+      
+      &_for-registration {
+        & .form-element__field {
+          width: 22.86rem;
+
+          &::placeholder {
+            color: $dark25;
+          }
+        }
     }
+  }
+
+    & .form-element__field {
+      width: 10.71rem;
+      
+      &::placeholder {
+        text-transform: uppercase;
+        color: $dark75;
+      }
+    }  
   }
 
   &_for-main-ui {
@@ -142,6 +93,30 @@
       background: url('./images/icon-expand.svg') no-repeat;
       right: -1.14rem;
       top: 1.29rem;
+    }
+
+    & .form-element__field{
+      &::placeholder {
+        color: $dark75;
+      }
+    }
+  }
+
+  &_type_masked {
+    & .form-element__field {
+      text-transform: uppercase;
+    }
+  }
+
+  &_type_subscription {
+    &.form-element_for-footer-widget{
+      & .form-element__field{
+        width: 18.57rem;
+      }
+    }
+
+    & .form-element__field{
+      width: 19rem;
     }
   }
 
@@ -168,12 +143,6 @@
     }
   }
 
-  &_for-footer-widget#{&}_type_subscription {
-    &::after{
-      top: 2.36rem;
-    }
-  }
-
   &_type_subscription {
     position: relative;
     display: inline-block;
@@ -189,6 +158,12 @@
     }
   }
 
+  &_for-filter, &_for-rooms {
+    & .form-element__field {
+      width: 19rem;
+    }
+  }
+
   &_for-hide-datepicker {
     @include hide;
   }
@@ -196,14 +171,18 @@
 
 @media (max-width: 1100px) {
   .form-element {
-    &_type_date {
-      &.form-element_for-search {
+    &_for-search, &_for-order {
+      & .form-element__field {
         width: 8.57rem;
+
+        &::placeholder {
+          font-size: 0.86rem;
+        }
       }
     }
 
-    &_type_dropdown {
-      &.form-element_for-guests {
+    &_for-guests {
+      & .form-element__field {
         width: 18.57rem;
       }
     }
@@ -221,15 +200,10 @@
         width: 18.57rem;
       }
 
-      &_for-guests {
-        width: 18.57rem;
-      }
-
       &__field_type_subscription {
         width: 19rem;
       }
 
-      &_for-search-in, &_for-search-out,
       &_for-order-in, &_for-order-out {
         width: 8.57rem;
 
@@ -239,25 +213,14 @@
       }
     }
   }
-
-  .form-element__field.form-element__field_type_subscription.form-element__field_for-footer-widget {
-    padding: .86rem 1rem;
-    width: 15.71rem;
-
-    &::placeholder {
-      font-size: 0.86rem;
-    }
-  }
 }
 
 @media (max-width: 450px) {
   .form-element  {
-    &__field_for-sign-in.form-element__field_type_text {
-      margin: .43rem 1.43rem .29rem 0;
-    }
-
-    &_for-registration {
-      width: 18.57rem;
+    &_for-registration#{&}_for_guests {
+      & .form-element__field {
+        width: 18.57rem; 
+      }
     }
 
     &__field {

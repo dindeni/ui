@@ -125,6 +125,8 @@
 
   &__button-wrapper {
     margin-top: 1.7rem;
+    width: 22.86rem;
+    height: 3.14rem;
   }
 
   &__sum-guests-wrapper {
@@ -169,6 +171,10 @@
       &::after {
         width: 8.93rem;
       }
+    }
+
+    &__button-wrapper {
+      width: 18.57rem;
     }
   }
 }

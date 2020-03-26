@@ -1,15 +1,13 @@
-mixin features(options)
+mixin features(values)
 
-  -const {values, modifier}=options;
   -const sloganModifiers = ['type_comfortable', 'type_convenient', 'type_cozy'];
 
-  div(class=["features",
-   `${modifier ? `features_${modifier}`: ''}`])
+  div.features
 
     each value, index in values
 
       -const {slogan, description} = value
 
       div.features__wrapper
-        b(class=["features__slogan", `features__slogan_${sloganModifiers[index]}`])=slogan
+        b.features__slogan(class=`features__slogan_${sloganModifiers[index]}`)=slogan
         span.features__description=description

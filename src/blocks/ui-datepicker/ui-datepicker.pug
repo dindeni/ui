@@ -2,33 +2,23 @@ include ../form-element/form-element
 
 mixin ui-datepicker(options)
 
-  -const { type, placeholder, modifierForLabel, modifierForInput, defaultDate }=options;
+  -
+    const { type, placeholder, modifierForLabel, modifierForInput, defaultDate }=options;
 
-  -if (type === 'single') {
-    +form-element({ type: 'date', placeholder: placeholder,
-      modifierForLabel, modifierForInput, jsModifierForInput: 'date'})
-  -} else if (type === 'range') {
-    +form-element({
-      type: 'dropdown', placeholder: defaultDate,
-      modifierForInput: 'for-datepicker-range', jsModifierForInput: 'for-datepicker-range',
-      modifierForLabel })
+    const formOptions = {
+      single: { type: 'date', placeholder: placeholder, modifierForLabel, modifierForInput, jsModifierForInput: 'date'},
+      range: [
+        { type: 'dropdown', placeholder: defaultDate, modifierForInput: 'for-datepicker-range', jsModifierForInput: 'for-datepicker-range', modifierForLabel },
+        {type: 'dropdown', placeholder: defaultDate, modifierForInput: 'for-hide-datepicker', jsModifierForInput: 'for-hide-datepicker', modifierForLabel: 'for-hide-datepicker' }
+      ],
+      double: [
+        { type: 'date', placeholder: 'дд.мм.гггг', modifierForInput: `${modifierForInput}-in`, modifierForLabel, jsModifierForInput: `${modifierForInput}-in` },
+        { type: 'date', placeholder: 'дд.мм.гггг', modifierForInput: `${modifierForInput}-out`, modifierForLabel: 'for-search', jsModifierForInput: `${modifierForInput}-out` }
+      ] 
+    };
 
-    +form-element({
-      type: 'dropdown', placeholder: defaultDate,
-      modifierForInput: 'for-hide-datepicker', jsModifierForInput: 'for-hide-datepicker',
-      modifierForLabel: 'for-hide-datepicker' })
-  -} else if (type === 'double') {
-
-    +form-element({
-      type: 'date', placeholder: 'дд.мм.гггг',
-      modifierForInput: `${modifierForInput}-in`, modifierForLabel,
-      jsModifierForInput: `${modifierForInput}-in`
-    })
-
-    +form-element({
-      type: 'date', placeholder: 'дд.мм.гггг',
-      modifierForInput: `${modifierForInput}-out`, modifierForLabel: 'for-search',
-      jsModifierForInput: `${modifierForInput}-out`
-    })
-
-  -}
+  if type === 'single'
+    +form-element(formOptions.single)
+  else
+    each value in formOptions[type]
+      +form-element(value)

@@ -2,15 +2,19 @@ include ../ui-control/ui-control
 
 mixin review(options)
 
-  -const {head, date, description, path, typeOfButton, numberOfLikes, modifier}=options;
+  -
+    const {head, date, description, path, typeOfButton, numberOfLikes, modifier}=options;
 
-  section(class=["review", `${modifier ? `review_${modifier}`:''}`])
+    const classModifier = modifier ? `review_${modifier}`:'';
+
+    const descriptionModifier = modifier ? `review__description_${modifier}` : '';
+
+  section.review(class=classModifier)
     img.review__icon(src=path alt="фото аватар")
     h3.review__name=head
     span.review__date=date
 
     div.review__wrapper
       +ui-control({isBorder: true, content: numberOfLikes, modifier: `theme_${typeOfButton}`,
-       buttonModifier: `theme_${typeOfButton}`})
-      p(class=["review__description",
-       `${modifier ? `review__description_${modifier}` : ''}`])=description
+        buttonModifier: `theme_${typeOfButton}`})
+      p.review__description(class=descriptionModifier)=description

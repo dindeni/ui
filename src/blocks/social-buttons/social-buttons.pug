@@ -1,12 +1,12 @@
 mixin social-buttons()
   -
-    const arrSocialLink = ['https://twitter.com', 'https://www.facebook.com/', 'https://www.instagram.com'];
-    const arrSocial = ['twitter', 'facebook', 'instagram'];
+    const socialLinks = ['https://twitter.com', 'https://www.facebook.com/', 'https://www.instagram.com'];
+    const socialNames = ['twitter', 'facebook', 'instagram'];
 
-  div(class=["social-buttons",])
+  div.social-buttons
 
-    ul(class=["social-buttons__list",])
-      each item, index in arrSocial
-        li.social-buttons__item(class=`social-buttons__item_${item}`)
-          a.social-buttons__link(href=`${arrSocialLink[index]}`)
-            span.social-buttons__link-text=item
+    ul.social-buttons__list
+      each name, index in socialNames
+        li.social-buttons__item(class=`social-buttons__item_${name}`)
+          a.social-buttons__link(href=socialLinks[index])
+            span.social-buttons__link-text=name

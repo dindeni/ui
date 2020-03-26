@@ -10,45 +10,44 @@ include ../ui-datepicker/ui-datepicker
 
 mixin registration()
 
-  section(class=["registration"])
+  section.registration
     h2.registration__head Регистрация аккаунта
 
     form.registration__form
       div.registration__name-wrapper
 
-        +form-element({type: 'text', placeholder: 'Имя',
-          modifierForInput: 'for-registration'})
+        +form-element({type: 'default', placeholder: 'Имя'})
 
-        +form-element({type: 'text', placeholder: 'Фамилия',
-          modifierForInput: 'for-registration'})
+        div.registration__surname-wrapper
+          +form-element({type: 'default', placeholder: 'Фамилия'})
 
       div.registration__radio-wrapper
         +radio({values:arrRadioReg, id: arrRadioRegId, modifier: 'for-registration'})
 
       div.registration__date-head дата рождения
 
-      +ui-datepicker({type: 'single', placeholder: 'дд.мм.гггг',
-       modifierForLabel: 'for-registration', modifierForInput: 'for-registration'
-      })
+      div.registration__date-wrapper
+        +ui-datepicker({type: 'single', placeholder: 'дд.мм.гггг',
+          modifierForLabel: 'for-registration'})
 
       div.registration__data-head данные для входа в сервис
 
-      +form-element({type: 'text', placeholder: 'Email', modifierForInput: 'for-registration'})
+      +form-element({type: 'default', placeholder: 'Email'})
 
-      +form-element({type: 'password', placeholder: 'Пароль',
-        modifierForInput: 'for-registration'})
+      div.registration__password-wrapper
+        +form-element({type: 'password', placeholder: 'Пароль'})
 
       span.registration__toggle-wrapper
         +toggle({label: 'Получать спецпредложения', id: 'registration-toggle',
           modifier:'for-registration'})
 
       div.registration__button-wrapper
-        +ui-control({content: 'перейти к оплате', buttonModifier: 'width-arrow'})
+        +ui-control({content: 'перейти к оплате', type: 'filled', isArrow: true})
 
     div.registration__footer
       span.registration__footer-label Уже есть аккаунт на Toxin
       div.registration__link-wrapper
-        +ui-control({isBorder: true, content: 'войти', link: 'registration-login', linkModifier: 'for-registration'})
+        +ui-control({content: 'войти', link: 'registration-login', type: 'border'})
 
 
 

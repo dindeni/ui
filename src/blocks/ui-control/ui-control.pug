@@ -1,20 +1,34 @@
 mixin ui-control(options)
 
   -
-    const {content, link, modifier, jsModifier, hideModifier, linkModifier,
-     isBorder, buttonModifier, isTransparent, isArrow} = options;
+    const {content, link, modifier, jsModifier, isHideModifier,
+     isBorder, buttonModifier, isTransparent, isArrow, type} = options;
+
+    const typeModifiers = {
+      filled: 'theme_filled',
+      border: 'theme_border',
+      like: 'theme_like',
+      gray: 'theme_gray',
+      transparent: 'theme_transparent',
+      navigationWithBorder: 'theme_navigation-with-border',
+      navigation: 'theme_navigation'
+    };
+
+    const typeModifier = `ui-control_${typeModifiers[type]}`;
+
+    const classModifier = modifier ? `ui-control_${modifier}` : '';
 
     const isLink = link ? 'a' : 'button';
 
-  if isBorder
-    div(class=["ui-control", `${modifier ? `ui-control_${modifier}` : ''}`])
-      #{isLink}(href=link || false class=[link ? 'ui-control__link' :
-       `ui-control__button`, `${linkModifier ? `ui-control__link_${linkModifier}`:''}`,
-        `${buttonModifier ? `ui-control__button_${buttonModifier}`:''}`])=content
-  else
-    #{isLink}(href=link || false class=[link ? 'ui-control_with-link' : 'ui-control',
-     `${linkModifier ? `ui-control_${linkModifier}` : ''}`,
-      `${buttonModifier ? `ui-control_${buttonModifier}` : ''}`,
-      `${isTransparent ? 'ui-control_theme_transparent' :
-       'ui-control_theme_filled'}`, `${jsModifier ? `js-ui-control_${jsModifier}` : ''}`,
-      `${hideModifier ? `js-ui-control_${hideModifier}` : ''}`])=content
+    const className = link ? 'ui-control_type_link' : `ui-control_type_button`;
+
+    const arrowModifier = isArrow ? 'ui-control_width-arrow' : '';
+
+    const jsClass = jsModifier ? `js-ui-control_${jsModifier}` : '';
+
+    const hideModifier = isHideModifier ? 'ui-control_hidden' : '';
+
+    const classes = [typeModifier, classModifier, className, arrowModifier, jsClass, hideModifier];
+
+  #{isLink}.ui-control(href=link || false class=classes)=content
+

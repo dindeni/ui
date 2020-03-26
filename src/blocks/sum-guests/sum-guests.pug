@@ -4,20 +4,26 @@ include ../form-element/form-element
 mixin sum-guests(options)
 
   -
-    const {modifier, modifierForInput, modifierForLabel, head}=options;
+    const {modifier, head}=options;
+    
     const visitors = ['взрослые', 'дети', 'младенцы'];
+    
     const visitorsId = ['adult', 'children', 'babies'];
 
-  div(class=["sum-guests",
-  `${modifier ? `sum-guests_${modifier}`:''}`])=head ? head:null
+    const classModifier = modifier ? modifier: 'for-guests';
+
+    const controlsOption = [
+      {content: 'очистить', isHideModifier: true, jsModifier:'clear', type: 'transparent', modifier: 'color_gray'},
+      {content: 'применить', type: 'transparent', jsModifier: 'apply'}
+    ];
+
+  div.sum-guests=head ? head:null
 
     +form-element({type: 'dropdown', placeholder: 'Сколько гостей',
-      modifierForInput: modifierForInput ? modifierForInput: 'for-guests',
-      modifierForLabel: modifierForLabel ? modifierForLabel: 'for-guests',
-      jsModifierForInput: 'for-guests'})
+      modifierForLabel: classModifier, jsModifierForInput: 'for-guests'})
 
-    div(tabindex=0 class=["sum-guests__popup", "js-sum-guests__popup",
-     "sum-guests__popup_hidden", `${modifier ? `sum-guests__popup_${modifier}` : ''}`])
+    div.sum-guests__popup.js-sum-guests__popup.sum-guests__popup_hidden(tabindex=0 class=
+     `${modifier ? `sum-guests__popup_${modifier}` : ''}`)
 
       div.sum-guests__count-container
         each value, index in visitors
@@ -27,16 +33,12 @@ mixin sum-guests(options)
             span.sum-guests__type-visitors=value
 
             div.sum-guests__number-of-visitors-wrapper
-              button(type="button" class="sum-guests__button sum-guests__button_minus js-sum-guests__button_minus") -
+              button.sum-guests__button.sum-guests__button_minus.js-sum-guests__button_minus(type="button") -
               span.sum-guests__number-of-visitors.js-sum-guests__number-of-visitors 0
-              button(type="button" class="sum-guests__button sum-guests__button_plus js-sum-guests__button_plus") +
+              button.sum-guests__button.sum-guests__button_plus.js-sum-guests__button_plus(type="button") +
 
       div.sum-guests__buttons-footer-container.js-sum-guests__buttons-footer-container
 
-        div.sum-guests__button-wrapper
-          +ui-control({isTransparent: true, content: 'очистить',
-           modifier: 'clear', hideModifier: 'hidden', jsModifier:'clear'})
-
-        div.sum-guests__button-wrapper
-          +ui-control({isTransparent: true, content: 'применить',
-           modifier: 'apply', jsModifier: 'apply'})
+        each option in controlsOption
+          div.sum-guests__button-wrapper
+            +ui-control(option)

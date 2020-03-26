@@ -1,4 +1,4 @@
--const legendArr = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован']
+-const legend = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован']
 
 mixin pie-chart()
 
@@ -8,5 +8,5 @@ mixin pie-chart()
       class="pie-chart__outer js-pie-chart__outer")
 
     ul.pie-chart__list
-      each item in legendArr
+      each item in legend
         li.pie-chart__item=item

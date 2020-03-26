@@ -1,8 +1,9 @@
 mixin bullet-list(options)
 
-  -const {values, modifier} = options;
+  -
+    const {values, modifier} = options;
 
   div.bullet-list
-    ul(class=["bullet-list__roster", `${modifier ? `bullet-list__roster_${modifier}`:''}`])
+    ul.bullet-list__roster
       each value in values
         li.bullet-list__item=value

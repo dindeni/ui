@@ -35,7 +35,8 @@ include ../sum-guests/sum-guests
 
   const { items, linkModifier } = navigation;
 
-  const valuesForLogin = { items, linkModifier, type: 'default', loginName: 'login', registrationName: 'register' };
+  const valuesForLogin = { items, linkModifier, type: 'default', loginName: 'login', registrationName: 'register',
+    modifier: 'theme_en' };
 
   const valuesForLoggedIn = { items, linkModifier, type: 'loggedIn',
    userName: 'Cosmin Negoita' };
@@ -47,11 +48,10 @@ mixin main-ui()
     div.main-ui__form
       div.main-ui__form-wrapper
         +form-element({
-          type: 'text', placeholder: 'email',
+          type: 'default', placeholder: 'email',
           modifierForLabel: 'for-main-ui', modifierForInput: 'for-main-ui'
         })
-        +sum-guests({label: 'Сколько гостей', modifier: 'for-main-ui', modifierForInput: 'for-main-ui',
-        modifierForLabel: 'for-main-ui'})
+        +sum-guests({label: 'Сколько гостей', modifier: 'for-main-ui'})
         +form-element({
           type: 'masked', placeholder: 'дд.мм.гггг',
           modifierForLabel: 'for-main-ui', modifierForInput: 'for-main-ui'
@@ -78,35 +78,33 @@ mixin main-ui()
           })
 
         div.main-ui__button-rate-wrapper
-          +ui-control({isBorder: true, content: 2, modifier: 'theme_gray',
-          buttonModifier: 'theme_gray'})
+          +ui-control({isBorder: true, content: 2, type: 'gray'})
         div.main-ui__button-rate-wrapper
-          +ui-control({isBorder: true, content: 12, modifier: 'theme_like',
-          buttonModifier: 'theme_like'})
+          +ui-control({isBorder: true, content: 12, type: 'like'})
 
         div.main-ui__rates-wrapper
           div.main-ui__rate-wrapper
-            +rate({numberFillStars: 4, modifier: 'for-ui'})
+            +rate(4)
           div.main-ui__rate-wrapper
-            +rate({numberFillStars: 5})
+            +rate(5)
 
       div.main-ui__form-wrapper
 
         div.main-ui__range-wrapper
           +ui-slider
 
-        div.main-ui__buttons-wrapper
-          +ui-control({ content: 'click me'})
+        div.main-ui__buttons-wrapper.main-ui__buttons-wrapper_size_default
+          +ui-control({ content: 'click me', type: 'filled'})
+
+        div.main-ui__buttons-wrapper.main-ui__buttons-wrapper_size_small
+          +ui-control({content: 'click me', type: 'border'})
+
+        div.main-ui__buttons-wrapper.main-ui__buttons-wrapper_size_default
+          +ui-control({content: 'click me', type: 'transparent'})
 
         div.main-ui__buttons-wrapper
-          +ui-control({isBorder: true, content: 'click me'})
-
-        div.main-ui__buttons-wrapper
-          +ui-control({isTransparent: true, content: 'click me'})
-
-        div.main-ui__buttons-wrapper
-          +ui-control({ content: 'перейти к оплате', buttonModifier: 'width-arrow'})
-        +pagination({value: 15, modifier: 'for-ui'})
+          +ui-control({ content: 'перейти к оплате', type: 'filled', isArrow: true})
+        +pagination({value: 15})
 
       div.main-ui__form-wrapper
         div.main-ui__checkbox-wrapper
@@ -119,7 +117,7 @@ mixin main-ui()
         +bullet-list(bulletList)
 
       div.main-ui__form-wrapper.main-ui__form-wrapper_review
-        +features({values: features})
+        +features(features)
 
         +review({
           head: 'Мурад Сарафанов', date: '5 дней назад',

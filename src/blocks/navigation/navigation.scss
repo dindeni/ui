@@ -108,7 +108,30 @@
 
   &__sign-in-button-wrapper {
     display: inline-block;
-    margin: 0 1.79rem 0 0;
+    margin: 0 3rem 0 0;
+  }
+
+  &__button-registration-wrapper{
+    width: 14rem;
+    height: 2.43rem;
+    display: inline-block;
+
+  }
+
+  &_theme_en{
+    & .navigation{
+      &__list{
+        margin: .36rem 0 0 20.6%;
+      }
+
+      &__buttons-wrapper {
+        margin: 0 0 0 2.4rem;
+      }
+
+      &__button-registration-wrapper {
+        width: 7rem;
+      }
+    }
   }
 }
 
@@ -165,11 +188,11 @@
     }
 
     &__buttons-wrapper {
-      margin: 0 5% 0 0;
+      margin: 0 7% 0 0;
     }
 
     &__sign-in-button-wrapper {
-      margin: .8rem 1.5rem 0 0;
+      margin: .8rem 2rem 0 0;
     }
 
     &__button-mobile {
@@ -253,6 +276,10 @@
 
       &__list {
         width: 50%;
+      }
+
+      &__logo {
+        margin: 0 .5rem 0 1%;
       }
     }
 }

@@ -25,14 +25,6 @@
       left: -.64rem;
       top: -.07rem;
     }
-
-    &_for-registration {
-      padding: 0 0 0 1.5rem;
-
-      &::before {
-        top: -.29rem;
-      }
-    }
   }
 
   &__field:checked + &__mark {
@@ -52,10 +44,22 @@
     &::before {
       border: .07rem solid $purple;
     }
+  }
 
-    &_for-registration {
-      &::after{
-        top: 0;
+  &_for-registration {
+    & .radio {
+      &__mark {
+        padding: 0 0 0 1.5rem;
+
+        &::before {
+          top: -.29rem;
+        }
+      }
+
+      &__field:checked + .radio__mark {
+        &::after {
+          top: 0;
+        }
       }
     }
   }

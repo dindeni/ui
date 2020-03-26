@@ -27,6 +27,8 @@
 
   &__button-wrapper {
     margin-top: 2.29rem;
+    width: 22.86rem;
+    height: 3.14rem;
   }
 
   &__sum-guests-wrapper {
@@ -45,13 +47,19 @@
     &__label {
       width: 8.57rem;
     }
+
+    &__button-wrapper {
+      width: 18.57rem;
+    }
   }
 }
 
 @media (max-width: 399px) {
-  .search-room.search-room_with-position_absolute {
+  .search-room{
+    &#{&}_with-position_absolute {
     left: 0;
-  }
+    }
+  }  
 }
 
 

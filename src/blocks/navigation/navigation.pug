@@ -4,25 +4,29 @@ mixin navigation(options)
 
   -
     const {type, items, modifierForItems, loginName, registrationName,
-     linkModifier, userName} = options;
+     linkModifier, userName, modifier} = options;
+
+    const itemClass = modifierForItems ? `navigation__item_${modifierForItems}`:'';
+
+    const classModifier = modifier ? `navigation_${modifier}` : '';
+    
 
   if type === 'default'
-    nav.navigation.js-navigation
+    nav.navigation.js-navigation(class=classModifier)
       img.navigation__logo(src=require('../img/icon-logo.svg') alt="logo")
 
       ul.navigation__list.js-navigation__list
         each item, index in items
-          li(class=["navigation__item",
-           `${modifierForItems ? `navigation__item_${modifierForItems}`:''}`])
-            a(href="somePage.html" class=["navigation__link",
-            `${linkModifier[index] ?
-             `navigation__link_${linkModifier[index]}`:''}`])=item
+          li.navigation__item(class=itemClass)
+            a.navigation__link(href="somePage.html" class=
+              `${linkModifier[index] ? `navigation__link_${linkModifier[index]}`:''}`)=item
 
       div.navigation__buttons-wrapper
         div.navigation__sign-in-button-wrapper
-          +ui-control({isBorder: true, content: `${loginName}`, link:"sign-in.html", linkModifier: "for-navigation"})
-        +ui-control({content:`${registrationName}`, link: 'registration.html',
-         linkModifier: 'for-navigation'})
+          +ui-control({content: `${loginName}`, link:"sign-in.html", type: 'navigationWithBorder'})
+        div.navigation__button-registration-wrapper
+          +ui-control({content:`${registrationName}`, link: 'registration.html',
+             type: 'navigation'})
         button.navigation__button-mobile.js-navigation__button-mobile
 
   else if type === 'loggedIn'
@@ -32,9 +36,8 @@ mixin navigation(options)
       ul.navigation__list.js-navigation__list.navigation__list_logged
         each item, index in items
           li.navigation__item.navigation__item_logged
-            a(href="somePage.html" class=["navigation__link",
-             `${linkModifier[index] ?
-               `navigation__link_${linkModifier[index]}` : ''}`])=item
+            a.navigation__link(href="somePage.html" class=
+             `${linkModifier[index] ? `navigation__link_${linkModifier[index]}` : ''}`)=item
 
       em.navigation__user-name=userName
 

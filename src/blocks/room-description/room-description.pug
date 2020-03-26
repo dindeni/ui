@@ -7,6 +7,7 @@ include ../order-room/order-room
 
 -
   const descriptionData = require('../blocks/room-description/room-description.json');
+  
   const { features, totalValue, totalPrice, review, bulletList } = descriptionData;
 
   const reviewPath = [require('../blocks/room-description/images/icon-avatar-1.png'), require('../blocks/room-description/images/icon-avatar-2.png')];
@@ -18,7 +19,7 @@ mixin room-description
       div.room-description__wrapper
         h2.room-description__features-head Сведения о номере
 
-        +features({values: features, modifier: 'for-room-description'})
+        +features(features)
 
       div.room-description__pie-chart-wrapper
         h2.room-description__pie-chart-head Впечатления от номера

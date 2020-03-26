@@ -6,15 +6,15 @@ mixin sign-in
   section.sign-in
     h1.sign-in__head Войти
 
-    +form-element({type: 'text', placeholder: 'Email',
-      modifierForInput: 'for-sign-in'})
+    div.sign-in__email-wrapper
+      +form-element({type: 'default', placeholder: 'Email'})
 
-    +form-element({type: 'password', placeholder: 'Пароль',
-      modifierForInput: 'for-sign-in'})
+    div.sign-in__password-wrapper
+      +form-element({type: 'password', placeholder: 'Пароль'})
 
     span.sign-in__link-enter-wrapper
-      +ui-control({content: 'Войти', link: 'sign-in.html', linkModifier: 'for-sign-in'})
+      +ui-control({content: 'Войти', link: 'sign-in.html', type: 'filled', isArrow: true})
 
     span.sign-in__label Нет аккаунта на Toxin?
-      span.sign-in__link-wrapper
-        +ui-control({isBorder: true, content: 'Создать', link: 'registration.html', linkModifier: 'for-sign-in'})
+      div.sign-in__link-wrapper
+        +ui-control({content: 'Создать', link: 'registration.html', type: 'border'})
