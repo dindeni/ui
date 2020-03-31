@@ -7,24 +7,6 @@
   display: flex;
   flex-direction: column;
 
-  &__label::after {
-    top: .29rem;
-  }
-
-  &__popup {
-    &_hidden {
-      @include hide;
-    }
-
-    &_unfocused {
-      z-index: 1;
-    }
-
-    &_focused {
-      z-index: 100;
-    }
-  }
-
   &__popup {
     width: 22.86rem;
     margin-top: 4.36rem;
@@ -37,6 +19,18 @@
     z-index: 100;
     padding: 0 0 .71rem 0;
 
+    &_hidden {
+      @include hide;
+    }
+
+    &_unfocused {
+      z-index: 1;
+    }
+
+    &_focused {
+      z-index: 100;
+    }
+
     &_for-filter {
       width: 19rem;
     }
@@ -46,15 +40,19 @@
     }
   }
 
-  &__type-visitors {
-    margin: .86rem 0 .71rem 1.07rem;
-  }
-
   &__container {
     display: flex;
     justify-content: space-between;
   }
+  
+  &__type-visitors {
+    margin: .86rem 0 .71rem 1.07rem;
+  }
 
+  &__number-of-visitors-wrapper {
+    margin: .29rem .43rem 0 0;
+  }
+  
   &__button {
     border: .07rem solid $dark25;
     box-sizing: border-box;
@@ -78,10 +76,6 @@
   &__number-of-visitors {
     color: #1F2041;
     margin: 0 .86rem;
-  }
-
-  &__number-of-visitors-wrapper {
-    margin: .29rem .43rem 0 0;
   }
 
   &__buttons-footer-container {

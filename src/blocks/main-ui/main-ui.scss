@@ -4,9 +4,29 @@
     flex-wrap: wrap;
   }
 
+  &__form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: .71rem 0 1.43rem 3.57rem;
+    width: 22.86rem;
+
+    &_review {
+      width: 55.71rem;
+    }
+  }
+
   &__range-wrapper,
   &__checkbox-wrapper {
     margin: 0 0 1.43rem 0;
+  }
+
+  &__radio-wrapper {
+    padding-left: .71rem;
+  }
+
+  &__toggle-wrapper {
+    padding: .71rem 0 .71rem .43rem;
   }
 
   &__buttons-wrapper {
@@ -27,18 +47,10 @@
     }
   }
 
-  &__form-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    margin: .71rem 0 1.43rem 3.57rem;
-    width: 22.86rem;
-
-    &_review {
-      width: 55.71rem;
-    }
+  &__button-rate-wrapper {
+    margin: 0 1.71rem 0 .29rem;
   }
-
+  
   &__rates-wrapper {
     width: 100%;
   }
@@ -46,6 +58,10 @@
   &__rate-wrapper {
     display: inline-block;
     margin: 0 1.43rem 0 .29rem;
+  }
+
+  &__registration-wrapper {
+    margin-top: .71rem;
   }
 
   &__card-wrapper {
@@ -58,22 +74,6 @@
 
   &__headers-footers {
     margin-top: 1.43rem;
-  }
-
-  &__registration-wrapper {
-    margin-top: .71rem;
-  }
-
-  &__button-rate-wrapper {
-    margin: 0 1.71rem 0 .29rem;
-  }
-
-  &__radio-wrapper {
-    padding-left: .71rem;
-  }
-
-  &__toggle-wrapper {
-    padding: .71rem 0 .71rem .43rem;
   }
 }
 

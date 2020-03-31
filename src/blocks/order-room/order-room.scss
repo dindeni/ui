@@ -12,15 +12,15 @@
     margin: 3.29rem 0 0 .36rem;
   }
 
+  &__number-mark {
+    @include h2;
+    font-size: 1rem;
+  }
+  
   &__number {
     @include h2;
     font-size: 1.71rem;
     margin: 0 .71rem 0 .21rem;
-  }
-
-  &__number-mark {
-    @include h2;
-    font-size: 1rem;
   }
 
   &__type-room {
@@ -28,12 +28,6 @@
     color: $purple;
     font-weight: bold;
     margin: 0 8.14rem 0 0;
-  }
-
-  &__price-wrapper {
-    @include body;
-    color: $dark50;
-    margin: .57rem 0 0 0;
   }
 
   &__price {
@@ -67,6 +61,11 @@
 
   &__form {
     margin: .29rem 0 0 0;
+  }
+
+  &__sum-guests-wrapper {
+    padding: 1.43rem 0 0 .21rem;
+    width: 22.86rem;
   }
 
   &__total {
@@ -128,10 +127,6 @@
     width: 22.86rem;
     height: 3.14rem;
   }
-
-  &__sum-guests-wrapper {
-    padding: 1.43rem 0 0 .21rem;
-  }
 }
 
 @media (max-width: 1100px) {
@@ -174,7 +169,7 @@
     }
 
     &__button-wrapper {
-      width: 18.57rem;
+      width: 20.3rem;
     }
   }
 }

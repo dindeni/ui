@@ -27,13 +27,13 @@
     }
   }
 
-  &__type-visitors {
-    margin: .86rem 0 .71rem 1.07rem;
-  }
-
   &__container {
     display: flex;
     justify-content: space-between;
+  }
+  
+  &__type-visitors {
+    margin: .86rem 0 .71rem 1.07rem;
   }
 
   &__button {
@@ -48,13 +48,13 @@
     outline: none;
   }
 
+  &__number-of-visitors-wrapper {
+    margin: .29rem .43rem 0 0;
+  }
+  
   &__number-of-visitors {
     color: #1F2041;
     margin: 0 .86rem;
-  }
-
-  &__number-of-visitors-wrapper {
-    margin: .29rem .43rem 0 0;
   }
 }
 

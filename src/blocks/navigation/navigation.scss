@@ -9,10 +9,6 @@
   box-shadow: 0 .71rem 1.43rem $dark5;
   align-items: center;
 
-  &__buttons-wrapper {
-    margin: 0 0 0 1.57rem;
-  }
-
   &__logo {
     margin: 0 0 0 9.8%;
     height: auto;
@@ -32,6 +28,22 @@
 
     &_hidden {
       @include hide;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin: 0 2rem 0 0;
+
+      &.navigation__item_type_ru {
+        margin: 0 1.5rem 0 0;
+      }
+    }
+
+    &_logged {
+      &:not(:last-child) {
+        margin: 0 2.07rem 0 0;
+      }
     }
   }
 
@@ -69,20 +81,20 @@
     }
   }
 
-  &__item {
-    &:not(:last-child) {
-      margin: 0 2rem 0 0;
+  &__buttons-wrapper {
+    margin: 0 0 0 1.57rem;
+  }
 
-      &.navigation__item_type_ru {
-        margin: 0 1.5rem 0 0;
-      }
-    }
+  &__sign-in-button-wrapper {
+    display: inline-block;
+    margin: 0 3rem 0 0;
+  }
 
-    &_logged {
-      &:not(:last-child) {
-        margin: 0 2.07rem 0 0;
-      }
-    }
+  &__button-registration-wrapper{
+    width: 14rem;
+    height: 2.43rem;
+    display: inline-block;
+
   }
 
   &__user-name {
@@ -104,18 +116,6 @@
 
   &__button-mobile {
     display: none;
-  }
-
-  &__sign-in-button-wrapper {
-    display: inline-block;
-    margin: 0 3rem 0 0;
-  }
-
-  &__button-registration-wrapper{
-    width: 14rem;
-    height: 2.43rem;
-    display: inline-block;
-
   }
 
   &_theme_en{
@@ -161,14 +161,14 @@
   .navigation {
     justify-content: space-between;
 
-    &__buttons-wrapper {
-      margin-right: 1%;
-    }
-
     &__logo {
       margin: 0 0 0 2%;
       width: 5rem;
       padding: .36rem 0 0 0;
+    }
+    
+    &__buttons-wrapper {
+      margin-right: 1%;
     }
   }
 }
@@ -178,13 +178,23 @@
     position: relative;
     justify-content: space-between;
 
+    &__item {
+      padding: .29rem .36rem;
+    }
+    
     &__list {
       z-index: 10;
       display: block;
-    }
+      position: absolute;
+      width: 40%;
+      right: 0;
+      background: $purple;
+      border-radius: .29rem;
+      margin: 3.57rem 0 0 10%;
 
-    &__item {
-      padding: .29rem .36rem;
+      &_logged {
+        top: 0;
+      }
     }
 
     &__buttons-wrapper {
@@ -193,6 +203,10 @@
 
     &__sign-in-button-wrapper {
       margin: .8rem 2rem 0 0;
+    }
+
+    &__user-name {
+      margin: .36rem 0 0 15%;
     }
 
     &__button-mobile {
@@ -231,19 +245,6 @@
       }
     }
 
-    &__list {
-      position: absolute;
-      width: 40%;
-      right: 0;
-      background: $purple;
-      border-radius: .29rem;
-      margin: 3.57rem 0 0 10%;
-
-      &_logged {
-        top: 0;
-      }
-    }
-
     &__button-mobile_open {
       &.navigation__button-mobile::before {
         background: $dark50;
@@ -255,10 +256,6 @@
         transform: rotate(-45deg);
         top: 1.07rem;
       }
-    }
-
-    &__user-name {
-      margin: .36rem 0 0 15%;
     }
   }
 }
@@ -274,12 +271,12 @@
       flex-wrap: wrap;
       justify-content: center;
 
-      &__list {
-        width: 50%;
-      }
-
       &__logo {
         margin: 0 .5rem 0 1%;
+      }
+
+      &__list {
+        width: 50%;
       }
     }
 }
@@ -288,12 +285,12 @@
   .navigation {
     padding-bottom: 1.43rem;
 
-    &__buttons-wrapper {
-      margin: .36rem 0 0 0;
-    }
-
     &__logo {
       margin: 0 20%;
+    }
+
+    &__buttons-wrapper {
+      margin: .36rem 0 0 0;
     }
   }
 }

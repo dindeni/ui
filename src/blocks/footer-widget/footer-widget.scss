@@ -6,16 +6,6 @@
   display: flex;
   flex-wrap: wrap;
 
-  &__list-wrapper {
-    padding: 6.43rem 2.8% 0 0;
-    width: 11.43rem;
-  }
-
-  &__subscribe-head {
-    @include h3;
-    color: $dark100;
-  }
-
   &__logo-wrapper {
     width: 18%;
     margin: 7.14rem 2.8% 8.29rem 9.7%;
@@ -25,15 +15,27 @@
     @include body;
     margin-top: .86rem;
   }
-
-  &__subscribe-wrapper {
-    margin: 6.43rem 0 0 0;
-    width: 18%;
+  
+  &__list-wrapper {
+    padding: 6.43rem 2.8% 0 0;
+    width: 11.43rem;
   }
 
-  &__subscribe-description {
-    @include body;
-    margin: 1.43rem 0 1.5rem 0;
+  &__subscribe {
+    &-wrapper {
+      margin: 6.43rem 0 0 0;
+      width: 18%;
+    }
+
+    &-head {
+      @include h3;
+      color: $dark100;
+    }
+
+    &-description {
+      @include body;
+      margin: 1.43rem 0 1.5rem 0;
+    }
   }
 }
 
@@ -76,13 +78,13 @@
       }
     }
 
-    &__subscribe-wrapper {
-      margin: 3.57rem 0 3.57rem 0;
-    }
-
     &__list-wrapper {
       width: 8.57rem;
       padding: 3.57rem 2.8% 0 0;
+    }
+
+    &__subscribe-wrapper {
+      margin: 3.57rem 0 3.57rem 0;
     }
   }
 }

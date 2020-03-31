@@ -22,12 +22,12 @@
     left: 1.43rem;
   }
 
-  &__image_hidden {
-    @include hide;
-  }
+  &__image {
+    width: 19.29rem;
 
-  &__radio {
-    @include hide;
+    &_hidden {
+      @include hide;
+    }
   }
 
   &__form {
@@ -54,6 +54,18 @@
     }
   }
 
+  &__radio {
+    @include hide;
+  }
+
+  &__arrows-wrapper {
+    position: absolute;
+    top: 4.93rem;
+    display: flex;
+    justify-content: space-between;
+    width: 19.29rem;
+  }
+  
   &__arrow {
     width: .57rem;
     height: .93rem;
@@ -70,22 +82,6 @@
       &_type_prev {
         margin-left: 1.29rem;
       }
-  }
-
-  &__arrows-wrapper {
-    position: absolute;
-    top: 4.93rem;
-    display: flex;
-    justify-content: space-between;
-    width: 19.29rem;
-  }
-
-  &__image {
-    width: 19.29rem;
-  }
-
-  &__wrapper {
-    position: relative;
   }
 
   &__number {
@@ -130,6 +126,11 @@
     margin: 0 1.21rem 0 .43rem;
   }
 
+  &__rate-wrapper {
+    display: inline-block;
+    margin: 1.07rem 0 0 1.43rem;
+  }
+  
   &__number-review {
     display: inline-block;
     @include body;
@@ -147,10 +148,5 @@
     text-transform: none;
     margin-left: .29rem;
     margin-right: .86rem;
-  }
-
-  &__rate-wrapper {
-    display: inline-block;
-    margin: 1.07rem 0 0 1.43rem;
   }
 }

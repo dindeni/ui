@@ -26,7 +26,7 @@ mixin order-room(options)
        modifierForLabel: 'for-order' })
 
       div.order-room__sum-guests-wrapper
-        +sum-guests({modifier: 'for-order', head: 'гости'})
+        +sum-guests({modifier: 'for-guests', head: 'гости'})
 
     div.order-room__total
       each value, index in totalValue

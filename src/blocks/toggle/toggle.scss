@@ -7,6 +7,17 @@
     @include hide;
   }
 
+  .toggle__field:checked + .toggle__label {
+    &::before {
+      border: .07rem solid $purple;
+    }
+  
+    &::after {
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      left: 1.36rem;
+    }
+  }
+
   &__label {
     @include body;
     padding: .07rem 0 0 3.21rem;
@@ -34,16 +45,5 @@
       left: 0;
       top: .14rem;
     }
-  }
-}
-
-.toggle__field:checked + .toggle__label {
-  &::before {
-    border: .07rem solid $purple;
-  }
-
-  &::after {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    left: 1.36rem;
   }
 }

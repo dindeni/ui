@@ -7,6 +7,25 @@
     @include hide;
   }
 
+  &__field:checked + &__mark {
+    color: rgba(31, 32, 65, 0.75);
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: .86rem;
+      height: .86rem;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      border-radius: .71rem;
+      left: -.36rem;
+      top: .21rem;
+    }
+
+    &::before {
+      border: .07rem solid $purple;
+    }
+  }
+
   &__mark {
     position: relative;
     @include body;
@@ -24,25 +43,6 @@
       border-radius: .71rem;
       left: -.64rem;
       top: -.07rem;
-    }
-  }
-
-  &__field:checked + &__mark {
-    color: rgba(31, 32, 65, 0.75);
-
-    &::after {
-      position: absolute;
-      content: '';
-      width: .86rem;
-      height: .86rem;
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-      border-radius: .71rem;
-      left: -.36rem;
-      top: .21rem;
-    }
-
-    &::before {
-      border: .07rem solid $purple;
     }
   }
 

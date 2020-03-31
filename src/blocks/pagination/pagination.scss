@@ -25,6 +25,14 @@
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
       border-radius: 1.57rem;
     }
+    &_dots {
+        background: none;
+    }
+
+    &_type_next {
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      border-radius: 1.57rem;
+    }
   }
 
   &__link {
@@ -44,11 +52,6 @@
     }
   }
 
-  &__item_type_next {
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    border-radius: 1.57rem;
-  }
-
   &__description {
     @include body;
     margin-right: 3rem;
@@ -59,9 +62,5 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  &__item_dots {
-    background: none;
   }
 }

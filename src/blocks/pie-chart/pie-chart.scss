@@ -2,7 +2,13 @@
 
 .pie-chart {
   display: flex;
+  position: relative;
 
+  &__outer {
+    position: absolute;
+    top: 0;
+  }
+  
   &__list {
     list-style: none;
     margin: 2.43rem 0 0 .36rem;
@@ -35,21 +41,12 @@
       background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
     }
   }
-
-  &__outer {
-    position: absolute;
-    top: 2.14rem;
-  }
 }
 
 @media (max-width: 450px) {
   .pie-chart {
     &__item{
       font-size: 0.93rem;
-    }
-
-    &__outer {
-      top: 2.14rem;
     }
   }
 }

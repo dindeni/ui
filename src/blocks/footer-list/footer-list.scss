@@ -13,12 +13,12 @@
     margin: 1.36rem 0 0 0;
   }
 
+  &__item {
+    margin: 0 0 1rem 0;
+  }
+
   &__link {
     text-decoration: none;
     @include body;
-  }
-
-  &__item {
-    margin: 0 0 1rem 0;
   }
 }

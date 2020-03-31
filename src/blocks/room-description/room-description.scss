@@ -30,42 +30,42 @@
   &__review {
     position: relative;
     width: 100%;
-  }
 
-  &__review-head {
-    margin: .14rem 0 1.29rem 0;
-    display: inline-block;
-  }
+    &-head {
+      margin: .14rem 0 1.29rem 0;
+      display: inline-block;
+    }
 
-  &__review-number {
-    @include body;
-    color: $dark50;
-    position: absolute;
-    right: 4.86rem;
-    top: -.21rem;
+    &-number {
+      @include body;
+      color: $dark50;
+      position: absolute;
+      right: 4.86rem;
+      top: -.21rem;
+    }
   }
 
   &__rules {
     margin: 1.43rem 5.86rem 0 .14rem;
     width: 20rem;
-  }
 
-  &__rules-head {
-    margin: 0 0 1.57rem 1.5rem;
+    &-head {
+      margin: 0 0 1.57rem 1.5rem;
+    }
   }
 
   &__cancel {
     margin: 1.43rem 0 0 0;
-  }
 
-  &__cancel-paragraph {
-    width: 24.57rem;
-    @include body;
-    margin: 1.64rem 0 0 0;
-  }
+    &-paragraph {
+      width: 24.57rem;
+      @include body;
+      margin: 1.64rem 0 0 0;
+    }
 
-  &__cancel-head {
-    margin: 0;
+    &-head {
+      margin: 0;
+    }
   }
 }
 
@@ -101,12 +101,12 @@
       margin: 0 0 0 2%;
     }
 
-    &__cancel {
-      margin: 1rem 0 1.43rem 2%;
-    }
-
     &.room-description__review {
       width: 100%;
+    }
+    
+    &__cancel {
+      margin: 1rem 0 1.43rem 2%;
     }
   }
 }
@@ -120,22 +120,24 @@
 @media (max-width: 450px) {
   .room-description {
     &__features-head, &__pie-chart-head, &__review-head, &__rules-head,
-    &__cancel-head {
-      font-size: 1.14rem;
-    }
-
-    &__cancel-paragraph {
-      width: 90%;
-    }
-
     &__pie-chart-wrapper {
-      margin: .86rem 0 0 2%;
+      margin: .86rem 0 1.64rem 2%;
     }
 
     &__review-number {
       right: -10%;
       font-size: 0.86rem;
       top: 2.43rem;
+    }
+
+    &__cancel {
+      &-head {
+        font-size: 1.14rem;
+      }
+
+      &-paragraph {
+        width: 90%;
+      }
     }
   }
 }
