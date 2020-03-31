@@ -25,6 +25,11 @@
     &:last-child {
       left: 100%;
     }
+
+    &:focus {
+      outline: .07rem dashed #6FCF97;
+      outline-offset: .21rem;
+    }
   }
 
   &-range.ui-corner-all {

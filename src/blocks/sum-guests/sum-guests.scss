@@ -71,6 +71,10 @@
     &_type_non-nullified {
       opacity: 1;
     }
+
+    &:focus {
+      outline: .07rem dashed $dark25;
+    }
   }
 
   &__number-of-visitors {

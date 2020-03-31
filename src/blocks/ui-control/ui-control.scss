@@ -44,6 +44,11 @@
       text-align: center;
     }
   }
+
+  &:focus {
+    outline: .07rem dashed #BC9CFF;
+    outline-offset: .21rem;
+  }
 }
 
 &_theme_navigation-with-border{
@@ -69,6 +74,11 @@
 
   &.ui-control_for-sign-in{
     padding: 1.07rem 9.9rem;
+  }
+
+  &:focus {
+    outline: .07rem dashed #BC9CFF;
+    outline-offset: .21rem;
   }
 }
 
@@ -113,11 +123,21 @@
   &_theme_like {
     @include button-like(linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%),
      url('./images/icon-favorite.svg') no-repeat, $purple);
+
+     &:focus {
+      outline: .07rem dashed #BC9CFF;
+      outline-offset: .21rem;
+    }
   }
 
   &_theme_gray {
     @include button-like($dark25, url('./images/icon-favorite-border.svg') no-repeat,
       $dark25);
+    
+    &:focus {
+      outline: .07rem dashed #BC9CFF;
+      outline-offset: .21rem;
+    }
   }
 
   &_hidden {

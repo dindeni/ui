@@ -198,7 +198,7 @@
     }
 
     &__buttons-wrapper {
-      margin: 0 7% 0 0;
+      margin: 0 9% 0 0;
     }
 
     &__sign-in-button-wrapper {
@@ -213,14 +213,15 @@
       display: inline-block;
       cursor: pointer;
       width: 2.14rem;
-      height: 1.79rem;
+      height: 1.5rem;
       box-shadow: 0 .14rem $purple;
       border: none;
       background: none;
       vertical-align: top;
       position: absolute;
       z-index: 100;
-      right:.36rem;
+      right: 0;
+      margin:  .6rem 1rem 0 0;
       top: 1.43rem;
       outline: none;
 
@@ -231,7 +232,7 @@
         height: .14rem;
         background: $purple;
         left: 0;
-        top: 1.07rem;
+        top: .67rem;
       }
 
       &::after {
@@ -241,20 +242,30 @@
         height: .14rem;
         background: $purple;
         left: 0;
-        top: .36rem;
+        top: -.14rem;
+      }
+
+      &:focus {
+        outline: .07rem dashed $purple;
+        outline-offset: .36rem;
       }
     }
 
-    &__button-mobile_open {
-      &.navigation__button-mobile::before {
+    &__button-mobile_state_open {
+      &::before {
         background: $dark50;
         transform: rotate(45deg);
+        top: .75rem;
       }
 
-      &.navigation__button-mobile::after {
+      &::after {
         background: $dark50;
         transform: rotate(-45deg);
-        top: 1.07rem;
+        top: .75rem;
+      }
+
+      &:focus {
+        outline: .07rem dashed $dark50;
       }
     }
   }

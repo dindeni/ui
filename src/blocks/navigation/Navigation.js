@@ -20,15 +20,15 @@ class Navigation {
     const button = navigation.querySelector('.js-navigation__button-mobile');
     const navigationList = navigation.querySelector('.js-navigation__list');
     const isButtonClose = event.target === button
-      && !button.classList.contains('navigation__button-mobile_open');
+      && !button.classList.contains('navigation__button-mobile_state_open');
     const isButtonOpen = event.target === button
-      && button.classList.contains('navigation__button-mobile_open');
+      && button.classList.contains('navigation__button-mobile_state_open');
     if (isButtonClose) {
       navigationList.classList.remove('navigation__list_hidden');
-      button.classList.add('navigation__button-mobile_open');
+      button.classList.add('navigation__button-mobile_state_open');
     } else if (isButtonOpen) {
       navigationList.classList.add('navigation__list_hidden');
-      button.classList.remove('navigation__button-mobile_open');
+      button.classList.remove('navigation__button-mobile_state_open');
     }
   }
 }

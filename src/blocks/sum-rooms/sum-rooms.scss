@@ -46,6 +46,10 @@
     height: 2.14rem;
     margin-bottom: .29rem;
     outline: none;
+
+    &:focus {
+      outline: 0.07rem dashed $dark25;
+    }
   }
 
   &__number-of-visitors-wrapper {
