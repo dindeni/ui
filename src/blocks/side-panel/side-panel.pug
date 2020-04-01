@@ -1,12 +1,13 @@
 include ../sum-guests/sum-guests
 include ../ui-slider/ui-slider
-include ../checkbox/checkbox
+include ../checkbox-set/checkbox-set
 include ../card-room/card-room
 include ../sum-rooms/sum-rooms
 include ../ui-datepicker/ui-datepicker
 
 -
   const panelData = require('../blocks/side-panel/side-panel.json');
+  
   const { standard, rich, expandable } = panelData;
 
 mixin side-panel
@@ -16,7 +17,8 @@ mixin side-panel
 
     form.side-panel__form
 
-      +ui-datepicker({type: 'range', defaultDate: '19 авг - 23 авг', modifierForLabel: 'for-filter'})
+      div.side-panel__datepicker-wrapper
+        +ui-datepicker({type: 'range', defaultDate: '19 авг - 23 авг', modifierForLabel: 'for-filter'})
 
       div.side-panel__sum-guests-wrapper
         +sum-guests({modifier: 'for-filter', modifierForInput: 'for-filter',
@@ -27,13 +29,14 @@ mixin side-panel
       div.side-panel__range-reference Стоимость за сутки пребывания в номере
 
       div.side-panel__slogan.side-panel__slogan_type_checkbox Checkbox Buttons
-      +checkbox({values: standard, type: 'checkbox', modifier: 'for-side-panel'})
+      div.side-panel__checkbox-wrapper
+        +checkbox-set({values: standard})
 
       div.side-panel__slogan.side-panel__slogan_type_checkbox-rich доступность
-      +checkbox({values: rich, type: 'rich', modifier: 'for-side-panel'})
+      +checkbox-set({values: rich.values, descriptions: rich.descriptions})
 
       div.side-panel__slogan.side-panel__slogan_type_rooms удобства номера
-      +sum-rooms
-      div.side-panel__checkbox-wrapper
-        +checkbox({values: expandable, type: 'checkboxExpandable',
-          head: 'дополнительные удобства'})
+      div.side-panel__sum-rooms-wrapper
+        +sum-rooms
+      
+      +checkbox-set({values: expandable, isExpandable: true, head: 'дополнительные удобства'})

@@ -7,28 +7,32 @@
   &__slogan {
     @include h3;
     color: $dark100;
-    margin: 0 0 .36rem 0;
+    margin: 0 .1rem 0 .1rem;
 
     &_type_range {
-      margin: 2.21rem 0 1.71rem 0;
+      margin: 2.3rem 0.3rem 1.6rem 0;
       display: inline-block;
     }
 
     &_type_checkbox {
-      margin: 2.07rem 0 1.07rem 0;
+      margin: 2.2rem 0 1.07rem .1rem;
     }
 
     &_type_checkbox-rich {
-      margin: 2.14rem 0 1.3rem 0;
+      margin: 1.14rem 0 1.15rem .1rem;
     }
 
     &_type_rooms {
-      margin: 2.1rem 0 .36rem 0;
+      margin: 1.5rem 0 .36rem .1rem;
     }
   }
 
+  &__datepicker-wrapper {
+    margin: .1rem 0 0 .1rem;
+  }
+
   &__sum-guests-wrapper {
-    margin-top: 1.57rem;
+    margin: 1.5rem 0 0 .1rem;
   }
 
   &__range-reference {
@@ -39,6 +43,10 @@
   }
 
   &__checkbox-wrapper{
-    margin: 2.29rem 0 1.29rem 0;
+    margin: 1.2rem 0 1.29rem .8rem;
+  }
+
+  &__sum-rooms-wrapper {
+    margin: 0 0 2.2rem .1rem;
   }
 }

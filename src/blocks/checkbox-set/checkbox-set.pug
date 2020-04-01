@@ -1,0 +1,20 @@
+include ../checkbox/checkbox
+
+mixin checkbox-set(options)
+
+  -
+     const {values, isExpandable, head, descriptions}=options;
+
+    const wrapperClass = isExpandable ? 'checkbox-set__wrapper_type_expandable checkbox-set__wrapper_hidden js-checkbox-set__wrapper_type_expandable' : '';
+  
+  div.checkbox-set
+
+    if isExpandable
+      h3.checkbox-set__head.js-checkbox-set__head=head
+      div.checkbox-set__container.js-checkbox__container.checkbox__container_hidden
+    
+    div.checkbox-set__wrapper(class=wrapperClass)
+      each value, index in values
+        div.checkbox-set__item-wrapper
+          +checkbox({ modifier, type, value,
+            description: descriptions ? descriptions[index] : undefined })

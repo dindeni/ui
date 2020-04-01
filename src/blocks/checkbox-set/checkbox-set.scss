@@ -1,0 +1,37 @@
+@import '../../style/mixins/text';
+@import '../../style//mixins//hide';
+@import '../../style/variables/variables';
+
+.checkbox-set {
+  &__head {
+    position: relative;
+    @include h3;
+    color: $dark100;
+    margin: 0 0 1.29rem .14rem;
+    width: 17.86rem;
+    --rotate: rotate(0deg);
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: .86rem;
+      height: .57rem;
+      background: url('./images/icon-expand.svg') no-repeat;
+      right: 0;
+      transform: var(--rotate);
+      top: .21rem;
+    }
+
+    &_turned {
+      --rotate: rotate(180deg);
+    }
+  }
+  
+  &__wrapper_hidden {
+    @include hide;
+  }
+
+  &__item-wrapper {
+    padding: 0 0 .71rem 0; 
+  }
+}

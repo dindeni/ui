@@ -18,6 +18,7 @@ include ../footer/footer
 include ../footer-widget/footer-widget
 include ../sign-in/sign-in
 include ../sum-guests/sum-guests
+include ../checkbox-set/checkbox-set
 
 -
   const data = require('../blocks/main-ui/main-ui.json');
@@ -68,7 +69,7 @@ mixin main-ui()
         })
 
       div.main-ui__form-wrapper
-        +checkbox(checkbox)
+        +checkbox-set(checkbox)
         div.main-ui__radio-wrapper
           +radio({values: radioLabels, id: radioIds, modifier: 'for-ui'})
         div.main-ui__toggle-wrapper
@@ -108,10 +109,10 @@ mixin main-ui()
 
       div.main-ui__form-wrapper
         div.main-ui__checkbox-wrapper
-          +checkbox(checkboxExpandable)
+          +checkbox-set(checkboxExpandable)
 
       div.main-ui__form-wrapper
-        +checkbox(checkboxRich)
+        +checkbox-set(checkboxRich)
 
       div.main-ui__form-wrapper
         +bullet-list(bulletList)

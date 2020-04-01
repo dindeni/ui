@@ -1,29 +1,13 @@
 mixin checkbox(options)
 
   -
-    const {values, type, head, modifier}=options
+    const {value, description}=options;
 
-    const labelModifier = modifier ? `checkbox__mark_${modifier}` : '';
+    const classes = description ? 'checkbox__mark_type_rich' : '';
 
-    const descriptionModifier = modifier ? `checkbox__description_${modifier}` : '';
+  label.checkbox
+    input.checkbox__field(type="checkbox")
+    span.checkbox__mark(class=classes)=value
 
-  div.checkbox.checkbox
-
-    if type === 'checkbox'
-      each value, index in values
-        input.checkbox__field(type="checkbox" id=`field-checkbox-${index}`)
-        label.checkbox__mark(for=`field-checkbox-${index}` class =
-        `${modifier ? `checkbox__mark_${modifier}` : ''}`)=value
-
-    else if type === 'checkboxExpandable'
-      h3.checkbox__head.js-checkbox__head=head
-      div.checkbox__wrapper.js-checkbox__wrapper.checkbox__wrapper_hidden#checkbox-expandable-wrapper
-        each value, index in values
-          input.checkbox__field(type="checkbox" id=`field-checkbox-expandable-${index}`)
-          label.checkbox__mark(for=`field-checkbox-expandable-${index}`)=value
-
-    else if type === 'rich'
-      each value, index in values
-        input.checkbox__field(type="checkbox" id=`field-checkbox-rich-${index}`)
-        label.checkbox__mark.checkbox__mark_type_rich(for=`field-checkbox-rich-${index}` class =richModifier)=value.label
-          span.checkbox__description(class=descriptionModifier)=value.description
+    if description
+      span.checkbox__description=description
