@@ -1,9 +1,11 @@
 include ../social-buttons/social-buttons
 
-mixin footer
+-const text = 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.';
+
+mixin footer(description=text)
 
   footer.footer
     img.footer__logo(src=require('../img/icon-logo.svg'))
-    p.footer__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+    p.footer__description=description
 
     +social-buttons({modifier: 'for-footer'})
