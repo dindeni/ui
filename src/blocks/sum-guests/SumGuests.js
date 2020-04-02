@@ -7,7 +7,7 @@ class SumGuests {
   }
 
   countGuests() {
-    const buttonMinus = this.classGuests.querySelectorAll('.js-sum-guests__button_minus');
+    const buttonMinus = this.classGuests.querySelectorAll('.js-sum-guests__button_type_minus');
     const numberVisitors = this.classGuests.querySelectorAll('.js-sum-guests__number-of-visitors');
     const inputGuests = this.classGuests.querySelector('.js-form-element__field_for-guests');
     const guestsPopup = this.classGuests.querySelector('.js-sum-guests__popup');
@@ -57,10 +57,10 @@ class SumGuests {
     } = options;
     const { parentElement } = event.target.parentElement;
     const searchButtonPlus = parentElement.querySelector(
-      '.js-sum-guests__button_plus',
+      '.js-sum-guests__button_type_plus',
     );
     const searchButtonMinus = parentElement.querySelector(
-      '.js-sum-guests__button_minus',
+      '.js-sum-guests__button_type_minus',
     );
     const searchNumberVisitors = parentElement.querySelector('.js-sum-guests__number-of-visitors');
 

@@ -53,7 +53,7 @@ class SumRooms {
     } = options;
 
     const { parentElement } = event.target;
-    const searchButtonPlus = parentElement.querySelector('.js-sum-rooms__button_plus');
+    const searchButtonPlus = parentElement.querySelector('.js-sum-rooms__button_type_plus');
     const number = parentElement.querySelector('.js-sum-rooms__number-of-visitors');
     if (event.target === searchButtonPlus) {
       number.textContent = +number.textContent + 1;
