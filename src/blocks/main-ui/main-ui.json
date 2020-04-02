@@ -84,28 +84,32 @@
   },
   "footerWidget": {
     "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
-    "navigationItems": [
-      "About Us",
-      "News",
-      "Support",
-      "Products"
+    "headers": [
+      "Navigation",
+      "about us",
+      "support"
     ],
-    "aboutItems": [
-      "Who we are",
-      "Our team",
-      "Careers",
-      "Investors"
-    ],
-    "supportItems": [
-      "Documentation",
-      "Community",
-      "Get in Touch"
+    "items": [
+      [
+        "About Us",
+        "News",
+        "Support",
+        "Products"
+      ],
+      [
+        "Who we are",
+        "Our team",
+        "Careers",
+        "Investors"
+      ],
+      [
+        "Documentation",
+        "Community",
+        "Get in Touch"
+      ]
     ],
     "subscribeDescription": "Receive our latest news and promotions in your inbox!",
-    "headNavigation": "Navigation",
-    "headAbout": "about us",
     "headSubscribe": "Subscribe to our newsletter",
-    "headSupport": "support",
     "placeholderEmail": "Your email address",
     "copyrightText": "Copyright © 2018 Toxin UI Kit. All rights reserved."
   }
