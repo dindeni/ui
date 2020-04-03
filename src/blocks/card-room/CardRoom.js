@@ -1,23 +1,27 @@
+import autoBind from 'auto-bind';
+
 class CardRoom {
   constructor(options) {
     const { formElement, cardRoomElement } = options;
     this.formElement = formElement;
     this.cardRoomElement = cardRoomElement;
+    autoBind(this);
   }
 
   observeForm() {
-    this.formElement.addEventListener('change', (event) => CardRoom.handleFormElementChange(event, this.formElement));
+    this.formElement.addEventListener('change', this._handleFormElementChange);
   }
 
   observeCardRoom() {
-    this.cardRoomElement.addEventListener('click', (event) => CardRoom.handleCardRoomElementClick(event, this.cardRoomElement));
+    this.cardRoomElement.addEventListener('click', this._handleCardRoomElementClick);
   }
 
-  static handleFormElementChange(event, formElement) {
+  _handleFormElementChange(event) {
     let imageCount = 0;
-    if (event.currentTarget === formElement) {
+
+    if (event.currentTarget === this.formElement) {
       const cardImages = event.currentTarget.parentElement.querySelectorAll('.js-card-room__image');
-      Array.from(formElement.querySelectorAll('.card-room__radio'))
+      Array.from(this.formElement.querySelectorAll('.card-room__radio'))
         .map((input, index) => {
           if (event.target === input) {
             const inputElement = input;
@@ -37,11 +41,11 @@ class CardRoom {
     }
   }
 
-  static handleCardRoomElementClick(event, cardRoomElement) {
-    const prev = cardRoomElement.querySelector('.js-card-room__arrow_type_prev');
-    const next = cardRoomElement.querySelector('.js-card-room__arrow_type_next');
-    const images = cardRoomElement.querySelectorAll('.js-card-room__image');
-    const inputs = cardRoomElement.querySelectorAll('.js-card-room__radio');
+  _handleCardRoomElementClick(event) {
+    const prev = this.cardRoomElement.querySelector('.js-card-room__arrow_type_prev');
+    const next = this.cardRoomElement.querySelector('.js-card-room__arrow_type_next');
+    const images = this.cardRoomElement.querySelectorAll('.js-card-room__image');
+    const inputs = this.cardRoomElement.querySelectorAll('.js-card-room__radio');
 
     if (event.target === prev) {
       let flag = false;

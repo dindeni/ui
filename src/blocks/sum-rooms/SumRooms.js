@@ -1,57 +1,49 @@
+import autoBind from 'auto-bind';
+
 class SumRooms {
   constructor(wrapper) {
     this.wrapper = wrapper;
+    autoBind(this);
   }
 
   summarizeRooms() {
-    const roomsInput = this.wrapper.querySelector('.js-form-element__field_for-rooms');
-    const roomsPopup = this.wrapper.querySelector('.js-sum-rooms__popup');
-    const bedRoomsNumber = this.wrapper.querySelector('.js-sum-rooms__number-of-visitors_bedroom');
-    const bedsNumber = this.wrapper.querySelector('.js-sum-rooms__number-of-visitors_beds');
+    this.roomsInput = this.wrapper.querySelector('.js-form-element__field_for-rooms');
+    this.roomsPopup = this.wrapper.querySelector('.js-sum-rooms__popup');
+    this.bedRoomsNumber = this.wrapper.querySelector('.js-sum-rooms__number-of-visitors_bedroom');
+    this.bedsNumber = this.wrapper.querySelector('.js-sum-rooms__number-of-visitors_beds');
 
-    roomsInput.value = '0 спальни, 0 кровати...';
+    this.roomsInput.value = '0 спальни, 0 кровати...';
 
-    roomsPopup.addEventListener('focusout', () => SumRooms._handleRoomsPopupFocusout(roomsPopup));
-    roomsPopup.addEventListener('focusin', () => SumRooms._handleRoomsPopupFocusin(roomsPopup));
+    this.roomsPopup.addEventListener('focusout', this._handleRoomsPopupFocusout);
+    this.roomsPopup.addEventListener('focusin', this._handleRoomsPopupFocusin);
 
-    document.addEventListener('click', (event) => SumRooms._handleDocumentClick({
-      event, roomsInput, roomsPopup,
-    }));
+    document.addEventListener('click', this._handleDocumentClick);
 
-    roomsPopup.addEventListener('click', (event) => SumRooms._handleRoomsPopupClick({
-      event, roomsInput, bedRoomsNumber, bedsNumber,
-    }));
+    this.roomsPopup.addEventListener('click', this._handleRoomsPopupClick);
   }
 
-  static _handleRoomsPopupFocusout(element) {
-    const roomsPopup = element;
-    roomsPopup.classList.remove('sum-rooms__popup_focused');
-    roomsPopup.classList.add('sum-rooms__popup_unfocused');
-    roomsPopup.classList.add('sum-rooms__popup_hidden');
+  _handleRoomsPopupFocusout() {
+    this.roomsPopup.classList.remove('sum-rooms__popup_focused');
+    this.roomsPopup.classList.add('sum-rooms__popup_unfocused');
+    this.roomsPopup.classList.add('sum-rooms__popup_hidden');
   }
 
-  static _handleRoomsPopupFocusin(element) {
-    const roomsPopup = element;
-    roomsPopup.classList.remove('sum-rooms__popup_unfocused');
-    roomsPopup.classList.add('sum-rooms__popup_focused');
-    roomsPopup.classList.remove('sum-rooms__popup_hidden');
+  _handleRoomsPopupFocusin() {
+    this.roomsPopup.classList.remove('sum-rooms__popup_unfocused');
+    this.roomsPopup.classList.add('sum-rooms__popup_focused');
+    this.roomsPopup.classList.remove('sum-rooms__popup_hidden');
   }
 
-  static _handleDocumentClick(options) {
-    const { event, roomsPopup, roomsInput } = options;
-    if (event.target === roomsInput && roomsPopup.classList.contains('sum-rooms__popup_hidden')) {
-      roomsPopup.classList.remove('sum-rooms__popup_hidden');
-      roomsPopup.focus();
-    } else if (event.target === roomsInput && !roomsPopup.classList.contains('sum-rooms__popup_hidden')) {
-      roomsPopup.classList.add('sum-rooms__popup_hidden');
+  _handleDocumentClick(event) {
+    if (event.target === this.roomsInput && this.roomsPopup.classList.contains('sum-rooms__popup_hidden')) {
+      this.roomsPopup.classList.remove('sum-rooms__popup_hidden');
+      this.roomsPopup.focus();
+    } else if (event.target === this.roomsInput && !this.roomsPopup.classList.contains('sum-rooms__popup_hidden')) {
+      this.roomsPopup.classList.add('sum-rooms__popup_hidden');
     }
   }
 
-  static _handleRoomsPopupClick(options) {
-    const {
-      event, roomsInput, bedsNumber, bedRoomsNumber,
-    } = options;
-
+  _handleRoomsPopupClick(event) {
     const { parentElement } = event.target;
     const searchButtonPlus = parentElement.querySelector('.js-sum-rooms__button_type_plus');
     const number = parentElement.querySelector('.js-sum-rooms__number-of-visitors');
@@ -61,8 +53,8 @@ class SumRooms {
       number.textContent = +number.textContent - 1;
     }
 
-    roomsInput.value = `${bedRoomsNumber.textContent} спальни, `
-      + `${bedsNumber.textContent} кровати...`;
+    this.roomsInput.value = `${this.bedRoomsNumber.textContent} спальни, `
+      + `${this.bedsNumber.textContent} кровати...`;
   }
 }
 

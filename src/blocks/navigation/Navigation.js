@@ -1,11 +1,13 @@
+import autoBind from 'auto-bind';
+
 class Navigation {
   constructor(navigationElement) {
     this.navigationElement = navigationElement;
+    autoBind(this);
   }
 
   observeButton() {
-    this.navigationElement.addEventListener('click',
-      (event) => Navigation._handleButtonClick({ event, navigation: this.navigationElement }));
+    this.navigationElement.addEventListener('click', this._handleButtonClick);
   }
 
   hideList() {
@@ -15,10 +17,9 @@ class Navigation {
     }
   }
 
-  static _handleButtonClick(options) {
-    const { event, navigation } = options;
-    const button = navigation.querySelector('.js-navigation__button-mobile');
-    const navigationList = navigation.querySelector('.js-navigation__list');
+  _handleButtonClick(event) {
+    const button = this.navigationElement.querySelector('.js-navigation__button-mobile');
+    const navigationList = this.navigationElement.querySelector('.js-navigation__list');
     const isButtonClose = event.target === button
       && !button.classList.contains('navigation__button-mobile_state_open');
     const isButtonOpen = event.target === button

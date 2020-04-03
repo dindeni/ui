@@ -1,60 +1,47 @@
+import autoBind from 'auto-bind';
+
 class SumGuests {
   constructor(options) {
     const { classGuests, babiesValue, guestsValue } = options;
     this.classGuests = classGuests;
     this.babiesValue = babiesValue;
     this.guestsValue = guestsValue;
+    autoBind(this);
   }
 
   countGuests() {
-    const buttonMinus = this.classGuests.querySelectorAll('.js-sum-guests__button_type_minus');
-    const numberVisitors = this.classGuests.querySelectorAll('.js-sum-guests__number-of-visitors');
-    const inputGuests = this.classGuests.querySelector('.js-form-element__field_for-guests');
-    const guestsPopup = this.classGuests.querySelector('.js-sum-guests__popup');
-    const containerAdult = this.classGuests.querySelector('.js-sum-guests__container_adult');
-    const containerChildren = this.classGuests.querySelector('.js-sum-guests__container_children');
-    const containerBabies = this.classGuests.querySelector('.js-sum-guests__container_babies');
-    const buttonApply = this.classGuests.querySelector('.js-ui-control_apply');
-    const buttonClear = this.classGuests.querySelector('.js-ui-control_clear');
+    this.buttonMinus = this.classGuests.querySelectorAll('.js-sum-guests__button_type_minus');
+    this.numberVisitors = this.classGuests.querySelectorAll('.js-sum-guests__number-of-visitors');
+    this.inputGuests = this.classGuests.querySelector('.js-form-element__field_for-guests');
+    this.guestsPopup = this.classGuests.querySelector('.js-sum-guests__popup');
+    this.containerAdult = this.classGuests.querySelector('.js-sum-guests__container_adult');
+    this.containerChildren = this.classGuests.querySelector('.js-sum-guests__container_children');
+    this.containerBabies = this.classGuests.querySelector('.js-sum-guests__container_babies');
+    this.buttonApply = this.classGuests.querySelector('.js-ui-control_apply');
+    this.buttonClear = this.classGuests.querySelector('.js-ui-control_clear');
 
-    guestsPopup.addEventListener('focusout', SumGuests._handleGuestsPopupFocusout);
+    this.guestsPopup.addEventListener('focusout', SumGuests._handleGuestsPopupFocusout);
 
-    guestsPopup.addEventListener('focusin', SumGuests._handleGuestsPopupFocusIn);
+    this.guestsPopup.addEventListener('focusin', SumGuests._handleGuestsPopupFocusIn);
 
     const handleClassGuestsClick = (event) => {
-      const isHidden = event.target === inputGuests && guestsPopup.classList.contains('sum-guests__popup_hidden');
+      const isHidden = event.target === this.inputGuests && this.guestsPopup.classList.contains('sum-guests__popup_hidden');
       if (isHidden) {
-        guestsPopup.classList.remove('sum-guests__popup_hidden');
+        this.guestsPopup.classList.remove('sum-guests__popup_hidden');
 
-        guestsPopup.focus();
+        this.guestsPopup.focus();
       }
 
-      this._summarizeGuests({
-        event,
-        containerAdult,
-        containerChildren,
-        containerBabies,
-        inputGuests,
-      });
+      this._summarizeGuests(event);
 
-      SumGuests._clearInput({
-        event,
-        buttonClear,
-        inputGuests,
-        guestsPopup,
-      });
-      SumGuests._applyInputValue({
-        event, buttonApply, guestsPopup,
-      });
-      SumGuests._controlButtonMinus({ number: numberVisitors, buttonMinus });
+      this._clearInput(event);
+      this._applyInputValue(event);
+      this._controlButtonMinus(this.numberVisitors);
     };
     this.classGuests.addEventListener('click', handleClassGuestsClick);
   }
 
-  _summarizeGuests(options) {
-    const {
-      event, containerAdult, containerChildren, containerBabies, inputGuests,
-    } = options;
+  _summarizeGuests(event) {
     const { parentElement } = event.target.parentElement;
     const searchButtonPlus = parentElement.querySelector(
       '.js-sum-guests__button_type_plus',
@@ -78,15 +65,16 @@ class SumGuests {
         .textContent = +searchNumberVisitors.textContent - 1;
     };
 
-    const isAdultPlus = parentElement === containerAdult && event.target === searchButtonPlus;
-    const isAdultMinus = parentElement === containerAdult
+    const isAdultPlus = parentElement === this.containerAdult && event.target === searchButtonPlus;
+    const isAdultMinus = parentElement === this.containerAdult
       && event.target === searchButtonMinus && searchNumberVisitors.textContent > 0;
-    const isChildrenPlus = parentElement === containerChildren && event.target === searchButtonPlus;
-    const isChildrenMinus = parentElement === containerChildren
-      && event.target === searchButtonMinus && searchNumberVisitors.textContent > 0;
-    const isBabiesPlus = parentElement === containerBabies
+    const isChildrenPlus = parentElement === this.containerChildren
       && event.target === searchButtonPlus;
-    const isBabiesMinus = parentElement === containerBabies
+    const isChildrenMinus = parentElement === this.containerChildren
+      && event.target === searchButtonMinus && searchNumberVisitors.textContent > 0;
+    const isBabiesPlus = parentElement === this.containerBabies
+      && event.target === searchButtonPlus;
+    const isBabiesMinus = parentElement === this.containerBabies
       && event.target === searchButtonMinus && searchNumberVisitors.textContent > 0;
 
     if (isAdultPlus) {
@@ -109,19 +97,18 @@ class SumGuests {
       decreaseBabies();
     }
 
-    this.babiesValue !== 0 ? inputGuests.value = `${this.guestsValue} ${SumGuests._controlGuestsBabiesPrefix({ value: this.guestsValue, type: 'guests' })}, ${this.babiesValue} ${SumGuests._controlGuestsBabiesPrefix({ value: this.babiesValue, type: 'babies' })}`
-      : inputGuests.value = `${this.guestsValue} ${SumGuests._controlGuestsBabiesPrefix({ value: this.guestsValue, type: 'guests' })}`;
+    this.babiesValue !== 0 ? this.inputGuests.value = `${this.guestsValue} ${SumGuests._controlGuestsBabiesPrefix({ value: this.guestsValue, type: 'guests' })}, ${this.babiesValue} ${SumGuests._controlGuestsBabiesPrefix({ value: this.babiesValue, type: 'babies' })}`
+      : this.inputGuests.value = `${this.guestsValue} ${SumGuests._controlGuestsBabiesPrefix({ value: this.guestsValue, type: 'guests' })}`;
   }
 
-  static _controlButtonMinus({ number, buttonMinus }) {
+  _controlButtonMinus(number) {
     number.forEach((value, index) => {
-      const buttonMinusElement = buttonMinus;
       if (+value.textContent === 0) {
-        buttonMinusElement[index].classList.remove('sum-guests__button_type_non-nullified');
-        buttonMinusElement[index].classList.add('sum-guests__button_type_nullified');
+        this.buttonMinus[index].classList.remove('sum-guests__button_type_non-nullified');
+        this.buttonMinus[index].classList.add('sum-guests__button_type_nullified');
       } else {
-        buttonMinusElement[index].classList.remove('sum-guests__button_type_nullified');
-        buttonMinusElement[index].classList.add('sum-guests__button_type_non-nullified');
+        this.buttonMinus[index].classList.remove('sum-guests__button_type_nullified');
+        this.buttonMinus[index].classList.add('sum-guests__button_type_non-nullified');
       }
     });
   }
@@ -151,30 +138,26 @@ class SumGuests {
     return undefined;
   }
 
-  static _clearInput(options) {
-    const {
-      event, buttonClear, inputGuests, guestsPopup,
-    } = options;
-    const hasValue = +inputGuests.value !== 0 && inputGuests.value !== '' && inputGuests.value !== '0 гостей';
+  _clearInput(event) {
+    const hasValue = +this.inputGuests.value !== 0 && this.inputGuests.value !== '' && this.inputGuests.value !== '0 гостей';
     if (hasValue) {
-      buttonClear.classList.remove('ui-control_hidden');
+      this.buttonClear.classList.remove('ui-control_hidden');
     } else {
-      buttonClear.classList.add('ui-control_hidden');
+      this.buttonClear.classList.add('ui-control_hidden');
     }
-    if (event.target === buttonClear) {
-      inputGuests.value = 0;
-      guestsPopup.querySelectorAll('.js-sum-guests__number-of-visitors').forEach((value) => {
+    if (event.target === this.buttonClear) {
+      this.inputGuests.value = 0;
+      this.guestsPopup.querySelectorAll('.js-sum-guests__number-of-visitors').forEach((value) => {
         const valueOfSpanElement = value;
         valueOfSpanElement.textContent = '0';
       });
     }
   }
 
-  static _applyInputValue(options) {
-    const { event, buttonApply, guestsPopup } = options;
-    if (event.target === buttonApply) {
+  _applyInputValue(event) {
+    if (event.target === this.buttonApply) {
       event.preventDefault();
-      guestsPopup.classList.add('sum-guests__popup_hidden');
+      this.guestsPopup.classList.add('sum-guests__popup_hidden');
     }
   }
 

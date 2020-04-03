@@ -5,5 +5,5 @@ Array.from(document.querySelectorAll('.sum-guests')).map((wrapper) => {
   const guestsValue = 0;
 
   const sumGuests = new SumGuests({ classGuests: wrapper, guestsValue, babiesValue });
-  sumGuests.countGuests();
+  return sumGuests.countGuests();
 });

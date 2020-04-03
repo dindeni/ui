@@ -182,7 +182,7 @@
       padding: .29rem .36rem;
     }
     
-    &__list {
+    &__list, &_theme_en &__list {
       z-index: 10;
       display: block;
       position: absolute;
@@ -190,14 +190,15 @@
       right: 0;
       background: $purple;
       border-radius: .29rem;
-      margin: 3.57rem 0 0 10%;
+      margin: 0;
+      top: 0;
 
       &_logged {
         top: 0;
       }
     }
 
-    &__buttons-wrapper {
+    &__buttons-wrapper, &_theme_en &__buttons-wrapper {
       margin: 0 9% 0 0;
     }
 

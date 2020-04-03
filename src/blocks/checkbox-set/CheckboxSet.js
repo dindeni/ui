@@ -1,27 +1,26 @@
+import autoBind from 'auto-bind';
+
 class CheckboxSet {
   constructor(options) {
     const { checkboxHead, checkboxWrapper } = options;
     this.checkboxHead = checkboxHead;
     this.checkboxWrapper = checkboxWrapper;
+    autoBind(this);
   }
 
   observeCheckbox() {
-    this.checkboxHead.addEventListener('click', (event) => CheckboxSet.handleCheckboxHeadClick(
-      { event, checkboxHead: this.checkboxHead, checkboxWrapper: this.checkboxWrapper },
-    ));
+    this.checkboxHead.addEventListener('click', this._handleCheckboxHeadClick);
   }
 
-  static handleCheckboxHeadClick(options) {
-    const { event, checkboxHead, checkboxWrapper } = options;
-
-    const isNotHide = event.target === checkboxHead && !checkboxWrapper.classList.contains('checkbox-set__wrapper_hidden');
-    const isHide = event.target === checkboxHead && checkboxWrapper.classList.contains('checkbox-set__wrapper_hidden');
+  _handleCheckboxHeadClick(event) {
+    const isNotHide = event.target === this.checkboxHead && !this.checkboxWrapper.classList.contains('checkbox-set__wrapper_hidden');
+    const isHide = event.target === this.checkboxHead && this.checkboxWrapper.classList.contains('checkbox-set__wrapper_hidden');
     if (isNotHide) {
-      checkboxWrapper.classList.add('checkbox-set__wrapper_hidden');
-      checkboxHead.classList.remove('checkbox-set__head_turned');
+      this.checkboxWrapper.classList.add('checkbox-set__wrapper_hidden');
+      this.checkboxHead.classList.remove('checkbox-set__head_turned');
     } else if (isHide) {
-      checkboxWrapper.classList.remove('checkbox-set__wrapper_hidden');
-      checkboxHead.classList.add('checkbox-set__head_turned');
+      this.checkboxWrapper.classList.remove('checkbox-set__wrapper_hidden');
+      this.checkboxHead.classList.add('checkbox-set__head_turned');
     }
   }
 }
