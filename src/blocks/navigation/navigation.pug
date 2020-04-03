@@ -4,11 +4,15 @@ mixin navigation(options)
 
   -
     const {type, items, modifierForItems, loginName, registrationName,
-     linkModifier, userName, modifier} = options;
+     linkModifier, userName, isThemeEn} = options;
 
-    const itemClass = modifierForItems ? `navigation__item_${modifierForItems}`:'';
+    const itemClass = modifierForItems ? 'navigation__item_type_ru' : '';
 
-    const classModifier = modifier ? `navigation_${modifier}` : '';
+    const classModifier = isThemeEn ? 'navigation_theme_en' : '';
+
+    const linkClasses = linkModifier.map((value) => {
+      return value === 'current' || 'expand' || 'expand-ru' ? `navigation__link_type_${value}` : ''
+    });
     
 
   if type === 'default'
@@ -18,8 +22,7 @@ mixin navigation(options)
       ul.navigation__list.js-navigation__list
         each item, index in items
           li.navigation__item(class=itemClass)
-            a.navigation__link(href="somePage.html" class=
-              `${linkModifier[index] ? `navigation__link_${linkModifier[index]}`:''}`)=item
+            a.navigation__link(href="somePage.html" class=linkClasses[index])=item
 
       div.navigation__buttons-wrapper
         div.navigation__sign-in-button-wrapper
@@ -36,8 +39,7 @@ mixin navigation(options)
       ul.navigation__list.js-navigation__list.navigation__list_logged
         each item, index in items
           li.navigation__item.navigation__item_logged
-            a.navigation__link(href="somePage.html" class=
-             `${linkModifier[index] ? `navigation__link_${linkModifier[index]}` : ''}`)=item
+            a.navigation__link(href="somePage.html" class=linkClasses[index])=item
 
       em.navigation__user-name=userName
 

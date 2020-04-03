@@ -1,12 +1,11 @@
 include ../form-element/form-element
-include ../radio/radio
+include ../radio-group/radio-group
 include ../toggle/toggle
 include ../ui-control/ui-control
 include ../ui-datepicker/ui-datepicker
 
 -
-  const arrRadioReg = ['Мужчина', 'Женщина'];
-  const arrRadioRegId = ['man', 'woman'];
+  const radioValues = ['Мужчина', 'Женщина'];
 
 mixin registration()
 
@@ -22,7 +21,7 @@ mixin registration()
           +form-element({type: 'default', placeholder: 'Фамилия'})
 
       div.registration__radio-wrapper
-        +radio({values:arrRadioReg, id: arrRadioRegId, modifier: 'for-registration'})
+        +radio-group(radioValues)
 
       div.registration__date-head дата рождения
 
@@ -38,8 +37,7 @@ mixin registration()
         +form-element({type: 'password', placeholder: 'Пароль'})
 
       span.registration__toggle-wrapper
-        +toggle({label: 'Получать спецпредложения', id: 'registration-toggle',
-          modifier:'for-registration'})
+        +toggle('Получать спецпредложения')
 
       div.registration__button-wrapper
         +ui-control({content: 'перейти к оплате', type: 'filled', isArrow: true})

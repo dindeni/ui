@@ -35,7 +35,7 @@ mixin room-description
           -const {head, date, description, typeOfButton, numberOfLikes} = value;
 
           +review({head, date, description, path: reviewPath[index], typeOfButton,
-          numberOfLikes, modifier: 'for-room-description'})
+          numberOfLikes, isRoomModifier: true})
 
       div.room-description__rules
         h2.room-description__rules-head Правила

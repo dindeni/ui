@@ -3,13 +3,11 @@ include ../ui-control/ui-control
 mixin review(options)
 
   -
-    const {head, date, description, path, typeOfButton, numberOfLikes, modifier}=options;
+    const {head, date, description, path, typeOfButton, numberOfLikes, isRoomModifier}=options;
 
-    const classModifier = modifier ? `review_${modifier}`:'';
+    const descriptionModifier = isRoomModifier ? 'review__description_for-room-description' : '';
 
-    const descriptionModifier = modifier ? `review__description_${modifier}` : '';
-
-  section.review(class=classModifier)
+  section.review
     img.review__icon(src=path alt="фото аватар")
     h3.review__name=head
     span.review__date=date

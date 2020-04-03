@@ -4,13 +4,15 @@ include ../form-element/form-element
 mixin sum-guests(options)
 
   -
-    const {modifier, head}=options;
+    const {isPopupModifier, head, modifier}=options;
     
     const visitors = ['взрослые', 'дети', 'младенцы'];
     
     const visitorsId = ['adult', 'children', 'babies'];
 
     const classModifier = modifier ? modifier: 'for-guests';
+
+    const popupModifier = isPopupModifier ? 'sum-guests__popup_for-main-ui' : '';
 
     const controlsOption = [
       {content: 'очистить', isHideModifier: true, jsModifier:'clear', type: 'transparent', modifier: 'color_gray'},
@@ -22,8 +24,7 @@ mixin sum-guests(options)
     +form-element({type: 'dropdown', placeholder: 'Сколько гостей',
       modifierForLabel: classModifier, jsModifierForInput: 'for-guests'})
 
-    div.sum-guests__popup.js-sum-guests__popup.sum-guests__popup_hidden(tabindex=0 class=
-     `${modifier ? `sum-guests__popup_${modifier}` : ''}`)
+    div.sum-guests__popup.js-sum-guests__popup.sum-guests__popup_hidden(tabindex=0 class=popupModifier)
 
       div.sum-guests__count-container
         each value, index in visitors

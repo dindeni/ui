@@ -3,10 +3,6 @@
     "Terran",
     "Protoss"
   ],
-  "radioIds": [
-    "terran",
-    "protoss"
-  ],
   "checkbox": {
     "values": [
       "Можно курить",
@@ -77,9 +73,9 @@
       "Documentation"
     ],
     "linkModifier": [
-      "type_current",
+      "current",
       "",
-      "type_expand"
+      "expand"
     ]
   },
   "footerWidget": {

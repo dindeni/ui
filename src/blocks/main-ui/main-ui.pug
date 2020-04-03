@@ -1,7 +1,7 @@
 include ../search-room/search-room
 include ../form-element/form-element
 include ../checkbox/checkbox
-include ../radio/radio
+include ../radio-group/radio-group
 include ../toggle/toggle
 include ../ui-slider/ui-slider
 include ../pagination/pagination
@@ -23,7 +23,7 @@ include ../checkbox-set/checkbox-set
 -
   const data = require('../blocks/main-ui/main-ui.json');
 
-  const { radioLabels, radioIds, checkbox, checkboxExpandable, checkboxRich,
+  const { radioLabels, checkbox, checkboxExpandable, checkboxRich,
    bulletList, orderRoom, features, navigation, footerWidget } = data;
 
   const cardRoomImagesFirst = [
@@ -37,7 +37,7 @@ include ../checkbox-set/checkbox-set
   const { items, linkModifier } = navigation;
 
   const valuesForLogin = { items, linkModifier, type: 'default', loginName: 'login', registrationName: 'register',
-    modifier: 'theme_en' };
+    isThemeEn: true };
 
   const valuesForLoggedIn = { items, linkModifier, type: 'loggedIn',
    userName: 'Cosmin Negoita' };
@@ -52,7 +52,7 @@ mixin main-ui()
           type: 'default', placeholder: 'email',
           modifierForLabel: 'for-main-ui', modifierForInput: 'for-main-ui'
         })
-        +sum-guests({label: 'Сколько гостей', modifier: 'for-main-ui'})
+        +sum-guests({label: 'Сколько гостей', isPopupModifier: true})
         +form-element({
           type: 'masked', placeholder: 'дд.мм.гггг',
           modifierForLabel: 'for-main-ui', modifierForInput: 'for-main-ui'
@@ -71,12 +71,9 @@ mixin main-ui()
       div.main-ui__form-wrapper
         +checkbox-set(checkbox)
         div.main-ui__radio-wrapper
-          +radio({values: radioLabels, id: radioIds, modifier: 'for-ui'})
+          +radio-group(radioLabels)
         div.main-ui__toggle-wrapper
-          +toggle({
-            label: 'Получать спецпредложение', id: 'toggle',
-            modifier: 'for-ui'
-          })
+          +toggle('Получать спецпредложение')
 
         div.main-ui__button-rate-wrapper
           +ui-control({isBorder: true, content: 2, type: 'gray'})

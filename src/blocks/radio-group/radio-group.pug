@@ -1,0 +1,9 @@
+mixin radio-group(values)
+
+  div.radio-group
+
+    each value, index in values
+      
+      label.radio-group__title
+        input.radio-group__field(type="radio" name="radio" checked=index===0)
+        span.radio-group__mark=value

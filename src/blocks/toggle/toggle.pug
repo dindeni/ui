@@ -1,9 +1,5 @@
-mixin toggle(options)
+mixin toggle(label)
 
-  -
-    const {label, id, modifier}=options;
-    const classModifier = modifier ? `toggle_${modifier}`:'';
-
-  span.toggle(class=classModifier)
-      input.toggle__field(type="checkbox" id=`${id}` name="toggle")
-      label.toggle__label(for=`${id}` name="toggle")=label
+  label.toggle
+    input.toggle__field(type="checkbox" id=`${id}` name="toggle")
+    span.toggle__label=label
