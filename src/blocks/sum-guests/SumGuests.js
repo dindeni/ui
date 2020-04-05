@@ -1,11 +1,8 @@
 import autoBind from 'auto-bind';
 
 class SumGuests {
-  constructor(options) {
-    const { classGuests, babiesValue, guestsValue } = options;
+  constructor(classGuests) {
     this.classGuests = classGuests;
-    this.babiesValue = babiesValue;
-    this.guestsValue = guestsValue;
     autoBind(this);
   }
 
@@ -14,9 +11,6 @@ class SumGuests {
     this.numberVisitors = this.classGuests.querySelectorAll('.js-sum-guests__number-of-visitors');
     this.inputGuests = this.classGuests.querySelector('.js-form-element__field_for-guests');
     this.guestsPopup = this.classGuests.querySelector('.js-sum-guests__popup');
-    this.containerAdult = this.classGuests.querySelector('.js-sum-guests__container_adult');
-    this.containerChildren = this.classGuests.querySelector('.js-sum-guests__container_children');
-    this.containerBabies = this.classGuests.querySelector('.js-sum-guests__container_babies');
     this.buttonApply = this.classGuests.querySelector('.js-ui-control_apply');
     this.buttonClear = this.classGuests.querySelector('.js-ui-control_clear');
 
@@ -24,85 +18,52 @@ class SumGuests {
 
     this.guestsPopup.addEventListener('focusin', SumGuests._handleGuestsPopupFocusIn);
 
-    const handleClassGuestsClick = (event) => {
-      const isHidden = event.target === this.inputGuests && this.guestsPopup.classList.contains('sum-guests__popup_hidden');
-      if (isHidden) {
-        this.guestsPopup.classList.remove('sum-guests__popup_hidden');
-
-        this.guestsPopup.focus();
-      }
-
-      this._summarizeGuests(event);
-
-      this._clearInput(event);
-      this._applyInputValue(event);
-      this._controlButtonMinus(this.numberVisitors);
-    };
-    this.classGuests.addEventListener('click', handleClassGuestsClick);
+    this.classGuests.addEventListener('click', this._handleClassGuestsClick);
   }
 
-  _summarizeGuests(event) {
-    const { parentElement } = event.target.parentElement;
-    const searchButtonPlus = parentElement.querySelector(
-      '.js-sum-guests__button_type_plus',
-    );
-    const searchButtonMinus = parentElement.querySelector(
-      '.js-sum-guests__button_type_minus',
-    );
-    const searchNumberVisitors = parentElement.querySelector('.js-sum-guests__number-of-visitors');
-
-    /* eslint-disable no-param-reassign */
-    const increaseVisitors = () => { this.guestsValue += 1; };
-    const decreaseVisitors = () => { this.guestsValue -= 1; };
-    const increaseBabies = () => { this.babiesValue += 1; };
-    const decreaseBabies = () => { this.babiesValue -= 1; };
-    const increaseNumberVisitors = () => {
-      searchNumberVisitors
-        .textContent = +searchNumberVisitors.textContent + 1;
-    };
-    const decreaseNumberVisitors = () => {
-      searchNumberVisitors
-        .textContent = +searchNumberVisitors.textContent - 1;
-    };
-
-    const isAdultPlus = parentElement === this.containerAdult && event.target === searchButtonPlus;
-    const isAdultMinus = parentElement === this.containerAdult
-      && event.target === searchButtonMinus && searchNumberVisitors.textContent > 0;
-    const isChildrenPlus = parentElement === this.containerChildren
-      && event.target === searchButtonPlus;
-    const isChildrenMinus = parentElement === this.containerChildren
-      && event.target === searchButtonMinus && searchNumberVisitors.textContent > 0;
-    const isBabiesPlus = parentElement === this.containerBabies
-      && event.target === searchButtonPlus;
-    const isBabiesMinus = parentElement === this.containerBabies
-      && event.target === searchButtonMinus && searchNumberVisitors.textContent > 0;
-
-    if (isAdultPlus) {
-      increaseNumberVisitors();
-      increaseVisitors();
-    } else if (isAdultMinus) {
-      decreaseNumberVisitors();
-      decreaseVisitors();
-    } else if (isChildrenPlus) {
-      increaseNumberVisitors();
-      increaseVisitors();
-    } else if (isChildrenMinus) {
-      decreaseNumberVisitors();
-      decreaseVisitors();
-    } else if (isBabiesPlus) {
-      increaseNumberVisitors();
-      increaseBabies();
-    } else if (isBabiesMinus) {
-      decreaseNumberVisitors();
-      decreaseBabies();
+  _handleClassGuestsClick(event) {
+    const isHidden = event.target === this.inputGuests && this.guestsPopup.classList.contains('sum-guests__popup_hidden');
+    if (isHidden) {
+      this.guestsPopup.classList.remove('sum-guests__popup_hidden');
+      this.guestsPopup.focus();
     }
 
-    this.babiesValue !== 0 ? this.inputGuests.value = `${this.guestsValue} ${SumGuests._controlGuestsBabiesPrefix({ value: this.guestsValue, type: 'guests' })}, ${this.babiesValue} ${SumGuests._controlGuestsBabiesPrefix({ value: this.babiesValue, type: 'babies' })}`
-      : this.inputGuests.value = `${this.guestsValue} ${SumGuests._controlGuestsBabiesPrefix({ value: this.guestsValue, type: 'guests' })}`;
+    if (event.target.classList.contains('js-sum-guests__button_type_minus')) {
+      SumGuests._setNumberOfVisitors({ event, type: 'decrease' });
+    }
+
+    if (event.target.classList.contains('js-sum-guests__button_type_plus')) {
+      SumGuests._setNumberOfVisitors({ event, type: 'increase' });
+    }
+
+    this._setInputValue();
+    this._clearInput(event);
+    this._applyInputValue(event);
+    this._controlButtonMinus();
   }
 
-  _controlButtonMinus(number) {
-    number.forEach((value, index) => {
+  _setInputValue() {
+    let guestsValue = 0;
+    let babiesValue = 0;
+
+    Array.from(this.numberVisitors).map(((value) => {
+      const isAdultOrChildren = value.classList.contains('js-sum-guests__number-of-visitors_type_adult')
+        || value.classList.contains('js-sum-guests__number-of-visitors_type_children');
+      if (isAdultOrChildren) {
+        guestsValue += parseInt(value.textContent, 10);
+      } else babiesValue += parseInt(value.textContent, 10);
+      return undefined;
+    }));
+
+    const guestsPrefix = SumGuests._controlGuestsBabiesPrefix({ value: guestsValue, type: 'guests' });
+    const babiesPrefix = SumGuests._controlGuestsBabiesPrefix({ value: guestsValue, type: 'babies' });
+
+    this.inputGuests.value = babiesValue !== 0 ? `${guestsValue} ${guestsPrefix} ${babiesValue} ${babiesPrefix}`
+      : `${guestsValue} ${guestsPrefix}`;
+  }
+
+  _controlButtonMinus() {
+    this.numberVisitors.forEach((value, index) => {
       if (+value.textContent === 0) {
         this.buttonMinus[index].classList.remove('sum-guests__button_type_non-nullified');
         this.buttonMinus[index].classList.add('sum-guests__button_type_nullified');
@@ -111,6 +72,44 @@ class SumGuests {
         this.buttonMinus[index].classList.add('sum-guests__button_type_non-nullified');
       }
     });
+  }
+
+  _clearInput(event) {
+    const hasValue = +this.inputGuests.value !== 0 && this.inputGuests.value !== '' && this.inputGuests.value !== '0 гостей';
+    if (hasValue) {
+      this.buttonClear.classList.remove('ui-control_hidden');
+    } else {
+      this.buttonClear.classList.add('ui-control_hidden');
+    }
+    if (event.target === this.buttonClear) {
+      this.inputGuests.value = 0;
+      this.guestsPopup.querySelectorAll('.js-sum-guests__number-of-visitors').forEach((value) => {
+        const valueOfSpanElement = value;
+        valueOfSpanElement.textContent = '0';
+      });
+    }
+  }
+
+  _applyInputValue(event) {
+    if (event.target === this.buttonApply) {
+      event.preventDefault();
+      this.guestsPopup.classList.add('sum-guests__popup_hidden');
+    }
+  }
+
+  static _setNumberOfVisitors(options) {
+    const { event, type } = options;
+
+    const numberOfVisitors = event.target.parentElement.querySelector('.js-sum-guests__number-of-visitors');
+    const numberOfVisitorsValue = parseInt(numberOfVisitors.textContent, 10);
+
+    if (numberOfVisitorsValue > 0 && type === 'decrease') {
+      numberOfVisitors.textContent = numberOfVisitorsValue - 1;
+    }
+
+    if (type === 'increase') {
+      numberOfVisitors.textContent = numberOfVisitorsValue + 1;
+    }
   }
 
   static _controlGuestsBabiesPrefix({ type, value }) {
@@ -136,29 +135,6 @@ class SumGuests {
       }
     }
     return undefined;
-  }
-
-  _clearInput(event) {
-    const hasValue = +this.inputGuests.value !== 0 && this.inputGuests.value !== '' && this.inputGuests.value !== '0 гостей';
-    if (hasValue) {
-      this.buttonClear.classList.remove('ui-control_hidden');
-    } else {
-      this.buttonClear.classList.add('ui-control_hidden');
-    }
-    if (event.target === this.buttonClear) {
-      this.inputGuests.value = 0;
-      this.guestsPopup.querySelectorAll('.js-sum-guests__number-of-visitors').forEach((value) => {
-        const valueOfSpanElement = value;
-        valueOfSpanElement.textContent = '0';
-      });
-    }
-  }
-
-  _applyInputValue(event) {
-    if (event.target === this.buttonApply) {
-      event.preventDefault();
-      this.guestsPopup.classList.add('sum-guests__popup_hidden');
-    }
   }
 
   static _handleGuestsPopupFocusout(event) {

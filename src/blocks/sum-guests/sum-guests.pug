@@ -29,13 +29,13 @@ mixin sum-guests(options)
       div.sum-guests__count-container
         each value, index in visitors
 
-          div.sum-guests__container(class=`sum-guests__container_${visitorsId[index]} js-sum-guests__container_${visitorsId[index]}`)
+          div.sum-guests__container
 
             span.sum-guests__type-visitors=value
 
             div.sum-guests__number-of-visitors-wrapper
               button.sum-guests__button.sum-guests__button_type_minus.js-sum-guests__button_type_minus(type="button") -
-              span.sum-guests__number-of-visitors.js-sum-guests__number-of-visitors 0
+              span.sum-guests__number-of-visitors.js-sum-guests__number-of-visitors(class=`sum-guests__number-of-visitors_type_${visitorsId[index]} js-sum-guests__number-of-visitors_type_${visitorsId[index]}`) 0
               button.sum-guests__button.sum-guests__button_type_plus.js-sum-guests__button_type_plus(type="button") +
 
       div.sum-guests__buttons-footer-container.js-sum-guests__buttons-footer-container

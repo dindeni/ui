@@ -35,10 +35,12 @@ class SumRooms {
   }
 
   _handleDocumentClick(event) {
-    if (event.target === this.roomsInput && this.roomsPopup.classList.contains('sum-rooms__popup_hidden')) {
+    const isInputHidden = event.target === this.roomsInput && this.roomsPopup.classList.contains('sum-rooms__popup_hidden');
+    const isNotInputHidden = event.target === this.roomsInput && !this.roomsPopup.classList.contains('sum-rooms__popup_hidden');
+    if (isInputHidden) {
       this.roomsPopup.classList.remove('sum-rooms__popup_hidden');
       this.roomsPopup.focus();
-    } else if (event.target === this.roomsInput && !this.roomsPopup.classList.contains('sum-rooms__popup_hidden')) {
+    } else if (isNotInputHidden) {
       this.roomsPopup.classList.add('sum-rooms__popup_hidden');
     }
   }

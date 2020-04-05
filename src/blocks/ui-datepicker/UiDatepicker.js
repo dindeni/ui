@@ -126,43 +126,17 @@ class UiDatepicker {
   }
 
   _setDoubleDatepickerSettings() {
-    // const { $inputElementIn, $inputElementOut, modifier } = options;
-    let dateArrive;
-    let dateOut;
-
-    const getRange = () => {
-      setTimeout(() => {
-        const $tdElement = $('.ui-datepicker td');
-
-        $tdElement.each((index, td) => {
-          const childElement = td.firstChild.textContent;
-          const isMaxDate = dateOut && +childElement === parseInt(dateOut.substring(0, 2), 10);
-          const isMinDate = dateArrive && +childElement
-            === parseInt(dateArrive.substring(0, 2), 10);
-          const isRangeDate = dateArrive && dateOut && +childElement
-            > parseInt(dateArrive.substring(0, 2), 10)
-            && +childElement < parseInt(dateOut.substring(0, 2), 10);
-          if (isMaxDate) {
-            $(td).addClass('ui-datepicker-calendar__max');
-          } else if (isMinDate) {
-            $(td).addClass('ui-datepicker-calendar__min');
-          } else if (isRangeDate) {
-            $(td).addClass('ui-datepicker-calendar__range');
-          }
-        });
-      }, 0);
-    };
-
     this.$inputElementIn.datepicker({
       ...DATE_SETTINGS,
       dateFormat: 'dd.mm.yy',
       onSelect: (date) => {
-        if (date < dateOut || !dateOut) {
-          dateArrive = date;
+        if (date < this.dateOut || !this.dateOut) {
+          this.dateArrive = date;
         }
       },
       beforeShow: (input, instance) => {
-        getRange(this.$inputElementIn);
+        this.getRange();
+
         setTimeout(() => {
           instance.dpDiv.css({
             top: this.$inputElementIn.offset().top + SHIFT_LEFT,
@@ -183,7 +157,7 @@ class UiDatepicker {
       onClose: (value, instance) => {
         if (value === '') {
           instance.input.datepicker('setDate', null);
-        } else instance.input.datepicker('setDate', dateArrive);
+        } else instance.input.datepicker('setDate', this.dateArrive);
 
         if (this.modifier) {
           instance.dpDiv.removeClass(`ui-datepicker_${this.modifier}`);
@@ -195,12 +169,12 @@ class UiDatepicker {
       ...DATE_SETTINGS,
       dateFormat: 'dd.mm.yy',
       onSelect: (date) => {
-        if (date > dateArrive) {
-          dateOut = date;
+        if (date > this.dateArrive) {
+          this.dateOut = date;
         }
       },
       beforeShow: (input, instance) => {
-        getRange(this.$inputElementOut);
+        this.getRange();
         setTimeout(() => {
           if (this.modifier) {
             instance.dpDiv.addClass(`ui-datepicker_${this.modifier}`);
@@ -221,13 +195,38 @@ class UiDatepicker {
       onClose: (value, instance) => {
         if (value === '') {
           this.$inputElementOut.datepicker('setDate', null);
-        } else this.$inputElementOut.datepicker('setDate', dateOut);
+        } else this.$inputElementOut.datepicker('setDate', this.dateOut);
 
         if (this.modifier) {
           instance.dpDiv.removeClass(`ui-datepicker_${this.modifier}`);
         }
       },
     });
+  }
+
+  getRange() {
+    setTimeout(() => {
+      const $tdElement = $('.ui-datepicker td');
+
+      $tdElement.each((index, td) => {
+        const childElementValue = parseInt(td.firstChild.textContent, 10);
+        const isMaxDate = this.dateOut && childElementValue
+         === parseInt(this.dateOut.substring(0, 2), 10);
+        const isMinDate = this.dateArrive && childElementValue
+          === parseInt(this.dateArrive.substring(0, 2), 10);
+        const isRangeDate = this.dateArrive && this.dateOut && childElementValue
+          > parseInt(this.dateArrive.substring(0, 2), 10)
+          && childElementValue < parseInt(this.dateOut.substring(0, 2), 10);
+
+        if (isMaxDate) {
+          $(td).addClass('ui-datepicker-calendar__max');
+        } else if (isMinDate) {
+          $(td).addClass('ui-datepicker-calendar__min');
+        } else if (isRangeDate) {
+          $(td).addClass('ui-datepicker-calendar__range');
+        }
+      });
+    }, 0);
   }
 
   static _clearInput($element) {
