@@ -47,11 +47,11 @@ class UiDatepicker {
           instance.dpDiv.addClass('ui-datepicker_for-single-datepicker');
           instance.dpDiv.css({ top: this.$singleElement.offset().top + SHIFT_LEFT });
 
-          const $clearButton = $('.ui-datepicker-close');
-          const $applyButton = $('.ui-datepicker-current');
+          const $buttonClear = $('.ui-datepicker-close');
+          const $buttonApply = $('.ui-datepicker-current');
 
-          $clearButton.click(() => UiDatepicker._clearInput(this.$singleElement));
-          $applyButton.click(() => UiDatepicker._applyValue(this.$singleElement));
+          $buttonClear.click(() => UiDatepicker._clearInput(this.$singleElement));
+          $buttonApply.click(() => UiDatepicker._applyValue(this.$singleElement));
         }, 0);
       },
     });
@@ -74,11 +74,11 @@ class UiDatepicker {
             width: this.$inputElement.outerWidth(),
           });
 
-          const $clearButton = $('.ui-datepicker-close');
-          const $applyButton = $('.ui-datepicker-current');
+          const $buttonClear = $('.ui-datepicker-close');
+          const $buttonApply = $('.ui-datepicker-current');
 
-          $clearButton.click(() => UiDatepicker._clearInput(this.$inputElement));
-          $applyButton.click({ value: this.$inputElement }, UiDatepicker._applyValueThroughEvent);
+          $buttonClear.click(() => UiDatepicker._clearInput(this.$inputElement));
+          $buttonApply.click({ value: this.$inputElement }, UiDatepicker._applyValueThroughEvent);
         }, 0);
       },
       onClose: (value, instance) => {
@@ -114,11 +114,11 @@ class UiDatepicker {
             left: this.$inputElement.offset().left,
           });
 
-          const $clearButton = $('.ui-datepicker-close');
-          const $applyButton = $('.ui-datepicker-current');
+          const $buttonClear = $('.ui-datepicker-close');
+          const $buttonApply = $('.ui-datepicker-current');
 
-          $clearButton.click(() => this.$inputElementHide);
-          $applyButton.click({ value: this.$inputElementHide },
+          $buttonClear.click(this.$inputElementHide);
+          $buttonApply.click({ value: this.$inputElementHide },
             UiDatepicker._applyValueThroughEvent);
         }, 0);
       },
