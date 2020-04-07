@@ -48,28 +48,16 @@ mixin main-ui()
 
     div.main-ui__form
       div.main-ui__form-wrapper
-        +form-element({
-          type: 'default', placeholder: 'Email',
-          modifierForLabel: 'for-main-ui', modifierForInput: 'for-main-ui'
-        })
+        +form-element({type: 'default', placeholder: 'Email'})
         +sum-guests()
-        +form-element({
-          type: 'masked', placeholder: 'дд.мм.гггг',
-          modifierForLabel: 'for-main-ui', modifierForInput: 'for-main-ui'
-        })
+        +form-element({type: 'masked', placeholder: 'дд.мм.гггг'})
         div.main-ui__datepicker-wrapper
-          +datepickers({type: 'single', placeholder: 'дд.мм.гггг', modifierForLabel: 'for-main-ui',
-            modifierForInput: 'for-main-ui'})
+          +datepickers({type: 'single', placeholder: 'дд.мм.гггг'})
         div.main-ui__range-datepicker-wrapper
-          +datepickers({
-            type: 'range', defaultDate: '19 авг - 23 авг', modifierForLabel: 'for-main-ui',
-            modifierForInput: 'for-main-ui'
-        })
+          +datepickers({type: 'range', defaultDate: '19 авг - 23 авг'})
         div.main-ui__subscription-wrapper
           +form-element({
-            type: 'subscription', placeholder: 'email',
-            modifierForLabel: 'for-main-ui', modifierForInput: 'for-main-ui'
-          })
+            type: 'subscription', placeholder: 'email'})
 
       div.main-ui__form-wrapper
         +checkbox-set(checkbox)
