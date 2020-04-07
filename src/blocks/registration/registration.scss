@@ -17,6 +17,10 @@
   &__name-wrapper {
     margin: 1.86rem 0 0 0;
   }
+
+  &__name-wrapper, &__date-wrapper, &__data-head, &__email-wrapper, &__password-wrapper {
+    width: 22.86rem;
+  }
   
   &__surname-wrapper{
     margin: .8rem 0 .6rem 0;
@@ -77,19 +81,7 @@
   } 
 }
 
-@media (max-width: 1100px) {
-  .registration {
-    &__button-wrapper {
-      width: 18.57rem;
-    }
-    
-    &__link-wrapper {
-    margin: .21rem 0 0 0.3rem;
-    }
-  }
-}
-
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .registration {
     padding-left: 1.43rem;
     width: 21.43rem;
@@ -98,8 +90,18 @@
       font-size: 1.29rem;
     }
 
+    &__name-wrapper, &__date-wrapper, &__data-head, &__email-wrapper, &__password-wrapper,
+    &__button-wrapper {
+      width: 18.57rem;
+    }
+
     &__footer-label {
       font-size: .86rem;
+    }
+
+    &__link-wrapper {
+      margin: .21rem 0 0 1.86rem;
+      width: 5.79rem;
     }
   }
 }

@@ -1,5 +1,5 @@
 include ../sum-guests/sum-guests
-include ../ui-datepicker/ui-datepicker
+include ../datepickers/datepickers
 include ../ui-control/ui-control
 
 mixin searchRoom(absolute)
@@ -15,10 +15,10 @@ mixin searchRoom(absolute)
         span.search-room__label выезд
 
       form.search-room__form
-        +ui-datepicker({ type: 'double', modifierForInput: 'for-search',
-        modifierForLabel: 'for-search' })
+        +datepickers({ type: 'double', modifierForInput: 'for-search' })
 
-        div.search-room__sum-guests-wrapper
-          +sum-guests({head: 'гости'})
+        div.search-room__sum-guests-wrapper 
+          div.search-room__sum-guests-label гости
+          +sum-guests()
         div.search-room__button-wrapper
           +ui-control({content: 'Подобрать номер', type: 'filled', isArrow: true})

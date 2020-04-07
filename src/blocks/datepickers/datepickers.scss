@@ -1,6 +1,12 @@
 @import '../../style/mixins/text';
 @import '../../style/variables/variables';
 
+.datepickers__wrapper {
+  display: inline-block;
+  width: 10.71rem;
+  margin-right: 1.5rem;
+}
+
 .ui-datepicker {
   width: 22.71rem;
   padding-top: .36rem;
@@ -237,6 +243,10 @@
 }
 
 @media (max-width: 1100px) {
+  .datepickers__wrapper {
+    width: 8.57rem;
+  }
+
   .ui-datepicker:not(.ui-datepicker_for-single-datepicker) {
     width: 18.43rem;
     padding-bottom: 1.79rem;

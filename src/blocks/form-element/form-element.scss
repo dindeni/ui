@@ -3,8 +3,10 @@
 @import '../../style/mixins/text';
 
 .form-element {
+  width: 100%;
+  
   &__field {
-    width: 22.86rem;
+    width: 100%;
     border: .07rem solid $dark25;
     box-sizing: border-box;
     border-radius: .29rem;
@@ -26,7 +28,7 @@
     }
   }
 
-  &_type_date {
+  &_type_date, &_type_dropdown, &_type_subscription {
     display: inline-block;
     position: relative;
 
@@ -40,201 +42,43 @@
       top: 1.29rem;
     }
 
-    &.form-element {
-      &_for-search {
-        padding: 0 1.5rem 0 0;
-
-        &::after {
-          right: 0.36rem;
-        }
-      }
-
-      &_for-order {
-        padding: 0 1.21rem 0 .21rem;
-        &::after{
-          right: .07rem;
-        }
-      }
-      
-      &_for-registration {
-        & .form-element__field {
-          width: 22.86rem;
-
-          &::placeholder {
-            color: $dark25;
-          }
-        }
+    & .form-element__field::placeholder {
+      color: $dark75;
     }
   }
 
-    & .form-element__field {
-      width: 10.71rem;
-      
-      &::placeholder {
-        text-transform: uppercase;
-        color: $dark75;
-      }
-    }  
-  }
-
-  &_for-main-ui {
-    padding: 0 0 .71rem 0;
-  }
-
-  &_type_dropdown {
-    display: inline-block;
-    position: relative;
-
-    &::after {
-      position: absolute;
-      content: '';
-      width: 3.14rem;
-      height: 3.14rem;
-      background: url('./images/icon-expand.svg') no-repeat;
-      right: -1.14rem;
-      top: 1.29rem;
-    }
-
-    & .form-element__field{
-      &::placeholder {
-        color: $dark75;
-      }
-    }
-  }
-
-  &_type_masked {
-    & .form-element__field {
+  &_type_masked, &_type_date {
+    & .form-element__field::placeholder {
       text-transform: uppercase;
     }
   }
 
   &_type_subscription {
-    &.form-element_for-footer-widget{
-      & .form-element__field{
-        width: 18.57rem;
-      }
-    }
-
-    & .form-element__field{
-      width: 19rem;
-    }
-  }
-
-  &_for-guests {
-    display: inline-block;
-    padding-top: .36rem;
-    width: min-content;
-
-    &.form-element_for-filter, & .form-element__field_for-filter {
-      width: 19rem;
-    }
-
     &::after {
-      top: 1.65rem;
-    }
-  }
-
-  &_for-filter {
-    width: 19rem;
-    padding-top: .29rem;
-
-    &::after {
-      top: 1.58rem;
-    }
-  }
-
-  &_type_subscription {
-    position: relative;
-    display: inline-block;
-
-    &::after {
-      position: absolute;
-      content: '';
-      width: 3.14rem;
-      height: 3.14rem;
       background: url('./images/icon-arrow-forward.svg') no-repeat;
       right: -1rem;
       top: .93rem;
     }
   }
 
-  &_for-filter, &_for-rooms {
-    & .form-element__field {
-      width: 19rem;
-    }
-  }
-
-  &_for-hide-datepicker {
+  &_type_hidden {
     @include hide;
   }
 }
 
 @media (max-width: 1100px) {
   .form-element {
-    &_for-search, &_for-order {
-      & .form-element__field {
-        width: 8.57rem;
-
-        &::placeholder {
-          font-size: 0.86rem;
-        }
-      }
-    }
-
-    &_for-guests {
-      & .form-element__field {
-        width: 18.57rem;
-      }
-    }
-
-    &_for-main-ui {
-      & .form-element__field {
-        &_type_date {
-          width: 10.71rem;
-        }
-      }
-    }
-
-    &__field {
-      &_for-main-ui {
-        width: 18.57rem;
-      }
-
-      &__field_type_subscription {
-        width: 19rem;
-      }
-
-      &_for-order-in, &_for-order-out {
-        width: 8.57rem;
-
-        &::placeholder {
-          font-size: 0.86rem;
-        }
-      }
+    &_type_date .form-element__field::placeholder {
+      font-size: .86rem;
     }
   }
 }
 
 @media (max-width: 450px) {
   .form-element  {
-    &_for-registration#{&}_for_guests {
-      & .form-element__field {
-        width: 18.57rem; 
-      }
-    }
-
     &__field {
-      &_type_date {
-        width: 8.5rem;
-
-        &::placeholder {
-          font-size: 0.86rem;
-        }
-      }
-
-      &_for-registration#{&}_type_text, &_for-registration#{&}_type_date,
-      &#{&}_for-sign-in {
-        width: 18.57rem;
+      &_type_date::placeholder {
+        font-size: 0.86rem;
       }
     }
   }

@@ -1,0 +1,29 @@
+include ../form-element/form-element
+
+mixin datepickers(options)
+
+  -
+    const { type, placeholder, modifierForInput, defaultDate }=options;
+
+    const formOptions = {
+      single: { type: 'date', placeholder: placeholder, jsModifierForInput: 'type_single'},
+      range: [
+        { type: 'dropdown', placeholder: defaultDate, jsModifierForInput: 'type_range' },
+        {type: 'hidden', placeholder: defaultDate, jsModifierForInput: 'type_hidden' }
+      ],
+      double: [
+        { type: 'date', placeholder: 'дд.мм.гггг', jsModifierForInput: `${modifierForInput}-in` },
+        { type: 'date', placeholder: 'дд.мм.гггг', jsModifierForInput: `${modifierForInput}-out` }
+      ] 
+    };
+
+  div.datepickers
+    if type === 'single'
+      +form-element(formOptions.single)
+    else
+      each value in formOptions[type]
+        if type === 'double'
+          div.datepickers__wrapper
+            +form-element(value)
+        else
+          +form-element(value)

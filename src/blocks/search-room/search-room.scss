@@ -17,20 +17,31 @@
   }
 
   &__label {
-    text-transform: uppercase;
-    font-size: 0.86rem;
-    font-weight: bold;
     margin: 1.5rem 1.43rem .43rem 0;
     width: 10.71rem;
     display: inline-block;
   }
 
+  &__label, &__sum-guests-label {
+    text-transform: uppercase;
+    font-size: 0.86rem;
+    font-weight: bold;
+  }
+
+  &__sum-guests-label {
+    margin-bottom: .4rem;
+  }
+
   &__sum-guests-wrapper {
-    padding: 1.57rem 0 0 0
+    text-transform: uppercase;
+    font-size: 0.86rem;
+    font-weight: bold;
+    padding: 1.57rem 0 0 0;
+    width: 22.86rem;
   }
   
   &__button-wrapper {
-    margin-top: 2.29rem;
+    margin-top: 2.1rem;
     width: 22.86rem;
     height: 3.14rem;
   }
@@ -48,6 +59,10 @@
       width: 8.57rem;
     }
 
+    &__sum-guests-wrapper {
+      width: 18.57rem;
+    }
+
     &__button-wrapper {
       width: 18.57rem;
     }
@@ -55,7 +70,7 @@
 }
 
 @media (max-width: 399px) {
-  .search-room{
+  .search-room {
     &#{&}_with-position_absolute {
     left: 0;
     }

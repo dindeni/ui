@@ -16,6 +16,14 @@
     }
   }
 
+  &__datepicker-wrapper {
+    width: 10.71rem;
+  }
+
+  &__range-datepicker-wrapper, &__subscription-wrapper {
+    width: 19rem;
+  }
+
   &__range-wrapper,
   &__checkbox-wrapper {
     margin: 0 0 1.43rem 0;

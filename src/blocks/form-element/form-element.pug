@@ -13,9 +13,10 @@ mixin form-element(options)
       date: `form-element_type_date ${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`,
       subscription: `form-element_type_subscription ${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`,
       password: 'form-element_type_password',
+      hidden: 'form-element_type_hidden',
     };
 
-    const jsModifier = jsModifierForInput ? `js-form-element__field_${jsModifierForInput}` : '';
+    const jsModifier = jsModifierForInput ? [`form-element__field_${jsModifierForInput}`, `js-form-element__field_${jsModifierForInput}`] : '';
 
   label.form-element(class=classes[type])
     input.form-element__field(type=typeOfInput class=jsModifier placeholder=`${placeholder}`)

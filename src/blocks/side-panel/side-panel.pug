@@ -3,7 +3,7 @@ include ../ui-slider/ui-slider
 include ../checkbox-set/checkbox-set
 include ../card-room/card-room
 include ../sum-rooms/sum-rooms
-include ../ui-datepicker/ui-datepicker
+include ../datepickers/datepickers
 
 -
   const panelData = require('../blocks/side-panel/side-panel.json');
@@ -18,11 +18,11 @@ mixin side-panel
     form.side-panel__form
 
       div.side-panel__datepicker-wrapper
-        +ui-datepicker({type: 'range', defaultDate: '19 авг - 23 авг', modifierForLabel: 'for-filter'})
+        +datepickers({type: 'range', defaultDate: '19 авг - 23 авг', modifierForLabel: 'for-filter'})
 
       div.side-panel__sum-guests-wrapper
-        +sum-guests({modifier: 'for-filter', modifierForInput: 'for-filter',
-         modifierForLabel: 'for-filter', head: 'гости'})
+        div.side-panel__sum-guests-label гости
+        +sum-guests(true)
 
       div.side-panel__slogan.side-panel__slogan_type_range диапазон цены
       +ui-slider('for-side-panel')

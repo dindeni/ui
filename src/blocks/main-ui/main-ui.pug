@@ -19,7 +19,7 @@ include ../footer-widget/footer-widget
 include ../sign-in/sign-in
 include ../sum-guests/sum-guests
 include ../checkbox-set/checkbox-set
-
+include ../datepickers/datepickers
 -
   const data = require('../blocks/main-ui/main-ui.json');
 
@@ -49,24 +49,27 @@ mixin main-ui()
     div.main-ui__form
       div.main-ui__form-wrapper
         +form-element({
-          type: 'default', placeholder: 'email',
+          type: 'default', placeholder: 'Email',
           modifierForLabel: 'for-main-ui', modifierForInput: 'for-main-ui'
         })
-        +sum-guests({label: 'Сколько гостей', isPopupModifier: true})
+        +sum-guests()
         +form-element({
           type: 'masked', placeholder: 'дд.мм.гггг',
           modifierForLabel: 'for-main-ui', modifierForInput: 'for-main-ui'
         })
-        +ui-datepicker({type: 'single', placeholder: 'дд.мм.гггг', modifierForLabel: 'for-main-ui',
-        modifierForInput: 'for-main-ui'})
-        +ui-datepicker({
-          type: 'range', defaultDate: '19 авг - 23 авг', modifierForLabel: 'for-main-ui',
-          modifierForInput: 'for-main-ui'
+        div.main-ui__datepicker-wrapper
+          +datepickers({type: 'single', placeholder: 'дд.мм.гггг', modifierForLabel: 'for-main-ui',
+            modifierForInput: 'for-main-ui'})
+        div.main-ui__range-datepicker-wrapper
+          +datepickers({
+            type: 'range', defaultDate: '19 авг - 23 авг', modifierForLabel: 'for-main-ui',
+            modifierForInput: 'for-main-ui'
         })
-        +form-element({
-          type: 'subscription', placeholder: 'email',
-          modifierForLabel: 'for-main-ui', modifierForInput: 'for-main-ui'
-        })
+        div.main-ui__subscription-wrapper
+          +form-element({
+            type: 'subscription', placeholder: 'email',
+            modifierForLabel: 'for-main-ui', modifierForInput: 'for-main-ui'
+          })
 
       div.main-ui__form-wrapper
         +checkbox-set(checkbox)

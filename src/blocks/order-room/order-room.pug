@@ -1,6 +1,6 @@
 include ../sum-guests/sum-guests
 include ../ui-control/ui-control
-include ../ui-datepicker/ui-datepicker
+include ../datepickers/datepickers
 
 mixin order-room(options)
 
@@ -22,11 +22,12 @@ mixin order-room(options)
 
     form.order-room__form
 
-      +ui-datepicker({ type: 'double', modifierForInput: 'for-order',
+      +datepickers({ type: 'double', modifierForInput: 'for-order',
        modifierForLabel: 'for-order' })
 
       div.order-room__sum-guests-wrapper
-        +sum-guests({modifier: 'for-guests', head: 'гости'})
+        div.order-room__sum-guests-label гости
+        +sum-guests()
 
     div.order-room__total
       each value, index in totalValue

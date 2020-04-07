@@ -16,6 +16,10 @@
     margin: 1.75rem 0 0 0;
   }
 
+  &__email-wrapper, &__password-wrapper {
+    width: 22.86rem;
+  }
+
   &__password-wrapper {
     margin: .7rem 0 .4rem 0;
   }
@@ -45,6 +49,10 @@
     width: 21.43rem;
     padding-left: 1.43rem;
 
+    &__email-wrapper, &__password-wrapper {
+      width: 18.56rem;
+    }
+    
     &__link-enter-wrapper {
       width: 18.57rem;
     }
@@ -54,7 +62,8 @@
     }
 
     &__link-wrapper {
-      margin: 0 0 0 .7rem;
+      margin: .21rem 0 0 1.86rem;
+      width: 5.79rem;
     }
   }
 }

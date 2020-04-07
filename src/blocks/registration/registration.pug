@@ -2,7 +2,7 @@ include ../form-element/form-element
 include ../radio-group/radio-group
 include ../toggle/toggle
 include ../ui-control/ui-control
-include ../ui-datepicker/ui-datepicker
+include ../datepickers/datepickers
 
 -
   const radioValues = ['Мужчина', 'Женщина'];
@@ -14,7 +14,6 @@ mixin registration()
 
     form.registration__form
       div.registration__name-wrapper
-
         +form-element({type: 'default', placeholder: 'Имя'})
 
         div.registration__surname-wrapper
@@ -26,12 +25,12 @@ mixin registration()
       div.registration__date-head дата рождения
 
       div.registration__date-wrapper
-        +ui-datepicker({type: 'single', placeholder: 'дд.мм.гггг',
-          modifierForLabel: 'for-registration'})
+        +datepickers({type: 'single', placeholder: 'дд.мм.гггг'})
 
       div.registration__data-head данные для входа в сервис
 
-      +form-element({type: 'default', placeholder: 'Email'})
+      div.registration__email-wrapper
+        +form-element({type: 'default', placeholder: 'Email'})
 
       div.registration__password-wrapper
         +form-element({type: 'password', placeholder: 'Пароль'})
@@ -45,7 +44,7 @@ mixin registration()
     div.registration__footer
       span.registration__footer-label Уже есть аккаунт на Toxin
       div.registration__link-wrapper
-        +ui-control({content: 'войти', link: 'registration-login', type: 'border'})
+        +ui-control({content: 'войти', link: 'sign-in.html', type: 'border'})
 
 
 

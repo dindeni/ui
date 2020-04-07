@@ -1,25 +1,22 @@
 include ../ui-control/ui-control
 include ../form-element/form-element
 
-mixin sum-guests(options)
+mixin sum-guests(isSizeSmall)
 
   -
-    const {isPopupModifier, head, modifier}=options;
     
     const visitors = ['взрослые', 'дети', 'младенцы'];
     
     const visitorsId = ['adult', 'children', 'babies'];
 
-    const classModifier = modifier ? modifier: 'for-guests';
-
-    const popupModifier = isPopupModifier ? 'sum-guests__popup_for-main-ui' : '';
+    const popupModifier = isSizeSmall ? 'sum-guests__popup_size_small' : '';
 
     const controlsOption = [
       {content: 'очистить', isHideModifier: true, jsModifier:'clear', type: 'transparent', modifier: 'color_gray'},
       {content: 'применить', type: 'transparent', jsModifier: 'apply'}
     ];
 
-  div.sum-guests=head ? head:null
+  div.sum-guests
 
     +form-element({type: 'dropdown', placeholder: 'Сколько гостей',
       modifierForLabel: classModifier, jsModifierForInput: 'for-guests'})

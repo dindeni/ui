@@ -48,9 +48,12 @@
     margin: 1.29rem 0 0 .21rem;
   }
 
-  &__label {
+  &__label, &__sum-guests-label {
     @include h3;
     color: $dark100;
+  }
+  
+  &__label, &__sum-guests-label {
     margin-bottom: .14rem;
     display: inline-block;
 
@@ -60,12 +63,16 @@
   }
 
   &__form {
-    margin: .29rem 0 0 0;
+    margin: .29rem 0 0 .21rem;
   }
 
   &__sum-guests-wrapper {
-    padding: 1.43rem 0 0 .21rem;
+    padding: 1.43rem 0 0 0;
     width: 22.86rem;
+  }
+
+  &__sum-guests-label {
+    margin-bottom: .35rem;
   }
 
   &__total {
@@ -149,6 +156,10 @@
 
     &__label:first-child {
       margin-right: 4.71rem;
+    }
+
+    &__sum-guests-wrapper {
+      width: 18.57rem;
     }
 
     &__total-description {
