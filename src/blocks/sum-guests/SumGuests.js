@@ -64,7 +64,7 @@ class SumGuests {
 
   _controlButtonMinus() {
     this.numberVisitors.forEach((value, index) => {
-      if (+value.textContent === 0) {
+      if (parseInt(value.textContent, 10) === 0) {
         this.buttonMinus[index].classList.remove('sum-guests__button_type_non-nullified');
         this.buttonMinus[index].classList.add('sum-guests__button_type_nullified');
       } else {
@@ -75,7 +75,7 @@ class SumGuests {
   }
 
   _clearInput(event) {
-    const hasValue = +this.inputGuests.value !== 0 && this.inputGuests.value !== '' && this.inputGuests.value !== '0 гостей';
+    const hasValue = parseInt(this.inputGuests.value, 10) !== 0 && this.inputGuests.value !== '' && this.inputGuests.value !== '0 гостей';
     if (hasValue) {
       this.buttonClear.classList.remove('ui-control_hidden');
     } else {

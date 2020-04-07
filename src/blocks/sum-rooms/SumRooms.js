@@ -50,13 +50,12 @@ class SumRooms {
     const searchButtonPlus = parentElement.querySelector('.js-sum-rooms__button_type_plus');
     const number = parentElement.querySelector('.js-sum-rooms__number-of-visitors');
     if (event.target === searchButtonPlus) {
-      number.textContent = +number.textContent + 1;
+      number.textContent = parseInt(number.textContent, 10) + 1;
     } else if (number.textContent > 0) {
-      number.textContent = +number.textContent - 1;
+      number.textContent = parseInt(number.textContent, 10) - 1;
     }
 
-    this.roomsInput.value = `${this.bedRoomsNumber.textContent} спальни, `
-      + `${this.bedsNumber.textContent} кровати...`;
+    this.roomsInput.value = `${this.bedRoomsNumber.textContent} спальни, ${this.bedsNumber.textContent} кровати...`;
   }
 }
 
