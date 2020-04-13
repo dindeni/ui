@@ -7,7 +7,7 @@ class SumRooms {
   }
 
   summarizeRooms() {
-    this.roomsInput = this.wrapper.querySelector('.js-form-element__field_for-rooms');
+    this.roomsInput = this.wrapper.querySelector('.js-form-element__field');
     this.roomsPopup = this.wrapper.querySelector('.js-sum-rooms__popup');
     this.bedRoomsNumber = this.wrapper.querySelector('.js-sum-rooms__number-of-visitors_bedroom');
     this.bedsNumber = this.wrapper.querySelector('.js-sum-rooms__number-of-visitors_beds');

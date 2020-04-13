@@ -1,22 +1,21 @@
 mixin form-element(options)
 
   -
-    const {type, placeholder, modifierForInput, modifierForLabel,
-     jsModifierForInput}=options;
+    const {type, placeholder, isJsInputClass}=options;
 
-    const typeOfInput = type === 'password' ? 'password' : 'text'
+    const typeOfInput = type === 'password' ? 'password' : 'text';
 
     const classes = {
-      default: modifierForLabel ? `form-element_${modifierForLabel}` : '',
-      dropdown: `form-element_type_dropdown ${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`,
-      masked: `form-element_type_masked ${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`,
-      date: `form-element_type_date ${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`,
-      subscription: `form-element_type_subscription ${modifierForLabel ? `form-element_${modifierForLabel}` : ''}`,
+      default: 'form-element',
+      dropdown: 'form-element_type_dropdown',
+      masked: 'form-element_type_masked',
+      date: 'form-element_type_date',
+      subscription: 'form-element_type_subscription',
       password: 'form-element_type_password',
       hidden: 'form-element_type_hidden',
     };
 
-    const jsModifier = jsModifierForInput ? [`form-element__field_${jsModifierForInput}`, `js-form-element__field_${jsModifierForInput}`] : '';
+    const jsInputClass = isJsInputClass ? 'js-form-element__field' : '';
 
   label.form-element(class=classes[type])
-    input.form-element__field(type=typeOfInput class=jsModifier placeholder=`${placeholder}`)
+    input.form-element__field(type=typeOfInput  placeholder=`${placeholder}` class=jsInputClass)

@@ -247,7 +247,7 @@
     width: 8.57rem;
   }
 
-  .ui-datepicker:not(.ui-datepicker_for-single-datepicker) {
+  .ui-datepicker:not(.ui-datepicker_type_single) {
     width: 18.43rem;
     padding-bottom: 1.79rem;
 
@@ -325,7 +325,7 @@
 }
 
 @media (max-width: 450px) {
-  .ui-datepicker_for-single-datepicker {
+  .ui-datepicker_type_single {
     width: 18.43rem;
     padding-bottom: 1.79rem;
 

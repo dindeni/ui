@@ -10,8 +10,17 @@ const DATE_SETTINGS = {
   currentText: 'применить',
 };
 
+const RANGE_SETTINGS = {
+  dateFormat: 'dd M',
+  monthNamesShort: [' янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
+};
+
 const SHIFT_LEFT = 44;
 
 const BORDER_CORRECTION = 2;
 
-export { DATE_SETTINGS, SHIFT_LEFT, BORDER_CORRECTION };
+const INDENT = 21;
+
+export {
+  DATE_SETTINGS, SHIFT_LEFT, BORDER_CORRECTION, RANGE_SETTINGS, INDENT,
+};

@@ -4,7 +4,6 @@ include ../form-element/form-element
 mixin sum-guests(isSizeSmall)
 
   -
-    
     const visitors = ['взрослые', 'дети', 'младенцы'];
     
     const visitorsId = ['adult', 'children', 'babies'];
@@ -18,8 +17,7 @@ mixin sum-guests(isSizeSmall)
 
   div.sum-guests
 
-    +form-element({type: 'dropdown', placeholder: 'Сколько гостей',
-      modifierForLabel: classModifier, jsModifierForInput: 'for-guests'})
+    +form-element({type: 'dropdown', placeholder: 'Сколько гостей', isJsInputClass: true})
 
     div.sum-guests__popup.js-sum-guests__popup.sum-guests__popup_hidden(tabindex=0 class=popupModifier)
 

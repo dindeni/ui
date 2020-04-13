@@ -48,16 +48,18 @@ mixin main-ui()
 
     div.main-ui__form
       div.main-ui__form-wrapper
-        +form-element({type: 'default', placeholder: 'Email'})
-        +sum-guests()
-        +form-element({type: 'masked', placeholder: 'дд.мм.гггг'})
-        div.main-ui__datepicker-wrapper
+        div.main-ui__field-wrapper
+          +form-element({type: 'default', placeholder: 'Email'})
+        div.main-ui__field-wrapper.main-ui__field-wrapper_type_sum-guests
+          +sum-guests(true)
+        div.main-ui__field-wrapper
+          +form-element({type: 'masked', placeholder: 'дд.мм.гггг'})
+        div.main-ui__field-wrapper.main-ui__field-wrapper_type_single-datepicker
           +datepickers({type: 'single', placeholder: 'дд.мм.гггг'})
-        div.main-ui__range-datepicker-wrapper
+        div.main-ui__field-wrapper.main-ui__field-wrapper_type_range-datepicker
           +datepickers({type: 'range', defaultDate: '19 авг - 23 авг'})
-        div.main-ui__subscription-wrapper
-          +form-element({
-            type: 'subscription', placeholder: 'email'})
+        div.main-ui__field-wrapper.main-ui__field-wrapper_type_subscription
+          +form-element({type: 'subscription', placeholder: 'email'})
 
       div.main-ui__form-wrapper
         +checkbox-set(checkbox)

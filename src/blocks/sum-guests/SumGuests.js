@@ -9,7 +9,7 @@ class SumGuests {
   countGuests() {
     this.buttonMinus = this.classGuests.querySelectorAll('.js-sum-guests__button_type_minus');
     this.numberVisitors = this.classGuests.querySelectorAll('.js-sum-guests__number-of-visitors');
-    this.inputGuests = this.classGuests.querySelector('.js-form-element__field_for-guests');
+    this.inputGuests = this.classGuests.querySelector('.js-form-element__field');
     this.guestsPopup = this.classGuests.querySelector('.js-sum-guests__popup');
     this.buttonApply = this.classGuests.querySelector('.js-ui-control_apply');
     this.buttonClear = this.classGuests.querySelector('.js-ui-control_clear');
