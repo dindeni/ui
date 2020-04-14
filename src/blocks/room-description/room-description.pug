@@ -10,7 +10,7 @@ include ../order-room/order-room
   
   const { features, totalValue, totalPrice, review, bulletList } = descriptionData;
 
-  const reviewPath = [require('../blocks/room-description/images/icon-avatar-1.png'), require('../blocks/room-description/images/icon-avatar-2.png')];
+  const reviewPath = [require('../images/icon-avatar-1.jpg'), require('../images/icon-avatar-2.jpg')];
 
 mixin room-description
 
@@ -26,7 +26,7 @@ mixin room-description
 
         +pie-chart
 
-      div.room-description__review
+      div.room-description__reviews
         h2.room-description__review-head Отзывы посетителей номера
         span.room-description__review-number 2 отзыва
 
@@ -34,8 +34,9 @@ mixin room-description
 
           -const {head, date, description, typeOfButton, numberOfLikes} = value;
 
-          +review({head, date, description, path: reviewPath[index], typeOfButton,
-          numberOfLikes, isRoomModifier: true})
+          div.room-description__review-wrapper
+            +review({head, date, description, path: reviewPath[index], typeOfButton,
+              numberOfLikes, isRoomModifier: true})
 
       div.room-description__rules
         h2.room-description__rules-head Правила

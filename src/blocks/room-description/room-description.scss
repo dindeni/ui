@@ -27,12 +27,14 @@
     margin: 0 0 1.07rem 0;
   }
 
-  &__review {
+  &__reviews {
     position: relative;
     width: 100%;
-
+  }
+  
+  &__review {
     &-head {
-      margin: .14rem 0 1.29rem 0;
+      margin: 0 0 1.7rem 0;
       display: inline-block;
     }
 
@@ -43,10 +45,14 @@
       right: 4.86rem;
       top: -.21rem;
     }
+
+    &-wrapper {
+      margin-bottom: 1.7rem;
+    }
   }
 
   &__rules {
-    margin: 1.43rem 5.86rem 0 .14rem;
+    margin: 1.1rem 5.86rem 0 .14rem;
     width: 20rem;
 
     &-head {
@@ -55,7 +61,7 @@
   }
 
   &__cancel {
-    margin: 1.43rem 0 0 0;
+    margin: 1.1rem 0 0 0;
 
     &-paragraph {
       width: 24.57rem;

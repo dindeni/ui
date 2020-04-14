@@ -13,6 +13,7 @@ mixin review(options)
     span.review__date=date
 
     div.review__wrapper
-      +ui-control({isBorder: true, content: numberOfLikes, modifier: `theme_${typeOfButton}`,
-        buttonModifier: `theme_${typeOfButton}`})
+      div.review__button-wrapper
+        +ui-control({isBorder: true, content: numberOfLikes, modifier: `theme_${typeOfButton}`,
+          buttonModifier: `theme_${typeOfButton}`})
       p.review__description(class=descriptionModifier)=description
