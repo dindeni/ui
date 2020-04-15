@@ -3,7 +3,7 @@
 .search-room {
   @include rectangle;
 
-  &.search-room_with-position_absolute {
+  &_with-position_absolute {
     position: absolute;
     top: 5rem;
     left: 9.6%;
@@ -69,11 +69,18 @@
   }
 }
 
+@media (max-width: 800px) {
+  .search-room_with-position_absolute {
+    top: .5rem;
+  }
+}
+
 @media (max-width: 399px) {
-  .search-room {
-    &#{&}_with-position_absolute {
+  .search-room_with-position_absolute {
     left: 0;
-    }
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
   }  
 }
 

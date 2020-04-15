@@ -25,10 +25,6 @@
     &_logged {
       margin: .36rem 0 0 24.4%;
     }
-
-    &_hidden {
-      @include hide;
-    }
   }
 
   &__item {
@@ -195,6 +191,10 @@
 
       &_logged {
         top: 0;
+      }
+
+      &_hidden {
+        @include hide;
       }
     }
 

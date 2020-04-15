@@ -30,15 +30,16 @@ mixin main-filter()
 
     section.main-filter__rooms
       h1.main-filter__rooms-head Номера, которые мы для вас подобрали
-      each value, index in cardRoomData.value
+      
+      div.main-filter__cards-wrapper
+        each value, index in cardRoomData.value
+          -
+            const { images, type, numberOfRoom, numberOfRate, price, numberOfReviews } = value;
 
-        -
-          const { images, type, numberOfRoom, numberOfRate, price, numberOfReviews } = value;
+          div.main-filter__card-wrapper
+            +card-room({
+              images: rooms[index], radioName: 'room-radio-name', type,
+              numberOfRoom, price, numberOfReviews, numberOfRate,
+            })
 
-        div.main-filter__card-wrapper
-          +card-room({
-            images: rooms[index], radioName: 'room-radio-name', type,
-            numberOfRoom, price, numberOfReviews, numberOfRate,
-          })
-
-      +pagination({value: 15, modifier: 'for-filter'})
+        +pagination({value: 15, modifier: 'for-filter'})

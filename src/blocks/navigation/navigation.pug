@@ -19,7 +19,7 @@ mixin navigation(options)
     nav.navigation.js-navigation(class=classModifier)
       img.navigation__logo(src=require('../images/icon-logo.svg') alt="logo")
 
-      ul.navigation__list.js-navigation__list
+      ul.navigation__list.js-navigation__list.navigation__list_hidden
         each item, index in items
           li.navigation__item(class=itemClass)
             a.navigation__link(href="somePage.html" class=linkClasses[index])=item
@@ -36,7 +36,7 @@ mixin navigation(options)
     nav.navigation.js-navigation.navigation_logged
       img.navigation__logo(src=require('../images/icon-logo.svg') alt="logo")
 
-      ul.navigation__list.js-navigation__list.navigation__list_logged
+      ul.navigation__list.js-navigation__list.navigation__list_logged.navigation__list_hidden
         each item, index in items
           li.navigation__item.navigation__item_logged
             a.navigation__link(href="somePage.html" class=linkClasses[index])=item

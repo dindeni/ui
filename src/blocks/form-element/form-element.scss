@@ -68,18 +68,8 @@
 
 @media (max-width: 1100px) {
   .form-element {
-    &_type_date .form-element__field::placeholder {
+    &_type_date .form-element__field::placeholder, &_type_date .form-element__field {
       font-size: .86rem;
-    }
-  }
-}
-
-@media (max-width: 450px) {
-  .form-element  {
-    &__field {
-      &_type_date::placeholder {
-        font-size: 0.86rem;
-      }
     }
   }
 }

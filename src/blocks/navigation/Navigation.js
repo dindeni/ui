@@ -10,13 +10,6 @@ class Navigation {
     this.navigationElement.addEventListener('click', this._handleButtonClick);
   }
 
-  hideList() {
-    if (window.innerWidth <= 920) {
-      const navigationList = this.navigationElement.querySelector('.js-navigation__list');
-      navigationList.classList.add('navigation__list_hidden');
-    }
-  }
-
   _handleButtonClick(event) {
     const button = this.navigationElement.querySelector('.js-navigation__button-mobile');
     const navigationList = this.navigationElement.querySelector('.js-navigation__list');
