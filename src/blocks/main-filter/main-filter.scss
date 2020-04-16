@@ -19,23 +19,23 @@
   }
 
   &__rooms {
-    margin: 0 0 5.29rem 1.9rem;
+    margin: 0 0 5.29rem 1.48rem;
   }
 
   &__rooms-head {
     @include h1;
-    margin: 2.8rem 0 1.79rem 0;
+    margin: 2.8rem 0 1.79rem .5rem;
   }
 
   &__card-wrapper {
     display: inline-block;
-    margin: 0 .75rem 1.38rem 0;
+    margin: 0 .375rem 1.38rem .375rem;
   }
 
   &__pagination-wrapper {
     width: max-content;
     margin: auto;
-    padding: 0.3rem 7.9rem 0 0;
+    padding: 0.3rem 10.5rem 0 0;
   }
 }
 
@@ -50,8 +50,8 @@
     
     &__cards-wrapper {
       display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     &__pagination-wrapper {
@@ -85,11 +85,5 @@
       align-items: center;
       width: 100%
     }
-  }
-}
-
-@media (max-width: 540px) {
-  .main-filter__card-wrapper {
-    margin: 0 0 1.38rem 0;
   }
 }
