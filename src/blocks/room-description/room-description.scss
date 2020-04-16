@@ -15,16 +15,16 @@
   &__features-head, &__pie-chart-head, &__review-head, &__rules-head,
   &__cancel-head {
     @include h2;
-    margin: 0 0 1.71rem 0;
+    margin: 0 0 1.9rem .21rem;
   }
 
   &__pie-chart-wrapper {
-    margin: .21rem 0 0 13.7%;
+    margin: 0 0 0 13.7%;
     position: relative;
   }
 
   &__pie-chart-head {
-    margin: 0 0 1.07rem 0;
+    margin: 0 0 1.3rem 0;
   }
 
   &__reviews {
@@ -34,7 +34,7 @@
   
   &__review {
     &-head {
-      margin: 0 0 1.7rem 0;
+      margin: 2.7rem 0 1.9rem .1rem;
       display: inline-block;
     }
 
@@ -43,11 +43,11 @@
       color: $dark50;
       position: absolute;
       right: 4.86rem;
-      top: -.21rem;
+      top: 2.7rem;
     }
 
     &-wrapper {
-      margin-bottom: 1.7rem;
+      margin-bottom: 1.8rem;
     }
   }
 

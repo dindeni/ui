@@ -6,7 +6,7 @@
 .card-room {
   @include rectangle;
   padding: 0;
-  width: 19.29rem;
+  width: 19.43rem;
   height: 18.43rem;
   display: inline-block;
   position: relative;
@@ -77,11 +77,11 @@
 
       &_type_next {
         transform: rotate(180deg);
-        margin-right: 1.29rem;
+        margin-right: 1.2rem;
       }
 
       &_type_prev {
-        margin-left: 1.29rem;
+        margin-left: 1.2rem;
       }
 
       &:focus {
@@ -91,7 +91,7 @@
 
   &__number {
     @include h2;
-    margin: 0 .5rem 0 .43rem;
+    margin: 0 .3rem 0 .43rem;
 
     &-room-wrapper {
       margin: 1.79rem 0 0 0;
@@ -109,7 +109,7 @@
   &__type-room {
     @include body;
     color: $purple;
-    font-weight: bold;
+    font-weight: 700;
     line-height: normal;
   }
 
@@ -122,24 +122,24 @@
   &__price {
     @include body;
     color: $dark50;
-    font-weight: bold;
+    font-weight: 700;
   }
 
   &__periodicity {
     @include body;
     font-size: .86rem;
-    margin: 0 1.21rem 0 .43rem;
+    margin: 0 1.25rem 0 .43rem;
   }
 
   &__rate-wrapper {
     display: inline-block;
-    margin: 1.07rem 0 0 1.43rem;
+    margin: 1rem 0 0 1.5rem
   }
   
   &__number-review {
     display: inline-block;
     @include body;
-    font-weight: bold;
+    font-weight: 700;
     color: $dark50;
     line-height: 1.29rem;
     vertical-align: top;

@@ -1,28 +1,29 @@
 @mixin h3 {
-  font-family: Montserrat-regular, sans-serif;
-  font-weight: bold;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 700;
   font-size: 0.86rem;
   text-transform: uppercase;
   color: rgba(31, 32, 65, 0.75);
 }
 
 @mixin body {
-  font-family: Montserrat-regular, sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
   font-size: 1rem;
-  line-height: 24px;
+  line-height: 1.71rem;
   color: rgba(31, 32, 65, 0.75);
+  font-weight: 400;
 }
 
 @mixin h2 {
-  font-family: Quicksand, sans-serif;
-  font-weight: bold;
+  font-family: Quicksand, Arial, sans-serif;
+  font-weight: 700;
   font-size: 1.36rem;
   color: #1F2041;
 }
 
 @mixin h1 {
-  font-family: Quicksand, sans-serif;
-  font-weight: bold;
+  font-family: Quicksand, Arial, sans-serif;
+  font-weight: 700;
   font-size: 1.71rem;
   color: #1F2041;
 }

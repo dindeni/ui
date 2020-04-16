@@ -20,27 +20,27 @@
   &__number {
     @include h2;
     font-size: 1.71rem;
-    margin: 0 .71rem 0 .21rem;
+    margin: 0 .3rem 0 .21rem;
   }
 
   &__type-room {
     @include body;
     color: $purple;
-    font-weight: bold;
-    margin: 0 8.14rem 0 0;
+    font-weight: 700;
+    margin: 0 8.1rem 0 0;
   }
 
   &__price {
     @include body;
     color: $dark50;
-    font-weight: bold;
+    font-weight: 700;
   }
 
   &__periodicity {
     @include body;
     font-size: 0.86rem;
     color: $dark50;
-    margin: .14rem 0 0 .43rem;
+    margin: .14rem 0 0 .3rem;
     display: inline-block;
   }
 
@@ -130,7 +130,7 @@
   }
 
   &__button-wrapper {
-    margin-top: 1.7rem;
+    margin-top: 1.8rem;
     width: 22.86rem;
     height: 3.14rem;
   }

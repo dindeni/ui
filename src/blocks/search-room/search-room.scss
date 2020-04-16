@@ -1,4 +1,5 @@
 @import '../../style/mixins/rectangle';
+@import '../../style//mixins//text';
 
 .search-room {
   @include rectangle;
@@ -10,14 +11,14 @@
   }
 
   &__head {
-    font: 1.7rem/29px Quickand-regular, sans-serif;
-    font-weight: bold;
+    @include h1;
+    line-height: 2.07rem;
     width: 20rem;
     margin: 2.93rem 0 0 0;
   }
 
   &__label {
-    margin: 1.5rem 1.43rem .43rem 0;
+    margin: 1.6rem 1.43rem .5rem 0;
     width: 10.71rem;
     display: inline-block;
   }
@@ -25,7 +26,7 @@
   &__label, &__sum-guests-label {
     text-transform: uppercase;
     font-size: 0.86rem;
-    font-weight: bold;
+    font-weight: 700;
   }
 
   &__sum-guests-label {
@@ -35,13 +36,13 @@
   &__sum-guests-wrapper {
     text-transform: uppercase;
     font-size: 0.86rem;
-    font-weight: bold;
+    font-weight: 700;
     padding: 1.57rem 0 0 0;
     width: 22.86rem;
   }
   
   &__button-wrapper {
-    margin-top: 2.1rem;
+    margin-top: 2.3rem;
     width: 22.86rem;
     height: 3.14rem;
   }

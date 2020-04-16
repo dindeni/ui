@@ -6,14 +6,15 @@
   height: 25.57rem;
   position: relative;
   z-index: 1;
+  padding-left: 2.1rem;
 
   &__head {
     @include h1;
-    margin: 3.5rem 0 1.43rem 0;
+    margin: 3.3rem 0 1.43rem 0;
   }
 
   &__email-wrapper{
-    margin: 1.75rem 0 0 0;
+    margin: 2rem 0 0 0;
   }
 
   &__email-wrapper, &__password-wrapper {
@@ -21,7 +22,7 @@
   }
 
   &__password-wrapper {
-    margin: .7rem 0 .4rem 0;
+    margin: .8rem 0 .4rem 0;
   }
 
   &__link-enter-wrapper {

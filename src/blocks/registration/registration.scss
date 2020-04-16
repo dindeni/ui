@@ -15,7 +15,7 @@
   }
 
   &__name-wrapper {
-    margin: 1.86rem 0 0 0;
+    margin: 1.95rem 0 0 0;
   }
 
   &__name-wrapper, &__date-wrapper, &__data-head, &__email-wrapper, &__password-wrapper {
@@ -29,7 +29,7 @@
   &__radio-wrapper {
     position: relative;
     display: block;
-    margin: 0 0 0 .71rem;
+    margin: .7rem 0 0 .71rem;
   }
   
   &__date-head, &__data-head {
@@ -40,7 +40,7 @@
   }
 
   &__date-head {
-    margin: 1.57rem 0 .36rem 0;
+    margin: 1.57rem 0 .4rem 0;
   }
 
   &__date-wrapper {
@@ -48,11 +48,11 @@
   }
 
   &__data-head {
-    margin: 1.6rem 0 0.3rem 0;
+    margin: 1.6rem 0 0.4rem 0;
   }
 
   &__password-wrapper{
-    margin: .7rem 0 .5rem 0;
+    margin: .8rem 0 .7rem 0;
   }
 
   &__toggle-wrapper {
@@ -76,7 +76,7 @@
 
   &__link-wrapper {
     display: inline-block;
-    margin: .21rem 0 0 2.86rem;
+    margin: .1rem 0 0 2.86rem;
     width: 6.79rem;
   } 
 }

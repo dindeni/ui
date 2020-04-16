@@ -1,11 +1,8 @@
-mixin pagination(options)
+mixin pagination(value)
 
-  -
-    const {value, modifier}=options;
+  div.pagination
 
-  div.pagination(class=`${modifier ? `pagination_${modifier}`:''}`)
-
-    ul.pagination__list(class=`${modifier ? `pagination__list_${modifier}` : ''}`)
+    ul.pagination__list
       each arrayItem, index in Array(value)
         
         if index === 3
@@ -18,5 +15,4 @@ mixin pagination(options)
       li.pagination__item.pagination__item_type_next
             a.pagination__link.pagination__link_type_next(href="somePage.html")
        
-    div.pagination__description(class=
-      `${modifier ? `pagination__description_${modifier}` : ''}`) 1 – 12 из 100+ вариантов аренды
+    div.pagination__description 1 – 12 из 100+ вариантов аренды

@@ -3,12 +3,12 @@
 .features {
   @include body;
 
-  &__wrapper {
-    margin-bottom: 2.9rem;
+  &__wrapper:not(:last-child) {
+    margin-bottom: 3rem;
   }
 
   &__slogan {
-    font-weight: bold;
+    font-weight: 700;
     display: block;
     padding: 0 0 0 4.43rem;
     position: relative;

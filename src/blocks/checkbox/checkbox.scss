@@ -47,8 +47,8 @@
     }
 
     &_type_rich {
-      font-weight: bold;
-      margin: 0 0 .57rem .86rem;
+      font-weight: 700;
+      margin: 0 0 .5rem .9rem;
     }
 
     & .checkbox__mark:checked  {
@@ -74,9 +74,9 @@
     font-size: .86rem;
     font-weight: normal;
     display: block;
-    line-height: .8rem;
+    line-height: .9rem;
     color: $dark50;
-    margin: 0.4rem 0 .1rem 2.2rem;
+    margin: 0.4rem 0 .1rem 2.3rem;
     width: 16rem;
   }
 }

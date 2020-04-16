@@ -57,8 +57,8 @@
 
   &-title {
     text-transform: capitalize;
-    font-weight: bold;
-    font-family: Quickand-regular, sans-serif;
+    @include h1;
+    font-weight: 700;
     font-size: 1.36rem;
     text-align: center;
     margin: .71rem .57rem 0 0;
@@ -126,7 +126,7 @@
 
   &-calendar &-today .ui-state-default {
     color: #FFFFFF;
-    font-weight: bold;
+    font-weight: 700;
     position: relative;
 
     &::after{
@@ -178,7 +178,7 @@
 
     & > a {
       color: #FFFFFF;
-      font-weight: bold;
+      font-weight: 700;
     }
 
     &::after {

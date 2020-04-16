@@ -88,14 +88,14 @@ class PieChart {
         const { ctx } = chart.chart;
 
         ctx.restore();
-        ctx.font = '24px bold Montserrat-regular, sans-serif';
+        ctx.font = '24px bold Montserrat, Arial, sans-serif';
         ctx.textBaseline = 'middle';
         const textNumber = '260';
         const textVotes = 'голосов';
         const textY = 60;
         ctx.fillStyle = '#BC9CFF';
         ctx.fillText(textNumber, width / 2, textY);
-        ctx.font = '12px bold Montserrat-regular, sans-serif';
+        ctx.font = '12px bold Montserrat, Arial, sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText(textVotes.toUpperCase(), width / 2, textY + 21);
         ctx.save();

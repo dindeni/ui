@@ -42,4 +42,5 @@ mixin main-filter()
               numberOfRoom, price, numberOfReviews, numberOfRate,
             })
 
-        +pagination({value: 15, modifier: 'for-filter'})
+        div.main-filter__pagination-wrapper
+          +pagination(15)
