@@ -17,7 +17,7 @@ mixin navigation(options)
 
   if type === 'default'
     nav.navigation.js-navigation(class=classModifier)
-      img.navigation__logo(src=require('../images/icon-logo.svg') alt="logo")
+      img.navigation__logo(src=require('../images/icon-logo.svg') alt="логотип")
 
       ul.navigation__list.js-navigation__list.navigation__list_hidden
         each item, index in items
@@ -34,7 +34,7 @@ mixin navigation(options)
 
   else if type === 'loggedIn'
     nav.navigation.js-navigation.navigation_logged
-      img.navigation__logo(src=require('../images/icon-logo.svg') alt="logo")
+      img.navigation__logo(src=require('../images/icon-logo.svg') alt="логотип")
 
       ul.navigation__list.js-navigation__list.navigation__list_logged.navigation__list_hidden
         each item, index in items

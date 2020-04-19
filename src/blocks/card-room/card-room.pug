@@ -11,9 +11,9 @@ mixin card-room(options)
       div.card-room__image-wrapper
         each value, index in images
           if index > 0
-            img.card-room__image.js-card-room__image.card-room__image_hidden(src=`${value}` alt="room image")
+            img.card-room__image.js-card-room__image.card-room__image_hidden(src=`${value}` alt="фото комнаты")
           else
-            img.card-room__image.js-card-room__image(src=`${value}` alt="room image")
+            img.card-room__image.js-card-room__image(src=`${value}` alt="фото комнаты")
 
       form(autocomplete="off").card-room__form.js-card-room__form
         each value, index in Array(4)
