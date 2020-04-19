@@ -1,0 +1,117 @@
+.demo-forms {
+  &__logo {
+    margin: 2.14rem 0 0 2.14rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 4.43rem 10rem 2.86rem 10rem;
+
+    &:last-child {
+      margin: 0 11.5% 10.5rem 9.5%;
+    }
+  }
+
+  &__column {
+    &:nth-child(2) {
+      .demo-forms__container {
+        &_type_checkbox, &_type_radio {
+          margin-left: .4rem;
+        }
+
+        &_type_toggle {
+          margin-left: .2rem;
+        }
+
+        &_type_button-rate {
+          margin: 0 .71rem 2.86rem 0;
+          display: flex;
+        }
+
+        &_type_checkbox-rich {
+          margin-left: .7rem;
+        }
+      }
+    }
+
+    &:last-child {
+      .demo-forms__container {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__container {
+    margin: 0 0 2.86rem 0;
+    
+    &_size {
+      &_default {
+        width: 22.86rem;
+      }
+
+      &_small {
+        width: 10.71rem;
+      }
+
+      &_middle {
+        width: 19rem;
+      }
+    }
+
+    &_button-size {
+      &_middle {
+        width: 7.07rem;
+      }
+
+      &_small {
+        width: 4.36rem;
+      }
+
+      &_default {
+        width: 22.86rem;
+      }
+    }
+  }
+
+  &__toggle-wrapper {
+    margin: 0 0 2.86rem 2.2rem;
+  }
+
+  &__button-wrapper {
+    margin-right: .71rem;
+  }
+
+  &__rate-wrapper {
+    display: inline-block;
+    margin-right: 1.43rem;
+  }
+
+  
+}
+
+@media (max-width: 1280px) {
+  .demo-forms {
+    &__column:last-child {
+      margin: auto;
+    }
+
+    &__features-wrapper {
+      margin-bottom: 2.86rem;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .demo-forms {
+    &__wrapper {
+      margin: 4.43rem auto 2.86rem auto;
+    }
+
+    &__column {
+      width: max-content;
+      margin: auto;
+    }
+  }
+}

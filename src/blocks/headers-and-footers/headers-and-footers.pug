@@ -1,0 +1,22 @@
+include ../navigation/navigation
+include ../footer-widget/footer-widget
+include ../footer/footer
+
+mixin headers-and-footers(options)
+
+  -const { valuesForLogin, valuesForLoggedIn, footerWidget } = options;
+  
+  div.headers-and-footers
+
+    img.headers-and-footers__logo(src=require('../images/icon-logo-gray.svg') alt="логотип" width="48")
+
+    div.headers-and-footers__wrapper
+      div.headers-and-footers__container
+        +navigation(valuesForLogin)
+      div.headers-and-footers__container
+        +navigation(valuesForLoggedIn)
+      div.headers-and-footers__container
+        +footer-widget(footerWidget)
+      div.headers-and-footers__container
+        +footer
+        

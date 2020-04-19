@@ -4,16 +4,22 @@
   flex-direction: column;
   display: flex;
   align-items: center;
+  background: #FFFFFF;
+  padding-bottom: 7.9rem;
 
   &__logo {
-    margin: 7.14rem 0 0 1.43rem;
+    margin: 7.14rem 0 0 0;
   }
 
   &__description {
     @include body;
     width: 40rem;
-    margin: 1.29rem 0 2rem 1.57rem;
+    margin: 1.29rem 0 2rem 0;
     text-align: center;
+  }
+
+  &__buttons-wrapper {
+    margin-right: 1.4rem
   }
 }
 

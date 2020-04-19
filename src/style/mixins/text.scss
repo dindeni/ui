@@ -27,3 +27,10 @@
   font-size: 1.71rem;
   color: #1F2041;
 }
+
+@mixin quicksand-regular {
+  font-family: Quicksand, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.36rem;
+  color: #1F2041;
+}

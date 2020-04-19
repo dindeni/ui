@@ -1,0 +1,118 @@
+@import '../../style//mixins/text';
+@import '../../style//variables/variables';
+
+.colors-and-type {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  &__logo {
+    margin: 2.14rem 0 0 2.14rem;
+  }
+  
+  &__list {
+      list-style: none;
+      justify-content: center;
+
+      &:first-child {
+        margin: 5.1rem 0 10.36rem 7.6%;
+      }
+
+      &:last-child {
+        margin: 4.8rem 12.2% 0 0;
+      }
+    }
+
+    &__color-name {
+      @include h2;
+      line-height: 150%;
+      padding-left: 7.86rem;
+      position: relative;
+      margin-bottom: 2.42rem;
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 5rem;
+        height: 5rem;
+        background: var(--background);
+        opacity: var(--opacity);
+        border-radius: .43rem;
+        left: 0;
+        top: -.4rem
+      }
+    }
+
+    &__color-value {
+      @include quicksand-regular;
+    }
+
+    &__text-title {
+      text-transform: uppercase;
+      @include body;
+      color: $dark25;
+      font-size: 1.71rem;
+      line-height: 2rem;
+      display: flex;
+      
+      &:not(:last-child) {
+        margin: 0 0 3.7rem .5rem;
+      }
+
+      &:nth-child(2) {
+        font-size: 1.36rem;
+        line-height: 1.8rem;
+        margin-bottom: 3rem;
+
+        & .colors-and-type__text-description {
+          @include h2;
+          padding-left: 2.3rem;
+        }
+      }
+
+      &:nth-child(3) {
+        font-size: .86rem;
+        margin: 0 0 2.8rem 1.3rem;
+
+        & .colors-and-type__text-description {
+          @include h3;
+        }
+      }
+
+      &:last-child {
+        font-size: 1rem;
+        text-transform: none;
+
+        & .colors-and-type__text-description {
+          @include body;
+          padding-top: .2rem;
+          width: 22rem;
+        }
+      }
+    }
+
+    &__text-description {
+      @include h1;
+      padding: 0 0 0 2.14rem;
+      width: 24.29rem;
+      display: inline-block;
+      width: 25rem;
+
+      &:first-child {
+        text-transform: none;
+      }
+    }
+}
+
+@media (max-width: 840px) {
+  .colors-and-type {
+    &__wrapper {
+      flex-wrap: wrap;
+    }
+
+    & &__list {
+      margin: 2.14rem auto 0 auto;
+    }
+  }
+}

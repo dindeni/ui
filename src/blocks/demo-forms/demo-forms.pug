@@ -1,0 +1,88 @@
+include ../form-element/form-element
+include ../sum-guests/sum-guests
+include ../datepickers/datepickers
+include ../checkbox-set/checkbox-set
+include ../features/features
+include ../radio-group/radio-group
+include ../toggle/toggle
+include ../ui-control/ui-control
+include ../ui-slider/ui-slider
+include ../pagination/pagination
+include ../rate/rate
+include ../review/review
+include ../bullet-list/bullet-list
+
+mixin demo-forms(values)
+
+  -const { checkbox, checkboxExpandable, checkboxRich, features, radio, bulletList } = values;
+
+  div.demo-forms
+    
+    img.demo-forms__logo(src=require('../images/icon-logo-gray.svg') alt="логотип" width="48")
+    
+    div.demo-forms__wrapper
+      
+      div.demo-forms__column
+        div.demo-forms__container.demo-forms__container_size_default
+            +form-element({type: 'default', placeholder: 'Email'})
+        div.demo-forms__container.demo-forms__container_size_default
+            +sum-guests()
+        div.demo-forms__container.demo-forms__container_size_default
+            +form-element({type: 'masked', placeholder: 'дд.мм.гггг'})
+        div.demo-forms__container.demo-forms__container_size_small
+            +datepickers({type: 'single', placeholder: 'дд.мм.гггг'})
+        div.demo-forms__container.demo-forms__container_size_middle
+            +datepickers({type: 'range', defaultDate: '19 авг - 23 авг'})
+        div.demo-forms__container.demo-forms__container_size_middle
+            +form-element({type: 'subscription', placeholder: 'email'})
+        div.demo-forms__container
+          +checkbox-set(checkboxExpandable)
+
+      div.demo-forms__column
+        div.demo-forms__container.demo-forms__container_type_checkbox
+          +checkbox-set(checkbox)
+        div.demo-forms__container.demo-forms__container_type_radio
+          +radio-group(radioLabels)
+        div.demo-forms__container.demo-forms__container_type_toggle
+          +toggle('Получать спецпредложение')
+        div.demo-forms__container.demo-forms__container_type_button-rate
+          div.demo-forms__button-wrapper
+            +ui-control({isBorder: true, content: 2, type: 'gray'})
+          div.demo-forms__button-wrapper
+            +ui-control({isBorder: true, content: 12, type: 'like'})
+        div.demo-forms__container
+          div.demo-forms__rate-wrapper
+            +rate(4)
+          div.demo-forms__rate-wrapper
+            +rate(5)
+          
+        div.demo-forms__container.demo-forms__container_type_checkbox-rich
+          +checkbox-set(checkboxRich)
+      
+      div.demo-forms__column
+        div.demo-forms__container
+          +ui-slider
+        div.demo-forms__container.demo-forms__container_button-size_middle
+          +ui-control({ content: 'click me', type: 'filled'})
+        div.demo-forms__container.demo-forms__container_button-size_middle
+          +ui-control({content: 'click me', type: 'border'})
+        div.demo-forms__container.demo-forms__container_button-size_small
+          +ui-control({content: 'click me', type: 'transparent'})
+        div.demo-forms__container.demo-forms__container_button-size_default
+          +ui-control({ content: 'перейти к оплате', type: 'filled', isArrow: true})
+        div.demo-forms__container
+          +pagination(15)
+        +bullet-list(bulletList)
+
+    div.demo-forms__wrapper
+      div.demo-forms__features-wrapper
+        +features(features)    
+      div.demo-forms__review-wrapper
+        +review({
+            head: 'Мурад Сарафанов', date: '5 дней назад',
+            description: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+            path: require('../images/icon-avatar-1.jpg'),
+            numberOfLikes: 12, typeOfButton: 'like'
+          })
+        
+        

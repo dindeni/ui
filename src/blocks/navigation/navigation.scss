@@ -8,6 +8,13 @@
   display: flex;
   box-shadow: 0 .71rem 1.43rem $dark5;
   align-items: center;
+  background: #FFFFFF;
+  position: relative;
+  z-index: 1;
+
+  &_logged {
+    z-index: 0;
+  }
 
   &__logo {
     margin: 0 0 0 9.8%;
@@ -133,7 +140,7 @@
 
 @media (max-width: 1430px) {
   .navigation {
-    &__list {
+    &__list, &_theme_en &__list {
       margin: 5px 0 0 13%;
 
       &_logged {
@@ -148,8 +155,10 @@
 }
 
 @media (max-width: 1250px) {
-  .navigation__list {
+  .navigation {
+    &__list, &_theme_en &__list {
     margin: .36rem 0 0 5%;
+    }
   }
 }
 

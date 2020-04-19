@@ -1,0 +1,40 @@
+include ../search-room/search-room
+include ../order-room/order-room
+include ../registration/registration
+include ../card-room/card-room
+include ../sign-in/sign-in
+
+mixin demo-cards(options)
+
+ -const { orderRoom, cardRoomImagesFirst, cardRoomImagesSecond } = options;
+
+  div.demo-cards
+
+    img.demo-cards__logo(src=require('../images/icon-logo-gray.svg') alt="логотип" width="48")
+    
+    div.demo-cards__wrapper
+      div.demo-cards__column
+        div.demo-cards__element-wrapper
+          +searchRoom
+        div.demo-cards__element-wrapper
+          +registration()
+      div.demo-cards__column
+        div.demo-cards__element-wrapper
+          +order-room(orderRoom)
+        div.demo-cards__column
+          div.demo-cards__element-wrapper
+            +sign-in()
+      div.demo-cards__column
+        div.demo-cards__element-wrapper
+            +card-room({
+              images: cardRoomImagesFirst, radioName: 'room-radio-name-1',
+              type: 'luxe', numberOfRoom: 888, price: '9 900',
+              numberOfReviews: 145, numberOfRate: 5
+            })
+        div.demo-cards__element-wrapper
+            +card-room({
+              images: cardRoomImagesSecond, radioName: 'room-radio-name-2',
+              type: 'normal', numberOfRoom: 840, price: '9 900', numberOfReviews: 65,
+              numberOfRate: 4
+            })
+      

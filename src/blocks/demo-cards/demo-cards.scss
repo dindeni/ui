@@ -1,0 +1,24 @@
+.demo-cards {
+  background: #F4F4F6;
+  padding-bottom: 7.14rem;
+
+  &__logo {
+    margin: 2.14rem 0 0 2.14rem;
+  }
+
+  &__wrapper {
+    margin: 5.14rem 10rem 0 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__column:not(:last-child) {
+    margin-right: 2.86rem;
+  }
+
+  &__element-wrapper {
+    margin-bottom: 2.86rem;
+  }
+  
+}

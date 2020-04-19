@@ -33,7 +33,8 @@ mixin side-panel
         +checkbox-set({values: standard})
 
       div.side-panel__slogan.side-panel__slogan_type_checkbox-rich доступность
-      +checkbox-set({values: rich.values, descriptions: rich.descriptions})
+      div.side-panel__checkbox-rich-wrapper
+        +checkbox-set({values: rich.values, descriptions: rich.descriptions})
 
       div.side-panel__slogan.side-panel__slogan_type_rooms удобства номера
       div.side-panel__sum-rooms-wrapper

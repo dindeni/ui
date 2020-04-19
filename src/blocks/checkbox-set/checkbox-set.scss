@@ -27,11 +27,17 @@
     }
   }
   
-  &__wrapper_hidden {
-    @include hide;
+  &__wrapper {
+    &_hidden {
+      @include hide;
+    }
+
+    &_type_expandable {
+      padding-left: .9rem;
+    }
   }
 
   &__item-wrapper {
-    padding: 0 0 .6rem 0; 
+    padding-bottom: .65rem; 
   }
 }

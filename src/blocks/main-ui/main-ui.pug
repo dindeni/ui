@@ -1,30 +1,12 @@
-include ../search-room/search-room
-include ../form-element/form-element
-include ../checkbox/checkbox
-include ../radio-group/radio-group
-include ../toggle/toggle
-include ../ui-slider/ui-slider
-include ../pagination/pagination
-include ../rate/rate
-include ../bullet-list/bullet-list
-include ../review/review
-include ../features/features
-include ../registration/registration
-include ../order-room/order-room
-include ../card-room/card-room
-include ../navigation/navigation
-include ../copyright/copyright
-include ../footer/footer
-include ../footer-widget/footer-widget
-include ../sign-in/sign-in
-include ../sum-guests/sum-guests
-include ../checkbox-set/checkbox-set
-include ../datepickers/datepickers
+include ../colors-and-type/colors-and-type
+include ../demo-forms/demo-forms
+include ../demo-cards/demo-cards
+include ../headers-and-footers/headers-and-footers
 -
   const data = require('../blocks/main-ui/main-ui.json');
 
   const { radioLabels, checkbox, checkboxExpandable, checkboxRich,
-   bulletList, orderRoom, features, navigation, footerWidget } = data;
+   bulletList, orderRoom, features, navigation, footerWidget, colorsAndType } = data;
 
   const cardRoomImagesFirst = [
     require('../images/image-room-888.jpg'), require('../images/image-room-982.jpg'), require('../images/image-room-350.jpg'), require('../images/image-room-444.jpg')
@@ -36,6 +18,8 @@ include ../datepickers/datepickers
 
   const { items, linkModifier } = navigation;
 
+  const { colorValues, textValues } = colorsAndType;
+
   const valuesForLogin = { items, linkModifier, type: 'default', loginName: 'login', registrationName: 'register',
     isThemeEn: true };
 
@@ -46,106 +30,11 @@ mixin main-ui()
 
   main.main-ui
 
-    div.main-ui__form
-      div.main-ui__form-wrapper
-        div.main-ui__field-wrapper
-          +form-element({type: 'default', placeholder: 'Email'})
-        div.main-ui__field-wrapper.main-ui__field-wrapper_type_sum-guests
-          +sum-guests(true)
-        div.main-ui__field-wrapper
-          +form-element({type: 'masked', placeholder: 'дд.мм.гггг'})
-        div.main-ui__field-wrapper.main-ui__field-wrapper_type_single-datepicker
-          +datepickers({type: 'single', placeholder: 'дд.мм.гггг'})
-        div.main-ui__field-wrapper.main-ui__field-wrapper_type_range-datepicker
-          +datepickers({type: 'range', defaultDate: '19 авг - 23 авг'})
-        div.main-ui__field-wrapper.main-ui__field-wrapper_type_subscription
-          +form-element({type: 'subscription', placeholder: 'email'})
+    +colors-and-type({ colorValues, textValues })
 
-      div.main-ui__form-wrapper
-        +checkbox-set(checkbox)
-        div.main-ui__radio-wrapper
-          +radio-group(radioLabels)
-        div.main-ui__toggle-wrapper
-          +toggle('Получать спецпредложение')
+    +demo-forms({ checkbox, checkboxExpandable, checkboxRich, features,
+      radio: radioLabels, bulletList })
 
-        div.main-ui__button-rate-wrapper
-          +ui-control({isBorder: true, content: 2, type: 'gray'})
-        div.main-ui__button-rate-wrapper
-          +ui-control({isBorder: true, content: 12, type: 'like'})
+    +demo-cards({ orderRoom, cardRoomImagesFirst, cardRoomImagesSecond })
 
-        div.main-ui__rates-wrapper
-          div.main-ui__rate-wrapper
-            +rate(4)
-          div.main-ui__rate-wrapper
-            +rate(5)
-
-      div.main-ui__form-wrapper
-
-        div.main-ui__range-wrapper
-          +ui-slider
-
-        div.main-ui__buttons-wrapper.main-ui__buttons-wrapper_size_default
-          +ui-control({ content: 'click me', type: 'filled'})
-
-        div.main-ui__buttons-wrapper.main-ui__buttons-wrapper_size_small
-          +ui-control({content: 'click me', type: 'border'})
-
-        div.main-ui__buttons-wrapper.main-ui__buttons-wrapper_size_default
-          +ui-control({content: 'click me', type: 'transparent'})
-
-        div.main-ui__buttons-wrapper
-          +ui-control({ content: 'перейти к оплате', type: 'filled', isArrow: true})
-        +pagination(15)
-
-      div.main-ui__form-wrapper
-        div.main-ui__checkbox-wrapper
-          +checkbox-set(checkboxExpandable)
-
-      div.main-ui__form-wrapper
-        +checkbox-set(checkboxRich)
-
-      div.main-ui__form-wrapper
-        +bullet-list(bulletList)
-
-      div.main-ui__form-wrapper.main-ui__form-wrapper_review
-        +features(features)
-
-        +review({
-          head: 'Мурад Сарафанов', date: '5 дней назад',
-          description: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
-          path: require('../images/icon-avatar-1.jpg'),
-          numberOfLikes: 12, typeOfButton: 'like'
-        })
-
-    div.main-ui__cards
-
-      div.main-ui__card-wrapper
-        +searchRoom
-        div.main-ui__registration-wrapper
-          +registration()
-
-      div.main-ui__card-wrapper
-        +order-room(orderRoom)
-        +sign-in
-
-      div.main-ui__card-wrapper
-
-        +card-room({
-          images: cardRoomImagesFirst, radioName: 'room-radio-name-1',
-          type: 'luxe', numberOfRoom: 888, price: '9 900',
-          numberOfReviews: 145, numberOfRate: 5
-        })
-
-        +card-room({
-          images: cardRoomImagesSecond, radioName: 'room-radio-name-2',
-          type: 'normal', numberOfRoom: 840, price: '9 900', numberOfReviews: 65,
-          numberOfRate: 4
-        })
-
-    div.main-ui__headers-footers
-
-      +navigation(valuesForLogin)
-      +navigation(valuesForLoggedIn)
-
-      +footer
-      +footer-widget(footerWidget)
+    +headers-and-footers({ valuesForLogin, valuesForLoggedIn, footerWidget })

@@ -5,6 +5,14 @@
     font-weight: 700;
     font-style: normal;
   }
+
+  @font-face {
+    font-family: Quicksand;
+    src: url('../../fonts/quicksand-regular.woff2') format('woff2'),
+    url('../../fonts/quicksand-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
   
   @font-face {
     font-family: Montserrat;

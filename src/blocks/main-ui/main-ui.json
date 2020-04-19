@@ -1,4 +1,58 @@
 {
+  "colorsAndType": {
+    "colorValues": [
+      {
+        "name": "Dark Shade 100%",
+        "value": "#1F2041"
+      },
+      {
+        "name": "Dark Shade 75%",
+        "value": "#1F2041",
+        "opacity": ".75"
+      },
+      {
+        "name": "Dark Shade 50%",
+        "value": "#1F2041",
+        "opacity": ".5"
+      },
+      {
+        "name": "Dark Shade 25%",
+        "value": "#1F2041",
+        "opacity": ".25"
+      },
+      {
+        "name": "Dark Shade 5%",
+        "value": "#1F2041",
+        "opacity": ".05"
+      },
+      {
+        "name": "Purple",
+        "value": "#BC9CFF"
+      },
+      {
+        "name": "Green",
+        "value": "#6FCF97"
+      }
+    ],
+    "textValues" : [
+      {
+        "title": "h1",
+        "description": "This one is the sub-section or widget title"
+      },
+      {
+        "title": "h2",
+        "description": "Next one is the item title inside widgets"
+      },
+      {
+        "title": "h3",
+        "description": "This is a label or CTA text"
+      },
+      {
+        "title": "Body",
+        "description": "This is the body text which is used for most of the design, like paragraphs, lists, etc."
+      }
+    ]
+  },
   "radioLabels": [
     "Terran",
     "Protoss"

@@ -123,6 +123,7 @@
   &_theme_like {
     @include button-like(linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%),
      url('./images/icon-favorite.svg') no-repeat, $purple);
+     display: block;
 
      &:focus {
       outline: .07rem dashed #BC9CFF;

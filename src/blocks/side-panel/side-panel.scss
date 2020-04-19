@@ -22,7 +22,7 @@
     }
 
     &_type_checkbox-rich {
-      margin: 1.6rem 0 1.1rem .1rem;
+      margin: 1.6rem 0 .9rem .1rem;
     }
 
     &_type_rooms {
@@ -58,6 +58,10 @@
     margin: 1.2rem 0 1.29rem .8rem;
   }
 
+  &__checkbox-rich-wrapper {
+    margin-left: .9rem;
+  }
+  
   &__sum-rooms-wrapper {
     margin: 0 0 2.3rem .1rem;
   }

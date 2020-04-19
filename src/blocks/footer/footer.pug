@@ -8,4 +8,5 @@ mixin footer(description=text)
     img.footer__logo(src=require('../images/icon-logo.svg'))
     p.footer__description=description
 
-    +social-buttons({modifier: 'for-footer'})
+    div.footer__buttons-wrapper
+      +social-buttons()
