@@ -1,10 +1,10 @@
 include ../blocks/main-ui/main-ui
+include ../blocks/head/head
 
 doctype html
-html(lang="en")
-  head
-    title UI
-    meta(name="viewport" content="width=device-width,initial-scale=1")
+html(lang="ru")
+  +head({ descriptionValue: 'UI - набор элементов для сайта',
+    keywordsValue: 'ui, элементы и блоки для сайта', title: 'Ui' })
   body
 
     +main-ui

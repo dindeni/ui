@@ -8,9 +8,10 @@ include ../blocks/head/head
   const { navigation, footer } = data;
 
 doctype html
-html(lang="en")
+html(lang="ru")
 
-  +head
+  +head({descriptionValue: 'Поиск номеров по заданным параметрам',
+    keywordsValue: 'поиск комнаты в отеле, поиск номера в отеле'})
 
   body
     header.main-filter__header
