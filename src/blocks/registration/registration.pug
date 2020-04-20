@@ -30,10 +30,10 @@ mixin registration()
       div.registration__data-head данные для входа в сервис
 
       div.registration__email-wrapper
-        +form-element({type: 'default', placeholder: 'Email'})
+        +form-element({type: 'default', placeholder: 'Email', typeOfInput: 'email'})
 
       div.registration__password-wrapper
-        +form-element({type: 'password', placeholder: 'Пароль'})
+        +form-element({type: 'password', placeholder: 'Пароль', typeOfInput: 'password'})
 
       span.registration__toggle-wrapper
         +toggle('Получать спецпредложения')

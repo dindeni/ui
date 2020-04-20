@@ -21,7 +21,7 @@ mixin footer-widget(options)
       h3.footer-widget__subscribe-head=headSubscribe
       div.footer-widget__subscribe-description=subscribeDescription
 
-      +form-element({type: 'subscription', placeholder: placeholderEmail})
+      +form-element({type: 'subscription', placeholder: placeholderEmail, typeOfInput: 'email'})
 
     +copyright(copyrightText)
 

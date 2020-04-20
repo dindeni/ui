@@ -24,7 +24,7 @@ mixin demo-forms(values)
       
       div.demo-forms__column
         div.demo-forms__container.demo-forms__container_size_default
-            +form-element({type: 'default', placeholder: 'Email'})
+            +form-element({type: 'default', placeholder: 'Email', typeOfInput: 'email'})
         div.demo-forms__container.demo-forms__container_size_default
             +sum-guests()
         div.demo-forms__container.demo-forms__container_size_default
@@ -34,7 +34,7 @@ mixin demo-forms(values)
         div.demo-forms__container.demo-forms__container_size_middle
             +datepickers({type: 'range', defaultDate: '19 авг - 23 авг'})
         div.demo-forms__container.demo-forms__container_size_middle
-            +form-element({type: 'subscription', placeholder: 'email'})
+            +form-element({type: 'subscription', placeholder: 'email', typeOfInput: 'email'})
         div.demo-forms__container
           +checkbox-set(checkboxExpandable)
 

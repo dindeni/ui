@@ -7,10 +7,10 @@ mixin sign-in
     h1.sign-in__head Войти
 
     div.sign-in__email-wrapper
-      +form-element({type: 'default', placeholder: 'Email'})
+      +form-element({type: 'default', placeholder: 'Email', typeOfInput: 'email'})
 
     div.sign-in__password-wrapper
-      +form-element({type: 'password', placeholder: 'Пароль'})
+      +form-element({type: 'password', placeholder: 'Пароль', typeOfInput: 'password'})
 
     span.sign-in__link-enter-wrapper
       +ui-control({content: 'Войти', link: 'sign-in.html', type: 'filled', isArrow: true})

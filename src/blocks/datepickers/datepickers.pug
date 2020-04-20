@@ -6,7 +6,7 @@ mixin datepickers(options)
     const { type, placeholder, defaultDate }=options;
 
     const formOptions = {
-      single: { type: 'date', placeholder: placeholder, isJsInputClass: true},
+      single: { type: 'date', placeholder: placeholder, isJsInputClass: true },
       range: [
         { type: 'dropdown', placeholder: defaultDate, isJsInputClass: true },
         {type: 'hidden', placeholder: defaultDate, isJsInputClass: true }

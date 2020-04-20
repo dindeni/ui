@@ -1,9 +1,7 @@
 mixin form-element(options)
 
   -
-    const {type, placeholder, isJsInputClass}=options;
-
-    const typeOfInput = type === 'password' ? 'password' : 'text';
+    const {type, placeholder, isJsInputClass, typeOfInput}=options;
 
     const classes = {
       default: 'form-element',
@@ -18,4 +16,4 @@ mixin form-element(options)
     const jsInputClass = isJsInputClass ? 'js-form-element__field' : '';
 
   label.form-element(class=classes[type])
-    input.form-element__field(type=typeOfInput  placeholder=`${placeholder}` class=jsInputClass)
+    input.form-element__field(type=typeOfInput || 'text'  placeholder=`${placeholder}` class=jsInputClass)
