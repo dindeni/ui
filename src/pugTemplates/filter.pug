@@ -14,8 +14,9 @@ html(lang="ru")
     keywordsValue: 'поиск комнаты в отеле, поиск номера в отеле'})
 
   body
-    header.main-filter__header
-      +navigation(navigation)
-    +main-filter
+    div.wrapper
+      header
+        +navigation(navigation)
+      +main-filter
 
-    +footer-widget(footer)
+      +footer-widget(footer)

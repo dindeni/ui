@@ -15,10 +15,11 @@ html(lang="ru")
     keywordsValue: 'отзывы об номере отеля, просмотреть и забронировать номер' })
 
   body
+    div.wrapper
+      header
+        +navigation(navigation)
 
-    +navigation(navigation)
+      +main-room
 
-    +main-room
-
-    +footer-widget(footer)
+      +footer-widget(footer)
 
