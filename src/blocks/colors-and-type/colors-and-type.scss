@@ -105,14 +105,25 @@
     }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 1000px) {
   .colors-and-type {
     &__wrapper {
       flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
     }
 
     & &__list {
-      margin: 2.14rem auto 0 auto;
+      margin: 2.14rem 0 0 0;
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .colors-and-type{
+    &__list {
+      width: 20rem;
     }
   }
 }

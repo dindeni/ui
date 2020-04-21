@@ -3,9 +3,9 @@ include ../ui-control/ui-control
 mixin review(options)
 
   -
-    const {head, date, description, path, typeOfButton, numberOfLikes, isRoomModifier}=options;
+    const {head, date, description, path, typeOfButton, numberOfLikes}=options;
 
-    const descriptionModifier = isRoomModifier ? 'review__description_for-room-description' : '';
+    //const descriptionModifier = isRoomModifier ? 'review__description_for-room-description' : '';
 
   section.review
     img.review__icon(src=path alt="фото аватар")

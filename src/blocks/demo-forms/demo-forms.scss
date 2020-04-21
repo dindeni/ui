@@ -88,13 +88,18 @@
     margin-right: 1.43rem;
   }
 
-  
+  &__review-wrapper {
+    width: 50.86rem;
+  }
 }
 
 @media (max-width: 1280px) {
   .demo-forms {
     &__column:last-child {
-      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
     }
 
     &__features-wrapper {
@@ -103,10 +108,28 @@
   }
 }
 
+@media (max-width: 1100px) {
+  .demo-forms {
+    &__container {
+      &_size_default {
+        width: 18.57rem;
+      }
+
+      &_button-size_default {
+        width: 18.57rem;
+      }
+    }
+  }
+}
+
 @media (max-width: 900px) {
   .demo-forms {
     &__wrapper {
       margin: 4.43rem auto 2.86rem auto;
+
+      &:last-child {
+        margin: 0 0 10.5rem 0;
+      }
     }
 
     &__column {

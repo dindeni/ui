@@ -48,6 +48,7 @@
 
     &-wrapper {
       margin-bottom: 1.8rem;
+      width: 50.71rem;
     }
   }
 
@@ -101,14 +102,16 @@
 
 @media (max-width: 800px) {
   .room-description {
-    padding: 5.07rem 0 4.57rem 2.6%;
-
     &__pie-chart-wrapper {
       margin: 0 0 0 2%;
     }
 
     &.room-description__review {
       width: 100%;
+    }
+
+    &__review-wrapper {
+      width: 80vw;
     }
     
     &__cancel {
@@ -128,12 +131,13 @@
     &__features-head, &__pie-chart-head, &__review-head, &__rules-head,
     &__pie-chart-wrapper {
       margin: .86rem 0 1.64rem 2%;
+      font-size: 1.1rem;
     }
 
     &__review-number {
-      right: -10%;
+      right: 5%;
       font-size: 0.86rem;
-      top: 2.43rem;
+      top: .7rem;
     }
 
     &__cancel {

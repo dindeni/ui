@@ -3,10 +3,10 @@ include ../ui-control/ui-control
 mixin navigation(options)
 
   -
-    const {type, items, modifierForItems, loginName, registrationName,
+    const {type, items, isItemThemeRu, loginName, registrationName,
      linkModifier, userName, isThemeEn} = options;
 
-    const itemClass = modifierForItems ? 'navigation__item_type_ru' : '';
+    const itemClass = isItemThemeRu ? 'navigation__item_type_ru' : '';
 
     const classModifier = isThemeEn ? 'navigation_theme_en' : '';
 

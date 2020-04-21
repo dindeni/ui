@@ -17,7 +17,7 @@
     "type": "default",
     "loginName": "войти",
     "registrationName": "зарегистрироваться",
-    "modifierForItems": "type_ru"
+    "isItemThemeRu": "true"
   },
   "footer": {
     "description": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
