@@ -1,11 +1,21 @@
 @import '../../style/variables/variables';
 @import '../../style/mixins/text';
 @import '../../style/mixins/hide';
-@import '../../style/mixins/button';
 
 .ui-control {
   display: inline-block;
-  outline: none;
+  width: 100%;
+  font-size: .86rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 1.57rem;
+  @include h3;
+  cursor: pointer;
+
+  &:focus {
+    outline: .07rem dashed #BC9CFF;
+    outline-offset: .21rem;
+  }
 
   &_type_link {
     text-decoration: none;
@@ -15,12 +25,9 @@
 &_theme_border, &_theme_navigation-with-border{
   position: relative;
   background: #FFFFFF;
-  border-radius: 1.57rem;
-  @include h3;
   line-height: 1.71rem;
   color: $purple;
   padding: .6rem 0;
-  width: 100%;
 
   &::before{
     position: absolute;
@@ -44,11 +51,6 @@
       text-align: center;
     }
   }
-
-  &:focus {
-    outline: .07rem dashed #BC9CFF;
-    outline-offset: .21rem;
-  }
 }
 
 &_theme_navigation-with-border{
@@ -65,7 +67,9 @@
 
 
 &_theme_filled, &_theme_navigation {
-  @include button(linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%), #FFFFFF);
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  color: #FFFFFF;
+  padding: 1.07rem 0;
 
   &:hover {
     background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%,
@@ -74,11 +78,6 @@
 
   &.ui-control_for-sign-in{
     padding: 1.07rem 9.9rem;
-  }
-
-  &:focus {
-    outline: .07rem dashed #BC9CFF;
-    outline-offset: .21rem;
   }
 }
 
@@ -103,10 +102,12 @@
 &_type_button{
   border: none;
   border-radius: 1.57rem;
+  outline: none;
 }
 
   &_theme_transparent {
-    @include button(#FFFFFF, #BC9CFF);
+    color: #BC9CFF;;
+    background: #FFFFFF; 
     padding: 0;
     width: auto;
 
@@ -115,29 +116,52 @@
     }
   }
 
-  &_with-link#{&}_for-navigation {
-    height: 2.5rem;
-    padding: .71rem 1.79rem;
-  }
+  &_theme_like, &_theme_gray {
+    position: relative;
+    padding: .1rem 0 0 .6rem;
+    border-radius: .71rem;
+    font-weight: normal;
+    font-size: .71rem;
+    width: 2.71rem;
+    height: 1.29rem;
+    box-sizing: border-box;
+    color: $purple;
+    background: #FFFFFF;
+    display: block;
 
-  &_theme_like {
-    @include button-like(linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%),
-     url('./images/icon-favorite.svg') no-repeat, $purple);
-     display: block;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 2.86rem;
+      height: 1.43rem;
+      border-radius: 1.57rem;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      z-index: -10;
+      top: -.072rem;
+      left: -.07rem;
+    }
 
-     &:focus {
-      outline: .07rem dashed #BC9CFF;
-      outline-offset: .21rem;
+    &::after, &:hover::after {
+      position: absolute;
+      content: '';
+      width: .71rem;
+      height: .57rem;
+      background: url('./images/icon-favorite.svg') no-repeat;
+      left: .21rem;
+      top: .36rem;
+      z-index: 1;
     }
   }
 
   &_theme_gray {
-    @include button-like($dark25, url('./images/icon-favorite-border.svg') no-repeat,
-      $dark25);
-    
-    &:focus {
-      outline: .07rem dashed #BC9CFF;
-      outline-offset: .21rem;
+    color: $dark25;
+
+    &::before {
+      background: $dark25;
+    }
+
+    &::after, &:hover::after {
+      background: url('./images/icon-favorite-border.svg') no-repeat;
     }
   }
 

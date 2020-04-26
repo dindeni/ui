@@ -56,8 +56,11 @@
     line-height: 1.21rem;
 
     &_type_current, &:hover {
-      font-weight: 700;
       color: $dark75;
+    }
+
+    &_type_current {
+      font-weight: 700;
     }
 
     &_type_expand, &_type_expand-ru {

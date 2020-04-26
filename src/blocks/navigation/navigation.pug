@@ -11,7 +11,7 @@ mixin navigation(options)
     const classModifier = isThemeEn ? 'navigation_theme_en' : '';
 
     const linkClasses = linkModifier.map((value) => {
-      return value === 'current' || 'expand' || 'expand-ru' ? `navigation__link_type_${value}` : ''
+      return value === ('current' || 'expand' || 'expand-ru') ? `navigation__link_type_${value}` : ''
     });
     
 
