@@ -10,7 +10,7 @@ mixin main-room()
   main.main-room
 
     div.main-room__image-wrapper
-      img(src=roomDetailPath[0] alt="фото номера").main-room__image.main-room__image_for-first-image
+      img(src=roomDetailPath[0] alt="фото номера").main-room__image
       div.main-room__images-aside
         each image, index in roomDetailPath
           if index > 0

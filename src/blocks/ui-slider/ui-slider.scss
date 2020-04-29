@@ -20,9 +20,8 @@
     text-align: end;
     font-weight: 400;
     margin-right: .5rem;
+    cursor: pointer;
   }
-
-
 
   &-horizontal {
     width: 19rem;
@@ -41,6 +40,7 @@
     border-radius: .71rem;
     outline: none;
     z-index: 0;
+    cursor: pointer;
 
     &:last-child {
       left: 100%;

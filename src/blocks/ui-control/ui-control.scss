@@ -75,10 +75,6 @@
     background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%,
             rgba(139, 164, 249, .5) 100%);
   }
-
-  &.ui-control_for-sign-in{
-    padding: 1.07rem 9.9rem;
-  }
 }
 
 &_theme_navigation{
@@ -118,7 +114,6 @@
 
   &_theme_like, &_theme_gray {
     position: relative;
-    padding: .1rem 0 0 .6rem;
     border-radius: .71rem;
     font-weight: normal;
     font-size: .71rem;
@@ -127,9 +122,11 @@
     box-sizing: border-box;
     color: $purple;
     background: #FFFFFF;
-    display: block;
+    display: flex;
+    align-items: center;
+    padding-left: .3rem;
 
-    &::before {
+     &::before {
       position: absolute;
       content: '';
       width: 2.86rem;
@@ -140,27 +137,12 @@
       top: -.072rem;
       left: -.07rem;
     }
-
-    &::after, &:hover::after {
-      position: absolute;
-      content: '';
-      width: .71rem;
-      height: .57rem;
-      background: url('./images/icon-favorite.svg') no-repeat;
-      left: .21rem;
-      top: .36rem;
-      z-index: 1;
-    }
   }
 
   &_theme_gray {
     color: $dark25;
 
-    &::before {
-      background: $dark25;
-    }
-
-    &::after, &:hover::after {
+    & .ui-control__mark {
       background: url('./images/icon-favorite-border.svg') no-repeat;
     }
   }
@@ -171,5 +153,12 @@
 
   &_color_gray{
     color: $dark50;
+  }
+
+  &__mark {
+    width: .71rem;
+    height: .57rem;
+    background: url('./images/icon-favorite.svg') no-repeat;
+    margin-right: .4rem;
   }
 }

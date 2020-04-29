@@ -46,6 +46,12 @@
     }
   }
 
+  &_type_date, &_type_dropdown {
+    &::after {
+      cursor: pointer;
+    }
+  }
+
   &_type_masked, &_type_date {
     & .form-element__field::placeholder {
       text-transform: uppercase;
