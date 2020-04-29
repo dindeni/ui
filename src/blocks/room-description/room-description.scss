@@ -9,7 +9,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 60%;
-    margin-top: .5rem;
+    margin-top: .4rem;
   }
 
   &__features-head, &__pie-chart-head, &__review-head, &__rules-head,
@@ -34,7 +34,7 @@
   
   &__review {
     &-head {
-      margin: 2.7rem 0 1.9rem .1rem;
+      margin: 2.7rem 0 1.95rem .1rem;
       display: inline-block;
     }
 
@@ -43,31 +43,32 @@
       color: $dark50;
       position: absolute;
       right: 4.86rem;
-      top: 2.7rem;
+      top: 2.8rem;
     }
 
     &-wrapper {
-      margin-bottom: 1.8rem;
+      margin: 0 0 1.8rem .1rem;
       width: 50.71rem;
     }
   }
 
   &__rules {
-    margin: 1.1rem 5.86rem 0 .14rem;
-    width: 20rem;
+    margin: .9rem 7.86rem 0 .14rem;
+    width: 18rem;
 
     &-head {
-      margin: 0 0 1.57rem 1.5rem;
+      margin: 0 0 1.8rem 1.5rem;
     }
   }
 
   &__cancel {
-    margin: 1.1rem 0 0 0;
+    margin: .9rem 0 0 0;
 
     &-paragraph {
       width: 24.57rem;
       @include body;
-      margin: 1.64rem 0 0 0;
+      margin: 1.8rem 0 0 0;
+      line-height: 1.71rem;
     }
 
     &-head {

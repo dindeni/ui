@@ -31,11 +31,12 @@
 
   &__slogan {
     position: absolute;
-    bottom: 1.6rem;
+    bottom: 1.7rem;
     @include body;
     width: 21.43rem;
     right: 9.3%;
     text-align: end;
+    line-height: 1.71rem;
   }
 }
 

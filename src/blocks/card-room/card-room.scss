@@ -33,8 +33,8 @@
   &__form {
     position: absolute;
     width: 3.57rem;
-    top: 8.93rem;
-    left: 15.21rem;
+    top: 9rem;
+    left: 15.3rem;
   }
 
   &__mark {
@@ -81,7 +81,7 @@
       }
 
       &_type_prev {
-        margin-left: 1.2rem;
+        margin-left: 1.1rem;
       }
 
       &:focus {
@@ -91,10 +91,10 @@
 
   &__number {
     @include h2;
-    margin: 0 .3rem 0 .43rem;
+    margin: 0 .2rem 0 .4rem;
 
     &-room-wrapper {
-      margin: 1.79rem 0 0 0;
+      margin: 1.7rem 0 0 0;
       width: 50%;
       display: inline-block;
     }
@@ -102,7 +102,7 @@
     &-mark {
       @include h2;
       font-size: 1rem;
-      margin-left: 1.43rem;
+      margin-left: 1.5rem;
     }
   }
 
@@ -110,7 +110,6 @@
     @include body;
     color: $purple;
     font-weight: 700;
-    line-height: normal;
   }
 
   &__price-wrapper {
@@ -133,7 +132,7 @@
 
   &__rate-wrapper {
     display: inline-block;
-    margin: 1rem 0 0 1.5rem
+    margin: 1.5rem 0 0 1.5rem
   }
   
   &__number-review {
@@ -143,7 +142,7 @@
     color: $dark50;
     line-height: 1.29rem;
     vertical-align: top;
-    margin: 1.5rem 0 0 0;
+    margin: 1.8rem 0 0 0;
     width: 45%;
     text-align: end;
   }

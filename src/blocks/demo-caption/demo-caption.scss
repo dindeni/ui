@@ -1,0 +1,14 @@
+@import '../../style/mixins/text.scss';
+@import '../../style/variables/variables.scss';
+
+.demo-caption {
+  @include h3;
+  font-size: .86rem;
+  display: flex;
+  justify-content: space-between;
+
+  &__default {
+    font-weight: 400;
+    color: $dark50;
+  }
+}

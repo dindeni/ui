@@ -21,6 +21,7 @@
   &__label {
     @include body;
     padding: .07rem 0 0 3.21rem;
+    display: inline-block;
     position: relative;
 
     &::before {
@@ -44,6 +45,10 @@
       border-radius: .71rem;
       left: 0;
       top: .14rem;
+    }
+
+    &::first-letter {
+      text-transform: capitalize;
     }
   }
 }

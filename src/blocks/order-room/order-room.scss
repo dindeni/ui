@@ -9,7 +9,7 @@
 
   &__header {
     display: flex;
-    margin: 3.29rem 0 0 .36rem;
+    margin: 3.29rem 0 0 .3rem;
   }
 
   &__number-mark {
@@ -20,14 +20,14 @@
   &__number {
     @include h2;
     font-size: 1.71rem;
-    margin: 0 .3rem 0 .21rem;
+    margin: 0 .3rem 0 .3rem;
   }
 
   &__type-room {
     @include body;
     color: $purple;
     font-weight: 700;
-    margin: 0 8.1rem 0 0;
+    margin: 0 8rem 0 0;
   }
 
   &__price {
@@ -45,7 +45,7 @@
   }
 
   &__label-wrapper {
-    margin: 1.29rem 0 0 .21rem;
+    margin: 1.8rem 0 0 .21rem;
   }
 
   &__label, &__sum-guests-label {
@@ -63,7 +63,7 @@
   }
 
   &__form {
-    margin: .35rem 0 0 .21rem;
+    margin: .2rem 0 0 .21rem;
   }
 
   &__sum-guests-wrapper {
@@ -72,19 +72,19 @@
   }
 
   &__sum-guests-label {
-    margin-bottom: .35rem;
+    margin-bottom: .3rem;
   }
 
   &__total {
     @include body;
     line-height: 1.29rem;
-    margin: 1.64rem 0 0 .36rem;
+    margin: 1.6rem 0 0 .36rem;
   }
 
   &__total-wrapper {
     display: flex;
     justify-content: space-between;
-    width: 91%;
+    width: 92%;
     margin: 0 0 1.14rem 0;
     position: relative;
   }
@@ -101,7 +101,7 @@
     width: 1.43rem;
     height: 1.43rem;
     position: absolute;
-    right: 5.5rem;
+    right: 5.7rem;
     top: -.29rem;
     padding: 0;
   }
@@ -110,7 +110,7 @@
     @include h2;
     display: flex;
     justify-content: space-between;
-    margin: 2.5rem 0 0 .36rem;
+    margin: 2.4rem 0 0 .36rem;
     position: relative;
 
     &::after {
@@ -120,13 +120,13 @@
       height: .07rem;
       border: .07rem solid $dark25;
       box-sizing: border-box;
-      bottom: .14rem;
-      left: 4.3rem;
+      bottom: 0;
+      left: 4.5rem;
     }
   }
 
   &__sum {
-    margin-right: 1.86rem;
+    margin-right: 1.8rem;
   }
 
   &__button-wrapper {

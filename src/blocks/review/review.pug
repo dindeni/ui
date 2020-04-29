@@ -5,12 +5,11 @@ mixin review(options)
   -
     const {head, date, description, path, typeOfButton, numberOfLikes}=options;
 
-    //const descriptionModifier = isRoomModifier ? 'review__description_for-room-description' : '';
-
   section.review
     img.review__icon(src=path alt="фото аватар")
-    h3.review__name=head
-    span.review__date=date
+    div.review__name-wrapper
+      h3.review__name=head
+      div.review__date=date
 
     div.review__wrapper
       div.review__button-wrapper

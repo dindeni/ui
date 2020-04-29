@@ -24,8 +24,8 @@ mixin side-panel
         div.side-panel__sum-guests-label гости
         +sum-guests(true)
 
-      div.side-panel__slogan.side-panel__slogan_type_range диапазон цены
-      +ui-slider('for-side-panel')
+      div.side-panel__slider-wrapper
+        +ui-slider('диапазон цены')
       div.side-panel__range-reference Стоимость за сутки пребывания в номере
 
       div.side-panel__slogan.side-panel__slogan_type_checkbox Checkbox Buttons

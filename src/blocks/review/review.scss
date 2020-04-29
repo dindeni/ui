@@ -13,17 +13,21 @@
     height: 3.14rem;
   }
 
+  &__name-wrapper {
+    display: inline-block;
+    vertical-align: top;
+  }
+  
   &__name {
     font-weight: 700;
     margin: .1rem 0 0 .7rem;
     display: inline-block;
     vertical-align: top;
+    font-size: 1rem;
   }
 
   &__date {
-    position: absolute;
-    top: 1.75rem;
-    left: 4.2rem;
+    margin: .9rem 0 0 .7rem;
   }
 
   &__wrapper {
@@ -31,13 +35,14 @@
     margin: 0 0 0 .43rem;
   }
 
-  &__description {
-    margin: .2rem 0 0 1.1rem;
-    width: 46.79rem;
+  &__button-wrapper {
+    margin-top: .5rem;
+  }
 
-    /* &_for-room-description {
-      max-width: calc(100% - 8.9rem);
-    } */
+  &__description {
+    margin: .5rem 0 0 1rem;
+    width: 46.79rem;
+    line-height: 1.67rem;
   }
 }
 

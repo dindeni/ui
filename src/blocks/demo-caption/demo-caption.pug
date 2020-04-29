@@ -1,0 +1,7 @@
+mixin demo-caption(options)
+
+  -const { text, isDefaultCaption } = options;
+
+  span.demo-caption=text
+    if isDefaultCaption
+      span.demo-caption__default default

@@ -1,16 +1,32 @@
 @import '../../style/mixins/text';
+@import '../../style/variables//variables.scss';
 
 .features {
   @include body;
 
-  &__wrapper:not(:last-child) {
-    margin-bottom: 3rem;
-  }
+  &__wrapper {
+    position: relative;
+    
+    &:not(:last-child) {
+      margin-bottom: 3.1rem;
+    }
 
+    &::before {
+      position: absolute;
+      content: '';
+      width: 20rem;
+      height: .07rem;
+      background: $dark10;
+      bottom: -1.5rem;
+      left: .4rem;
+    }
+  }
+    
   &__slogan {
     font-weight: 700;
     display: block;
-    padding: 0 0 0 4.43rem;
+    padding: 0 0 0 4.4rem;
+    line-height: 1.7rem;
     position: relative;
 
     &::before {
@@ -19,8 +35,7 @@
       width: 3.43rem;
       height: 3.43rem;
       background: url('./images/icon-emoticon.svg') no-repeat;
-      left: .57rem;
-      top: .14rem;
+      left: .65rem;
     }
 
     &_type_convenient::before {
@@ -33,6 +48,7 @@
   }
 
   &__description {
-    margin: 0 0 0 4.43rem;
+    margin: 0 0 0 4.4rem;
+    line-height: 1.71rem;
   }
 }

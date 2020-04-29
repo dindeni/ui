@@ -1,12 +1,12 @@
 mixin form-element(options)
 
   -
-    const {type, placeholder, isJsInputClass, typeOfInput}=options;
+    const {type, placeholder, isJsInputClass, typeOfInput, label}=options;
 
     const classes = {
       default: 'form-element',
       dropdown: 'form-element_type_dropdown',
-      masked: 'form-element_type_masked',
+      masked: 'form-element_type_masked js-form-element_type_masked',
       date: 'form-element_type_date',
       subscription: 'form-element_type_subscription',
       password: 'form-element_type_password',

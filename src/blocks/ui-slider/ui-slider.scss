@@ -4,6 +4,26 @@
 .ui-slider {
   width: 19.36rem;
 
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: .1rem 0 1.6rem 0;
+  }
+
+  &__label {
+    @include h3;
+  }
+
+  &__range {
+    @include h3;
+    color: $dark50;
+    text-align: end;
+    font-weight: 400;
+    margin-right: .5rem;
+  }
+
+
+
   &-horizontal {
     width: 19rem;
     height: .43rem;
@@ -36,19 +56,5 @@
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     border-radius: .21rem;
     z-index: 0;
-  }
-
-  &_for-side-panel #{&}__label {
-    display: inline-block;
-    width: 8.57rem;
-    margin: 0 0 0 1.5rem;
-  }
-
-  &__label {
-    @include h3;
-    color: $dark50;
-    text-align: end;
-    margin: 0 0 1.71rem 0;
-    font-weight: normal;
   }
 }
