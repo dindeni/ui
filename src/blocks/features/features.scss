@@ -6,6 +6,8 @@
 
   &__wrapper {
     position: relative;
+    display: flex;
+    flex-direction: column;
     
     &:not(:last-child) {
       margin-bottom: 3.1rem;
@@ -24,7 +26,6 @@
     
   &__slogan {
     font-weight: 700;
-    display: block;
     padding: 0 0 0 4.4rem;
     line-height: 1.7rem;
     position: relative;

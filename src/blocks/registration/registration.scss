@@ -28,7 +28,6 @@
 
   &__radio-wrapper {
     position: relative;
-    display: block;
     margin: .7rem 0 0 .71rem;
   }
   
@@ -36,7 +35,6 @@
     @include h3;
     color: $dark100;
     text-transform: uppercase;
-    display: block;
   }
 
   &__date-head {

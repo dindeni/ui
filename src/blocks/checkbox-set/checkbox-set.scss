@@ -39,6 +39,10 @@
   }
 
   &__item-wrapper {
-    margin-bottom: .65rem; 
+    margin-bottom: .65rem;
+
+    &_type_default {
+      margin-bottom: .6rem;
+    }
   }
 }
