@@ -1,5 +1,7 @@
 mixin colors-and-type(options)
-  -const { colorValues, textValues } = options;
+
+  -
+    const { colorValues, textValues } = options;
 
   div.colors-and-type
     
@@ -9,7 +11,7 @@ mixin colors-and-type(options)
       ul.colors-and-type__list
         
         each data in colorValues
-          li.colors-and-type__color-name(style=`--background: ${data.value}; --opacity: ${data.opacity||1}`)=data.name
+          li.colors-and-type__color-name(style=`--background: ${data.value}; --opacity: ${data.opacity || 1}`)=data.name
             div.colors-and-type__color-value=data.value
 
       ul.colors-and-type__list

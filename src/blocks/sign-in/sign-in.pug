@@ -7,14 +7,14 @@ mixin sign-in
     h1.sign-in__head Войти
 
     div.sign-in__email-wrapper
-      +form-element({type: 'default', placeholder: 'Email', typeOfInput: 'email'})
+      +form-element({ type: 'default', placeholder: 'Email', typeOfInput: 'email' })
 
     div.sign-in__password-wrapper
-      +form-element({type: 'password', placeholder: 'Пароль', typeOfInput: 'password'})
+      +form-element({ type: 'password', placeholder: 'Пароль', typeOfInput: 'password' })
 
     span.sign-in__link-enter-wrapper
-      +ui-control({content: 'Войти', link: 'sign-in.html', type: 'filled', isArrow: true})
+      +ui-control({ content: 'Войти', link: 'sign-in.html', type: 'filled', isArrow: true })
 
     span.sign-in__label Нет аккаунта на Toxin?
       div.sign-in__link-wrapper
-        +ui-control({content: 'Создать', link: 'registration.html', type: 'border'})
+        +ui-control({ content: 'Создать', link: 'registration.html', type: 'border' })

@@ -4,7 +4,8 @@ include ../ui-control/ui-control
 
 mixin searchRoom(absolute)
 
-  -const classModifier = absolute ? 'search-room_with-position_absolute' : '';
+  -
+    const classModifier = absolute ? 'search-room_with-position_absolute' : '';
 
   section.search-room(class=classModifier)
     h2.search-room__head Найдём номера под ваши пожелания
@@ -21,4 +22,4 @@ mixin searchRoom(absolute)
           div.search-room__sum-guests-label гости
           +sum-guests()
         div.search-room__button-wrapper
-          +ui-control({content: 'Подобрать номер', type: 'filled', isArrow: true})
+          +ui-control({ content: 'Подобрать номер', type: 'filled', isArrow: true })

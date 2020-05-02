@@ -3,11 +3,15 @@ include ../checkbox/checkbox
 mixin checkbox-set(options)
 
   -
-     const {values, isExpandable, head, descriptions}=options;
+     const { values, isExpandable, head, descriptions } = options;
 
-     const wrapperClass = isExpandable ? 'checkbox-set__wrapper_type_expandable checkbox-set__wrapper_hidden js-checkbox-set__wrapper_type_expandable' : '';
+     const wrapperClass = isExpandable
+       ? 'checkbox-set__wrapper_type_expandable checkbox-set__wrapper_hidden js-checkbox-set__wrapper_type_expandable'
+       : '';
 
-    const itemWrapperClass = isExpandable || descriptions ? 'checkbox-set__item-wrapper_type_default' : '';
+    const itemWrapperClass = isExpandable || descriptions
+      ? 'checkbox-set__item-wrapper_type_default'
+      : '';
 
   div.checkbox-set
 

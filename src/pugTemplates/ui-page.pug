@@ -3,8 +3,10 @@ include ../blocks/head/head
 
 doctype html
 html(lang="ru")
-  +head({ descriptionValue: 'UI - набор элементов для сайта',
-    keywordsValue: 'ui, элементы и блоки для сайта', title: 'Ui' })
+  +head({
+    descriptionValue: 'UI - набор элементов для сайта',
+    keywordsValue: 'ui, элементы и блоки для сайта', title: 'Ui',
+  })
   body
     div.wrapper
       +main-ui

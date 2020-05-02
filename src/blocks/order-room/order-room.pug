@@ -4,7 +4,8 @@ include ../datepickers/datepickers
 
 mixin order-room(options)
 
-  -const {totalValue, totalPrice}=options;
+  -
+    const { totalValue, totalPrice } = options;
 
   section.order-room
     div.order-room__header
@@ -47,5 +48,5 @@ mixin order-room(options)
       span.order-room__sum 38 081₽
 
     div.order-room__button-wrapper
-      +ui-control({content: 'забронировать', type: 'filled', isArrow: true})
+      +ui-control({ content: 'забронировать', type: 'filled', isArrow: true })
 

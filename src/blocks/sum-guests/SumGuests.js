@@ -22,7 +22,8 @@ class SumGuests {
   }
 
   _handleClassGuestsClick(event) {
-    const isHidden = event.target === this.inputGuests && this.guestsPopup.classList.contains('sum-guests__popup_hidden');
+    const isHidden = event.target === this.inputGuests
+      && this.guestsPopup.classList.contains('sum-guests__popup_hidden');
     if (isHidden) {
       this.guestsPopup.classList.remove('sum-guests__popup_hidden');
       this.guestsPopup.focus();
@@ -46,7 +47,7 @@ class SumGuests {
     let guestsValue = 0;
     let babiesValue = 0;
 
-    Array.from(this.numberVisitors).map(((value) => {
+    [...this.numberVisitors].map(((value) => {
       const isAdultOrChildren = value.classList.contains('js-sum-guests__number-of-visitors_type_adult')
         || value.classList.contains('js-sum-guests__number-of-visitors_type_children');
       if (isAdultOrChildren) {
@@ -75,12 +76,16 @@ class SumGuests {
   }
 
   _clearInput(event) {
-    const hasValue = parseInt(this.inputGuests.value, 10) !== 0 && this.inputGuests.value !== '' && this.inputGuests.value !== '0 гостей';
+    const hasValue = parseInt(this.inputGuests.value, 10) !== 0
+      && this.inputGuests.value !== ''
+      && this.inputGuests.value !== '0 гостей';
+
     if (hasValue) {
       this.buttonClear.classList.remove('ui-control_hidden');
     } else {
       this.buttonClear.classList.add('ui-control_hidden');
     }
+
     if (event.target === this.buttonClear) {
       this.inputGuests.value = 0;
       this.guestsPopup.querySelectorAll('.js-sum-guests__number-of-visitors').forEach((value) => {
@@ -103,7 +108,8 @@ class SumGuests {
     const numberOfVisitors = event.target.parentElement.querySelector('.js-sum-guests__number-of-visitors');
     const numberOfVisitorsValue = parseInt(numberOfVisitors.textContent, 10);
 
-    if (numberOfVisitorsValue > 0 && type === 'decrease') {
+    const isValueAboveZero = numberOfVisitorsValue > 0 && type === 'decrease';
+    if (isValueAboveZero) {
       numberOfVisitors.textContent = numberOfVisitorsValue - 1;
     }
 

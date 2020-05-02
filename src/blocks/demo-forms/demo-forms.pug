@@ -15,7 +15,8 @@ include ../demo-caption/demo-caption
 
 mixin demo-forms(values)
 
-  -const { checkbox, checkboxExpandable, checkboxRich, features, radio, bulletList } = values;
+  -
+    const { checkbox, checkboxExpandable, checkboxRich, features, radioLabels, bulletList } = values;
 
   div.demo-forms
     
@@ -28,7 +29,7 @@ mixin demo-forms(values)
         div.demo-forms__container.demo-forms__container_size_default
           div.demo-forms__caption-wrapper
             +demo-caption({ text: 'text field', isDefaultCaption: true })
-          +form-element({type: 'default', placeholder: 'Email', typeOfInput: 'email'})
+          +form-element({ type: 'default', placeholder: 'Email', typeOfInput: 'email' })
         
         div.demo-forms__container.demo-forms__container_size_default
           div.demo-forms__caption-wrapper
@@ -38,22 +39,22 @@ mixin demo-forms(values)
         div.demo-forms__container.demo-forms__container_size_default
           div.demo-forms__caption-wrapper
             +demo-caption({ text: 'masked text field', isDefaultCaption: true })
-          +form-element({type: 'masked', placeholder: 'дд.мм.гггг'})
+          +form-element({ type: 'masked', placeholder: 'дд.мм.гггг' })
         
         div.demo-forms__container.demo-forms__container_size_small
           div.demo-forms__caption-wrapper
             +demo-caption({ text: 'data dropdown' })
-          +datepickers({type: 'single', placeholder: 'дд.мм.гггг'})
+          +datepickers({ type: 'single', placeholder: 'дд.мм.гггг' })
         
         div.demo-forms__container.demo-forms__container_size_middle
           div.demo-forms__caption-wrapper
             +demo-caption({ text: 'filter dropdown' })  
-          +datepickers({type: 'range', defaultDate: '19 авг - 23 авг'})
+          +datepickers({ type: 'range', defaultDate: '19 авг - 23 авг' })
         
         div.demo-forms__container.demo-forms__container_size_middle
           div.demo-forms__caption-wrapper
             +demo-caption({ text: 'subscription text field' })
-          +form-element({type: 'subscription', placeholder: 'Email', typeOfInput: 'email'})
+          +form-element({ type: 'subscription', placeholder: 'Email', typeOfInput: 'email' })
         
         div.demo-forms__container.demo-forms__container_type_expandable
           +checkbox-set(checkboxExpandable)
@@ -75,9 +76,9 @@ mixin demo-forms(values)
         +demo-caption({ text: 'like button' })
         div.demo-forms__container.demo-forms__container_type_button-rate
           div.demo-forms__button-wrapper
-            +ui-control({isBorder: true, content: 2, type: 'gray'})
+            +ui-control({ isBorder: true, content: 2, type: 'gray' })
           div.demo-forms__button-wrapper
-            +ui-control({isBorder: true, content: 12, type: 'like'})
+            +ui-control({ isBorder: true, content: 12, type: 'like' })
         
         +demo-caption({ text: 'rate button' })
         div.demo-forms__container
@@ -99,11 +100,11 @@ mixin demo-forms(values)
           div.demo-forms__button-container.demo-forms__button-container_button-size_middle
             +ui-control({ content: 'click me', type: 'filled'})
           div.demo-forms__button-container.demo-forms__button-container_button-size_middle
-            +ui-control({content: 'click me', type: 'border'})
+            +ui-control({ content: 'click me', type: 'border' })
           div.demo-forms__button-container.demo-forms__button-container_button-size_small
-            +ui-control({content: 'click me', type: 'transparent'})
+            +ui-control({ content: 'click me', type: 'transparent' })
           div.demo-forms__button-container.demo-forms__button-container_button-size_default
-            +ui-control({ content: 'перейти к оплате', type: 'filled', isArrow: true})
+            +ui-control({ content: 'перейти к оплате', type: 'filled', isArrow: true })
         
         div.demo-forms__container
           +demo-caption({ text: 'pagination' })
@@ -118,10 +119,10 @@ mixin demo-forms(values)
         +features(features)    
       div.demo-forms__review-wrapper
         +review({
-            head: 'Мурад Сарафанов', date: '5 дней назад',
-            description: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
-            path: require('../images/icon-avatar-1.jpg'),
-            numberOfLikes: 12, typeOfButton: 'like'
-          })
+          head: 'Мурад Сарафанов', date: '5 дней назад',
+          description: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+          path: require('../images/icon-avatar-1.jpg'),
+          numberOfLikes: 12, typeOfButton: 'like',
+        })
         
         

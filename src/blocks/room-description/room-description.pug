@@ -5,14 +5,17 @@ include ../bullet-list/bullet-list
 include ../features/features
 include ../order-room/order-room
 
--
-  const descriptionData = require('../blocks/room-description/room-description.json');
-  
-  const { features, totalValue, totalPrice, review, bulletList } = descriptionData;
-
-  const reviewPath = [require('../images/icon-avatar-1.jpg'), require('../images/icon-avatar-2.jpg')];
-
 mixin room-description
+
+  -
+    const descriptionData = require('../blocks/room-description/room-description.json');
+
+    const { features, totalValue, totalPrice, review, bulletList } = descriptionData;
+
+    const reviewPath = [
+      require('../images/icon-avatar-1.jpg'),
+      require('../images/icon-avatar-2.jpg'),
+    ];
 
   section.room-description
     div.room-description__container
@@ -32,11 +35,19 @@ mixin room-description
 
         each value, index in review
 
-          -const {head, date, description, typeOfButton, numberOfLikes} = value;
+          -
+            const { head, date, description, typeOfButton, numberOfLikes } = value;
 
           div.room-description__review-wrapper
-            +review({head, date, description, path: reviewPath[index], typeOfButton,
-              numberOfLikes, isRoomModifier: true})
+            +review({
+              head,
+              date,
+              description,
+              path: reviewPath[index],
+              typeOfButton,
+              numberOfLikes,
+              isRoomModifier: true,
+            })
 
       div.room-description__rules
         h2.room-description__rules-head Правила
@@ -47,4 +58,4 @@ mixin room-description
         h2.room-description__cancel-head Отмена
         p.room-description__cancel-paragraph Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
-    +order-room({totalValue, totalPrice})
+    +order-room({ totalValue, totalPrice })

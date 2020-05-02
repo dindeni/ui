@@ -5,8 +5,15 @@ include ../footer-list/footer-list
 mixin footer-widget(options)
 
   -
-    const {description, headers, items, headSubscribe,subscribeDescription, placeholderEmail,
-     copyrightText}=options;
+    const {
+      description,
+      headers,
+      items,
+      headSubscribe,
+      subscribeDescription,
+      placeholderEmail,
+     copyrightText
+    } = options;
 
   footer.footer-widget
     div.footer-widget__logo-wrapper
@@ -21,7 +28,7 @@ mixin footer-widget(options)
       h3.footer-widget__subscribe-head=headSubscribe
       div.footer-widget__subscribe-description=subscribeDescription
 
-      +form-element({type: 'subscription', placeholder: placeholderEmail, typeOfInput: 'email'})
+      +form-element({ type: 'subscription', placeholder: placeholderEmail, typeOfInput: 'email' })
 
     +copyright(copyrightText)
 

@@ -3,7 +3,7 @@ include ../ui-control/ui-control
 mixin review(options)
 
   -
-    const {head, date, description, path, typeOfButton, numberOfLikes}=options;
+    const { head, date, description, path, typeOfButton, numberOfLikes } = options;
 
   section.review
     img.review__icon(src=path alt="фото аватар")
@@ -14,4 +14,4 @@ mixin review(options)
     div.review__wrapper
       div.review__button-wrapper
         +ui-control({isBorder: true, content: numberOfLikes, type: typeOfButton})
-      p.review__description(class=descriptionModifier)=description
+      p.review__description=description

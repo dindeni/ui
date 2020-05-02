@@ -35,8 +35,10 @@ class SumRooms {
   }
 
   _handleDocumentClick(event) {
-    const isInputHidden = event.target === this.roomsInput && this.roomsPopup.classList.contains('sum-rooms__popup_hidden');
-    const isNotInputHidden = event.target === this.roomsInput && !this.roomsPopup.classList.contains('sum-rooms__popup_hidden');
+    const isInputHidden = event.target === this.roomsInput
+      && this.roomsPopup.classList.contains('sum-rooms__popup_hidden');
+    const isNotInputHidden = event.target === this.roomsInput
+      && !this.roomsPopup.classList.contains('sum-rooms__popup_hidden');
     if (isInputHidden) {
       this.roomsPopup.classList.remove('sum-rooms__popup_hidden');
       this.roomsPopup.focus();

@@ -11,13 +11,13 @@ mixin sum-guests(isSizeSmall)
     const popupModifier = isSizeSmall ? 'sum-guests__popup_size_small' : '';
 
     const controlsOption = [
-      {content: 'очистить', isHideModifier: true, jsModifier:'clear', type: 'transparent', modifier: 'color_gray'},
-      {content: 'применить', type: 'transparent', jsModifier: 'apply'}
+      { content: 'очистить', isHideModifier: true, jsModifier:'clear', type: 'transparent', modifier: 'color_gray' },
+      { content: 'применить', type: 'transparent', jsModifier: 'apply' },
     ];
 
   div.sum-guests.js-sum-guests
 
-    +form-element({type: 'dropdown', placeholder: 'Сколько гостей', isJsInputClass: true})
+    +form-element({ type: 'dropdown', placeholder: 'Сколько гостей', isJsInputClass: true })
 
     div.sum-guests__popup.js-sum-guests__popup.sum-guests__popup_hidden(tabindex=0 class=popupModifier)
 
@@ -30,7 +30,8 @@ mixin sum-guests(isSizeSmall)
 
             div.sum-guests__number-of-visitors-wrapper
               button.sum-guests__button.sum-guests__button_type_minus.js-sum-guests__button_type_minus(type="button") -
-              span.sum-guests__number-of-visitors.js-sum-guests__number-of-visitors(class=`sum-guests__number-of-visitors_type_${visitorsId[index]} js-sum-guests__number-of-visitors_type_${visitorsId[index]}`) 0
+              span.sum-guests__number-of-visitors.js-sum-guests__number-of-visitors(class=`sum-guests__number-of-visitors_type_${visitorsId[index]}
+                js-sum-guests__number-of-visitors_type_${visitorsId[index]}`) 0
               button.sum-guests__button.sum-guests__button_type_plus.js-sum-guests__button_type_plus(type="button") +
 
       div.sum-guests__buttons-footer-container.js-sum-guests__buttons-footer-container

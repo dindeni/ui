@@ -13,8 +13,10 @@ class CheckboxSet {
   }
 
   _handleCheckboxHeadClick(event) {
-    const isNotHide = event.target === this.checkboxHead && !this.checkboxWrapper.classList.contains('checkbox-set__wrapper_hidden');
-    const isHide = event.target === this.checkboxHead && this.checkboxWrapper.classList.contains('checkbox-set__wrapper_hidden');
+    const isNotHide = event.target === this.checkboxHead
+      && !this.checkboxWrapper.classList.contains('checkbox-set__wrapper_hidden');
+    const isHide = event.target === this.checkboxHead
+      && this.checkboxWrapper.classList.contains('checkbox-set__wrapper_hidden');
     if (isNotHide) {
       this.checkboxWrapper.classList.add('checkbox-set__wrapper_hidden');
       this.checkboxHead.classList.remove('checkbox-set__head_turned');

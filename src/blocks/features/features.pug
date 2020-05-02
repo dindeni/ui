@@ -1,12 +1,14 @@
 mixin features(values)
 
-  -const sloganModifiers = ['type_comfortable', 'type_convenient', 'type_cozy'];
+  -
+    const sloganModifiers = ['type_comfortable', 'type_convenient', 'type_cozy'];
 
   div.features
 
     each value, index in values
 
-      -const {slogan, description} = value
+      -
+        const { slogan, description } = value;
 
       div.features__wrapper
         b.features__slogan(class=`features__slogan_${sloganModifiers[index]}`)=slogan

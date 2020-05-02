@@ -4,6 +4,7 @@ include ../pagination/pagination
 
 -
   const cardRoomData = require('../blocks/main-filter/main-filter.json');
+
   const { type, numberOfRoom, price, numberOfReviews, numberOfRate } = cardRoomData;
 
   const rooms = [
@@ -38,8 +39,13 @@ mixin main-filter()
 
           div.main-filter__card-wrapper
             +card-room({
-              images: rooms[index], radioName: 'room-radio-name', type,
-              numberOfRoom, price, numberOfReviews, numberOfRate,
+              images: rooms[index],
+              radioName: 'room-radio-name',
+              type,
+              numberOfRoom,
+              price,
+              numberOfReviews,
+              numberOfRate,
             })
 
         div.main-filter__pagination-wrapper

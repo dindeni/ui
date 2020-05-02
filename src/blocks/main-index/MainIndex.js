@@ -6,9 +6,11 @@ class MainIndex {
   changeBackground() {
     /* eslint-disable global-require */
     if (this.mainElement) {
-      const images = [require('../../images/image-back-1.jpg'),
+      const images = [
+        require('../../images/image-back-1.jpg'),
         require('../../images/image-back-2.jpg'),
-        require('../../images/image-back-3.jpg')];
+        require('../../images/image-back-3.jpg'),
+      ];
 
       let count = 1;
       setInterval(() => {

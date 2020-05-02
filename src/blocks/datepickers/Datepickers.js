@@ -117,7 +117,8 @@ class Datepickers {
       ...DATE_SETTINGS,
       dateFormat: 'dd.mm.yy',
       onSelect: (date) => {
-        if (date < this.dateOut || !this.dateOut) {
+        const isValidDate = date < this.dateOut || !this.dateOut;
+        if (isValidDate) {
           this.dateArrive = date;
         }
       },
@@ -181,12 +182,12 @@ class Datepickers {
 
       $tdElement.each((index, td) => {
         const childElementValue = parseInt(td.firstChild.textContent, 10);
-        const isMaxDate = this.dateOut && childElementValue
-          === parseInt(this.dateOut.substring(0, 2), 10);
-        const isMinDate = this.dateArrive && childElementValue
-          === parseInt(this.dateArrive.substring(0, 2), 10);
-        const isRangeDate = this.dateArrive && this.dateOut && childElementValue
-          > parseInt(this.dateArrive.substring(0, 2), 10)
+        const isMaxDate = this.dateOut
+          && childElementValue === parseInt(this.dateOut.substring(0, 2), 10);
+        const isMinDate = this.dateArrive
+          && childElementValue === parseInt(this.dateArrive.substring(0, 2), 10);
+        const isRangeDate = this.dateArrive && this.dateOut
+          && childElementValue > parseInt(this.dateArrive.substring(0, 2), 10)
           && childElementValue < parseInt(this.dateOut.substring(0, 2), 10);
 
         if (isMaxDate) {

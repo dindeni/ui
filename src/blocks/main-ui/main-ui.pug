@@ -2,38 +2,60 @@ include ../colors-and-type/colors-and-type
 include ../demo-forms/demo-forms
 include ../demo-cards/demo-cards
 include ../headers-and-footers/headers-and-footers
--
-  const data = require('../blocks/main-ui/main-ui.json');
-
-  const { radioLabels, checkbox, checkboxExpandable, checkboxRich,
-   bulletList, orderRoom, features, navigation, footerWidget, colorsAndType } = data;
-
-  const cardRoomImagesFirst = [
-    require('../images/image-room-888.jpg'), require('../images/image-room-982.jpg'), require('../images/image-room-350.jpg'), require('../images/image-room-444.jpg')
-  ];
-
-  const cardRoomImagesSecond = [
-    require('../images/image-room-840.jpg'), require('../images/image-room-982.jpg'), require('../images/image-room-350.jpg'), require('../images/image-room-444.jpg')
-  ];
-
-  const { items, linkModifier } = navigation;
-
-  const { colorValues, textValues } = colorsAndType;
-
-  const valuesForLogin = { items, linkModifier, type: 'default', loginName: 'login', registrationName: 'register',
-    isThemeEn: true };
-
-  const valuesForLoggedIn = { items, linkModifier, type: 'loggedIn',
-   userName: 'Cosmin Negoita' };
 
 mixin main-ui()
+
+  -
+    const data = require('../blocks/main-ui/main-ui.json');
+
+    const {
+      radioLabels,
+      checkbox,
+      checkboxExpandable,
+      checkboxRich,
+      bulletList,
+      orderRoom,
+      features,
+      navigation,
+      footerWidget,
+      colorsAndType,
+    } = data;
+
+    const cardRoomImagesFirst = [
+      require('../images/image-room-888.jpg'),
+      require('../images/image-room-982.jpg'),
+      require('../images/image-room-350.jpg'),
+      require('../images/image-room-444.jpg'),
+    ];
+
+    const cardRoomImagesSecond = [
+      require('../images/image-room-840.jpg'),
+      require('../images/image-room-982.jpg'),
+      require('../images/image-room-350.jpg'),
+      require('../images/image-room-444.jpg'),
+    ];
+
+    const { items, linkModifier } = navigation;
+
+    const { colorValues, textValues } = colorsAndType;
+
+    const valuesForLogin = {
+      items,
+      linkModifier,
+      type: 'default',
+      loginName: 'login',
+      registrationName: 'register',
+      isThemeEn: true,
+    };
+
+    const valuesForLoggedIn = { items, linkModifier, type: 'loggedIn', userName: 'Cosmin Negoita' };
+
 
   main.main-ui
 
     +colors-and-type({ colorValues, textValues })
 
-    +demo-forms({ checkbox, checkboxExpandable, checkboxRich, features,
-      radio: radioLabels, bulletList })
+    +demo-forms({ checkbox, checkboxExpandable, checkboxRich, features, radioLabels, bulletList })
 
     +demo-cards({ orderRoom, cardRoomImagesFirst, cardRoomImagesSecond })
 

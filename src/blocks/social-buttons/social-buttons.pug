@@ -1,9 +1,10 @@
 mixin social-buttons()
-  -
-    const socialLinks = ['https://twitter.com', 'https://www.facebook.com', 'https://www.instagram.com'];
-    const socialNames = ['twitter', 'facebook', 'instagram'];
 
   div.social-buttons
+
+    -
+      const socialLinks = ['https://twitter.com', 'https://www.facebook.com', 'https://www.instagram.com'];
+      const socialNames = ['twitter', 'facebook', 'instagram'];
 
     ul.social-buttons__list
       each name, index in socialNames

@@ -77,7 +77,6 @@ class PieChart {
           display: false,
         },
       },
-
     });
   }
 

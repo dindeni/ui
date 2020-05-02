@@ -1,8 +1,17 @@
 mixin ui-control(options)
 
   -
-    const {content, link, modifier, jsModifier, isHideModifier,
-     isBorder, isTransparent, isArrow, type} = options;
+    const {
+      content,
+      link,
+      modifier,
+      jsModifier,
+      isHideModifier,
+      isBorder,
+      isTransparent,
+      isArrow,
+      type,
+    } = options;
 
     const typeModifiers = {
       filled: 'theme_filled',
@@ -11,7 +20,7 @@ mixin ui-control(options)
       gray: 'theme_gray',
       transparent: 'theme_transparent',
       navigationWithBorder: 'theme_navigation-with-border',
-      navigation: 'theme_navigation'
+      navigation: 'theme_navigation',
     };
 
     const typeModifier = `ui-control_${typeModifiers[type]}`;

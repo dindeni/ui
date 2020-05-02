@@ -3,17 +3,23 @@ include ../ui-control/ui-control
 mixin navigation(options)
 
   -
-    const {type, items, isItemThemeRu, loginName, registrationName,
-     linkModifier, userName, isThemeEn} = options;
+    const {
+      type,
+      items,
+      isItemThemeRu,
+      loginName,
+      registrationName,
+      linkModifier,
+      userName,
+      isThemeEn,
+    } = options;
 
     const itemClass = isItemThemeRu ? 'navigation__item_type_ru' : '';
 
     const classModifier = isThemeEn ? 'navigation_theme_en' : '';
 
-    const linkClasses = linkModifier.map((value) => {
-      return value !== false ? `navigation__link_type_${value}` : ''
-    });
-    
+    const linkClasses = linkModifier.map((value) => (value !== false ? `navigation__link_type_${value}` : ''));
+
 
   if type === 'default'
     nav.navigation.js-navigation(class=classModifier)
@@ -26,10 +32,9 @@ mixin navigation(options)
 
       div.navigation__buttons-wrapper
         div.navigation__sign-in-button-wrapper
-          +ui-control({content: `${loginName}`, link:"sign-in.html", type: 'navigationWithBorder'})
+          +ui-control({ content: `${loginName}`, link:"sign-in.html", type: 'navigationWithBorder' })
         div.navigation__button-registration-wrapper
-          +ui-control({content:`${registrationName}`, link: 'registration.html',
-             type: 'navigation'})
+          +ui-control({ content:`${registrationName}`, link: 'registration.html', type: 'navigation' })
         button.navigation__button-mobile.js-navigation__button-mobile
 
   else if type === 'loggedIn'

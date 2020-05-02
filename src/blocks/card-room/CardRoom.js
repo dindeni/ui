@@ -21,7 +21,7 @@ class CardRoom {
 
     if (event.currentTarget === this.formElement) {
       const cardImages = event.currentTarget.parentElement.querySelectorAll('.js-card-room__image');
-      Array.from(this.formElement.querySelectorAll('.card-room__radio'))
+      [...this.formElement.querySelectorAll('.card-room__radio')]
         .map((input, index) => {
           if (event.target === input) {
             const inputElement = input;
@@ -60,7 +60,7 @@ class CardRoom {
     const { inputs, images } = options;
 
     let flag = false;
-    Array.from(inputs).map((input, index) => {
+    [...inputs].map((input, index) => {
       const inputElement = input;
       const isInputFirst = inputElement.checked && input === inputs[0];
       const isInputChecked = inputElement.checked && !flag;
@@ -86,9 +86,10 @@ class CardRoom {
     const { inputs, images } = options;
 
     let flag = false;
-    Array.from(inputs).map((input, index) => {
+    [...inputs].map((input, index) => {
       const inputElement = input;
-      const isInputLast = inputElement.checked && inputElement === inputs[inputs.length - 1]
+      const isInputLast = inputElement.checked
+        && inputElement === inputs[inputs.length - 1]
         && !flag;
       const isInputChecked = inputElement.checked && !flag;
 

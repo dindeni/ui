@@ -3,18 +3,18 @@ include ../form-element/form-element
 mixin datepickers(options)
 
   -
-    const { type, placeholder, defaultDate }=options;
+    const { type, placeholder, defaultDate } = options;
 
     const formOptions = {
       single: { type: 'date', placeholder: placeholder, isJsInputClass: true },
       range: [
         { type: 'dropdown', placeholder: defaultDate, isJsInputClass: true },
-        {type: 'hidden', placeholder: defaultDate, isJsInputClass: true }
+        { type: 'hidden', placeholder: defaultDate, isJsInputClass: true },
       ],
       double: [
         { type: 'date', placeholder: 'дд.мм.гггг', isJsInputClass: true },
-        { type: 'date', placeholder: 'дд.мм.гггг', isJsInputClass: true }
-      ] 
+        { type: 'date', placeholder: 'дд.мм.гггг', isJsInputClass: true },
+      ],
     };
 
   div.datepickers.js-datepickers(data-type=type)

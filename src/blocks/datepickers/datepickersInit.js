@@ -1,7 +1,9 @@
 import Datepickers from './Datepickers';
 
 const datepickers = document.querySelectorAll('.js-datepickers');
-Array.from(datepickers).map((datepickerElement) => {
+
+
+[...datepickers].map((datepickerElement) => {
   const formList = datepickerElement.querySelectorAll('.js-form-element__field');
 
   switch (datepickerElement.dataset.type) {
