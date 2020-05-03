@@ -47,13 +47,12 @@ class SumGuests {
     let guestsValue = 0;
     let babiesValue = 0;
 
-    [...this.numberVisitors].map(((value) => {
+    [...this.numberVisitors].forEach(((value) => {
       const isAdultOrChildren = value.classList.contains('js-sum-guests__number-of-visitors_type_adult')
         || value.classList.contains('js-sum-guests__number-of-visitors_type_children');
       if (isAdultOrChildren) {
         guestsValue += parseInt(value.textContent, 10);
       } else babiesValue += parseInt(value.textContent, 10);
-      return undefined;
     }));
 
     const guestsPrefix = SumGuests._controlGuestsBabiesPrefix({ value: guestsValue, type: 'guests' });

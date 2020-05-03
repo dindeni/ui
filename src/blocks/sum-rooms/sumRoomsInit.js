@@ -3,8 +3,8 @@ import SumRooms from './SumRooms';
 const sumRoomsWrapper = document.querySelectorAll('.js-sum-rooms');
 
 if (sumRoomsWrapper) {
-  [...sumRoomsWrapper].map((wrapper) => {
+  [...sumRoomsWrapper].forEach((wrapper) => {
     const sumRooms = new SumRooms(wrapper);
-    return sumRooms.summarizeRooms();
+    sumRooms.summarizeRooms();
   });
 }

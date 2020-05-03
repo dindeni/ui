@@ -1,7 +1,7 @@
 import Navigation from './Navigation';
 
 const navigationElements = document.querySelectorAll('.js-navigation');
-[...navigationElements].map((navigationElement) => {
+[...navigationElements].forEach((navigationElement) => {
   const navigation = new Navigation(navigationElement);
-  return navigation.observeButton();
+  navigation.observeButton();
 });

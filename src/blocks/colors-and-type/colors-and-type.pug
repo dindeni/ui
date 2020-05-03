@@ -11,7 +11,10 @@ mixin colors-and-type(options)
       ul.colors-and-type__list
         
         each data in colorValues
-          li.colors-and-type__color-name(style = `--background: ${data.value}; --opacity: ${data.opacity || 1}`)=data.name
+          -
+            const dataOpacity = (data.opacity || data.opacity === 0) ? data.opacity : 1;
+
+          li.colors-and-type__color-name(style = `--background: ${data.value}; --opacity: ${dataOpacity}`)=data.name
             div.colors-and-type__color-value=data.value
 
       ul.colors-and-type__list
