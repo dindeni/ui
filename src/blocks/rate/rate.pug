@@ -4,8 +4,8 @@ mixin rate(numberFillStars)
     each value,index in Array(5)
 
       if index <= numberFillStars - 1
-        img.rate__image(src=require('../blocks/rate/images/icon-star.svg') alt="изображение звезды")
+        img.rate__image(src = require('../blocks/rate/images/icon-star.svg') alt = "изображение звезды")
 
       else
-        img.rate__image(src=require('../blocks/rate/images/icon-star-border.svg') alt="изображение звезды")
+        img.rate__image(src = require('../blocks/rate/images/icon-star-border.svg') alt = "изображение звезды")
 

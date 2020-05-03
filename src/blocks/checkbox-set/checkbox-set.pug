@@ -3,7 +3,7 @@ include ../checkbox/checkbox
 mixin checkbox-set(options)
 
   -
-     const { values, isExpandable, head, descriptions } = options;
+    const { values, isExpandable, head, descriptions = [] } = options;
 
      const wrapperClass = isExpandable
        ? 'checkbox-set__wrapper_type_expandable checkbox-set__wrapper_hidden js-checkbox-set__wrapper_type_expandable'
@@ -21,5 +21,5 @@ mixin checkbox-set(options)
     
     div.checkbox-set__wrapper(class=wrapperClass)
       each value, index in values
-        div.checkbox-set__item-wrapper(class=itemWrapperClass)
-          +checkbox({ value, description: descriptions ? descriptions[index] : undefined })
+        div.checkbox-set__item-wrapper(class = itemWrapperClass)
+          +checkbox({ value, description: descriptions[index] })

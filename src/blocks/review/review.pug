@@ -6,12 +6,12 @@ mixin review(options)
     const { head, date, description, path, typeOfButton, numberOfLikes } = options;
 
   section.review
-    img.review__icon(src=path alt="фото аватар")
+    img.review__icon(src = path alt = "фото аватар")
     div.review__name-wrapper
       h3.review__name=head
       div.review__date=date
 
     div.review__wrapper
       div.review__button-wrapper
-        +ui-control({isBorder: true, content: numberOfLikes, type: typeOfButton})
+        +ui-control({ isBorder: true, content: numberOfLikes, type: typeOfButton })
       p.review__description=description

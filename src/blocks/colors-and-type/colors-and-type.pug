@@ -5,13 +5,13 @@ mixin colors-and-type(options)
 
   div.colors-and-type
     
-    img.colors-and-type__logo(src=require('../images/icon-logo-gray.svg') alt="логотип" width="48")
+    img.colors-and-type__logo(src = require('../images/icon-logo-gray.svg') alt = "логотип" width = "48")
     
     div.colors-and-type__wrapper
       ul.colors-and-type__list
         
         each data in colorValues
-          li.colors-and-type__color-name(style=`--background: ${data.value}; --opacity: ${data.opacity || 1}`)=data.name
+          li.colors-and-type__color-name(style = `--background: ${data.value}; --opacity: ${data.opacity || 1}`)=data.name
             div.colors-and-type__color-value=data.value
 
       ul.colors-and-type__list

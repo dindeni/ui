@@ -8,6 +8,6 @@ mixin social-buttons()
 
     ul.social-buttons__list
       each name, index in socialNames
-        li.social-buttons__item(class=`social-buttons__item_${name}`)
-          a.social-buttons__link(href=socialLinks[index] target="_blank" rel="noopener noreferrer")
+        li.social-buttons__item(class = `social-buttons__item_${name}`)
+          a.social-buttons__link(href = socialLinks[index] target = "_blank" rel = "noopener noreferrer")
             span.social-buttons__link-text=name

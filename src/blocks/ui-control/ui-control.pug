@@ -41,7 +41,7 @@ mixin ui-control(options)
 
     const textContent = (type === 'like' || type === 'gray') ? '' : content;
 
-  #{isLink}.ui-control(href=(link || false) class=classes)=textContent
+  #{isLink}.ui-control(href = (link || false) class = classes)=textContent
   
     if type === 'like' || type === 'gray'
       div.ui-control__mark

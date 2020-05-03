@@ -6,8 +6,8 @@ mixin checkbox(options)
     const classes = description ? 'checkbox__mark_type_rich' : '';
 
   label.checkbox
-    input.checkbox__field(type="checkbox")
-    span.checkbox__mark(class=classes)=value
+    input.checkbox__field(type = "checkbox")
+    span.checkbox__mark(class = classes)=value
 
     if description
       span.checkbox__description=description

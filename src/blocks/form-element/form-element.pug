@@ -15,5 +15,5 @@ mixin form-element(options)
 
     const jsInputClass = isJsInputClass ? 'js-form-element__field' : '';
 
-  label.form-element(class=classes[type])
-    input.form-element__field(type=typeOfInput || 'text'  placeholder = `${placeholder}` class=jsInputClass)
+  label.form-element(class = classes[type])
+    input.form-element__field(type = typeOfInput || 'text' placeholder = `${placeholder}` class = jsInputClass)

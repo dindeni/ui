@@ -12,12 +12,12 @@ mixin footer-widget(options)
       headSubscribe,
       subscribeDescription,
       placeholderEmail,
-     copyrightText
+      copyrightText,
     } = options;
 
   footer.footer-widget
     div.footer-widget__logo-wrapper
-      img.footer-widget__logo(src=require('../images/icon-logo.svg') alt="логотип")
+      img.footer-widget__logo(src = require('../images/icon-logo.svg') alt = "логотип")
       p.footer-widget__description=description
 
     each head, index in headers

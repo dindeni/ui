@@ -10,18 +10,18 @@ mixin card-room(options)
       div.card-room__image-wrapper
         each value, index in images
           if index > 0
-            img.card-room__image.js-card-room__image.card-room__image_hidden(src=`${value}` alt="фото комнаты")
+            img.card-room__image.js-card-room__image.card-room__image_hidden(src = `${value}` alt = "фото комнаты")
           else
-            img.card-room__image.js-card-room__image(src=`${value}` alt="фото комнаты")
+            img.card-room__image.js-card-room__image(src = `${value}` alt = "фото комнаты")
 
-      form(autocomplete="off").card-room__form.js-card-room__form
+      form(autocomplete = "off").card-room__form.js-card-room__form
         each value, index in Array(4)
           if index === 0
             label.card-room__mark.card-room__mark_filled
-              input.card-room__radio.js-card-room__radio(type="radio" name=`${radioName}` checked )
+              input.card-room__radio.js-card-room__radio(type = "radio" name = `${radioName}` checked )
           else
             label.card-room__mark
-              input.card-room__radio.js-card-room__radio(type="radio" name=`${radioName}`)
+              input.card-room__radio.js-card-room__radio(type = "radio" name = `${radioName}`)
 
       div.card-room__arrows-wrapper
         button.card-room__arrow.card-room__arrow_type_prev.js-card-room__arrow_type_prev

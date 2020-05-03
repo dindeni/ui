@@ -22,13 +22,13 @@ mixin navigation(options)
 
 
   if type === 'default'
-    nav.navigation.js-navigation(class=classModifier)
-      img.navigation__logo(src=require('../images/icon-logo.svg') alt="логотип")
+    nav.navigation.js-navigation(class = classModifier)
+      img.navigation__logo(src = require('../images/icon-logo.svg') alt = "логотип")
 
       ul.navigation__list.js-navigation__list.navigation__list_hidden
         each item, index in items
-          li.navigation__item(class=itemClass)
-            a.navigation__link(href="change-me.html" class=linkClasses[index])=item
+          li.navigation__item(class = itemClass)
+            a.navigation__link(href = "change-me.html" class = linkClasses[index])=item
 
       div.navigation__buttons-wrapper
         div.navigation__sign-in-button-wrapper
@@ -39,12 +39,12 @@ mixin navigation(options)
 
   else if type === 'loggedIn'
     nav.navigation.js-navigation.navigation_logged
-      img.navigation__logo(src=require('../images/icon-logo.svg') alt="логотип")
+      img.navigation__logo(src = require('../images/icon-logo.svg') alt = "логотип")
 
       ul.navigation__list.js-navigation__list.navigation__list_logged.navigation__list_hidden
         each item, index in items
           li.navigation__item.navigation__item_logged
-            a.navigation__link(href="change-me.html" class=linkClasses[index])=item
+            a.navigation__link(href = "change-me.html" class = linkClasses[index])=item
 
       em.navigation__user-name=userName
 
