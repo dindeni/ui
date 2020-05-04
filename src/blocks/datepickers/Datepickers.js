@@ -6,28 +6,31 @@ import {
 require('jquery-ui/ui/widgets/datepicker.js');
 
 class Datepickers {
-  constructor(options) {
-    const {
-      inputElement, inputElementHide, inputElementIn, inputElementOut,
-    } = options;
-
-    this.$inputElement = $(inputElement);
-    this.$inputElementHide = $(inputElementHide);
-    this.$inputElementIn = $(inputElementIn);
-    this.$inputElementOut = $(inputElementOut);
+  constructor(wrapper) {
+    this.wrapper = wrapper;
     autoBind(this);
   }
 
-  loadSingleDatepicker() {
-    this._setSingleDatepickerSettings();
-  }
+  initialize() {
+    const formList = this.wrapper.querySelectorAll('.js-form-element__field');
 
-  loadRangeDatepicker() {
-    this._setRangeDatepickerSettings();
-  }
-
-  loadDoubleDatepicker() {
-    this._setDoubleDatepickerSettings();
+    switch (this.wrapper.dataset.type) {
+      case 'single': {
+        this.$inputElement = $(formList[0]);
+        return this._setSingleDatepickerSettings();
+      }
+      case 'double': {
+        this.$inputElementIn = $(formList[0]);
+        this.$inputElementOut = $(formList[1]);
+        return this._setDoubleDatepickerSettings();
+      }
+      case 'range': {
+        this.$inputElement = $(formList[0]);
+        this.$inputElementHide = $(formList[1]);
+        return this._setRangeDatepickerSettings();
+      }
+      default: return undefined;
+    }
   }
 
   _setSingleDatepickerSettings() {

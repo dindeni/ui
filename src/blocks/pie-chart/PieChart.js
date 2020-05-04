@@ -2,9 +2,10 @@
 import Chart from 'chart.js';
 
 class PieChart {
-  constructor({ elementInner, elementOuter }) {
-    this.chartElement = elementInner;
-    this.chartOuterElement = elementOuter;
+  constructor(wrapper) {
+    this.wrapper = wrapper;
+    this.innerElement = this.wrapper.querySelector('.js-pie-chart__inner');
+    this.outerElement = this.wrapper.querySelector('.js-pie-chart__outer');
   }
 
   loadChart() {
@@ -15,7 +16,7 @@ class PieChart {
   }
 
   _setGradient() {
-    const chartElement = this.chartElement.getContext('2d');
+    const chartElement = this.innerElement.getContext('2d');
 
     this.gradientPurple = chartElement.createLinearGradient(0, 0, 0, 400);
     this.gradientPurple.addColorStop(0, '#BC9CFF');
@@ -31,7 +32,7 @@ class PieChart {
   }
 
   _setChartOuter() {
-    new Chart(this.chartOuterElement, {
+    new Chart(this.outerElement, {
       type: 'doughnut',
       data: {
         labels: ['Удовлетворительно', 'Хорошо', 'Великолепно'],
@@ -56,7 +57,7 @@ class PieChart {
   }
 
   _setChartInner() {
-    new Chart(this.chartElement, {
+    new Chart(this.innerElement, {
       type: 'doughnut',
       data: {
         labels: ['Удовлетворительно', 'Хорошо', 'Великолепно'],

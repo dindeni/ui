@@ -1,9 +1,8 @@
 import CheckboxSet from './CheckboxSet';
 
-const checkboxHead = document.querySelector('.js-checkbox-set__head');
-const checkboxWrapper = document.querySelector('.js-checkbox-set__wrapper_type_expandable');
+const checkboxSetElements = document.querySelectorAll('.js-checkbox-set');
 
-if (checkboxWrapper) {
-  const checkbox = new CheckboxSet({ checkboxHead, checkboxWrapper });
+[...checkboxSetElements].forEach((element) => {
+  const checkbox = new CheckboxSet(element);
   checkbox.observeCheckbox();
-}
+});

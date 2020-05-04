@@ -1,10 +1,10 @@
 import autoBind from 'auto-bind';
 
 class CheckboxSet {
-  constructor(options) {
-    const { checkboxHead, checkboxWrapper } = options;
-    this.checkboxHead = checkboxHead;
-    this.checkboxWrapper = checkboxWrapper;
+  constructor(checkboxSetElement) {
+    this.checkboxSetElement = checkboxSetElement;
+    this.checkboxHead = this.checkboxSetElement.querySelector('.js-checkbox-set__head');
+    this.checkboxWrapper = this.checkboxSetElement.querySelector('.js-checkbox-set__wrapper_type_expandable');
     autoBind(this);
   }
 

@@ -2,13 +2,14 @@ require('jquery-ui/ui/widgets/slider');
 require('jquery-ui/themes/base/slider.css');
 
 class UiSlider {
-  constructor({ $element, $labelElement }) {
-    this.$element = $element;
-    this.$labelElement = $labelElement;
+  constructor($sliderElement) {
+    this.$sliderElement = $sliderElement;
+    this.$rangeElement = $sliderElement.find('.js-ui-slider__range');
+    this.$labelElement = this.$sliderElement.find('.js-ui-slider__label');
   }
 
   loadSlider() {
-    this.$element.slider({
+    this.$rangeElement.slider({
       range: true,
       min: 0,
       max: 16000,

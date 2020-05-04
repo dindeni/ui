@@ -1,19 +1,19 @@
 import autoBind from 'auto-bind';
 
 class CardRoom {
-  constructor(options) {
-    const { formElement, cardRoomElement } = options;
-    this.formElement = formElement;
+  constructor(cardRoomElement) {
     this.cardRoomElement = cardRoomElement;
+    this.formElement = cardRoomElement.querySelector('.js-card-room__form');
     autoBind(this);
   }
 
-  observeForm() {
+  _observeForm() {
     this.formElement.addEventListener('change', this._handleFormElementChange);
   }
 
   observeCardRoom() {
     this.cardRoomElement.addEventListener('click', this._handleCardRoomElementClick);
+    this._observeForm();
   }
 
   _handleFormElementChange(event) {
