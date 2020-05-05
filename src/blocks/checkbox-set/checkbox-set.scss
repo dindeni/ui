@@ -9,7 +9,6 @@
     color: $dark100;
     margin: 0 0 1.29rem .14rem;
     width: 17.86rem;
-    --rotate: rotate(0deg);
 
     &::after {
       position: absolute;
@@ -18,13 +17,13 @@
       height: .57rem;
       background: url('../../images/icon-expand.svg') no-repeat;
       right: 0;
-      transform: var(--rotate);
+      transform: rotate(0deg);
       top: .21rem;
       cursor: pointer;
     }
 
-    &_turned {
-      --rotate: rotate(180deg);
+    &_turned::after {
+      transform: rotate(180deg);
     }
   }
   

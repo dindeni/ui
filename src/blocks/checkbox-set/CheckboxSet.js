@@ -12,17 +12,13 @@ class CheckboxSet {
     this.checkboxHead.addEventListener('click', this._handleCheckboxHeadClick);
   }
 
-  _handleCheckboxHeadClick(event) {
-    const isNotHide = event.target === this.checkboxHead
-      && !this.checkboxWrapper.classList.contains('checkbox-set__wrapper_hidden');
-    const isHide = event.target === this.checkboxHead
-      && this.checkboxWrapper.classList.contains('checkbox-set__wrapper_hidden');
-    if (isNotHide) {
-      this.checkboxWrapper.classList.add('checkbox-set__wrapper_hidden');
-      this.checkboxHead.classList.remove('checkbox-set__head_turned');
-    } else if (isHide) {
+  _handleCheckboxHeadClick() {
+    if (this.checkboxWrapper.classList.contains('checkbox-set__wrapper_hidden')) {
       this.checkboxWrapper.classList.remove('checkbox-set__wrapper_hidden');
       this.checkboxHead.classList.add('checkbox-set__head_turned');
+    } else {
+      this.checkboxWrapper.classList.add('checkbox-set__wrapper_hidden');
+      this.checkboxHead.classList.remove('checkbox-set__head_turned');
     }
   }
 }
