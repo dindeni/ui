@@ -12,7 +12,7 @@ class SumRooms {
     this.bedRoomsNumber = this.wrapper.querySelector('.js-sum-rooms__number-of-visitors_bedroom');
     this.bedsNumber = this.wrapper.querySelector('.js-sum-rooms__number-of-visitors_beds');
 
-    this.roomsInput.value = '0 спальни, 0 кровати...';
+    this.roomsInput.value = '0 спален, 0 кроватей...';
 
     this.roomsPopup.addEventListener('focusout', this._handleRoomsPopupFocusout);
     this.roomsPopup.addEventListener('focusin', this._handleRoomsPopupFocusin);
@@ -57,7 +57,28 @@ class SumRooms {
       number.textContent = parseInt(number.textContent, 10) - 1;
     }
 
-    this.roomsInput.value = `${this.bedRoomsNumber.textContent} спальни, ${this.bedsNumber.textContent} кровати...`;
+    this.roomsInput.value = `${this.bedRoomsNumber.textContent} ${SumRooms._getPrefix({ type: 'bedroom', value: this.bedRoomsNumber.textContent })},`
+     + ` ${this.bedsNumber.textContent} ${SumRooms._getPrefix({ type: 'bed', value: this.bedsNumber.textContent })}...`;
+  }
+
+  static _getPrefix({ type, value }) {
+    const lastDigit = Number(value.toString().slice(-1));
+    const numberOfValue = Number(value);
+    const bedroom = ['спален', 'спальня', 'спальни'];
+    const bed = ['кроватей', 'кровать', 'кровати'];
+
+    const getIndex = () => {
+      switch (true) {
+        case (numberOfValue === 0) || (numberOfValue > 10 && numberOfValue < 21):
+          return 0;
+        case lastDigit === 1:
+          return 1;
+        case lastDigit > 1 && lastDigit < 5:
+          return 2;
+        default: return 0;
+      }
+    };
+    return type === 'bedroom' ? bedroom[getIndex()] : bed[getIndex()];
   }
 }
 

@@ -1,5 +1,6 @@
 include ../form-element/form-element
 include ../sum-guests/sum-guests
+include ../sum-rooms/sum-rooms
 include ../datepickers/datepickers
 include ../checkbox-set/checkbox-set
 include ../features/features
@@ -43,18 +44,23 @@ mixin demo-forms(values)
         
         div.demo-forms__container.demo-forms__container_size_small
           div.demo-forms__caption-wrapper
-            +demo-caption({ text: 'data dropdown' })
+            +demo-caption({ text: 'date dropdown' })
           +datepickers({ type: 'single', placeholder: 'дд.мм.гггг' })
         
         div.demo-forms__container.demo-forms__container_size_middle
           div.demo-forms__caption-wrapper
-            +demo-caption({ text: 'filter dropdown' })  
+            +demo-caption({ text: 'filter date dropdown' })
           +datepickers({ type: 'range', defaultDate: '19 авг - 23 авг' })
         
         div.demo-forms__container.demo-forms__container_size_middle
           div.demo-forms__caption-wrapper
             +demo-caption({ text: 'subscription text field' })
           +form-element({ type: 'subscription', placeholder: 'Email', typeOfInput: 'email' })
+
+        div.demo-forms__container.demo-forms__container_size_middle
+          div.demo-forms__caption-wrapper
+            +demo-caption({text: 'dropdown', isDefaultCaption: true})
+          +sum-rooms()
         
         div.demo-forms__container.demo-forms__container_type_expandable
           +checkbox-set(checkboxExpandable)

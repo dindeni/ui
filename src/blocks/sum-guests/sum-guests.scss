@@ -19,7 +19,7 @@
     background: #FFFFFF;
     position: absolute;
     z-index: 100;
-    padding: 0 0 .71rem 0;
+    padding: 0 0 .8rem 0;
 
     &_hidden {
       @include hide;
@@ -41,14 +41,16 @@
   &__container {
     display: flex;
     justify-content: space-between;
+    padding-right: .4rem;
+    @include h3;
+    color: #1F2041;
+    font-size: .86rem;
+    text-transform: uppercase;
   }
   
   &__type-visitors {
-    margin: .86rem 0 .71rem 1.07rem;
-  }
-
-  &__number-of-visitors-wrapper {
-    margin: .29rem .43rem 0 0;
+    margin: 0 0 0 1.07rem;
+    padding: .9rem 0 .76rem 0;
   }
   
   &__button {
@@ -59,7 +61,7 @@
     background: #FFFFFF;
     width: 2.14rem;
     height: 2.14rem;
-    margin-bottom: .29rem;
+    margin-top: .4rem;
     outline: none;
 
     &_type_nullified {
@@ -77,17 +79,19 @@
 
   &__number-of-visitors {
     color: #1F2041;
-    margin: 0 .86rem;
+    width: 2.4rem;
+    display: inline-block;
+    text-align: center;
   }
 
   &__buttons-footer-container {
     display: flex;
     justify-content: space-between;
-    margin: 1.14rem 0 0 .14rem;
+    margin: 1.35rem 0 0 .14rem;
   }
 
   &__button-wrapper {
-    margin: 0 .7rem;
+    margin: 0 .5rem;
   }
 }
 

@@ -1,5 +1,6 @@
 @import '../../style/variables/variables';
 @import '../../style/mixins/hide';
+@import '../../style/mixins/text';
 
 .sum-rooms {
   font-weight: 700;
@@ -13,6 +14,7 @@
     background: #FFFFFF;
     position: absolute;
     z-index: 100;
+    padding-bottom: .2rem;
 
     &_hidden {
       @include hide;
@@ -30,6 +32,10 @@
   &__container {
     display: flex;
     justify-content: space-between;
+    @include h3;
+    font-size: .86rem;
+    text-transform: uppercase;
+    color: #1F2041;
   }
   
   &__type-visitors {
@@ -54,11 +60,14 @@
 
   &__number-of-visitors-wrapper {
     margin: .29rem .43rem 0 0;
+    display: flex;
   }
   
   &__number-of-visitors {
     color: #1F2041;
-    margin: 0 .86rem;
+    padding: .6rem 0 0 0;
+    width: 2.3rem;
+    text-align: center;
   }
 }
 

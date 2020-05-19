@@ -56,10 +56,13 @@ class SumGuests {
     }));
 
     const guestsPrefix = SumGuests._controlGuestsBabiesPrefix({ value: guestsValue, type: 'guests' });
-    const babiesPrefix = SumGuests._controlGuestsBabiesPrefix({ value: guestsValue, type: 'babies' });
+    const babiesPrefix = SumGuests._controlGuestsBabiesPrefix({ value: babiesValue, type: 'babies' });
 
     this.inputGuests.value = babiesValue !== 0 ? `${guestsValue} ${guestsPrefix} ${babiesValue} ${babiesPrefix}`
       : `${guestsValue} ${guestsPrefix}`;
+    if (guestsValue === 0 && babiesValue === 0) {
+      this.inputGuests.value = '';
+    }
   }
 
   _controlButtonMinus() {
@@ -118,28 +121,24 @@ class SumGuests {
   }
 
   static _controlGuestsBabiesPrefix({ type, value }) {
-    const inputValue = Number(value);
-    const isValueFrom2To4 = inputValue > 1 && inputValue < 5;
-    if (type === 'guests') {
+    const lastDigit = Number(value.toString().slice(-1));
+    const numberOfValue = Number(value);
+    const guests = ['гостей', 'гость', 'гостя'];
+    const babies = ['младенцев', 'младенец', 'младенца'];
+
+    const getIndex = () => {
       switch (true) {
-        case inputValue === 0:
-          return 'гостей';
-        case inputValue === 1:
-          return 'гость';
-        case isValueFrom2To4:
-          return 'гостя';
-        default: return 'гостей';
+        case (numberOfValue === 0) || (numberOfValue > 10 && numberOfValue < 21):
+          return 0;
+        case lastDigit === 1:
+          return 1;
+        case lastDigit > 1 && lastDigit < 5:
+          return 2;
+        default: return 0;
       }
-    } else if (type === 'babies') {
-      switch (true) {
-        case inputValue === 1:
-          return 'младенец';
-        case isValueFrom2To4:
-          return 'младенца';
-        default: return 'младенцев';
-      }
-    }
-    return undefined;
+    };
+
+    return type === 'guests' ? guests[getIndex()] : babies[getIndex()];
   }
 
   static _handleGuestsPopupFocusout(event) {

@@ -7,7 +7,13 @@ class FormElement {
 
   init() {
     this.inputElement.addEventListener('focusin', this._handleInputElementFocusin);
-    InputMask({ alias: 'datetime', inputFormat: 'dd.mm.yyyy' }).mask(this.inputElement);
+    InputMask({
+      alias: 'datetime',
+      inputFormat: 'dd.mm.yyyy',
+      showMaskOnHover: false,
+      showMaskOnFocus: false,
+      placeholder: 'ДД.ММ.ГГГГ',
+    }).mask(this.inputElement);
   }
 }
 
