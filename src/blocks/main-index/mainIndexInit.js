@@ -1,8 +1,8 @@
 import MainIndex from './MainIndex';
 
-const mainElement = document.querySelector('.js-main-index');
+const mainElements = document.querySelectorAll('.js-main-index');
 
-if (mainElement) {
-  const mainIndex = new MainIndex(mainElement);
+[...mainElements].forEach((element) => {
+  const mainIndex = new MainIndex(element);
   mainIndex.changeBackground();
-}
+});

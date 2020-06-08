@@ -1,8 +1,9 @@
 import UiSlider from './UiSlider';
 
-const $sliderElement = $('.js-ui-slider');
+const sliderElements = document.querySelectorAll('.js-ui-slider');
 
-if ($sliderElement) {
+sliderElements.forEach((element) => {
+  const $sliderElement = $(element);
   const uiSlider = new UiSlider($sliderElement);
   uiSlider.loadSlider();
-}
+});

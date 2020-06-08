@@ -1,8 +1,8 @@
 import FormElement from './FormElement';
 
-const labelElement = document.querySelector('.js-form-element_type_masked');
+const labelElements = document.querySelectorAll('.js-form-element_type_masked');
 
-if (labelElement) {
+[...labelElements].forEach((labelElement) => {
   const formElement = new FormElement(labelElement);
   formElement.init();
-}
+});

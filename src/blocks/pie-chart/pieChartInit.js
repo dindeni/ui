@@ -1,8 +1,8 @@
 import PieChart from './PieChart';
 
-const pieChartWrapper = document.querySelector('.js-pie-chart');
+const pieChartElements = document.querySelectorAll('.js-pie-chart');
 
-if (pieChartWrapper) {
+[...pieChartElements].forEach((pieChartWrapper) => {
   const pieChart = new PieChart(pieChartWrapper);
   pieChart.loadChart();
-}
+});
