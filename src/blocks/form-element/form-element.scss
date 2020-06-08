@@ -25,6 +25,11 @@
         color: $dark75;
       }
     }
+
+     &:focus {
+       outline: .07rem dashed $dark50;
+       outline-offset: .21rem;
+     }
   }
 
   &_type_date, &_type_dropdown, &_type_subscription {

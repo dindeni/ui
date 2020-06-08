@@ -55,7 +55,7 @@ class Datepickers {
           $buttonClear.click(() => Datepickers._clearInput(this.$inputElement));
           $buttonApply.click(() => Datepickers._applyValue(this.$inputElement));
 
-          Datepickers.removeClass(instance.dpDiv);
+          Datepickers._removeClass(instance.dpDiv);
         }, 0);
       },
     });
@@ -69,7 +69,7 @@ class Datepickers {
         setTimeout(() => {
           instance.dpDiv.addClass('ui-datepicker_type_range');
 
-          Datepickers.setDimensions({ instance, $element: this.$inputElement });
+          Datepickers._setDimensions({ instance, $element: this.$inputElement });
 
           const $buttonClear = $('.ui-datepicker-close');
           const $buttonApply = $('.ui-datepicker-current');
@@ -102,7 +102,7 @@ class Datepickers {
             instance.dpDiv.addClass('ui-datepicker_type_range');
           }
 
-          Datepickers.setDimensions({ instance, $element: this.$inputElement });
+          Datepickers._setDimensions({ instance, $element: this.$inputElement });
 
           const $buttonClear = $('.ui-datepicker-close');
           const $buttonApply = $('.ui-datepicker-current');
@@ -126,10 +126,10 @@ class Datepickers {
         }
       },
       beforeShow: (input, instance) => {
-        this.getRange();
+        this._getRange();
 
         setTimeout(() => {
-          Datepickers.setDimensions({ instance, $element: this.$inputElementIn, type: 'double' });
+          Datepickers._setDimensions({ instance, $element: this.$inputElementIn, type: 'double' });
 
           const $clearButton = $('.ui-datepicker-close');
           const $applyButton = $('.ui-datepicker-current');
@@ -137,7 +137,7 @@ class Datepickers {
           $clearButton.click(() => Datepickers._clearInput(instance.input));
           $applyButton.click({ value: this.$inputElementIn }, Datepickers._applyValueThroughEvent);
 
-          Datepickers.removeClass(instance.dpDiv);
+          Datepickers._removeClass(instance.dpDiv);
         }, 0);
       },
       onClose: (value, instance) => {
@@ -156,9 +156,9 @@ class Datepickers {
         }
       },
       beforeShow: (input, instance) => {
-        this.getRange();
+        this._getRange();
         setTimeout(() => {
-          Datepickers.setDimensions({ instance, $element: this.$inputElementIn, type: 'double' });
+          Datepickers._setDimensions({ instance, $element: this.$inputElementIn, type: 'double' });
 
           const $clearButton = $('.ui-datepicker-close');
           const $applyButton = $('.ui-datepicker-current');
@@ -168,7 +168,7 @@ class Datepickers {
           $applyButton.click({ value: this.$inputElementOut },
             Datepickers._applyValueThroughEvent);
 
-          Datepickers.removeClass(instance.dpDiv);
+          Datepickers._removeClass(instance.dpDiv);
         }, 0);
       },
       onClose: (value) => {
@@ -179,7 +179,7 @@ class Datepickers {
     });
   }
 
-  getRange() {
+  _getRange() {
     setTimeout(() => {
       const $tdElement = $('.ui-datepicker td');
 
@@ -204,7 +204,7 @@ class Datepickers {
     }, 0);
   }
 
-  static setDimensions(options) {
+  static _setDimensions(options) {
     const { instance, $element, type } = options;
 
     const elementWidth = type === 'double' ? $element.outerWidth() * 2 + INDENT - BORDER_CORRECTION
@@ -228,7 +228,7 @@ class Datepickers {
     event.data.value.datepicker('hide');
   }
 
-  static removeClass($element) {
+  static _removeClass($element) {
     if ($element.hasClass('ui-datepicker_type_range')) {
       $element.removeClass('ui-datepicker_type_range');
     }

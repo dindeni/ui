@@ -7,13 +7,13 @@ class CardRoom {
     autoBind(this);
   }
 
-  _observeForm() {
-    this.formElement.addEventListener('change', this._handleFormElementChange);
-  }
-
   observeCardRoom() {
     this.cardRoomElement.addEventListener('click', this._handleCardRoomElementClick);
     this._observeForm();
+  }
+
+  _observeForm() {
+    this.formElement.addEventListener('change', this._handleFormElementChange);
   }
 
   _handleFormElementChange(event) {
