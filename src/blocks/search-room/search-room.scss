@@ -4,12 +4,6 @@
 .search-room {
   @include rectangle;
 
-  &_with-position_absolute {
-    position: absolute;
-    top: 5rem;
-    left: 9.6%;
-  }
-
   &__head {
     @include h1;
     line-height: 2.07rem;

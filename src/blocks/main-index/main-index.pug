@@ -7,4 +7,5 @@ mixin main-index()
     img.main-index__background.js-main-index__background(src = require('../images/image-back-1.jpg') alt = "фото номера")
     span.main-index__slogan Лучшие номера для вашей работы, отдыха и просто вдохновения
 
-    +searchRoom(true)
+    div.main-index__wrapper
+      +searchRoom()

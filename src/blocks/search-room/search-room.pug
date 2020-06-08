@@ -2,10 +2,7 @@ include ../sum-guests/sum-guests
 include ../datepickers/datepickers
 include ../ui-control/ui-control
 
-mixin searchRoom(absolute)
-
-  -
-    const classModifier = absolute ? 'search-room_with-position_absolute' : '';
+mixin searchRoom()
 
   section.search-room(class = classModifier)
     h2.search-room__head Найдём номера под ваши пожелания

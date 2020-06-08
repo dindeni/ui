@@ -37,6 +37,12 @@
     text-align: end;
     line-height: 1.71rem;
   }
+
+  &__wrapper {
+    position: absolute;
+    top: 5rem;
+    left: 9.6%;
+  }
 }
 
 @media (max-width: 800px) {
