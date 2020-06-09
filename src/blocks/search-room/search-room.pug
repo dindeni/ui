@@ -9,14 +9,14 @@ mixin searchRoom()
 
     div.search-room__check
       div.search-room__label-wrapper
-        span.search-room__label прибытие
-        span.search-room__label выезд
+        h3.search-room__label прибытие
+        h3.search-room__label выезд
 
       form.search-room__form
         +datepickers({ type: 'double' })
 
         div.search-room__sum-guests-wrapper 
-          div.search-room__sum-guests-label гости
+          h3.search-room__sum-guests-label гости
           +sum-guests()
         div.search-room__button-wrapper
           +ui-control({ content: 'Подобрать номер', type: 'filled', isArrow: true })

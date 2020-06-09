@@ -51,6 +51,7 @@
   &__label, &__sum-guests-label {
     @include h3;
     color: $dark100;
+    margin: 0;
   }
   
   &__label, &__sum-guests-label {
@@ -106,27 +107,35 @@
     padding: 0;
   }
 
-  &__sum-wrapper {
-    @include h2;
-    display: flex;
-    justify-content: space-between;
-    margin: 2.4rem 0 0 .36rem;
-    position: relative;
+  &__sum {
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin: 2.4rem 0 0 .36rem;
+      position: relative;
 
-    &::after {
-      position: absolute;
-      content: '';
-      width: 13rem;
-      height: .07rem;
-      border: .07rem solid $dark25;
-      box-sizing: border-box;
-      bottom: 0;
-      left: 4.5rem;
+      &::after {
+        position: absolute;
+        content: '';
+        width: 13rem;
+        height: .07rem;
+        border: .07rem solid $dark25;
+        box-sizing: border-box;
+        bottom: 0;
+        left: 4.5rem;
+      }
+    }
+
+    &-label {
+      @include h2;
+      margin: 0;
     }
   }
 
+
   &__sum {
     margin-right: 1.8rem;
+    @include h2;
   }
 
   &__button-wrapper {

@@ -12,6 +12,8 @@
 
   &__label {
     @include h3;
+    color: $dark100;
+    margin: 0;
   }
 
   &__range {

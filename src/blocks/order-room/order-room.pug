@@ -18,15 +18,15 @@ mixin order-room(options)
         span.order-room__periodicity в сутки
 
     div.order-room__label-wrapper
-      span.order-room__label прибытие
-      span.order-room__label выезд
+      h3.order-room__label прибытие
+      h3.order-room__label выезд
 
     form.order-room__form
 
       +datepickers({ type: 'double' })
 
       div.order-room__sum-guests-wrapper
-        div.order-room__sum-guests-label гости
+        h3.order-room__sum-guests-label гости
         +sum-guests()
 
     div.order-room__total
@@ -44,7 +44,7 @@ mixin order-room(options)
             span.order-room__total-price=totalPrice[index]
 
     div.order-room__sum-wrapper
-      span.order-room__sum-label Итого
+      h3.order-room__sum-label Итого
       span.order-room__sum 38 081₽
 
     div.order-room__button-wrapper
