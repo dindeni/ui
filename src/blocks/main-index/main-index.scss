@@ -55,5 +55,16 @@
       bottom: .5rem;
       font-size: .8rem;
     }
+
+    &__wrapper {
+      top: 1rem;
+      left: 5%;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .main-index__wrapper {
+    left: 0;
   }
 }
