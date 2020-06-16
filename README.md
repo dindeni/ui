@@ -10,7 +10,7 @@
 
   [registration page](https://dindeni.github.io/ui/registration.html)
 
-  [sign in page](https://dindeni.github.io/ui/signIn.html)
+  [sign in page](https://dindeni.github.io/ui/sign-in.html)
 
   [page with a set of ui elements](https://dindeni.github.io/ui/ui-page.html)
 
