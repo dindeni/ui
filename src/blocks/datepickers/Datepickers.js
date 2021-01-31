@@ -1,9 +1,8 @@
 import autoBind from 'auto-bind';
-import {
-  DATE_SETTINGS, SHIFT_LEFT, BORDER_CORRECTION, RANGE_SETTINGS, INDENT,
-} from './constants';
+import 'air-datepicker';
+import 'air-datepicker/dist/css/datepicker.min.css';
 
-require('jquery-ui/ui/widgets/datepicker.js');
+import BASIC_SETTINGS from './constants';
 
 class Datepickers {
   constructor(wrapper) {
@@ -35,197 +34,116 @@ class Datepickers {
 
   _setSingleDatepickerSettings() {
     this.$inputElement.datepicker({
-      ...DATE_SETTINGS,
-      dateFormat: 'dd.mm.yy',
-      onClose: (value, instance) => {
-        if (value === '') {
-          this.$inputElement.datepicker('setDate', null);
-        }
+      ...BASIC_SETTINGS,
+      classes: 'datepickers__popup datepickers__popup_type_single',
 
-        instance.dpDiv.removeClass('ui-datepicker_type_single');
+      onShow: (instance) => {
+        this._changePopupView(instance, this.$inputElement);
       },
-      beforeShow: (text, instance) => {
-        setTimeout(() => {
-          instance.dpDiv.addClass('ui-datepicker_type_single');
-          instance.dpDiv.css({ top: this.$inputElement.offset().top + SHIFT_LEFT });
-
-          const $buttonClear = $('.ui-datepicker-close');
-          const $buttonApply = $('.ui-datepicker-current');
-
-          $buttonClear.click(() => Datepickers._clearInput(this.$inputElement));
-          $buttonApply.click(() => Datepickers._applyValue(this.$inputElement));
-
-          Datepickers._removeClass(instance.dpDiv);
-        }, 0);
+      onSelect: (_formattedDate, _date, instance) => {
+        const $buttonClear = instance.nav.$buttonsContainer.find('[data-action="clear"]');
+        this._checkClearButtonVisibility($buttonClear);
+        instance.hide();
       },
     });
   }
 
   _setRangeDatepickerSettings() {
     this.$inputElement.datepicker({
-      ...DATE_SETTINGS,
-      ...RANGE_SETTINGS,
-      beforeShow: (text, instance) => {
-        setTimeout(() => {
-          instance.dpDiv.addClass('ui-datepicker_type_range');
+      ...BASIC_SETTINGS,
+      range: true,
+      classes: 'datepickers__popup datepickers__popup_type_range',
 
-          Datepickers._setDimensions({ instance, $element: this.$inputElement });
-
-          const $buttonClear = $('.ui-datepicker-close');
-          const $buttonApply = $('.ui-datepicker-current');
-
-          $buttonClear.click(() => Datepickers._clearInput(this.$inputElement));
-          $buttonApply.click({ value: this.$inputElement }, Datepickers._applyValueThroughEvent);
-        }, 0);
+      onShow: (instance) => {
+        this._changePopupView(instance, this.$inputElement);
       },
-      onClose: (value) => {
-        if (!value) {
-          this.$inputElement.datepicker('setDate', null);
-        } else this.$inputElementHide.datepicker('show');
-      },
-    });
-
-    this.$inputElementHide.datepicker({
-      ...DATE_SETTINGS,
-      ...RANGE_SETTINGS,
-      onClose: (value) => {
-        const isValidValue = parseInt(value, 10) > parseInt(this.$inputElement.val(), 10);
-        if (value === '' || !isValidValue) {
-          this.$inputElementHide.datepicker('setDate', null);
-        } else {
-          this.$inputElement.val(`${this.$inputElement.val().substring(0, 6)} - ${value}`);
+      onSelect: (_formattedDate, date, instance) => {
+        if (date[0]) {
+          this.$inputElement[0].value = Datepickers._formatDate(date[0]);
         }
-      },
-      beforeShow: (text, instance) => {
-        setTimeout(() => {
-          if (parseInt(this.$inputElement.css('width'), 10) < 270) {
-            instance.dpDiv.addClass('ui-datepicker_type_range');
-          }
-
-          Datepickers._setDimensions({ instance, $element: this.$inputElement });
-
-          const $buttonClear = $('.ui-datepicker-close');
-          const $buttonApply = $('.ui-datepicker-current');
-
-          $buttonClear.click(this.$inputElementHide);
-          $buttonApply.click({ value: this.$inputElementHide },
-            Datepickers._applyValueThroughEvent);
-        }, 0);
+        if (date[1]) {
+          this.$inputElement[0].value = `${this.$inputElement[0].value} - ${Datepickers._formatDate(date[1])}`;
+        }
+        const $buttonClear = instance.nav.$buttonsContainer.find('[data-action="clear"]');
+        this._checkClearButtonVisibility($buttonClear);
       },
     });
   }
 
   _setDoubleDatepickerSettings() {
     this.$inputElementIn.datepicker({
-      ...DATE_SETTINGS,
-      dateFormat: 'dd.mm.yy',
-      onSelect: (date) => {
-        const isValidDate = date < this.dateOut || !this.dateOut;
-        if (isValidDate) {
-          this.dateArrive = date;
+      ...BASIC_SETTINGS,
+      range: true,
+
+      onShow: (instance) => {
+        this._changePopupView(instance, this.$inputElementIn);
+      },
+      onSelect: (_formattedDate, date, instance) => {
+        if (date[0]) {
+          this.$inputElementIn[0].value = Datepickers._formatDate(date[0], 'long');
         }
-      },
-      beforeShow: (input, instance) => {
-        this._getRange();
-
-        setTimeout(() => {
-          Datepickers._setDimensions({ instance, $element: this.$inputElementIn, type: 'double' });
-
-          const $clearButton = $('.ui-datepicker-close');
-          const $applyButton = $('.ui-datepicker-current');
-
-          $clearButton.click(() => Datepickers._clearInput(instance.input));
-          $applyButton.click({ value: this.$inputElementIn }, Datepickers._applyValueThroughEvent);
-
-          Datepickers._removeClass(instance.dpDiv);
-        }, 0);
-      },
-      onClose: (value, instance) => {
-        if (value === '') {
-          instance.input.datepicker('setDate', null);
-        } else instance.input.datepicker('setDate', this.dateArrive);
+        this.$inputElementOut[0].value = date[1] ? Datepickers._formatDate(date[1], 'long') : '';
+        const $buttonClear = instance.nav.$buttonsContainer.find('[data-action="clear"]');
+        this._checkClearButtonVisibility($buttonClear);
       },
     });
-
     this.$inputElementOut.datepicker({
-      ...DATE_SETTINGS,
-      dateFormat: 'dd.mm.yy',
-      onSelect: (date) => {
-        if (date > this.dateArrive) {
-          this.dateOut = date;
-        }
-      },
-      beforeShow: (input, instance) => {
-        this._getRange();
-        setTimeout(() => {
-          Datepickers._setDimensions({ instance, $element: this.$inputElementIn, type: 'double' });
-
-          const $clearButton = $('.ui-datepicker-close');
-          const $applyButton = $('.ui-datepicker-current');
-
-          $clearButton.click({ value: this.$inputElementOut }, () => Datepickers
-            ._clearInput(this.$inputElementOut));
-          $applyButton.click({ value: this.$inputElementOut },
-            Datepickers._applyValueThroughEvent);
-
-          Datepickers._removeClass(instance.dpDiv);
-        }, 0);
-      },
-      onClose: (value) => {
-        if (value === '') {
-          this.$inputElementOut.datepicker('setDate', null);
-        } else this.$inputElementOut.datepicker('setDate', this.dateOut);
+      onShow: (instance) => {
+        instance.hide();
+        this.$inputElementIn.data('datepicker').show();
       },
     });
   }
 
-  _getRange() {
-    setTimeout(() => {
-      const $tdElement = $('.ui-datepicker td');
-
-      $tdElement.each((index, td) => {
-        const childElementValue = parseInt(td.firstChild.textContent, 10);
-        const isMaxDate = this.dateOut
-          && childElementValue === parseInt(this.dateOut.substring(0, 2), 10);
-        const isMinDate = this.dateArrive
-          && childElementValue === parseInt(this.dateArrive.substring(0, 2), 10);
-        const isRangeDate = this.dateArrive && this.dateOut
-          && childElementValue > parseInt(this.dateArrive.substring(0, 2), 10)
-          && childElementValue < parseInt(this.dateOut.substring(0, 2), 10);
-
-        if (isMaxDate) {
-          $(td).addClass('ui-datepicker-calendar__max');
-        } else if (isMinDate) {
-          $(td).addClass('ui-datepicker-calendar__min');
-        } else if (isRangeDate) {
-          $(td).addClass('ui-datepicker-calendar__range');
-        }
-      });
-    }, 0);
+  _changePopupView(instance, $inputElement) {
+    instance.$datepicker.css({ top: `${$inputElement.offset().top + $inputElement.outerHeight()}px` });
+    const $buttonClear = instance.nav.$buttonsContainer.find('[data-action="clear"]');
+    const $buttonApply = instance.nav.$buttonsContainer.find('[data-action="today"]');
+    Datepickers._changeButtonsText($buttonClear, $buttonApply);
+    $buttonApply.click(() => Datepickers._applyPopup(instance));
+    this._checkClearButtonVisibility($buttonClear);
   }
 
-  static _setDimensions(options) {
-    const { instance, $element, type } = options;
+  _checkClearButtonVisibility($buttonClear) {
+    const inputs = this.wrapper.querySelectorAll('.js-form-element__field');
 
-    const elementWidth = type === 'double' ? $element.outerWidth() * 2 + INDENT - BORDER_CORRECTION
-      : $element.outerWidth() - BORDER_CORRECTION;
-    instance.dpDiv.css({
-      top: $element.offset().top + SHIFT_LEFT,
-      left: $element.offset().left,
-      width: elementWidth,
-    });
+    const changeButtonClass = (isValueEmpty, hasClassHidden) => {
+      if (isValueEmpty) {
+        $buttonClear.addClass(!hasClassHidden ? 'datepicker--button_hidden' : '');
+        $buttonClear.parent().css({ justifyContent: 'flex-end' });
+      } else {
+        $buttonClear.removeClass('datepicker--button_hidden');
+        $buttonClear.parent().css({ justifyContent: 'space-between' });
+      }
+    };
+    const isButtonHidden = $buttonClear.hasClass('datepicker--button_hidden');
+    if (inputs.length > 1) {
+      const isInputsEmpty = this.$inputElementIn.val() === '' && this.$inputElementOut.val() === '';
+      changeButtonClass(isInputsEmpty, isButtonHidden);
+    } else {
+      const isInputEmpty = inputs[0].value === '';
+      changeButtonClass(isInputEmpty, isButtonHidden);
+    }
   }
 
-  static _clearInput($element) {
-    $element.datepicker('setDate', null);
+  static _formatDate(date, type) {
+    if (type === 'long') {
+      const day = `0${date.getDate()}`.slice(-2);
+      const month = `0${date.getMonth() + 1}`.slice(-2);
+      const year = date.getFullYear();
+      return `${day}.${month}.${year}`;
+    }
+    const localeDate = date.toLocaleString('ru-RU', { day: '2-digit', month: 'short' });
+    return `${localeDate.slice(0, 2)} ${localeDate.slice(3, 6)}`;
   }
 
-  static _applyValue($element) {
-    $element.datepicker('hide');
+  static _changeButtonsText($buttonClear, $buttonApply) {
+    $buttonClear.text('очистить');
+    $buttonApply.text('применить');
   }
 
-  static _applyValueThroughEvent(event) {
-    event.data.value.datepicker('hide');
+  static _applyPopup(datepickerInstance) {
+    datepickerInstance.hide();
   }
 
   static _removeClass($element) {

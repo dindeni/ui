@@ -11,8 +11,7 @@ class SumRooms {
     this.roomsPopup = this.wrapper.querySelector('.js-sum-rooms__popup');
     this.bedRoomsNumber = this.wrapper.querySelector('.js-sum-rooms__number-of-visitors_bedroom');
     this.bedsNumber = this.wrapper.querySelector('.js-sum-rooms__number-of-visitors_beds');
-
-    this.roomsInput.value = '0 спален, 0 кроватей...';
+    this.bathRoomNumber = this.wrapper.querySelector('.js-sum-rooms__number-of-visitors_bathroom');
 
     this.roomsPopup.addEventListener('focusout', this._handleRoomsPopupFocusout);
     this.roomsPopup.addEventListener('focusin', this._handleRoomsPopupFocusin);
@@ -57,15 +56,30 @@ class SumRooms {
       number.textContent = parseInt(number.textContent, 10) - 1;
     }
 
-    this.roomsInput.value = `${this.bedRoomsNumber.textContent} ${SumRooms._getPrefix({ type: 'bedroom', value: this.bedRoomsNumber.textContent })},`
-     + ` ${this.bedsNumber.textContent} ${SumRooms._getPrefix({ type: 'bed', value: this.bedsNumber.textContent })}...`;
+    this._setInputValue();
   }
 
-  static _getPrefix({ type, value }) {
+  _setInputValue() {
+    const values = [this.bedRoomsNumber.textContent, this.bedsNumber.textContent,
+      this.bathRoomNumber.textContent];
+    const keys = ['bedroom', 'bed', 'bathRoom'];
+
+    this.roomsInput.value = '';
+    values.forEach((value, index) => {
+      if (parseInt(value, 10) !== 0) {
+        this.roomsInput.value = this.roomsInput.value === ''
+          ? `${value} ${SumRooms._getPrefix(keys[index], value)}`
+          : `${this.roomsInput.value}, ${value} ${SumRooms._getPrefix(keys[index], value)}`;
+      }
+    });
+  }
+
+  static _getPrefix(type, value) {
     const lastDigit = Number(value.toString().slice(-1));
     const numberOfValue = Number(value);
     const bedroom = ['спален', 'спальня', 'спальни'];
     const bed = ['кроватей', 'кровать', 'кровати'];
+    const bathRoom = ['ванных комнат', 'ванная комната', 'ванные комнаты'];
 
     const getIndex = () => {
       switch (true) {
@@ -78,7 +92,11 @@ class SumRooms {
         default: return 0;
       }
     };
-    return type === 'bedroom' ? bedroom[getIndex()] : bed[getIndex()];
+    switch (type) {
+      case 'bedroom': return bedroom[getIndex()];
+      case 'bed': return bed[getIndex()];
+      default: return bathRoom[getIndex()];
+    }
   }
 }
 

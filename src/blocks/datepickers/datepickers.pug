@@ -7,10 +7,7 @@ mixin datepickers(options)
 
     const formOptions = {
       single: { type: 'date', placeholder: placeholder, isJsInputClass: true },
-      range: [
-        { type: 'dropdown', placeholder: defaultDate, isJsInputClass: true },
-        { type: 'hidden', placeholder: defaultDate, isJsInputClass: true },
-      ],
+      range: { type: 'dropdown', placeholder: defaultDate, isJsInputClass: true },
       double: [
         { type: 'date', placeholder: 'дд.мм.гггг', isJsInputClass: true },
         { type: 'date', placeholder: 'дд.мм.гггг', isJsInputClass: true },
@@ -18,12 +15,9 @@ mixin datepickers(options)
     };
 
   div.datepickers.js-datepickers(data-type=type)
-    if type === 'single'
-      +form-element(formOptions.single)
+    if type === 'single' || type === 'range'
+      +form-element(formOptions[type])
     else
       each value in formOptions[type]
-        if type === 'double'
-          div.datepickers__wrapper
-            +form-element(value)
-        else
+        div.datepickers__wrapper
           +form-element(value)

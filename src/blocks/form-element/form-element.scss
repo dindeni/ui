@@ -4,7 +4,7 @@
 
 .form-element {
   width: 100%;
-  
+
   &__field {
     width: 100%;
     border: .07rem solid $dark25;
@@ -73,6 +73,11 @@
 
   &_type_hidden {
     @include hide;
+  }
+
+  &_with_ellipsis .form-element__field {
+    text-overflow: ellipsis;
+    padding-right: 6.3rem;
   }
 }
 

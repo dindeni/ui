@@ -5,7 +5,7 @@ mixin sum-rooms
 
   div.sum-rooms.js-sum-rooms
 
-    +form-element({ type: 'dropdown', placeholder: '0 спальни, 0 кровати...', isJsInputClass: true })
+    +form-element({ type: 'withEllipsis', placeholder: '0 спальни, 0 кровати...', isJsInputClass: true, is })
 
     div.sum-rooms__popup.js-sum-rooms__popup.sum-rooms__popup_hidden(tabindex = 0)
       div.sum-rooms__count-container
@@ -17,9 +17,9 @@ mixin sum-rooms
 
           div.sum-rooms__number-of-visitors-wrapper
             button.sum-rooms__button.sum-rooms__button_type_minus.js-sum-rooms__button_type_minus(type = "button") -
-            
+
             span.sum-rooms__number-of-visitors.js-sum-rooms__number-of-visitors(
               class = `sum-rooms__number-of-visitors_${roomsModifier[index]} js-sum-rooms__number-of-visitors_${roomsModifier[index]}`
               ) 0
-            
+
             button.sum-rooms__button.sum-rooms__button_type_plus.js-sum-rooms__button_type_plus(type = "button") +
