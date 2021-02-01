@@ -6,12 +6,16 @@ class SumRooms {
     autoBind(this);
   }
 
-  summarizeRooms() {
+  summarizeRooms(initialValues) {
     this.roomsInput = this.wrapper.querySelector('.js-form-element__field');
     this.roomsPopup = this.wrapper.querySelector('.js-sum-rooms__popup');
     this.bedRoomsNumber = this.wrapper.querySelector('.js-sum-rooms__number-of-visitors_bedroom');
     this.bedsNumber = this.wrapper.querySelector('.js-sum-rooms__number-of-visitors_beds');
     this.bathRoomNumber = this.wrapper.querySelector('.js-sum-rooms__number-of-visitors_bathroom');
+
+    if (initialValues) {
+      this._setInitialNumberOfVisitors(initialValues);
+    }
 
     this.roomsPopup.addEventListener('focusout', this._handleRoomsPopupFocusout);
     this.roomsPopup.addEventListener('focusin', this._handleRoomsPopupFocusin);
@@ -97,6 +101,19 @@ class SumRooms {
       case 'bed': return bed[getIndex()];
       default: return bathRoom[getIndex()];
     }
+  }
+
+  _setInitialNumberOfVisitors(values) {
+    values.forEach((value) => {
+      switch (value.type) {
+        case 'bedroom': this.bedRoomsNumber.textContent = value.numberOfVisitors;
+          break;
+        case 'bed': this.bedsNumber.textContent = value.numberOfVisitors;
+          break;
+        default: this.bathRoomNumber.textContent = value.numberOfVisitors;
+      }
+    });
+    this._setInputValue();
   }
 }
 
