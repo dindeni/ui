@@ -12,10 +12,10 @@ mixin searchRoom()
         h3.search-room__label прибытие
         h3.search-room__label выезд
 
-      form.search-room__form
+      form.search-room__form(action= 'filter.html')
         +datepickers({ type: 'double' })
 
-        div.search-room__sum-guests-wrapper 
+        div.search-room__sum-guests-wrapper
           h3.search-room__sum-guests-label гости
           +sum-guests()
         div.search-room__button-wrapper

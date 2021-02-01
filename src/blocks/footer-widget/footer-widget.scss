@@ -17,7 +17,7 @@
     margin-top: 1.17rem;
     line-height: 1.71rem;
   }
-  
+
   &__list-wrapper {
     padding: 6.43rem 2.8% 0 0;
     width: 11.43rem;
@@ -66,13 +66,13 @@
 
 @media (max-width: 900px) {
   .footer-widget__logo-wrapper {
-    margin: 7.14rem 2.8% 0 2%;
+    margin: 4.3rem 2.8% 0 2%;
   }
 }
 
 @media (max-width: 620px) {
   .footer-widget {
-    &__logo {
+    &__logo-image {
       width: 5.71rem;
 
       &-wrapper {

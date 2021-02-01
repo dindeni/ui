@@ -17,7 +17,8 @@ mixin footer-widget(options)
 
   footer.footer-widget
     div.footer-widget__logo-wrapper
-      img.footer-widget__logo(src = require('../images/icon-logo.svg') alt = "логотип")
+      a.footer-widget__logo-link(href='index.html')
+        img.footer-widget__logo-image(src = require('../images/icon-logo.svg') alt = "логотип")
       p.footer-widget__description=description
 
     each head, index in headers

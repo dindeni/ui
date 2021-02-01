@@ -29,7 +29,7 @@ mixin card-room(options)
 
     div.card-room__number-room-wrapper
       span.card-room__number-mark №
-      span.card-room__number=numberOfRoom
+      a.card-room__number(href='room.html')=numberOfRoom
 
       if type === 'luxe'
         span.card-room__type-room люкс

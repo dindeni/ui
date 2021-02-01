@@ -65,7 +65,7 @@
     justify-content: space-between;
     width: 19.29rem;
   }
-  
+
   &__arrow {
     width: .57rem;
     height: .93rem;
@@ -92,6 +92,7 @@
   &__number {
     @include h2;
     margin: 0 .2rem 0 .4rem;
+    text-decoration: none;
 
     &-room-wrapper {
       margin: 1.7rem 0 0 0;
@@ -134,7 +135,7 @@
     display: inline-block;
     margin: 1.5rem 0 0 1.5rem
   }
-  
+
   &__number-review {
     display: inline-block;
     @include body;

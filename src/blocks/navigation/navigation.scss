@@ -17,8 +17,13 @@
   }
 
   &__logo {
-    margin: 0 0 0 9.8%;
-    height: auto;
+    &-link {
+      margin: 0 0 0 9.8%;
+    }
+
+    &-image {
+      height: auto;
+    }
   }
 
   &__list {
@@ -169,12 +174,12 @@
   .navigation {
     justify-content: space-between;
 
-    &__logo {
+    &__logo-link {
       margin: 0 0 0 2%;
       width: 5rem;
       padding: .36rem 0 0 0;
     }
-    
+
     &__buttons-wrapper {
       margin-right: 1%;
     }
@@ -189,7 +194,7 @@
     &__item {
       padding: .29rem .36rem;
     }
-    
+
     &__list, &_theme_en &__list {
       z-index: 10;
       display: block;
@@ -286,7 +291,9 @@
 
 @media (max-width: 800px) {
     .navigation__logo {
-      width: 6.43rem;
+      &-image, &-link {
+        width: 6.43rem;
+      }
     }
 }
 
@@ -295,7 +302,7 @@
       flex-wrap: wrap;
       justify-content: center;
 
-      &__logo {
+      &__logo-link {
         margin: 0 .5rem 0 1%;
       }
 
@@ -309,12 +316,16 @@
   .navigation {
     padding-bottom: 1.43rem;
 
-    &__logo {
+    &__logo-link {
       margin: 0 20%;
     }
 
     &__buttons-wrapper {
-      margin: .36rem 0 0 0;
+      margin: 0;
+    }
+
+    &__button-mobile {
+      top: 1.2rem;
     }
   }
 }
