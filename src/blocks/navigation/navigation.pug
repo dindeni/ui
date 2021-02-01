@@ -40,7 +40,8 @@ mixin navigation(options)
 
   else if type === 'loggedIn'
     nav.navigation.js-navigation.navigation_logged
-      img.navigation__logo(src = require('../images/icon-logo.svg') alt = "логотип")
+      a.navigation__logo-link(href='index.html')
+        img.navigation__logo-image(src = require('../images/icon-logo.svg') alt = "логотип")
 
       ul.navigation__list.js-navigation__list.navigation__list_logged.navigation__list_hidden
         each item, index in items
