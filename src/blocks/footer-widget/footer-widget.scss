@@ -3,13 +3,16 @@
 @import '../../style/variables/variables';
 
 .footer-widget {
-  display: flex;
-  flex-wrap: wrap;
-  background: #FFFFFF;
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    background: #FFFFFF;
+    padding-left: 9.8%;
+  }
 
   &__logo-wrapper {
-    width: 18%;
-    margin: 7rem 2.8% 8.29rem 9.7%;
+    max-width: 18.57rem;
+    margin: 7rem 3% 8.29rem 0;
   }
 
   &__description {
@@ -19,14 +22,14 @@
   }
 
   &__list-wrapper {
-    padding: 6.43rem 2.8% 0 0;
+    padding: 6.43rem 3.1% 0 0;
     width: 11.43rem;
   }
 
   &__subscribe {
     &-wrapper {
       margin: 6.43rem 0 0 0;
-      width: 18%;
+      max-width: 18.57rem;
     }
 
     &-head {
@@ -42,34 +45,6 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .footer-widget__subscribe-wrapper {
-    width: 16%;
-  }
-}
-
-@media (max-width: 1250px) {
-  .footer-widget {
-    flex-wrap: wrap;
-    justify-content: center;
-
-    &__logo-wrapper, &__subscribe-wrapper {
-      width: 18.57rem;
-      padding-bottom: 1rem;
-    }
-
-    &__logo-wrapper {
-      margin: 100px 2.8% 50px 2%;
-    }
-  }
-}
-
-@media (max-width: 900px) {
-  .footer-widget__logo-wrapper {
-    margin: 4.3rem 2.8% 0 2%;
-  }
-}
-
 @media (max-width: 620px) {
   .footer-widget {
     &__logo-image {
@@ -81,6 +56,10 @@
       }
     }
 
+    &__logo-wrapper {
+      margin-top: 4.5rem;
+    }
+
     &__list-wrapper {
       width: 8.57rem;
       padding: 3.57rem 2.8% 0 0;
@@ -89,5 +68,11 @@
     &__subscribe-wrapper {
       margin: 3.57rem 0 3.57rem 0;
     }
+  }
+}
+
+@media (max-width: 460px) {
+  .footer-widget__wrapper {
+    padding-left: 5%;
   }
 }

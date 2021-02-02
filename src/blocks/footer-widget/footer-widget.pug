@@ -16,20 +16,21 @@ mixin footer-widget(options)
     } = options;
 
   footer.footer-widget
-    div.footer-widget__logo-wrapper
-      a.footer-widget__logo-link(href='index.html')
-        img.footer-widget__logo-image(src = require('../images/icon-logo.svg') alt = "логотип")
-      p.footer-widget__description=description
+    div.footer-widget__wrapper
+      div.footer-widget__logo-wrapper
+        a.footer-widget__logo-link(href='index.html')
+          img.footer-widget__logo-image(src = require('../images/icon-logo.svg') alt = "логотип")
+        p.footer-widget__description=description
 
-    each head, index in headers
-      div.footer-widget__list-wrapper
-        +footer-list({ head, items: items[index] })
+      each head, index in headers
+        div.footer-widget__list-wrapper
+          +footer-list({ head, items: items[index] })
 
-    div.footer-widget__subscribe-wrapper
-      h3.footer-widget__subscribe-head=headSubscribe
-      div.footer-widget__subscribe-description=subscribeDescription
+      div.footer-widget__subscribe-wrapper
+        h3.footer-widget__subscribe-head=headSubscribe
+        div.footer-widget__subscribe-description=subscribeDescription
 
-      +form-element({ type: 'subscription', placeholder: placeholderEmail, typeOfInput: 'email' })
+        +form-element({ type: 'subscription', placeholder: placeholderEmail, typeOfInput: 'email' })
 
     +copyright(copyrightText)
 

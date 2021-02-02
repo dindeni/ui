@@ -31,10 +31,13 @@
     position: relative;
     width: 100%;
   }
-  
+
   &__review {
+    &s {
+      margin-top: 2.7rem;
+    }
     &-head {
-      margin: 2.7rem 0 1.95rem .1rem;
+      margin: 0 0 1.95rem .1rem;
       display: inline-block;
     }
 
@@ -43,12 +46,12 @@
       color: $dark50;
       position: absolute;
       right: 4.86rem;
-      top: 2.8rem;
+      top: .1rem;
     }
 
     &-wrapper {
       margin: 0 0 1.8rem .1rem;
-      width: 50.71rem;
+      width: 100%;
     }
   }
 
@@ -83,72 +86,64 @@
   }
 }
 
-@media (max-width: 1056px) {
+@media (max-width: 1100px) {
   .room-description {
-    justify-content: space-around;
-
     &__container {
       width: 100%;
     }
 
     &__pie-chart-wrapper {
-      margin: 0 0 0 8%;
+      margin: 0 0 0 13.7%;
+    }
+
+    &__order-room {
+      margin: 0.9rem 0 0 0;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .room-description {
+    &__container {
+      flex-direction: column;
+    }
+
+    &__pie-chart-wrapper {
+      margin: 2.7rem 0 0 0;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .room-description {
+    &__wrapper, &__pie-chart-wrapper, &__reviews, &__rules,
+    &__cancel {
+      margin-left: 5%;
     }
 
     &__review {
-      width: 82%;
-    }
-  }
-}
-
-@media (max-width: 800px) {
-  .room-description {
-    &__pie-chart-wrapper {
-      margin: 0 0 0 2%;
-    }
-
-    &.room-description__review {
-      width: 100%;
-    }
-
-    &__review-wrapper {
-      width: 80vw;
-    }
-    
-    &__cancel {
-      margin: 1rem 0 1.43rem 2%;
-    }
-  }
-}
-
-@media (max-width: 620px) {
-  .room-description__review-number {
-    right: 4%;
-  }
-}
-
-@media (max-width: 450px) {
-  .room-description {
-    &__features-head, &__pie-chart-head, &__review-head, &__rules-head,
-    &__pie-chart-wrapper {
-      margin: .86rem 0 1.64rem 2%;
-      font-size: 1.1rem;
-    }
-
-    &__review-number {
-      right: 5%;
-      font-size: 0.86rem;
-      top: .7rem;
-    }
-
-    &__cancel {
-      &-head {
-        font-size: 1.14rem;
+      &s {
+        width: 90%;
       }
 
+      &-number {
+        right: 0;
+        top: 3rem;
+      }
+    }
+
+    &__rules {
+      margin-right: 0;
+    }
+
+    &__cancel {
       &-paragraph {
         width: 90%;
       }
+    }
+
+    &__order-room {
+      margin: 0.9rem auto 0 auto;
     }
   }
 }

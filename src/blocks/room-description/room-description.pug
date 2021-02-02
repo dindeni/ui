@@ -58,4 +58,5 @@ mixin room-description
         h2.room-description__cancel-head Отмена
         p.room-description__cancel-paragraph Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
-    +order-room({ totalValue, totalPrice })
+    div.room-description__order-room
+      +order-room({ totalValue, totalPrice })

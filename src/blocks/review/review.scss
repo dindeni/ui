@@ -17,7 +17,7 @@
     display: inline-block;
     vertical-align: top;
   }
-  
+
   &__name {
     font-weight: 700;
     margin: .1rem 0 0 .7rem;
@@ -41,7 +41,7 @@
 
   &__description {
     margin: .5rem 0 0 1rem;
-    width: 46.79rem;
+    padding-right: 5.71rem;
     line-height: 1.67rem;
   }
 }
@@ -50,5 +50,6 @@
   .review__description {
     font-size: 0.8rem;
     width: 80%;
+    padding-right: 0;
   }
 }
