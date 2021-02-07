@@ -3,52 +3,55 @@
 @import '../../style/mixins/text';
 
 .radio-group {
+  display: flex;
+  max-width: 15.7rem;
+
   &__title {
     position: relative;
+    display: flex;
+    cursor: pointer;
+
+    &:first-child  {
+      margin-right: 19px;
+    }
   }
-  
+
   &__field {
     @include hide;
-  }
 
-  &__field:checked + &__mark {
-    color: rgba(31, 32, 65, 0.75);
-
-    &::after {
-      position: absolute;
-      content: '';
-      width: .86rem;
-      height: .86rem;
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-      border-radius: .71rem;
-      left: -.36rem;
-      top: 0;
-      cursor: pointer;
-    }
-
-    &::before {
+    &:checked + .radio-group__mark {
       border: .07rem solid $purple;
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: .86rem;
+        height: .86rem;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        border-radius: .71rem;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      & + .radio-group__caption {
+        color: rgba(31, 32, 65, 0.75);
+      }
     }
   }
 
   &__mark {
+    position: absolute;
+    width: 1.3rem;
+    height: 1.3rem;
+    border: .07rem solid $dark25;
+    border-radius: .71rem;
+    left: 0;
+  }
+
+  &__caption {
     @include body;
     color: rgba(31, 32, 65, 0.5);
-    padding:  .21rem 0 0 1.43rem;
-    margin: 0 2.14rem 0 0;
-    line-height: 1.71rem;
-
-    &::before {
-      position: absolute;
-      content: '';
-      width: 1.43rem;
-      height: 1.43rem;
-      border: .07rem solid $dark25;
-      box-sizing: border-box;
-      border-radius: .71rem;
-      left: -.64rem;
-      top: -.3rem;
-      cursor: pointer;
-    }
+    margin: .3rem 0 0 2.25rem;
   }
 }

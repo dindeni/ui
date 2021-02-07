@@ -64,11 +64,21 @@
   }
 
   &_type_subscription {
+    position: relative;
     &::after {
-      background: url('../../images/icon-arrow-forward.svg') no-repeat;
-      right: -1rem;
-      top: .93rem;
+      display: none;
     }
+  }
+
+  &__send-button {
+    position: absolute;
+    border: none;
+    background: url('../../images/icon-arrow-forward.svg') no-repeat;
+    width: 1.3rem;
+    height: 1.3rem;
+    right: 0.9rem;
+    top: 1rem;
+    cursor: pointer;
   }
 
   &_type_hidden {

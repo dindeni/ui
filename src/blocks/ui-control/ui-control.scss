@@ -103,7 +103,7 @@
 
   &_theme_transparent {
     color: #BC9CFF;;
-    background: #FFFFFF; 
+    background: #FFFFFF;
     padding: 0;
     width: auto;
 
@@ -141,6 +141,10 @@
 
   &_theme_gray {
     color: $dark25;
+
+    &::before {
+      background: $dark25;
+    }
 
     & .ui-control__mark {
       background: url('./images/icon-favorite-border.svg') no-repeat;

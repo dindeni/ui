@@ -11,10 +11,12 @@ mixin form-element(options)
       subscription: 'form-element_type_subscription',
       password: 'form-element_type_password',
       hidden: 'form-element_type_hidden',
-      withEllipsis: 'form-element_with_ellipsis form-element_type_dropdown',
+      withEllipsis: 'form-element_with_ellipsis form-element_type_dropdown'
     };
 
     const jsInputClass = isJsInputClass ? 'js-form-element__field' : '';
 
   label.form-element(class = classes[type])
     input.form-element__field(type = typeOfInput || 'text' placeholder = `${placeholder}` class = jsInputClass)
+    if type === 'subscription'
+      button.form-element__send-button

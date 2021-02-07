@@ -16,7 +16,7 @@
     @include h2;
     font-size: 1rem;
   }
-  
+
   &__number {
     @include h2;
     font-size: 1.71rem;
@@ -53,7 +53,7 @@
     color: $dark100;
     margin: 0;
   }
-  
+
   &__label, &__sum-guests-label {
     margin-bottom: .14rem;
     display: inline-block;
@@ -119,7 +119,7 @@
         content: '';
         width: 13rem;
         height: .07rem;
-        border: .07rem solid $dark25;
+        border-top: .07rem dotted $dark25;
         box-sizing: border-box;
         bottom: 0;
         left: 4.5rem;
@@ -139,8 +139,8 @@
   }
 
   &__button-wrapper {
-    margin-top: 1.8rem;
-    width: 22.86rem;
+    margin-top: 1.9rem;
+    width: 23rem;
     height: 3.14rem;
   }
 }

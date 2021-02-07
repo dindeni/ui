@@ -19,10 +19,6 @@
       .demo-forms__container {
         margin: 1.14rem 0 2.86rem 0;
 
-        &_type_checkbox, &_type_radio {
-          margin-left: .7rem;
-        }
-
         &_type_toggle {
           margin-left: .2rem;
         }
@@ -47,7 +43,7 @@
 
   &__container {
     margin: 0 0 2.86rem 0;
-    
+
     &_size {
       &_default {
         width: 22.86rem;
@@ -87,12 +83,12 @@
   &__buttons-wrapper, &__bullet-list-wrapper {
     margin: 1.14rem 0 2.86rem 0;
   }
-  
+
   &__button-container {
     &:not(:last-child) {
       margin-bottom: 2.14rem;
     }
-    
+
     &_button-size {
       &_middle {
         width: 7.07rem;
