@@ -32,7 +32,8 @@ mixin footer-widget(options)
 
         +form-element({ type: 'subscription', placeholder: placeholderEmail, typeOfInput: 'email' })
 
-    +copyright(copyrightText)
+    div.footer-widget__copyright-wrapper
+      +copyright({ text: copyrightText })
 
 
 

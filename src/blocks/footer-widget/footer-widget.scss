@@ -3,16 +3,17 @@
 @import '../../style/variables/variables';
 
 .footer-widget {
+  background: #FFFFFF;
+
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
-    background: #FFFFFF;
     padding-left: 9.8%;
   }
 
   &__logo-wrapper {
     max-width: 18.57rem;
-    margin: 7rem 3% 8.29rem 0;
+    margin: 7rem 3% 0 0;
   }
 
   &__description {
@@ -28,7 +29,7 @@
 
   &__subscribe {
     &-wrapper {
-      margin: 6.43rem 0 0 0;
+      margin-top: 6.43rem;
       max-width: 18.57rem;
     }
 
@@ -43,10 +44,18 @@
       line-height: 1.71rem;
     }
   }
+
+  &__copyright-wrapper {
+    margin-top: 5.7rem;
+  }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 750px) {
   .footer-widget {
+    &__wrapper {
+      padding-left: 5%;
+    }
+
     &__logo-image {
       width: 5.71rem;
 
@@ -71,8 +80,8 @@
   }
 }
 
-@media (max-width: 460px) {
+/*@media (max-width: 460px) {
   .footer-widget__wrapper {
     padding-left: 5%;
   }
-}
+}*/

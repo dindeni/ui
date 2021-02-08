@@ -6,7 +6,8 @@ mixin headers-and-footers(options)
 
   -
     const { valuesForLogin, valuesForLoggedIn, footerWidget } = options;
-  
+    const text = 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.';
+
   div.headers-and-footers
 
     img.headers-and-footers__logo(src = require('../images/icon-logo-gray.svg') alt = "логотип" width = "48")
@@ -19,5 +20,4 @@ mixin headers-and-footers(options)
       div.headers-and-footers__container
         +footer-widget(footerWidget)
       div.headers-and-footers__container
-        +footer
-        
+        +copyright({ text: text, typeColumn: true })

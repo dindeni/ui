@@ -1,8 +1,12 @@
 include ../social-buttons/social-buttons
 
-mixin copyright(text)
+mixin copyright(options)
+  -
+    const { text, typeColumn } = options;
+    const classes = typeColumn ? 'copyright_type_column' : '';
 
-  section.copyright
+  section.copyright(class=classes)
+    img.copyright__logo(src = require('../images/icon-logo.svg') alt = "логотип")
     div.copyright__head=text
 
     div.copyright__buttons-wrapper

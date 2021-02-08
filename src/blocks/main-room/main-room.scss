@@ -37,19 +37,29 @@
 
   &__description-wrapper {
     padding: 5rem 0 4.57rem 9.5%;
+
+    @media (max-width: 750px) {
+      .main-room__description-wrapper {
+        padding: 5rem 0 4.57rem 0;
+      }
+    }
   }
 }
 
 @media (max-width: 1056px) {
-  .main-room__images-aside{
+  .main-room__images-aside {
     width: 40%;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 750px) {
   .main-room {
     &__image {
       margin: auto;
+    }
+
+    &__description-wrapper {
+      padding: 5rem 0 4.57rem 0;
     }
   }
 }
