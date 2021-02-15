@@ -19,6 +19,8 @@ mixin main-ui()
       navigation,
       footerWidget,
       colorsAndType,
+      rooms,
+      guests
     } = data;
 
     const cardRoomImagesFirst = [
@@ -55,7 +57,7 @@ mixin main-ui()
 
     +colors-and-type({ colorValues, textValues })
 
-    +demo-forms({ checkbox, checkboxExpandable, checkboxRich, features, radioLabels, bulletList })
+    +demo-forms({ checkbox, checkboxExpandable, checkboxRich, features, radioLabels, bulletList, rooms, guests })
 
     +demo-cards({ orderRoom, cardRoomImagesFirst, cardRoomImagesSecond })
 

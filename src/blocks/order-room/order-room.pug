@@ -1,4 +1,4 @@
-include ../sum-guests/sum-guests
+include ../sum-search-items/sum-search-items
 include ../ui-control/ui-control
 include ../datepickers/datepickers
 
@@ -6,6 +6,7 @@ mixin order-room(options)
 
   -
     const { totalValue, totalPrice } = options;
+    const values = ['взрослые', 'дети', 'младенцы'];
 
   section.order-room
     div.order-room__header
@@ -27,7 +28,7 @@ mixin order-room(options)
 
       div.order-room__sum-guests-wrapper
         h3.order-room__sum-guests-label гости
-        +sum-guests()
+        +sum-search-items({ type: 'guests', placeholder: 'Сколько гостей', values })
 
     div.order-room__total
       each value, index in totalValue

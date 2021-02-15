@@ -1,6 +1,5 @@
 include ../form-element/form-element
-include ../sum-guests/sum-guests
-include ../sum-rooms/sum-rooms
+include ../sum-search-items/sum-search-items
 include ../datepickers/datepickers
 include ../checkbox-set/checkbox-set
 include ../features/features
@@ -17,41 +16,41 @@ include ../demo-caption/demo-caption
 mixin demo-forms(values)
 
   -
-    const { checkbox, checkboxExpandable, checkboxRich, features, radioLabels, bulletList } = values;
+    const { checkbox, checkboxExpandable, checkboxRich, features, radioLabels, bulletList, rooms, guests } = values;
 
   div.demo-forms
-    
+
     img.demo-forms__logo(src = require('../images/icon-logo-gray.svg') alt = "логотип" width = "48")
-    
+
     div.demo-forms__wrapper
-      
+
       div.demo-forms__column
-        
+
         div.demo-forms__container.demo-forms__container_size_default
           div.demo-forms__caption-wrapper
             +demo-caption({ text: 'text field', isDefaultCaption: true })
           +form-element({ type: 'default', placeholder: 'Email', typeOfInput: 'email' })
-        
+
         div.demo-forms__container.demo-forms__container_size_default
           div.demo-forms__caption-wrapper
             +demo-caption({ text: 'dropdown', isDefaultCaption: true })
-          +sum-guests()
-        
+          +sum-search-items({ values: guests, type: 'guests', placeholder: 'Сколько гостей' })
+
         div.demo-forms__container.demo-forms__container_size_default
           div.demo-forms__caption-wrapper
             +demo-caption({ text: 'masked text field', isDefaultCaption: true })
           +form-element({ type: 'masked', placeholder: 'дд.мм.гггг' })
-        
+
         div.demo-forms__container.demo-forms__container_size_small
           div.demo-forms__caption-wrapper
             +demo-caption({ text: 'date dropdown' })
           +datepickers({ type: 'single', placeholder: 'дд.мм.гггг' })
-        
+
         div.demo-forms__container.demo-forms__container_size_middle
           div.demo-forms__caption-wrapper
             +demo-caption({ text: 'filter date dropdown' })
           +datepickers({ type: 'range', defaultDate: '19 авг - 23 авг' })
-        
+
         div.demo-forms__container.demo-forms__container_size_middle
           div.demo-forms__caption-wrapper
             +demo-caption({ text: 'subscription text field' })
@@ -60,47 +59,47 @@ mixin demo-forms(values)
         div.demo-forms__container.demo-forms__container_size_middle
           div.demo-forms__caption-wrapper
             +demo-caption({text: 'dropdown', isDefaultCaption: true})
-          +sum-rooms()
-        
+          +sum-search-items({ values: rooms, type: 'rooms', placeholder: 'Сколько комнат', isSizeSmall: true })
+
         div.demo-forms__container.demo-forms__container_type_expandable
           +checkbox-set(checkboxExpandable)
 
       div.demo-forms__column
-        
+
         +demo-caption({ text: 'checkbox buttons' })
         div.demo-forms__container.demo-forms__container_type_checkbox
           +checkbox-set(checkbox)
-        
+
         +demo-caption({ text: 'radio buttons' })
         div.demo-forms__container.demo-forms__container_type_radio
           +radio-group(radioLabels)
-        
+
         +demo-caption({ text: 'toggle' })
         div.demo-forms__container.demo-forms__container_type_toggle
           +toggle('получать спецпредложения')
-        
+
         +demo-caption({ text: 'like button' })
         div.demo-forms__container.demo-forms__container_type_button-rate
           div.demo-forms__button-wrapper
             +ui-control({ isBorder: true, content: 2, type: 'gray' })
           div.demo-forms__button-wrapper
             +ui-control({ isBorder: true, content: 12, type: 'like' })
-        
+
         +demo-caption({ text: 'rate button' })
         div.demo-forms__container
           div.demo-forms__rate-wrapper
             +rate(4)
           div.demo-forms__rate-wrapper
             +rate(5)
-          
+
         +demo-caption({ text: 'rich checkbox buttons' })
         div.demo-forms__container.demo-forms__container_type_checkbox-rich
           +checkbox-set(checkboxRich)
-      
+
       div.demo-forms__column
         div.demo-forms__container
           +ui-slider('range slider')
-        
+
         +demo-caption({ text: 'buttons' })
         div.demo-forms__buttons-wrapper
           div.demo-forms__button-container.demo-forms__button-container_button-size_middle
@@ -111,18 +110,18 @@ mixin demo-forms(values)
             +ui-control({ content: 'click me', type: 'transparent' })
           div.demo-forms__button-container.demo-forms__button-container_button-size_default
             +ui-control({ content: 'перейти к оплате', type: 'filled', isArrow: true })
-        
+
         div.demo-forms__container
           +demo-caption({ text: 'pagination' })
           +pagination(15)
-        
+
         +demo-caption({ text: 'bullet list' })
         div.demo-forms__bullet-list-wrapper
           +bullet-list(bulletList.values)
 
     div.demo-forms__wrapper
       div.demo-forms__features-wrapper
-        +features(features)    
+        +features(features)
       div.demo-forms__review-wrapper
         +review({
           head: 'Мурад Сарафанов', date: '5 дней назад',
@@ -130,5 +129,4 @@ mixin demo-forms(values)
           path: require('../images/icon-avatar-1.jpg'),
           numberOfLikes: 12, typeOfButton: 'like',
         })
-        
-        
+

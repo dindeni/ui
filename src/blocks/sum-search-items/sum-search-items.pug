@@ -1,0 +1,42 @@
+mixin sum-search-items(options)
+  -
+    const { values, type, placeholder, isSizeSmall } = options;
+
+    const controlsOption = [
+      {
+        content: 'очистить',
+        isHideModifier: true,
+        jsModifier: 'clear',
+        type: 'transparent',
+        modifier: 'color_gray'
+      },
+      {content: 'применить', type: 'transparent', jsModifier: 'apply'},
+    ];
+    const popupModifier = isSizeSmall ? 'sum-search-items__popup_size_small' : '';
+
+
+  div.sum-search-items.js-sum-search-items(class=`sum-search-items_type_${type} js-sum-search-items_type_${type}`)
+
+    +form-element({ type: 'withEllipsis', placeholder, isJsInputClass: true })
+
+    div.sum-search-items__popup.js-sum-search-items__popup.sum-search-items__popup_hidden(class = popupModifier tabindex = 0)
+      div.sum-search-items__count-container
+
+      each value, index in values
+
+        div.sum-search-items__container
+          span.sum-search-items__item-name=value
+
+          div.sum-search-items__wrapper.js-sum-search-items__wrapper
+            button.sum-search-items__button.sum-search-items__button_type_minus.js-sum-search-items__button_type_minus(type = "button") -
+
+            span.sum-search-items__sum.js-sum-search-items__sum 0
+
+            button.sum-search-items__button.sum-search-items__button_type_plus.js-sum-search-items__button_type_plus(type = "button") +
+
+
+      if type === 'guests'
+        div.sum-search-items__buttons-footer-container.js-sum-search-items__buttons-footer-container
+          each option in controlsOption
+                div.sum-guests__button-wrapper
+                  +ui-control(option)

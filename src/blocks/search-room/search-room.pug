@@ -1,10 +1,13 @@
-include ../sum-guests/sum-guests
+include ../sum-search-items/sum-search-items
 include ../datepickers/datepickers
 include ../ui-control/ui-control
 
-mixin searchRoom()
+mixin search-room()
 
   section.search-room(class = classModifier)
+    -
+      const values = ['взрослые', 'дети', 'младенцы'];
+
     h2.search-room__head Найдём номера под ваши пожелания
 
     div.search-room__check
@@ -17,6 +20,6 @@ mixin searchRoom()
 
         div.search-room__sum-guests-wrapper
           h3.search-room__sum-guests-label гости
-          +sum-guests()
+          +sum-search-items({ type: 'guests', placeholder: 'Сколько гостей', values })
         div.search-room__button-wrapper
           +ui-control({ content: 'Подобрать номер', type: 'filled', isArrow: true })

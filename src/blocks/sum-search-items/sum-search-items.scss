@@ -1,25 +1,24 @@
-@import '../../style/mixins/hide';
 @import '../../style/variables/variables';
+@import '../../style/mixins/hide';
 @import '../../style/mixins/text';
 
-.sum-guests {
+.sum-search-items {
   font-weight: 700;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  position: relative;
 
   &__popup {
     width: 22.86rem;
-    top: 3rem;
-    border: 0.07rem solid $dark50;
+    border: .07rem solid $dark50;
     box-sizing: border-box;
     box-shadow: 0 .71rem 1.43rem $dark5;
     border-radius: 0 0 .29rem .29rem;
     background: #FFFFFF;
     position: absolute;
     z-index: 100;
-    padding: 0 0 .8rem 0;
+    padding-bottom: .2rem;
+
+    &_size_small {
+      width: 19rem;
+    }
 
     &:focus {
       outline: .07rem dashed $dark50;
@@ -37,27 +36,21 @@
     &_focused {
       z-index: 100;
     }
-
-    &_size_small {
-      width: 19rem;
-    }
   }
 
   &__container {
     display: flex;
     justify-content: space-between;
-    padding-right: .4rem;
     @include h3;
-    color: #1F2041;
     font-size: .86rem;
     text-transform: uppercase;
+    color: #1F2041;
   }
-  
-  &__type-visitors {
-    margin: 0 0 0 1.07rem;
-    padding: .9rem 0 .76rem 0;
+
+  &__item-name {
+    margin: .86rem 0 .71rem 1.07rem;
   }
-  
+
   &__button {
     border: .07rem solid $dark25;
     box-sizing: border-box;
@@ -66,8 +59,12 @@
     background: #FFFFFF;
     width: 2.14rem;
     height: 2.14rem;
-    margin-top: .4rem;
+    margin-bottom: .29rem;
     outline: none;
+
+    &:focus {
+      outline: 0.07rem dashed $dark25;
+    }
 
     &_type_nullified {
       opacity: .38;
@@ -76,23 +73,26 @@
     &_type_non-nullified {
       opacity: 1;
     }
-
-    &:focus {
-      outline: .07rem dashed $dark25;
-    }
   }
 
-  &__number-of-visitors {
+  &__wrapper {
+    margin: .29rem .43rem 0 0;
+    display: flex;
+  }
+
+  &__sum {
     color: #1F2041;
-    width: 2.4rem;
-    display: inline-block;
+    padding: .6rem 0 0 0;
+    width: 2.3rem;
     text-align: center;
   }
 
   &__buttons-footer-container {
     display: flex;
     justify-content: space-between;
-    margin: 1.35rem 0 0 .14rem;
+    margin: 1.2rem 0 .5rem .5rem;
+    padding: 0 .4rem;
+
   }
 
   &__button-wrapper {
@@ -100,8 +100,3 @@
   }
 }
 
-@media (max-width: 1100px) {
-  .sum-guests__popup:not(.sum-guests__popup_size_small) {
-    width: 18.57rem;
-  }
-}

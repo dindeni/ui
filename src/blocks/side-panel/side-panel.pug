@@ -1,8 +1,7 @@
-include ../sum-guests/sum-guests
 include ../ui-slider/ui-slider
 include ../checkbox-set/checkbox-set
 include ../card-room/card-room
-include ../sum-rooms/sum-rooms
+include ../sum-search-items/sum-search-items
 include ../datepickers/datepickers
 
 mixin side-panel
@@ -10,7 +9,7 @@ mixin side-panel
   -
     const panelData = require('../blocks/side-panel/side-panel.json');
 
-    const { standard, rich, expandable } = panelData;
+    const { standard, rich, expandable, rooms, guests } = panelData;
 
   section.side-panel
 
@@ -22,7 +21,7 @@ mixin side-panel
 
       div.side-panel__sum-guests-wrapper
         h2.side-panel__sum-guests-label гости
-        +sum-guests(true)
+        +sum-search-items({ values: guests,type: 'guests', placeholder: 'Сколько гостей', isSizeSmall: true })
 
       div.side-panel__slider-wrapper
         +ui-slider('диапазон цены')
@@ -38,6 +37,6 @@ mixin side-panel
 
       h2.side-panel__slogan.side-panel__slogan_type_rooms удобства номера
       div.side-panel__sum-rooms-wrapper
-        +sum-rooms
-      
+        +sum-search-items({ values: rooms, type: 'rooms', placeholder: 'Сколько комнат', isSizeSmall: true })
+
       +checkbox-set({ values: expandable, isExpandable: true, head: 'дополнительные удобства' })

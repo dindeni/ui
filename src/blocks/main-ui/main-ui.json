@@ -162,5 +162,15 @@
     "headSubscribe": "Subscribe to our newsletter",
     "placeholderEmail": "Your email address",
     "copyrightText": "Copyright © 2018 Toxin UI Kit. All rights reserved."
-  }
+  },
+  "rooms": [
+    "спальни",
+    "кровати",
+    "ванные комнаты"
+  ],
+  "guests": [
+    "взрослые",
+    "дети",
+    "младенцы"
+  ]
 }

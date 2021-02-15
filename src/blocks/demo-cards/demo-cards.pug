@@ -12,12 +12,12 @@ mixin demo-cards(options)
   div.demo-cards
 
     img.demo-cards__logo(src = require('../images/icon-logo-gray.svg') alt = "логотип" width = "48")
-    
+
     div.demo-cards__wrapper
 
       div.demo-cards__column
         div.demo-cards__element-wrapper
-          +searchRoom()
+          +search-room()
         div.demo-cards__element-wrapper
           +registration()
       div.demo-cards__column
@@ -48,4 +48,3 @@ mixin demo-cards(options)
               numberOfReviews: 65,
               numberOfRate: 4,
             })
-      
