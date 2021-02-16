@@ -6,6 +6,10 @@
   display: inline-block;
   width: 10.71rem;
   margin-right: 1.5rem;
+
+  @media (max-width: 1100px) {
+    width: 8.57rem;
+  }
 }
 
 .datepickers__popup {
@@ -14,6 +18,10 @@
   border: .07rem solid rgba(31, 32, 65, 0.25);
   border-radius: .29rem;
   background: #FFFFFF;
+
+  @media (max-width: 1100px) {
+    width: 18.5rem;
+  }
 
   & .datepicker--pointer {
     display: none;
@@ -62,6 +70,10 @@
       color: #BC9CFF;
       margin: 2.75rem 0 0 0;
       display: inline-flex;
+
+      @media (max-width: 1100px) {
+        margin: 1.5rem 0 0 0;
+      }
     }
 
     &--day-name {
@@ -69,8 +81,16 @@
       font-size: .86rem;
       margin-right: 1.6rem;
 
+      @media (max-width: 1100px) {
+        margin-right: 1.2rem;
+      }
+
       &:first-child {
         margin-left: 1.9rem;
+
+        @media (max-width: 1100px) {
+          margin-left: .7rem;
+        }
       }
     }
 
@@ -79,12 +99,23 @@
       font-weight: 400;
       margin: .9rem 0 0 1.1rem;
 
+      &-days {
+        @media (max-width: 1100px) {
+          margin: .5rem 0 0 0;
+        }
+      }
+
     }
 
     &--cell-day {
       width: 2.85rem;
       height: 2.85rem;
       color: $dark50;
+
+      @media (max-width: 1100px) {
+        width: 2.6rem;
+        height: 2.6rem;
+      }
 
       &:hover {
         background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%,
@@ -130,6 +161,10 @@
           width: 1.4rem;
           height: 100%;
           right: 0;
+
+          @media (max-width: 1100px) {
+            width: 1.25rem;
+          }
         }
       }
 
@@ -220,47 +255,6 @@
         &.-range-from-, &.-range-to- {
           &::after {
             width: 1.3rem;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 1100px) {
-  .datepickers {
-    &__wrapper {
-      width: 8.57rem;
-    }
-
-    &__popup:not(.datepickers__popup_type_single) {
-      width: 18.5rem;
-
-      & .datepicker {
-        &--days-names {
-          margin: 1.5rem 0 0 0;
-        }
-
-        &--day-name {
-          &:first-child {
-            margin-left: .7rem;
-          }
-
-          margin-right: 1.2rem;
-        }
-
-        &--cells-days {
-          margin: .5rem 0 0 0;
-        }
-
-        &--cell-day {
-          width: 2.5rem;
-          height: 2.5rem;
-
-          &.-range-from-, &.-range-to- {
-            &::after {
-              width: 1.25rem;
-            }
           }
         }
       }
