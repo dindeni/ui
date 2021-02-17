@@ -43,13 +43,11 @@
     margin: .5rem 0 0 1rem;
     padding-right: 5.71rem;
     line-height: 1.67rem;
-  }
-}
 
-@media (max-width: 800px) {
-  .review__description {
-    font-size: 0.8rem;
-    width: 80%;
-    padding-right: 0;
+    @media (max-width: 800px) {
+      font-size: 0.8rem;
+      width: 80%;
+      padding-right: 0;
+    }
   }
 }

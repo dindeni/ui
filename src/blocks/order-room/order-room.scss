@@ -7,6 +7,11 @@
   height: 36.5rem;
   padding-left: 1.93rem;
 
+  @media (max-width: 1100px)  {
+    width: 320px;
+    padding-left: 1.07rem;
+  }
+
   &__header {
     display: flex;
     margin: 3.29rem 0 0 .3rem;
@@ -21,6 +26,10 @@
     @include h2;
     font-size: 1.71rem;
     margin: 0 .3rem 0 .3rem;
+
+    @media (max-width: 1100px) {
+      font-size: 1.29rem;
+    }
   }
 
   &__type-room {
@@ -28,12 +37,21 @@
     color: $purple;
     font-weight: 700;
     margin: 0 8rem 0 0;
+
+    @media (max-width: 1100px) {
+      font-size: 0.86rem;
+      margin: 0 5rem 0 0;
+    }
   }
 
   &__price {
     @include body;
     color: $dark50;
     font-weight: 700;
+
+    @media (max-width: 1100px) {
+      font-size: 0.93rem;
+    }
   }
 
   &__periodicity {
@@ -60,6 +78,10 @@
 
     &:first-child {
       margin-right: 6.86rem;
+
+      @media (max-width: 1100px) {
+        margin-right: 4.71rem;
+      }
     }
   }
 
@@ -70,6 +92,10 @@
   &__sum-guests-wrapper {
     padding: 1.6rem 0 0 0;
     width: 22.86rem;
+
+    @media (max-width: 1100px) {
+      width: 18.57rem
+    }
   }
 
   &__sum-guests-label {
@@ -92,6 +118,11 @@
 
   &__total-description {
     width: 15.71rem;
+
+    @media (max-width: 1100px) {
+      font-size: 0.93rem;
+      width: 14.29rem;
+    }
   }
 
   &__total-tax {
@@ -105,6 +136,10 @@
     right: 5.7rem;
     top: -.29rem;
     padding: 0;
+
+    @media (max-width: 1100px) {
+      right: 2.86rem;
+    }
   }
 
   &__sum {
@@ -113,6 +148,10 @@
       justify-content: space-between;
       margin: 2.4rem 0 0 .36rem;
       position: relative;
+
+      @media (max-width: 1100px) {
+        font-size: 1.29rem;
+      }
 
       &::after {
         position: absolute;
@@ -123,6 +162,10 @@
         box-sizing: border-box;
         bottom: 0;
         left: 4.5rem;
+
+        @media (max-width: 1100px) {
+          width: 8.93rem;
+        }
       }
     }
 
@@ -131,7 +174,6 @@
       margin: 0;
     }
   }
-
 
   &__sum {
     margin-right: 1.8rem;
@@ -142,53 +184,8 @@
     margin-top: 1.9rem;
     width: 23rem;
     height: 3.14rem;
-  }
-}
 
-@media (max-width: 1100px) {
-  .order-room {
-    width: 320px;
-    padding-left: 1.07rem;
-
-    &__number {
-      font-size: 1.29rem;
-    }
-
-    &__type-room {
-      font-size: 0.86rem;
-      margin: 0 5rem 0 0;
-    }
-
-    &__price {
-      font-size: 0.93rem;
-    }
-
-    &__label:first-child {
-      margin-right: 4.71rem;
-    }
-
-    &__sum-guests-wrapper {
-      width: 18.57rem;
-    }
-
-    &__total-description {
-      font-size: 0.93rem;
-      width: 14.29rem;
-    }
-
-    &__total-tax {
-      right: 2.86rem;
-    }
-
-    &__sum-wrapper {
-      font-size: 1.29rem;
-
-      &::after {
-        width: 8.93rem;
-      }
-    }
-
-    &__button-wrapper {
+    @media (max-width: 1100px) {
       width: 20.3rem;
     }
   }

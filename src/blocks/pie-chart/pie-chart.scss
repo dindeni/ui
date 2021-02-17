@@ -8,7 +8,7 @@
     position: absolute;
     top: 0;
   }
-  
+
   &__list {
     list-style: none;
     margin: 2.5rem 0 0 .3rem;
@@ -19,6 +19,10 @@
     position: relative;
     line-height: 1.71rem;
     margin-bottom: .1rem;
+
+    @media (max-width: 450px) {
+      font-size: 0.93rem;
+    }
 
     &::before {
       position: absolute;
@@ -41,14 +45,6 @@
 
     &:nth-child(4)::before {
       background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
-    }
-  }
-}
-
-@media (max-width: 450px) {
-  .pie-chart {
-    &__item{
-      font-size: 0.93rem;
     }
   }
 }

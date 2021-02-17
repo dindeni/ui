@@ -11,6 +11,14 @@
 
     &:last-child {
       margin: 0 11.5% 10.5rem 9.5%;
+
+      @media (max-width: 1000px) {
+        margin-left: 5%;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      margin-left: 5%;
     }
   }
 
@@ -38,6 +46,11 @@
       .demo-forms__container {
         margin-left: 0;
       }
+
+      @media (max-width: 1280px) {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 
@@ -47,6 +60,10 @@
     &_size {
       &_default {
         width: 22.86rem;
+
+        @media (max-width: 1100px) {
+          width: 18.57rem;
+        }
       }
 
       &_small {
@@ -100,57 +117,20 @@
 
       &_default {
         width: 22.86rem;
+        @media (max-width: 1100px) {
+          width: 18.57rem;
+        }
       }
+    }
+  }
+
+  &__features-wrapper {
+    @media (max-width: 1280px) {
+      margin-bottom: 2.86rem;
     }
   }
 
   &__review-wrapper {
     width: 50.86rem;
-  }
-}
-
-@media (max-width: 1280px) {
-  .demo-forms {
-    &__column:last-child {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-
-    &__features-wrapper {
-      margin-bottom: 2.86rem;
-    }
-  }
-}
-
-@media (max-width: 1100px) {
-  .demo-forms {
-    &__container {
-      &_size_default {
-        width: 18.57rem;
-      }
-
-      &_button-size_default {
-        width: 18.57rem;
-      }
-    }
-  }
-}
-
-@media (max-width: 900px) {
-  .demo-forms {
-    &__wrapper {
-      margin: 4.43rem auto 2.86rem auto;
-
-      &:last-child {
-        margin: 0 0 10.5rem 0;
-      }
-    }
-
-    &__column {
-      width: max-content;
-      margin: auto;
-    }
   }
 }

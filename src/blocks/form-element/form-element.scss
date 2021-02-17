@@ -51,6 +51,14 @@
     }
   }
 
+  &_type_date {
+    @media (max-width: 1100px) {
+      & .form-element__field, .form-element__field::placeholder {
+        font-size: .86rem;
+      }
+    }
+  }
+
   &_type_date, &_type_dropdown {
     &::after {
       cursor: pointer;
@@ -67,6 +75,10 @@
     position: relative;
     &::after {
       display: none;
+    }
+
+    & .form-element__field::placeholder {
+      color: $dark25;
     }
   }
 
@@ -88,13 +100,5 @@
   &_with_ellipsis .form-element__field {
     text-overflow: ellipsis;
     padding-right: 6.3rem;
-  }
-}
-
-@media (max-width: 1100px) {
-  .form-element {
-    &_type_date .form-element__field::placeholder, &_type_date .form-element__field {
-      font-size: .86rem;
-    }
   }
 }

@@ -5,10 +5,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-@media (max-width: 750px) {
-  .main-sign-in {
+  @media (max-width: 750px) {
     justify-content: start;
     padding-left: 5%;
   }

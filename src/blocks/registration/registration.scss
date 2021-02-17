@@ -9,9 +9,18 @@
   position: relative;
   z-index: 1;
 
+  @media (max-width: 1100px) {
+    padding-left: 1.43rem;
+    width: 21.43rem;
+  }
+
   &__head {
     @include h1;
     margin: 3.57rem 0 0 0;
+
+    @media (max-width: 1100px) {
+      font-size: 1.29rem;
+    }
   }
 
   &__name-wrapper {
@@ -20,17 +29,21 @@
 
   &__name-wrapper, &__date-wrapper, &__data-head, &__email-wrapper, &__password-wrapper {
     width: 22.86rem;
-  }
-  
+
+    @media (max-width: 1100px) {
+      width: 18.57rem;
+    }
+}
+
   &__surname-wrapper{
     margin: .7rem 0 .6rem 0;
   }
 
   &__radio-wrapper {
     position: relative;
-    margin: .7rem 0 0 .71rem;
+    margin-bottom: 2rem;
   }
-  
+
   &__date-head, &__data-head {
     @include h3;
     color: $dark100;
@@ -62,42 +75,30 @@
     margin-top: 1.8rem;
     width: 22.86rem;
     height: 3.14rem;
+
+    @media (max-width: 1100px) {
+      width: 18.57rem;
+    }
   }
-  
+
   &__footer {
     margin: 2.2rem 0 0 0;
   }
 
   &__footer-label {
     @include body;
+
+    @media (max-width: 1100px) {
+      font-size: .86rem;
+    }
   }
 
   &__link-wrapper {
     display: inline-block;
     margin: .1rem 0 0 2.86rem;
     width: 6.79rem;
-  } 
-}
 
-@media (max-width: 450px) {
-  .registration {
-    padding-left: 1.43rem;
-    width: 21.43rem;
-
-    &__head {
-      font-size: 1.29rem;
-    }
-
-    &__name-wrapper, &__date-wrapper, &__data-head, &__email-wrapper, &__password-wrapper,
-    &__button-wrapper {
-      width: 18.57rem;
-    }
-
-    &__footer-label {
-      font-size: .86rem;
-    }
-
-    &__link-wrapper {
+    @media (max-width: 1100px) {
       margin: .21rem 0 0 1.86rem;
       width: 5.79rem;
     }

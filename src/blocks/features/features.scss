@@ -1,5 +1,5 @@
 @import '../../style/mixins/text';
-@import '../../style/variables//variables.scss';
+@import '../../style/variables/variables.scss';
 
 .features {
   @include body;
@@ -8,7 +8,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    
+
     &:not(:last-child) {
       margin-bottom: 3.1rem;
     }
@@ -23,7 +23,7 @@
       left: .4rem;
     }
   }
-    
+
   &__slogan {
     font-weight: 700;
     padding: 0 0 0 4.4rem;

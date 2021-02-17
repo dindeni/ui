@@ -8,6 +8,11 @@
   z-index: 1;
   padding-left: 2.1rem;
 
+  @media (max-width: 450px) {
+    width: 21.43rem;
+    padding-left: 1.43rem;
+  }
+
   &__head {
     @include h1;
     margin: 3.3rem 0 1.43rem 0;
@@ -19,6 +24,10 @@
 
   &__email-wrapper, &__password-wrapper {
     width: 22.86rem;
+
+    @media (max-width: 450px) {
+      width: 18.56rem;
+    }
   }
 
   &__password-wrapper {
@@ -30,39 +39,28 @@
     display: inline-block;
     width: 22.86rem;
     height: 3.14rem;
+
+    @media (max-width: 450px) {
+      width: 18.57rem;
+    }
   }
 
   &__label {
     @include body;
     display: inline-block;
     margin: 2.4rem 0 0 0;
+
+    @media (max-width: 450px) {
+      font-size: 0.86rem;
+    }
   }
 
   &__link-wrapper {
     margin: 0 0 0 4.29rem;
     display: inline-block;
     width: 6.79rem;
-  }
-}
 
-@media (max-width: 450px) {
-  .sign-in {
-    width: 21.43rem;
-    padding-left: 1.43rem;
-
-    &__email-wrapper, &__password-wrapper {
-      width: 18.56rem;
-    }
-
-    &__link-enter-wrapper {
-      width: 18.57rem;
-    }
-
-    &__label {
-      font-size: 0.86rem;
-    }
-
-    &__link-wrapper {
+    @media (max-width: 450px) {
       margin: .21rem 0 0 1.86rem;
       width: 5.79rem;
     }

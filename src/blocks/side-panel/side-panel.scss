@@ -4,11 +4,15 @@
 .side-panel {
   width: 21.43rem;
 
+  @media (max-width: 760px) {
+    width: auto;
+  }
+
   &__slogan, &__sum-guests-label {
     @include h3;
     color: $dark100;
   }
-  
+
   &__slogan {
     margin: 0 .1rem 0 .1rem;
 
@@ -61,14 +65,8 @@
   &__checkbox-rich-wrapper {
     margin-left: .9rem;
   }
-  
+
   &__sum-rooms-wrapper {
     margin: 0 0 2.2rem .1rem;
-  }
-}
-
-@media (max-width: 760px) {
-  .side-panel {
-    width: auto;
   }
 }

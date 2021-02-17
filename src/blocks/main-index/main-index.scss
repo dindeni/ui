@@ -8,6 +8,10 @@
     width: 100%;
     min-height: auto;
 
+    @media (max-width: 800px) {
+      min-height: 31rem;
+    }
+
     &_theme_gallery {
       animation: move 4s 1;
 
@@ -36,36 +40,26 @@
     right: 9.3%;
     text-align: end;
     line-height: 1.71rem;
+
+    @media (max-width: 800px) {
+      bottom: .5rem;
+      font-size: .8rem;
+    }
   }
 
   &__wrapper {
     position: absolute;
     top: 5rem;
     left: 9.5%;
-  }
-}
 
-@media (max-width: 800px) {
-  .main-index {
-    &__background {
-      min-height: 31rem;
-    }
-
-    &__slogan {
-      bottom: .5rem;
-      font-size: .8rem;
-    }
-
-    &__wrapper {
+    @media (max-width: 800px) {
       top: 1rem;
       left: 5%;
     }
-  }
-}
 
-@media (max-width: 380px) {
-  .main-index__wrapper {
-    left: 50%;
-    transform: translateX(-50%);
+    @media (max-width: 380px) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }
