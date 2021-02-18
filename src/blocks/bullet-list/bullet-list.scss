@@ -26,5 +26,9 @@
       left: 0;
       top: 0.36rem;
     }
+
+    &:last-child {
+      margin: 0;
+    }
   }
 }

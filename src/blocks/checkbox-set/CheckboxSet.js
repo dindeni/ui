@@ -5,6 +5,7 @@ class CheckboxSet {
     this.checkboxSetElement = checkboxSetElement;
     this.checkboxHead = this.checkboxSetElement.querySelector('.js-checkbox-set__head');
     this.checkboxWrapper = this.checkboxSetElement.querySelector('.js-checkbox-set__wrapper_type_expandable');
+    this.inputElement = this.checkboxSetElement.querySelector('.js-checkbox-set__toggle');
     autoBind(this);
   }
 
@@ -13,13 +14,7 @@ class CheckboxSet {
   }
 
   _handleCheckboxHeadClick() {
-    if (this.checkboxWrapper.classList.contains('checkbox-set__wrapper_hidden')) {
-      this.checkboxWrapper.classList.remove('checkbox-set__wrapper_hidden');
-      this.checkboxHead.classList.add('checkbox-set__head_turned');
-    } else {
-      this.checkboxWrapper.classList.add('checkbox-set__wrapper_hidden');
-      this.checkboxHead.classList.remove('checkbox-set__head_turned');
-    }
+    this.checkboxWrapper.style.display = this.inputElement.checked ? 'block' : 'none';
   }
 }
 

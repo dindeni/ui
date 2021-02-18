@@ -39,4 +39,5 @@ mixin side-panel
       div.side-panel__sum-rooms-wrapper
         +sum-search-items({ values: rooms, type: 'rooms', placeholder: 'Сколько комнат', isSizeSmall: true })
 
-      +checkbox-set({ values: expandable, isExpandable: true, head: 'дополнительные удобства' })
+      div.side-panel__checkbox-expandable-wrapper
+        +checkbox-set({ values: expandable, isExpandable: true, head: 'дополнительные удобства' })

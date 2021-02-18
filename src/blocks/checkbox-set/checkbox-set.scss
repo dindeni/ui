@@ -8,32 +8,43 @@
     @include h3;
     color: $dark100;
     margin: 0 0 1.29rem .14rem;
-    width: 17.86rem;
+    width: 100%;
+    display: inline-block;
 
-    &::after {
+    & .checkbox-set__icon-expand {
       position: absolute;
       content: '';
       width: .86rem;
       height: .57rem;
       background: url('../../images/icon-expand.svg') no-repeat;
-      right: 0;
       transform: rotate(0deg);
       top: .21rem;
       cursor: pointer;
+      display: inline-block;
+      right: 0;
+    }
+
+    & .checkbox-set {
+      &__toggle{
+        display: none;
+
+        &:checked + .checkbox-set__icon-expand {
+          transform: rotate(180deg);
+        }
+      }
     }
 
     &_turned::after {
       transform: rotate(180deg);
     }
   }
-  
-  &__wrapper {
-    &_hidden {
-      @include hide;
-    }
 
-    &_type_expandable {
-      padding-left: .9rem;
+  &__wrapper_type_expandable {
+    display: none;
+    margin: 0 0 0 .8rem;
+
+    & .checkbox-set__item-wrapper {
+      margin-bottom: .65rem;
     }
   }
 

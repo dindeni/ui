@@ -18,9 +18,10 @@ mixin checkbox-set(options)
   div.checkbox-set(class = mainClass)
 
     if isExpandable
-      h2.checkbox-set__head.js-checkbox-set__head=head
-      div.checkbox-set__container.js-checkbox__container.checkbox__container_hidden
-    
+      label.checkbox-set__head.js-checkbox-set__head=head
+        input.checkbox-set__toggle.js-checkbox-set__toggle(type='checkbox')
+        span.checkbox-set__icon-expand
+
     div.checkbox-set__wrapper(class=wrapperClass)
       each value, index in values
         div.checkbox-set__item-wrapper(class = itemWrapperClass)
