@@ -77,8 +77,12 @@
       display: none;
     }
 
-    & .form-element__field::placeholder {
-      color: $dark25;
+    & .form-element__field  {
+      padding-right: 2.5rem;
+
+      &::placeholder {
+        color: $dark25;
+      }
     }
   }
 
