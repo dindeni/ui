@@ -9,16 +9,6 @@
   align-items: center;
   box-shadow: 0 .71rem 1.43rem $dark5;
   background: #FFFFFF;
-  position: relative;
-
-  &::before {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: .07rem;
-    box-shadow: 0 .07rem 0 rgba(31, 32, 65, 0.1);
-    top: -.2rem;
-  }
 
   &__logo {
     display: none;

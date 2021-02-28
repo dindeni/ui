@@ -9,9 +9,25 @@
     display: flex;
     flex-wrap: wrap;
     padding-left: 9.8%;
+    margin-bottom: 7.3rem;
+    position: relative;
 
     @media (max-width: 750px) {
       padding-left: 5%;
+    }
+
+    @media (max-width: 560px) {
+      display: none;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100vw;
+      height: .07rem;
+      box-shadow: 0 .07rem 0 rgba(31, 32, 65, 0.1);
+      bottom: -7.2rem;
+      left: 0;
     }
   }
 
@@ -60,10 +76,6 @@
       margin: 1.5rem 0 1.6rem 0;
       line-height: 1.71rem;
     }
-  }
-
-  &__copyright-wrapper {
-    margin-top: 7.3rem;
   }
 
   &__logo-image {
