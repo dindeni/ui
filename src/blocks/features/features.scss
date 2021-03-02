@@ -11,16 +11,15 @@
 
     &:not(:last-child) {
       margin-bottom: 3.1rem;
-    }
 
-    &::before {
-      position: absolute;
-      content: '';
-      width: 20rem;
-      height: .07rem;
-      background: $dark10;
-      bottom: -1.5rem;
-      left: .4rem;
+      &::before {
+        position: absolute;
+        content: '';
+        width: 20rem;
+        height: .07rem;
+        background: $dark10;
+        bottom: -1.5rem;
+      }
     }
   }
 

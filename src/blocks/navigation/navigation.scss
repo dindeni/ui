@@ -32,18 +32,18 @@
   &_theme_en {
     & .navigation{
       &__list{
-        margin: .36rem 0 0 20.6%;
+        margin: .36rem 0 0 21.2rem;
       }
 
       &__buttons-wrapper {
         margin: 0 0 0 2.4rem;
 
         @media (max-width: 1100px) {
-          margin-right: 1%;
+          margin-right: .5rem;
         }
 
         @media (max-width: 920px) {
-          margin: 0 9% 0 0;
+          margin: 0 5rem 0 0;
         }
       }
 
@@ -55,20 +55,20 @@
 
   &__logo {
     &-link {
-      margin: 0 0 0 9.8%;
+      margin: 0 0 0 10rem;
 
       @media (max-width: 1100px) {
-        margin: 0 0 0 2%;
+        margin: 0 0 0 2rem;
         width: 5rem;
         padding: .36rem 0 0 0;
       }
 
       @media (max-width: 500px) {
-        margin: 0 .5rem 0 1%;
+        margin: 0 .5rem 0 1rem;
       }
 
       @media (max-width: 450px) {
-        margin: 0 20%;
+        margin: 0 5rem;
       }
     }
 
@@ -89,18 +89,14 @@
     display: flex;
     align-items: center;
     padding: 0;
-    margin: .3rem 0 0 19.8%;
+    margin: .3rem 0 0 20.4rem;
 
     @media (max-width: 500px) {
       width: 50%;
     }
 
     &_logged {
-      margin: .36rem 0 0 24.4%;
-
-      @media (max-width: 1430px) {
-        margin: .36rem 0 0 6.2%;
-      }
+      margin: .36rem 0 0 25rem;
 
       @media (max-width: 920px) {
         top: 0;
@@ -110,11 +106,11 @@
 
   &__list, &_theme_en .navigation__list {
     @media (max-width: 1430px) {
-      margin: 5px 0 0 13%;
+      margin: 5px 0 0 15rem;
     }
 
     @media (max-width: 1250px) {
-      margin: .36rem 0 0 5%;
+      margin: .36rem 0 0 4rem;
     }
 
     @media (max-width: 920px) {
@@ -211,7 +207,11 @@
     margin: 0 0 0 1.57rem;
 
     @media (max-width: 920px) {
-      margin: 0 9% 0 0;
+      margin: 0 5rem 0 0;
+    }
+
+    @media (max-width: 500px) {
+      margin-right: 3rem;
     }
 
     @media (max-width: 450px) {
@@ -237,16 +237,16 @@
 
   &__user-name {
     @include body;
-    margin: 0.36rem 0 0 4.3%;
+    margin: 0.36rem 0 0 4.1rem;
     font-style: normal;
     position: relative;
 
     @media (max-width: 1430px) {
-      margin: .36rem 0 0 10%;
+      margin: .36rem 0 0 7rem;
     }
 
     @media (max-width: 920px) {
-      margin: .36rem 0 0 15%;
+      margin: .36rem 0 0 12rem;
     }
 
     &::before {

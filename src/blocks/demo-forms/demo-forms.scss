@@ -10,15 +10,15 @@
     margin: 4.43rem 10rem 2.86rem 10rem;
 
     &:last-child {
-      margin: 0 11.5% 10.5rem 9.5%;
+      margin: 0 9.5rem 10.5rem 9.5rem;
 
       @media (max-width: 1000px) {
-        margin-left: 5%;
+        margin-left: 2rem;
       }
     }
 
     @media (max-width: 1000px) {
-      margin-left: 5%;
+      margin-left: 2rem;
     }
   }
 
