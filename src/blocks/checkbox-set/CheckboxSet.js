@@ -14,7 +14,9 @@ class CheckboxSet {
   }
 
   _handleCheckboxHeadClick() {
-    this.checkboxWrapper.style.display = this.inputElement.checked ? 'block' : 'none';
+    this.inputElement.checked
+      ? this.checkboxWrapper.classList.remove('checkbox-set__wrapper_hidden')
+      : this.checkboxWrapper.classList.add('checkbox-set__wrapper_hidden');
   }
 }
 

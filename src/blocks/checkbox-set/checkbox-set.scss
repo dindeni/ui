@@ -39,12 +39,17 @@
     }
   }
 
-  &__wrapper_type_expandable {
-    display: none;
-    margin: 0 0 0 .8rem;
+  &__wrapper {
+    &_hidden {
+      @include hide;
+    }
 
-    & .checkbox-set__item-wrapper {
-      margin-bottom: .65rem;
+    &_type_expandable {
+      margin: 0 0 0 .8rem;
+
+      & .checkbox-set__item-wrapper {
+        margin-bottom: .65rem;
+      }
     }
   }
 
